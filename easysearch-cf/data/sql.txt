@@ -1,0 +1,25 @@
+CREATE TABLE `t_model_cf` (
+	`id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+	`item_id_h` varchar(30) NOT NULL COMMENT '标的物A',
+	`item_id_l` varchar(30) NOT NULL COMMENT '标的物B',
+	`similarity_score` decimal(12,4) NOT NULL COMMENT '相似度值',
+	`create_dt` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`update_dt` datetime NULL DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP COMMENT '修改时间',
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `uk_item_id_h_l` (`item_id_h`,`item_id_l`),
+	KEY `idx_update_dt` (`update_dt`)
+) DEFAULT CHARACTER SET=utf8mb4 COMMENT='协同过滤相似评分';
+
+CREATE TABLE `t_user_action` (
+	`id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+	`user_code` varchar(50) NULL COMMENT '用户编号',
+	`actions` varchar(1000) NULL COMMENT '偏好行为[item,score,time]',
+	`create_dt` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`update_dt` datetime NULL DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP COMMENT '修改时间',
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `uk_user_code` (`user_code`)
+) DEFAULT CHARACTER SET=utf8mb4 COMMENT='协同过滤相似评分';
+
+# 若只有一个独立的服务负责写则可配置未MyISAM可大幅提高性能
+ALTER TABLE t_model_cf ENGINE = MyISAM;
+ALTER TABLE t_user_action ENGINE = MyISAM;

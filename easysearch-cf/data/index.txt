@@ -1,0 +1,58 @@
+# 模型参数，id为`item_id_h`,`item_id_l`
+PUT model_cf
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1,
+    "refresh_interval": "60s"
+  },
+  "mappings": {
+    "dynamic":false,
+    "properties": {
+      "item_id_h":{
+        "type": "keyword"
+      },
+      "item_id_l":{
+        "type": "keyword"
+      },
+      "similarity_score":{
+        "type": "double",
+        "index": false
+      },
+      "identity":{
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+# 用户偏好历史，id为userCode；userType 1-登录用户 2-临时用户
+PUT user_action
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1,
+    "refresh_interval": "10s"
+  },
+  "mappings": {
+    "dynamic":false,
+    "properties": {
+      "user_code":{
+        "type": "keyword",
+        "index": false
+      },
+      "actions":{
+        "type": "keyword",
+        "index": false
+      },
+      "user_type":{
+        "type": "keyword"
+      },
+      "update_dt":{
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss.SSS||epoch_millis",
+        "index": false
+      }
+    }
+  }
+}
