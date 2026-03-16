@@ -1,0 +1,1047 @@
+@RELATION product meta
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+[oppo r9s],model,1,207
+[oppo r11],model,1,214
+[oppo a79],model,1,221
+[oppo r17],model,1,233
+[oppo a35 (2021款)],model,1,235
+[oppo k1],model,1,238
+[oppo r15x],model,1,256
+[oppo a7],model,1,333
+[oppo reno],model,1,338
+[oppo a9],model,1,339
+[oppo k3],model,1,342
+[oppo a9x],model,1,344
+[oppo reno z],model,1,345
+[oppo reno2],model,1,351
+[oppo a11x],model,1,353
+[oppo k5],model,1,354
+[oppo reno ace],model,1,355
+[oppo reno2 z],model,1,356
+[oppo a11 (2019款)],model,1,357
+[oppo a8],model,1,358
+[oppo a91],model,1,359
+[oppo reno3 (5g版)],model,1,360
+[oppo reno3 (5g 元气版)],model,1,365
+[oppo find x2 (5g版)],model,1,366
+[oppo ace2 (5g版)],model,1,368
+[oppo a52],model,1,369
+[oppo a92s (5g版)],model,1,370
+[oppo reno4 (5g版)],model,1,372
+[三星 galaxy s8],model,1,614
+[三星 galaxy s8+],model,1,616
+[三星 galaxy s9],model,1,624
+[三星 galaxy s9+],model,1,625
+[三星 galaxy s10],model,1,767
+[三星 galaxy s10+],model,1,769
+[三星 galaxy s20 ultra (5g版)],model,1,820
+[三星 galaxy a51 (5g版)],model,1,827
+[vivo s12 (2021款)],model,1,1431
+[vivo x20],model,1,1481
+[vivo x20 plus],model,1,1482
+[vivo z1],model,1,1491
+[vivo x21 (后指纹版)],model,1,1496
+[vivo x23],model,1,1500
+[vivo z3],model,1,1513
+[vivo y55s (2021款)],model,1,1514
+[vivo x21s],model,1,1518
+[vivo x27],model,1,1556
+[vivo x27 pro],model,1,1560
+[vivo y3],model,1,1565
+[vivo z5x (710版)],model,1,1567
+[vivo z5],model,1,1570
+[vivo nex 3 (5g版)],model,1,1573
+[vivo u3x],model,1,1574
+[vivo y5s],model,1,1579
+[vivo s5],model,1,1581
+[vivo z5i],model,1,1582
+[vivo y9s],model,1,1583
+[vivo x30 (5g版)],model,1,1586
+[vivo z6 (5g版)],model,1,1587
+[vivo nex 3s (5g版)],model,1,1588
+[vivo s6 (5g 2020款)],model,1,1589
+[vivo y50 (4g版)],model,1,1590
+[vivo y70s (5g版)],model,1,1592
+[vivo x50 (5g版)],model,1,1593
+[vivo y51s],model,1,1597
+[vivo s7 (5g版)],model,1,1598
+[联想 z5],model,1,1960
+[魅族 17 (5g版)],model,1,2487
+[魅族 17 pro (5g版)],model,1,2488
+[努比亚 红魔 5g（5g版）],model,1,3005
+[一加 7 pro (4g版)],model,1,3036
+[一加 7t],model,1,3038
+[一加 8 pro (5g版)],model,1,3039
+[一加 8 (5g版)],model,1,3040
+[荣耀 9],model,1,3233
+[荣耀 畅玩7c],model,1,3239
+[荣耀 10],model,1,3241
+[荣耀 9i],model,1,3244
+[荣耀 8x],model,1,3246
+[荣耀 8x max],model,1,3247
+[荣耀 畅玩8c],model,1,3248
+[荣耀 20i],model,1,3255
+[荣耀 20],model,1,3256
+[荣耀 20 pro],model,1,3257
+[荣耀 9x],model,1,3261
+[荣耀 20s],model,1,3262
+[荣耀 play3],model,1,3263
+[荣耀 20 (青春版)],model,1,3265
+[荣耀 v30 (5g版)],model,1,3266
+[荣耀 v30 pro (5g版)],model,1,3267
+[荣耀 30s (5g版)],model,1,3268
+[荣耀 畅玩9a],model,1,3269
+[荣耀 30 (5g版)],model,1,3270
+[荣耀 30 pro (5g版)],model,1,3271
+[荣耀 30 pro+ (5g版)],model,1,3272
+[荣耀 play4t],model,1,3273
+[荣耀 play4t pro],model,1,3274
+[荣耀 x10 (5g版)],model,1,3275
+[荣耀 x10 max (5g版)],model,1,3277
+[荣耀 30 青春版 (5g版)],model,1,3278
+[荣耀 play4 (5g版)],model,1,3279
+[黑鲨游戏手机 3 (5g版)],model,1,3284
+[oppo k7],model,1,3349
+[iqoo],model,1,3356
+[iqoo neo],model,1,3357
+[iqoo pro (5g版)],model,1,3359
+[iqoo neo (855版)],model,1,3360
+[iqoo 3 (5g版)],model,1,3362
+[iqoo neo3 (5g版)],model,1,3363
+[iqoo z1 (5g版)],model,1,3364
+[iqoo z1x (5g版)],model,1,3365
+[三星 galaxy note 20 ultra (5g版)],model,1,3369
+[iqoo 5],model,1,3372
+[一加 8t],model,1,3373
+[三星 galaxy z fold2 (5g版)],model,1,3377
+[三星 galaxy note 20 (5g版)],model,1,3378
+[oppo reno5 pro (5g版)],model,1,3538
+[oppo reno5 (5g版)],model,1,3539
+[iqoo 7],model,1,3542
+[oppo reno4 se (5g版)],model,1,3549
+[真我 x7 pro],model,1,3551
+[vivo y85],model,1,3563
+[vivo x23 (幻彩版)],model,1,3566
+[三星 galaxy s21 (5g版)],model,1,3581
+[三星 galaxy s21 ultra (5g版)],model,1,3582
+[三星 w21 (5g版)],model,1,3583
+[vivo x60 pro (5g版)],model,1,3596
+[vivo x60 (直屏版)],model,1,3597
+[oppo reno5 pro+ (5g版)],model,1,3601
+[荣耀 v40 (5g版)],model,1,3602
+[oppo find x3],model,1,3607
+[oppo find x3 pro],model,1,3608
+[魅族 18],model,1,3610
+[一加 9],model,1,3612
+[一加 9 pro],model,1,3613
+[真我 gt],model,1,3614
+[vivo s9 (5g 2021款)],model,1,3615
+[iqoo neo5],model,1,3616
+[oppo a72 (5g版)],model,1,3621
+[真我 x50 pro (5g 玩家版)],model,1,3627
+[黑鲨游戏手机 4],model,1,3632
+[一加 9r],model,1,3633
+[索尼 xperia 1 iii],model,1,3635
+[iqoo z3 (5g版)],model,1,3638
+[真我 gt neo (5g版)],model,1,3641
+[真我 q3],model,1,3651
+[真我 q3 pro],model,1,3652
+[荣耀 play5 (5g版)],model,1,3653
+[荣耀 play 5t 活力版 (4g版)],model,1,3654
+[荣耀 play5t],model,1,3655
+[荣耀 50 se],model,1,3659
+[荣耀 50],model,1,3660
+[荣耀 50 pro],model,1,3661
+[oppo reno6 (5g版)],model,1,3662
+[oppo reno6 pro (5g版)],model,1,3663
+[oppo reno6 pro+ (5g版)],model,1,3664
+[oppo k9],model,1,3665
+[荣耀 60 pro],model,1,3667
+[iqoo u1x],model,1,3669
+[oppo a93 (5g版)],model,1,3670
+[vivo s10],model,1,3673
+[vivo s10 pro],model,1,3674
+[荣耀 x20],model,1,3677
+[iqoo neo5 (活力版)],model,1,3680
+[vivo y52s],model,1,3681
+[iqoo 8],model,1,3684
+[iqoo 8 pro],model,1,3685
+[oppo a32],model,1,3686
+[真我 v15 (5g版)],model,1,3695
+[oppo reno5 k (5g版)],model,1,3697
+[荣耀 畅玩20],model,1,3702
+[vivo y3s],model,1,3704
+[vivo y53s],model,1,3709
+[真我 q],model,1,3712
+[vivo y31s 标准版],model,1,3715
+[vivo y73s (5g版)],model,1,3720
+[荣耀 magic3 (至臻版)],model,1,3723
+[三星 galaxy a52 (5g版)],model,1,3725
+[oppo k9 pro],model,1,3734
+[荣耀 magic3 pro],model,1,3735
+[荣耀 magic3],model,1,3743
+[真我 gt neo2],model,1,3745
+[真我 q3s],model,1,3746
+[真我 gt neo2t],model,1,3748
+[vivo x70],model,1,3749
+[vivo x70 pro],model,1,3750
+[vivo x70 pro+],model,1,3751
+[荣耀 60],model,1,3790
+[荣耀 x30i],model,1,3791
+[真我 v5],model,1,3837
+[一加 10 pro],model,1,3858
+[iqoo 9 pro],model,1,3859
+[iqoo 9],model,1,3860
+[荣耀 magic v],model,1,3869
+[oppo k9s],model,1,3894
+[三星 galaxy z flip3 (5g版)],model,1,3927
+[真我 gt (大师探索版)],model,1,3928
+[真我 gt2],model,1,3939
+[三星 galaxy s22],model,1,3941
+[三星 galaxy s22+],model,1,3942
+[三星 galaxy s22 ultra],model,1,3943
+[努比亚 红魔 7],model,1,3947
+[努比亚 红魔 7 pro],model,1,3948
+[oppo find x5],model,1,3949
+[oppo find x5 pro],model,1,3950
+[努比亚 z40 pro],model,1,3952
+[真我 gt neo3 (5g款)],model,1,3976
+[iqoo neo5s],model,1,3977
+[oppo reno7 pro (5g版)],model,1,3978
+[荣耀 magic4 (5g款)],model,1,3997
+[真我 q2 (5g版)],model,1,4003
+[荣耀 70 (5g版)],model,1,4055
+[荣耀 70 pro+ (5g版)],model,1,4056
+[荣耀 70 pro (5g版)],model,1,4057
+[oppo k10],model,1,4064
+[oppo k10 pro],model,1,4065
+[oppo reno8 (5g版)],model,1,4066
+[oppo reno8 pro (5g版)],model,1,4067
+[oppo reno8 pro+ (5g版)],model,1,4068
+[oppo find n],model,1,4113
+[vivo x fold],model,1,4114
+[iqoo z5],model,1,4117
+[iqoo 10],model,1,4143
+[iqoo 10 pro],model,1,4144
+[一加 ace (竞速版)],model,1,4145
+[一加 ace],model,1,4146
+[vivo x80],model,1,4149
+[vivo x80 pro (骁龙版）],model,1,4150
+[vivo x80 pro (天玑9000版)],model,1,4151
+[vivo x note],model,1,4152
+[vivo s15 pro],model,1,4153
+[vivo s15],model,1,4154
+[iqoo neo6],model,1,4157
+[iqoo neo6 se],model,1,4158
+[荣耀 magic4 (至臻版)],model,1,4310
+[荣耀 x40],model,1,4311
+[oppo k10x],model,1,4313
+[三星 galaxy z fold4 (5g版)],model,1,4314
+[三星 galaxy z flip4 (5g版)],model,1,4315
+[荣耀 x40 gt],model,1,4332
+[iqoo neo7],model,1,4334
+[iqoo z6x (5g版)],model,1,4335
+[oppo a36],model,1,4336
+[oppo k9x],model,1,4337
+[三星 galaxy s23],model,1,4365
+[三星 galaxy s23+],model,1,4366
+[三星 galaxy s23 ultra],model,1,4367
+[iqoo z5x],model,1,4432
+[三星 w23],model,1,7002
+[三星 w23 flip],model,1,7003
+[vivo x90 pro],model,1,7064
+[魅族 20],model,1,7066
+[iqoo z7x (m)],model,1,7077
+[摩托罗拉 edge s30],model,1,7081
+[vivo y78+],model,1,7145
+[荣耀 x50i],model,1,7146
+[努比亚 红魔 7s pro],model,1,7152
+[华硕 rog 游戏手机3],model,1,7155
+[摩托罗拉 edge x30],model,1,7156
+[联想 拯救者 y90],model,1,7167
+[oppo k10 (活力版)],model,1,7171
+[iqoo neo5 se],model,1,7178
+[vivo y77 (5g版)],model,1,7180
+[vivo s16],model,1,7181
+[荣耀 畅玩30 plus],model,1,7187
+[努比亚 z40s pro 80w (5g版)],model,1,7188
+[vivo t2x (5g版)],model,1,7191
+[vivo y77e (5g版)],model,1,7192
+[黑鲨游戏手机 5],model,1,7193
+[黑鲨游戏手机 5 pro],model,1,7194
+[真我 gt2 (大师探索版)],model,1,7195
+[魅族 18x],model,1,7198
+[vivo y33s],model,1,7209
+[vivo x90],model,1,7210
+[vivo y76s],model,1,7211
+[vivo y30 (2020款)],model,1,7212
+[oppo reno7 (5g版)],model,1,7213
+[oppo find n2 flip],model,1,7214
+[努比亚 红魔 7s],model,1,7215
+[摩托罗拉 edge s pro],model,1,7216
+[vivo y30 (2020款 标准版)],model,1,7240
+[iqoo neo7 se],model,1,7242
+[oppo a97],model,1,7251
+[vivo y31s],model,1,7252
+[真我 11 pro+],model,1,7254
+[真我 11 pro],model,1,7255
+[真我 11],model,1,7256
+[荣耀 x30],model,1,7267
+[vivo s7e (5g 活力版)],model,1,7268
+[oppo a1 pro],model,1,7269
+[一加 11],model,1,7271
+[一加 ace 2],model,1,7272
+[黑鲨游戏手机 5 rs],model,1,7280
+[oppo a57 (5g 2022款)],model,1,7284
+[麦芒 11 (5g版)],model,1,7285
+[鼎桥 m40],model,1,7286
+[真我 v3],model,1,7287
+[荣耀 v40 (轻奢版)],model,1,7290
+[中兴 axon 40 ultra],model,1,7293
+[vivo y53s (t2版)],model,1,7294
+[vivo s17e],model,1,7297
+[荣耀 80],model,1,7298
+[真我 v13 (5g版)],model,1,7299
+[vivo s15e],model,1,7301
+[vivo t1],model,1,7302
+[真我 10 pro],model,1,7309
+[真我 10 pro+],model,1,7310
+[oppo reno9],model,1,7311
+[oppo reno9 pro],model,1,7312
+[oppo reno9 pro+],model,1,7313
+[hi nova 9],model,1,7314
+[hi nova 9 pro (5g版)],model,1,7315
+[hi nova 10],model,1,7316
+[hi nova 10 pro],model,1,7317
+[荣耀 magic4 pro (5g款)],model,1,7320
+[摩托罗拉 s30 pro],model,1,7321
+[vivo s16e],model,1,7322
+[真我 q5 pro],model,1,7324
+[oppo a96],model,1,7325
+[索尼 xperia 1 iv (5g版)],model,1,7339
+[vivo y35m],model,1,7341
+[vivo y78m],model,1,7360
+[oppo a93s (5g版)],model,1,7363
+[联想 拯救者 y70 (5g版)],model,1,7367
+[oppo find x6],model,1,7374
+[iqoo neo8],model,1,7380
+[iqoo neo8 pro],model,1,7381
+[oppo reno10],model,1,7382
+[oppo reno10 pro],model,1,7383
+[oppo reno10 pro+],model,1,7384
+[oppo k11x],model,1,7386
+[oppo a55 (5g版)],model,1,7387
+[vivo x90 pro+],model,1,7388
+[一加 ace pro (5g版)],model,1,7389
+[vivo y76s (t1版)],model,1,7392
+[iqoo 11],model,1,7393
+[oppo find x6 pro],model,1,7394
+[oppo find n2],model,1,7395
+[iqoo 11 pro],model,1,7404
+[oppo a58],model,1,7405
+[oppo reno7 se (5g版)],model,1,7408
+[荣耀 80 pro],model,1,7420
+[vivo x70t],model,1,7421
+[三星 galaxy z fold3 (5g版)],model,1,7422
+[oppo a56],model,1,7427
+[一加 9rt (5g版)],model,1,7428
+[vivo y35+],model,1,7432
+[荣耀 90],model,1,7441
+[荣耀 90 pro],model,1,7442
+[iqoo z6 (5g版)],model,1,7445
+[vivo s17],model,1,7449
+[vivo s17 pro],model,1,7450
+[iqoo neo7 (竞速版)],model,1,7451
+[华硕 rog 游戏手机 6],model,1,7457
+[一加 ace 2v],model,1,7467
+[oppo find x3 pro (摄影师版)],model,1,7469
+[真我 gt neo (5g 闪速版)],model,1,7470
+[oppo a53 (5g 2020款)],model,1,7471
+[优畅 享 20],model,1,7477
+[vivo s16 pro],model,1,7482
+[vivo x fold+],model,1,7509
+[摩托罗拉 x40],model,1,7522
+[荣耀 60 se],model,1,7525
+[三星 w22 (5g版)],model,1,7539
+[荣耀 magic5],model,1,7634
+[oppo a58x],model,1,7635
+[vivo x flip],model,1,7647
+[vivo x fold 2],model,1,7648
+[荣耀 magic vs],model,1,7649
+[荣耀 magic5 (至臻版)],model,1,7650
+[vivo x90s],model,1,7695
+[iqoo z7x],model,1,7731
+[真我 v20],model,1,7743
+[iqoo 11s],model,1,7870
+[摩托罗拉 razr 40],model,1,7872
+[iqoo z7],model,1,7897
+[荣耀 x50],model,1,7900
+[荣耀 magic5 pro],model,1,7907
+[真我 gt neo 3 150w (5g款)],model,1,7914
+[vivo y35 (5g版)],model,1,7939
+[oppo a95],model,1,7940
+[摩托罗拉 razr 40 ultra],model,1,7949
+[荣耀 magic v2],model,1,7993
+[真我 gt neo5 se],model,1,7995
+[真我 gt neo5 150w],model,1,7996
+[真我 gt neo5 240w],model,1,7997
+[努比亚 z50 ultra],model,1,7999
+[hi nova 9 se],model,1,8005
+[wiko hi 畅享 60 pro 5g],model,1,8013
+[魅族 20 pro],model,1,8023
+[真我 v30t],model,1,8025
+[荣耀 畅玩30],model,1,8041
+[oppo k11],model,1,8042
+[hi nova 11],model,1,8068
+[荣耀 80 gt],model,1,8073
+[荣耀 x40i (5g版)],model,1,8074
+[真我 v11s],model,1,8076
+[三星 galaxy z fold5 (5g版)],model,1,8079
+[三星 galaxy z flip5 (5g版)],model,1,8080
+[荣耀magic v2 (至臻版)],model,1,8116
+[荣耀 10 (青春版)],model,1,8124
+[真我 x (青春版)],model,1,8129
+[荣耀 畅玩40 plus],model,1,8130
+[vivo s9e (5g版)],model,1,8131
+[一加 ace 2 pro],model,1,8215
+[荣耀 80 pro 直屏版],model,1,8267
+[荣耀 magic vs 至臻版],model,1,8268
+[荣耀 畅玩 40],model,1,8269
+[oppo find n3 flip],model,1,8294
+[真我 gt5 240w],model,1,8296
+[努比亚 红魔 8s pro],model,1,8359
+[iqoo z8],model,1,8360
+[oppo a2 pro],model,1,8371
+[华硕 rog 游戏手机 7],model,1,8384
+[麦芒 20],model,1,8385
+[荣耀 v purse],model,1,8390
+[荣耀 x40 gt 竞速版],model,1,8391
+[努比亚 z50],model,1,8401
+[vivo y73t],model,1,8419
+[努比亚 红魔 8 pro],model,1,8426
+[努比亚 z50s pro],model,1,8427
+[oppo a2x],model,1,8430
+[三星 w24],model,1,8443
+[荣耀 play 7t],model,1,8449
+[努比亚 红魔 8 pro+],model,1,8467
+[荣耀 畅玩50 plus],model,1,13046
+[荣耀 play 8t],model,1,13068
+[vivo y78 (t1版)],model,1,13070
+[三星 galaxy a54],model,1,13080
+[oppo find n3],model,1,13085
+[荣耀 magic vs2],model,1,13087
+[vivo y100],model,1,13104
+[oppo a2m],model,1,13106
+[三星 galaxy s23 fe],model,1,13107
+[魅族 20 classic],model,1,13113
+[vivo y78t],model,1,13124
+[iqoo 12],model,1,13147
+[iqoo 12 pro],model,1,13148
+[oppo a2],model,1,13177
+[vivo x100],model,1,13888
+[vivo x100 pro],model,1,13890
+[三星 w24 flip],model,1,14086
+[wiko hi 畅享 60s 5g],model,1,14088
+[真我 x50 pro (5g版)],model,1,14093
+[真我 v23],model,1,14095
+[真我 v30],model,1,14098
+[荣耀 畅玩 40c],model,1,14101
+[荣耀 畅玩20a],model,1,14103
+[荣耀 畅玩20 pro],model,1,14104
+[鼎桥 p50 (5g版)],model,1,14111
+[荣耀 x50i+],model,1,14116
+[vivo y36],model,1,15054
+[vivo y36m],model,1,15055
+[oppo reno11],model,1,15065
+[oppo reno11 pro],model,1,15066
+[荣耀 100],model,1,15071
+[荣耀 100 pro],model,1,15072
+[努比亚 红魔 9 pro+],model,1,15094
+[真我 gt2 pro],model,1,15099
+[vivo y100i],model,1,15115
+[魅族 21],model,1,15119
+[iqoo z8x],model,1,15123
+[努比亚 红魔 9 pro],model,1,15150
+[vivo y78],model,1,15155
+[努比亚 红魔 8s pro+],model,1,15162
+[一加 12],model,1,15163
+[真我 gt5 pro],model,1,15167
+[魅族 20 infinity 无界版],model,1,16548
+[vivo s18],model,1,16559
+[vivo s18 pro],model,1,16560
+[vivo s18e],model,1,16562
+[vivo y36i],model,1,16578
+[努比亚 z60 ultra],model,1,16605
+[oppo a1 活力版],model,1,16609
+[荣耀 90 gt],model,1,16627
+[iqoo neo9],model,1,16639
+[iqoo neo9 pro],model,1,16643
+[一加 ace 3],model,1,16682
+[oppo find x7],model,1,16693
+[oppo find x7 ultra],model,1,16694
+[荣耀 x50 gt],model,1,16696
+[vivo y53t],model,1,16701
+[荣耀 magic v2 rsr 保时捷设计],model,1,16707
+[荣耀 magic6],model,1,16708
+[荣耀 magic6 pro],model,1,16709
+[荣耀 x50 pro],model,1,16746
+[三星 galaxy s24],model,1,16759
+[三星 galaxy s24+],model,1,16760
+[三星 galaxy s24 ultra],model,1,16761
+[华硕 rog 游戏手机 8 pro],model,1,16766
+[华硕 rog 游戏手机 8],model,1,16768
+[vivo s17t],model,1,16773
+[真我 12 pro+],model,1,16893
+[真我 12 pro],model,1,16894
+[oppo a1x],model,1,16898
+[oppo a1 (5g版)],model,1,16908
+[魅族 21 pro],model,1,16910
+[vivo z3i (标准版)],model,1,16977
+[荣耀 magic6 (至臻版)],model,1,17075
+[一加 ace 3v],model,1,17102
+[vivo x fold 3],model,1,17103
+[iqoo z7i],model,1,17114
+[荣耀 magic6 rsr 保时捷设计],model,1,17121
+[vivo x fold 3 pro],model,1,17139
+[wiko hi 畅享 70 pro 5g],model,1,17153
+[三星 galaxy a55 (5g版)],model,1,17176
+[荣耀 畅玩50m],model,1,17260
+[荣耀 畅玩50],model,1,17262
+[荣耀 80 se],model,1,17265
+[真我gt neo6 se],model,1,17270
+[oppo a3 pro],model,1,17280
+[努比亚 flip (5g版)],model,1,17393
+[真我 12x],model,1,17427
+[vivo y200i],model,1,17442
+[iqoo z9],model,1,17472
+[iqoo z9 turbo],model,1,17473
+[iqoo z9x],model,1,17474
+[三星 galaxy c55],model,1,17477
+[hi nova12 se],model,1,17485
+[oppo k12],model,1,17495
+[努比亚 小牛],model,1,17534
+[vivo x100s],model,1,17549
+[vivo x100s pro],model,1,17550
+[vivo x100 ultra],model,1,17551
+[真我gt neo6],model,1,18282
+[魅族 21 note],model,1,18563
+[vivo y200],model,1,18578
+[vivo y200 gt],model,1,18580
+[vivo y200t],model,1,18581
+[真我 12],model,1,18608
+[iqoo neo9s pro],model,1,18611
+[荣耀 200],model,1,18923
+[荣耀 200 pro],model,1,18925
+[oppo reno12 pro],model,1,18941
+[oppo reno12],model,1,18942
+[vivo s19 pro],model,1,18945
+[vivo s19],model,1,18950
+[oppo k12x],model,1,26264
+[荣耀 magic v flip],model,1,26351
+[一加 ace 3 pro],model,1,26434
+[荣耀 畅玩60 plus],model,1,26440
+[oppo a3 (5g版)],model,1,26473
+[真我 gt5 150w],model,1,26479
+[摩托罗拉 razr 50],model,1,26483
+[摩托罗拉 razr 50 ultra],model,1,26484
+[努比亚 红魔 9s pro],model,1,26493
+[真我 v60],model,1,26583
+[真我 gt6],model,1,26601
+[努比亚 红魔 9s pro+],model,1,26603
+[摩托罗拉 s50 neo],model,1,26606
+[真我 v60s],model,1,26613
+[荣耀 magic v3],model,1,26642
+[荣耀 magic vs3],model,1,26643
+[iqoo neo9s pro+],model,1,26647
+[vivo y37 (5g版)],model,1,26650
+[vivo y37m (5g版)],model,1,26651
+[三星 galaxy z fold6 (5g版)],model,1,26690
+[三星 galaxy z flip6 (5g版)],model,1,26692
+[努比亚 z60s pro],model,1,26957
+[麦芒 30],model,1,26984
+[oppo a3 活力版],model,1,26985
+[荣耀 x60i],model,1,26997
+[努比亚 z60 ultra 领先版],model,1,27064
+[真我 13 pro+],model,1,27092
+[魅族 魅蓝 20],model,1,27117
+[oppo a3x (5g版)],model,1,27191
+[中兴 远航60],model,1,27210
+[vivo y37 pro],model,1,27447
+[wiko hi 畅享 70m 5g],model,1,27598
+[真我 13 pro],model,1,27605
+[vivo y300 pro],model,1,27621
+[摩托罗拉 moto s50],model,1,27623
+[真我 13],model,1,27658
+[vivo y36c],model,1,28607
+[iqoo z9 turbo+],model,1,28744
+[魅族 lucky 08],model,1,29612
+[荣耀 play 9t],model,1,29618
+[oppo k12 plus],model,1,29756
+[vivo x200],model,1,29773
+[vivo x200 pro],model,1,29774
+[vivo x200 pro mini],model,1,29776
+[荣耀 play 9c],model,1,29794
+[荣耀 x60],model,1,29953
+[荣耀 x60 pro],model,1,29955
+[oppo find x8],model,1,30010
+[oppo find x8 pro],model,1,30018
+[iqoo 13],model,1,30059
+[荣耀 magic7],model,1,30062
+[荣耀 magic7 pro],model,1,30065
+[一加 13],model,1,30091
+[摩托罗拉 moto g55],model,1,30142
+[摩托罗拉 moto g75],model,1,30219
+[真我 gt7 pro],model,1,30241
+[三星 w25],model,1,30314
+[三星 w25 flip],model,1,30315
+[努比亚 红魔 10 pro],model,1,30437
+[努比亚 红魔 10 pro+],model,1,30439
+[oppo reno13],model,1,30475
+[oppo reno13 pro],model,1,30476
+[vivo s20],model,1,30561
+[vivo s20 pro],model,1,30562
+[努比亚 z70 ultra],model,1,30571
+[iqoo neo10],model,1,30572
+[iqoo neo10 pro],model,1,30591
+[荣耀 300],model,1,30631
+[荣耀 300 pro],model,1,30632
+[荣耀 300 ultra],model,1,30633
+[华硕 rog 游戏手机 9 pro],model,1,30636
+[oppo a3i],model,1,30692
+[真我 neo7],model,1,30761
+[wiko hi 畅享 70 plus],model,1,30771
+[华硕 rog 游戏手机 9],model,1,30788
+[荣耀 gt],model,1,30789
+[真我 v60 pro],model,1,30829
+[vivo y300],model,1,30833
+[荣耀 magic7 rsr 保时捷设计],model,1,30947
+[一加 ace 5],model,1,30968
+[oppo a5 pro],model,1,30969
+[一加 ace 5 pro],model,1,30970
+[摩托罗拉 moto g54],model,1,31105
+[iqoo z9 turbo (长续航版)],model,1,31286
+[三星 galaxy s25 ultra],model,1,31430
+[三星 galaxy s25+],model,1,31746
+[三星 galaxy s25],model,1,31747
+[oppo find n5],model,1,32421
+[真我 gt7 pro 竞速版],model,1,32598
+[真我 neo7 se],model,1,32611
+[vivo y300i],model,1,32840
+[努比亚 flip 2],model,1,34685
+[oppo a5 (活力版)],model,1,34693
+[oppo a5 (5g版)],model,1,34698
+[真我 neo7x],model,1,34949
+[vivo y300t],model,1,35099
+[vivo y300 pro+],model,1,35112
+[荣耀 畅玩60],model,1,35116
+[真我 v70s],model,1,35140
+[oppo find x8 ultra],model,1,35543
+[oppo find x8s],model,1,35552
+[oppo find x8s+],model,1,35554
+[努比亚 红魔 10 air],model,1,35644
+[荣耀 power],model,1,35653
+[vivo x200 ultra],model,1,35822
+[vivo x200s],model,1,35823
+[真我 gt7],model,1,35827
+[荣耀 x60 gt],model,1,35858
+[荣耀 gt pro],model,1,35859
+[荣耀 畅玩60m],model,1,35956
+[一加 13t],model,1,35960
+[oppo k12s],model,1,36011
+[iqoo z10 turbo],model,1,36460
+[荣耀 x70i],model,1,36461
+[iqoo z10 turbo pro],model,1,36464
+[iqoo z10x],model,1,36563
+[努比亚 z70s ultra],model,1,36650
+[oppo reno14],model,1,36844
+[oppo reno14 pro],model,1,36847
+[魅族 note 16],model,1,36849
+[三星 galaxy s25 edge],model,1,36868
+[iqoo neo10 pro+],model,1,36987
+[魅族 note 16 pro],model,1,36996
+[一加 ace 5 至尊版],model,1,37255
+[一加 ace 5 竞速版],model,1,37256
+[荣耀 400],model,1,37300
+[荣耀 400 pro],model,1,37301
+[vivo s30],model,1,37306
+[vivo s30 pro mini],model,1,37307
+[真我 neo7 turbo],model,1,37309
+[vivo y300 gt],model,1,37419
+[oppo a5x (5g版)],model,1,37690
+[努比亚 红魔 10s pro+],model,1,37898
+[努比亚 红魔 10s pro],model,1,38358
+[vivo x fold 5],model,1,38391
+[麦芒 40],model,1,38608
+[荣耀 magic v5],model,1,38662
+[荣耀 x70],model,1,39132
+[三星 galaxy z fold7 (5g版)],model,1,39358
+[三星 galaxy z flip7 (5g版)],model,1,39361
+[三星 galaxy z flip7 fe],model,1,39362
+[oppo k13 turbo],model,1,39407
+[oppo k13 turbo pro],model,1,39409
+[vivo y50m (5g版)],model,1,39423
+[vivo y50 (5g版)],model,1,39424
+[荣耀 畅玩70 plus],model,1,39772
+[荣耀 magic v flip2],model,1,40366
+[vivo y500],model,1,40804
+[wiko hi 畅享 80 pro],model,1,39242
+[vivo y72t],model,1,32976
+[魅族 18s],model,1,7281
+[vivo x60 (曲屏版)],model,1,7157
+[荣耀 畅玩 30m],model,1,8439
+[vivo x60 pro+ (5g版)],model,1,3595
+[vivo y30 (2021款)],model,1,7282
+[荣耀 畅玩7x],model,1,3236
+[oppo a6 pro],model,1,41127
+[vivo y50i],model,1,42742
+[vivo s12 pro],model,1,7407
+[vivo y53s (t1版)],model,1,7274
+[iqoo 5 pro],model,1,3371
+[oppo k13s],model,1,42541
+[iqoo u5],model,1,7177
+[vivo x300],model,1,42599
+[荣耀 note 10],model,1,3245
+[oppo reno3 pro (5g版)],model,1,361
+[oppo a6],model,1,42177
+[vivo y33e],model,1,7632
+[vivo y10 (t2版)],model,1,7327
+[摩托罗拉 edge 60s],model,1,37679
+[荣耀 9x pro],model,1,3260
+[nzone 50 pro (5g版)],model,1,8386
+[中兴 畅行 60 plus],model,1,36526
+[hi nova 9z],model,1,8387
+[vivo x60t pro+],model,1,8020
+[oppo k13x],model,1,42619
+[索尼 xperia 1 v],model,1,16547
+[vivo y36s],model,1,26423
+[vivo x300 pro],model,1,42600
+[真我 13 pro (至尊版)],model,1,27415
+[vivo s7e (5g版)],model,1,7270
+[iqoo z10 turbo+],model,1,39942
+[荣耀 畅玩 40s],model,1,14102
+[oppo reno4 pro (5g版)],model,1,371
+[oppo r15],model,1,224
+[真我 v11 (5g版)],model,1,3698
+[vivo y30 (2021款 活力版)],model,1,7241
+[荣耀 play5t pro],model,1,8421
+[oppo a83],model,1,223
+[vivo s1],model,1,1559
+[vivo y10(t1版)],model,1,7275
+[vivo y97],model,1,1501
+[oppo k7x (5g版)],model,1,3642
+[vivo y30g],model,1,7279
+[vivo y52s (t1版)],model,1,7517
+[oppo find x9],model,1,42761
+[oppo find x9 pro],model,1,42762
+[联想 拯救者 电竞手机 pro],model,1,1997
+[中兴 畅行 60],model,1,17283
+[vivo y50t],model,1,8388
+[oppo r15 pro],model,1,225
+[荣耀 magic8 pro],model,1,42745
+[oppo a3i plus],model,1,32795
+[oppo a7x],model,1,234
+[oppo r17 pro],model,1,236
+[荣耀 v20],model,1,3252
+[iqoo u5x],model,1,7273
+[iqoo u3 (5g版)],model,1,3668
+[三星 galaxy s21+ (5g版)],model,1,3647
+[三星 galaxy s21 fe(5g版)],model,1,3940
+[中兴 畅行 50],model,1,13142
+[vivo y7s],model,1,1569
+[荣耀 play 8t pro],model,1,26425
+[努比亚 红魔 10 pro+ (臻金传奇)],model,1,35476
+[中兴 小鲜50],model,1,16577
+[oppo find x5 pro (天玑版)],model,1,3951
+[中兴 远航41],model,1,8335
+[中兴 小鲜60],model,1,29792
+[vivo y78m (t1版)],model,1,13174
+[真我 q3 pro (狂欢版)],model,1,3747
+[vivo s10e],model,1,7283
+[vivo s1 pro],model,1,1564
+[中兴 远航30s],model,1,37899
+[vivo y10],model,1,7676
+[魅族 22],model,1,41572
+[荣耀 x20 se],model,1,3658
+[努比亚 红魔 11 pro+],model,1,42902
+[oppo a6 gt],model,1,40884
+[努比亚 红魔 11 pro],model,1,42900
+[荣耀 x30 max],model,1,3792
+[真我 gt8 pro],model,1,43269
+[三星 w26],model,1,42855
+[iqoo 15],model,1,42906
+[荣耀 play 6c],model,1,8446
+[vivo s7t],model,1,3683
+[一加 6],model,1,3027
+[一加 6t],model,1,3028
+[iqoo u3x (5g版)],model,1,4116
+[vivo u3],model,1,1577
+[vivo x50 pro (5g版)],model,1,1594
+[oppo find x2 pro (5g版)],model,1,367
+[荣耀 magic8],model,1,42743
+[麦芒 10 se (5g版)],model,1,3868
+[魅族 16x],model,1,2479
+[oppo reno10 pro (海外版)],model,1,13071
+[荣耀 v10],model,1,3237
+[一加 15],model,1,43872
+[vivo y93],model,1,1515
+[荣耀 畅玩8a],model,1,3253
+[摩托罗拉 edge 60 pro],model,1,37272
+[vivo nex 3 (4g版)],model,1,1572
+[wiko hi 畅享 80],model,1,36681
+[三星 galaxy note 8],model,1,618
+[iqoo neo11],model,1,44322
+[tcl p10],model,1,32440
+[摩托罗拉 moto g100 pro],model,1,39604
+[真我 x7 pro (至尊版)],model,1,7468
+[真我 v25],model,1,14097
+[摩托罗拉 moto x50 ultra],model,1,18913
+[真我 q3i (5g版)],model,1,3741
+[摩托罗拉  razr（5g版）],model,1,3590
+[oppo a1i],model,1,26612
+[摩托罗拉 razr 60],model,1,37067
+[华硕 rog 游戏手机2],model,1,7246
+[荣耀 play],model,1,3243
+[vivo y32t],model,1,7691
+[黑鲨游戏手机 4s],model,1,7183
+[麦芒9],model,1,32780
+[iqoo u1],model,1,3366
+[真我 10],model,1,4331
+[索尼 xperia 5 ii],model,1,3591
+[iqoo u3x (标准版)],model,1,7239
+[vivo x30 pro (5g版)],model,1,1585
+[iqoo neo (855竞速版)],model,1,3361
+[oppo a56s],model,1,26467
+[真我 12 pro (至尊版)],model,1,16895
+[真我 v50s],model,1,15170
+[努比亚 红魔 6],model,1,3678
+[vivo x21i],model,1,1489
+[魅族 21 pro flyme 钛好用版],model,1,37585
+[vivo y31s (t2版)],model,1,7400
+[vivo y77t],model,1,8272
+[vivo y74s],model,1,7452
+[vivo y32],model,1,7295
+[麦芒 a20],model,1,7677
+[麦芒 10],model,1,3867
+[vivo t1x],model,1,7454
+[wiko hi 畅享 80 gt],model,1,41917
+[oppo r11s plus],model,1,220
+[一加 7],model,1,3035
+[oppo r11s],model,1,219
+[真我 14 pro],model,1,34811
+[真我 q2 pro (5g版)],model,1,3687
+[三星 galaxy s10e],model,1,768
+[u-magic 优畅享 50 plus (5g)],model,1,13053
+[中兴 axon 40 pro],model,1,7715
+[荣耀 play5 (活力版)],model,1,14105
+[vivo y200+],model,1,31293
+[oppo a3],model,1,226
+[摩托罗拉 g53],model,1,30881
+[努比亚 红魔 6s pro],model,1,7170
+[黑莓 key 2],model,1,2523
+[魅族 18 pro],model,1,3611
+[真我 gt (大师版)],model,1,7455
+[真我 14],model,1,34810
+[三星 galaxy s20 fe (5g版)],model,1,3546
+[oppo a11s],model,1,8032
+[vivo y70t],model,1,7484
+[锤子 坚果 pro2],model,1,3014
+[荣耀 8],model,1,3225
+[华硕 rog 游戏手机5],model,1,7200
+[荣耀 play 6t],model,1,8271
+[华硕 rog 游戏手机 6 天玑版],model,1,7485
+[谷歌 pixel 8a],model,1,30136
+[oppo a5 (4g版)],model,1,229
+[真我 q5],model,1,4156
+[oppo a5 plus],model,1,41107
+[三星 galaxy a56 (5g版)],model,1,35049
+[真我 x7],model,1,3617
+[一加 ace 6],model,1,43874
+[oppo reno (10倍变焦版)],model,1,340
+[vivo y100t],model,1,16957
+[三星 galaxy s20 (5g版)],model,1,818
+[中兴 天机a31],model,1,17165
+[真我 14 pro+],model,1,32507
+[锤子 坚果 r2],model,1,3370
+[黑鲨游戏手机],model,1,3280
+[三星 w2019],model,1,694
+[一加 5t],model,1,3026
+[vivo y35m+],model,1,7443
+[摩托罗拉 x30 pro (5g版)],model,1,7250
+[vivo y93s],model,1,1552
+[黑鲨游戏手机 4 pro],model,1,3643
+[中兴 axon 50 ultra],model,1,16546
+[vivo y100+],model,1,30141
+[iqoo pro (4g版)],model,1,3358
+[三星 galaxy s7 edge],model,1,576
+[荣耀 play4 pro (5g版)],model,1,3276
+[索尼 xperia 1 ii],model,1,1730
+[vivo y77e (t1版)],model,1,27416
+[vivo y36t],model,1,26986
+[vivo x50 pro+ (5g版)],model,1,1596
+[联想 拯救者 电竞手机 2pro],model,1,3710
+[vivo y55t],model,1,13123
+[荣耀 play 7t pro],model,1,8270
+[三星 galaxy a53 (5g版)],model,1,14089
+[魅族 x8],model,1,2481
+[hi nova 10 se],model,1,15152
+[三星 galaxy f52],model,1,16814
+[努比亚 z50s],model,1,13169
+[三星 galaxy a90 (5g版)],model,1,7439
+[华硕 rog 游戏手机5s],model,1,7196
+[魅族 16t],model,1,2486
+[vivo y3 (标准版)],model,1,16899
+[vivo nex (旗舰版)],model,1,1498
+[真我 q2i],model,1,7201
+[黑鲨游戏手机 helo],model,1,3281
+[vivo y33t (2023款)],model,1,13119
+[摩托罗拉 edge s],model,1,7366
+[oppo find x],model,1,228
+[黑鲨游戏手机 2],model,1,3282
+[oppo a55s (5g版)],model,1,7416
+[vivo z3x],model,1,1563
+[真我 x50 (5g版)],model,1,14091
+[荣耀 play 6t pro],model,1,8411
+[魅族 16s pro],model,1,2485
+[努比亚 红魔 6pro],model,1,7153
+[三星 galaxy a6s],model,1,638
+[三星 galaxy note 10 (4g版)],model,1,790
+[真我 10s],model,1,7696
+[三星 galaxy note 9],model,1,630
+[荣耀 magic2],model,1,3250
+[三星 w2018],model,1,623
+[索尼 xperia 5 v],model,1,17267
+[中兴 远航41s],model,1,17445
+[vivo z1i],model,1,1494
+[三星 galaxy note 10+ (5g版)],model,1,789
+[oppo r11 plus],model,1,216
+[酷派大观 y60s],model,1,17452
+[魅族 16th plus],model,1,2476
+[锤子 坚果 pro3],model,1,3019
+[努比亚 z40s pro 120w (5g版)],model,1,7189
+[索尼 xperia 5 iv],model,1,16903
+[真我 x2],model,1,3838
+[三星 galaxy s20+ (5g版)],model,1,819
+[黑鲨游戏手机 3s (5g版)],model,1,3286
+[vivo z5x (712版)],model,1,1591
+[中兴 axon 30(5g版)],model,1,7190
+[vivo z3i],model,1,1512
+[vivo nex (屏幕指纹版)],model,1,1503
+[真我 v50],model,1,15169
+[一加 7t pro],model,1,3037
+[黑鲨游戏手机 5 (高能版)],model,1,7403
+[vivo nex (后指纹版)],model,1,1492
+[oppo a1s (5g版)],model,1,26319
+[一加 5],model,1,3025
+[努比亚 z30 pro],model,1,7365
+[努比亚 红魔 5s（5g版）],model,1,3007
+[索尼 xperia pro-i],model,1,3744
+[优畅 享20 plus（5g版）],model,1,7659
+[真我 q3t],model,1,7739
+[nzone s7 pro(5g)],model,1,8416
+[nzone s7 pro+ (5g)],model,1,8412
+[nzone s7],model,1,8402
+[黑鲨游戏手机 4s pro],model,1,7245
+[努比亚 红魔3],model,1,3001
+[摩托罗拉 razr 2022],model,1,7429
+[华硕 rog 游戏手机 6 天玑至尊版],model,1,26948
+[u-magic 优畅享 50 (5g版)],model,1,13051
+[华硕 rog 游戏手机 7 pro],model,1,16774
+[wiko hi 畅享 60 5g],model,1,14110
+[iqoo u5e (5g版)],model,1,7182
+[魅族 18s pro],model,1,8066
+[联想 z5s],model,1,1982
+[美图 t9],model,1,7402
+[荣耀 8 (青春版)],model,1,8043
+[oppo r9],model,1,197
+[vivo x9s],model,1,1480
+[wiko hi 畅享 80s],model,1,36677
+[vivo y66],model,1,1474
+[oppo r9 plus],model,1,198
+[vivo x9],model,1,1471
+[联想 z6],model,1,1992
+[vivo x7],model,1,1468
+[努比亚 x],model,1,2999
+[小度青禾学习手机 v20],model,1,38221
+[魅族 16th],model,1,2477
+[联想 z6 pro],model,1,1988
+[魅族 16s],model,1,2483
+[oppo a57 (2016款)],model,1,208
+[三星 galaxy note 10+],model,1,791
+[三星 galaxy z flip],model,1,816
+[努比亚 z20],model,1,3002
+[oppo a72n (5g版)],model,1,7953
+[vivo x21 (屏幕指纹版)],model,1,1495
+[vivo x9 plus],model,1,8030
+[真我 q5 (狂欢版)],model,1,16902
+[vivo y37c],model,1,37808
+[黑鲨游戏手机 2 pro],model,1,3283
+[vivo y53s (nfc版)],model,1,8404
+[魅族 魅蓝 note 6],model,1,2466
+[真我 v70],model,1,34812
+[三星 galaxy s10 (5g版)],model,1,31198
+[摩托罗拉 razr 60 pro],model,1,38902
+[荣耀 9 (青春版)],model,1,7418
+[谷歌 pixel 8 pro],model,1,15070
+[oppo a6 max],model,1,43072
+[wiko hi 畅享 70 5g],model,1,27686
+[vivo y52t],model,1,39616
+[真我 15],model,1,41573
+[荣耀 play 9t pro],model,1,31318
+[真我 gt8],model,1,43266
+[真我 q5i],model,1,27446
+[三星 galaxy a15 (5g版)],model,1,17381
+[美图 v7],model,1,3061
+[三星 w20 (5g版)],model,1,810
+[夏普 aquos r9],model,1,34959
+[摩托罗拉 edge 60],model,1,37674
+[三星 galaxy m23],model,1,15107
+[荣耀 play 10c],model,1,40369
+[vivo nex (双屏版)],model,1,16913
+[oppo reno15 pro],model,1,44940
+[oppo reno15],model,1,44939
+[一加 7 pro (5g版)],model,1,3041
+[荣耀 500 pro],model,1,47904
+[荣耀 500],model,1,47902
+[索尼 xperia 5 iii],model,1,3636
+[努比亚 z80 ultra],model,1,44478
+[vivo y500 pro],model,1,44788
+[一加 ace 6t],model,1,48151
+[vivo s50],model,1,48571
+[vivo y300+],model,1,42560
+[vivo s50 pro mini],model,1,48573
+[优畅 享 30e (骁龙版)],model,1,8409
+[摩托罗拉 moto x70 air],model,1,44660
+[三星 galaxy a14],model,1,31194
+[三星 galaxy s24 fe],model,1,31299
+[三星 galaxy note 5],model,1,566
+[谷歌 pixel 9 pro fold],model,1,29702
+[vivo y78+ (t1版)],model,1,16736
+[三星 galaxy z flip (5g版)],model,1,829
+[真我 15 pro],model,1,41576
+[nothing cmf phone 1],model,1,44027
+[麦芒 十年臻爱版],model,1,15097
+[vivo y100i (长续航版)],model,1,18606
+[索尼 xperia 1 vi],model,1,26295
+[三星 galaxy a16 (5g版)],model,1,34813
+[三星 galaxy fold (4g版)],model,1,802
+[真我 15t],model,1,41574
+[荣耀 magic8 pro air],model,1,50521
+[一加 turbo 6v],model,1,50190
+[vivo y500i],model,1,50314
+[荣耀 play 10t],model,1,41927
+[wiko hi 畅享 80 plus],model,1,50386
+[三星 galaxy a70],model,1,772
+[荣耀 power 2],model,1,50199
+[摩托罗拉 razr 50s],model,1,50977
+[努比亚 红魔mars电竞手机],model,1,3000
+[三星 galaxy s7],model,1,575
+[三星 galaxy a60],model,1,775
+[oppo a6s (5g版)],model,1,50622
+[真我 neo8],model,1,50482
+[中兴 x10],model,1,51025

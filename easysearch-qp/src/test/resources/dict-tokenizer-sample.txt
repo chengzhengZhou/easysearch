@@ -1,0 +1,8 @@
+# 词典分词器示例词典，支持 词 或 词\t词性
+影石	NR
+摄像机	CATEGORY
+影石摄像机	NN
+华为	BRAND
+手机	CATEGORY
+华为手机	NN
+MateBook	NN

@@ -1,0 +1,3027 @@
+@RELATION product meta
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+[机械革命 s2],model,1,3476
+[thinkpad x230],model,1,3989
+[thinkpad x270],model,1,3990
+[thinkpad x1 carbon],model,1,3993
+[thinkpad e470],model,1,3994
+[thinkpad t14],model,1,3995
+[alienware m15 r5],model,1,4440
+[alienware x17 r1],model,1,4441
+[alienware area-51m r2],model,1,4445
+[alienware m17 r4],model,1,4446
+[alienware m15 r3],model,1,4447
+[alienware 17 r5],model,1,4454
+[alienware 15],model,1,4458
+[gpd p2 max 系列],model,1,4463
+[msi微星 gp76],model,1,4481
+[msi微星 gf65],model,1,4486
+[msi微星 gp65],model,1,4487
+[msi微星 gl75],model,1,4489
+[msi微星 gl65],model,1,4494
+[msi微星 gf63],model,1,4497
+[msi微星 gs65],model,1,4499
+[msi微星 gl62m],model,1,4524
+[thinkpad p15v 2021],model,1,4551
+[thinkpad thinkbook plus 17],model,1,4553
+[thinkpad t16 2022],model,1,4555
+[thinkpad t14s 2022],model,1,4560
+[thinkpad e14 gen4],model,1,4561
+[thinkpad x1 nano],model,1,4563
+[thinkpad p1 隐士 2021],model,1,4564
+[thinkpad x13 2021],model,1,4566
+[thinkpad x1 yoga 2017],model,1,4571
+[thinkpad l13 gen2],model,1,4572
+[thinkpad p14s 2020],model,1,4576
+[thinkpad e15 gen2],model,1,4577
+[thinkpad l14 gen2],model,1,4580
+[thinkpad s2 2016],model,1,4583
+[thinkpad l380 yoga],model,1,4594
+[thinkpad thinkbook 15 gen3],model,1,4595
+[thinkpad e14 gen3],model,1,4596
+[thinkpad thinkbook 13s gen2],model,1,4597
+[thinkpad thinkbook 14p 2021],model,1,4605
+[thinkpad thinkbook 13x],model,1,4607
+[thinkpad thinkbook 14 gen3],model,1,4608
+[thinkpad x1 carbon 2021],model,1,4612
+[thinkpad s1 2017],model,1,4614
+[thinkpad thinkbook 14 gen2],model,1,4616
+[thinkpad thinkbook 15p],model,1,4623
+[thinkpad x1 carbon 2020],model,1,4625
+[thinkpad thinkbook plus],model,1,4626
+[thinkpad x13 yoga],model,1,4638
+[thinkpad s2 2018],model,1,4639
+[thinkpad l14 gen1],model,1,4640
+[thinkpad t14s],model,1,4643
+[thinkpad x13 2020],model,1,4645
+[thinkpad e15],model,1,4648
+[thinkpad p53],model,1,4652
+[thinkpad e14],model,1,4654
+[thinkpad thinkbook 14],model,1,4656
+[thinkpad thinkbook 15],model,1,4661
+[thinkpad x1 carbon 2019],model,1,4662
+[thinkpad x1 隐士 2019],model,1,4665
+[thinkpad thinkbook 13s],model,1,4666
+[thinkpad thinkbook 14s],model,1,4667
+[thinkpad x390 yoga],model,1,4669
+[thinkpad t490],model,1,4674
+[thinkpad e490],model,1,4678
+[thinkpad x1 tablet evo],model,1,4680
+[thinkpad x1 隐士],model,1,4681
+[thinkpad e485],model,1,4685
+[thinkpad t580],model,1,4687
+[thinkpad t480],model,1,4689
+[thinkpad e580],model,1,4692
+[thinkpad l470],model,1,4693
+[thinkpad r480],model,1,4696
+[thinkpad t470p],model,1,4700
+[thinkpad e570c],model,1,4703
+[thinkpad e475],model,1,4704
+[thinkpad e570],model,1,4706
+[thinkpad p50],model,1,4707
+[戴尔 inspiron 灵越 14 5425 系列],model,1,4724
+[戴尔 precision 3561 系列],model,1,4727
+[戴尔 g16 7620 系列],model,1,4735
+[戴尔 inspiron 灵越 14 5415 系列],model,1,4738
+[戴尔 precision 3571 系列],model,1,4741
+[戴尔 vostro成就 3420 系列],model,1,4759
+[戴尔 inspiron 灵越 16 5620 系列],model,1,4761
+[戴尔 inspiron 灵越 14 5420 系列],model,1,4765
+[戴尔 g15 5520 系列],model,1,4768
+[戴尔 latitude 7320 系列],model,1,4771
+[戴尔 vostro成就 3510 系列],model,1,4779
+[戴尔 inspiron 灵越 15 5515 系列],model,1,4780
+[戴尔 vostro成就 5510 系列],model,1,4789
+[戴尔 inspiron 灵越 13 7300 系列],model,1,4790
+[戴尔 inspiron 灵越 15 5510 系列],model,1,4793
+[戴尔 latitude 5580 系列],model,1,4794
+[戴尔 latitude 7420 系列],model,1,4797
+[戴尔 inspiron 灵越 16 7610 系列],model,1,4798
+[戴尔 inspiron 灵越 14 5418 系列],model,1,4799
+[戴尔 latitude 5520 系列],model,1,4800
+[戴尔 inspiron 灵越 13 5310 系列],model,1,4802
+[戴尔 g15 5511 系列],model,1,4804
+[戴尔 xps 15 9560 系列],model,1,4806
+[戴尔 latitude 7410 系列],model,1,4808
+[戴尔 g15 5515 系列],model,1,4809
+[戴尔 vostro成就 5502 系列],model,1,4813
+[戴尔 inspiron 灵越 14 5402 系列],model,1,4814
+[戴尔 vostro成就 5301 系列],model,1,4817
+[戴尔 inspiron 灵越 15 5502 系列],model,1,4819
+[戴尔 inspiron 灵越 14 5409 系列],model,1,4822
+[戴尔 xps 13 9305 系列],model,1,4824
+[戴尔 g15 5510 系列],model,1,4825
+[戴尔 latitude 7310 系列],model,1,4837
+[戴尔 inspiron 灵越 15 3501 系列],model,1,4838
+[戴尔 inspiron 灵越 13 5301 系列],model,1,4839
+[戴尔 inspiron 灵越 15 3505 系列],model,1,4842
+[戴尔 xps 13 7390 系列],model,1,4845
+[戴尔 latitude 5280 系列],model,1,4846
+[戴尔 g3 3500 系列],model,1,4850
+[戴尔 inspiron 灵越 13 5391 系列],model,1,4852
+[戴尔 inspiron 灵越 14 5493 系列],model,1,4856
+[戴尔 inspiron 灵越 15 5593 系列],model,1,4857
+[戴尔 inspiron 灵越 15 5598 系列],model,1,4860
+[戴尔 inspiron 灵越 14 5498 系列],model,1,4862
+[戴尔 inspiron 灵越 15 3583 系列],model,1,4865
+[戴尔 inspiron 灵越 14 3480 系列],model,1,4866
+[戴尔 inspiron 灵越 15 5590 系列],model,1,4869
+[戴尔 inspiron 灵越 13 5390 系列],model,1,4872
+[戴尔 inspiron 灵越 14 5485 系列],model,1,4873
+[戴尔 g3 3590 系列],model,1,4876
+[戴尔 inspiron 灵越 15 7590 系列],model,1,4878
+[戴尔 inspiron 灵越 14 5480 系列],model,1,4884
+[戴尔 inspiron 灵越 15 5580 系列],model,1,4886
+[戴尔 inspiron 灵越 14 5488 系列],model,1,4890
+[戴尔 latitude 7490 系列],model,1,4894
+[戴尔 g5 5587 系列],model,1,4895
+[戴尔 xps 15 9570 系列],model,1,4897
+[戴尔 inspiron 灵越 14 3476 系列],model,1,4899
+[戴尔 g7 7588 系列],model,1,4901
+[戴尔 xps 13 9370 系列],model,1,4905
+[戴尔 vostro成就 5370 系列],model,1,4908
+[戴尔 inspiron 灵越 15 5570 系列],model,1,4914
+[戴尔 latitude 3380 系列],model,1,4916
+[戴尔 inspiron 灵越 14 7472 系列],model,1,4918
+[戴尔 xps 13 9360 系列],model,1,4920
+[戴尔 latitude 3480 系列],model,1,4922
+[戴尔 inspiron 灵越 15 7559 系列],model,1,4924
+[戴尔 xps 13 9350 系列],model,1,4926
+[戴尔 latitude 7480 系列],model,1,4927
+[戴尔 inspiron 灵越 15 5576 系列],model,1,4929
+[戴尔 vostro成就 3568 系列],model,1,4933
+[戴尔 latitude 5480 系列],model,1,4934
+[戴尔 vostro成就 3565 系列],model,1,4936
+[戴尔 inspiron 灵越 15 3568 系列],model,1,4942
+[戴尔 inspiron 灵越 14 3468 系列],model,1,4945
+[戴尔 inspiron 灵越 15 3567 系列],model,1,4946
+[戴尔 xps 13 9343 系列],model,1,4948
+[戴尔 vostro成就 5468 系列],model,1,4955
+[戴尔 vostro成就 3559 系列],model,1,4958
+[戴尔 latitude 3460 系列],model,1,4959
+[戴尔 inspiron 灵越 15 5567 系列],model,1,4963
+[海尔 凌越 5000 系列],model,1,5023
+[acer 暗影骑士 龙 15.6英寸],model,1,5039
+[acer v3],model,1,5042
+[acer s7],model,1,5055
+[acer aspire s5],model,1,5062
+[acer travelmate p50],model,1,5067
+[acer 蜂鸟 fun s40],model,1,5068
+[acer 暗影骑士 擎 an515-55],model,1,5069
+[acer 蜂鸟 fun s50],model,1,5070
+[acer 掠夺者 helios 300 ph315],model,1,5073
+[acer 暗影骑士4],model,1,5081
+[acer a315],model,1,5083
+[acer 掠夺者 helios 300 ph317],model,1,5089
+[acer 暗影骑士3 进阶版 an515-52],model,1,5094
+[acer aspire a615],model,1,5100
+[acer 蜂鸟 swift1 sf114],model,1,5107
+[acer 暗影骑士3 vx5-591g],model,1,5124
+[acer travelmate tx50],model,1,5125
+[acer f5],model,1,5133
+[acer 蜂鸟 swift3 sf314],model,1,5134
+[acer e5 15寸],model,1,5135
+[acer travelmate p249],model,1,5142
+[华硕 rog 幻16 翻转版 2022],model,1,5149
+[华硕 顽石 e410],model,1,5150
+[华硕 破晓2 2022 15寸],model,1,5157
+[华硕 灵耀x 双屏pro 14英寸],model,1,5159
+[华硕 破晓 pro 13],model,1,5163
+[华硕 rog 魔霸6],model,1,5164
+[华硕 无畏 16],model,1,5165
+[华硕 a豆14 pro],model,1,5168
+[华硕 rog 幻16 2022],model,1,5170
+[华硕 rog 幻13 2022],model,1,5171
+[华硕 rog 魔霸6 plus],model,1,5172
+[华硕 rog 魔霸新锐 2022],model,1,5173
+[华硕 rog 幻14 2022],model,1,5175
+[华硕 无畏 pro15],model,1,5184
+[华硕 vivobook 15 v5200],model,1,5191
+[华硕 vivobook 14 (v4200)],model,1,5196
+[华硕 tuf gaming a15],model,1,5203
+[华硕 无畏 pro14],model,1,5211
+[华硕 灵耀x 逍遥],model,1,5212
+[华硕 rog 幻13],model,1,5214
+[华硕 vivobook 15 2021],model,1,5216
+[华硕 天选2 plus],model,1,5218
+[华硕 飞行堡垒 9],model,1,5219
+[华硕 redolbook 14],model,1,5221
+[华硕 rog 冰刃4 plus],model,1,5224
+[华硕 rog 枪神5],model,1,5225
+[华硕 rog zephyrus g14],model,1,5228
+[华硕 vivobook 15 x 2021],model,1,5234
+[华硕 天选 air],model,1,5235
+[华硕 天选2],model,1,5244
+[华硕 顽石 7代 15],model,1,5269
+[华硕 灵耀 14],model,1,5271
+[华硕 rog 枪神4],model,1,5272
+[华硕 vivobook 14 2020],model,1,5274
+[华硕 rog 冰刃4],model,1,5276
+[华硕 飞行堡垒 8 (fx506)],model,1,5277
+[华硕 顽石 v4000f],model,1,5279
+[华硕 vivobook 15s v5000],model,1,5280
+[华硕 灵锐 14],model,1,5281
+[华硕 rog 幻14],model,1,5285
+[华硕 rog 魔霸4],model,1,5289
+[华硕 顽石 v480],model,1,5292
+[华硕 vivobook flip 14],model,1,5310
+[华硕 飞行堡垒 fx503],model,1,5313
+[华硕 灵耀 v406],model,1,5314
+[华硕 vivobook 14 x s4500],model,1,5329
+[华硕 顽石 fl8700],model,1,5335
+[华硕 顽石 r540],model,1,5336
+[华硕 rog 幻15],model,1,5337
+[华硕 mars 15 vx60 系列],model,1,5339
+[华硕 y5100ub 系列],model,1,5348
+[华硕 vivobook s15],model,1,5349
+[华硕 u306u 系列],model,1,5358
+[华硕 rog 冰刃3s],model,1,5360
+[华硕 rog 冰刃3s plus],model,1,5361
+[华硕 破晓 px574],model,1,5362
+[华硕 飞行堡垒 7 (fx95)],model,1,5367
+[华硕 yx560ud 系列],model,1,5369
+[华硕 a豆13],model,1,5390
+[华硕 飞行堡垒 fx86fe],model,1,5393
+[华硕 u4000],model,1,5394
+[华硕 灵耀s 2代 s5300],model,1,5403
+[华硕 灵耀s 2代 s4300],model,1,5404
+[华硕 f580u 系列],model,1,5420
+[华硕 zenbook ux430],model,1,5427
+[华硕 灵耀 u3100],model,1,5432
+[华硕 飞行堡垒 fz63v],model,1,5433
+[华硕 f541u 系列],model,1,5435
+[华硕 顽石 k505],model,1,5437
+[华硕 灵耀 s4100],model,1,5442
+[华硕 灵耀 s4200],model,1,5447
+[华硕 顽石 v587],model,1,5448
+[华硕 r419u 系列],model,1,5450
+[华硕 a541u 系列],model,1,5451
+[华硕 飞行堡垒 fx63vd],model,1,5455
+[华硕 e203 系列],model,1,5457
+[华硕 pro454u],model,1,5459
+[华硕 p553u 系列],model,1,5461
+[华硕 顽石 fl8000u],model,1,5462
+[华硕 x400n 系列],model,1,5468
+[华硕 灵耀 s4000],model,1,5479
+[华硕 灵耀 s5100],model,1,5481
+[华硕 飞行堡垒 fx50v],model,1,5486
+[华硕 x556 系列],model,1,5488
+[华硕 飞行堡垒 fz53v],model,1,5492
+[华硕 灵耀 u4100],model,1,5497
+[华硕 rx310u 系列],model,1,5498
+[华硕 飞行堡垒 fz50vw],model,1,5499
+[华硕 飞行堡垒 vx50],model,1,5504
+[华硕 a400u 系列],model,1,5506
+[华硕 灵耀 u410],model,1,5513
+[华硕 a441 系列],model,1,5515
+[华硕 f441 系列],model,1,5518
+[华硕 rog g752],model,1,5520
+[华硕 f540up 系列],model,1,5521
+[华硕 r558 系列],model,1,5522
+[华硕 transformer 3],model,1,5524
+[华硕 顽石 fl5700u],model,1,5525
+[华硕 灵耀 u310],model,1,5526
+[华硕 zenbook ux305],model,1,5528
+[华硕 飞行堡垒 zx50vx],model,1,5529
+[华硕 r457 系列],model,1,5535
+[华硕 飞行堡垒 zx60vm],model,1,5536
+[华硕 pro553],model,1,5548
+[惠普 elitebook 830 g9 系列],model,1,5607
+[惠普 elitebook 640 g9 系列],model,1,5611
+[惠普 zbook fury 15 g7 系列],model,1,5614
+[惠普 envy dv6 系列],model,1,5620
+[惠普 zbook firefly 14 g8 系列],model,1,5623
+[惠普 星 14 pro 系列],model,1,5626
+[惠普 暗影精灵8 pro 系列],model,1,5627
+[惠普 战66 5代 15.6寸 系列],model,1,5633
+[惠普 probook 430 g8 系列],model,1,5634
+[惠普 暗影精灵8 plus 系列],model,1,5635
+[惠普 暗影精灵8 系列],model,1,5636
+[惠普 elitebook 830 g8 系列],model,1,5638
+[惠普 战66 4代 15.6寸 系列],model,1,5653
+[惠普 星 13 air 系列],model,1,5659
+[惠普 小欧 17 系列],model,1,5667
+[惠普 probook 450 g8 系列],model,1,5669
+[惠普 elitebook 850 g8 系列],model,1,5672
+[惠普 victus 光影精灵7 系列],model,1,5673
+[惠普 星 17 青春版 系列],model,1,5674
+[惠普 probook 645 g1 系列],model,1,5678
+[惠普 暗影精灵7 系列],model,1,5683
+[惠普 spectre x360 14 系列],model,1,5684
+[惠普 暗影精灵6 pro 系列],model,1,5694
+[惠普 probook 450 g3 系列],model,1,5697
+[惠普 elitebook 835 g7 系列],model,1,5705
+[惠普 probook 440 g8 系列],model,1,5709
+[惠普 战66 4代 14寸 系列],model,1,5712
+[惠普 pavilion 13 系列],model,1,5715
+[惠普 elitebook 840 g7 系列],model,1,5719
+[惠普 elitebook 830 g7 系列],model,1,5730
+[惠普 probook 640 g4 系列],model,1,5732
+[惠普 15q 系列],model,1,5744
+[惠普 星 13 系列],model,1,5750
+[惠普 小欧 14q系列],model,1,5753
+[惠普 星 14 系列],model,1,5754
+[惠普 星 15 青春版 15s 系列],model,1,5756
+[惠普 pavilion 14 系列],model,1,5758
+[惠普 暗影精灵6 系列],model,1,5763
+[惠普 星 15 系列],model,1,5769
+[惠普 暗影精灵5 系列],model,1,5774
+[惠普 pavilion x360 14 系列],model,1,5777
+[惠普 348 g7 系列],model,1,5785
+[惠普 zbook 14u g5 系列],model,1,5790
+[惠普 envy 14 系列],model,1,5814
+[惠普 战66 3代 15.6寸 系列],model,1,5821
+[惠普 战66 pro 14 g2 系列],model,1,5822
+[惠普 战66 3代 14寸 系列],model,1,5826
+[惠普 elitebook 840 g6 系列],model,1,5831
+[惠普 elitebook 830 g6 系列],model,1,5843
+[惠普 elitebook 735 g6 系列],model,1,5844
+[惠普 暗影精灵5 air 系列],model,1,5854
+[惠普 暗影精灵ⅳ代 pro 系列],model,1,5865
+[惠普 elitebook 830 g5 系列],model,1,5887
+[惠普 elitebook 735 g5 系列],model,1,5892
+[惠普 elitebook 745 g5 系列],model,1,5893
+[惠普 envy x360 13 系列],model,1,5894
+[惠普 暗影精灵ⅲ代 pro 系列],model,1,5903
+[惠普 probook 440 g5 系列],model,1,5904
+[惠普 elitebook 840 g5 系列],model,1,5907
+[惠普 elitebook 840 g4 系列],model,1,5908
+[惠普 246 g6 系列],model,1,5920
+[惠普 envy x360 15 系列],model,1,5922
+[惠普 pavilion 15 系列],model,1,5926
+[惠普 pavilion x360 13 系列],model,1,5927
+[惠普 暗影精灵ⅲ代 系列],model,1,5942
+[惠普 光影精灵ⅲ代 系列],model,1,5949
+[惠普 15 系列],model,1,5956
+[惠普 spectre x360 13 系列],model,1,5990
+[惠普 envy 13 系列],model,1,5996
+[惠普 暗影精灵ⅱ代 pro 系列],model,1,5999
+[火影 t7 系列],model,1,6020
+[机械革命 蛟龙 15],model,1,6032
+[机械革命 极光 z],model,1,6033
+[机械革命 旷世 e],model,1,6035
+[机械革命 极光 e],model,1,6037
+[机械革命 无界 14],model,1,6042
+[机械革命 旷世 17.3英寸],model,1,6044
+[机械革命 蛟龙 7x],model,1,6045
+[机械革命 极光 pro],model,1,6046
+[机械革命 蛟龙 55i],model,1,6052
+[机械革命 蛟龙 5],model,1,6054
+[机械革命 蛟龙 7],model,1,6056
+[机械革命 s3 pro],model,1,6061
+[机械革命 z3 pro],model,1,6062
+[机械革命 umi pro 3],model,1,6063
+[机械革命 深海泰坦 x10 pro 系列],model,1,6064
+[机械革命 x8ti-s],model,1,6070
+[机械革命 s2 air],model,1,6072
+[机械革命 蛟龙 p],model,1,6073
+[机械革命 深海泰坦 x10ti-s],model,1,6075
+[机械革命 深海泰坦 x8ti-g],model,1,6078
+[机械革命 深海幽灵 z2 air],model,1,6081
+[机械革命 深海泰坦 x6ti-m2],model,1,6082
+[机械革命 深海幽灵 z2],model,1,6086
+[机械革命 深海泰坦 x6ti-s],model,1,6087
+[机械革命 深海泰坦 x1],model,1,6091
+[机械师 曙光 15],model,1,6094
+[机械师 t58-v],model,1,6101
+[雷蛇 blade stealth 灵刃潜行版 系列 13寸],model,1,6139
+[雷神 911mt air],model,1,6140
+[雷神 911air 星战二代],model,1,6145
+[雷神 911air 星战五代],model,1,6148
+[雷神 911air 星战三代],model,1,6149
+[雷神 911 mt 黑武士],model,1,6150
+[雷神 911air 星战四代],model,1,6152
+[雷神 zero],model,1,6153
+[雷神 iger e1],model,1,6166
+[雷神 911 me],model,1,6167
+[雷神 911mt 黑武士3],model,1,6172
+[雷神 911],model,1,6173
+[雷神 911mp],model,1,6178
+[雷神 911m],model,1,6183
+[雷神 911air],model,1,6195
+[雷神 911 se],model,1,6205
+[雷神 911 targa],model,1,6212
+[雷神 st],model,1,6225
+[联想 小新 air 14 2023],model,1,6231
+[联想 小新 duet],model,1,6240
+[联想 yoga 14c 2022],model,1,6241
+[联想 拯救者 r9000x 2022],model,1,6242
+[联想 拯救者 y9000k 2022],model,1,6247
+[联想 小新 air 15 2022],model,1,6254
+[联想 拯救者 r7000p 2022],model,1,6256
+[联想 小新 pro 14 2022],model,1,6257
+[联想 拯救者 r9000p 2022],model,1,6258
+[联想 小新 air 14 plus 2022],model,1,6259
+[联想 扬天 v330 14寸],model,1,6262
+[联想 ideapad 14 2022],model,1,6267
+[联想 小新 pro 16 2022],model,1,6268
+[联想 拯救者 y9000k 2020],model,1,6271
+[联想 小新 air 15],model,1,6274
+[联想 昭阳 e41-50],model,1,6277
+[thinkpad thinkbook 14+ 2022],model,1,6278
+[thinkpad thinkbook 16+ 2022],model,1,6280
+[联想 拯救者 y9000p 2022],model,1,6283
+[联想 拯救者 y7000p 2022],model,1,6284
+[联想 ideapad d335],model,1,6285
+[联想 yoga slim 7 carbon],model,1,6287
+[联想 yoga c940 14寸],model,1,6299
+[联想 扬天 s14],model,1,6305
+[联想 拯救者 y7000p 2021],model,1,6311
+[联想 小新 15 2021],model,1,6314
+[联想 拯救者 r7000 2021],model,1,6316
+[联想 拯救者 y9000p 2021],model,1,6317
+[联想 拯救者 r7000p 2021],model,1,6318
+[联想 拯救者 y7000 2021],model,1,6319
+[联想 拯救者 r9000k 2021],model,1,6324
+[联想 ideapad 15s 2021],model,1,6325
+[联想 小新 air 14 plus 2021],model,1,6326
+[联想 ideapad 14s 2021],model,1,6331
+[联想 拯救者 y7000p 2019],model,1,6332
+[联想 拯救者 r9000p 2021],model,1,6333
+[联想 yoga pro 13s 2021],model,1,6336
+[联想 yoga 13s 2021],model,1,6338
+[联想 小新 510s],model,1,6343
+[联想 v14],model,1,6347
+[联想 扬天 威6 15寸],model,1,6354
+[联想 小新 pro 14 2021],model,1,6359
+[联想 小新 air 15 2021],model,1,6362
+[联想 小新 air 14 2021],model,1,6364
+[联想 昭阳 e5],model,1,6368
+[联想 小新 pro 13 2020],model,1,6370
+[联想 拯救者 y7000p 2020],model,1,6372
+[联想 ideapad 14s 2020],model,1,6373
+[联想 ideapad 15s 2020],model,1,6374
+[联想 拯救者 y7000 2020],model,1,6375
+[联想 小新 15 2020],model,1,6377
+[联想 yoga 14s 2021],model,1,6378
+[联想 拯救者 r7000 2020],model,1,6379
+[联想 扬天 v340 14寸],model,1,6381
+[联想 昭阳 k4e],model,1,6383
+[联想 扬天 v320 15寸],model,1,6389
+[联想 小新 13],model,1,6394
+[联想 拯救者 y9000x 2020],model,1,6395
+[联想 扬天 威6 pro 14寸],model,1,6396
+[联想 ideapad l340 15寸],model,1,6397
+[联想 小新 pro 13 2019],model,1,6398
+[联想 扬天 v320 14寸],model,1,6399
+[联想 小新 air 15 2019],model,1,6400
+[联想 yoga c740 14寸],model,1,6401
+[联想 ideapad 700 15寸],model,1,6416
+[联想 扬天 威5 14寸],model,1,6418
+[联想 扬天 威5 15寸],model,1,6419
+[联想 小新 15 2019],model,1,6422
+[联想 扬天 s540 14寸],model,1,6427
+[联想 小新 14 青春版],model,1,6435
+[联想 昭阳 e4],model,1,6436
+[联想 拯救者 y7000p],model,1,6445
+[联想 ideapad 330 15寸],model,1,6450
+[联想 k22],model,1,6452
+[联想 ideapad 320c 15寸],model,1,6453
+[联想 扬天 威6 14寸],model,1,6454
+[联想 拯救者 y7000 2018],model,1,6455
+[联想 小新 air 14 2018],model,1,6457
+[联想 扬天 v330 15寸],model,1,6459
+[联想 小新 潮7000 15寸],model,1,6463
+[联想 yoga 730 13寸],model,1,6464
+[联想 ideapad y700 15寸],model,1,6466
+[联想 miix 520],model,1,6470
+[联想 ideapad 320s 14寸],model,1,6471
+[联想 小新 潮7000 14寸],model,1,6473
+[联想 ideapad 320s 15寸],model,1,6475
+[联想 ideapad 120s 14寸],model,1,6476
+[联想 拯救者 e520],model,1,6480
+[联想 ideapad 320 15寸],model,1,6481
+[联想 ideapad 720s 14寸],model,1,6488
+[联想 yoga 720 13寸],model,1,6491
+[联想 小新 sr1000],model,1,6493
+[联想 小新 潮7000 13寸],model,1,6495
+[联想 拯救者 y520],model,1,6496
+[联想 拯救者 r720],model,1,6500
+[联想 昭阳 e42],model,1,6501
+[联想 ideapad 310s 15寸],model,1,6503
+[联想 ideapad 310 15寸],model,1,6511
+[联想 ideapad 110 15寸],model,1,6513
+[七彩虹 将星 x15 系列],model,1,6600
+[清华同方 锋锐 k41h 系列],model,1,6609
+[神舟 战神 t8],model,1,6700
+[神舟 战神 s7m],model,1,6704
+[神舟 战神 z7 2022],model,1,6706
+[神舟 战神 zx10],model,1,6709
+[神舟 战神 s7t],model,1,6716
+[神舟 战神 z8 2022],model,1,6717
+[神舟 战神 z7t],model,1,6732
+[神舟 战神 z7 2018],model,1,6733
+[神舟 战神 g8],model,1,6734
+[神舟 战神 g7],model,1,6735
+[神舟 战神 z7 2015],model,1,6764
+[神舟 战神 z7 2019],model,1,6773
+[神舟 战神 tx8],model,1,6778
+[神舟 战神 zx6],model,1,6789
+[神舟 战神 t6ti],model,1,6815
+[神舟 优雅 x5],model,1,6825
+[微软 surface pro 9],model,1,6863
+[微软 surface laptop 5 13.5英寸],model,1,6864
+[微软 surface laptop go 2],model,1,6865
+[微软 surface go 3],model,1,6866
+[微软 surface pro 8],model,1,6867
+[微软 surface pro 7+],model,1,6868
+[微软 surface laptop go],model,1,6869
+[微软 surface go 2],model,1,6871
+[微软 surface pro x],model,1,6872
+[微软 surface pro 7],model,1,6873
+[微软 surface laptop 2],model,1,6875
+[微软 surface pro 6],model,1,6876
+[微软 surface go],model,1,6877
+[微软 surface book 2 13.5寸],model,1,6878
+[微软 surface pro 4],model,1,6881
+[微软 surface pro 3],model,1,6882
+[微软 surface 3],model,1,6885
+[炫龙 m7 系列],model,1,6912
+[炫龙 kp2 系列],model,1,6920
+[壹号本 one-gx1 系列],model,1,6934
+[壹号本 onemix 3s 系列],model,1,6939
+[壹号本 onemi x2s 系列],model,1,6940
+[华硕 天选],model,1,7019
+[华硕 天选3],model,1,7020
+[联想 小新 pro 16 2021],model,1,7021
+[thinkpad t470],model,1,7078
+[华硕 rog 魔霸3],model,1,7079
+[联想 拯救者 r7000p 2020],model,1,7080
+[惠普 暗影精灵ⅳ代 系列],model,1,7114
+[微软 surface pro 5],model,1,7139
+[联想 拯救者 y9000x 2022],model,1,7140
+[联想 拯救者 r9000x 2021],model,1,7141
+[联想 小新 air 14 2020],model,1,7142
+[联想 小新 air 14 2022],model,1,7147
+[华硕 x550 系列],model,1,7148
+[华硕 rog 魔霸新锐],model,1,7149
+[华硕 飞行堡垒 fx50j],model,1,7150
+[华硕 rog 幻16],model,1,7151
+[机械革命 钛钽 plus],model,1,7158
+[机械革命 深海幽灵 z2 air-s],model,1,7159
+[thinkpad t460s],model,1,7161
+[thinkpad t450],model,1,7162
+[thinkpad t460],model,1,7165
+[联想 小新 14],model,1,7166
+[联想 小新 air 13],model,1,7168
+[thinkpad l13],model,1,7169
+[联想 s41],model,1,7173
+[机械革命 蛟龙 16],model,1,7174
+[惠普 光影精灵6 系列],model,1,7179
+[thinkpad e480],model,1,7204
+[thinkpad e470c],model,1,7206
+[thinkpad e440],model,1,7207
+[雷神 911mt 暗杀星],model,1,7208
+[thinkpad e431],model,1,7237
+[联想 ideapad 310s 14寸],model,1,7247
+[华硕 飞行堡垒 zx53ve],model,1,7248
+[惠普 光影精灵5代 系列],model,1,7249
+[戴尔 g5 5590 系列],model,1,7253
+[华硕 飞行堡垒 fx86fm],model,1,7257
+[acer 暗影骑士 擎 an515-57],model,1,7264
+[戴尔 inspiron 灵越 15 7560 系列],model,1,7265
+[戴尔 inspiron 灵越 15 ii 7572 系列],model,1,7266
+[联想 拯救者 15],model,1,7276
+[雷神 911mt],model,1,7300
+[acer 暗影骑士 擎 an515-58],model,1,7303
+[惠普 星14 青春版 14s 系列],model,1,7318
+[神舟 战神 k650d],model,1,7319
+[戴尔 inspiron 灵越 15 5577 系列],model,1,7326
+[神舟 战神 z8 2015],model,1,7336
+[thinkpad x1 carbon 2023],model,1,7349
+[thinkpad t14p 2023],model,1,7351
+[thinkpad t14 2023],model,1,7352
+[thinkpad x13 2023],model,1,7354
+[thinkpad e14 gen5],model,1,7355
+[thinkpad e16 2023],model,1,7356
+[戴尔 inspiron 灵越 14 5459 系列],model,1,7369
+[惠普 elitebook 820 g2 系列],model,1,7371
+[戴尔 vostro成就 5480 系列],model,1,7373
+[戴尔 g3 3579 系列],model,1,7376
+[七彩虹 将星x17 at],model,1,7379
+[联想 g50],model,1,7385
+[联想 ideapad 330c 14寸],model,1,7391
+[联想 yoga book 9],model,1,7409
+[联想 yoga pro 16s 2023],model,1,7410
+[联想 yoga pro 14s 2023],model,1,7411
+[神舟 战神 tx9],model,1,7423
+[联想 拯救者 r7000p 2023],model,1,7424
+[惠普 光影精灵8 16.1寸 系列],model,1,7433
+[戴尔 latitude 5300 系列],model,1,7435
+[微软 surface laptop 4 13.5英寸],model,1,7458
+[thinkpad p1 隐士 2019],model,1,7460
+[thinkpad t14 2021],model,1,7462
+[thinkpad s2 yoga 2020],model,1,7463
+[惠普 暗影精灵ⅱ代 系列],model,1,7472
+[thinkpad e460],model,1,7479
+[戴尔 latitude e7450 系列],model,1,7480
+[thinkpad e450],model,1,7481
+[alienware x15 r2],model,1,7486
+[thinkpad thinkbook 14 gen4],model,1,7519
+[thinkpad thinkbook 15 gen4],model,1,7520
+[联想 ideapad 300 15寸],model,1,7528
+[thinkpad l460],model,1,7530
+[thinkpad t440],model,1,7531
+[惠普 probook 440 g10 系列],model,1,7532
+[thinkpad l450],model,1,7533
+[联想 扬天 v15],model,1,7534
+[联想 小新 300],model,1,7535
+[联想 昭阳 e4430],model,1,7537
+[thinkpad t480s],model,1,7540
+[thinkpad x260],model,1,7541
+[alienware m17],model,1,7542
+[alienware x15 r1],model,1,7544
+[thinkpad e450c],model,1,7545
+[alienware x14 r1],model,1,7546
+[thinkpad w540],model,1,7548
+[thinkpad t430],model,1,7551
+[thinkpad t440s],model,1,7552
+[thinkpad t440p],model,1,7553
+[thinkpad t470s],model,1,7554
+[thinkpad t560],model,1,7555
+[机械师 f117-7],model,1,7557
+[thinkpad l490],model,1,7558
+[惠普 elitebook 840 g3 系列],model,1,7562
+[thinkpad x240],model,1,7568
+[thinkpad x250],model,1,7569
+[机械革命 深海泰坦 x3],model,1,7576
+[联想 拯救者 y9000p 2023],model,1,7586
+[联想 z500],model,1,7588
+[联想 g40],model,1,7589
+[联想 小新 潮5000],model,1,7594
+[戴尔 latitude e7240 系列],model,1,7595
+[戴睿 t30 pro],model,1,7598
+[机械师 f117-b],model,1,7600
+[惠普 战66 5代 14寸 系列],model,1,7603
+[戴尔 inspiron 灵越 14 7460 系列],model,1,7605
+[alienware x14 r2],model,1,7639
+[alienware x17 r2],model,1,7651
+[惠普 elitebook 840 g1 系列],model,1,7653
+[acer 暗影骑士 擎16],model,1,7665
+[惠普 246 g9 系列],model,1,7666
+[华硕 y581 系列],model,1,7667
+[戴尔 inspiron 灵越 15 5557 系列],model,1,7668
+[戴尔 inspiron 灵越 15 5548 系列],model,1,7669
+[戴尔 latitude e7250 系列],model,1,7678
+[惠普 probook 440 g6 系列],model,1,7683
+[华硕 a501 系列],model,1,7711
+[华硕 w519l 系列],model,1,7713
+[机械革命 蛟龙 750],model,1,7730
+[微软 surface laptop 3],model,1,7732
+[戴尔 inspiron 灵越 16 plus 7620 系列],model,1,7735
+[戴尔 inspiron 灵越 15 3558 系列],model,1,7737
+[acer 非凡 go 14],model,1,7742
+[msi微星 绝影 14],model,1,7746
+[机械革命 无界 14 pro 2023],model,1,7747
+[机械革命 旷世 16 pro],model,1,7748
+[七彩虹 隐星 p15],model,1,7749
+[惠普 probook 445 g9 系列],model,1,7750
+[神舟 战神 z8 2023],model,1,7751
+[七彩虹 隐星 p16],model,1,7752
+[戴尔 inspiron 灵越 14 5490 系列],model,1,7782
+[荣耀 magicbook 16 se],model,1,7784
+[荣耀 magicbook 14],model,1,7785
+[荣耀 magicbook 14 2020],model,1,7786
+[荣耀 magicbook 15 2021],model,1,7789
+[荣耀 magicbook 16 2021],model,1,7790
+[荣耀 magicbook pro],model,1,7792
+[荣耀 magicbook v 14],model,1,7793
+[荣耀 荣耀猎人 游戏本v700],model,1,7794
+[三星 galaxy book s],model,1,7796
+[三星 300e5k],model,1,7800
+[三星 300e5m],model,1,7801
+[三星 35x0aa/350xaa],model,1,7815
+[三星 500r5m],model,1,7819
+[三星 sf311],model,1,7844
+[惠普 elite dragonfly g3 系列],model,1,7856
+[七彩虹 将星 x15 2023],model,1,7877
+[机械革命 旷世 g16],model,1,7885
+[机械师 f117-7p],model,1,7888
+[机械师 曙光 15 2023],model,1,7894
+[机械革命 旷世 16],model,1,7895
+[机械革命 蛟龙 16 pro],model,1,7902
+[机械师 f117-v],model,1,7904
+[机械师 f117-f],model,1,7906
+[机械革命 蛟龙 560],model,1,7909
+[机械师 曙光 16 air],model,1,7910
+[荣耀 magicbook x 16 2023],model,1,7913
+[机械革命 蛟龙 16s],model,1,7915
+[thinkpad p15 gen2],model,1,7920
+[msi微星 星影 15],model,1,7928
+[神舟 战神 tx8r9],model,1,7930
+[惠普 probook 450 g10 系列],model,1,7931
+[alienware m16],model,1,7933
+[机械革命 旷世 g16 pro],model,1,7937
+[机械革命 深海幽灵 z3 air],model,1,7942
+[惠普 255 g10 系列],model,1,7943
+[华硕 rog 幻14 2023],model,1,7945
+[acer 掠夺者 擎neo 2023],model,1,7948
+[联想 yoga duet 2021],model,1,7957
+[神舟 战神 s8],model,1,7958
+[华硕 无畏 pro15 2023],model,1,7963
+[华硕 天选4r],model,1,7964
+[alienware m17 r3],model,1,7969
+[戴尔 inspiron 灵越 14 plus 7420 系列],model,1,7974
+[机械革命 蛟龙 17k],model,1,7977
+[戴尔 latitude 5590 系列],model,1,7978
+[msi微星 神枪手 15],model,1,7984
+[机械革命 蛟龙 15k],model,1,7986
+[华硕 r557 系列],model,1,8000
+[戴尔 inspiron 灵越 14 3467 系列],model,1,8001
+[惠普 elitebook 845 g10 系列],model,1,8015
+[华硕 rog 枪神6 plus],model,1,8024
+[联想 拯救者 y9000x 2023],model,1,8027
+[联想 拯救者 r9000x 2023],model,1,8046
+[thinkpad e495],model,1,8049
+[alienware m15 r6],model,1,8052
+[alienware m15 r7],model,1,8053
+[alienware m17 r5],model,1,8054
+[alienware x16],model,1,8055
+[alienware area-51m],model,1,8057
+[alienware 15 r3],model,1,8060
+[alienware 15 r4],model,1,8061
+[惠普 probook 445 g10 系列],model,1,8075
+[戴尔 latitude 3490 系列],model,1,8083
+[戴尔 vostro成就 3500 系列],model,1,8086
+[惠普 elitebook 820 g3 系列],model,1,8117
+[华硕 飞行堡垒 fx/fz/zx 80],model,1,8133
+[戴尔 inspiron 灵越 14 5457 系列],model,1,8134
+[华硕 飞行堡垒 fx53v],model,1,8137
+[华硕 飞行堡垒 fx-pro],model,1,8138
+[神舟 战神 z7 2021],model,1,8139
+[联想 天逸 100 15寸],model,1,8155
+[联想 ideapad 330c 15寸],model,1,8156
+[华硕 a450 系列],model,1,8157
+[华硕 a556u 系列],model,1,8159
+[华硕 a555 系列],model,1,8160
+[华硕 a550 系列],model,1,8161
+[华硕 pro551],model,1,8162
+[华硕 f556 系列],model,1,8165
+[华硕 顽石 fh5900],model,1,8166
+[华硕 a455 系列],model,1,8177
+[华硕 k550 系列],model,1,8180
+[华硕 r417 系列],model,1,8181
+[华硕 e402 系列],model,1,8192
+[华硕 a480 系列],model,1,8198
+[华硕 顽石 fl5800],model,1,8203
+[华硕 w419l 系列],model,1,8206
+[华硕 k555 系列],model,1,8207
+[华硕 x555 系列],model,1,8210
+[华硕 a540 系列],model,1,8214
+[华硕 k45 系列],model,1,8216
+[华硕 y481 系列],model,1,8218
+[华硕 w418l 系列],model,1,8220
+[华硕 r455 系列],model,1,8221
+[华硕 e403 系列],model,1,8223
+[华硕 a456u 系列],model,1,8226
+[华硕 顽石 fl5900],model,1,8227
+[联想 扬天 v130 14寸],model,1,8230
+[联想 ideapad 110 14寸],model,1,8233
+[联想 y40],model,1,8234
+[thinkpad e540],model,1,8235
+[戴尔 inspiron 灵越 13 5320 系列],model,1,8237
+[thinkpad e550],model,1,8250
+[戴尔 inspiron 灵越 15 7567 系列],model,1,8252
+[华硕 fl5600l 系列],model,1,8253
+[惠普 340 g4 系列],model,1,8254
+[惠普 光影精灵4代 系列],model,1,8256
+[惠普 elitebook 630 g10 系列],model,1,8258
+[惠普 245 g10 系列],model,1,8262
+[联想 g410],model,1,8274
+[华硕 k501 系列],model,1,8276
+[戴尔 inspiron 灵越 14 5401/5408 系列],model,1,8283
+[thinkpad e550c],model,1,8292
+[华硕 rog 魔霸新锐 2023],model,1,8306
+[thinkpad l440],model,1,8310
+[联想 小新 锐7000],model,1,8312
+[thinkpad thinkbook 16+ 2023],model,1,8328
+[thinkpad thinkbook 14+ 2023],model,1,8329
+[thinkpad x1 carbon 2022],model,1,8330
+[华硕 天选4],model,1,8332
+[华硕 a豆14],model,1,8337
+[thinkpad p16v gen1],model,1,8339
+[联想 v15 g4],model,1,8367
+[thinkpad thinkbook 14 gen6],model,1,8369
+[惠普 星book pro 16 系列],model,1,8399
+[惠普 暗影精灵9 系列],model,1,8408
+[神舟 战神 z8 2021],model,1,8413
+[神舟 战神 z6],model,1,8415
+[神舟 战神 z7 2023],model,1,8417
+[雷神 911x 2023],model,1,8418
+[神舟 战神 z7m 2017],model,1,8440
+[华硕 飞行堡垒 fx505],model,1,8451
+[联想 昭阳 e43 系列],model,1,8498
+[联想 昭阳 e41-55],model,1,8550
+[戴尔 vostro成就 3400 系列],model,1,9160
+[三星 305v5a],model,1,9307
+[msi微星 ge60],model,1,9515
+[thinkpad e430c],model,1,9559
+[thinkpad t430u],model,1,9566
+[联想 e49],model,1,9572
+[联想 y500],model,1,9590
+[惠普 8470p 系列],model,1,9652
+[联想 g510],model,1,9734
+[三星 450r5j],model,1,9921
+[惠普 folio 9480m 系列],model,1,9956
+[神舟 战神 k670d],model,1,10018
+[神舟 战神 k670e],model,1,10019
+[神舟 战神 k680e],model,1,10021
+[戴尔 inspiron 灵越 15r 5537 系列],model,1,10038
+[华硕 n551 系列],model,1,10087
+[联想 y430p],model,1,10163
+[msi微星 ge62],model,1,10184
+[华硕 飞行堡垒 zx50j],model,1,10241
+[戴尔 vostro成就 5459 系列],model,1,10264
+[华硕 u303 系列],model,1,10381
+[msi微星 gp62],model,1,10394
+[戴尔 vostro成就 3459 系列],model,1,10411
+[三星 270e5k],model,1,10473
+[三星 500r4k],model,1,10478
+[三星 500r5h],model,1,10479
+[三星 910s3k],model,1,10484
+[惠普 probook 430 g3 系列],model,1,10489
+[神舟 战神 zx7],model,1,10521
+[戴尔 inspiron 灵越 15 5559 系列],model,1,10555
+[神舟 战神 t6],model,1,10585
+[联想 小新 700 电竞版],model,1,10866
+[联想 拯救者 14],model,1,10872
+[联想 k21],model,1,10891
+[戴尔 inspiron 灵越 14 5448 系列],model,1,10928
+[thinkpad 黑将 s5],model,1,11359
+[联想 yoga 710 14寸],model,1,11362
+[联想 天逸 310 15寸],model,1,11514
+[华硕 飞行堡垒 zx53vw],model,1,11540
+[惠普 elitebook x360 g2 系列],model,1,11617
+[三星 玄龙骑士 800g5m],model,1,11667
+[惠普 probook 430 g4 系列],model,1,11711
+[戴尔 inspiron 灵越 13 7373 系列],model,1,11725
+[thinkpad 13],model,1,11777
+[戴尔 inspiron 灵越 13 5370 系列],model,1,11781
+[戴尔 vostro成就 3468 系列],model,1,11784
+[炫龙 毁灭者dd2 系列],model,1,11799
+[惠普 战99 系列],model,1,11853
+[thinkpad e585],model,1,11872
+[戴尔 latitude 7390 系列],model,1,11877
+[华硕 顽石 yx570],model,1,11885
+[acer 暗影骑士3 锐龙版 an515-42],model,1,11893
+[华硕 顽石 y5000],model,1,11910
+[华硕 顽石 y4000],model,1,11924
+[戴尔 vostro成就 3480 系列],model,1,11932
+[联想 ideapad 340c 15寸],model,1,11943
+[华硕 vivobook s14],model,1,11959
+[雷神 911 plus],model,1,11977
+[戴尔 xps 13 9380 系列],model,1,11987
+[惠普 小欧 14s 系列],model,1,11988
+[msi微星 gp75],model,1,11994
+[惠普 laptop 15 系列],model,1,12002
+[机械革命 s1 pro],model,1,12056
+[alienware m17 r2],model,1,12080
+[三星 星曜 730xbe],model,1,12094
+[机械师 t90 plus],model,1,12107
+[戴尔 inspiron 灵越 13 7391 系列],model,1,12115
+[戴尔 inspiron 灵越 14 7490 系列],model,1,12119
+[thinkpad x395],model,1,12121
+[神舟 精盾 u65a 畅玩版],model,1,12124
+[索尼 vaio sx12 系列],model,1,12130
+[华硕 顽石 v4000d],model,1,12141
+[戴尔 latitude 3400 系列],model,1,12142
+[戴尔 vostro成就 5490 系列],model,1,12173
+[华硕 顽石 y4200],model,1,12185
+[荣耀 magicbook 15],model,1,12193
+[戴尔 xps 13 9300 系列],model,1,12212
+[acer 墨舞 ex214],model,1,12213
+[戴尔 vostro成就 5391 系列],model,1,12237
+[荣耀 magicbook pro 2020],model,1,12260
+[acer ex215],model,1,12261
+[戴尔 g5 5500 系列],model,1,12274
+[惠普 暗影精灵6 plus 系列],model,1,12281
+[联想 yoga duet],model,1,12283
+[戴尔 inspiron 灵越 15 7501 系列],model,1,12286
+[msi微星 ge66],model,1,12288
+[神舟 战神 z8 2020],model,1,12291
+[thinkpad new s2 2017],model,1,12292
+[戴尔 inspiron 灵越 14 7400 系列],model,1,12312
+[戴尔 inspiron 灵越 15 5501/5508 系列],model,1,12328
+[华硕 expertbook p2],model,1,12340
+[火影 t5c 系列],model,1,12347
+[msi微星 强袭 ge76],model,1,12363
+[华硕 expertbook b1],model,1,12365
+[荣耀 magicbook 14 2021],model,1,12367
+[华硕 灵耀x 双屏],model,1,12384
+[thinkpad thinkbook 15 gen2],model,1,12392
+[thinkpad p1 隐士 2020],model,1,12394
+[华硕 顽石 7代 14],model,1,12408
+[荣耀 magicbook x 14],model,1,12414
+[荣耀 magicbook x 15],model,1,12421
+[戴尔 inspiron 灵越 14 5410 系列],model,1,12431
+[雷蛇 灵刃15 2019],model,1,12435
+[戴尔 latitude 5320 系列],model,1,12437
+[戴尔 latitude 5420 系列],model,1,12443
+[msi微星 武士 gf66],model,1,12455
+[acer 传奇 x],model,1,12463
+[联想 扬天 s15],model,1,12479
+[戴尔 inspiron 灵越 15 3511 系列],model,1,12488
+[华硕 无畏 15],model,1,12489
+[戴尔 inspiron 灵越 15 7510 系列],model,1,12496
+[雷蛇 book 13 系列],model,1,12579
+[华硕 天选3 plus],model,1,12581
+[gpd pocket 3 系列],model,1,12599
+[攀升 maxbook p1 pro+],model,1,12600
+[火影 t5a 系列 15寸],model,1,12609
+[华硕 rog 幻x 2022],model,1,12611
+[华硕 adolbook14 2020],model,1,12622
+[华硕 灵耀x 14],model,1,12630
+[荣耀 magicbook x 15 2022],model,1,12644
+[联想 ideapad 15],model,1,12646
+[thinkpad neo 14],model,1,12655
+[戴尔 vostro成就 3401 系列],model,1,12656
+[华硕 灵耀 14 2022],model,1,12657
+[联想 yoga pro 14s 2022],model,1,12669
+[华硕 灵耀x 13],model,1,12672
+[荣耀 magicbook 14 2022],model,1,12675
+[惠普 zbook studio g8 系列],model,1,12679
+[戴尔 vostro成就 5620 系列],model,1,12684
+[清华同方 然14],model,1,12686
+[雷蛇 灵刃14 2022],model,1,12687
+[戴尔 vostro成就 3425 系列],model,1,12690
+[lg gram 16 2022],model,1,12696
+[华硕 vivobook 15 x515],model,1,12700
+[惠普 245 g9 系列],model,1,12706
+[华硕 无畏 二合一 13寸],model,1,12708
+[thinkpad e15 gen4],model,1,12711
+[thinkpad e15 gen3],model,1,12712
+[惠普 zbook power g9 系列],model,1,12716
+[戴尔 inspiron 灵越 15 3520 系列],model,1,12721
+[acer 暗影骑士 擎pro an515-58],model,1,12740
+[msi微星 强袭 ge77 hx],model,1,12759
+[thinkpad x1 yoga 2022],model,1,12778
+[英特尔 nuc x15 系列],model,1,12784
+[acer 掠夺者 刀锋 300se],model,1,12791
+[荣耀 magicbook x 16 2022],model,1,12794
+[acer 未来 av14],model,1,12798
+[火影 t5k],model,1,12809
+[惠普 probook 440 g9 系列],model,1,12813
+[gpd win max 2],model,1,12834
+[lg gram 17z90q 系列],model,1,12837
+[thinkpad thinkbook 14 gen5],model,1,12848
+[thinkpad thinkbook 15 gen5],model,1,12849
+[戴尔 inspiron 灵越 13 5330 系列],model,1,12850
+[戴尔 inspiron 灵越 14 5430 系列],model,1,12851
+[戴尔 inspiron 灵越 16 5630 系列],model,1,12852
+[华硕 rog 枪神7 plus],model,1,12858
+[华硕 rog 枪神7],model,1,12859
+[华硕 无畏 pro14 2022],model,1,12860
+[华硕 rog 幻x 2023],model,1,12861
+[华硕 rog 幻16 2023],model,1,12862
+[联想 小新 pro 14 2023],model,1,12863
+[联想 小新 pro 16 2023],model,1,12864
+[联想 小新 14 2023],model,1,12865
+[联想 小新 16 2023],model,1,12866
+[惠普 暗影精灵9 plus 系列],model,1,12867
+[thinkpad t14 2022],model,1,12870
+[thinkpad x1 nano 2022],model,1,12872
+[雷神 zero 2023],model,1,12873
+[神舟 战神 t7 2022],model,1,12874
+[华硕 天选4 plus],model,1,12876
+[机械革命 蛟龙 16k],model,1,12878
+[机械革命 旷世 16 super],model,1,12880
+[华硕 灵耀14 2023],model,1,12882
+[机械师 曙光 16 pro],model,1,12884
+[华硕 无畏 15i 2023],model,1,12890
+[华硕 a豆14 2023],model,1,12892
+[msi微星 魔影 15],model,1,12893
+[荣耀 magicbook x 16 pro 2023],model,1,12895
+[联想 geekpro g5000],model,1,12897
+[火影 t6a],model,1,12900
+[华硕 rog 魔霸7 plus],model,1,12903
+[戴尔 vostro成就 5630 系列],model,1,12904
+[戴尔 g16 7630 系列],model,1,12905
+[戴尔 g15 5530 系列],model,1,12906
+[戴尔 inspiron 灵越 16 plus 7630 系列],model,1,12907
+[戴尔 inspiron 灵越 14 plus 7430 系列],model,1,12908
+[戴尔 inspiron 灵越 15 3530 系列],model,1,12909
+[戴尔 vostro成就 3430 系列],model,1,12911
+[戴尔 vostro成就 3530 系列],model,1,12912
+[惠普 星book pro 14 系列],model,1,12913
+[惠普 星book plus 15 系列],model,1,12914
+[惠普 星book 14 系列],model,1,12915
+[惠普 星book 15 系列],model,1,12916
+[惠普 战66 6代 14寸 系列],model,1,12918
+[华硕 无畏 15 2023],model,1,12919
+[华硕 无畏 16 2023],model,1,12920
+[惠普 战66 6代 15.6寸 系列],model,1,12921
+[惠普 暗影精灵9 slim 系列],model,1,12925
+[惠普 光影精灵9 15.6寸 系列],model,1,12926
+[荣耀 magicbook 14 2023],model,1,12928
+[荣耀 magicbook x 14 2023],model,1,12929
+[荣耀 magicbook x 14 pro 2023],model,1,12930
+[联想 拯救者 r9000p 2023],model,1,12932
+[thinkpad thinkbook 16p 2023],model,1,12933
+[华硕 灵耀x 双屏pro 2023],model,1,12936
+[华硕 灵耀pro 14 2023],model,1,12939
+[华硕 无畏 pro16 2023],model,1,12941
+[联想 拯救者 y7000p 2023],model,1,12942
+[戴尔 latitude 5440 系列],model,1,12948
+[lg gram 15 2023],model,1,12961
+[雷蛇 灵刃16],model,1,12968
+[msi微星 gp78],model,1,12969
+[惠普 zbook fury 15 g8 系列],model,1,12978
+[机械革命 蛟龙 16qs],model,1,12983
+[神舟 战神 g9r9],model,1,12986
+[荣耀 magicbook 14 pro 2023],model,1,12987
+[惠普 光影精灵9 16.1寸 系列],model,1,12989
+[七彩虹 将星x17 pro],model,1,12994
+[thinkpad r14 gen4],model,1,12995
+[惠普 probook 640 g8系列],model,1,12999
+[联想 拯救者 r7000 2023],model,1,13002
+[神舟 战神 tx9r9],model,1,13004
+[惠普 laptop 14 系列],model,1,13006
+[msi微星 星影 15 air],model,1,13009
+[七彩虹 将星x16 pro],model,1,13014
+[火影 众颜 u6],model,1,13015
+[thinkpad thinkbook 16 2023],model,1,13016
+[惠普 probook 640 g5 系列],model,1,13019
+[机械革命 蛟龙 17ks],model,1,13023
+[联想 小新 air 14 2019],model,1,13024
+[msi微星 gp68],model,1,13029
+[thinkpad l13 gen3],model,1,13031
+[thinkpad c13 yoga gen 1],model,1,13032
+[惠普 elitebook 640 g10 系列],model,1,13039
+[acer 暗影骑士 龙16],model,1,13042
+[壹号本 one-netbook 5],model,1,13057
+[联想 ideapad 720s 13寸],model,1,13064
+[神舟 战神 s7 14寸],model,1,13088
+[thinkpad e14 gen2],model,1,13128
+[吾空 x16],model,1,13141
+[华硕 vivobook 14 (x1404)],model,1,13176
+[机械革命 无界 14+],model,1,15078
+[雷神 911 plus 2023],model,1,15083
+[机械革命 蛟龙 16q],model,1,15112
+[联想 昭阳 x5-14],model,1,15164
+[华硕 灵耀14 2024],model,1,16557
+[机械革命 极光 s],model,1,16563
+[联想 小新 pro 16 2024],model,1,16570
+[thinkpad l15 gen4],model,1,16572
+[thinkpad l13 gen4],model,1,16573
+[thinkpad x1 carbon 2024],model,1,16574
+[微软 surface laptop studio 2],model,1,16621
+[雷蛇 灵刃15 2021],model,1,16626
+[thinkpad z13 gen2],model,1,16636
+[惠普 246 g10 系列],model,1,16645
+[联想 昭阳 x7-14],model,1,16648
+[联想 拯救者 r7000 2024],model,1,16659
+[机械革命 无界 14 pro 2024],model,1,16671
+[联想 昭阳 x7-16],model,1,16685
+[华硕 天选5 pro],model,1,16699
+[华硕 rog 枪神8],model,1,16703
+[华硕 rog 枪神8 plus],model,1,16704
+[华硕 rog 魔霸新锐 2024],model,1,16705
+[acer 传奇 go],model,1,16713
+[华硕 破晓3 2023 15寸],model,1,16735
+[联想 拯救者 y7000p 2024],model,1,16744
+[联想 小新 pro 14 2024],model,1,16745
+[thinkpad thinkbook 14+ 2024],model,1,16750
+[thinkpad thinkbook 16+ 2024],model,1,16751
+[联想 拯救者 y9000p 2024],model,1,16752
+[惠普 暗影精灵10 系列],model,1,16780
+[华硕 天选5],model,1,16785
+[华硕 无畏 pro15 2024],model,1,16786
+[华硕 rog 幻14 air],model,1,16790
+[华硕 rog 幻16 air],model,1,16791
+[惠普 光影精灵10 16.1寸 系列],model,1,16796
+[联想 昭阳 x3-15],model,1,16799
+[惠普 星book pro 14 2024 系列],model,1,16815
+[联想 v15 g3],model,1,16819
+[机械师 曙光16 2023],model,1,16823
+[华硕 灵耀14 双屏],model,1,16830
+[acer 非凡 go pro 14],model,1,16848
+[华硕 a豆14 air],model,1,16852
+[华硕 a豆14 2024],model,1,16853
+[荣耀笔记本 x16 2024],model,1,16864
+[雷神 猎刃16],model,1,16877
+[机械革命 极光 pro 2024],model,1,16945
+[惠普 probook 445 g8 系列],model,1,16948
+[msi微星 雷影 17],model,1,16965
+[联想 拯救者 y9000x 2024],model,1,16983
+[华硕 天选 air 2022],model,1,16986
+[msi微星 泰坦16 a13v],model,1,16987
+[alienware m16 r2],model,1,17062
+[联想 小新 14 2024],model,1,17068
+[戴尔 inspiron 灵越 16 plus 7640 系列],model,1,17070
+[荣耀笔记本 x16 plus 2024],model,1,17077
+[荣耀笔记本 x14 plus 2024],model,1,17078
+[荣耀 magicbook pro 16],model,1,17079
+[荣耀 magicbook pro 16 hunter版],model,1,17080
+[机械革命 耀世 15 pro],model,1,17087
+[联想 小新 15 2024],model,1,17111
+[机械革命 旷世 15 pro],model,1,17123
+[神舟 战神 t8 2024],model,1,17147
+[华硕 a豆14 2021],model,1,17163
+[联想 ideapad 1 15寸],model,1,17171
+[thinkpad thinkbook 14 gen7],model,1,17177
+[联想 ideapad 14s 2023],model,1,17180
+[荣耀 magicbook z3 14 2023],model,1,17187
+[联想 小新 16 2024],model,1,17239
+[msi微星 泰坦 17 2024],model,1,17241
+[雷神 猎刃15],model,1,17244
+[荣耀笔记本 x14 2024],model,1,17245
+[acer 非凡 go 14 青春版],model,1,17248
+[lg gram pro 16 2024],model,1,17256
+[华硕 rog 枪神2s plus (s7cv)],model,1,17392
+[联想 昭阳 x3-14],model,1,17394
+[雷神 zero 2024],model,1,17396
+[acer 非凡 go fun 16],model,1,17417
+[msi微星 神影 16],model,1,17420
+[微软 surface pro 10],model,1,17425
+[acer 暗影骑士 擎 sh15-51],model,1,17468
+[thinkpad e14 gen6],model,1,17471
+[联想 拯救者 r7000p 2024],model,1,17488
+[神舟 战神 gx10r9],model,1,17493
+[thinkpad thinkbook 16p 2024],model,1,17494
+[机械革命 无界 14x],model,1,17533
+[thinkpad t14p ai 2024],model,1,17535
+[戴尔 inspiron 灵越 14 plus 7440 系列],model,1,17553
+[机械革命 翼龙15 pro],model,1,18562
+[七彩虹 隐星 p16 ta 24],model,1,18590
+[联想 yoga pro 16s ai元启],model,1,18596
+[联想 geekpro g5000 2024],model,1,18931
+[七彩虹 meow 橘宝r15 24],model,1,18943
+[alienware x16 r2],model,1,18957
+[thinkpad thinkbook 16 2024],model,1,26254
+[lg gram 14 2024],model,1,26279
+[机械革命 极光 15 2024],model,1,26297
+[联想 yoga air 14 2024],model,1,26306
+[惠普 战66 7代 14寸 系列],model,1,26317
+[酷比魔方 iwork gt 12],model,1,26324
+[机械革命 无界 15 pro],model,1,26329
+[联想 拯救者 y7000 2024],model,1,26337
+[七彩虹 隐星 p15 ta 24],model,1,26360
+[惠普 星book pro 16 2024],model,1,26361
+[华硕 无畏 14 2024],model,1,26377
+[thinkpad thinkbook x 2024 ai],model,1,26396
+[神舟 战神 t8 plus],model,1,26397
+[壹号本 游侠x1],model,1,26407
+[华硕 vivobook go 15],model,1,26444
+[华硕 a豆 14s],model,1,26448
+[惠普 elitebook x360 1040 g7 系列],model,1,26474
+[惠普 战66 7代 16寸 系列],model,1,26475
+[神舟 战神 t8 pro],model,1,26490
+[联想 yoga pro 14s 2024],model,1,26495
+[中柏 ezpad v12],model,1,26496
+[惠普 光影精灵10 15.6英寸 系列],model,1,26587
+[acer 掠夺者 擎neo 2024],model,1,26594
+[七彩虹 隐星 g15 24],model,1,26628
+[荣耀 magicbook art 14],model,1,26646
+[雷神 911 plus 2024],model,1,26661
+[惠普 envy x360 14 2024],model,1,26666
+[惠普 战99 系列 2024],model,1,26710
+[玄派 玄机星 16寸],model,1,26734
+[七彩虹 隐星 p15 24],model,1,26909
+[thinkpad 11e yoga gen6],model,1,26955
+[thinkpad x13 2024],model,1,26964
+[acer 优跃 14],model,1,26965
+[thinkpad t15g gen1],model,1,26975
+[机械革命 极光 x 16英寸],model,1,26987
+[thinkpad s2 yoga 2023],model,1,26988
+[惠普 elitebook 645 g10 系列],model,1,26989
+[华硕 transformer book flip tp301ua],model,1,27021
+[华硕 破晓4 2024 14寸],model,1,27075
+[华硕 破晓4 2024 16寸],model,1,27076
+[联想 拯救者 r9000p 2024],model,1,27081
+[thinkpad t14 2024],model,1,27084
+[机械师 曙光 15 pro 2024],model,1,27132
+[戴尔 latitude 5450],model,1,27151
+[thinkpad e16 2024],model,1,27168
+[七彩虹 meow 橘宝r16 24],model,1,27195
+[机械革命 无界 14s],model,1,27231
+[联想 ideapad 15s 2023],model,1,27308
+[机械师 曙光 15l],model,1,27469
+[微软 surface laptop 7 13.8英寸],model,1,27495
+[惠普 暗影精灵 乐享版 系列],model,1,27497
+[华硕 天选 air 2024],model,1,27591
+[联想 昭阳 x5-16],model,1,27634
+[机械革命 耀世 16 pro],model,1,27774
+[msi微星 星影 14 air],model,1,28415
+[惠普 星book pro 13 2024 系列],model,1,28755
+[联想 yoga air 14s 2024],model,1,28967
+[雷神 t-book 16d 2024],model,1,29605
+[机械革命 蛟龙 15 pro],model,1,29610
+[雷神 911t 黑武士],model,1,29636
+[火影 炙影 h6],model,1,29645
+[戴尔 latitude 7520],model,1,29667
+[荣耀笔记本 x16 2025],model,1,29732
+[玄派 玄智星 青锋],model,1,29922
+[华硕 灵耀 14 air],model,1,29987
+[msi微星 雷影 15 青春版],model,1,29992
+[msi微星 神影 17],model,1,30123
+[msi微星 刃影 16 2024],model,1,30378
+[戴睿 a16 max 14寸],model,1,30429
+[七彩虹 隐星 g16 24],model,1,30473
+[戴尔 inspiron 灵越 14 灵龙 5445 系列],model,1,30483
+[惠普 星book plus 16 2024 系列],model,1,30484
+[戴睿 幻影gt],model,1,30552
+[机械革命 极光 16],model,1,30563
+[机械革命 无界 15x],model,1,30717
+[惠普 星book 14 2024 系列],model,1,30801
+[acer 非凡 go fun 14],model,1,30821
+[雷蛇 灵刃15 2023],model,1,30830
+[msi微星 星影 15 thin 2024],model,1,30901
+[联想 小新 13 air 2025],model,1,30961
+[华硕 无畏 pro14 2024],model,1,30985
+[acer 暗影骑士 擎6],model,1,31046
+[thinkpad x1 carbon 2025],model,1,31143
+[荣耀笔记本 x16 plus 2025],model,1,31195
+[荣耀 magicbook x 16 战斗版],model,1,31375
+[华硕 vivobook 14 2021],model,1,31386
+[thinkpad thinkbook 14 gen8],model,1,31515
+[机械师 创物者 16m],model,1,31862
+[戴睿 d14 mac],model,1,31982
+[联想 小新 16 se 2025],model,1,32005
+[攀升 暴风龙 s2],model,1,32050
+[msi微星 星影 15 ai 锐龙版 2024],model,1,32257
+[华硕 天选 锐龙ai版],model,1,32371
+[thinkpad thinkbook 14+ 2025],model,1,32465
+[优和 s8 pro],model,1,32493
+[联想 异能者 p14h],model,1,32532
+[荣耀笔记本 x14 plus 2025],model,1,32534
+[acer 暗影骑士 龙5],model,1,32582
+[荣耀笔记本 x14 2025],model,1,32583
+[thinkpad l14 gen5],model,1,32586
+[壹号本 游侠x1 pro],model,1,32591
+[thinkpad x1 yoga 2024],model,1,32692
+[thinkpad thinkbook 16 2025],model,1,32693
+[联想 小新 air 15 2025],model,1,32703
+[华硕 无畏 14 2025],model,1,32706
+[荣耀 magicbook pro 14 2025],model,1,32707
+[联想 小新 pro 14 gt ai元启版],model,1,32757
+[联想 小新 14 se 2025],model,1,32767
+[七彩虹 源 n14 2024],model,1,32777
+[联想 yoga air 14 aura ai元启],model,1,32808
+[联想 异能者 s130],model,1,32836
+[华硕 rog 幻x 2025],model,1,34689
+[联想 小新 pro 14 2025],model,1,34797
+[联想 小新 pro 16 gt ai元启版],model,1,34798
+[华硕 无畏 14 ai 2025],model,1,34850
+[thinkpad thinkbook 16+ 2025],model,1,34855
+[联想 小新 pro 16 2025],model,1,34927
+[华硕 rog 枪神6],model,1,34954
+[华硕 rog 枪神9 plus],model,1,35189
+[联想 开天 n80z],model,1,35549
+[惠普 光影精灵11 系列],model,1,35615
+[thinkpad thinkbook x 2025],model,1,35634
+[thinkpad x9 15.3寸],model,1,35636
+[惠普 elitebook 840 g10 系列],model,1,35775
+[惠普 暗影精灵 max],model,1,35838
+[七彩虹 将星 x18 max],model,1,35972
+[华硕 rog 幻16 air 2025],model,1,35975
+[雷神 猎刃s 2025],model,1,35997
+[华硕 灵耀14 双屏 2025],model,1,35998
+[华硕 a豆14 air 香氛版],model,1,36237
+[机械革命 耀世 16 ultra],model,1,36315
+[联想 拯救者 y9000p 2025],model,1,36462
+[gpd win max 2 (2025)],model,1,36479
+[华硕 天选6 pro],model,1,36488
+[机械革命 蛟龙 16 pro 2025],model,1,36505
+[acer 非凡 go 公主本],model,1,36510
+[惠普 暗影精灵11 系列],model,1,36531
+[联想 异能者 p15h],model,1,36532
+[华硕 rog 枪神9],model,1,36619
+[华硕 rog 魔霸新锐 2025],model,1,36623
+[七彩虹 隐星 p16 pro],model,1,36626
+[msi微星 泰坦 18 pro 2025],model,1,36638
+[机械革命 苍龙 16x pro],model,1,36672
+[联想 lecoo 来酷15],model,1,36680
+[雷神 zero 18 pro 2025],model,1,36708
+[thinkpad e14 gen7],model,1,36718
+[华硕 rog 枪神9 plus 超竞版],model,1,36794
+[thinkpad t14p 2025],model,1,36807
+[联想 拯救者 y7000 2019],model,1,36854
+[acer 传奇 go ai 16英寸],model,1,36985
+[惠普 星book pro 16 2025],model,1,36997
+[荣耀 magicbook pro 16 2025],model,1,37019
+[华硕 无畏 16 2025],model,1,37050
+[联想 小新 15 2025],model,1,37057
+[机械革命 苍龙 16 ultra],model,1,37240
+[联想 拯救者 r9000p 2025],model,1,37247
+[aierxuan 创世者 16英寸],model,1,37260
+[联想 拯救者 y7000 2025],model,1,37298
+[alienware 18 area-51],model,1,37357
+[thinkpad e16 2025 超能版],model,1,37574
+[acer 暗影骑士 擎7s],model,1,37575
+[华硕 a豆14 2025],model,1,37606
+[alienware 16 aurora],model,1,37664
+[联想 拯救者 y7000p 2025],model,1,37846
+[联想 小新 16 2025],model,1,37849
+[神舟 战神 t8 ultra],model,1,37858
+[联想 小新 14 2025],model,1,38083
+[联想 拯救者 r7000p 2025],model,1,38088
+[联想 yoga pro 16 aura ai元启版],model,1,38089
+[thinkpad e16 ai 2025],model,1,38091
+[华硕 天选6],model,1,38113
+[华硕 破晓6 幻金版 14寸],model,1,38114
+[机械革命 极光 x 潮玩版],model,1,38116
+[机械革命 极光 x pro],model,1,38118
+[机械革命 恒悦 e14],model,1,38123
+[机械革命 无界 14x pro 2025],model,1,38128
+[alienware 16x aurora],model,1,38143
+[联想 拯救者 r7000 2025],model,1,38484
+[机械革命 旷世 x pro 2025],model,1,38539
+[联想 异能者 s130c],model,1,38846
+[联想 来酷 pro 14 2025],model,1,38876
+[荣耀 magicbook art 14 2025],model,1,38911
+[荣耀笔记本 x14 2025 战斗版],model,1,38945
+[华硕 vivobook 14 2022],model,1,39227
+[华硕 rog 枪神9 超竞版],model,1,39369
+[玄派 玄机星 16n],model,1,39457
+[acer 暗影骑士 擎7],model,1,39615
+[神舟 战神 z8 2025],model,1,39641
+[msi微星 绝影 16 ai+],model,1,39774
+[华硕 rog 魔霸9 plus],model,1,39882
+[联想 异能者 p16h],model,1,39891
+[华硕 vivobook 15 k571],model,1,39903
+[火影 t6k],model,1,39909
+[联想 来酷 斗战者 战7000 2025],model,1,39966
+[msi微星 魔影 16 ai 2024],model,1,40123
+[戴尔 latitude 3430 系列],model,1,40128
+[吾空 x14 pro+],model,1,40216
+[火影 众颜 u4e],model,1,40223
+[联想 异能者 e15h],model,1,40305
+[aierxuan 耀星 16 pro],model,1,40705
+[gpd pocket 4],model,1,40916
+[荣耀 magicbook pro 14 2025 极客版],model,1,40927
+[戴尔 15 dc15250],model,1,41149
+[雷神 aibook 14 air],model,1,41508
+[戴尔 precision 3590 系列],model,1,42119
+[联想 yoga 360 14 ai元启],model,1,42160
+[微软 surface pro 12英寸],model,1,42191
+[机械革命 蛟龙 16 pro 潮玩版],model,1,42292
+[惠普 zbook firefly 14 g9 系列],model,1,5612
+[华硕 expertbook p1462],model,1,27307
+[神舟 精盾 t96],model,1,11730
+[神舟 战神 z8 2024],model,1,37020
+[华硕 破晓6 14寸],model,1,31564
+[雷蛇 灵刃14 2025],model,1,38147
+[thinkpad thinkbook 16p 2025],model,1,38864
+[惠普 战66 8代 14寸 系列],model,1,40734
+[戴尔 latitude 7440 系列],model,1,12947
+[acer 蜂鸟 swift7 sf714],model,1,42568
+[雷神 猎刃16 2025],model,1,37069
+[acer 非凡 go air],model,1,40729
+[七彩虹 隐星 g16 25],model,1,39740
+[联想 ideapad 500 15寸],model,1,10889
+[华硕 rog g46v],model,1,5475
+[acer predator helios neo 16],model,1,31128
+[华硕 无双 15],model,1,42626
+[戴尔 xps 15 9500 系列],model,1,12279
+[惠普 elitebook 845 g9 系列],model,1,5622
+[机械革命 耀世 15 pro 2025],model,1,40302
+[惠普 mt43 mobile thin client],model,1,26728
+[戴尔 latitude 5421 系列],model,1,26706
+[惠普 probook 650 g3 系列],model,1,38146
+[联想 legion 5 pro],model,1,7899
+[神舟 战神 tx8r5],model,1,12960
+[雷蛇 灵刃17 2022],model,1,12841
+[华硕 飞行堡垒 fx60],model,1,5537
+[aierxuan 小轩 pro 系列],model,1,12337
+[戴尔 precision 5550 系列],model,1,4803
+[华硕 tuf gaming f17],model,1,8264
+[华硕 rog 幻14 air 2025],model,1,36480
+[惠普 elitebook 835 g9 系列],model,1,7883
+[神舟 战神 z9r9],model,1,17101
+[thinkpad thinkbook 16p nx],model,1,4569
+[戴尔 vostro成就 5390 系列],model,1,4874
+[神舟 精盾 u65a1 畅玩版],model,1,27589
+[thinkpad l15 gen3],model,1,13008
+[中柏 ezbook s7xt],model,1,42347
+[微软 surface go 2 lte版],model,1,12356
+[三星 550r5l],model,1,7823
+[联想 小新 15 se 2025],model,1,35969
+[机械革命 耀世16 super],model,1,26267
+[联想 小新 pro 13s],model,1,6387
+[神舟 战神 tx8r7],model,1,7873
+[华硕 vivobook 15 x542],model,1,8222
+[惠普 zbook power g10 系列],model,1,18917
+[戴尔 vostro成就 3578 系列],model,1,4892
+[msi微星 gt73evr],model,1,4508
+[华硕 zenbook tp360ca],model,1,5514
+[华硕 vivobook 360 2022],model,1,12626
+[戴尔 latitude 5330 系列],model,1,12722
+[联想 yoga 360 14 aura ai元启],model,1,36455
+[华硕 灵耀 14s],model,1,5245
+[机械革命 s5],model,1,6049
+[华硕 vivobook 15 x 2020],model,1,5283
+[戴尔 inspiron 灵越 13 7380 系列],model,1,4891
+[东芝 c40-a 系列],model,1,9817
+[thinkpad p14s gen4 2023款],model,1,16886
+[terrans force s5 系列],model,1,4547
+[华硕 破晓4 pro 2024 14寸],model,1,32426
+[thinkpad x380 yoga],model,1,4655
+[戴尔 inspiron 灵越 14 3462 系列],model,1,4928
+[炫龙 毁灭者 x55 ti 系列],model,1,6927
+[thinkpad x1 fold],model,1,4630
+[机械革命 无界 16],model,1,6047
+[联想 yoga pro 14c 2021],model,1,6272
+[海尔 凌越 s14-1s],model,1,30073
+[msi微星 侠客 刃15],model,1,12501
+[thinkpad t450s],model,1,7160
+[华硕 灵耀 deluxe14 (u4600)],model,1,5323
+[华硕 顽石 tp401],model,1,5233
+[神舟 战神 g8r9],model,1,7916
+[华硕 灵耀 u3000],model,1,11020
+[acer a550],model,1,31200
+[华硕 无畏 14 2023],model,1,12943
+[msi微星 泰坦 18 ultra ai 2025],model,1,43938
+[戴尔 latitude 5410 系列],model,1,12307
+[华硕 f456 系列],model,1,5531
+[华硕 灵耀 deluxe14 (u4500)],model,1,5287
+[联想 yoga air 14s 2023],model,1,12958
+[壹号本 游侠x1 mini],model,1,27203
+[华硕 顽石 a505],model,1,5418
+[msi微星 ge72],model,1,10388
+[华硕 a豆14 air 悦享版],model,1,40716
+[惠普 星book pro 14 2025],model,1,40118
+[华硕 rog 魔霸5],model,1,5229
+[thinkpad thinkbook plus2],model,1,6291
+[联想 异能者 a14h],model,1,44331
+[thinkpad t590],model,1,7556
+[华硕 v505 系列],model,1,8202
+[七彩虹 igame m16 origo],model,1,42156
+[七彩虹 隐星 g15 25],model,1,41116
+[惠普 elitebook 830 g10 系列],model,1,27766
+[华硕 zenbook s 13],model,1,8263
+[戴睿 surface pro 16],model,1,26259
+[荣耀笔记本 x14 2026],model,1,44665
+[戴尔 latitude e5470 系列],model,1,4964
+[戴尔 xps 13 9310 系列],model,1,4834
+[华硕 无畏 360],model,1,12709
+[联想 扬天 s550],model,1,6388
+[惠普 elitebook 1040 g9 系列],model,1,30990
+[华硕 无畏 pro16],model,1,5180
+[惠普 光影精灵8 15.6寸 系列],model,1,13000
+[机械师 t90],model,1,6106
+[戴尔 vostro成就 5415 系列],model,1,4773
+[联想 扬天 v110 14寸],model,1,6521
+[机械革命 蛟龙 550],model,1,12980
+[thinkpad p15v],model,1,12314
+[七彩虹 隐星 p15 ta],model,1,16836
+[华硕 破晓2 2022 14寸],model,1,5158
+[神舟 战神 z7m 2019],model,1,8414
+[惠普 zbook firefly 14 g10 系列],model,1,18569
+[thinkpad t490s],model,1,7597
+[火影 t5g系列 15.6英寸],model,1,12636
+[华硕 破晓6 幻金版 16寸],model,1,38115
+[雷神 g150t],model,1,10386
+[戴尔 xps 15 9510 系列],model,1,4787
+[华硕 expertbook p1550],model,1,5181
+[华硕 rog 冰刃3],model,1,15086
+[acer 暗影骑士 vn7-591g],model,1,7921
+[炫龙 毁灭者dc pro 系列],model,1,6928
+[thinkpad p52],model,1,4672
+[华硕 飞行堡垒 fx51],model,1,5542
+[alienware m15 r1],model,1,4456
+[thinkpad x1 nano 2023],model,1,7350
+[华硕 飞行堡垒 fx71 pro],model,1,5534
+[微软 surface laptop 5 15英寸],model,1,6862
+[神舟 战神 z8 2019],model,1,6740
+[华硕 proart 创16],model,1,5185
+[戴尔 inspiron 灵越 15 5585 系列],model,1,12102
+[华硕 proart 创16 2025],model,1,40926
+[戴尔 xps 13 9350 2024],model,1,44664
+[戴尔 inspiron 灵越 17r 7720 系列],model,1,10204
+[三星 340xaa],model,1,11834
+[华硕 f555 系列],model,1,8170
+[华硕 rog 幻13 2023],model,1,7946
+[华硕 顽石 r424],model,1,5309
+[thinkpad z16],model,1,4549
+[戴尔 inspiron 灵越 14 3443 系列],model,1,8153
+[惠普 probook 4540s 系列],model,1,11505
+[神舟 战神 tx7],model,1,6783
+[华硕 灵耀pro 14],model,1,5186
+[惠普 光影精灵6 max 系列],model,1,5748
+[联想 昭阳 k32],model,1,7574
+[壹号本 onemix a1],model,1,6932
+[华硕 pro451],model,1,8176
+[联想 b51 系列],model,1,8293
+[thinkpad x230s],model,1,9887
+[msi微星 神影 16 2025],model,1,42589
+[华硕 灵耀 16 air],model,1,27720
+[微软 surface laptop 13.5英寸],model,1,11665
+[联想 拯救者 y9000x 2025],model,1,39243
+[联想 e50],model,1,10292
+[微软 surface pro 11],model,1,26453
+[荣耀 magicbook x 14 2022],model,1,12643
+[戴尔 latitude 3420 系列],model,1,4796
+[thinkpad t460p],model,1,10860
+[thinkpad x1 yoga 2016],model,1,4575
+[华硕 灵耀x 纵横],model,1,5270
+[戴尔 xps 13 9320 系列],model,1,4742
+[雷神 911绝地武士],model,1,6151
+[联想 小新 v4000],model,1,10218
+[机械革命 深海泰坦 x8 pro],model,1,6059
+[戴尔 latitude 5490 系列],model,1,4893
+[雷神 911-f1],model,1,6209
+[msi微星 雷影 17 青春版],model,1,26816
+[联想 n50],model,1,10591
+[华硕 灵耀13 2023],model,1,12937
+[华硕 f442u 系列],model,1,8175
+[玩家战神 勇者pro],model,1,30746
+[华硕 破晓 air 2023],model,1,7965
+[戴尔 inspiron 灵越 14 3482 系列],model,1,4867
+[机械师 f117-fp],model,1,7176
+[戴尔 inspiron 灵越 15 3543 系列],model,1,7738
+[神舟 战神 z7m 2020],model,1,6739
+[thinkpad x390],model,1,3795
+[机械师 星辰 15],model,1,8044
+[thinkpad thinkbook 16p 2021],model,1,4593
+[惠普 probook 445r 系列],model,1,12133
+[戴尔 inspiron 灵越 15 7570 系列],model,1,4921
+[联想 ideapad 15s 2024],model,1,26675
+[thinkpad x13 2022],model,1,4567
+[戴尔 inspiron 灵越 15 7591 系列],model,1,4877
+[联想 y410p],model,1,12957
+[惠普 elitebook 820 g4 系列],model,1,5900
+[华硕 s46 系列],model,1,9584
+[戴尔 16 plus 2025],model,1,38130
+[华硕 zenbook 14 (ux425)],model,1,16669
+[惠普 elite c1030 chromebook],model,1,15160
+[火影 众颜 u4],model,1,8260
+[戴尔 precision 7510 系列],model,1,11694
+[gpd win max 系列],model,1,12301
+[雷神 iger f1],model,1,6164
+[惠普 elite dragonfly g2 系列],model,1,12637
+[七彩虹 隐星 p16 24],model,1,44735
+[惠普 340 g7 系列],model,1,5778
+[thinkpad p15],model,1,4637
+[玩家战神 幻影pro 16],model,1,29920
+[华硕 飞行堡垒 zx63vd],model,1,5431
+[thinkpad s3-s440],model,1,4705
+[thinkpad s3],model,1,9875
+[吾空 x15],model,1,16850
+[联想 扬天 v110 15寸],model,1,6490
+[戴尔 g7 7590 系列],model,1,4883
+[戴尔 latitude 5400 系列],model,1,7448
+[戴尔 inspiron 灵越 15 3559 系列],model,1,4937
+[雷神 911-s1g],model,1,6227
+[联想 yoga s740],model,1,12215
+[戴尔 inspiron 灵越 15 5518 系列],model,1,4782
+[荣耀 magicbook 16 pro 2021],model,1,7791
+[戴尔 g15 5525 系列],model,1,13056
+[机械师 t58],model,1,6107
+[戴尔 inspiron 灵越 15 7557 系列],model,1,10229
+[acer 传奇 go ai 14英寸],model,1,32739
+[机械革命 深海泰坦 x8ti],model,1,6085
+[联想 y50-70],model,1,10282
+[华硕 顽石 e510],model,1,5220
+[华硕 顽石 e406],model,1,5406
+[联想 扬天 威6 pro 13寸],model,1,6428
+[机械革命 蛟龙 7e],model,1,6057
+[戴尔 latitude 3440 2023],model,1,26658
+[雷神 911 pro],model,1,6187
+[thinkpad p15s 2020],model,1,4644
+[惠普 暗影精灵ⅲ代 plus 系列],model,1,11737
+[戴尔 vostro成就 5310 系列],model,1,4801
+[华硕 rog 幻16 翻转版 2023],model,1,12922
+[thinkpad x280],model,1,3794
+[戴尔 vostro成就 5410 系列],model,1,12543
+[msi微星 泰坦 16 2025],model,1,35137
+[戴尔 inspiron 灵越 15 5505 系列],model,1,12330
+[联想 yoga 720 12寸],model,1,6458
+[神舟 战神 z7 2017],model,1,6767
+[华硕 rog 枪神4 plus],model,1,7489
+[thinkpad e560],model,1,10293
+[华硕 灵耀14 2025],model,1,32752
+[联想 yoga 14s 2020],model,1,7985
+[thinkpad e590],model,1,4677
+[华硕 f454 系列],model,1,8208
+[神舟 战神 k670t],model,1,6750
+[戴尔 latitude 7300 系列],model,1,4851
+[thinkpad s2 2023],model,1,8398
+[戴尔 xps 15 7590 系列],model,1,4853
+[acer 暗影骑士3 进阶版 an515-51],model,1,5066
+[机械革命 极光 16 pro],model,1,13130
+[thinkpad t14s 2023],model,1,26300
+[雷神 911m16 创作大师],model,1,6141
+[thinkpad x1 隐士 2021],model,1,4585
+[微软 surface book 2 15寸],model,1,13035
+[海尔 逸15 系列],model,1,12377
+[戴尔 latitude 5431 系列],model,1,4729
+[华硕 rog flow x13 (gv301)],model,1,12576
+[惠普 zbook 15 g2 系列],model,1,5939
+[戴尔 inspiron 灵越 13 7370 系列],model,1,4915
+[惠普 暗影精灵7 plus 系列],model,1,5651
+[戴尔 vostro成就 7580 系列],model,1,4888
+[华硕 rog 枪神3 (s5d)],model,1,5350
+[神舟 战神 zx9],model,1,12613
+[戴尔 latitude 7290 系列],model,1,4879
+[雷神 911 p1],model,1,12424
+[三星 910s3l],model,1,10258
+[华硕 无畏 pro16 2025],model,1,35857
+[thinkpad s2 2019],model,1,4635
+[华硕 rog 冰锐2],model,1,12551
+[thinkpad p1],model,1,4673
+[戴尔 latitude 7280 系列],model,1,7944
+[玄派 玄意星 星耀],model,1,31159
+[联想 yoga air 14c ai元启],model,1,27162
+[华硕 rog 魔霸5r],model,1,5195
+[机械师 创物者 14],model,1,6097
+[微软 surface laptop 4 15英寸],model,1,12450
+[华硕 灵耀 deluxe13 (u3300)],model,1,5342
+[msi微星 gp66],model,1,12544
+[惠普 光影精灵5 plus 系列],model,1,5741
+[联想 拯救者 y9000k 2021],model,1,6433
+[机械师 星辰 17],model,1,6096
+[神舟 战神 gx9],model,1,10579
+[戴尔 inspiron 灵越 15 5502/5509 系列],model,1,38684
+[惠普 256 g8 系列],model,1,5691
+[惠普 光影精灵ⅱ代 pro 系列],model,1,5966
+[thinkpad t430i],model,1,8445
+[华硕 灵耀14 2023 旗舰版],model,1,15088
+[雷蛇 灵刃14 2021],model,1,16675
+[华硕 vivobook 14 x 2021],model,1,5197
+[机械革命 s1 plus],model,1,6079
+[戴尔 g3 3779 系列],model,1,4896
+[thinkpad w541],model,1,7550
+[lg gram 13z980 系列],model,1,4470
+[thinkpad x1 yoga 2018],model,1,4562
+[华硕 天选 air 2025],model,1,39958
+[雷神 911x1 猎荒者 2022],model,1,6142
+[戴尔 inspiron 灵越 15 5558 系列],model,1,7932
+[华硕 proart 创16 2024],model,1,30458
+[惠普 zbook 15 g3 系列],model,1,11778
+[联想 异能者 a15h],model,1,42579
+[机械革命 深海泰坦 x3-s],model,1,6076
+[华硕 破晓 pro 15 (px555)],model,1,5204
+[机械革命 code 01],model,1,6068
+[雷蛇 灵刃14 2023],model,1,17469
+[惠普 elitebook 840 g8 系列],model,1,12466
+[戴尔 latitude 5290 二合一 系列],model,1,11927
+[戴尔 precision 5520 系列],model,1,7547
+[华硕 w508 系列],model,1,5516
+[华硕 vm510 系列],model,1,8209
+[联想 小新 i2000],model,1,7664
+[戴尔 inspiron 灵越 14 3442 系列],model,1,8303
+[惠普 战66 1代 14寸 系列],model,1,7296
+[联想 s410p],model,1,8232
+[联想 yoga 16s 2022],model,1,6269
+[thinkpad e595],model,1,4668
+[华硕 rog zephyrus m16],model,1,7197
+[华硕 vm592 系列],model,1,8199
+[华硕 飞行堡垒 fx-plus],model,1,10346
+[神舟 战神 tx6],model,1,12147
+[华硕 tuf gaming f15],model,1,12702
+[机械革命 星耀 14],model,1,38124
+[华硕 vivobook 15s x],model,1,5178
+[玄派 玄智星 银河],model,1,36692
+[戴尔 vostro成就 3478 系列],model,1,11832
+[戴尔 inspiron 灵越 15 5584 系列],model,1,12108
+[雷神 iger s1],model,1,6165
+[戴尔 latitude 3510 系列],model,1,12372
+[机械革命 umi pro ⅱ],model,1,6069
+[格莱富 ds16 系列],model,1,17064
+[戴尔 latitude 3500 系列],model,1,4855
+[神舟 战神 gx8],model,1,7413
+[thinkpad p14s 2022],model,1,7959
+[雷神 iger z1],model,1,6155
+[华硕 rog 魔霸 faker定制版 s5am7700],model,1,5205
+[alienware m15 r2],model,1,7862
+[戴尔 xps 13 9333 系列],model,1,11653
+[thinkpad a285],model,1,12180
+[realme book 增强版 air 系列 14寸],model,1,12580
+[aierxuan 游侠 r3 16寸],model,1,12901
+[机械师 f117-s],model,1,7745
+[联想 ideapad 510s 13寸],model,1,12197
+[微软 surface laptop 7 15英寸],model,1,30157
+[华硕 rog 枪神3 plus],model,1,7377
+[华硕 tuf gaming a17],model,1,5210
+[戴尔 vostro成就 5402 系列],model,1,4815
+[微软 surface laptop studio],model,1,12638
+[神舟 优雅 x4d2],model,1,6726
+[戴尔 latitude 5290 系列],model,1,4889
+[thinkpad t16 2023],model,1,7357
+[acer 墨舞 ex2519],model,1,12714
+[acer 暗影骑士 vn7-571g],model,1,10754
+[lg gram 13z990 系列],model,1,12259
+[机械革命 深海幽灵 z2 air-g],model,1,6055
+[联想 yoga 5 pro（yoga 910）],model,1,6516
+[戴尔 latitude e5450 系列],model,1,10441
+[华硕 vm591 系列],model,1,5507
+[戴尔 latitude 3410 系列],model,1,4832
+[thinkpad x1 yoga 2021],model,1,10562
+[msi微星 ge75],model,1,4496
+[神舟 战神 zx8],model,1,10522
+[微软 surface laptop go 3],model,1,16697
+[神舟 战神 k550d],model,1,10276
+[thinkpad x240s],model,1,9889
+[联想 扬天 s540 13寸],model,1,6266
+[雷神 911-s5a],model,1,11543
+[戴尔 vostro成就 5501 系列],model,1,12298
+[华硕 p452l 系列],model,1,5466
+[华硕 vivobook 14 sf4100],model,1,12143
+[雷蛇 灵刃15 2018],model,1,6138
+[acer 蜂鸟 swift3 sf313],model,1,5063
+[联想 小新 v2000],model,1,10196
+[戴尔 inspiron 灵越 15 3576 系列],model,1,11796
+[戴尔 latitude 7285 系列],model,1,4786
+[戴尔 inspiron 灵越 14r 5437 系列],model,1,11773
+[联想 拯救者 y700 15寸],model,1,10868
+[戴尔 inspiron 灵越 15 5543 系列],model,1,11527
+[联想 小新 air 13 pro],model,1,11415
+[thinkpad p15v 2022],model,1,12713
+[联想 天骄 15 2022],model,1,12650
+[华硕 a56 系列],model,1,9622
+[机械革命 深海泰坦 x8ti plus],model,1,6080
+[华硕 s550 系列],model,1,10102
+[戴尔 inspiron 灵越 14 5405 系列],model,1,12280
+[华硕 v455 系列],model,1,10369
+[华硕 rog 魔霸4 plus],model,1,5288
+[戴尔 vostro成就 5460 系列],model,1,10060
+[惠普 小欧 14g 系列],model,1,5747
+[msi微星 武士 gf76],model,1,12442
+[联想 扬天 v310 14寸],model,1,6522
+[技嘉 g5 系列],model,1,6112
+[戴尔 xps 15 9520 系列],model,1,4750
+[联想 14w],model,1,6382
+[华硕 rog 枪神2s (s5c)],model,1,12467
+[神舟 战神 k610c],model,1,10014
+[戴睿 dere r16 pro 15.6英寸],model,1,30606
+[炫龙 毁灭者dd3 plus 系列],model,1,6915
+[机械革命 f1],model,1,6060
+[华硕 破晓 pro 2022],model,1,5152
+[联想 扬天 v530s 14寸],model,1,11855
+[msi微星 gl63],model,1,4498
+[戴尔 xps 17 9720 系列],model,1,4747
+[戴尔 inspiron 灵越 14 3459 系列],model,1,11002
+[戴尔 inspiron 灵越 15 5575 系列],model,1,4898
+[华硕 k401 系列],model,1,8290
+[联想 yoga 14c 2021],model,1,12346
+[thinkpad s2 2020],model,1,12380
+[戴尔 inspiron 灵越 13 5378 系列],model,1,4931
+[戴尔 latitude 3580 系列],model,1,4902
+[华硕 顽石 a407],model,1,12004
+[惠普 elitebook 840 g9 系列],model,1,5606
+[戴尔 inspiron 灵越 14 3421 系列],model,1,10035
+[联想 扬天 v340 15寸],model,1,6384
+[联想 b41 系列],model,1,7491
+[惠普 zbook create g7 系列],model,1,12345
+[联想 天逸 300 14寸],model,1,10875
+[联想 yoga air 13s 2022 carbon],model,1,6253
+[玄派 玄智星 墨影],model,1,30884
+[thinkpad yoga 260],model,1,7571
+[炫龙 毁灭者dc2 系列],model,1,6916
+[华硕 x455 系列],model,1,8190
+[华硕 f554l 系列],model,1,8197
+[华硕 u5000ux 系列],model,1,5189
+[戴尔 inspiron 灵越 14 5458 系列],model,1,10380
+[thinkpad p53s],model,1,4641
+[三星 900x3g],model,1,9944
+[机械师 创物者 15],model,1,6098
+[华硕 vivobook 14 x 2020],model,1,12369
+[戴尔 latitude e7440 系列],model,1,7573
+[thinkpad s2 2021],model,1,4611
+[联想 ideapad 300s 14寸],model,1,8241
+[联想 昭阳 k43c],model,1,7560
+[戴尔 vostro成就 5470 系列],model,1,10061
+[戴尔 inspiron 灵越 15 5555 系列],model,1,10393
+[神舟 战神 z7 2020],model,1,12648
+[联想 拯救者 r9000k 2022],model,1,6243
+[acer es1 13.3英寸],model,1,5120
+[华硕 飞行堡垒 kx53ve],model,1,5454
+[戴尔 inspiron 灵越 14 3437 系列],model,1,8302
+[惠普 elitebook 1040 g3 系列],model,1,7741
+[msi微星 gl62vr],model,1,4507
+[华硕 v556 系列],model,1,5456
+[戴尔 xps 13 9315 系列],model,1,4745
+[戴尔 latitude 5521 系列],model,1,26641
+[华硕 f550 系列],model,1,7673
+[中柏 ezbook s5 pro],model,1,12971
+[雷蛇 灵刃14],model,1,8406
+[thinkpad t14s 2024],model,1,30208
+[联想 天逸 100 14寸],model,1,10873
+[戴尔 inspiron 灵越 14 5468 系列],model,1,11522
+[msi微星 modern 14],model,1,12839
+[戴尔 inspiron 灵越 17r 5737 系列],model,1,10274
+[惠普 elitebook 845 g7 系列],model,1,5739
+[华硕 飞行堡垒 fx86fy],model,1,5372
+[索尼 vaio z 系列 2017年],model,1,7755
+[华硕 x454 系列],model,1,8184
+[机械师 曙光 15 mate],model,1,26672
+[thinkpad s2 2022],model,1,4565
+[acer aspire a715],model,1,5071
+[华硕 灵耀 v510],model,1,5510
+[联想 拯救者 y530],model,1,6409
+[华硕 rog 枪神2 plus (s7cm)],model,1,5370
+[技嘉 赢刃aero 15x 系列],model,1,6120
+[惠普 probook 440 g4 系列],model,1,11502
+[戴尔 precision 7560 系列],model,1,16807
+[华硕 v555 系列],model,1,10362
+[联想 天逸 310 14寸],model,1,11515
+[华硕 transformer book flip tp300],model,1,10398
+[惠普 暗影精灵10 slim 16寸 系列],model,1,16779
+[thinkpad x1 隐士 2020],model,1,4632
+[机械革命 极光 air],model,1,6041
+[thinkpad l540],model,1,9871
+[acer k4000],model,1,10250
+[thinkpad x230t],model,1,9888
+[攀升 maxbook p1],model,1,12420
+[alienware 17 r4],model,1,4453
+[惠普 probook 635 areao g7 系列],model,1,5666
+[神舟 战神 k710c],model,1,10022
+[机械师 创物者 15n],model,1,29729
+[华硕 无双 15],model,1,12623
+[华硕 灵耀 u5100],model,1,5482
+[机械革命 umi cc],model,1,6058
+[acer 非凡 s3x],model,1,12349
+[炫龙 x7 系列],model,1,10544
+[戴尔 inspiron 灵越 15 5545 系列],model,1,10391
+[炫龙 t3 pro 系列],model,1,11996
+[机械革命 无界 14 2023],model,1,7975
+[炫龙 毁灭者 x55 系列],model,1,6926
+[机械革命 s1],model,1,3481
+[中柏 ezbook x3 air],model,1,6957
+[华硕 r414uv 系列],model,1,5494
+[华硕 rog 魔霸5 plus],model,1,8238
+[华硕 飞行堡垒 zx53vd],model,1,8135
+[神舟 战神 s7 15.6寸],model,1,6723
+[alienware 17],model,1,4455
+[戴尔 latitude e6520 系列],model,1,10053
+[戴尔 latitude e7270 系列],model,1,7663
+[戴尔 inspiron 灵越 15 3537 系列],model,1,10041
+[alienware m18 r1],model,1,12887
+[华硕 灵耀pro 16],model,1,12505
+[华硕 飞行堡垒 8plus],model,1,5266
+[玄派 玄意星 星空],model,1,32430
+[戴尔 precision 5570 系列],model,1,12771
+[华硕 pro px554],model,1,8187
+[戴尔 vostro成就 5471 系列],model,1,4907
+[华硕 k455 系列],model,1,8169
+[华硕 vivobook 14 x415],model,1,5207
+[华硕 vm520 系列],model,1,5512
+[戴尔 inspiron 灵越 15 3582 系列],model,1,4863
+[联想 u41],model,1,7172
+[惠普 暗影精灵ⅱ代 plus 系列],model,1,6010
+[戴尔 inspiron 灵越 15 3542 系列],model,1,7572
+[惠普 星book pro 13 系列],model,1,8140
+[thinkpad thinkbook k4],model,1,4592
+[机械革命 深海泰坦 x7ti],model,1,6089
+[雷神 mixbook air],model,1,6176
+[thinkpad e531],model,1,9866
+[戴尔 xps 13 7390 二合一 系列],model,1,4859
+[惠普 elitebook 755 g5 系列],model,1,5849
+[vaio fh14 侍14],model,1,30873
+[壹号本 4铂金版],model,1,12449
+[戴尔 xps 15 9550 系列],model,1,4812
+[机械革命 蛟龙 17],model,1,12877
+[thinkpad t495s],model,1,4601
+[戴尔 vostro成就 3490 系列],model,1,12183
+[华硕 zenbook duo ux481],model,1,5307
+[三星 370r5v],model,1,9908
+[戴尔 xps 13 9365 二合一 系列],model,1,4943
+[华硕 vm590 系列],model,1,8163
+[terrans force t500 系列],model,1,16939
+[戴尔 inspiron 灵越 15 3515 系列],model,1,12555
+[华硕 rx410 系列],model,1,5463
+[惠普 zbook power g8 系列],model,1,5621
+[thinkpad z13],model,1,4550
+[华硕 灵耀 s406],model,1,11805
+[戴尔 latitude 3520 系列],model,1,4792
+[msi微星 gl62mvr],model,1,4500
+[acer 新蜂鸟 fun+],model,1,12635
+[acer travelmate p255],model,1,10756
+[雷蛇 灵刃15 精英版],model,1,12401
+[联想 小新 310 15寸],model,1,11841
+[thinkpad l480],model,1,4686
+[机械革命 深海幽灵 z3 air-s],model,1,7596
+[联想 yoga slim 7 pro],model,1,7938
+[thinkpad e490s],model,1,7898
+[雷神 t8000],model,1,6159
+[驰为 corebook x pro],model,1,30874
+[惠普 elitebook 865 g9 系列],model,1,12898
+[gpd win max 系列 2021年],model,1,12592
+[联想 ideapad 320 14寸],model,1,6478
+[华硕 pro px452],model,1,12146
+[神舟 战神 z9 2023],model,1,7863
+[机械革命 蛟龙 760 15.6英寸],model,1,7583
+[戴尔 inspiron 灵越 15 7580 系列],model,1,7370
+[惠普 folio 9470m 系列],model,1,9713
+[华硕 x540 系列],model,1,5489
+[技嘉 newaero 系列 15寸],model,1,6118
+[联想 y510p],model,1,10164
+[神舟 战神 k660e],model,1,10017
+[惠普 340 g5 系列],model,1,12226
+[雷神 911 st],model,1,6189
+[机械革命 深海泰坦 x2],model,1,6084
+[华硕 v580 系列],model,1,12120
+[神舟 战神 z7m 2018],model,1,6771
+[msi微星 绝影 18 ai studio 2024],model,1,27148
+[神舟 战神 k670c],model,1,6779
+[攀升maxbook p2 系列 15.6英寸],model,1,12507
+[惠普 光影精灵 傲腾版],model,1,36875
+[华硕 w409l 系列],model,1,8191
+[雷蛇 blade stealth 灵刃潜行版 系列 12寸],model,1,10722
+[acer 蜂鸟 fun plus s50],model,1,12782
+[thinkpad e575],model,1,4699
+[惠普 暗影精灵6 air 系列],model,1,12300
+[华硕 rog 枪神5 plus],model,1,7277
+[戴尔 latitude e5270 系列],model,1,8029
+[机械师 machcreator-mci1p 系列],model,1,37042
+[惠普 暗影精灵ⅰ代 系列],model,1,10244
+[戴尔 latitude e6540 系列],model,1,7473
+[戴尔 inspiron 灵越 15 3585 系列],model,1,4864
+[华硕 飞行堡垒 fx63vm],model,1,5430
+[msi微星 gv62],model,1,4505
+[realme book 增强版 14英寸],model,1,12610
+[华硕 rog 超神2s],model,1,5359
+[thinkpad t570],model,1,4573
+[玄派 玄智星系列 22年],model,1,29923
+[华硕 w40 系列],model,1,10185
+[thinkpad t530],model,1,8048
+[acer es1 14英寸],model,1,12966
+[acer 非凡 s3],model,1,12521
+[acer 非凡 go 14 2024],model,1,26352
+[msi微星 gl72m],model,1,4512
+[华硕 rog 魔霸3 plus],model,1,5305
+[戴尔 inspiron 灵越 14 7447 系列],model,1,10384
+[联想 拯救者 y9000x 2021],model,1,12674
+[戴尔 vostro成就 3583 系列],model,1,11952
+[惠普 envy 15 系列],model,1,11669
+[联想 ideapad 510s 14寸],model,1,8240
+[惠普 348 g3 系列],model,1,7736
+[acer 优跃 16],model,1,26966
+[海尔 简爱 s14 pro 系列],model,1,12381
+[雷神 911-m1c],model,1,6220
+[神舟 战神 z7 2016],model,1,6753
+[机械师 t57],model,1,7733
+[华硕 n550 系列],model,1,10086
+[惠普 elitebook 835 g10 系列],model,1,31331
+[惠普 战66 pro 15 g2 系列],model,1,5867
+[戴尔 vostro成就 3549 系列],model,1,4961
+[戴尔 latitude 7400 系列],model,1,12082
+[戴尔 vostro成就 3590 系列],model,1,12168
+[lg gram 16 2021],model,1,12703
+[惠普 250 g9 系列],model,1,5610
+[华硕 灵耀 deluxe14 (u4700)],model,1,5290
+[惠普 probook x360 11 g2 ee],model,1,8308
+[华硕 p453u 系列],model,1,5445
+[索尼 svt 14 系列],model,1,10747
+[华硕 rog 魔霸5r plus],model,1,5198
+[戴尔 precision 3541 系列],model,1,12272
+[华硕 r454 系列],model,1,10412
+[神舟 战神 g7m],model,1,6765
+[msi微星 泰坦 18 pro],model,1,28845
+[华硕 a401 系列],model,1,10456
+[雷蛇 灵刃15 2022],model,1,12879
+[惠普 暗影精灵10 slim 系列],model,1,16778
+[msi微星 gt73vr],model,1,4526
+[alienware m15 r4],model,1,4442
+[戴尔 inspiron 灵越 15 5547 系列],model,1,10303
+[戴尔 vostro成就 7570 系列],model,1,4917
+[thinkpad p14s 2021],model,1,4618
+[msi微星 gs66],model,1,12277
+[惠普 14q 系列],model,1,11616
+[华硕 r409 系列],model,1,8004
+[神舟 战神 k610d],model,1,10015
+[惠普 spectre 13 系列],model,1,5710
+[华硕 c520u 系列],model,1,11695
+[联想 扬天 v310 15寸],model,1,11442
+[联想 flex3 14],model,1,10880
+[联想 天逸 300 15寸],model,1,10874
+[联想 y400],model,1,9698
+[联想 拯救者 y9000k 2019],model,1,6288
+[acer 蜂鸟 swift1 sf113],model,1,11650
+[thinkpad x1 tablet],model,1,12661
+[三星 500r3m],model,1,11634
+[华硕 无畏 pro16 2024],model,1,28559
+[华硕 rog 冰刃4 新锐],model,1,12144
+[联想 yoga 530 14寸],model,1,6434
+[戴尔 inspiron 灵越 15 7500 系列],model,1,12323
+[terrans force t700 系列],model,1,4540
+[惠普 暗影精灵5 plus 系列],model,1,12072
+[戴尔 vostro成就 7510 系列],model,1,12640
+[雷神 g7000],model,1,6180
+[技嘉 aero 系列 17寸],model,1,12575
+[快速者 s9 15.6寸],model,1,12552
+[thinkpad s431],model,1,9879
+[炫龙 炎魔t50 系列],model,1,11572
+[alienware 18],model,1,9842
+[华硕 灵耀 deluxe14 (u4300)],model,1,11896
+[联想 小新 v1070],model,1,10278
+[thinkpad r490],model,1,4671
+[惠普 小欧 14 系列],model,1,12524
+[联想 s410],model,1,10151
+[联想 ideapad y700 14寸],model,1,6462
+[机械师 machcreator],model,1,12247
+[雷神 st plus],model,1,6160
+[华硕 transformer pro],model,1,12156
+[神舟 战神 g7t],model,1,12351
+[thinkpad t420],model,1,7559
+[戴尔 latitude 3540 2024],model,1,32552
+[炫龙 毁灭者dd pro 系列],model,1,11535
+[联想 z50],model,1,8309
+[戴睿 dere pad pro],model,1,17499
+[华硕 灵耀x],model,1,5396
+[联想 u330],model,1,8556
+[联想 小新 310 经典版],model,1,10863
+[戴尔 vostro成就 5568 系列],model,1,11491
+[华硕 rog 超神2 g7bi],model,1,5215
+[联想 y40p],model,1,6472
+[戴尔 inspiron 灵越 15 7566 系列],model,1,4965
+[msi微星 gp62mvr],model,1,4523
+[神舟 战神 z7-pro],model,1,6824
+[华硕 rog 枪神2s plus (s7cw)],model,1,11981
+[华硕 rog 枪神 plus],model,1,5413
+[联想 b4400],model,1,10128
+[华硕 rog s5 系列],model,1,5258
+[戴尔 precision 3490 系列],model,1,27053
+[惠普 probook 430 g6 系列],model,1,7575
+[惠普 240 g7 系列],model,1,5836
+[华硕 u44 系列],model,1,9714
+[华硕 飞行堡垒 nx580vd],model,1,11685
+[微软 surface book 3 15寸],model,1,12296
+[荣耀 magicbook 14 se 2020],model,1,7787
+[联想 拯救者 y720],model,1,6484
+[华硕 顽石 y5200],model,1,12148
+[戴尔 inspiron 灵越 13 7391 二合一 系列],model,1,4844
+[机械革命 蛟龙 17 pro],model,1,6036
+[炫龙 a60l 系列],model,1,9778
+[acer 传奇 14寸],model,1,12537
+[华硕 无双 14],model,1,12620
+[msi微星 绝影 gs77],model,1,12844
+[炫龙 毁灭者dc 系列],model,1,11416
+[华硕 w50 系列],model,1,10267
+[惠普 小欧 15 系列],model,1,5663
+[华硕 k46 系列],model,1,8213
+[thinkpad thinkbook 14p 2022],model,1,4558
+[机械师 黑鹰 f57],model,1,10643
+[雷神 911-s2c],model,1,10894
+[戴尔 inspiron 灵越 14 7467 系列],model,1,11521
+[联想 k42],model,1,11779
+[msi微星 泰坦 16 2024],model,1,26314
+[惠普 小欧 15g 系列],model,1,12403
+[lg gram 16 2024],model,1,27372
+[戴尔 latitude 3301 系列],model,1,12216
+[华硕 vivobook s 15 oled],model,1,17076
+[神舟 战神 z10],model,1,12326
+[三星 玄龙骑士 8500gm],model,1,11517
+[联想 小新 air 14 pro],model,1,12719
+[炫龙 毁灭者dc2 畅玩版 系列],model,1,12041
+[华硕 顽石 a580],model,1,11727
+[alienware 15 r2],model,1,8059
+[lg gram 14 2023],model,1,8334
+[戴尔 m4600 系列],model,1,10621
+[华硕 破晓 pro 14],model,1,5162
+[acer t5000],model,1,10329
+[樱本 d16],model,1,30885
+[alienware m18 r2],model,1,17243
+[alienware 13],model,1,4457
+[msi微星 gt62vr],model,1,11480
+[alienware 17 r2],model,1,4451
+[惠普 probook 445 g7 系列],model,1,16611
+[联想 小新 pro 13 2021],model,1,12438
+[联想 b5400],model,1,10123
+[微软 surface go 4],model,1,17466
+[戴尔 vostro成就 2421 系列],model,1,10058
+[华硕 破晓3 2023 14寸],model,1,26368
+[戴尔 inspiron 灵越 14 5442 系列],model,1,11472
+[东芝 s40t-a 系列],model,1,10314
+[华硕 rog gl553v 系列],model,1,5470
+[戴尔 latitude 7430 系列],model,1,12727
+[惠普 246 g8 系列],model,1,5654
+[戴尔 latitude 3470 系列],model,1,7671
+[thinkpad thinkbook k3],model,1,4588
+[惠普 elitebook 655 g10 系列],model,1,32526
+[thinkpad p16s 2022],model,1,12963
+[惠普 elitebook x360 g4 系列],model,1,5794
+[惠普 战66 pro 13 g2 系列],model,1,5823
+[索尼 svf 15 系列],model,1,10237
+[thinkpad x1 titanium],model,1,4615
+[惠普 星 x360 系列],model,1,5755
+[戴尔 latitude e5440 系列],model,1,8314
+[中柏 ezbook s5 go],model,1,26952
+[华硕 vivobook 16],model,1,26492
+[thinkpad x13 yoga gen 2],model,1,36628
+[lg gram 15 2020],model,1,15082
+[京东京造 jdbook 14英寸],model,1,6122
+[惠普 elitebook 630 g9 系列],model,1,5608
+[惠普 246 g7 系列],model,1,8351
+[戴尔 inspiron 灵越 14 5443 系列],model,1,11506
+[thinkpad p15v 2022 4k屏],model,1,12857
+[神舟 战神 zx6ti],model,1,6737
+[惠普 240 g10 系列],model,1,26284
+[惠普 envy 14 进阶版 系列],model,1,12825
+[戴尔 inspiron 灵越 15 5509 系列],model,1,12338
+[惠普 probook 430 g5 系列],model,1,11817
+[戴尔 latitude 7200 系列],model,1,4828
+[华硕 rog 冰刃7 双屏],model,1,12924
+[戴尔 precision 5560 系列],model,1,4730
+[华硕 灵耀 x2 duo (ux4000)],model,1,5302
+[惠普 暗影精灵ⅳ代 plus 系列],model,1,11808
+[三星 870z5g],model,1,9942
+[华硕 rog flow z13 (gz301)],model,1,7447
+[神舟 战神 x5],model,1,6802
+[联想 yoga s730],model,1,12128
+[惠普 锐pro 14 系列],model,1,8400
+[华硕 dx882 系列],model,1,5385
+[联想 ideapad 3 15寸],model,1,6312
+[雷神 五代 新911],model,1,6186
+[thinkpad thinkbook 16p 2022],model,1,4557
+[神舟 战神 tx6ti],model,1,6729
+[acer 蜂鸟 swift3 sf315],model,1,5104
+[联想 ideapad y700 17寸],model,1,6447
+[炫龙 毁灭者p6 系列],model,1,11573
+[中柏 ezpad i7],model,1,6958
+[华硕 灵耀 13],model,1,5267
+[戴尔 vostro成就 3520 系列],model,1,4734
+[火影 地狱火 x5 系列],model,1,6028
+[吾空 x14 pro],model,1,32824
+[华硕 fx504g 系列],model,1,5365
+[thinkpad l14 gen4],model,1,16629
+[戴尔 inspiron 灵越 12 5280 系列],model,1,4909
+[华硕 zenbook 14x],model,1,15084
+[惠普 envy 17 非触控版 系列],model,1,5734
+[惠普 pavilion 16 系列],model,1,5688
+[戴尔 vostro成就 5590 系列],model,1,12166
+[炫龙 kp2 金属狂潮 系列 2代],model,1,12035
+[联想 ideapad d330],model,1,12044
+[华硕 rog 魔霸2],model,1,5333
+[acer travelmate tx40],model,1,5143
+[惠普 laptop 15s 系列],model,1,26588
+[雷神 911m-m3],model,1,6207
+[戴尔 g7 7700 系列],model,1,12289
+[戴尔 latitude 7450 系列],model,1,37689
+[戴尔 vostro成就 7500 系列],model,1,12316
+[神舟 战神 z7m 2015],model,1,7308
+[神舟 精盾 u63e1],model,1,6763
+[机械革命 蛟龙 75i],model,1,8091
+[华硕 r510 系列],model,1,8219
+[华硕 rog zephyrus g15],model,1,5239
+[联想 ideapad slim 3 15寸],model,1,26774
+[戴尔 precision 3551 系列],model,1,4818
+[雷神 911m-m6b],model,1,6221
+[华硕 rog gx501vs 系列],model,1,5383
+[戴尔 latitude 7340 系列],model,1,12946
+[惠普 elitebook 840r g4 系列],model,1,5791
+[联想 小新 14 360 ai元启],model,1,37059
+[三星 900x3l],model,1,10482
+[戴尔 inspiron 灵越 15r 5521 系列],model,1,10037
+[惠普 255 g9 系列],model,1,12875
+[戴尔 precision 3581 系列],model,1,12952
+[acer travelmate p446],model,1,10340
+[神舟 精盾 t65],model,1,6807
+[惠普 probook 445 g6 系列],model,1,11986
+[acer 非凡 s3 plus],model,1,12441
+[技嘉 赢刃aero 系列 15寸],model,1,11642
+[msi微星 gp63],model,1,11807
+[雷神 911m 野王],model,1,6157
+[联想 yoga 710 11寸],model,1,11363
+[acer 3820],model,1,8863
+[thinkpad x1 yoga 2020],model,1,12273
+[华硕 zenbook u305],model,1,10307
+[acer travelmate tx420],model,1,5059
+[戴尔 inspiron 灵越 17 5759 系列],model,1,10427
+[acer a515],model,1,11819
+[三星 900x3k],model,1,10481
+[壹号本 壹号工程师pc a1],model,1,12525
+[雷神 911 pro 钛空2代],model,1,6170
+[神舟 战神 k620c],model,1,10016
+[惠普 星book 15 2024 系列],model,1,18564
+[alienware m17x],model,1,9406
+[惠普 probook 455r 系列],model,1,5845
+[壹号本 4 系列],model,1,12425
+[acer 传奇 young],model,1,12612
+[thinkpad s1 yoga],model,1,9872
+[戴尔 precision 7520 系列],model,1,11758
+[攀升 暴风龙 p3],model,1,7919
+[联想 ideapad flex 5 14寸],model,1,6279
+[惠普 probook 650 g8 系列],model,1,7961
+[联想 ideapad 1 14],model,1,36612
+[雷神 t-book 16],model,1,6146
+[lg gram 17 2023],model,1,7908
+[联想 ideapad s130 14寸],model,1,6439
+[英特尔 qc7 游戏本 系列],model,1,6941
+[联想 z40],model,1,10281
+[华硕 vivobook s400],model,1,9509
+[thinkpad x13s 2022],model,1,4556
+[雷蛇 灵刃15 2020],model,1,6135
+[华硕 fl8800 系列],model,1,5237
+[华硕 l410],model,1,13069
+[acer travelmate p259],model,1,11570
+[联想 yoga book 9i  ai元启 13寸],model,1,37839
+[terrans force dr521 15.6寸],model,1,30499
+[华硕 vivobook flip tp301],model,1,10573
+[thinkpad thinkbook 13x 2022],model,1,4552
+[惠普 zbook power g7 系列],model,1,5717
+[联想 miix 5（miix 510）],model,1,6517
+[华硕 vivobook s300],model,1,9739
+[三星 q468],model,1,9892
+[戴尔 latitude 5591 系列],model,1,8063
+[thinkpad r14],model,1,12354
+[惠普 probook 440 g3 系列],model,1,7652
+[炫龙 毁灭者kp 系列],model,1,6921
+[aierxuan 焰魔 g2 系列],model,1,4715
+[thinkpad p1 隐士 2022],model,1,12792
+[华硕 n56 系列],model,1,9532
+[华硕 pro453],model,1,8228
+[联想 ideapad 500s 15寸],model,1,10877
+[联想 yoga c930],model,1,6334
+[戴尔 inspiron 灵越 15 7577 系列],model,1,11726
+[七彩虹 将星x17 pro max],model,1,13033
+[惠普 15g 系列],model,1,5797
+[联想 k4350],model,1,10139
+[华硕 transformer book tx300],model,1,10107
+[华硕 k56 系列],model,1,10084
+[华硕 pro px552],model,1,10566
+[alienware 17 r3],model,1,4452
+[acer 蜂鸟 swift5 sf514],model,1,12112
+[thinkpad s2 yoga 2021],model,1,12553
+[msi微星 星际战神 gl76],model,1,12469
+[火影 t5 系列],model,1,12452
+[gpd micro pc 系列],model,1,12069
+[acer ek],model,1,10195
+[lg gram 17 2021],model,1,3898
+[机械革命 无界 16 pro],model,1,6043
+[惠普 245 g4 系列],model,1,10351
+[戴尔 precision 5540 系列],model,1,8051
+[华硕 rog 冰刃5 双屏],model,1,5193
+[神舟 战神 t7 2023],model,1,7992
+[惠普 elitebook x360 g6 系列],model,1,5696
+[戴尔 inspiron 灵越 14 7466 系列],model,1,4951
+[惠普 光影精灵6 pro 系列],model,1,5729
+[戴尔 inspiron 灵越 14 5447 系列],model,1,10370
+[惠普 elitebook 855 g8 系列],model,1,5682
+[惠普 probook 446 系列],model,1,6003
+[神舟 战神 k660d],model,1,10259
+[联想 yoga 6 pro],model,1,6474
+[戴尔 g7 7500 系列],model,1,12308
+[惠普 elite x2 g8 系列],model,1,15550
+[华硕 飞行堡垒 zx60vd],model,1,5415
+[惠普 elitebook 828 g4 系列],model,1,5909
+[戴尔 xps 15 9575 系列],model,1,4785
+[thinkpad l15 gen2],model,1,7461
+[机械革命 深海泰坦 x9ti-r],model,1,7578
+[联想 yoga 700 14寸],model,1,6514
+[华硕 n46 系列],model,1,9626
+[三星 530u3c],model,1,10828
+[联想 ideapad 510 15寸],model,1,11569
+[联想 yoga book 9i ai元启 14寸],model,1,38141
+[华硕 飞行堡垒 zx50vw],model,1,10850
+[thinkpad t520i],model,1,8991
+[lg gram wqxga 系列 17寸],model,1,3899
+[机械师 创物者 young 15],model,1,8305
+[戴尔 precision 3591 系列],model,1,30229
+[华硕 rog g58],model,1,10448
+[华硕 pro pu404],model,1,5419
+[联想 b43 系列],model,1,10920
+[联想 miix 720],model,1,12415
+[华硕 rog gl502vm 系列],model,1,5472
+[惠普 256 g4 系列],model,1,10378
+[戴尔 vostro成就 5320 系列],model,1,4757
+[机械革命 深海泰坦 x6ti],model,1,10693
+[技嘉 aorus 17g 系列],model,1,6116
+[惠普 240 g8 系列],model,1,5711
+[戴尔 inspiron 灵越 15 5542 系列],model,1,10036
+[terrans force t5 系列],model,1,30872
+[惠普 probook 440 g7 系列],model,1,12234
+[戴尔 inspiron 灵越 14 5482 系列],model,1,11938
+[联想 ideapad 110 17寸],model,1,13103
+[acer travelmate p248],model,1,10330
+[戴尔 inspiron 灵越 14r 7420 系列],model,1,10031
+[戴尔 xps 17 9730 系列],model,1,12934
+[炫龙 t3 ti 系列],model,1,12019
+[惠普 elitebook 850 g7 系列],model,1,5679
+[戴睿 dere r16 pro 16英寸],model,1,12985
+[华硕 pro pu551],model,1,8171
+[华硕 zenbook ux303],model,1,10227
+[联想 小新 v3000],model,1,10248
+[雷神 911-s6],model,1,6218
+[华硕 灵耀 3],model,1,5538
+[华硕 s56 系列],model,1,9573
+[惠普 elitebook 850 g5 系列],model,1,5668
+[华硕 zenbook flip 14],model,1,5261
+[戴尔 latitude 5430 系列],model,1,12723
+[神舟 精盾 t65e],model,1,11812
+[thinkpad s5],model,1,9877
+[联想 v480],model,1,9611
+[雷神 911-e1],model,1,10896
+[msi微星 gf75],model,1,11992
+[华硕 灵耀x 双屏pro 15.6英寸],model,1,5179
+[thinkpad l380],model,1,11889
+[戴尔 vostro成就 5300 系列],model,1,4767
+[thinkpad z16 gen2],model,1,16635
+[msi微星 gp72mvr],model,1,11680
+[戴尔 vostro成就 3750 系列],model,1,9196
+[雷蛇 灵刃16 2025],model,1,37311
+[msi微星 ge63vr],model,1,4509
+[机械革命 深海泰坦 x6ti-pro],model,1,11638
+[华硕 tuf dash f15 2021],model,1,12821
+[联想 k4450],model,1,8251
+[acer travelmate p40],model,1,12320
+[华硕 灵耀 u3600],model,1,12665
+[雷神 911masterbook 2代],model,1,6171
+[戴尔 inspiron 灵越 16 5625],model,1,7893
+[三星 450r4v],model,1,9919
+[联想 yoga 720 15寸],model,1,11719
+[华硕 zenbook ux410],model,1,11513
+[海尔 简爱 s15 pro 系列],model,1,12419
+[戴尔 precision 5510 系列],model,1,11633
+[惠普 zbook 17 g3 系列],model,1,11956
+[雷神 911黑幽灵],model,1,6194
+[联想 ideapad gaming 3],model,1,6290
+[thinkpad x1 yoga 2019],model,1,4663
+[机械革命 s14],model,1,6053
+[acer travelmate p256],model,1,10337
+[玩家战神 创世者 16],model,1,30186
+[三星 551xaa],model,1,11941
+[thinkpad t495],model,1,4651
+[华硕 rog 魔霸9],model,1,37305
+[华硕 灵耀x 凌锋],model,1,12393
+[华硕 tp461],model,1,5414
+[三星 470r5e],model,1,9925
+[雷神 911m-m5ta],model,1,6203
+[酷比魔方 iwork gt 11寸],model,1,12698
+[thinkpad l390],model,1,12028
+[msi微星 gs75],model,1,11995
+[华硕 vm400 系列],model,1,10117
+[华硕 rog s7v 系列],model,1,12485
+[惠普 spectre x360 14 2024],model,1,26695
+[惠普 probook 430 g7 系列],model,1,5738
+[三星 3500el],model,1,11635
+[华硕 fl5000c 系列],model,1,10760
+[惠普 暗影精灵8 plus 高能版 系列],model,1,38659
+[联想 yoga book 2],model,1,6405
+[戴尔 vostro成就 5515 系列],model,1,12427
+[联想 y50c],model,1,10260
+[炫龙 炎魔t50ti 系列],model,1,11512
+[华硕 x452 系列],model,1,10349
+[惠普 tablet 11 系列],model,1,27181
+[acer travelmate spin b3],model,1,17419
+[雷神 911-m5ta],model,1,6161
+[华硕 proart 创16 2023],model,1,12938
+[机械革命 深海泰坦 x6ti-m2 pro],model,1,16775
+[戴尔 inspiron 灵越 13 7378 系列],model,1,11411
+[攀升 maxbook p2 pro],model,1,12752
+[神舟 战神 gx7],model,1,10507
+[东芝 l50-a 系列],model,1,9822
+[thinkpad t15p gen2],model,1,17540
+[acer e5 17寸],model,1,12790
+[acer 掠夺者 刀锋 500],model,1,5080
+[联想 ideapad 520 15寸],model,1,6460
+[联想 k41],model,1,10291
+[惠普 probook 470 g5 系列],model,1,5619
+[惠普 elitebook 745 g6 系列],model,1,5740
+[雷神 t-book 14 2023],model,1,12990
+[戴尔 inspiron 灵越 17 5748 系列],model,1,11016
+[acer travelmate p253],model,1,5136
+[alienware 13 r2],model,1,8058
+[惠普 spectre x360 15 系列],model,1,5795
+[联想 yoga 3 14寸],model,1,11846
+[雷神 911mr],model,1,6156
+[戴尔 latitude e6430 系列],model,1,7476
+[戴尔 vostro成就 5481 系列],model,1,12071
+[戴睿 v14 pro 系列],model,1,31292
+[thinkpad l590],model,1,4660
+[thinkpad l14 gen3],model,1,12830
+[联想 e51],model,1,8183
+[戴睿 dere r12 系列],model,1,12357
+[惠普 战x 13 g2 系列],model,1,5832
+[惠普 envy 4 系列],model,1,9526
+[机械革命 s1 air],model,1,6077
+[戴尔 inspiron 灵越 15 7579 系列],model,1,11582
+[神舟 战神 z8 2017],model,1,7947
+[东芝 c50-a 系列],model,1,9819
+[三星 玄龙骑士 810g5m],model,1,7853
+[机械师 m510a],model,1,10594
+[戴尔 inspiron 灵越 11 3180 系列],model,1,11870
+[thinkpad t430s],model,1,9607
+[戴尔 xps 15 系列],model,1,10826
+[acer travelmate p449],model,1,11863
+[联想 v570],model,1,8489
+[戴尔 vostro成就 3558 系列],model,1,10403
+[雷蛇 灵刃17 专业版 系列 17.3英寸],model,1,6132
+[雷神 911-s2],model,1,10897
+[thinkpad thinkbook plus hybrid],model,1,34801
+[华硕 k751 系列],model,1,10273
+[thinkpad w530],model,1,7549
+[msi微星 gs63],model,1,11542
+[联想 yoga s940],model,1,6429
+[thinkpad t540p],model,1,9882
+[惠普 elite x360 830 g9 系列],model,1,32570
+[acer s30],model,1,5085
+[戴尔 vostro成就 3449 系列],model,1,11387
+[雷神 911s],model,1,11939
+[联想 yoga air 14s 2022],model,1,6261
+[联想 昭阳 k4],model,1,12426
+[联想 昭阳 e53],model,1,6424
+[thinkpad x1 extreme gen5],model,1,12847
+[戴尔 precision 3540 系列],model,1,12050
+[戴尔 inspiron 灵越 15 7548 系列],model,1,8033
+[acer 蜂鸟 spin5],model,1,5056
+[戴尔 inspiron 灵越 15 5565 系列],model,1,11489
+[华硕 无畏 14],model,1,12779
+[戴尔 vostro成就 3515 系列],model,1,39415
+[海尔 x3 pro 系列],model,1,12383
+[火影 t9x],model,1,13020
+[thinkpad s230u twist],model,1,9533
+[三星 450r4q],model,1,9918
+[惠普 envy 16 系列],model,1,12724
+[戴尔 latitude e7470 系列],model,1,7478
+[thinkpad l560],model,1,11410
+[联想 昭阳 k14],model,1,12615
+[惠普 elitebook x360 1030 g7 系列],model,1,27004
+[华硕 rog 冰刃4 双屏],model,1,5241
+[联想 yoga slim 7 pro x],model,1,15074
+[acer conceptd 3],model,1,5061
+[戴尔 g5 se 5505 系列],model,1,12295
+[联想 k20],model,1,10221
+[华硕 rog gfx72 系列],model,1,11606
+[acer m5],model,1,5050
+[戴尔 latitude 3310 系列],model,1,4795
+[alienware 14],model,1,9841
+[戴尔 14 plus 2025],model,1,36806
+[戴尔 latitude 3350 系列],model,1,4854
+[acer 非凡 s3 pro 2022],model,1,8007
+[神舟 精盾 g97e],model,1,11813
+[thinkpad s5 yoga 15],model,1,10275
+[acer 非凡 x],model,1,12653
+[thinkpad s3 yoga 14],model,1,9874
+[联想 y50p],model,1,10577
+[东芝 c850d 系列],model,1,9671
+[thinkpad p52s],model,1,7637
+[戴尔 vostro成就 3405 系列],model,1,4840
+[三星 500r5l],model,1,10222
+[华硕 proart 创13 2024],model,1,35855
+[联想 昭阳 k3],model,1,6366
+[华硕 tuf dash f15 2022],model,1,31496
+[华硕 顽石 r421],model,1,11900
+[戴尔 inspiron 灵越 13 7348 系列],model,1,10824
+[雷神 911gt-y6],model,1,11605
+[机械革命 f6],model,1,6050
+[lg gram 15 2018],model,1,4471
+[戴睿 rx7],model,1,32741
+[戴尔 vostro成就 5560 系列],model,1,10062
+[惠普 elitebook folio 1040 g1 系列],model,1,5670
+[炫龙 a4 系列],model,1,12519
+[戴尔 latitude e5550 系列],model,1,10443
+[攀升 smartbook p1 pro+],model,1,12548
+[神舟 战神 z7m 2016],model,1,12188
+[acer 暗影骑士 龙 17.3英寸],model,1,12549
+[惠普 zbook 15 系列],model,1,10371
+[雷神 911mt 黑武士2],model,1,6169
+[驰为 gemibook plus],model,1,39691
+[联想 小新 v1000],model,1,10233
+[三星 3500em],model,1,7813
+[华硕 rog strix g15 g512],model,1,12962
+[雷神 st-pro],model,1,6228
+[gpd pocket2 系列],model,1,12015
+[三星 galaxy book3 pro 360],model,1,12979
+[acer travelmate p238],model,1,10336
+[东芝 l40-a 系列],model,1,9820
+[雷蛇 blade pro 系列 17寸],model,1,9776
+[微软 surface book 3 13.5寸],model,1,6870
+[机械革命 umi air ⅱ],model,1,6067
+[京东京造  jdbook pro 14英寸],model,1,12606
+[戴尔 precision 7720 系列],model,1,4930
+[戴睿 v14 plus 系列],model,1,31274
+[雷神 911m-m6a],model,1,6224
+[惠普 战66 8代 16寸 系列],model,1,38717
+[炫龙 炎魔t1 系列],model,1,11194
+[机械师 曙光 15 air],model,1,12896
+[msi微星 gt63],model,1,12088
+[惠普 240 g9 系列],model,1,12765
+[戴尔 inspiron 灵越 13 5300 系列],model,1,12290
+[惠普 probook 650 g2 系列],model,1,8031
+[雷神 911-t2b],model,1,6215
+[壹号本 a1 pro 7寸],model,1,12586
+[联想 y580],model,1,9549
+[火影 t5v 系列 15寸],model,1,6018
+[戴尔 vostro成就 5581 系列],model,1,11875
+[联想 yoga 700 11寸],model,1,10308
+[联想 启天 d10],model,1,13025
+[惠普 256 g10 系列],model,1,8016
+[机械师 创物者 16],model,1,12899
+[联想 y70],model,1,10162
+[lg gram 14 非触控版 系列],model,1,3895
+[华硕 x456 系列],model,1,12233
+[神舟 精盾 k470p],model,1,9038
+[雷神 iger l1],model,1,12511
+[戴睿 v15air 系列],model,1,12334
+[惠普 246 g4 系列],model,1,10352
+[联想 g500],model,1,9725
+[华硕 灵耀13 2024],model,1,30346
+[alienware 16 area-51],model,1,39089
+[戴尔 g7 7790 系列],model,1,4881
+[壹号本 one-gx1 pro 系列],model,1,6933
+[惠普 4341s 系列],model,1,9632
+[三星 450r4j],model,1,9917
+[惠普 战x 14 2024],model,1,30948
+[terrans force dr711],model,1,34842
+[三星 galaxy book3 ultra],model,1,13012
+[lg gram pro 16 2025],model,1,39150
+[华硕 灵锐 15],model,1,12376
+[戴尔 inspiron 灵越 13 5379 系列],model,1,4900
+[吾空 k6],model,1,26278
+[海尔 简爱 s16 pro 系列],model,1,31398
+[msi微星 gl73],model,1,4495
+[acer travelmate x349],model,1,11488
+[戴尔 latitude 5310 系列],model,1,12297
+[微软 surface book],model,1,6880
+[机械师 创物者 x 14],model,1,7889
+[戴尔 latitude 5491 系列],model,1,4880
+[thinkpad l13 yoga gen 2],model,1,13027
+[联想 yoga a12],model,1,6497
+[联想 ideapad 100 15寸],model,1,10883
+[戴尔 inspiron 灵越 16 7620 系列],model,1,4775
+[华硕 g551 系列],model,1,5550
+[acer 5745g],model,1,8899
+[华硕 rog gl551 系列],model,1,11500
+[火影 地狱火 x6 系列],model,1,11838
+[机械革命 旷世 x],model,1,6034
+[msi微星 冒险家 16 ai+],model,1,38699
+[联想 u31],model,1,10284
+[领睿 终结者 s1pro 系列],model,1,6526
+[惠普 elitebook 1050 g1 系列],model,1,11876
+[联想 yoga 3 pro],model,1,10165
+[戴尔 latitude e5570 系列],model,1,4941
+[华硕 顽石 x500],model,1,12052
+[lg gram 16 2023],model,1,3897
+[戴尔 inspiron 灵越 11 3147 系列],model,1,10361
+[机械革命 深海泰坦 x8ti-a],model,1,16652
+[华硕 r556 系列],model,1,7674
+[三星 450r5u],model,1,9922
+[惠普 348 g4 系列],model,1,5876
+[三星 900x3d],model,1,9648
+[神舟 战神 g9],model,1,6781
+[惠普 probook 440 g2 系列],model,1,9964
+[三星 915s3g],model,1,10485
+[三星 3445vx],model,1,9915
+[七彩虹 源 n14 2025],model,1,40733
+[华硕 飞行堡垒 fx86sm],model,1,11867
+[华硕 k456u 系列],model,1,10567
+[惠普 250 g4 系列],model,1,12815
+[华硕 天选 plus],model,1,12284
+[戴尔 inspiron 灵越 14 5439 系列],model,1,11365
+[戴尔 xps 12 9250 二合一 系列],model,1,10827
+[惠普 probook 430 g2 系列],model,1,9962
+[thinkpad thinkbook 14s yoga],model,1,8002
+[雷神 911m-m2a],model,1,6208
+[thinkpad yoga 12],model,1,11504
+[三星 700g7c],model,1,9662
+[联想 拯救者 legion 5],model,1,12413
+[戴尔 inspiron 灵越 17 7737 系列],model,1,10428
+[联想 昭阳 e41-80],model,1,10862
+[戴尔 vostro成就 3546 系列],model,1,4940
+[东芝 l500 系列],model,1,9092
+[七彩虹 隐星 p15 25],model,1,40885
+[thinkpad t530i],model,1,9881
+[壹号本 onemix 3 pro 系列],model,1,6938
+[华硕 w518ld 系列],model,1,10193
+[技嘉 aorus 15x 2023款],model,1,29632
+[微软 surface pro 5 lte版],model,1,11857
+[惠普 6570b 系列],model,1,9992
+[机械师 曙光 16],model,1,6095
+[戴睿 极光 x14],model,1,28370
+[惠普 光影精灵6 plus 系列],model,1,5720
+[戴尔 precision 7750 系列],model,1,7896
+[戴尔 inspiron 灵越 14r 5421 系列],model,1,10030
+[联想 miix 4（miix 700）],model,1,6499
+[惠普 elitebook 835 g8 系列],model,1,5643
+[联想 天骄 14 2022],model,1,12663
+[东芝 u40t-a 系列],model,1,10668
+[攀升 暴风龙p3 护眼版],model,1,13013
+[雷神 911-s2g],model,1,11466
+[海尔 7g-5 系列],model,1,9806
+[戴尔 inspiron 灵越 14 3465 系列],model,1,11610
+[华硕 zenbook 14 (ux435)],model,1,40805
+[惠普 256 g5 系列],model,1,6004
+[acer travelmate p258],model,1,10752
+[msi微星 ge62vr],model,1,11520
+[戴尔 inspiron 灵越 13 7386 系列],model,1,4871
+[戴尔 vostro成就 3582 系列],model,1,4875
+[机械革命 旷世 x 2025],model,1,38607
+[thinkpad p51],model,1,4683
+[机械师 f117-x],model,1,6099
+[雷神 911-m5b],model,1,12109
+[联想 ideapad 300 17寸],model,1,6408
+[联想 m4400s],model,1,10142
+[雷神 911 dino],model,1,11822
+[华硕 rog strix s5vt],model,1,10851
+[神舟 精盾 u45a2],model,1,15148
+[thinkpad t15],model,1,4619
+[神舟 战神 k580c],model,1,9721
+[戴尔 inspiron 灵越 11 3195 系列],model,1,13112
+[华硕 v551 系列],model,1,10116
+[华硕 rog zephyrus s15],model,1,5247
+[戴尔 inspiron 灵越 14 5445 系列],model,1,10367
+[联想 miix 710],model,1,12472
+[清华同方 锋锐 k560 系列],model,1,10231
+[华硕 tuf gaming f16],model,1,41586
+[msi微星 gs73vr],model,1,11476
+[华硕 vm490 系列],model,1,10358
+[东芝 dynabook g83 系列],model,1,34818
+[戴尔 inspiron 灵越 13 7368 系列],model,1,4919
+[炫龙 毁灭者dd 系列],model,1,6931
+[雷神 aibook 15],model,1,26990
+[华硕 b400a 系列],model,1,12020
+[戴尔 inspiron 灵越 11 3168 系列],model,1,11345
+[惠普 245 g8 系列],model,1,12530
+[thinkpad p72],model,1,4634
+[索尼 vpcz 系列],model,1,11093
+[攀升 maxbook p1 pro],model,1,12493
+[联想 yoga 4 pro（yoga 900）],model,1,10563
+[惠普 envy sleekbook 4 系列],model,1,11948
+[惠普 elite x2 1012 g1 系列],model,1,10845
+[索尼 svd 13 系列],model,1,10733
+[联想 ideapad 700 17寸],model,1,10865
+[华硕 飞行堡垒 fx73vd],model,1,11716
+[雷神 911-s5ta],model,1,11541
+[惠普 2570p 系列],model,1,9983
+[神舟 精盾 k580s],model,1,9510
+[惠普 255 g8 系列],model,1,12846
+[联想 legion s7],model,1,12856
+[thinkpad w550s],model,1,10268
+[msi微星 p65],model,1,11993
+[thinkpad p16 2022],model,1,4554
+[雷神 911-t2a],model,1,10893
+[三星 450r4e],model,1,9916
+[戴尔 latitude 3450 系列],model,1,10220
+[华硕 k556 系列],model,1,10570
+[alienware 13 r3],model,1,4449
+[东芝 c40d-a 系列],model,1,10320
+[机械革命 mr x6s],model,1,10301
+[msi微星 gp72vr],model,1,11590
+[神舟 精盾 q480s],model,1,10003
+[惠普 256 g6 系列],model,1,11861
+[玄派 玄极星 16],model,1,42179
+[华硕 bu400 系列],model,1,10071
+[华硕 rog zephyrus m15],model,1,5246
+[东芝 z30-c 系列],model,1,4988
+[三星 55x0aa],model,1,7825
+[戴睿dere v40 pro 系列  15.6寸],model,1,12578
+[戴尔 latitude 5511 系列],model,1,12379
+[联想 yoga 2 13寸],model,1,10167
+[lg gram style 16 2023],model,1,16888
+[戴尔 vostro成就 7620 系列],model,1,12742
+[清华同方 锋锐 s2 系列],model,1,10425
+[华硕 rog gl702vs 系列],model,1,12871
+[戴尔 inspiron 灵越 15 7568 系列],model,1,10417
+[msi微星 gp73],model,1,11990
+[三星 532u3x],model,1,10816
+[msi微星 泰坦 ge78 hx 2024],model,1,26478
+[acer 未来 av15],model,1,12560
+[惠普 elitebook 745 g2 系列],model,1,5924
+[acer travelmate p246],model,1,10272
+[华硕 灵耀x fold (ux9702)],model,1,5156
+[acer travelmate p245],model,1,5140
+[三星 galaxy book2 pro 15.6寸],model,1,41564
+[惠普 战x 16 2024],model,1,26375
+[联想 edge],model,1,10916
+[acer 暗影骑士 擎 an517 系列],model,1,5040
+[华硕 rog gx501gi 系列],model,1,5380
+[huwi book d15 se],model,1,8021
+[索尼 vpccb 系列],model,1,10559
+[thinkpad p51s],model,1,4682
+[戴尔 precision 7540 系列],model,1,12084
+[msi微星 尊爵 13 2024],model,1,31543
+[戴尔 g15 5521 系列],model,1,4744
+[戴尔 latitude 7275 系列],model,1,11742
+[戴尔 inspiron 灵越 11 3158 系列],model,1,11478
+[lg gram 14 2021],model,1,12666
+[神舟 战神 t8 plus 2025],model,1,42335
+[机械革命 code 10 ai],model,1,38121
+[戴尔 latitude e5250/5250 系列],model,1,10438
+[戴睿 v14 mini 系列],model,1,12440
+[戴尔 precision 5530 系列],model,1,8050
+[thinkpad x13 2025],model,1,41602
+[thinkpad p15s gen2],model,1,12998
+[机械革命 无界 15x pro 2025],model,1,37891
+[联想 g700],model,1,10136
+[三星 星曜 930xbe],model,1,12092
+[三星 550xaa],model,1,11835
+[雷神 911 pro 钛空版],model,1,11976
+[惠普 elitebook 630 g11 系列],model,1,30877
+[三星 900x3c],model,1,9536
+[华硕 rog 冰锐],model,1,12090
+[戴尔 pro 16 系列],model,1,42751
+[炫龙 毁灭者dd2 plus 系列],model,1,6913
+[炫龙 毁灭者dc2 锋刃 系列],model,1,12087
+[华硕 pro pu451],model,1,10098
+[神舟 飞天 u43],model,1,10783
+[戴尔 vostro成就 3458 系列],model,1,11017
+[msi微星 ge62mvr],model,1,4515
+[神舟 战神 g6],model,1,10506
+[戴尔 precision m6800 系列],model,1,8014
+[acer 蜂鸟 swift3 sf316],model,1,12639
+[戴尔 precision 5470 系列],model,1,4732
+[戴尔 inspiron 灵越 11 3138 系列],model,1,10027
+[三星 940x3k],model,1,10460
+[thinkpad t550],model,1,4675
+[aierxuan air15],model,1,38658
+[联想 yoga pro 14s 2021],model,1,6294
+[惠普 星book x 14 系列],model,1,38931
+[thinkpad new x1 carbon],model,1,4650
+[雷神 g150s],model,1,10383
+[华硕 rog gl503vs 系列],model,1,5334
+[神舟 优雅 x4],model,1,11414
+[华硕 n750 系列],model,1,10088
+[华硕 ux31 系列],model,1,9707
+[神舟 战神 k690e],model,1,6804
+[thinkpad w520],model,1,8977
+[戴尔 inspiron 灵越 14 5481 系列],model,1,11881
+[msi微星 gt72vr],model,1,4525
+[华硕 zenbook duo ux482],model,1,5231
+[戴尔 precision 3530 系列],model,1,11854
+[msi微星 gl72],model,1,10692
+[戴尔 inspiron 灵越 15 7537 系列],model,1,11018
+[华硕 rog gl552 系列],model,1,10580
+[惠普 14g 系列],model,1,5913
+[thinkpad l15],model,1,4636
+[惠普 战66+ 16寸 系列],model,1,37002
+[联想 ideapad 710s 13寸],model,1,10861
+[神舟 战神 k640e],model,1,10511
+[联想 z510],model,1,10172
+[七彩虹 隐星 p16 25],model,1,44524
+[华硕 r541u 系列],model,1,8167
+[acer 非凡 s3 pro],model,1,5035
+[神舟 精盾 k500c],model,1,10768
+[戴尔 latitude 7330 系列],model,1,12732
+[戴尔 latitude 7350 2024],model,1,27574
+[华硕 灵耀 13s],model,1,5183
+[华硕 天选5r],model,1,42585
+[acer 掠夺者 战斧9 neo s],model,1,42101
+[msi微星 ge72vr],model,1,4520
+[msi微星 alpha 15],model,1,12209
+[戴尔 precision 5680 系列],model,1,38540
+[terrans force amd 系列],model,1,30498
+[thinkpad a275],model,1,4690
+[thinkpad yoga 370],model,1,4622
+[华硕 r400 系列],model,1,9646
+[惠普 240 g6 系列],model,1,11883
+[惠普 dragonfly g4 系列],model,1,39540
+[机械革命 code go],model,1,7968
+[华硕 rog 冰刃5 plus],model,1,5199
+[壹号本 onemi x2 系列],model,1,12054
+[樱本 d16 pro],model,1,41359
+[联想 小新 air 12],model,1,10864
+[联想 昭阳 e31],model,1,10878
+[联想 ideapad 720s 15寸],model,1,16833
+[thinkpad p14s ai 2024],model,1,26616
+[七彩虹 将星x17-xs],model,1,12819
+[惠普 zbook studio x360 g5 系列],model,1,5858
+[华硕 rog strix s5vm],model,1,5501
+[联想 扬天 m51-80],model,1,10277
+[华硕 破晓6 15寸],model,1,35831
+[华硕 tp500 系列],model,1,10397
+[戴尔 latitude e5540 系列],model,1,11753
+[戴尔 latitude 5285 系列],model,1,11625
+[神舟 精盾 u45a1 畅玩版],model,1,12556
+[msi微星 勇者 bravo 17],model,1,12303
+[英特尔 nuc m15],model,1,7962
+[惠普 spectre xt pro 系列],model,1,9971
+[戴尔 xps l322x 系列],model,1,4823
+[七彩虹 meow 橘宝r16 25],model,1,42864
+[华硕 博文 pro 13],model,1,5182
+[华硕 飞行堡垒 fx705],model,1,5295
+[雷神 zero 16 2025],model,1,41144
+[惠普 15s 系列],model,1,5787
+[机械革命 翼龙15],model,1,40892
+[戴尔 precision 3580 系列],model,1,12954
+[惠普 zbook 15 g6 系列],model,1,5644
+[机械师 星辰 16],model,1,6093
+[戴尔 latitude 3390 二合一 系列],model,1,4725
+[戴尔 latitude 5350 系列],model,1,37785
+[火影 火神 v5 系列],model,1,10909
+[雷神 t-book 14],model,1,6143
+[thinkpad l580],model,1,4659
+[炫龙 炎魔t1 ti 系列],model,1,6930
+[戴尔 vostro成就 3562 系列],model,1,4923
+[索尼 svs 13a 系列],model,1,10743
+[acer travelmate p2510],model,1,11827
+[机械革命 k1],model,1,7582
+[三星 r580],model,1,9321
+[联想 ideapad 5 15寸],model,1,12432
+[acer v5],model,1,5146
+[戴睿 a16 pro 16寸],model,1,42565
+[华硕 rog gx501vi 系列],model,1,11728
+[aierxuan 勇者 g2],model,1,36707
+[华硕 顽石 m5050],model,1,5273
+[msi微星 创造者 creator 17m],model,1,17067
+[华硕 rog 冰刃6 双屏],model,1,5155
+[联想 z51],model,1,10279
+[雷神 zero 16 pro 2025],model,1,40819
+[acer 非凡 go 16],model,1,7935
+[联想 小新 i1000],model,1,11022
+[华硕 pro p2540],model,1,5440
+[戴尔 precision m4800 系列],model,1,10345
+[机械师 曙光 16s],model,1,38182
+[吾空 k7 系列 17寸],model,1,12603
+[华硕 pro8],model,1,5476
+[惠普 zbook 14 系列],model,1,5851
+[惠普 战x 14 2025],model,1,43058
+[华硕 顽石 y406],model,1,12236
+[索尼 svf 14n 系列],model,1,10740
+[微软 surface go lte版],model,1,11933
+[联想 ideapad 530s 15寸],model,1,6412
+[terrans force t5 skylake 系列],model,1,4544
+[aierxuan aex book pro],model,1,4711
+[戴尔 inspiron 灵越 14 7420 系列],model,1,12681
+[惠普 elitebook 850 g3 系列],model,1,10650
+[terrans force t7 系列],model,1,16942
+[msi微星 gt60],model,1,10180
+[索尼 svt 11 系列],model,1,10745
+[alienware m14x],model,1,9408
+[三星 星曜 750xbe],model,1,12095
+[三星 900x3t],model,1,7809
+[神舟 战神 z9],model,1,6782
+[戴尔 precision 7680 系列],model,1,12951
+[华硕 rog strix g15 g513],model,1,13034
+[华硕 vm480 系列],model,1,5533
+[惠普 8540w 系列],model,1,10608
+[acer travelmate x40],model,1,5054
+[华硕 x554 系列],model,1,8173
+[技嘉 aorus 17],model,1,12704
+[雷神 911masterbook],model,1,12123
+[msi微星 prestige 14],model,1,4483
+[戴睿 dere r13],model,1,12793
+[惠普 战66+ 14寸 系列],model,1,38938
+[三星 900x5n],model,1,7807
+[神舟 战神 g10],model,1,6701
+[华硕 f553 系列],model,1,11915
+[thinkpad a485],model,1,4617
+[联想 v15 g5],model,1,43918
+[惠普 elitebook 855 g7 系列],model,1,5686
+[戴尔 latitude 9420 系列],model,1,38488
+[acer z1401],model,1,10344
+[联想 ideapad s540],model,1,12366
+[戴尔 latitude 3450 2024],model,1,36713
+[惠普 zbook 15 g5 系列],model,1,7543
+[联想 ideapad 500s 14寸],model,1,8062
+[荣耀笔记本 x16 超清版],model,1,37822
+[msi微星 绝影 16 ai studio],model,1,16817
+[gpd pocket 系列],model,1,11972
+[acer aspire al16-31],model,1,34203
+[msi微星 gp72],model,1,4517
+[华硕 灵耀 x2 pro (ux5000)],model,1,12075
+[技嘉 aorus 15p 2021],model,1,12607
+[戴尔 inspiron 灵越 15 3525 系列],model,1,12310
+[thinkpad x1 carbon touch],model,1,10857
+[华硕 p53 系列],model,1,10092
+[acer 非凡 go fun 14 2025],model,1,48577
+[acer travelmate p645],model,1,10343
+[thinkpad x1 yoga 2023],model,1,16844
+[惠普 probook 450 g4 系列],model,1,5735
+[华硕 破晓 air 14],model,1,5161
+[联想 瑞天 14 2025],model,1,44963
+[惠普 350 g2 系列],model,1,10254
+[七彩虹 将星x16 pro 2025],model,1,44522
+[华硕 f415 系列],model,1,26270
+[惠普 elitebook 828 g3 系列],model,1,6009
+[三星 930x2k],model,1,10487
+[msi微星 泰坦 17 2025],model,1,39935
+[acer 非凡 go pro 16 2025],model,1,49643
+[机械革命 s3],model,1,12343
+[华硕 rog flow z13 2023 (gz301)],model,1,39233
+[华硕 rog g750],model,1,10082
+[msi微星 尊爵 14 ai+ evo],model,1,49749
+[thinkpad new s1],model,1,11360
+[联想 昭阳 e41-25],model,1,12955
+[华硕 破晓 pro 14 2023],model,1,47893
+[东芝 dynabook  cs40l 14英寸],model,1,12545
+[thinkpad s2 yoga 2018],model,1,11821
+[lg gram 14z90n 系列 14寸],model,1,4465
+[惠普 星book pro 13 2025],model,1,48000
+[联想 来酷 14 2025],model,1,49597
+[acer 暗影骑士 擎7 pro],model,1,47991
+[三星 500r5k],model,1,10480
+[惠普 elitebook 840 g11 系列],model,1,37299
+[戴尔 latitude 5530 系列],model,1,4728
+[三星 galaxy book ion 13.3寸],model,1,7797
+[华硕 vivobook 15 x512],model,1,16874
+[火影 焕16 air],model,1,44529
+[联想 v580],model,1,9650
+[荣耀笔记本 x14 超清版],model,1,42174
+[acer 非凡 go 16 青春版],model,1,17249
+[惠普 240r g9 系列],model,1,30038
+[惠普 elite x2 g4 13寸 系列],model,1,13041
+[炫龙 毁灭者 dd3 系列],model,1,12315
+[联想 e40],model,1,7536
+[机械革命 umi air],model,1,12200
+[海尔 简爱 s11pro 系列],model,1,12567
+[lg gram style 2023],model,1,13084
+[华硕 灵耀 u5000],model,1,5511
+[惠普 elitebook 845 g8 系列],model,1,5640
+[酷比魔方 iwork 20 pro],model,1,27489
+[惠普 probook 455 g8 系列],model,1,7601
+[戴尔 latitude 7210 二合一 系列],model,1,7874
+[惠普 zbook 17 g6 系列],model,1,5648
+[戴尔 latitude 7380 系列],model,1,4912
+[荣耀笔记本 x16 2026],model,1,49583
+[realme book 14英寸],model,1,12534
+[神舟 战神 tx9r7],model,1,16677
+[联想 yoga air 14c 2022],model,1,12668
+[惠普 elitebook 640 g11 系列],model,1,35088
+[炫龙 毁灭者 dd3 pro 系列],model,1,6911
+[wiko hi matebook d 16 2025],model,1,36657
+[努比亚 红魔游戏本 16 pro],model,1,28723
+[nec versapro vkt12 系列],model,1,26814
+[惠普 probook 640 g1 系列],model,1,9967
+[acer aspire nitro v 15],model,1,26344
+[thinkpad x13 yoga gen 3],model,1,41907
+[戴尔 xps 15 l502x 系列],model,1,10201
+[惠普 spectre xt 13 系列],model,1,9574
+[wiko hi matebook d 14 2025],model,1,36714
+[雷神 911gt],model,1,6192
+[七彩虹 meow 橘宝r15 25],model,1,41600
+[nec ll750 系列],model,1,4528
+[机械革命 耀世 15],model,1,49847
+[火影 t5c plus 系列],model,1,12840
+[神舟 战神 gx8r9],model,1,37600
+[炫龙 炎魔t1 pro 系列],model,1,11195
+[东芝 l755 系列],model,1,11501
+[acer aspire a514],model,1,12974
+[acer 暗影骑士2 vn7-592],model,1,5048
+[华硕 灵耀x pro (u5800ge)],model,1,5325
+[攀升 maxbook p1x 系列],model,1,12539
+[神舟 优雅 x3],model,1,12000
+[炫龙 炎魔t2 ti 系列],model,1,11792
+[戴尔 inspiron 灵越 17 5767 系列],model,1,4944
+[联想 异能者 n130],model,1,49002
+[戴尔 inspiron 灵越 14 7437 系列],model,1,10823
+[acer travelmate tx520],model,1,5095
+[联想 来酷 air 16],model,1,44442
+[雷神 dino],model,1,6199
+[华硕 tp300ld 系列],model,1,10106
+[联想 瑞天14 2026],model,1,50207
+[惠普 zbook studio g9 系列],model,1,16958
+[戴尔 latitude 5401 系列],model,1,12078
+[thinkpad t15g gen2],model,1,16858
+[acer es1 15.6英寸],model,1,12984
+[火影 金钢 t1 系列],model,1,10907
+[惠普 probook 455 g10 系列],model,1,7638
+[戴睿 v14 系列],model,1,4971
+[thinkpad t14 2025],model,1,39879
+[戴尔 latitude 5501 系列],model,1,12195
+[攀升 商睿air 系列 13寸],model,1,12667
+[神舟 精盾 u43e1],model,1,6776
+[惠普 spectre pro x360 g1 系列],model,1,10657
+[机械师 machcreator-l],model,1,6104
+[七彩虹 meow 橘宝r16 pro],model,1,47815
+[惠普 光影精灵ⅰ代 系列],model,1,11658
+[terrans force x411 2023款],model,1,50908
+[雷神 911-t2c],model,1,6219
+[华硕 灵耀15 2023],model,1,16866
+[惠普 zbook 15u g6 系列],model,1,35620
+[awo 乐-14],model,1,12705
+[三星 galaxy tabpro s],model,1,17449
+[acer a530],model,1,50953
+[七彩虹 将星 x15 2022],model,1,51037
+[acer 传奇 edge],model,1,12788
+[联想 yoga air 15 aura ai元启],model,1,30143
+[wiko hi matebook d 16],model,1,31387
+[alienware m11x],model,1,9409
+[惠普 4430s 系列],model,1,10612
+[联想 k49],model,1,10138
+[炫龙 阿尔法 l9 系列],model,1,12057
+[惠普 245 g7 系列],model,1,11991
+[微软 surface pro 2],model,1,6883
+[惠普 elitebook 645 g9 系列],model,1,15100
+[华硕 无畏 pro16 2026],model,1,50960
+[戴尔 studio 1558 系列],model,1,11452
+[华硕 vivobook 13 slate (t3300)],model,1,5177
+[东芝 l850d 系列],model,1,9824
+[联想 z585],model,1,10917
+[华硕 rog strix g g531],model,1,12205
+[msi微星 gt75],model,1,12152
+[terrans force dr7-plus 系列],model,1,4541
+[华硕 rog s7vi 系列],model,1,5423
+[惠普 346 g4 系列],model,1,11733
+[惠普 zbook studio g7 系列],model,1,5677
+[戴尔 inspiron 灵越 15 5578 二合一 系列],model,1,11955
+[联想 yoga pro 14 aura ai元启版],model,1,38090
+[华硕 rog 枪神2],model,1,12091
+[aorus 15 系列],model,1,11997
+[华硕 飞行堡垒 fx553vd],model,1,12055
+[惠普 pavilion x360 15 系列],model,1,29784
+[联想 ideapad 330s 15寸],model,1,12014
+[惠普 omen 15 系列],model,1,5786
+[雷神 911m星耀],model,1,11892
+[华硕 无畏 pro14 2025],model,1,43366
+[微软 surface rt],model,1,6887
+[七彩虹 将星 x15 2024],model,1,51040
+[thinkpad s1 2018],model,1,14126
+[戴尔 latitude 7320 detachable 系列],model,1,12780
+[戴尔 inspiron 灵越 13 7353 系列],model,1,10366
+[索尼 svs 15 系列],model,1,10744
+[惠普 cq15 系列],model,1,9950
+[戴尔 vostro成就 5401 系列],model,1,12319
+[神舟 优雅 x6],model,1,50401
+[联想 ideapad 320s 13寸],model,1,6469
+[七彩虹 隐星 p15 pro],model,1,49700
+[惠普 elitebook x360 g3 系列],model,1,5860
+[神舟 精盾 u45s1],model,1,6745
+[惠普 pavilion sleekbook 14 系列],model,1,5713
+[神舟 战神 s9 2025],model,1,49622

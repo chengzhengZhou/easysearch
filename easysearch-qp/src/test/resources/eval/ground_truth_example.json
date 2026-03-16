@@ -1,0 +1,131 @@
+{
+  "苹果iPhone 15 Pro Max": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "brand_apple"
+    },
+    {
+      "value": "iPhone 15 Pro Max",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 15 Pro Max",
+      "startOffset": 2,
+      "endOffset": 20,
+      "id": "model_iphone15promax"
+    }
+  ],
+  "华为 Mate X6": [
+    {
+      "value": "华为",
+      "type": "BRAND",
+      "normalizedValue": "Huawei",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "brand_huawei"
+    },
+    {
+      "value": "Mate X6",
+      "type": "MODEL",
+      "normalizedValue": "Mate X6",
+      "startOffset": 3,
+      "endOffset": 10,
+      "id": "model_matex6"
+    }
+  ],
+  "三星 Galaxy Z Fold7": [
+    {
+      "value": "三星",
+      "type": "BRAND",
+      "normalizedValue": "Samsung",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "brand_samsung"
+    },
+    {
+      "value": "Galaxy Z Fold7",
+      "type": "MODEL",
+      "normalizedValue": "Galaxy Z Fold7",
+      "startOffset": 3,
+      "endOffset": 17,
+      "id": "model_galaxyzfold7"
+    }
+  ],
+  "苹果手机": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "brand_apple"
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "category_mobile"
+    }
+  ],
+  "笔记本": [
+    {
+      "value": "笔记本",
+      "type": "CATEGORY",
+      "normalizedValue": "笔记本电脑",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "category_laptop"
+    }
+  ],
+  "小米 15 Ultra": [
+    {
+      "value": "小米",
+      "type": "BRAND",
+      "normalizedValue": "Xiaomi",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "brand_xiaomi"
+    },
+    {
+      "value": "15 Ultra",
+      "type": "MODEL",
+      "normalizedValue": "Xiaomi 15 Ultra",
+      "startOffset": 3,
+      "endOffset": 11,
+      "id": "model_xiaomi15ultra"
+    }
+  ],
+  "OPPO Find X8 Ultra": [
+    {
+      "value": "OPPO",
+      "type": "BRAND",
+      "normalizedValue": "OPPO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "brand_oppo"
+    },
+    {
+      "value": "Find X8 Ultra",
+      "type": "MODEL",
+      "normalizedValue": "Find X8 Ultra",
+      "startOffset": 5,
+      "endOffset": 18,
+      "id": "model_findx8ultra"
+    }
+  ],
+  "典藏": [
+    {
+      "value": "典藏",
+      "type": "CONDITION",
+      "normalizedValue": "典藏版",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "condition_collection"
+    }
+  ]
+}
+

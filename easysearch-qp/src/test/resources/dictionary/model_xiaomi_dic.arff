@@ -1,0 +1,413 @@
+@RELATION product meta
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+[小米平板],model,1,108
+[小米平板 4],model,1,111
+[小米平板 4 plus],model,1,112
+[小米 mix 2s],model,1,2662
+[小米 6x],model,1,2663
+[小米 8 (后指纹版)],model,1,2665
+[小米 8 se],model,1,2666
+[小米 max 3],model,1,2670
+[小米 8 (青春版)],model,1,2673
+[小米 8 (屏幕指纹版)],model,1,2674
+[小米 play],model,1,2691
+[redmi note 7],model,1,2694
+[小米 9],model,1,2718
+[小米 9 se],model,1,2719
+[redmi note 7 pro],model,1,2720
+[redmi k20 pro,红米k20pro],model,1,2723
+[小米 cc 9e],model,1,2726
+[小米 cc 9],model,1,2727
+[redmi note 8],model,1,2730
+[redmi note 8 pro],model,1,2731
+[redmi k20 pro (尊享版)],model,1,2732
+[小米 9 pro (5g版)],model,1,2734
+[redmi 8a],model,1,2736
+[redmi k30,红米k30],model,1,2738
+[redmi k30 (5g版)],model,1,2739
+[小米 10 (5g版)],model,1,2740
+[小米 10 pro (5g版)],model,1,2741
+[redmi k30 pro (5g版)],model,1,2742
+[redmi k30 pro (5g 变焦版)],model,1,2744
+[小米 10 青春版 (5g版) (mi 10 lite zoom)],model,1,2747
+[redmi 10x (5g版)],model,1,2748
+[redmi 10x (4g版)],model,1,2750
+[redmi k30 (5g极速版)],model,1,2751
+[redmi k30i (5g版)],model,1,2752
+[redmi 9],model,1,2754
+[redmi 9a],model,1,2755
+[小米 10 (至尊纪念版)],model,1,2757
+[redmi k30 (至尊纪念版)],model,1,2758
+[redmi k30s (至尊纪念版)],model,1,3380
+[redmi note 9 (5g版)],model,1,3383
+[小米 11],model,1,3537
+[redmi note 9 (4g版)],model,1,3547
+[小米 6],model,1,3567
+[红米 6a],model,1,3570
+[红米 note 5],model,1,3574
+[redmi k40],model,1,3603
+[redmi k40 pro],model,1,3604
+[小米 10s],model,1,3606
+[小米 11 ultra],model,1,3630
+[小米 11 pro],model,1,3631
+[小米 mix fold],model,1,3634
+[redmi k40 pro+],model,1,3644
+[redmi k40 (游戏增强版)],model,1,3645
+[小米 11 (青春版)],model,1,3646
+[redmi note 10 (5g版)],model,1,3649
+[redmi note 10 pro],model,1,3650
+[小米 mix 4],model,1,3679
+[小米平板 5],model,1,3729
+[小米平板 5 pro],model,1,3730
+[小米 12],model,1,3834
+[小米 12 pro (5g 骁龙版)],model,1,3835
+[小米 12 x],model,1,3836
+[小米 civi],model,1,3839
+[redmi note 11 pro],model,1,3840
+[redmi note 9 pro (5g版)],model,1,3866
+[redmi note 11 (4g版)],model,1,3870
+[redmi note 11 (5g版)],model,1,3871
+[redmi note 11 pro+],model,1,3872
+[redmi k50,红米k50],model,1,3944
+[redmi k50 (电竞版)],model,1,3945
+[redmi k50 pro,红米k50pro],model,1,3996
+[redmi k40s,红米k40s],model,1,4054
+[redmi note 11t pro],model,1,4058
+[redmi note 11t pro+],model,1,4059
+[小米 12s ultra],model,1,4133
+[小米 12s pro],model,1,4134
+[小米 12s],model,1,4135
+[小米 civi 1s],model,1,4147
+[小米 11 (青春活力版)],model,1,4148
+[redmi note 11se],model,1,4155
+[小米 civi 2],model,1,4312
+[redmi k50 (5g 至尊版)],model,1,4316
+[小米 mix fold 2 (5g版)],model,1,4317
+[redmi note 12 pro],model,1,4328
+[redmi note 12 (5g版)],model,1,4329
+[小米 12 pro (5g 天玑版)],model,1,4330
+[redmi pad],model,1,4369
+[小米平板 5 pro 12.4英寸],model,1,4384
+[小米 13],model,1,4433
+[小米 13 pro],model,1,4434
+[redmi k60e,红米k60e],model,1,4435
+[redmi k60,红米k60],model,1,4436
+[redmi k60 pro,红米k60pro],model,1,4437
+[redmi note 12 turbo],model,1,7067
+[红米 6],model,1,7184
+[小米 真无线降噪耳机 3 pro],model,1,7222
+[小米 buds 4 pro],model,1,7223
+[小米 buds 4],model,1,7224
+[redmi buds 4 pro],model,1,7225
+[redmi airdots 3 pro],model,1,7226
+[redmi note 11r],model,1,7364
+[小米 civi 3],model,1,7431
+[redmi 10a],model,1,7446
+[redmi buds 4 青春版],model,1,7492
+[小米 flipbuds pro],model,1,7493
+[redmi buds 4],model,1,7494
+[redmi buds 3],model,1,7495
+[redmi watch 2],model,1,7501
+[小米 watch s1],model,1,7502
+[redmi watch 3],model,1,7503
+[小米 watch color 2],model,1,7504
+[小米平板 6 pro],model,1,7510
+[小米平板 6],model,1,7514
+[redmi note 12 pro+],model,1,7523
+[redmibook 14 ii],model,1,7606
+[小米 游戏本 15.6寸],model,1,7607
+[小米 笔记本 pro 14],model,1,7608
+[小米 笔记本 pro x 15],model,1,7609
+[redmi g pro],model,1,7610
+[redmibook pro 14],model,1,7611
+[小米 笔记本 pro 15],model,1,7612
+[小米 笔记本air 13.3寸],model,1,7613
+[redmibook 16],model,1,7616
+[redmibook air 13],model,1,7617
+[redmibook 13],model,1,7620
+[redmibook 14],model,1,7621
+[redmi g 游戏本],model,1,7623
+[小米 笔记本 15.6寸],model,1,7625
+[小米 book air 13],model,1,7626
+[小米 笔记本 pro 15 oled],model,1,7627
+[redmibook pro 15],model,1,7628
+[小米 笔记本air 12.5寸],model,1,7629
+[redmibook 15e],model,1,7681
+[小米 13 ultra],model,1,7903
+[小米 note 3],model,1,8065
+[小米 mix fold 3],model,1,8144
+[redmi k60 (至尊版),红米k60至尊版],model,1,8224
+[redmi 12 (5g版)],model,1,8257
+[redmi 12r],model,1,8326
+[redmi pad se],model,1,8370
+[小米 book pro 14],model,1,12737
+[小米 book pro 16],model,1,12739
+[小米 book 12.4 二合一],model,1,12853
+[小米 14],model,1,13065
+[小米 14 pro],model,1,13067
+[小米 watch h1],model,1,13118
+[小米 watch s3],model,1,13129
+[小米手表 color 运动版],model,1,13157
+[小米手表 color],model,1,13158
+[小米 米兔儿童电话手表5c],model,1,13159
+[小米 watch s2],model,1,13161
+[小米 骨传导耳机],model,1,13386
+[小米 真无线蓝牙耳机air2],model,1,13426
+[小米 真无线蓝牙耳机air 2s],model,1,13430
+[小米 真无线蓝牙耳机air2 se],model,1,13434
+[redmi airdots 2],model,1,13447
+[小米 真无线蓝牙耳机air2 pro],model,1,13450
+[redmi airdots 3],model,1,13462
+[小米 真无线降噪耳机 3],model,1,13506
+[redmi buds 3 青春版],model,1,13521
+[redmi airdots 3 pro 原神版],model,1,13585
+[redmi buds 4 活力版],model,1,13657
+[小米 air 3 se],model,1,13669
+[redmi buds 5],model,1,13672
+[小米 米兔儿童电话手表3],model,1,13708
+[小米 米兔儿童电话手表3c],model,1,13722
+[小米 小寻儿童电话手表a5],model,1,13746
+[小米手表 xmwt01],model,1,13752
+[小米 米兔儿童电话手表2s],model,1,13779
+[redmi 手表],model,1,13783
+[小米 米兔儿童电话手表5 pro],model,1,13819
+[小米 米兔儿童学习手表6c],model,1,13840
+[小米 米兔儿童电话手表u1],model,1,13848
+[小米 米兔儿童学习手表6],model,1,13849
+[小米 米兔儿童学习手表6x],model,1,13850
+[小米 米兔儿童电话手表c7a],model,1,13874
+[redmi note 12r],model,1,14100
+[小米 buds 3t pro],model,1,14113
+[小米 pad 6 max 14],model,1,15038
+[redmi k70,红米k70],model,1,15091
+[redmi k70 pro,红米k70pro],model,1,15092
+[redmi k70e,红米k70e],model,1,15093
+[redmi book 14 2024],model,1,15109
+[redmi book 16 2024],model,1,15125
+[redmi buds 5 pro],model,1,15127
+[redmi note 13 pro+],model,1,16549
+[redmi note 13 pro],model,1,16550
+[redmi note 12t pro],model,1,16551
+[redmi 13r],model,1,16606
+[redmi note 13],model,1,16653
+[redmi 13c 5g],model,1,16663
+[redmibook pro 15 2023],model,1,16854
+[小米 笔记本 pro x 14],model,1,16855
+[redmi book pro 16 2024],model,1,16868
+[redmi book pro 14 2024],model,1,16869
+[小米 14 ultra],model,1,16873
+[小米 pad 6s pro 12.4],model,1,16906
+[redmi g pro 2024],model,1,16956
+[小米 civi 4 pro],model,1,17100
+[redmi 12c],model,1,17138
+[redmi turbo 3],model,1,17258
+[redmi note 12 pro 极速版],model,1,17266
+[小米 开放式耳机],model,1,17284
+[redmi pad pro],model,1,17480
+[小米 max],model,1,18479
+[redmi note 13r],model,1,26263
+[redmi 投影仪 pro],model,1,26501
+[小米 米家投影仪 (青春版)],model,1,26502
+[小米 sound],model,1,26534
+[小米 sound move],model,1,26535
+[小米 sound pro],model,1,26536
+[小米 小爱音箱 pro],model,1,26538
+[redmi k70 (至尊版),红米k70至尊版],model,1,26717
+[小米 mix fold 4],model,1,26731
+[小米 mix flip],model,1,26732
+[小米 watch s4 sport],model,1,26739
+[小米 buds 5],model,1,26992
+[小米 智能家庭屏 6],model,1,27023
+[小米 户外蓝牙音箱 camp],model,1,27211
+[小米无人机 4k版],model,1,27345
+[小米 灵感触控笔 (第一代)],model,1,27785
+[小米 灵感触控笔 (第二代)],model,1,27786
+[redmi note 14],model,1,28779
+[redmi note 14 pro],model,1,28781
+[redmi note 14 pro+],model,1,28782
+[redmi 14r 5g],model,1,29617
+[小米 焦点触控笔],model,1,29858
+[小米 15,小米15],model,1,30041
+[小米 15 pro,小米15pro],model,1,30043
+[小米 pad 7,小米平板7],model,1,30048
+[小米 pad 7 (柔光版)],model,1,30049
+[小米 pad 7 pro,小米平板7pro],model,1,30050
+[小米 pad 7 pro (柔光版)],model,1,30052
+[小米 watch s4],model,1,30053
+[小米 米家投影仪 (青春版2s)],model,1,30347
+[小米 蓝牙音箱 (asm02a)],model,1,30428
+[redmi 投影仪 2 pro],model,1,30519
+[小米 米家投影仪 (青春版2)],model,1,30533
+[redmi k80,红米k80],model,1,30541
+[redmi k80 pro,红米k80pro],model,1,30542
+[redmi watch 5],model,1,30551
+[redmi buds 6 pro],model,1,30553
+[小米 watch h1 e],model,1,30638
+[redmi 投影仪 (lite版)],model,1,30841
+[小米 小爱触屏音箱pro 8],model,1,30855
+[redmi turbo 4],model,1,31085
+[redmi book 14 2025],model,1,31089
+[redmi book 16 2025],model,1,31090
+[redmi note 12 探索版],model,1,31196
+[redmi 投影仪 3 pro],model,1,31342
+[小米 智能家庭屏 10],model,1,31947
+[redmi 投影仪],model,1,32014
+[redmi 投影仪 2],model,1,32015
+[小米 激光投影仪 1s],model,1,32362
+[小米 米家激光投影电视 150英寸 主机],model,1,32365
+[小米 米家投影仪],model,1,32367
+[redmi 14c],model,1,32439
+[小米 15 ultra],model,1,32576
+[redmi book pro 14 2025],model,1,32705
+[redmi book pro 16 2025],model,1,32815
+[小米 buds 5 pro],model,1,32961
+[小米 米家激光投影电视 4k],model,1,35424
+[redmi turbo 4 pro],model,1,35964
+[小米 civi 5 pro],model,1,37004
+[小米 15s pro,小米15spro],model,1,37007
+[redmi k80 (至尊版),红米k80至尊版],model,1,38389
+[小米 mix flip 2],model,1,38390
+[redmi note 15 pro],model,1,40374
+[redmi note 15 pro+],model,1,40376
+[redmi 10x pro (5g版)],model,1,2749
+[小米 mix 2],model,1,2654
+[小米 pad 8 pro],model,1,42117
+[小米 17],model,1,42106
+[小米 pad 7s pro 12.5],model,1,38415
+[redmi pad 2],model,1,40109
+[小米 17 pro],model,1,42109
+[小米 pad 8],model,1,42115
+[redmi note 15r],model,1,41432
+[redmi 15r 5g],model,1,42534
+[小米 17 pro max],model,1,42111
+[小米 pad 7s pro 12.5 (柔光版)],model,1,38424
+[redmi note 13r pro],model,1,15117
+[redmi 14c (4g 海外版)],model,1,30942
+[小米 mix2 (全陶瓷尊享版)],model,1,2660
+[小米 pad 7 ultra (柔光版)],model,1,37006
+[redmi 8],model,1,2735
+[redmi note 11e],model,1,8289
+[redmi note 15],model,1,40371
+[小米 8 (透明探索版)],model,1,2671
+[小米 小爱音箱 （hd版）],model,1,26537
+[redmi 小爱触屏音箱pro 8],model,1,30853
+[redmi watch 4],model,1,15129
+[redmi note 12r pro],model,1,8378
+[小米 mix 3 (4g版)],model,1,2682
+[redmi watch 3 青春版],model,1,16882
+[redmi pad 2 (柔光版)],model,1,40110
+[小米 cc 9 (美图定制版)],model,1,2728
+[redmi 投影仪 3],model,1,30752
+[小米 watch s4 15周年纪念版],model,1,37043
+[小米 11 lite (4g版)],model,1,30333
+[小米 cc 9 pro],model,1,2737
+[小米 米兔儿童电话手表5x],model,1,13795
+[小米 蓝牙项圈耳机（青春版）],model,1,13232
+[小米 11 lite (5g版)],model,1,16981
+[redmi k20],model,1,2724
+[redmi k90],model,1,43097
+[redmi 投影仪 3 (lite版)],model,1,36663
+[小米 5x],model,1,8128
+[小米 米兔儿童电话手表4c],model,1,13160
+[redmi 7],model,1,2721
+[小米 watch s1 pro],model,1,13851
+[小米 米家小相机],model,1,31563
+[小米 11t pro],model,1,31199
+[小米 电视音箱 影院版 mdz-35-da],model,1,31954
+[小米 pad 7 ultra],model,1,37005
+[小米 米家激光投影仪],model,1,32366
+[redmi k pad],model,1,38489
+[小米 蓝牙耳机 airdots（青春版）],model,1,13427
+[redmi note 11e pro(5g版)],model,1,35551
+[红米 小爱触屏音箱 8英寸],model,1,26518
+[小米 智能家庭屏pro 8],model,1,31946
+[小米 米兔儿童手表 s1],model,1,29804
+[小米 小爱音箱art(电池版)],model,1,26539
+[小米 米兔儿童电话手表4x],model,1,13769
+[小米 米家 全景相机],model,1,35068
+[小米 米家投影仪 2 pro],model,1,32369
+[小米 max 2],model,1,2651
+[小米 投影仪 2s],model,1,32370
+[redmi buds 4 哈利·波特版],model,1,13651
+[红米 6 pro],model,1,8035
+[小米 米兔儿童电话手表2],model,1,13709
+[小米 米家投影仪 2],model,1,32368
+[小米 蓝牙耳机（青春版）],model,1,13248
+[小米 投影仪 mini],model,1,35426
+[小米 降噪蓝牙耳机necklace],model,1,13385
+[小米 小寻儿童电话手表t1],model,1,13715
+[小米 蓝牙耳机 lyej01lm],model,1,13271
+[小米 降噪蓝牙项圈耳机],model,1,13257
+[小米 米兔儿童学习手表4 pro],model,1,13771
+[小米 小寻儿童电话手表x3],model,1,13804
+[小米 小寻儿童电话手表z7],model,1,13859
+[redmi airdots s],model,1,13436
+[小米 头戴式蓝牙耳机],model,1,13372
+[小米 小寻儿童电话手表a3],model,1,13737
+[小米 蓝牙耳机air],model,1,13425
+[小米 book s 12.4 二合一],model,1,7886
+[mi laser projector 150],model,1,34944
+[小米 小寻儿童电话手表s1],model,1,13716
+[redmi watch 2 lite],model,1,13871
+[小米 真无线耳机 2 pro],model,1,13285
+[redmi airdots 真无线蓝牙耳机],model,1,13424
+[小米 5s],model,1,40271
+[小米平板 3],model,1,110
+[redmi watch 3 lite],model,1,13877
+[redmi 投影仪 j3 pro],model,1,39964
+[小米 蓝牙项圈耳机],model,1,13231
+[红米 5 plus],model,1,3575
+[小米 米家激光投影电视 1s 4k],model,1,32364
+[小米 全色激光影院],model,1,35425
+[小米 四单元圈铁耳机],model,1,13279
+[小米 5s plus],model,1,16664
+[redmi 13 (5g版)],model,1,27636
+[小米 运动蓝牙耳机mini],model,1,13233
+[小米 pad 8 pro (柔光版)],model,1,42118
+[redmi k90 pro max],model,1,43098
+[redmi 7a],model,1,2725
+[redmi 13c],model,1,16576
+[redmi buds 6s],model,1,26629
+[小米 pad 8 (柔光版)],model,1,42116
+[小米 17 ultra],model,1,49615
+[小米 小蚁 m1 套机],model,1,27806
+[小米 17 ultra 徕卡版],model,1,49616
+[小米 智能音箱 pro],model,1,34988
+[redmi 儿童手表],model,1,39902
+[redmi buds 6],model,1,29849
+[小米 激光投影仪 3 4k],model,1,44725
+[小米 米兔儿童学习手表7],model,1,26627
+[小米 智能音箱],model,1,36835
+[小米 骨传导耳机2],model,1,41115
+[redmi buds 6 活力版],model,1,27079
+[redmi buds 5 pro 电竞版],model,1,15128
+[小米 小爱音箱play 增强版 l05c],model,1,37775
+[redmi watch 6],model,1,44320
+[redmi 蓝牙音响 (asm11a)],model,1,26656
+[小米 米兔儿童电话手表4],model,1,13801
+[小米 米兔儿童学习手表7x],model,1,26711
+[小米 米兔儿童电话手表7a],model,1,30135
+[小米 air 4 se],model,1,29696
+[小米 开放式耳机 pro],model,1,38492
+[redmi buds se],model,1,38279
+[redmi 灵感触控笔],model,1,17507
+[redmi watch 5 active],model,1,32549
+[redmi buds 7s],model,1,36243
+[小米 watch 5],model,1,49931
+[redmi 电脑音箱],model,1,27778
+[redmi buds 6 青春版],model,1,30090
+[redmi 投影仪 4 pro],model,1,50068
+[小米 ai音箱],model,1,50615
+[小米 米兔儿童电话手表2c],model,1,13714
+[redmi buds 3 pro],model,1,13673
+[小米 13 lite],model,1,7163
+[redmi turbo 5 max],model,1,50958
+[redmi turbo 5],model,1,50957
+[小米 小寻儿童电话手表x2],model,1,13748
+[redmi pad 2 pro],model,1,50973

@@ -1,0 +1,10 @@
+ # 源句 \t 目标句 \t 匹配类型 \t 优先级
+ # - 源句：用来匹配的原始 query 或短语
+ # - 目标句：命中后改写成的 query
+ # - 匹配类型：EXACT | PREFIX | CONTAINS，默认 EXACT
+ # - 优先级：可选，默认为 0；命中多个时选优先级最高的一条
+
+相机	数码相机	EXACT	0
+单反	相机套机 相机机身	EXACT	0
+微单	相机套机 相机机身	EXACT	0
+switch	任天堂 switch	PREFIX	0

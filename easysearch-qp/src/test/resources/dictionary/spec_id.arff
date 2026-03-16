@@ -1,0 +1,34 @@
+@RELATION spec dic
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+64gb,storage,1,217
+128gb,storage,1,210
+512gb,storage,1,192
+32gb,storage,1,218
+16gb,storage,1,219
+256gb,storage,1,209
+1tb,storage,1,187
+3g+32g,storage,1,184
+4g+64g,storage,1,201
+6g+64g,storage,1,200
+6g+128g,storage,1,211
+4g+128g,storage,1,212
+6g+256g,storage,1,208
+8g+128g,storage,1,213
+8g+64g,storage,1,198
+8g+256g,storage,1,206
+8g+512g,storage,1,190
+12g+256g,storage,1,204
+12g+1t,storage,1,185
+12g+128g,storage,1,216
+12g+512g,storage,1,189
+16g+512g,storage,1,188
+16g+1t,storage,1,2901
+16g+256g,storage,1,3018
+18g+512g,storage,1,3773
+24g+1t,storage,1,4770

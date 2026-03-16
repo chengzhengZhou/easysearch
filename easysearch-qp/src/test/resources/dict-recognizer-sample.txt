@@ -1,0 +1,2 @@
+# 实体分类器示例词典，实体\t类型\t归一值
+华为MateBook	MODEL	华为 matebook

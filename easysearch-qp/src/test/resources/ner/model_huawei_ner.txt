@@ -1,0 +1,427 @@
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m3 8.4 英寸","id":["56"],"normalizedValue":"华为平板 m3 8.4 英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m3 10.1 英寸（青春版 ）","id":["57"],"normalizedValue":"华为平板 m3 10.1 英寸（青春版 ）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m5 8.4英寸","id":["59"],"normalizedValue":"华为平板 m5 8.4英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 畅享平板 10.1英寸","id":["65"],"normalizedValue":"华为 畅享平板 10.1英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m5 10.1英寸（青春版）","id":["66"],"normalizedValue":"华为平板 m5 10.1英寸（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m5 10.8英寸","id":["69"],"normalizedValue":"华为平板 m5 10.8英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m3 8英寸（青春版）","id":["70"],"normalizedValue":"华为平板 m3 8英寸（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m5 8英寸（青春版）","id":["71"],"normalizedValue":"华为平板 m5 8英寸（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m6 8.4英寸","id":["73"],"normalizedValue":"华为平板 m6 8.4英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m6 10.8英寸","id":["74"],"normalizedValue":"华为平板 m6 10.8英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m6 8.4英寸 （高能版）","id":["75"],"normalizedValue":"华为平板 m6 8.4英寸 （高能版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 10.8英寸 2019款","id":["76"],"normalizedValue":"华为 matepad pro 10.8英寸 2019款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad","id":["78"],"normalizedValue":"华为 matepad","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p10 plus","id":["957"],"normalizedValue":"华为 p10 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 麦芒6","id":["965"],"normalizedValue":"华为 麦芒6","type":"MODEL"}
+{"aliases":["mate10"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 10","id":["966"],"normalizedValue":"华为 mate 10","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 2s","id":["969"],"normalizedValue":"华为 nova 2s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 3e","id":["971"],"normalizedValue":"华为 nova 3e","type":"MODEL"}
+{"aliases":["p20"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p20","id":["972"],"normalizedValue":"华为 p20","type":"MODEL"}
+{"aliases":["p20pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p20 pro","id":["976"],"normalizedValue":"华为 p20 pro","type":"MODEL"}
+{"aliases":["nova3"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 3","id":["984"],"normalizedValue":"华为 nova 3","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 3i","id":["985"],"normalizedValue":"华为 nova 3i","type":"MODEL"}
+{"aliases":["mate20"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20","id":["993"],"normalizedValue":"华为 mate 20","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20 pro (无屏下指纹版)","id":["994"],"normalizedValue":"华为 mate 20 pro (无屏下指纹版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20 x (4g版)","id":["995"],"normalizedValue":"华为 mate 20 x (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20 pro ud (屏下指纹版)","id":["997"],"normalizedValue":"华为 mate 20 pro ud (屏下指纹版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享9 plus","id":["998"],"normalizedValue":"华为 畅享9 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 max","id":["999"],"normalizedValue":"华为 畅享 max","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 4e","id":["1023"],"normalizedValue":"华为 nova 4e","type":"MODEL"}
+{"aliases":["p30pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p30 pro","id":["1025"],"normalizedValue":"华为 p30 pro","type":"MODEL"}
+{"aliases":["p30"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p30","id":["1026"],"normalizedValue":"华为 p30","type":"MODEL"}
+{"aliases":["nova5pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 5 pro","id":["1031"],"normalizedValue":"华为 nova 5 pro","type":"MODEL"}
+{"aliases":["nova5"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 5","id":["1032"],"normalizedValue":"华为 nova 5","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 5i","id":["1033"],"normalizedValue":"华为 nova 5i","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 5i pro","id":["1035"],"normalizedValue":"华为 nova 5i pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20 x (5g版)","id":["1036"],"normalizedValue":"华为 mate 20 x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享10 plus","id":["1037"],"normalizedValue":"华为 畅享10 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30 (4g版)","id":["1038"],"normalizedValue":"华为 mate 30 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30 pro (4g版)","id":["1039"],"normalizedValue":"华为 mate 30 pro (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30 pro (5g版)","id":["1040"],"normalizedValue":"华为 mate 30 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享10","id":["1041"],"normalizedValue":"华为 畅享10","type":"MODEL"}
+{"aliases":["mate30 5g"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30 (5g版)","id":["1042"],"normalizedValue":"华为 mate 30 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30 rs 保时捷设计","id":["1043"],"normalizedValue":"华为 mate 30 rs 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 6 se","id":["1046"],"normalizedValue":"华为 nova 6 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 6 (5g版)","id":["1047"],"normalizedValue":"华为 nova 6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享10s","id":["1048"],"normalizedValue":"华为 畅享10s","type":"MODEL"}
+{"aliases":["nova6 4g"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 6 (4g版)","id":["1049"],"normalizedValue":"华为 nova 6 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate xs (5g版)","id":["1057"],"normalizedValue":"华为 mate xs (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p40 (5g版)","id":["1059"],"normalizedValue":"华为 p40 (5g版)","type":"MODEL"}
+{"aliases":["p40pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p40 pro","id":["1060"],"normalizedValue":"华为 p40 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 (5g版)","id":["1061"],"normalizedValue":"华为 nova 7 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 se (5g版)","id":["1063"],"normalizedValue":"华为 nova 7 se (5g版)","type":"MODEL"}
+{"aliases":["p40pro+"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p40 pro+","id":["1064"],"normalizedValue":"华为 p40 pro+","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享z","id":["1065"],"normalizedValue":"华为 畅享z","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享20 pro","id":["1066"],"normalizedValue":"华为 畅享20 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40 pro (5g版)","id":["3368"],"normalizedValue":"华为 mate 40 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 30e pro (5g版)","id":["3376"],"normalizedValue":"华为 mate 30e pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40 pro+ (5g版)","id":["3381"],"normalizedValue":"华为 mate 40 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40 rs 保时捷设计","id":["3382"],"normalizedValue":"华为 mate 40 rs 保时捷设计","type":"MODEL"}
+{"aliases":["mate40"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40","id":["3516"],"normalizedValue":"华为 mate 40","type":"MODEL"}
+{"aliases":["nova8"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8","id":["3536"],"normalizedValue":"华为 nova 8","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 pro (5g版)","id":["3540"],"normalizedValue":"华为 nova 8 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享20 plus","id":["3548"],"normalizedValue":"华为 畅享20 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享10e","id":["3553"],"normalizedValue":"华为 畅享10e","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享8plus","id":["3557"],"normalizedValue":"华为 畅享8plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40e (5g版)","id":["3609"],"normalizedValue":"华为 mate 40e (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 4 (高配版)","id":["3639"],"normalizedValue":"华为 nova 4 (高配版)","type":"MODEL"}
+{"aliases":["nova8pro 4g"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 pro (4g版)","id":["3666"],"normalizedValue":"华为 nova 8 pro (4g版)","type":"MODEL"}
+{"aliases":["p50"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p50","id":["3675"],"normalizedValue":"华为 p50","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p50 pro (骁龙版)","id":["3676"],"normalizedValue":"华为 p50 pro (骁龙版)","type":"MODEL"}
+{"aliases":["mate40pro 4g"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40 pro (4g版)","id":["3692"],"normalizedValue":"华为 mate 40 pro (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享20 se","id":["3694"],"normalizedValue":"华为 畅享20 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11","id":["3726"],"normalizedValue":"华为 matepad 11","type":"MODEL"}
+{"aliases":["matepad10.8"],"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 10.8英寸","id":["3727"],"normalizedValue":"华为 matepad 10.8英寸","type":"MODEL"}
+{"aliases":["matepad10.4"],"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 10.4英寸","id":["3728"],"normalizedValue":"华为 matepad 10.4英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 10.8英寸 2021款","id":["3731"],"normalizedValue":"华为 matepad pro 10.8英寸 2021款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.6英寸 2021款","id":["3732"],"normalizedValue":"华为 matepad pro 12.6英寸 2021款","type":"MODEL"}
+{"aliases":["nova9pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 9 pro","id":["3733"],"normalizedValue":"华为 nova 9 pro","type":"MODEL"}
+{"aliases":["nova9"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 9","id":["3742"],"normalizedValue":"华为 nova 9","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40e (4g版)","id":["3861"],"normalizedValue":"华为 mate 40e (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 4i","id":["3890"],"normalizedValue":"华为 freebuds 4i","type":"MODEL"}
+{"aliases":["p50e"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p50 e","id":["3974"],"normalizedValue":"华为 p50 e","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 9 se","id":["3975"],"normalizedValue":"华为 nova 9 se","type":"MODEL"}
+{"aliases":["p50pro 麒麟"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p50 pro (麒麟版)","id":["3998"],"normalizedValue":"华为 p50 pro (麒麟版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 se (4g版)","id":["4004"],"normalizedValue":"华为 nova 8 se (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40 rs保时捷设计 (典藏版)","id":["4042"],"normalizedValue":"华为 mate 40 rs保时捷设计 (典藏版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p50 pocket","id":["4115"],"normalizedValue":"华为 p50 pocket","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate xs 2 （4g版）","id":["4118"],"normalizedValue":"华为 mate xs 2 （4g版）","type":"MODEL"}
+{"aliases":["nova10"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 10","id":["4277"],"normalizedValue":"华为 nova 10","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 10 pro","id":["4278"],"normalizedValue":"华为 nova 10 pro","type":"MODEL"}
+{"aliases":["mate50"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 50","id":["4282"],"normalizedValue":"华为 mate 50","type":"MODEL"}
+{"aliases":["mate50pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 50 pro","id":["4283"],"normalizedValue":"华为 mate 50 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 50 rs 保时捷设计","id":["4308"],"normalizedValue":"华为 mate 50 rs 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 50e","id":["4309"],"normalizedValue":"华为 mate 50e","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pocket s","id":["4327"],"normalizedValue":"华为 pocket s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 运动款","id":["4343"],"normalizedValue":"华为 watch gt 2 运动款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 活力款","id":["4344"],"normalizedValue":"华为 watch gt 3 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 活力款","id":["4345"],"normalizedValue":"华为 watch 3 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 时尚款","id":["4346"],"normalizedValue":"华为 watch gt 2 时尚款","type":"MODEL"}
+{"aliases":["watchgt3pro"],"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 pro","id":["4347"],"normalizedValue":"华为 watch gt 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 运动款","id":["4348"],"normalizedValue":"华为 watch gt 运动款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 pro 运动款","id":["4349"],"normalizedValue":"华为 watch gt 2 pro 运动款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 pro 时尚款","id":["4350"],"normalizedValue":"华为 watch 3 pro 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 时尚款","id":["4351"],"normalizedValue":"华为 watch gt 3 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 pro ecg款","id":["4352"],"normalizedValue":"华为 watch gt 2 pro ecg款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 pro 时尚款","id":["4353"],"normalizedValue":"华为 watch gt 2 pro 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 pro new 时尚款","id":["4354"],"normalizedValue":"华为 watch 3 pro new 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 时尚款","id":["4355"],"normalizedValue":"华为 watch 3 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch d","id":["4356"],"normalizedValue":"华为 watch d","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 11英寸 2022款","id":["4372"],"normalizedValue":"华为 matepad pro 11英寸 2022款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 11英寸 2022款 (性能版)","id":["4373"],"normalizedValue":"华为 matepad pro 11英寸 2022款 (性能版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.6英寸 2022款","id":["4374"],"normalizedValue":"华为 matepad pro 12.6英寸 2022款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad se 10.4英寸","id":["4385"],"normalizedValue":"华为 matepad se 10.4英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e go 2022","id":["5553"],"normalizedValue":"华为 matebook e go 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2020","id":["5556"],"normalizedValue":"华为 matebook d 14 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 se","id":["5557"],"normalizedValue":"华为 matebook d 15 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2022","id":["5558"],"normalizedValue":"华为 matebook d 14 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2022","id":["5559"],"normalizedValue":"华为 matebook 14 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 2022","id":["5560"],"normalizedValue":"华为 matebook d 16 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 16s","id":["5561"],"normalizedValue":"华为 matebook 16s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 se","id":["5563"],"normalizedValue":"华为 matebook d 14 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2022","id":["5565"],"normalizedValue":"华为 matebook x pro 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 2022","id":["5567"],"normalizedValue":"华为 matebook d 15 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b5-430","id":["5570"],"normalizedValue":"华为 matebook b5-430","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x 2021","id":["5571"],"normalizedValue":"华为 matebook x 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e 2019","id":["5574"],"normalizedValue":"华为 matebook e 2019","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14s 2021","id":["5575"],"normalizedValue":"华为 matebook 14s 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 16","id":["5576"],"normalizedValue":"华为 matebook 16","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2020","id":["5577"],"normalizedValue":"华为 matebook 14 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2021","id":["5578"],"normalizedValue":"华为 matebook 14 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2021","id":["5579"],"normalizedValue":"华为 matebook x pro 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2021","id":["5581"],"normalizedValue":"华为 matebook d 14 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 2021","id":["5582"],"normalizedValue":"华为 matebook d 15 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 13 2021","id":["5583"],"normalizedValue":"华为 matebook 13 2021","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 2020","id":["5584"],"normalizedValue":"华为 matebook d 15 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 2018 15寸","id":["5586"],"normalizedValue":"华为 matebook d 2018 15寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 13 2020","id":["5587"],"normalizedValue":"华为 matebook 13 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2019","id":["5589"],"normalizedValue":"华为 matebook 14 2019","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2019","id":["5590"],"normalizedValue":"华为 matebook d 14 2019","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro","id":["5591"],"normalizedValue":"华为 matebook x pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 2019","id":["5593"],"normalizedValue":"华为 matebook d 15 2019","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e 2017","id":["5594"],"normalizedValue":"华为 matebook e 2017","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x 2017","id":["5595"],"normalizedValue":"华为 matebook x 2017","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad se 10.1英寸","id":["6976"],"normalizedValue":"华为 matepad se 10.1英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 畅享平板2 10.1英寸","id":["6977"],"normalizedValue":"华为 畅享平板2 10.1英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 10.4英寸 2022款","id":["6978"],"normalizedValue":"华为 matepad 10.4英寸 2022款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 2","id":["6981"],"normalizedValue":"华为 watch 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 雅致款","id":["6982"],"normalizedValue":"华为 watch gt 3 雅致款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 2 活力款","id":["6984"],"normalizedValue":"华为 watch fit 2 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 pro 尊享款","id":["6986"],"normalizedValue":"华为 watch 3 pro 尊享款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 pro new 尊享款","id":["6987"],"normalizedValue":"华为 watch 3 pro new 尊享款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt cyber","id":["6988"],"normalizedValue":"华为 watch gt cyber","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 2 pro","id":["6989"],"normalizedValue":"华为 watch 2 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 活力款","id":["6990"],"normalizedValue":"华为 watch gt 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit new","id":["6991"],"normalizedValue":"华为 watch fit new","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt runner","id":["6992"],"normalizedValue":"华为 watch gt runner","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 雅致款","id":["6993"],"normalizedValue":"华为 watch gt 雅致款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 保时捷设计款","id":["6998"],"normalizedValue":"华为 watch gt 3 保时捷设计款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 雅致款","id":["6999"],"normalizedValue":"华为 watch gt 2 雅致款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch buds","id":["7000"],"normalizedValue":"华为 watch buds","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2e 运动款","id":["7004"],"normalizedValue":"华为 watch gt 2e 运动款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 尊享款","id":["7005"],"normalizedValue":"华为 watch gt 2 尊享款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 活力款","id":["7006"],"normalizedValue":"华为 watch fit 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 尊享款","id":["7007"],"normalizedValue":"华为 watch gt 3 尊享款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 保时捷设计款","id":["7008"],"normalizedValue":"华为 watch gt 2 保时捷设计款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 3 尊享版","id":["7010"],"normalizedValue":"华为 watch 3 尊享版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 2 时尚款","id":["7011"],"normalizedValue":"华为 watch fit 2 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 雅致款","id":["7012"],"normalizedValue":"华为 watch fit 雅致款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2e 活力款","id":["7013"],"normalizedValue":"华为 watch gt 2e 活力款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e 2022","id":["7017"],"normalizedValue":"华为 matebook e 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 13","id":["7018"],"normalizedValue":"华为 matebook 13","type":"MODEL"}
+{"aliases":["matex3"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x3","id":["7060"],"normalizedValue":"华为 mate x3","type":"MODEL"}
+{"aliases":["p60"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p60","id":["7061"],"normalizedValue":"华为 p60","type":"MODEL"}
+{"aliases":["p60pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p60 pro","id":["7062"],"normalizedValue":"华为 p60 pro","type":"MODEL"}
+{"aliases":["p60art"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p60 art","id":["7063"],"normalizedValue":"华为 p60 art","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds pro","id":["7122"],"normalizedValue":"华为 freebuds pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds pro 2","id":["7123"],"normalizedValue":"华为 freebuds pro 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 4","id":["7124"],"normalizedValue":"华为 freebuds 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 4e (有线充版)","id":["7125"],"normalizedValue":"华为 freebuds 4e (有线充版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freelace pro","id":["7126"],"normalizedValue":"华为 freelace pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 5i","id":["7127"],"normalizedValue":"华为 freebuds 5i","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 3","id":["7128"],"normalizedValue":"华为 freebuds 3","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds studio","id":["7129"],"normalizedValue":"华为 freebuds studio","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 5 至臻版","id":["7221"],"normalizedValue":"华为 freebuds 5 至臻版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为揽阅 m2 7英寸 （青春版）","id":["7244"],"normalizedValue":"华为揽阅 m2 7英寸 （青春版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x 2020","id":["7262"],"normalizedValue":"华为 matebook x 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2020","id":["7263"],"normalizedValue":"华为 matebook x pro 2020","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x2 (5g版)","id":["7291"],"normalizedValue":"华为 mate x2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x2 (4g版)","id":["7292"],"normalizedValue":"华为 mate x2 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为揽阅 m2 10.1英寸","id":["7306"],"normalizedValue":"华为揽阅 m2 10.1英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 13s","id":["7328"],"normalizedValue":"华为 matebook 13s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 60 pro","id":["7329"],"normalizedValue":"华为 畅享 60 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 11.5英寸 2023款","id":["7330"],"normalizedValue":"华为 matepad air 11.5英寸 2023款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2023 (微绒典藏版)","id":["7343"],"normalizedValue":"华为 matebook x pro 2023 (微绒典藏版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2023","id":["7344"],"normalizedValue":"华为 matebook x pro 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14s 2023","id":["7345"],"normalizedValue":"华为 matebook 14s 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2023","id":["7346"],"normalizedValue":"华为 matebook 14 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 16s 2023","id":["7347"],"normalizedValue":"华为 matebook 16s 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e 2023","id":["7348"],"normalizedValue":"华为 matebook e 2023","type":"MODEL"}
+{"aliases":["watch4pro"],"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 4 pro","id":["7358"],"normalizedValue":"华为 watch 4 pro","type":"MODEL"}
+{"aliases":["watch4"],"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 4","id":["7359"],"normalizedValue":"华为 watch 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 se 5g (乐活版)","id":["7362"],"normalizedValue":"华为 nova 7 se 5g (乐活版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 pro (5g版)","id":["7399"],"normalizedValue":"华为 nova 7 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享20 (5g版)","id":["7456"],"normalizedValue":"华为 畅享20 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11英寸 2023款(柔光版)","id":["7513"],"normalizedValue":"华为 matepad 11英寸 2023款(柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11英寸 2023款","id":["7515"],"normalizedValue":"华为 matepad 11英寸 2023款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14s 2022","id":["7521"],"normalizedValue":"华为 matebook 14s 2022","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 10 se","id":["7587"],"normalizedValue":"华为 nova 10 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 50","id":["7636"],"normalizedValue":"华为 畅享 50","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 60","id":["7675"],"normalizedValue":"华为 畅享 60","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 2020款","id":["7684"],"normalizedValue":"华为 matepad pro 2020款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 2023","id":["7686"],"normalizedValue":"华为 matebook d 16 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 60x","id":["7687"],"normalizedValue":"华为 畅享 60x","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享20e","id":["7688"],"normalizedValue":"华为 畅享20e","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pencil  第二代触控笔","id":["7694"],"normalizedValue":"华为 m-pencil  第二代触控笔","type":"MODEL"}
+{"aliases":["nova11"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 11","id":["7712"],"normalizedValue":"华为 nova 11","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 15 2017","id":["7927"],"normalizedValue":"华为 matebook d 15 2017","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 擎云 g540","id":["7967"],"normalizedValue":"华为 擎云 g540","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 11 pro","id":["8006"],"normalizedValue":"华为 nova 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 13s 2023","id":["8069"],"normalizedValue":"华为 matebook 13s 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 se 2023","id":["8085"],"normalizedValue":"华为 matebook d 14 se 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 40e pro (5g版)","id":["8132"],"normalizedValue":"华为 mate 40e pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 10.4英寸 2022款 (悦动版)","id":["8255"],"normalizedValue":"华为 matepad 10.4英寸 2022款 (悦动版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5英寸 2023款","id":["8288"],"normalizedValue":"华为 matepad 11.5英寸 2023款","type":"MODEL"}
+{"aliases":["mate60pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 60 pro","id":["8295"],"normalizedValue":"华为 mate 60 pro","type":"MODEL"}
+{"aliases":["mate60"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 60","id":["8301"],"normalizedValue":"华为 mate 60","type":"MODEL"}
+{"aliases":["matex5"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x5","id":["8361"],"normalizedValue":"华为 mate x5","type":"MODEL"}
+{"aliases":["matepadpro 13.2"],"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 13.2英寸","id":["8374"],"normalizedValue":"华为 matepad pro 13.2英寸","type":"MODEL"}
+{"aliases":["freebudspro3"],"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds pro 3","id":["8375"],"normalizedValue":"华为 freebuds pro 3","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 4","id":["8376"],"normalizedValue":"华为 watch gt 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 60 pro+","id":["8377"],"normalizedValue":"华为 mate 60 pro+","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 60 rs 非凡大师","id":["8379"],"normalizedValue":"华为 mate 60 rs 非凡大师","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad paper","id":["8394"],"normalizedValue":"华为 matepad paper","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 20 rs 保时捷设计","id":["8405"],"normalizedValue":"华为 mate 20 rs 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 se 2024","id":["8433"],"normalizedValue":"华为 matebook d 14 se 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 11.5英寸 2023款 (柔光版)","id":["8463"],"normalizedValue":"华为 matepad air 11.5英寸 2023款 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为揽阅 m2 8英寸","id":["8465"],"normalizedValue":"华为揽阅 m2 8英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b5-420","id":["12535"],"normalizedValue":"华为 matebook b5-420","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2022 (微绒典藏版)","id":["12769"],"normalizedValue":"华为 matebook x pro 2022 (微绒典藏版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2023","id":["12931"],"normalizedValue":"华为 matebook d 14 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 50 pro","id":["13086"],"normalizedValue":"华为 畅享 50 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 11 se","id":["13099"],"normalizedValue":"华为 nova 11 se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freelace","id":["13230"],"normalizedValue":"华为 freelace","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freelace 活力版","id":["13295"],"normalizedValue":"华为 freelace 活力版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 悦享版","id":["13428"],"normalizedValue":"华为 freebuds 悦享版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds se","id":["13624"],"normalizedValue":"华为 freebuds se","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds pro 2 +","id":["13641"],"normalizedValue":"华为 freebuds pro 2 +","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 5 标准版","id":["13642"],"normalizedValue":"华为 freebuds 5 标准版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds se2","id":["13662"],"normalizedValue":"华为 freebuds se2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 3 pro","id":["13707"],"normalizedValue":"华为 儿童手表 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 3s","id":["13749"],"normalizedValue":"华为 儿童手表 3s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 3 pro 超能版","id":["13762"],"normalizedValue":"华为 儿童手表 3 pro 超能版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 4x","id":["13767"],"normalizedValue":"华为 儿童手表 4x","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2 pro 新年款","id":["13784"],"normalizedValue":"华为 watch gt 2 pro 新年款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 4x 新耀款","id":["13805"],"normalizedValue":"华为 儿童手表 4x 新耀款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 4 pro","id":["13816"],"normalizedValue":"华为 儿童手表 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 2022典藏版","id":["13832"],"normalizedValue":"华为 watch gt 2022典藏版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit mini","id":["13847"],"normalizedValue":"华为 watch fit mini","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 5x","id":["13862"],"normalizedValue":"华为 儿童手表 5x","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 5x pro","id":["13863"],"normalizedValue":"华为 儿童手表 5x pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch ultimate","id":["13866"],"normalizedValue":"华为 watch ultimate","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 5","id":["13869"],"normalizedValue":"华为 儿童手表 5","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch b7-738","id":["13870"],"normalizedValue":"华为 watch b7-738","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 5 活力版","id":["13883"],"normalizedValue":"华为 儿童手表 5 活力版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 50z","id":["14106"],"normalizedValue":"华为 畅享 50z","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5英寸 2023款(柔光版)","id":["15034"],"normalizedValue":"华为 matepad 11.5英寸 2023款(柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 2024","id":["15124"],"normalizedValue":"华为 matebook d 16 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70","id":["15126"],"normalizedValue":"华为 畅享 70","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 11英寸 2024款","id":["15156"],"normalizedValue":"华为 matepad pro 11英寸 2024款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x5 典藏版","id":["16552"],"normalizedValue":"华为 mate x5 典藏版","type":"MODEL"}
+{"aliases":["nova12"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 12","id":["16630"],"normalizedValue":"华为 nova 12","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 12 (活力版)","id":["16631"],"normalizedValue":"华为 nova 12 (活力版)","type":"MODEL"}
+{"aliases":["nova12pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 12 pro","id":["16632"],"normalizedValue":"华为 nova 12 pro","type":"MODEL"}
+{"aliases":["nova12ultra"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 12 ultra","id":["16633"],"normalizedValue":"华为 nova 12 ultra","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 se 2024","id":["16654"],"normalizedValue":"华为 matebook d 16 se 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70 pro","id":["16700"],"normalizedValue":"华为 畅享 70 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 2024","id":["16771"],"normalizedValue":"华为 matebook d 14 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freeclip","id":["16772"],"normalizedValue":"华为 freeclip","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 高能版 2024","id":["16849"],"normalizedValue":"华为 matebook d 16 高能版 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 擎云 s520","id":["16856"],"normalizedValue":"华为 擎云 s520","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pocket 2","id":["16867"],"normalizedValue":"华为 pocket 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70z","id":["16872"],"normalizedValue":"华为 畅享 70z","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 10.4英寸 2021款 (麒麟820)","id":["16901"],"normalizedValue":"华为 matepad 10.4英寸 2021款 (麒麟820)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook x pro 2024 (微绒典藏版)","id":["17269"],"normalizedValue":"华为 matebook x pro 2024 (微绒典藏版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 擎云 s520 gen2","id":["17287"],"normalizedValue":"华为 擎云 s520 gen2","type":"MODEL"}
+{"aliases":["pura70"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 70","id":["17397"],"normalizedValue":"华为 pura 70","type":"MODEL"}
+{"aliases":["pura70pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 70 pro","id":["17398"],"normalizedValue":"华为 pura 70 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 70 pro+","id":["17399"],"normalizedValue":"华为 pura 70 pro+","type":"MODEL"}
+{"aliases":["pura70ultra"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 70 ultra","id":["17400"],"normalizedValue":"华为 pura 70 ultra","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freelace pro 2","id":["17453"],"normalizedValue":"华为 freelace pro 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds lipstick 2","id":["17517"],"normalizedValue":"华为 freebuds lipstick 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 2024","id":["17637"],"normalizedValue":"华为 matebook 14 2024","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5s（灵动版）","id":["18544"],"normalizedValue":"华为 matepad 11.5s（灵动版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5s（柔光版）","id":["18545"],"normalizedValue":"华为 matepad 11.5s（柔光版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook e go 2023","id":["18910"],"normalizedValue":"华为 matebook e go 2023","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70s","id":["18916"],"normalizedValue":"华为 畅享 70s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 3","id":["18963"],"normalizedValue":"华为 watch fit 3","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 5 pro","id":["18973"],"normalizedValue":"华为 儿童手表 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 12 ultra (星耀版)","id":["26260"],"normalizedValue":"华为 nova 12 ultra (星耀版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 70 北斗卫星消息版","id":["26465"],"normalizedValue":"华为 pura 70 北斗卫星消息版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad se 11英寸","id":["26500"],"normalizedValue":"华为 matepad se 11英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 ai 音箱","id":["26520"],"normalizedValue":"华为 ai 音箱","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 ai 音箱2","id":["26521"],"normalizedValue":"华为 ai 音箱2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound","id":["26522"],"normalizedValue":"华为 sound","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound joy","id":["26523"],"normalizedValue":"华为 sound joy","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound x","id":["26524"],"normalizedValue":"华为 sound x","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 擎云 h7546","id":["26648"],"normalizedValue":"华为 擎云 h7546","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5s（标准版）","id":["26954"],"normalizedValue":"华为 matepad 11.5s（标准版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 擎云 g740","id":["27085"],"normalizedValue":"华为 擎云 g740","type":"MODEL"}
+{"aliases":["novaflip"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova flip","id":["27103"],"normalizedValue":"华为 nova flip","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad se (活力版)","id":["27135"],"normalizedValue":"华为 matepad se (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook gt 14","id":["27141"],"normalizedValue":"华为 matebook gt 14","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 6i","id":["27187"],"normalizedValue":"华为 freebuds 6i","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.2英寸","id":["27214"],"normalizedValue":"华为 matepad pro 12.2英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.2英寸 (柔光版)","id":["27216"],"normalizedValue":"华为 matepad pro 12.2英寸 (柔光版)","type":"MODEL"}
+{"aliases":["m-pencil 3"],"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pencil (第三代)","id":["27334"],"normalizedValue":"华为 m-pencil (第三代)","type":"MODEL"}
+{"aliases":["m-pencil"],"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pencil","id":["27335"],"normalizedValue":"华为 m-pencil","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pen lite","id":["27336"],"normalizedValue":"华为 m-pen lite","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pen 2","id":["27337"],"normalizedValue":"华为 m-pen 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 12英寸 2024款","id":["27421"],"normalizedValue":"华为 matepad air 12英寸 2024款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 12英寸 2024款 (柔光版)","id":["27423"],"normalizedValue":"华为 matepad air 12英寸 2024款 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound x 鎏金剧院版","id":["27456"],"normalizedValue":"华为 sound x 鎏金剧院版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 擎云 h5546","id":["27513"],"normalizedValue":"华为 擎云 h5546","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate xt 非凡大师","id":["27903"],"normalizedValue":"华为 mate xt 非凡大师","type":"MODEL"}
+{"aliases":["watchgt5"],"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 5","id":["28724"],"normalizedValue":"华为 watch gt 5","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 5 pro","id":["28725"],"normalizedValue":"华为 watch gt 5 pro","type":"MODEL"}
+{"aliases":["nova13"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 13","id":["29947"],"normalizedValue":"华为 nova 13","type":"MODEL"}
+{"aliases":["nova13pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 13 pro","id":["29948"],"normalizedValue":"华为 nova 13 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5英寸 2024款","id":["30196"],"normalizedValue":"华为 matepad 11.5英寸 2024款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5英寸 2024款(柔光版)","id":["30197"],"normalizedValue":"华为 matepad 11.5英寸 2024款(柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound joy 2 智能版","id":["30386"],"normalizedValue":"华为 sound joy 2 智能版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch d2","id":["30490"],"normalizedValue":"华为 watch d2","type":"MODEL"}
+{"aliases":["freebudspro4"],"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds pro 4","id":["30492"],"normalizedValue":"华为 freebuds pro 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 70 rs 非凡大师","id":["30493"],"normalizedValue":"华为 mate 70 rs 非凡大师","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 70 pro+","id":["30494"],"normalizedValue":"华为 mate 70 pro+","type":"MODEL"}
+{"aliases":["mate70pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 70 pro","id":["30495"],"normalizedValue":"华为 mate 70 pro","type":"MODEL"}
+{"aliases":["mate70"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 70","id":["30496"],"normalizedValue":"华为 mate 70","type":"MODEL"}
+{"aliases":["matex6"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate x6","id":["30497"],"normalizedValue":"华为 mate x6","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 13.2英寸 2025款","id":["30506"],"normalizedValue":"华为 matepad pro 13.2英寸 2025款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 13.2英寸 2025款 (柔光版)","id":["30507"],"normalizedValue":"华为 matepad pro 13.2英寸 2025款 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70x","id":["31172"],"normalizedValue":"华为 畅享 70x","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound joy 2 蓝牙版","id":["31381"],"normalizedValue":"华为 sound joy 2 蓝牙版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound x4","id":["31462"],"normalizedValue":"华为 sound x4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch ultimate design 非凡大师","id":["32435"],"normalizedValue":"华为 watch ultimate design 非凡大师","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 70 pro 优享版","id":["32702"],"normalizedValue":"华为 mate 70 pro 优享版","type":"MODEL"}
+{"aliases":["purax"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura x","id":["34802"],"normalizedValue":"华为 pura x","type":"MODEL"}
+{"aliases":["freebuds6"],"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 6","id":["35125"],"normalizedValue":"华为 freebuds 6","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 70x 活力版","id":["35561"],"normalizedValue":"华为 畅享 70x 活力版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享 80","id":["35861"],"normalizedValue":"华为 畅享 80","type":"MODEL"}
+{"aliases":["nova14"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 14","id":["36865"],"normalizedValue":"华为 nova 14","type":"MODEL"}
+{"aliases":["nova14pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 14 pro","id":["36866"],"normalizedValue":"华为 nova 14 pro","type":"MODEL"}
+{"aliases":["nova14ultra"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 14 ultra","id":["36867"],"normalizedValue":"华为 nova 14 ultra","type":"MODEL"}
+{"aliases":["pura80pro"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 80 pro","id":["37706"],"normalizedValue":"华为 pura 80 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 80 pro+","id":["37708"],"normalizedValue":"华为 pura 80 pro+","type":"MODEL"}
+{"aliases":["pura80ultra"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 80 ultra","id":["37710"],"normalizedValue":"华为 pura 80 ultra","type":"MODEL"}
+{"aliases":["watch5"],"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch 5","id":["37711"],"normalizedValue":"华为 watch 5","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pocket 2 优享版","id":["39367"],"normalizedValue":"华为 pocket 2 优享版","type":"MODEL"}
+{"aliases":["pura80"],"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 pura 80","id":["39371"],"normalizedValue":"华为 pura 80","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 linux版","id":["41152"],"normalizedValue":"华为 matebook d 14 linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 14 se linux版","id":["41502"],"normalizedValue":"华为 matebook d 14 se linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 se linux版","id":["41505"],"normalizedValue":"华为 matebook d 16 se linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 linux版","id":["41506"],"normalizedValue":"华为 matebook d 16 linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook 14 linux版","id":["42163"],"normalizedValue":"华为 matebook 14 linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook d 16 高能版 linux版","id":["42359"],"normalizedValue":"华为 matebook d 16 高能版 linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 11 ultra","id":["14109"],"normalizedValue":"华为 nova 11 ultra","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 9","id":["950"],"normalizedValue":"华为 mate 9","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p10","id":["956"],"normalizedValue":"华为 p10","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5 s 2025款 (灵动版)","id":["40204"],"normalizedValue":"华为 matepad 11.5 s 2025款 (灵动版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 5g (星耀版)","id":["26693"],"normalizedValue":"华为 nova 7 5g (星耀版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 5z","id":["3640"],"normalizedValue":"华为 nova 5z","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 10 pro","id":["968"],"normalizedValue":"华为 mate 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 se (5g高配版)","id":["3545"],"normalizedValue":"华为 nova 8 se (5g高配版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate 9 pro","id":["7401"],"normalizedValue":"华为 mate 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5 s 2025款 (标准版)","id":["40202"],"normalizedValue":"华为 matepad 11.5 s 2025款 (标准版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.2英寸 2025 (柔光版)","id":["39536"],"normalizedValue":"华为 matepad pro 12.2英寸 2025 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad pro 12.2英寸 2025","id":["39535"],"normalizedValue":"华为 matepad pro 12.2英寸 2025","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 4 pro","id":["36872"],"normalizedValue":"华为 watch fit 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch fit 4","id":["36871"],"normalizedValue":"华为 watch fit 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 m5 pro","id":["60"],"normalizedValue":"华为平板 m5 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 12英寸 2025款","id":["40196"],"normalizedValue":"华为 matepad air 12英寸 2025款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p9","id":["938"],"normalizedValue":"华为 p9","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 p9 plus","id":["939"],"normalizedValue":"华为 p9 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 2","id":["13412"],"normalizedValue":"华为 freebuds 2","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5 s 2025款 (柔光版)","id":["40203"],"normalizedValue":"华为 matepad 11.5 s 2025款 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 c5 10.4英寸 2020款","id":["14801"],"normalizedValue":"华为平板 c5 10.4英寸 2020款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 6 pro","id":["42099"],"normalizedValue":"华为 watch gt 6 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 6","id":["42001"],"normalizedValue":"华为 watch gt 6","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 时尚款","id":["6985"],"normalizedValue":"华为 watch gt 时尚款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 运动心率蓝牙耳机r1 pro","id":["13198"],"normalizedValue":"华为 运动心率蓝牙耳机r1 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova flip s","id":["42858"],"normalizedValue":"华为 nova flip s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 14 (活力版)","id":["42857"],"normalizedValue":"华为 nova 14 (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad air 12英寸 2025款 (柔光版)","id":["40197"],"normalizedValue":"华为 matepad air 12英寸 2025款 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 4","id":["1018"],"normalizedValue":"华为 nova 4","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 擎云 c5 11.5英寸","id":["16608"],"normalizedValue":"华为 擎云 c5 11.5英寸","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds lite","id":["13423"],"normalizedValue":"华为 freebuds lite","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate rs 保时捷设计","id":["977"],"normalizedValue":"华为 mate rs 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 7 se 5g (活力版)","id":["3367"],"normalizedValue":"华为 nova 7 se 5g (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 麦芒8","id":["1029"],"normalizedValue":"华为 麦芒8","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为擎云 c7 2代","id":["28335"],"normalizedValue":"华为擎云 c7 2代","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova2plus","id":["3562"],"normalizedValue":"华为 nova2plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 mate xts 非凡大师","id":["40887"],"normalizedValue":"华为 mate xts 非凡大师","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b3-420","id":["12582"],"normalizedValue":"华为 matebook b3-420","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享9","id":["1010"],"normalizedValue":"华为 畅享9","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"842"},"entity":"华为 freebuds 2 pro","id":["13409"],"normalizedValue":"华为 freebuds 2 pro","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享7 plus","id":["959"],"normalizedValue":"华为 畅享7 plus","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b3-430","id":["5552"],"normalizedValue":"华为 matebook b3-430","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 擎云 s540","id":["7744"],"normalizedValue":"华为 擎云 s540","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad 11.5英寸 2025款","id":["40399"],"normalizedValue":"华为 matepad 11.5英寸 2025款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook gt 14 linux版","id":["42279"],"normalizedValue":"华为 matebook gt 14 linux版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch b7-536","id":["16810"],"normalizedValue":"华为 watch b7-536","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad mini (柔光版)","id":["40890"],"normalizedValue":"华为 matepad mini (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b3-410","id":["12520"],"normalizedValue":"华为 matebook b3-410","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为平板 c5 10.4英寸 2022款","id":["4120"],"normalizedValue":"华为平板 c5 10.4英寸 2022款","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 se (5g标配版)","id":["3544"],"normalizedValue":"华为 nova 8 se (5g标配版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 watch gt 3 pro 典藏版","id":["7009"],"normalizedValue":"华为 watch gt 3 pro 典藏版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为揽阅 m2 10.1英寸（青春版）","id":["67"],"normalizedValue":"华为揽阅 m2 10.1英寸（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"841"},"entity":"华为 sound x new","id":["27458"],"normalizedValue":"华为 sound x new","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad mini","id":["40889"],"normalizedValue":"华为 matepad mini","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"12348"},"entity":"华为 儿童手表 3","id":["13723"],"normalizedValue":"华为 儿童手表 3","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"21445"},"entity":"华为 m-pen 2s","id":["27338"],"normalizedValue":"华为 m-pen 2s","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 擎云 c5e","id":["14131"],"normalizedValue":"华为 擎云 c5e","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 10z","id":["7599"],"normalizedValue":"华为 nova 10z","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 8 se (活力版)","id":["8383"],"normalizedValue":"华为 nova 8 se (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 nova 10 青春版","id":["14108"],"normalizedValue":"华为 nova 10 青春版","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"672"},"entity":"华为 matebook b7-410","id":["7980"],"normalizedValue":"华为 matebook b7-410","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"655"},"entity":"华为 畅享8","id":["973"],"normalizedValue":"华为 畅享8","type":"MODEL"}
+{"attributes":{"brandId":"8557","categoryId":"2694"},"entity":"华为 matepad mini 悦读版 (柔光版)","id":["42316"],"normalizedValue":"华为 matepad mini 悦读版 (柔光版)","type":"MODEL"}

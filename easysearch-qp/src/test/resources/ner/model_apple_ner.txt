@@ -1,0 +1,190 @@
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini","id":["88"],"normalizedValue":"ipad mini","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 4代 (retina屏)","id":["89"],"normalizedValue":"ipad 4代 (retina屏)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini2","id":["90"],"normalizedValue":"ipad mini2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air","id":["91"],"normalizedValue":"ipad air","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini3","id":["92"],"normalizedValue":"ipad mini3","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air2","id":["93"],"normalizedValue":"ipad air2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini4","id":["94"],"normalizedValue":"ipad mini4","type":"MODEL"}
+{"aliases":["ipad pro 12.9英寸 1代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 1代 12.9英寸","id":["95"],"normalizedValue":"ipad pro 1代 12.9英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 5代","id":["96"],"normalizedValue":"ipad 5代","type":"MODEL"}
+{"aliases":["ipad pro 10.5英寸 1代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 1代 10.5英寸","id":["97"],"normalizedValue":"ipad pro 1代 10.5英寸","type":"MODEL"}
+{"aliases":["ipad pro2","ipad pro 12.9英寸 2代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 2代 12.9英寸","id":["98"],"normalizedValue":"ipad pro 2代 12.9英寸","type":"MODEL"}
+{"aliases":["ipad6"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 6代","id":["99"],"normalizedValue":"ipad 6代","type":"MODEL"}
+{"aliases":["ipad pro 12.9英寸 3代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 3代 12.9英寸","id":["100"],"normalizedValue":"ipad pro 3代 12.9英寸","type":"MODEL"}
+{"aliases":["ipad pro 9.7英寸 1代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 1代 9.7英寸","id":["101"],"normalizedValue":"ipad pro 1代 9.7英寸","type":"MODEL"}
+{"aliases":["ipad pro 11英寸 1代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 1代 11英寸","id":["102"],"normalizedValue":"ipad pro 1代 11英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini5","id":["103"],"normalizedValue":"ipad mini5","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air3","id":["104"],"normalizedValue":"ipad air3","type":"MODEL"}
+{"aliases":["ipad7"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 7代","id":["105"],"normalizedValue":"ipad 7代","type":"MODEL"}
+{"aliases":["ipad pro 12.9英寸 4代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 4代 12.9英寸","id":["106"],"normalizedValue":"ipad pro 4代 12.9英寸","type":"MODEL"}
+{"aliases":["ipad pro 11英寸 2代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 2代 11英寸","id":["107"],"normalizedValue":"ipad pro 2代 11英寸","type":"MODEL"}
+{"aliases":["苹果xr"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone xr","id":["134"],"normalizedValue":"iphone xr","type":"MODEL"}
+{"aliases":["苹果5s"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 5s","id":["2547"],"normalizedValue":"iphone 5s","type":"MODEL"}
+{"aliases":["苹果6"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 6","id":["2550"],"normalizedValue":"iphone 6","type":"MODEL"}
+{"aliases":["苹果6 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 6 plus","id":["2551"],"normalizedValue":"iphone 6 plus","type":"MODEL"}
+{"aliases":["苹果6s"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 6s","id":["2552"],"normalizedValue":"iphone 6s","type":"MODEL"}
+{"aliases":["苹果6s plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 6s plus","id":["2553"],"normalizedValue":"iphone 6s plus","type":"MODEL"}
+{"aliases":["苹果se"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone se","id":["2554"],"normalizedValue":"iphone se","type":"MODEL"}
+{"aliases":["苹果7"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 7","id":["2555"],"normalizedValue":"iphone 7","type":"MODEL"}
+{"aliases":["苹果7 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 7 plus","id":["2556"],"normalizedValue":"iphone 7 plus","type":"MODEL"}
+{"aliases":["苹果8"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 8","id":["2557"],"normalizedValue":"iphone 8","type":"MODEL"}
+{"aliases":["苹果8 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 8 plus","id":["2558"],"normalizedValue":"iphone 8 plus","type":"MODEL"}
+{"aliases":["苹果x"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone x","id":["2559"],"normalizedValue":"iphone x","type":"MODEL"}
+{"aliases":["苹果xs"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone xs","id":["2560"],"normalizedValue":"iphone xs","type":"MODEL"}
+{"aliases":["苹果xs max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone xs max","id":["2561"],"normalizedValue":"iphone xs max","type":"MODEL"}
+{"aliases":["苹果11"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 11","id":["2562"],"normalizedValue":"iphone 11","type":"MODEL"}
+{"aliases":["苹果11 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 11 pro","id":["2563"],"normalizedValue":"iphone 11 pro","type":"MODEL"}
+{"aliases":["苹果11 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 11 pro max","id":["2564"],"normalizedValue":"iphone 11 pro max","type":"MODEL"}
+{"aliases":["苹果se 2"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone se 2","id":["2565"],"normalizedValue":"iphone se 2","type":"MODEL"}
+{"aliases":["苹果12 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 12 pro","id":["3352"],"normalizedValue":"iphone 12 pro","type":"MODEL"}
+{"aliases":["苹果12 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 12 pro max","id":["3353"],"normalizedValue":"iphone 12 pro max","type":"MODEL"}
+{"aliases":["苹果12"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 12","id":["3354"],"normalizedValue":"iphone 12","type":"MODEL"}
+{"aliases":["苹果12 mini"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 12 mini","id":["3355"],"normalizedValue":"iphone 12 mini","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 12年 13寸","id":["3386"],"normalizedValue":"macbook air 12年 13寸","type":"MODEL"}
+{"aliases":["macbook pro"],"attributes":{"brandId":"14026","categoryId":"672"},"entity":"apple-macbook pro","id":["3388"],"normalizedValue":"apple-macbook pro","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"apple-macbook air 2014款","id":["3517"],"normalizedValue":"apple-macbook air 2014款","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 15年 11寸","id":["3518"],"normalizedValue":"macbook air 15年 11寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 17年 13寸","id":["3520"],"normalizedValue":"macbook air 17年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 18年 13寸","id":["3521"],"normalizedValue":"macbook air 18年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 19年 13寸","id":["3522"],"normalizedValue":"macbook air 19年 13寸","type":"MODEL"}
+{"aliases":["macbook air 2020","macbook air 20年"],"attributes":{"brandId":"14026","categoryId":"672"},"entity":"apple-macbook air 2020款","id":["3523"],"normalizedValue":"apple-macbook air 2020款","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"apple-macbook pro 2014款","id":["3524"],"normalizedValue":"apple-macbook pro 2014款","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 15年 15寸","id":["3525"],"normalizedValue":"macbook pro 15年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 16年 15寸","id":["3526"],"normalizedValue":"macbook pro 16年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 17年 15寸","id":["3527"],"normalizedValue":"macbook pro 17年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 18年 15寸","id":["3528"],"normalizedValue":"macbook pro 18年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 19年 15寸","id":["3529"],"normalizedValue":"macbook pro 19年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 20年 13寸","id":["3530"],"normalizedValue":"macbook pro 20年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook 15年 12寸","id":["3533"],"normalizedValue":"macbook 15年 12寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook 16年 12寸","id":["3534"],"normalizedValue":"macbook 16年 12寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook 17年 12寸","id":["3535"],"normalizedValue":"macbook 17年 12寸","type":"MODEL"}
+{"aliases":["ipad 8"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 8代","id":["3671"],"normalizedValue":"ipad 8代","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air4","id":["3672"],"normalizedValue":"ipad air4","type":"MODEL"}
+{"aliases":["ipad pro 11英寸 3代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 3代 11英寸","id":["3689"],"normalizedValue":"ipad pro 3代 11英寸","type":"MODEL"}
+{"aliases":["ipad pro 12.9英寸 5代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 5代 12.9英寸","id":["3690"],"normalizedValue":"ipad pro 5代 12.9英寸","type":"MODEL"}
+{"aliases":["苹果13 mini"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 13 mini","id":["3705"],"normalizedValue":"iphone 13 mini","type":"MODEL"}
+{"aliases":["苹果13"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 13","id":["3706"],"normalizedValue":"iphone 13","type":"MODEL"}
+{"aliases":["苹果13 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 13 pro","id":["3707"],"normalizedValue":"iphone 13 pro","type":"MODEL"}
+{"aliases":["13promax","苹果13 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 13 pro max","id":["3708"],"normalizedValue":"iphone 13 pro max","type":"MODEL"}
+{"aliases":["ipad 9"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 9代","id":["3716"],"normalizedValue":"ipad 9代","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini6","id":["3717"],"normalizedValue":"ipad mini6","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 21年 14寸","id":["3769"],"normalizedValue":"macbook pro 21年 14寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 15年 13寸","id":["3770"],"normalizedValue":"macbook pro 15年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 15年 13寸","id":["3771"],"normalizedValue":"macbook air 15年 13寸","type":"MODEL"}
+{"aliases":["apple watch s6"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 6","id":["3775"],"normalizedValue":"apple watch series 6","type":"MODEL"}
+{"aliases":["apple watch s5"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 5","id":["3776"],"normalizedValue":"apple watch series 5","type":"MODEL"}
+{"aliases":["apple watch s4"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 4","id":["3777"],"normalizedValue":"apple watch series 4","type":"MODEL"}
+{"aliases":["apple watch s3"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 3","id":["3778"],"normalizedValue":"apple watch series 3","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike+ (series 4)","id":["3779"],"normalizedValue":"apple watch nike+ (series 4)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike+ (series 3)","id":["3785"],"normalizedValue":"apple watch nike+ (series 3)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike (series 5)","id":["3786"],"normalizedValue":"apple watch nike (series 5)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 21年 16寸","id":["3873"],"normalizedValue":"macbook pro 21年 16寸","type":"MODEL"}
+{"aliases":["apple watch s7"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 7","id":["3901"],"normalizedValue":"apple watch series 7","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch se","id":["3919"],"normalizedValue":"apple watch se","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods max","id":["3929"],"normalizedValue":"airpods max","type":"MODEL"}
+{"aliases":["苹果se 3"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone se 3","id":["3953"],"normalizedValue":"iphone se 3","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 1","id":["3980"],"normalizedValue":"airpods pro 1","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air5","id":["4021"],"normalizedValue":"ipad air5","type":"MODEL"}
+{"aliases":["苹果14"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 14","id":["4202"],"normalizedValue":"iphone 14","type":"MODEL"}
+{"aliases":["苹果14 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 14 pro","id":["4203"],"normalizedValue":"iphone 14 pro","type":"MODEL"}
+{"aliases":["14promax","苹果14 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 14 pro max","id":["4204"],"normalizedValue":"iphone 14 pro max","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 22年 13寸","id":["4279"],"normalizedValue":"macbook pro 22年 13寸","type":"MODEL"}
+{"aliases":["macbook air m2"],"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 22年 13寸","id":["4280"],"normalizedValue":"macbook air 22年 13寸","type":"MODEL"}
+{"aliases":["苹果14 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 14 plus","id":["4281"],"normalizedValue":"iphone 14 plus","type":"MODEL"}
+{"aliases":["apple watch s8","applewatch8"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 8","id":["4286"],"normalizedValue":"apple watch series 8","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch se 2","id":["4287"],"normalizedValue":"apple watch se 2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 3","id":["4304"],"normalizedValue":"airpods 3","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 2","id":["4305"],"normalizedValue":"airpods 2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch ultra","id":["4307"],"normalizedValue":"apple watch ultra","type":"MODEL"}
+{"aliases":["ipad 10"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad 10代","id":["4320"],"normalizedValue":"ipad 10代","type":"MODEL"}
+{"aliases":["ipad pro 11英寸 4代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 4代 11英寸","id":["4321"],"normalizedValue":"ipad pro 4代 11英寸","type":"MODEL"}
+{"aliases":["ipad pro 12.9英寸 6代"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro 6代 12.9英寸","id":["4342"],"normalizedValue":"ipad pro 6代 12.9英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 2","id":["4368"],"normalizedValue":"airpods pro 2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike se","id":["4386"],"normalizedValue":"apple watch nike se","type":"MODEL"}
+{"aliases":["macbook pro m1"],"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro m1 20年 13寸","id":["6586"],"normalizedValue":"macbook pro m1 20年 13寸","type":"MODEL"}
+{"aliases":["macbook air m1"],"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air m1 20年 13寸","id":["6587"],"normalizedValue":"macbook air m1 20年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 19年 13寸","id":["6591"],"normalizedValue":"macbook pro 19年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 18年 13寸","id":["6593"],"normalizedValue":"macbook pro 18年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 12年 15寸","id":["6596"],"normalizedValue":"macbook pro 12年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 16年 13寸","id":["6599"],"normalizedValue":"macbook pro 16年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 23年 14寸","id":["7202"],"normalizedValue":"macbook pro 23年 14寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 23年 16寸","id":["7203"],"normalizedValue":"macbook pro 23年 16寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 23年 15寸","id":["7526"],"normalizedValue":"macbook air 23年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 13年 11寸","id":["7566"],"normalizedValue":"macbook air 13年 11寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 19年 16寸","id":["7655"],"normalizedValue":"macbook pro 19年 16寸","type":"MODEL"}
+{"aliases":["apple pencil 2"],"attributes":{"brandId":"14026","categoryId":"21445"},"entity":"apple pencil（第二代）","id":["7692"],"normalizedValue":"apple pencil（第二代）","type":"MODEL"}
+{"aliases":["apple pencil 1"],"attributes":{"brandId":"14026","categoryId":"21445"},"entity":"apple pencil（第一代）","id":["7693"],"normalizedValue":"apple pencil（第一代）","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 17年 13寸","id":["7858"],"normalizedValue":"macbook pro 17年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 13年 15寸","id":["7878"],"normalizedValue":"macbook pro 13年 15寸","type":"MODEL"}
+{"aliases":["apple watch s9","applewatch9"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 9","id":["8353"],"normalizedValue":"apple watch series 9","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch ultra 2","id":["8354"],"normalizedValue":"apple watch ultra 2","type":"MODEL"}
+{"aliases":["苹果15"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 15","id":["8355"],"normalizedValue":"iphone 15","type":"MODEL"}
+{"aliases":["苹果15 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 15 plus","id":["8356"],"normalizedValue":"iphone 15 plus","type":"MODEL"}
+{"aliases":["苹果15 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 15 pro","id":["8357"],"normalizedValue":"iphone 15 pro","type":"MODEL"}
+{"aliases":["15promax","苹果15 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 15 pro max","id":["8358"],"normalizedValue":"iphone 15 pro max","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 13年 13寸","id":["10199"],"normalizedValue":"macbook pro 13年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 11年 13寸","id":["10210"],"normalizedValue":"macbook pro 11年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 11年 13寸","id":["10215"],"normalizedValue":"macbook air 11年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 13年 13寸","id":["10216"],"normalizedValue":"macbook air 13年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike+ (series 2)","id":["13688"],"normalizedValue":"apple watch nike+ (series 2)","type":"MODEL"}
+{"aliases":["apple watch s1"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 1","id":["13691"],"normalizedValue":"apple watch series 1","type":"MODEL"}
+{"aliases":["apple watch s2"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 2","id":["13692"],"normalizedValue":"apple watch series 2","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch","id":["13696"],"normalizedValue":"apple watch","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike (series 7)","id":["13811"],"normalizedValue":"apple watch nike (series 7)","type":"MODEL"}
+{"aliases":["apple pencil usbc"],"attributes":{"brandId":"14026","categoryId":"21445"},"entity":"apple pencil (usb-c)","id":["16688"],"normalizedValue":"apple pencil (usb-c)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 2 充电仓","id":["16724"],"normalizedValue":"airpods pro 2 充电仓","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 2 单耳","id":["16725"],"normalizedValue":"airpods pro 2 单耳","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 2 充电仓","id":["16727"],"normalizedValue":"airpods 2 充电仓","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 2 单耳","id":["16728"],"normalizedValue":"airpods 2 单耳","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 3 充电仓","id":["16729"],"normalizedValue":"airpods 3 充电仓","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 24年 13寸","id":["16914"],"normalizedValue":"macbook air 24年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 24年 15寸","id":["16915"],"normalizedValue":"macbook air 24年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro (m4) 11英寸","id":["17511"],"normalizedValue":"ipad pro (m4) 11英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro (m4) 13英寸","id":["17512"],"normalizedValue":"ipad pro (m4) 13英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air (m2) 11英寸","id":["17513"],"normalizedValue":"ipad air (m2) 11英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air (m2) 13英寸","id":["17514"],"normalizedValue":"ipad air (m2) 13英寸","type":"MODEL"}
+{"aliases":["pencil pro"],"attributes":{"brandId":"14026","categoryId":"21445"},"entity":"apple pencil pro","id":["18565"],"normalizedValue":"apple pencil pro","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"841"},"entity":"homepod","id":["26530"],"normalizedValue":"homepod","type":"MODEL"}
+{"aliases":["homepod 2"],"attributes":{"brandId":"14026","categoryId":"841"},"entity":"homepod （第二代）","id":["26531"],"normalizedValue":"homepod （第二代）","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"841"},"entity":"homepod mini","id":["26532"],"normalizedValue":"homepod mini","type":"MODEL"}
+{"aliases":["apple watch s10"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 10","id":["27683"],"normalizedValue":"apple watch series 10","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 4 (不支持主动降噪)","id":["27687"],"normalizedValue":"airpods 4 (不支持主动降噪)","type":"MODEL"}
+{"aliases":["airpods4"],"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 4 (支持主动降噪)","id":["27688"],"normalizedValue":"airpods 4 (支持主动降噪)","type":"MODEL"}
+{"aliases":["苹果16"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 16","id":["27689"],"normalizedValue":"iphone 16","type":"MODEL"}
+{"aliases":["苹果16 plus"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 16 plus","id":["27690"],"normalizedValue":"iphone 16 plus","type":"MODEL"}
+{"aliases":["苹果16 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 16 pro","id":["27691"],"normalizedValue":"iphone 16 pro","type":"MODEL"}
+{"aliases":["16promax","苹果16 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 16 pro max","id":["27692"],"normalizedValue":"iphone 16 pro max","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 4 (支持主动降噪) 单耳","id":["29192"],"normalizedValue":"airpods 4 (支持主动降噪) 单耳","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 4 (支持主动降噪) 充电仓","id":["29196"],"normalizedValue":"airpods 4 (支持主动降噪) 充电仓","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad mini7","id":["29926"],"normalizedValue":"ipad mini7","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 24年 14寸","id":["30087"],"normalizedValue":"macbook pro 24年 14寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 24年 16寸","id":["30095"],"normalizedValue":"macbook pro 24年 16寸","type":"MODEL"}
+{"aliases":["mac mini m1","macmini m1","mac mini 2020"],"attributes":{"brandId":"14026","categoryId":"673"},"entity":"mac mini m1 2020年","id":["31326"],"normalizedValue":"mac mini m1 2020年","type":"MODEL"}
+{"aliases":["mac studio","mac studio 2023","macstudio"],"attributes":{"brandId":"14026","categoryId":"673"},"entity":"mac studio 2023年","id":["31329"],"normalizedValue":"mac studio 2023年","type":"MODEL"}
+{"aliases":["苹果16e"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 16e","id":["32574"],"normalizedValue":"iphone 16e","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 25年 15寸","id":["32790"],"normalizedValue":"macbook air 25年 15寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook air 25年 13寸","id":["32792"],"normalizedValue":"macbook air 25年 13寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad (a16) 11代","id":["32793"],"normalizedValue":"ipad (a16) 11代","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air (m3) 13英寸","id":["32794"],"normalizedValue":"ipad air (m3) 13英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad air (m3) 11英寸","id":["32796"],"normalizedValue":"ipad air (m3) 11英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 3 单耳","id":["41543"],"normalizedValue":"airpods pro 3 单耳","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 3","id":["41545"],"normalizedValue":"airpods pro 3","type":"MODEL"}
+{"aliases":["apple watch s11","applewatch11"],"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch series 11","id":["41546"],"normalizedValue":"apple watch series 11","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch ultra 3","id":["41547"],"normalizedValue":"apple watch ultra 3","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch se 3","id":["41551"],"normalizedValue":"apple watch se 3","type":"MODEL"}
+{"aliases":["苹果17"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 17","id":["41552"],"normalizedValue":"iphone 17","type":"MODEL"}
+{"aliases":["苹果17 pro"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 17 pro","id":["41554"],"normalizedValue":"iphone 17 pro","type":"MODEL"}
+{"aliases":["17promax","苹果17 pro max"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 17 pro max","id":["41555"],"normalizedValue":"iphone 17 pro max","type":"MODEL"}
+{"aliases":["苹果6"],"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone 6","id":["2550"],"normalizedValue":"iphone 6","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"655"},"entity":"iphone air","id":["41558"],"normalizedValue":"iphone air","type":"MODEL"}
+{"aliases":["mac mini 23年"],"attributes":{"brandId":"14026","categoryId":"673"},"entity":"mac mini 2023年","id":["31325"],"normalizedValue":"mac mini 2023年","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch nike (series 6)","id":["3780"],"normalizedValue":"apple watch nike (series 6)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 4 (不支持主动降噪) 充电仓","id":["29198"],"normalizedValue":"airpods 4 (不支持主动降噪) 充电仓","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"12348"},"entity":"apple watch hermès (series 8)","id":["13854"],"normalizedValue":"apple watch hermès (series 8)","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods pro 3 充电仓","id":["41540"],"normalizedValue":"airpods pro 3 充电仓","type":"MODEL"}
+{"aliases":["ipad pro m5 11英寸"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro (m5) 11英寸","id":["42931"],"normalizedValue":"ipad pro (m5) 11英寸","type":"MODEL"}
+{"aliases":["ipad pro m5 13英寸"],"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro (m5) 13英寸","id":["42936"],"normalizedValue":"ipad pro (m5) 13英寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 3 单耳","id":["16730"],"normalizedValue":"airpods 3 单耳","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"842"},"entity":"airpods 1","id":["7001"],"normalizedValue":"airpods 1","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"672"},"entity":"macbook pro 25年 14寸","id":["42929"],"normalizedValue":"macbook pro 25年 14寸","type":"MODEL"}
+{"attributes":{"brandId":"14026","categoryId":"2694"},"entity":"ipad pro (m5) 13英寸 纳米纹理版","id":["42937"],"normalizedValue":"ipad pro (m5) 13英寸 纳米纹理版","type":"MODEL"}

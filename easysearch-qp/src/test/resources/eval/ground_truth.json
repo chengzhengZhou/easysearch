@@ -1,0 +1,1096 @@
+{
+  "华为 Mate X6": [
+    {
+      "value": "华为",
+      "type": "BRAND",
+      "normalizedValue": "Huawei",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8557"
+    },
+    {
+      "value": "Mate X6",
+      "type": "MODEL",
+      "normalizedValue": "Mate X6",
+      "startOffset": 3,
+      "endOffset": 10,
+      "id": "30497"
+    }
+  ],
+  "苹果iPhone 15 Pro Max": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "iPhone 15 Pro Max",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 15 Pro Max",
+      "startOffset": 2,
+      "endOffset": 20,
+      "id": "8358"
+    }
+  ],
+  "苹果iPhone 16 Pro Max": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "iPhone 16 Pro Max",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 16 Pro Max",
+      "startOffset": 2,
+      "endOffset": 20,
+      "id": "27692"
+    }
+  ],
+  "典藏": [
+    {
+      "value": "典藏",
+      "type": "CONDITION",
+      "normalizedValue": "典藏版",
+      "startOffset": 0,
+      "endOffset": 2
+    }
+  ],
+  "三星 Galaxy Z Fold7": [
+    {
+      "value": "三星",
+      "type": "BRAND",
+      "normalizedValue": "Samsung",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "41653"
+    },
+    {
+      "value": "Galaxy Z Fold7",
+      "type": "MODEL",
+      "normalizedValue": "Galaxy Z Fold7",
+      "startOffset": 3,
+      "endOffset": 17,
+      "id": "39368"
+    }
+  ],
+  "AirPods Max": [
+    {
+      "value": "AirPods Max",
+      "type": "MODEL",
+      "normalizedValue": "AirPods Max",
+      "startOffset": 0,
+      "endOffset": 11,
+      "id": "3929"
+    }
+  ],
+  "vivo X Fold 3": [
+    {
+      "value": "vivo",
+      "type": "BRAND",
+      "normalizedValue": "vivo",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "25591"
+    },
+    {
+      "value": "X Fold 3",
+      "type": "MODEL",
+      "normalizedValue": "X Fold 3",
+      "startOffset": 5,
+      "endOffset": 13,
+      "id": "17102"
+    }
+  ],
+  "iPad mini6": [
+    {
+      "value": "iPad mini6",
+      "type": "MODEL",
+      "normalizedValue": "iPad mini6",
+      "startOffset": 0,
+      "endOffset": 10,
+      "id": "3717"
+    }
+  ],
+  "苹果手机": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "655"
+    }
+  ],
+  "苹果 iPhone 13": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "iPhone 13",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 13",
+      "startOffset": 3,
+      "endOffset": 12,
+      "id": "3706"
+    }
+  ],
+  "苹果15 pro max": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "15 pro max",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 15 Pro Max",
+      "startOffset": 2,
+      "endOffset": 12,
+      "id": "8358"
+    }
+  ],
+  "笔记本": [
+    {
+      "value": "笔记本",
+      "type": "CATEGORY",
+      "normalizedValue": "笔记本电脑",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "672"
+    }
+  ],
+  "小米 15 Ultra": [
+    {
+      "value": "小米",
+      "type": "BRAND",
+      "normalizedValue": "Xiaomi",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "133787"
+    },
+    {
+      "value": "15 Ultra",
+      "type": "MODEL",
+      "normalizedValue": "Xiaomi 15 Ultra",
+      "startOffset": 3,
+      "endOffset": 11,
+      "id": "32576"
+    }
+  ],
+  "OPPO Find X8 Ultra": [
+    {
+      "value": "OPPO",
+      "type": "BRAND",
+      "normalizedValue": "OPPO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "2032"
+    },
+    {
+      "value": "Find X8 Ultra",
+      "type": "MODEL",
+      "normalizedValue": "Find X8 Ultra",
+      "startOffset": 5,
+      "endOffset": 18,
+      "id": "35543"
+    }
+  ],
+  "REDMI K80 (至尊版)": [
+    {
+      "value": "REDMI",
+      "type": "BRAND",
+      "normalizedValue": "Redmi",
+      "startOffset": 0,
+      "endOffset": 5,
+      "id": "133787"
+    },
+    {
+      "value": "K80",
+      "type": "MODEL",
+      "normalizedValue": "Redmi K80",
+      "startOffset": 6,
+      "endOffset": 9,
+      "id": "30541"
+    },
+    {
+      "value": "至尊版",
+      "type": "TAG",
+      "normalizedValue": "至尊版",
+      "startOffset": 11,
+      "endOffset": 14
+    }
+  ],
+  "平板": [
+    {
+      "value": "平板",
+      "type": "CATEGORY",
+      "normalizedValue": "平板电脑",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "2694"
+    }
+  ],
+  "显卡": [
+    {
+      "value": "显卡",
+      "type": "CATEGORY",
+      "normalizedValue": "显卡",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "679"
+    }
+  ],
+  "折叠屏": [
+    {
+      "value": "折叠屏",
+      "type": "FEATURE",
+      "normalizedValue": "折叠屏",
+      "startOffset": 0,
+      "endOffset": 3
+    }
+  ],
+  "华为": [
+    {
+      "value": "华为",
+      "type": "BRAND",
+      "normalizedValue": "Huawei",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8557"
+    }
+  ],
+  "荣耀 Magic V3": [
+    {
+      "value": "荣耀",
+      "type": "BRAND",
+      "normalizedValue": "Honor",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "174101"
+    },
+    {
+      "value": "Magic V3",
+      "type": "MODEL",
+      "normalizedValue": "Magic V3",
+      "startOffset": 3,
+      "endOffset": 11,
+      "id": "26642"
+    }
+  ],
+  "佳明手表": [
+    {
+      "value": "佳明",
+      "type": "BRAND",
+      "normalizedValue": "Garmin",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8981"
+    },
+    {
+      "value": "手表",
+      "type": "CATEGORY",
+      "normalizedValue": "智能手表",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "12348"
+    }
+  ],
+  "iPhone 15": [
+    {
+      "value": "iPhone 15",
+      "type": "MODEL",
+      "normalizedValue": "iPhone 15",
+      "startOffset": 0,
+      "endOffset": 9,
+      "id": "8355"
+    }
+  ],
+  "手机": [
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "655"
+    }
+  ],
+  "OPPO Find N3": [
+    {
+      "value": "OPPO",
+      "type": "BRAND",
+      "normalizedValue": "OPPO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "2032"
+    },
+    {
+      "value": "Find N3",
+      "type": "MODEL",
+      "normalizedValue": "Find N3",
+      "startOffset": 5,
+      "endOffset": 12,
+      "id": "13085"
+    }
+  ],
+  "Apple Watch Series 10": [
+    {
+      "value": "Apple Watch Series 10",
+      "type": "MODEL",
+      "normalizedValue": "Apple Watch Series 10",
+      "startOffset": 0,
+      "endOffset": 21,
+      "id": "27683"
+    }
+  ],
+  "小米 13": [
+    {
+      "value": "小米",
+      "type": "BRAND",
+      "normalizedValue": "Xiaomi",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "133787"
+    },
+    {
+      "value": "13",
+      "type": "MODEL",
+      "normalizedValue": "Xiaomi 13",
+      "startOffset": 3,
+      "endOffset": 5,
+      "id": "4433"
+    }
+  ],
+  "一加 13": [
+    {
+      "value": "一加",
+      "type": "BRAND",
+      "normalizedValue": "OnePlus",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "63032"
+    },
+    {
+      "value": "13",
+      "type": "MODEL",
+      "normalizedValue": "OnePlus 13",
+      "startOffset": 3,
+      "endOffset": 5,
+      "id": "30091"
+    }
+  ],
+  "真我 GT7 Pro": [
+    {
+      "value": "真我",
+      "type": "BRAND",
+      "normalizedValue": "realme",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "438621"
+    },
+    {
+      "value": "GT7 Pro",
+      "type": "MODEL",
+      "normalizedValue": "GT7 Pro",
+      "startOffset": 3,
+      "endOffset": 10,
+      "id": "30241"
+    }
+  ],
+  "联想 拯救者 R9000P 2021": [
+    {
+      "value": "联想",
+      "type": "BRAND",
+      "normalizedValue": "Lenovo",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "11515"
+    },
+    {
+      "value": "拯救者 R9000P 2021",
+      "type": "MODEL",
+      "normalizedValue": "拯救者 R9000P 2021",
+      "startOffset": 3,
+      "endOffset": 21,
+      "id": "6333"
+    }
+  ],
+  "大疆": [
+    {
+      "value": "大疆",
+      "type": "BRAND",
+      "normalizedValue": "DJI",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "53680"
+    }
+  ],
+  "iQOO 12": [
+    {
+      "value": "iQOO",
+      "type": "BRAND",
+      "normalizedValue": "iQOO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "536885"
+    },
+    {
+      "value": "12",
+      "type": "MODEL",
+      "normalizedValue": "iQOO 12",
+      "startOffset": 5,
+      "endOffset": 7,
+      "id": "13147"
+    }
+  ],
+  "耳机": [
+    {
+      "value": "耳机",
+      "type": "CATEGORY",
+      "normalizedValue": "耳机",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "842"
+    }
+  ],
+  "折叠手机": [
+    {
+      "value": "折叠",
+      "type": "FEATURE",
+      "normalizedValue": "折叠屏",
+      "startOffset": 0,
+      "endOffset": 2
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "655"
+    }
+  ],
+  "投影仪": [
+    {
+      "value": "投影仪",
+      "type": "CATEGORY",
+      "normalizedValue": "投影仪",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "722"
+    }
+  ],
+  "运动相机": [
+    {
+      "value": "运动相机",
+      "type": "CATEGORY",
+      "normalizedValue": "运动相机",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "12342"
+    }
+  ],
+  "荣耀": [
+    {
+      "value": "荣耀",
+      "type": "BRAND",
+      "normalizedValue": "Honor",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "174101"
+    }
+  ],
+  "小米手机": [
+    {
+      "value": "小米",
+      "type": "BRAND",
+      "normalizedValue": "Xiaomi",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "133787"
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "655"
+    }
+  ],
+  "任天堂 Switch": [
+    {
+      "value": "任天堂",
+      "type": "BRAND",
+      "normalizedValue": "Nintendo",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "14671"
+    },
+    {
+      "value": "Switch",
+      "type": "MODEL",
+      "normalizedValue": "Switch",
+      "startOffset": 4,
+      "endOffset": 10
+    }
+  ],
+  "ThinkPad X1 Carbon": [
+    {
+      "value": "ThinkPad",
+      "type": "BRAND",
+      "normalizedValue": "ThinkPad",
+      "startOffset": 0,
+      "endOffset": 8,
+      "id": "11518"
+    },
+    {
+      "value": "X1 Carbon",
+      "type": "MODEL",
+      "normalizedValue": "X1 Carbon",
+      "startOffset": 9,
+      "endOffset": 18
+    }
+  ],
+  "MacBook Air": [
+    {
+      "value": "MacBook Air",
+      "type": "MODEL",
+      "normalizedValue": "MacBook Air",
+      "startOffset": 0,
+      "endOffset": 11
+    }
+  ],
+  "索尼耳机": [
+    {
+      "value": "索尼",
+      "type": "BRAND",
+      "normalizedValue": "Sony",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "153237"
+    },
+    {
+      "value": "耳机",
+      "type": "CATEGORY",
+      "normalizedValue": "耳机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "842"
+    }
+  ],
+  "Bose耳机": [
+    {
+      "value": "Bose",
+      "type": "BRAND",
+      "normalizedValue": "Bose",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "151412"
+    },
+    {
+      "value": "耳机",
+      "type": "CATEGORY",
+      "normalizedValue": "耳机",
+      "startOffset": 4,
+      "endOffset": 6,
+      "id": "842"
+    }
+  ],
+  "佳能相机": [
+    {
+      "value": "佳能",
+      "type": "BRAND",
+      "normalizedValue": "Canon",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8983"
+    },
+    {
+      "value": "相机",
+      "type": "CATEGORY",
+      "normalizedValue": "相机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "832"
+    }
+  ],
+  "大疆无人机": [
+    {
+      "value": "大疆",
+      "type": "BRAND",
+      "normalizedValue": "DJI",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "53680"
+    },
+    {
+      "value": "无人机",
+      "type": "CATEGORY",
+      "normalizedValue": "无人机",
+      "startOffset": 2,
+      "endOffset": 5,
+      "id": "12807"
+    }
+  ],
+  "华硕显卡": [
+    {
+      "value": "华硕",
+      "type": "BRAND",
+      "normalizedValue": "ASUS",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8551"
+    },
+    {
+      "value": "显卡",
+      "type": "CATEGORY",
+      "normalizedValue": "显卡",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "679"
+    }
+  ],
+  "联想笔记本": [
+    {
+      "value": "联想",
+      "type": "BRAND",
+      "normalizedValue": "Lenovo",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "11515"
+    },
+    {
+      "value": "笔记本",
+      "type": "CATEGORY",
+      "normalizedValue": "笔记本电脑",
+      "startOffset": 2,
+      "endOffset": 5,
+      "id": "672"
+    }
+  ],
+  "三星": [
+    {
+      "value": "三星",
+      "type": "BRAND",
+      "normalizedValue": "Samsung",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "41653"
+    }
+  ],
+  "苹果": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    }
+  ],
+  "vivo": [
+    {
+      "value": "vivo",
+      "type": "BRAND",
+      "normalizedValue": "vivo",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "25591"
+    }
+  ],
+  "游戏机": [
+    {
+      "value": "游戏机",
+      "type": "CATEGORY",
+      "normalizedValue": "游戏掌机",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "12804"
+    }
+  ],
+  "徕卡": [
+    {
+      "value": "徕卡",
+      "type": "BRAND",
+      "normalizedValue": "Leica",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "10809"
+    }
+  ],
+  "红米": [
+    {
+      "value": "红米",
+      "type": "BRAND",
+      "normalizedValue": "Redmi",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "133787"
+    }
+  ],
+  "拯救者": [
+    {
+      "value": "拯救者",
+      "type": "MODEL",
+      "normalizedValue": "拯救者",
+      "startOffset": 0,
+      "endOffset": 3
+    }
+  ],
+  "苹果平板": [
+    {
+      "value": "苹果",
+      "type": "BRAND",
+      "normalizedValue": "Apple",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "14026"
+    },
+    {
+      "value": "平板",
+      "type": "CATEGORY",
+      "normalizedValue": "平板电脑",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "2694"
+    }
+  ],
+  "华为平板": [
+    {
+      "value": "华为",
+      "type": "BRAND",
+      "normalizedValue": "Huawei",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "8557"
+    },
+    {
+      "value": "平板",
+      "type": "CATEGORY",
+      "normalizedValue": "平板电脑",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "2694"
+    }
+  ],
+  "荣耀手机": [
+    {
+      "value": "荣耀",
+      "type": "BRAND",
+      "normalizedValue": "Honor",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "174101"
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "655"
+    }
+  ],
+  "OPPO手机": [
+    {
+      "value": "OPPO",
+      "type": "BRAND",
+      "normalizedValue": "OPPO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "2032"
+    },
+    {
+      "value": "手机",
+      "type": "CATEGORY",
+      "normalizedValue": "手机",
+      "startOffset": 4,
+      "endOffset": 6,
+      "id": "655"
+    }
+  ],
+  "GoPro": [
+    {
+      "value": "GoPro",
+      "type": "BRAND",
+      "normalizedValue": "GoPro",
+      "startOffset": 0,
+      "endOffset": 5,
+      "id": "54035"
+    }
+  ],
+  "尼康": [
+    {
+      "value": "尼康",
+      "type": "BRAND",
+      "normalizedValue": "Nikon",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "13392"
+    }
+  ],
+  "松下": [
+    {
+      "value": "松下",
+      "type": "BRAND",
+      "normalizedValue": "Panasonic",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "16407"
+    }
+  ],
+  "影石": [
+    {
+      "value": "影石",
+      "type": "BRAND",
+      "normalizedValue": "Insta360",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "820379"
+    }
+  ],
+  "小天才": [
+    {
+      "value": "小天才",
+      "type": "BRAND",
+      "normalizedValue": "小天才",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "50457"
+    }
+  ],
+  "机械革命": [
+    {
+      "value": "机械革命",
+      "type": "BRAND",
+      "normalizedValue": "MECHREVO",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "54605"
+    }
+  ],
+  "雷神笔记本": [
+    {
+      "value": "雷神",
+      "type": "BRAND",
+      "normalizedValue": "Thunderobot",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "48100"
+    },
+    {
+      "value": "笔记本",
+      "type": "CATEGORY",
+      "normalizedValue": "笔记本电脑",
+      "startOffset": 2,
+      "endOffset": 5,
+      "id": "672"
+    }
+  ],
+  "外星人笔记本": [
+    {
+      "value": "外星人",
+      "type": "BRAND",
+      "normalizedValue": "Alienware",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "17193"
+    },
+    {
+      "value": "笔记本",
+      "type": "CATEGORY",
+      "normalizedValue": "笔记本电脑",
+      "startOffset": 3,
+      "endOffset": 6,
+      "id": "672"
+    }
+  ],
+  "极米投影仪": [
+    {
+      "value": "极米",
+      "type": "BRAND",
+      "normalizedValue": "XGIMI",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "66648"
+    },
+    {
+      "value": "投影仪",
+      "type": "CATEGORY",
+      "normalizedValue": "投影仪",
+      "startOffset": 2,
+      "endOffset": 5,
+      "id": "722"
+    }
+  ],
+  "JBL耳机": [
+    {
+      "value": "JBL",
+      "type": "BRAND",
+      "normalizedValue": "JBL",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "1262"
+    },
+    {
+      "value": "耳机",
+      "type": "CATEGORY",
+      "normalizedValue": "耳机",
+      "startOffset": 3,
+      "endOffset": 5,
+      "id": "842"
+    }
+  ],
+  "森海塞尔": [
+    {
+      "value": "森海塞尔",
+      "type": "BRAND",
+      "normalizedValue": "Sennheiser",
+      "startOffset": 0,
+      "endOffset": 4,
+      "id": "15196"
+    }
+  ],
+  "韶音耳机": [
+    {
+      "value": "韶音",
+      "type": "BRAND",
+      "normalizedValue": "OpenFit",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "991868"
+    },
+    {
+      "value": "耳机",
+      "type": "CATEGORY",
+      "normalizedValue": "耳机",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "842"
+    }
+  ],
+  "高驰手表": [
+    {
+      "value": "高驰",
+      "type": "BRAND",
+      "normalizedValue": "COROS",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "655717"
+    },
+    {
+      "value": "手表",
+      "type": "CATEGORY",
+      "normalizedValue": "智能手表",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "12348"
+    }
+  ],
+  "微星显卡": [
+    {
+      "value": "微星",
+      "type": "BRAND",
+      "normalizedValue": "MSI",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "17443"
+    },
+    {
+      "value": "显卡",
+      "type": "CATEGORY",
+      "normalizedValue": "显卡",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "679"
+    }
+  ],
+  "坚果投影": [
+    {
+      "value": "坚果",
+      "type": "BRAND",
+      "normalizedValue": "JMGO",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "44905"
+    },
+    {
+      "value": "投影",
+      "type": "CATEGORY",
+      "normalizedValue": "投影仪",
+      "startOffset": 2,
+      "endOffset": 4,
+      "id": "722"
+    }
+  ],
+  "漫步者音箱": [
+    {
+      "value": "漫步者",
+      "type": "BRAND",
+      "normalizedValue": "Edifier",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "12286"
+    },
+    {
+      "value": "音箱",
+      "type": "CATEGORY",
+      "normalizedValue": "音箱",
+      "startOffset": 3,
+      "endOffset": 5,
+      "id": "841"
+    }
+  ],
+  "ROG": [
+    {
+      "value": "ROG",
+      "type": "BRAND",
+      "normalizedValue": "ROG",
+      "startOffset": 0,
+      "endOffset": 3,
+      "id": "713830"
+    }
+  ],
+  "小度智能屏": [
+    {
+      "value": "小度",
+      "type": "BRAND",
+      "normalizedValue": "小度",
+      "startOffset": 0,
+      "endOffset": 2,
+      "id": "345020"
+    },
+    {
+      "value": "智能屏",
+      "type": "CATEGORY",
+      "normalizedValue": "音箱",
+      "startOffset": 2,
+      "endOffset": 5,
+      "id": "841"
+    }
+  ]
+}

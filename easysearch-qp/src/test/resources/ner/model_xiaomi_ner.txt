@@ -1,0 +1,321 @@
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板","id":["108"],"normalizedValue":"小米平板","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 4","id":["111"],"normalizedValue":"小米平板 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 4 plus","id":["112"],"normalizedValue":"小米平板 4 plus","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix 2s","id":["2662"],"normalizedValue":"小米 mix 2s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 6x","id":["2663"],"normalizedValue":"小米 6x","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 8 (后指纹版)","id":["2665"],"normalizedValue":"小米 8 (后指纹版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 8 se","id":["2666"],"normalizedValue":"小米 8 se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 max 3","id":["2670"],"normalizedValue":"小米 max 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 8 (青春版)","id":["2673"],"normalizedValue":"小米 8 (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 8 (屏幕指纹版)","id":["2674"],"normalizedValue":"小米 8 (屏幕指纹版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 play","id":["2691"],"normalizedValue":"小米 play","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 7","id":["2694"],"normalizedValue":"redmi note 7","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 9","id":["2718"],"normalizedValue":"小米 9","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 9 se","id":["2719"],"normalizedValue":"小米 9 se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 7 pro","id":["2720"],"normalizedValue":"redmi note 7 pro","type":"MODEL"}
+{"aliases":["红米k20pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k20 pro","id":["2723"],"normalizedValue":"redmi k20 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 cc 9e","id":["2726"],"normalizedValue":"小米 cc 9e","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 cc 9","id":["2727"],"normalizedValue":"小米 cc 9","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 8","id":["2730"],"normalizedValue":"redmi note 8","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 8 pro","id":["2731"],"normalizedValue":"redmi note 8 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k20 pro (尊享版)","id":["2732"],"normalizedValue":"redmi k20 pro (尊享版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 9 pro (5g版)","id":["2734"],"normalizedValue":"小米 9 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 8a","id":["2736"],"normalizedValue":"redmi 8a","type":"MODEL"}
+{"aliases":["红米k30"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30","id":["2738"],"normalizedValue":"redmi k30","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30 (5g版)","id":["2739"],"normalizedValue":"redmi k30 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 10 (5g版)","id":["2740"],"normalizedValue":"小米 10 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 10 pro (5g版)","id":["2741"],"normalizedValue":"小米 10 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30 pro (5g版)","id":["2742"],"normalizedValue":"redmi k30 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30 pro (5g 变焦版)","id":["2744"],"normalizedValue":"redmi k30 pro (5g 变焦版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 10 青春版 (5g版) (mi 10 lite zoom)","id":["2747"],"normalizedValue":"小米 10 青春版 (5g版) (mi 10 lite zoom)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 10x (5g版)","id":["2748"],"normalizedValue":"redmi 10x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 10x (4g版)","id":["2750"],"normalizedValue":"redmi 10x (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30 (5g极速版)","id":["2751"],"normalizedValue":"redmi k30 (5g极速版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30i (5g版)","id":["2752"],"normalizedValue":"redmi k30i (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 9","id":["2754"],"normalizedValue":"redmi 9","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 9a","id":["2755"],"normalizedValue":"redmi 9a","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 10 (至尊纪念版)","id":["2757"],"normalizedValue":"小米 10 (至尊纪念版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30 (至尊纪念版)","id":["2758"],"normalizedValue":"redmi k30 (至尊纪念版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k30s (至尊纪念版)","id":["3380"],"normalizedValue":"redmi k30s (至尊纪念版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 9 (5g版)","id":["3383"],"normalizedValue":"redmi note 9 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11","id":["3537"],"normalizedValue":"小米 11","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 9 (4g版)","id":["3547"],"normalizedValue":"redmi note 9 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 6","id":["3567"],"normalizedValue":"小米 6","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"红米 6a","id":["3570"],"normalizedValue":"红米 6a","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"红米 note 5","id":["3574"],"normalizedValue":"红米 note 5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k40","id":["3603"],"normalizedValue":"redmi k40","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k40 pro","id":["3604"],"normalizedValue":"redmi k40 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 10s","id":["3606"],"normalizedValue":"小米 10s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 ultra","id":["3630"],"normalizedValue":"小米 11 ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 pro","id":["3631"],"normalizedValue":"小米 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix fold","id":["3634"],"normalizedValue":"小米 mix fold","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k40 pro+","id":["3644"],"normalizedValue":"redmi k40 pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k40 (游戏增强版)","id":["3645"],"normalizedValue":"redmi k40 (游戏增强版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 (青春版)","id":["3646"],"normalizedValue":"小米 11 (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 10 (5g版)","id":["3649"],"normalizedValue":"redmi note 10 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 10 pro","id":["3650"],"normalizedValue":"redmi note 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix 4","id":["3679"],"normalizedValue":"小米 mix 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 5","id":["3729"],"normalizedValue":"小米平板 5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 5 pro","id":["3730"],"normalizedValue":"小米平板 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12","id":["3834"],"normalizedValue":"小米 12","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12 pro (5g 骁龙版)","id":["3835"],"normalizedValue":"小米 12 pro (5g 骁龙版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12 x","id":["3836"],"normalizedValue":"小米 12 x","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi","id":["3839"],"normalizedValue":"小米 civi","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11 pro","id":["3840"],"normalizedValue":"redmi note 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 9 pro (5g版)","id":["3866"],"normalizedValue":"redmi note 9 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11 (4g版)","id":["3870"],"normalizedValue":"redmi note 11 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11 (5g版)","id":["3871"],"normalizedValue":"redmi note 11 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11 pro+","id":["3872"],"normalizedValue":"redmi note 11 pro+","type":"MODEL"}
+{"aliases":["红米k50"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k50","id":["3944"],"normalizedValue":"redmi k50","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k50 (电竞版)","id":["3945"],"normalizedValue":"redmi k50 (电竞版)","type":"MODEL"}
+{"aliases":["红米k50pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k50 pro","id":["3996"],"normalizedValue":"redmi k50 pro","type":"MODEL"}
+{"aliases":["红米k40s"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k40s","id":["4054"],"normalizedValue":"redmi k40s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11t pro","id":["4058"],"normalizedValue":"redmi note 11t pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11t pro+","id":["4059"],"normalizedValue":"redmi note 11t pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12s ultra","id":["4133"],"normalizedValue":"小米 12s ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12s pro","id":["4134"],"normalizedValue":"小米 12s pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12s","id":["4135"],"normalizedValue":"小米 12s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi 1s","id":["4147"],"normalizedValue":"小米 civi 1s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 (青春活力版)","id":["4148"],"normalizedValue":"小米 11 (青春活力版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11se","id":["4155"],"normalizedValue":"redmi note 11se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi 2","id":["4312"],"normalizedValue":"小米 civi 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k50 (5g 至尊版)","id":["4316"],"normalizedValue":"redmi k50 (5g 至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix fold 2 (5g版)","id":["4317"],"normalizedValue":"小米 mix fold 2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 pro","id":["4328"],"normalizedValue":"redmi note 12 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 (5g版)","id":["4329"],"normalizedValue":"redmi note 12 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 12 pro (5g 天玑版)","id":["4330"],"normalizedValue":"小米 12 pro (5g 天玑版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi pad","id":["4369"],"normalizedValue":"redmi pad","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 5 pro 12.4英寸","id":["4384"],"normalizedValue":"小米平板 5 pro 12.4英寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 13","id":["4433"],"normalizedValue":"小米 13","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 13 pro","id":["4434"],"normalizedValue":"小米 13 pro","type":"MODEL"}
+{"aliases":["红米k60e"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k60e","id":["4435"],"normalizedValue":"redmi k60e","type":"MODEL"}
+{"aliases":["红米k60"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k60","id":["4436"],"normalizedValue":"redmi k60","type":"MODEL"}
+{"aliases":["红米k60pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k60 pro","id":["4437"],"normalizedValue":"redmi k60 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 turbo","id":["7067"],"normalizedValue":"redmi note 12 turbo","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"红米 6","id":["7184"],"normalizedValue":"红米 6","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线降噪耳机 3 pro","id":["7222"],"normalizedValue":"小米 真无线降噪耳机 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 buds 4 pro","id":["7223"],"normalizedValue":"小米 buds 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 buds 4","id":["7224"],"normalizedValue":"小米 buds 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 4 pro","id":["7225"],"normalizedValue":"redmi buds 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi airdots 3 pro","id":["7226"],"normalizedValue":"redmi airdots 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11r","id":["7364"],"normalizedValue":"redmi note 11r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi 3","id":["7431"],"normalizedValue":"小米 civi 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 10a","id":["7446"],"normalizedValue":"redmi 10a","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 4 青春版","id":["7492"],"normalizedValue":"redmi buds 4 青春版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 flipbuds pro","id":["7493"],"normalizedValue":"小米 flipbuds pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 4","id":["7494"],"normalizedValue":"redmi buds 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 3","id":["7495"],"normalizedValue":"redmi buds 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi watch 2","id":["7501"],"normalizedValue":"redmi watch 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s1","id":["7502"],"normalizedValue":"小米 watch s1","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi watch 3","id":["7503"],"normalizedValue":"redmi watch 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch color 2","id":["7504"],"normalizedValue":"小米 watch color 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 6 pro","id":["7510"],"normalizedValue":"小米平板 6 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米平板 6","id":["7514"],"normalizedValue":"小米平板 6","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 pro+","id":["7523"],"normalizedValue":"redmi note 12 pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook 14 ii","id":["7606"],"normalizedValue":"redmibook 14 ii","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 游戏本 15.6寸","id":["7607"],"normalizedValue":"小米 游戏本 15.6寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 pro 14","id":["7608"],"normalizedValue":"小米 笔记本 pro 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 pro x 15","id":["7609"],"normalizedValue":"小米 笔记本 pro x 15","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi g pro","id":["7610"],"normalizedValue":"redmi g pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook pro 14","id":["7611"],"normalizedValue":"redmibook pro 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 pro 15","id":["7612"],"normalizedValue":"小米 笔记本 pro 15","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本air 13.3寸","id":["7613"],"normalizedValue":"小米 笔记本air 13.3寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook 16","id":["7616"],"normalizedValue":"redmibook 16","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook air 13","id":["7617"],"normalizedValue":"redmibook air 13","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook 13","id":["7620"],"normalizedValue":"redmibook 13","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook 14","id":["7621"],"normalizedValue":"redmibook 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi g 游戏本","id":["7623"],"normalizedValue":"redmi g 游戏本","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 15.6寸","id":["7625"],"normalizedValue":"小米 笔记本 15.6寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 book air 13","id":["7626"],"normalizedValue":"小米 book air 13","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 pro 15 oled","id":["7627"],"normalizedValue":"小米 笔记本 pro 15 oled","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook pro 15","id":["7628"],"normalizedValue":"redmibook pro 15","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本air 12.5寸","id":["7629"],"normalizedValue":"小米 笔记本air 12.5寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook 15e","id":["7681"],"normalizedValue":"redmibook 15e","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 13 ultra","id":["7903"],"normalizedValue":"小米 13 ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 note 3","id":["8065"],"normalizedValue":"小米 note 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix fold 3","id":["8144"],"normalizedValue":"小米 mix fold 3","type":"MODEL"}
+{"aliases":["红米k60至尊版"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k60 (至尊版)","id":["8224"],"normalizedValue":"redmi k60 (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 12 (5g版)","id":["8257"],"normalizedValue":"redmi 12 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 12r","id":["8326"],"normalizedValue":"redmi 12r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi pad se","id":["8370"],"normalizedValue":"redmi pad se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 book pro 14","id":["12737"],"normalizedValue":"小米 book pro 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 book pro 16","id":["12739"],"normalizedValue":"小米 book pro 16","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 book 12.4 二合一","id":["12853"],"normalizedValue":"小米 book 12.4 二合一","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 14","id":["13065"],"normalizedValue":"小米 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 14 pro","id":["13067"],"normalizedValue":"小米 14 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch h1","id":["13118"],"normalizedValue":"小米 watch h1","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s3","id":["13129"],"normalizedValue":"小米 watch s3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米手表 color 运动版","id":["13157"],"normalizedValue":"小米手表 color 运动版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米手表 color","id":["13158"],"normalizedValue":"小米手表 color","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表5c","id":["13159"],"normalizedValue":"小米 米兔儿童电话手表5c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s2","id":["13161"],"normalizedValue":"小米 watch s2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 骨传导耳机","id":["13386"],"normalizedValue":"小米 骨传导耳机","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线蓝牙耳机air2","id":["13426"],"normalizedValue":"小米 真无线蓝牙耳机air2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线蓝牙耳机air 2s","id":["13430"],"normalizedValue":"小米 真无线蓝牙耳机air 2s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线蓝牙耳机air2 se","id":["13434"],"normalizedValue":"小米 真无线蓝牙耳机air2 se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi airdots 2","id":["13447"],"normalizedValue":"redmi airdots 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线蓝牙耳机air2 pro","id":["13450"],"normalizedValue":"小米 真无线蓝牙耳机air2 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi airdots 3","id":["13462"],"normalizedValue":"redmi airdots 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 真无线降噪耳机 3","id":["13506"],"normalizedValue":"小米 真无线降噪耳机 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 3 青春版","id":["13521"],"normalizedValue":"redmi buds 3 青春版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi airdots 3 pro 原神版","id":["13585"],"normalizedValue":"redmi airdots 3 pro 原神版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 4 活力版","id":["13657"],"normalizedValue":"redmi buds 4 活力版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 air 3 se","id":["13669"],"normalizedValue":"小米 air 3 se","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 5","id":["13672"],"normalizedValue":"redmi buds 5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表3","id":["13708"],"normalizedValue":"小米 米兔儿童电话手表3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表3c","id":["13722"],"normalizedValue":"小米 米兔儿童电话手表3c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 小寻儿童电话手表a5","id":["13746"],"normalizedValue":"小米 小寻儿童电话手表a5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米手表 xmwt01","id":["13752"],"normalizedValue":"小米手表 xmwt01","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表2s","id":["13779"],"normalizedValue":"小米 米兔儿童电话手表2s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi 手表","id":["13783"],"normalizedValue":"redmi 手表","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表5 pro","id":["13819"],"normalizedValue":"小米 米兔儿童电话手表5 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童学习手表6c","id":["13840"],"normalizedValue":"小米 米兔儿童学习手表6c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表u1","id":["13848"],"normalizedValue":"小米 米兔儿童电话手表u1","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童学习手表6","id":["13849"],"normalizedValue":"小米 米兔儿童学习手表6","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童学习手表6x","id":["13850"],"normalizedValue":"小米 米兔儿童学习手表6x","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表c7a","id":["13874"],"normalizedValue":"小米 米兔儿童电话手表c7a","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12r","id":["14100"],"normalizedValue":"redmi note 12r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 buds 3t pro","id":["14113"],"normalizedValue":"小米 buds 3t pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 6 max 14","id":["15038"],"normalizedValue":"小米 pad 6 max 14","type":"MODEL"}
+{"aliases":["红米k70"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k70","id":["15091"],"normalizedValue":"redmi k70","type":"MODEL"}
+{"aliases":["红米k70pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k70 pro","id":["15092"],"normalizedValue":"redmi k70 pro","type":"MODEL"}
+{"aliases":["红米k70e"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k70e","id":["15093"],"normalizedValue":"redmi k70e","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book 14 2024","id":["15109"],"normalizedValue":"redmi book 14 2024","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book 16 2024","id":["15125"],"normalizedValue":"redmi book 16 2024","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 5 pro","id":["15127"],"normalizedValue":"redmi buds 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 13 pro+","id":["16549"],"normalizedValue":"redmi note 13 pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 13 pro","id":["16550"],"normalizedValue":"redmi note 13 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12t pro","id":["16551"],"normalizedValue":"redmi note 12t pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 13r","id":["16606"],"normalizedValue":"redmi 13r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 13","id":["16653"],"normalizedValue":"redmi note 13","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 13c 5g","id":["16663"],"normalizedValue":"redmi 13c 5g","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmibook pro 15 2023","id":["16854"],"normalizedValue":"redmibook pro 15 2023","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"小米 笔记本 pro x 14","id":["16855"],"normalizedValue":"小米 笔记本 pro x 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book pro 16 2024","id":["16868"],"normalizedValue":"redmi book pro 16 2024","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book pro 14 2024","id":["16869"],"normalizedValue":"redmi book pro 14 2024","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 14 ultra","id":["16873"],"normalizedValue":"小米 14 ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 6s pro 12.4","id":["16906"],"normalizedValue":"小米 pad 6s pro 12.4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi g pro 2024","id":["16956"],"normalizedValue":"redmi g pro 2024","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi 4 pro","id":["17100"],"normalizedValue":"小米 civi 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 12c","id":["17138"],"normalizedValue":"redmi 12c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi turbo 3","id":["17258"],"normalizedValue":"redmi turbo 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 pro 极速版","id":["17266"],"normalizedValue":"redmi note 12 pro 极速版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 开放式耳机","id":["17284"],"normalizedValue":"小米 开放式耳机","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi pad pro","id":["17480"],"normalizedValue":"redmi pad pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 max","id":["18479"],"normalizedValue":"小米 max","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 13r","id":["26263"],"normalizedValue":"redmi note 13r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 pro","id":["26501"],"normalizedValue":"redmi 投影仪 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家投影仪 (青春版)","id":["26502"],"normalizedValue":"小米 米家投影仪 (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 sound","id":["26534"],"normalizedValue":"小米 sound","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 sound move","id":["26535"],"normalizedValue":"小米 sound move","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 sound pro","id":["26536"],"normalizedValue":"小米 sound pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 小爱音箱 pro","id":["26538"],"normalizedValue":"小米 小爱音箱 pro","type":"MODEL"}
+{"aliases":["红米k70至尊版"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k70 (至尊版)","id":["26717"],"normalizedValue":"redmi k70 (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix fold 4","id":["26731"],"normalizedValue":"小米 mix fold 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix flip","id":["26732"],"normalizedValue":"小米 mix flip","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s4 sport","id":["26739"],"normalizedValue":"小米 watch s4 sport","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 buds 5","id":["26992"],"normalizedValue":"小米 buds 5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 智能家庭屏 6","id":["27023"],"normalizedValue":"小米 智能家庭屏 6","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 户外蓝牙音箱 camp","id":["27211"],"normalizedValue":"小米 户外蓝牙音箱 camp","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12807"},"entity":"小米无人机 4k版","id":["27345"],"normalizedValue":"小米无人机 4k版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"21445"},"entity":"小米 灵感触控笔 (第一代)","id":["27785"],"normalizedValue":"小米 灵感触控笔 (第一代)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"21445"},"entity":"小米 灵感触控笔 (第二代)","id":["27786"],"normalizedValue":"小米 灵感触控笔 (第二代)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 14","id":["28779"],"normalizedValue":"redmi note 14","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 14 pro","id":["28781"],"normalizedValue":"redmi note 14 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 14 pro+","id":["28782"],"normalizedValue":"redmi note 14 pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 14r 5g","id":["29617"],"normalizedValue":"redmi 14r 5g","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"21445"},"entity":"小米 焦点触控笔","id":["29858"],"normalizedValue":"小米 焦点触控笔","type":"MODEL"}
+{"aliases":["小米15"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 15","id":["30041"],"normalizedValue":"小米 15","type":"MODEL"}
+{"aliases":["小米15pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 15 pro","id":["30043"],"normalizedValue":"小米 15 pro","type":"MODEL"}
+{"aliases":["小米平板7"],"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7","id":["30048"],"normalizedValue":"小米 pad 7","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7 (柔光版)","id":["30049"],"normalizedValue":"小米 pad 7 (柔光版)","type":"MODEL"}
+{"aliases":["小米平板7pro"],"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7 pro","id":["30050"],"normalizedValue":"小米 pad 7 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7 pro (柔光版)","id":["30052"],"normalizedValue":"小米 pad 7 pro (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s4","id":["30053"],"normalizedValue":"小米 watch s4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家投影仪 (青春版2s)","id":["30347"],"normalizedValue":"小米 米家投影仪 (青春版2s)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 蓝牙音箱 (asm02a)","id":["30428"],"normalizedValue":"小米 蓝牙音箱 (asm02a)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 2 pro","id":["30519"],"normalizedValue":"redmi 投影仪 2 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家投影仪 (青春版2)","id":["30533"],"normalizedValue":"小米 米家投影仪 (青春版2)","type":"MODEL"}
+{"aliases":["红米k80"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k80","id":["30541"],"normalizedValue":"redmi k80","type":"MODEL"}
+{"aliases":["红米k80pro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k80 pro","id":["30542"],"normalizedValue":"redmi k80 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi watch 5","id":["30551"],"normalizedValue":"redmi watch 5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"redmi buds 6 pro","id":["30553"],"normalizedValue":"redmi buds 6 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch h1 e","id":["30638"],"normalizedValue":"小米 watch h1 e","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 (lite版)","id":["30841"],"normalizedValue":"redmi 投影仪 (lite版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 小爱触屏音箱pro 8","id":["30855"],"normalizedValue":"小米 小爱触屏音箱pro 8","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi turbo 4","id":["31085"],"normalizedValue":"redmi turbo 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book 14 2025","id":["31089"],"normalizedValue":"redmi book 14 2025","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book 16 2025","id":["31090"],"normalizedValue":"redmi book 16 2025","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12 探索版","id":["31196"],"normalizedValue":"redmi note 12 探索版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 3 pro","id":["31342"],"normalizedValue":"redmi 投影仪 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 智能家庭屏 10","id":["31947"],"normalizedValue":"小米 智能家庭屏 10","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪","id":["32014"],"normalizedValue":"redmi 投影仪","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 2","id":["32015"],"normalizedValue":"redmi 投影仪 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 激光投影仪 1s","id":["32362"],"normalizedValue":"小米 激光投影仪 1s","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家激光投影电视 150英寸 主机","id":["32365"],"normalizedValue":"小米 米家激光投影电视 150英寸 主机","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家投影仪","id":["32367"],"normalizedValue":"小米 米家投影仪","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 14c","id":["32439"],"normalizedValue":"redmi 14c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 15 ultra","id":["32576"],"normalizedValue":"小米 15 ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book pro 14 2025","id":["32705"],"normalizedValue":"redmi book pro 14 2025","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"672"},"entity":"redmi book pro 16 2025","id":["32815"],"normalizedValue":"redmi book pro 16 2025","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 buds 5 pro","id":["32961"],"normalizedValue":"小米 buds 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家激光投影电视 4k","id":["35424"],"normalizedValue":"小米 米家激光投影电视 4k","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi turbo 4 pro","id":["35964"],"normalizedValue":"redmi turbo 4 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 civi 5 pro","id":["37004"],"normalizedValue":"小米 civi 5 pro","type":"MODEL"}
+{"aliases":["小米15spro"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 15s pro","id":["37007"],"normalizedValue":"小米 15s pro","type":"MODEL"}
+{"aliases":["红米k80至尊版"],"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k80 (至尊版)","id":["38389"],"normalizedValue":"redmi k80 (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix flip 2","id":["38390"],"normalizedValue":"小米 mix flip 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 15 pro","id":["40374"],"normalizedValue":"redmi note 15 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 15 pro+","id":["40376"],"normalizedValue":"redmi note 15 pro+","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 10x pro (5g版)","id":["2749"],"normalizedValue":"redmi 10x pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix 2","id":["2654"],"normalizedValue":"小米 mix 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 8 pro","id":["42117"],"normalizedValue":"小米 pad 8 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 17","id":["42106"],"normalizedValue":"小米 17","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7s pro 12.5","id":["38415"],"normalizedValue":"小米 pad 7s pro 12.5","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi pad 2","id":["40109"],"normalizedValue":"redmi pad 2","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 17 pro","id":["42109"],"normalizedValue":"小米 17 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 8","id":["42115"],"normalizedValue":"小米 pad 8","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 15r","id":["41432"],"normalizedValue":"redmi note 15r","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 15r 5g","id":["42534"],"normalizedValue":"redmi 15r 5g","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 17 pro max","id":["42111"],"normalizedValue":"小米 17 pro max","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7s pro 12.5 (柔光版)","id":["38424"],"normalizedValue":"小米 pad 7s pro 12.5 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 13r pro","id":["15117"],"normalizedValue":"redmi note 13r pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 14c (4g 海外版)","id":["30942"],"normalizedValue":"redmi 14c (4g 海外版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix2 (全陶瓷尊享版)","id":["2660"],"normalizedValue":"小米 mix2 (全陶瓷尊享版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7 ultra (柔光版)","id":["37006"],"normalizedValue":"小米 pad 7 ultra (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 8","id":["2735"],"normalizedValue":"redmi 8","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11e","id":["8289"],"normalizedValue":"redmi note 11e","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 15","id":["40371"],"normalizedValue":"redmi note 15","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 8 (透明探索版)","id":["2671"],"normalizedValue":"小米 8 (透明探索版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 小爱音箱 （hd版）","id":["26537"],"normalizedValue":"小米 小爱音箱 （hd版）","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"redmi 小爱触屏音箱pro 8","id":["30853"],"normalizedValue":"redmi 小爱触屏音箱pro 8","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi watch 4","id":["15129"],"normalizedValue":"redmi watch 4","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 12r pro","id":["8378"],"normalizedValue":"redmi note 12r pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 mix 3 (4g版)","id":["2682"],"normalizedValue":"小米 mix 3 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"redmi watch 3 青春版","id":["16882"],"normalizedValue":"redmi watch 3 青春版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi pad 2 (柔光版)","id":["40110"],"normalizedValue":"redmi pad 2 (柔光版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 cc 9 (美图定制版)","id":["2728"],"normalizedValue":"小米 cc 9 (美图定制版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 3","id":["30752"],"normalizedValue":"redmi 投影仪 3","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s4 15周年纪念版","id":["37043"],"normalizedValue":"小米 watch s4 15周年纪念版","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 lite (4g版)","id":["30333"],"normalizedValue":"小米 11 lite (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 cc 9 pro","id":["2737"],"normalizedValue":"小米 cc 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表5x","id":["13795"],"normalizedValue":"小米 米兔儿童电话手表5x","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 蓝牙项圈耳机（青春版）","id":["13232"],"normalizedValue":"小米 蓝牙项圈耳机（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11 lite (5g版)","id":["16981"],"normalizedValue":"小米 11 lite (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k20","id":["2724"],"normalizedValue":"redmi k20","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi k90","id":["43097"],"normalizedValue":"redmi k90","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"redmi 投影仪 3 (lite版)","id":["36663"],"normalizedValue":"redmi 投影仪 3 (lite版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 5x","id":["8128"],"normalizedValue":"小米 5x","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 米兔儿童电话手表4c","id":["13160"],"normalizedValue":"小米 米兔儿童电话手表4c","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi 7","id":["2721"],"normalizedValue":"redmi 7","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12348"},"entity":"小米 watch s1 pro","id":["13851"],"normalizedValue":"小米 watch s1 pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"12342"},"entity":"小米 米家小相机","id":["31563"],"normalizedValue":"小米 米家小相机","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"小米 11t pro","id":["31199"],"normalizedValue":"小米 11t pro","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 电视音箱 影院版 mdz-35-da","id":["31954"],"normalizedValue":"小米 电视音箱 影院版 mdz-35-da","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"小米 pad 7 ultra","id":["37005"],"normalizedValue":"小米 pad 7 ultra","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"722"},"entity":"小米 米家激光投影仪","id":["32366"],"normalizedValue":"小米 米家激光投影仪","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"2694"},"entity":"redmi k pad","id":["38489"],"normalizedValue":"redmi k pad","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"842"},"entity":"小米 蓝牙耳机 airdots（青春版）","id":["13427"],"normalizedValue":"小米 蓝牙耳机 airdots（青春版）","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"655"},"entity":"redmi note 11e pro(5g版)","id":["35551"],"normalizedValue":"redmi note 11e pro(5g版)","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"红米 小爱触屏音箱 8英寸","id":["26518"],"normalizedValue":"红米 小爱触屏音箱 8英寸","type":"MODEL"}
+{"attributes":{"brandId":"133787","categoryId":"841"},"entity":"小米 智能家庭屏pro 8","id":["31946"],"normalizedValue":"小米 智能家庭屏pro 8","type":"MODEL"}

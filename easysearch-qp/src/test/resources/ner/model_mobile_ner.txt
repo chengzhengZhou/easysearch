@@ -1,0 +1,859 @@
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r9s","id":["207"],"normalizedValue":"oppo r9s","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r11","id":["214"],"normalizedValue":"oppo r11","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a79","id":["221"],"normalizedValue":"oppo a79","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r17","id":["233"],"normalizedValue":"oppo r17","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a35 (2021款)","id":["235"],"normalizedValue":"oppo a35 (2021款)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k1","id":["238"],"normalizedValue":"oppo k1","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r15x","id":["256"],"normalizedValue":"oppo r15x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a7","id":["333"],"normalizedValue":"oppo a7","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno","id":["338"],"normalizedValue":"oppo reno","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a9","id":["339"],"normalizedValue":"oppo a9","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k3","id":["342"],"normalizedValue":"oppo k3","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a9x","id":["344"],"normalizedValue":"oppo a9x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno z","id":["345"],"normalizedValue":"oppo reno z","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno2","id":["351"],"normalizedValue":"oppo reno2","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a11x","id":["353"],"normalizedValue":"oppo a11x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k5","id":["354"],"normalizedValue":"oppo k5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno ace","id":["355"],"normalizedValue":"oppo reno ace","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno2 z","id":["356"],"normalizedValue":"oppo reno2 z","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a11 (2019款)","id":["357"],"normalizedValue":"oppo a11 (2019款)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a8","id":["358"],"normalizedValue":"oppo a8","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a91","id":["359"],"normalizedValue":"oppo a91","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno3 (5g版)","id":["360"],"normalizedValue":"oppo reno3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno3 (5g 元气版)","id":["365"],"normalizedValue":"oppo reno3 (5g 元气版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x2 (5g版)","id":["366"],"normalizedValue":"oppo find x2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo ace2 (5g版)","id":["368"],"normalizedValue":"oppo ace2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a52","id":["369"],"normalizedValue":"oppo a52","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a92s (5g版)","id":["370"],"normalizedValue":"oppo a92s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno4 (5g版)","id":["372"],"normalizedValue":"oppo reno4 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s8","id":["614"],"normalizedValue":"三星 galaxy s8","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s8+","id":["616"],"normalizedValue":"三星 galaxy s8+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s9","id":["624"],"normalizedValue":"三星 galaxy s9","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s9+","id":["625"],"normalizedValue":"三星 galaxy s9+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s10","id":["767"],"normalizedValue":"三星 galaxy s10","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s10+","id":["769"],"normalizedValue":"三星 galaxy s10+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s20 ultra (5g版)","id":["820"],"normalizedValue":"三星 galaxy s20 ultra (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy a51 (5g版)","id":["827"],"normalizedValue":"三星 galaxy a51 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s12 (2021款)","id":["1431"],"normalizedValue":"vivo s12 (2021款)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x20","id":["1481"],"normalizedValue":"vivo x20","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x20 plus","id":["1482"],"normalizedValue":"vivo x20 plus","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z1","id":["1491"],"normalizedValue":"vivo z1","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x21 (后指纹版)","id":["1496"],"normalizedValue":"vivo x21 (后指纹版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x23","id":["1500"],"normalizedValue":"vivo x23","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z3","id":["1513"],"normalizedValue":"vivo z3","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y55s (2021款)","id":["1514"],"normalizedValue":"vivo y55s (2021款)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x21s","id":["1518"],"normalizedValue":"vivo x21s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x27","id":["1556"],"normalizedValue":"vivo x27","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x27 pro","id":["1560"],"normalizedValue":"vivo x27 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y3","id":["1565"],"normalizedValue":"vivo y3","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z5x (710版)","id":["1567"],"normalizedValue":"vivo z5x (710版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z5","id":["1570"],"normalizedValue":"vivo z5","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo nex 3 (5g版)","id":["1573"],"normalizedValue":"vivo nex 3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo u3x","id":["1574"],"normalizedValue":"vivo u3x","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y5s","id":["1579"],"normalizedValue":"vivo y5s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s5","id":["1581"],"normalizedValue":"vivo s5","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z5i","id":["1582"],"normalizedValue":"vivo z5i","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y9s","id":["1583"],"normalizedValue":"vivo y9s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x30 (5g版)","id":["1586"],"normalizedValue":"vivo x30 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z6 (5g版)","id":["1587"],"normalizedValue":"vivo z6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo nex 3s (5g版)","id":["1588"],"normalizedValue":"vivo nex 3s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s6 (5g 2020款)","id":["1589"],"normalizedValue":"vivo s6 (5g 2020款)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y50 (4g版)","id":["1590"],"normalizedValue":"vivo y50 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y70s (5g版)","id":["1592"],"normalizedValue":"vivo y70s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x50 (5g版)","id":["1593"],"normalizedValue":"vivo x50 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y51s","id":["1597"],"normalizedValue":"vivo y51s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s7 (5g版)","id":["1598"],"normalizedValue":"vivo s7 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"11515","categoryId":"655"},"entity":"联想 z5","id":["1960"],"normalizedValue":"联想 z5","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 17 (5g版)","id":["2487"],"normalizedValue":"魅族 17 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 17 pro (5g版)","id":["2488"],"normalizedValue":"魅族 17 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 5g（5g版）","id":["3005"],"normalizedValue":"努比亚 红魔 5g（5g版）","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 7 pro (4g版)","id":["3036"],"normalizedValue":"一加 7 pro (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 7t","id":["3038"],"normalizedValue":"一加 7t","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 8 pro (5g版)","id":["3039"],"normalizedValue":"一加 8 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 8 (5g版)","id":["3040"],"normalizedValue":"一加 8 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 9","id":["3233"],"normalizedValue":"荣耀 9","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩7c","id":["3239"],"normalizedValue":"荣耀 畅玩7c","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 10","id":["3241"],"normalizedValue":"荣耀 10","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 9i","id":["3244"],"normalizedValue":"荣耀 9i","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 8x","id":["3246"],"normalizedValue":"荣耀 8x","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 8x max","id":["3247"],"normalizedValue":"荣耀 8x max","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩8c","id":["3248"],"normalizedValue":"荣耀 畅玩8c","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 20i","id":["3255"],"normalizedValue":"荣耀 20i","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 20","id":["3256"],"normalizedValue":"荣耀 20","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 20 pro","id":["3257"],"normalizedValue":"荣耀 20 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 9x","id":["3261"],"normalizedValue":"荣耀 9x","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 20s","id":["3262"],"normalizedValue":"荣耀 20s","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play3","id":["3263"],"normalizedValue":"荣耀 play3","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 20 (青春版)","id":["3265"],"normalizedValue":"荣耀 20 (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v30 (5g版)","id":["3266"],"normalizedValue":"荣耀 v30 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v30 pro (5g版)","id":["3267"],"normalizedValue":"荣耀 v30 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 30s (5g版)","id":["3268"],"normalizedValue":"荣耀 30s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩9a","id":["3269"],"normalizedValue":"荣耀 畅玩9a","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 30 (5g版)","id":["3270"],"normalizedValue":"荣耀 30 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 30 pro (5g版)","id":["3271"],"normalizedValue":"荣耀 30 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 30 pro+ (5g版)","id":["3272"],"normalizedValue":"荣耀 30 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play4t","id":["3273"],"normalizedValue":"荣耀 play4t","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play4t pro","id":["3274"],"normalizedValue":"荣耀 play4t pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x10 (5g版)","id":["3275"],"normalizedValue":"荣耀 x10 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x10 max (5g版)","id":["3277"],"normalizedValue":"荣耀 x10 max (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 30 青春版 (5g版)","id":["3278"],"normalizedValue":"荣耀 30 青春版 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play4 (5g版)","id":["3279"],"normalizedValue":"荣耀 play4 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 3 (5g版)","id":["3284"],"normalizedValue":"黑鲨游戏手机 3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k7","id":["3349"],"normalizedValue":"oppo k7","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo","id":["3356"],"normalizedValue":"iqoo","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo","id":["3357"],"normalizedValue":"iqoo neo","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo pro (5g版)","id":["3359"],"normalizedValue":"iqoo pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo (855版)","id":["3360"],"normalizedValue":"iqoo neo (855版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 3 (5g版)","id":["3362"],"normalizedValue":"iqoo 3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo3 (5g版)","id":["3363"],"normalizedValue":"iqoo neo3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z1 (5g版)","id":["3364"],"normalizedValue":"iqoo z1 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z1x (5g版)","id":["3365"],"normalizedValue":"iqoo z1x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy note 20 ultra (5g版)","id":["3369"],"normalizedValue":"三星 galaxy note 20 ultra (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 5","id":["3372"],"normalizedValue":"iqoo 5","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 8t","id":["3373"],"normalizedValue":"一加 8t","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold2 (5g版)","id":["3377"],"normalizedValue":"三星 galaxy z fold2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy note 20 (5g版)","id":["3378"],"normalizedValue":"三星 galaxy note 20 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno5 pro (5g版)","id":["3538"],"normalizedValue":"oppo reno5 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno5 (5g版)","id":["3539"],"normalizedValue":"oppo reno5 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 7","id":["3542"],"normalizedValue":"iqoo 7","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno4 se (5g版)","id":["3549"],"normalizedValue":"oppo reno4 se (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x7 pro","id":["3551"],"normalizedValue":"真我 x7 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y85","id":["3563"],"normalizedValue":"vivo y85","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x23 (幻彩版)","id":["3566"],"normalizedValue":"vivo x23 (幻彩版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s21 (5g版)","id":["3581"],"normalizedValue":"三星 galaxy s21 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s21 ultra (5g版)","id":["3582"],"normalizedValue":"三星 galaxy s21 ultra (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w21 (5g版)","id":["3583"],"normalizedValue":"三星 w21 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x60 pro (5g版)","id":["3596"],"normalizedValue":"vivo x60 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x60 (直屏版)","id":["3597"],"normalizedValue":"vivo x60 (直屏版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno5 pro+ (5g版)","id":["3601"],"normalizedValue":"oppo reno5 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v40 (5g版)","id":["3602"],"normalizedValue":"荣耀 v40 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x3","id":["3607"],"normalizedValue":"oppo find x3","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x3 pro","id":["3608"],"normalizedValue":"oppo find x3 pro","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 18","id":["3610"],"normalizedValue":"魅族 18","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 9","id":["3612"],"normalizedValue":"一加 9","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 9 pro","id":["3613"],"normalizedValue":"一加 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt","id":["3614"],"normalizedValue":"真我 gt","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s9 (5g 2021款)","id":["3615"],"normalizedValue":"vivo s9 (5g 2021款)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo5","id":["3616"],"normalizedValue":"iqoo neo5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a72 (5g版)","id":["3621"],"normalizedValue":"oppo a72 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x50 pro (5g 玩家版)","id":["3627"],"normalizedValue":"真我 x50 pro (5g 玩家版)","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 4","id":["3632"],"normalizedValue":"黑鲨游戏手机 4","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 9r","id":["3633"],"normalizedValue":"一加 9r","type":"MODEL"}
+{"attributes":{"brandId":"153237","categoryId":"655"},"entity":"索尼 xperia 1 iii","id":["3635"],"normalizedValue":"索尼 xperia 1 iii","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z3 (5g版)","id":["3638"],"normalizedValue":"iqoo z3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo (5g版)","id":["3641"],"normalizedValue":"真我 gt neo (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q3","id":["3651"],"normalizedValue":"真我 q3","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q3 pro","id":["3652"],"normalizedValue":"真我 q3 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play5 (5g版)","id":["3653"],"normalizedValue":"荣耀 play5 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 5t 活力版 (4g版)","id":["3654"],"normalizedValue":"荣耀 play 5t 活力版 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play5t","id":["3655"],"normalizedValue":"荣耀 play5t","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 50 se","id":["3659"],"normalizedValue":"荣耀 50 se","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 50","id":["3660"],"normalizedValue":"荣耀 50","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 50 pro","id":["3661"],"normalizedValue":"荣耀 50 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno6 (5g版)","id":["3662"],"normalizedValue":"oppo reno6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno6 pro (5g版)","id":["3663"],"normalizedValue":"oppo reno6 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno6 pro+ (5g版)","id":["3664"],"normalizedValue":"oppo reno6 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k9","id":["3665"],"normalizedValue":"oppo k9","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 60 pro","id":["3667"],"normalizedValue":"荣耀 60 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u1x","id":["3669"],"normalizedValue":"iqoo u1x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a93 (5g版)","id":["3670"],"normalizedValue":"oppo a93 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s10","id":["3673"],"normalizedValue":"vivo s10","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s10 pro","id":["3674"],"normalizedValue":"vivo s10 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x20","id":["3677"],"normalizedValue":"荣耀 x20","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo5 (活力版)","id":["3680"],"normalizedValue":"iqoo neo5 (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y52s","id":["3681"],"normalizedValue":"vivo y52s","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 8","id":["3684"],"normalizedValue":"iqoo 8","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 8 pro","id":["3685"],"normalizedValue":"iqoo 8 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a32","id":["3686"],"normalizedValue":"oppo a32","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v15 (5g版)","id":["3695"],"normalizedValue":"真我 v15 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno5 k (5g版)","id":["3697"],"normalizedValue":"oppo reno5 k (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩20","id":["3702"],"normalizedValue":"荣耀 畅玩20","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y3s","id":["3704"],"normalizedValue":"vivo y3s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y53s","id":["3709"],"normalizedValue":"vivo y53s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q","id":["3712"],"normalizedValue":"真我 q","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y31s 标准版","id":["3715"],"normalizedValue":"vivo y31s 标准版","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y73s (5g版)","id":["3720"],"normalizedValue":"vivo y73s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic3 (至臻版)","id":["3723"],"normalizedValue":"荣耀 magic3 (至臻版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy a52 (5g版)","id":["3725"],"normalizedValue":"三星 galaxy a52 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k9 pro","id":["3734"],"normalizedValue":"oppo k9 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic3 pro","id":["3735"],"normalizedValue":"荣耀 magic3 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic3","id":["3743"],"normalizedValue":"荣耀 magic3","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo2","id":["3745"],"normalizedValue":"真我 gt neo2","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q3s","id":["3746"],"normalizedValue":"真我 q3s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo2t","id":["3748"],"normalizedValue":"真我 gt neo2t","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x70","id":["3749"],"normalizedValue":"vivo x70","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x70 pro","id":["3750"],"normalizedValue":"vivo x70 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x70 pro+","id":["3751"],"normalizedValue":"vivo x70 pro+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 60","id":["3790"],"normalizedValue":"荣耀 60","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x30i","id":["3791"],"normalizedValue":"荣耀 x30i","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v5","id":["3837"],"normalizedValue":"真我 v5","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 10 pro","id":["3858"],"normalizedValue":"一加 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 9 pro","id":["3859"],"normalizedValue":"iqoo 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 9","id":["3860"],"normalizedValue":"iqoo 9","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v","id":["3869"],"normalizedValue":"荣耀 magic v","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k9s","id":["3894"],"normalizedValue":"oppo k9s","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip3 (5g版)","id":["3927"],"normalizedValue":"三星 galaxy z flip3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt (大师探索版)","id":["3928"],"normalizedValue":"真我 gt (大师探索版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt2","id":["3939"],"normalizedValue":"真我 gt2","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s22","id":["3941"],"normalizedValue":"三星 galaxy s22","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s22+","id":["3942"],"normalizedValue":"三星 galaxy s22+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s22 ultra","id":["3943"],"normalizedValue":"三星 galaxy s22 ultra","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 7","id":["3947"],"normalizedValue":"努比亚 红魔 7","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 7 pro","id":["3948"],"normalizedValue":"努比亚 红魔 7 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x5","id":["3949"],"normalizedValue":"oppo find x5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x5 pro","id":["3950"],"normalizedValue":"oppo find x5 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z40 pro","id":["3952"],"normalizedValue":"努比亚 z40 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo3 (5g款)","id":["3976"],"normalizedValue":"真我 gt neo3 (5g款)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo5s","id":["3977"],"normalizedValue":"iqoo neo5s","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno7 pro (5g版)","id":["3978"],"normalizedValue":"oppo reno7 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic4 (5g款)","id":["3997"],"normalizedValue":"荣耀 magic4 (5g款)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q2 (5g版)","id":["4003"],"normalizedValue":"真我 q2 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 70 (5g版)","id":["4055"],"normalizedValue":"荣耀 70 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 70 pro+ (5g版)","id":["4056"],"normalizedValue":"荣耀 70 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 70 pro (5g版)","id":["4057"],"normalizedValue":"荣耀 70 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k10","id":["4064"],"normalizedValue":"oppo k10","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k10 pro","id":["4065"],"normalizedValue":"oppo k10 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno8 (5g版)","id":["4066"],"normalizedValue":"oppo reno8 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno8 pro (5g版)","id":["4067"],"normalizedValue":"oppo reno8 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno8 pro+ (5g版)","id":["4068"],"normalizedValue":"oppo reno8 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n","id":["4113"],"normalizedValue":"oppo find n","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold","id":["4114"],"normalizedValue":"vivo x fold","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z5","id":["4117"],"normalizedValue":"iqoo z5","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 10","id":["4143"],"normalizedValue":"iqoo 10","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 10 pro","id":["4144"],"normalizedValue":"iqoo 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace (竞速版)","id":["4145"],"normalizedValue":"一加 ace (竞速版)","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace","id":["4146"],"normalizedValue":"一加 ace","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x80","id":["4149"],"normalizedValue":"vivo x80","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x80 pro (骁龙版）","id":["4150"],"normalizedValue":"vivo x80 pro (骁龙版）","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x80 pro (天玑9000版)","id":["4151"],"normalizedValue":"vivo x80 pro (天玑9000版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x note","id":["4152"],"normalizedValue":"vivo x note","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s15 pro","id":["4153"],"normalizedValue":"vivo s15 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s15","id":["4154"],"normalizedValue":"vivo s15","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo6","id":["4157"],"normalizedValue":"iqoo neo6","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo6 se","id":["4158"],"normalizedValue":"iqoo neo6 se","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic4 (至臻版)","id":["4310"],"normalizedValue":"荣耀 magic4 (至臻版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x40","id":["4311"],"normalizedValue":"荣耀 x40","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k10x","id":["4313"],"normalizedValue":"oppo k10x","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold4 (5g版)","id":["4314"],"normalizedValue":"三星 galaxy z fold4 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip4 (5g版)","id":["4315"],"normalizedValue":"三星 galaxy z flip4 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x40 gt","id":["4332"],"normalizedValue":"荣耀 x40 gt","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo7","id":["4334"],"normalizedValue":"iqoo neo7","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z6x (5g版)","id":["4335"],"normalizedValue":"iqoo z6x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a36","id":["4336"],"normalizedValue":"oppo a36","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k9x","id":["4337"],"normalizedValue":"oppo k9x","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s23","id":["4365"],"normalizedValue":"三星 galaxy s23","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s23+","id":["4366"],"normalizedValue":"三星 galaxy s23+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s23 ultra","id":["4367"],"normalizedValue":"三星 galaxy s23 ultra","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z5x","id":["4432"],"normalizedValue":"iqoo z5x","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w23","id":["7002"],"normalizedValue":"三星 w23","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w23 flip","id":["7003"],"normalizedValue":"三星 w23 flip","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x90 pro","id":["7064"],"normalizedValue":"vivo x90 pro","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 20","id":["7066"],"normalizedValue":"魅族 20","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z7x (m)","id":["7077"],"normalizedValue":"iqoo z7x (m)","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 edge s30","id":["7081"],"normalizedValue":"摩托罗拉 edge s30","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78+","id":["7145"],"normalizedValue":"vivo y78+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x50i","id":["7146"],"normalizedValue":"荣耀 x50i","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 7s pro","id":["7152"],"normalizedValue":"努比亚 红魔 7s pro","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机3","id":["7155"],"normalizedValue":"华硕 rog 游戏手机3","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 edge x30","id":["7156"],"normalizedValue":"摩托罗拉 edge x30","type":"MODEL"}
+{"attributes":{"brandId":"11515","categoryId":"655"},"entity":"联想 拯救者 y90","id":["7167"],"normalizedValue":"联想 拯救者 y90","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k10 (活力版)","id":["7171"],"normalizedValue":"oppo k10 (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo5 se","id":["7178"],"normalizedValue":"iqoo neo5 se","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y77 (5g版)","id":["7180"],"normalizedValue":"vivo y77 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s16","id":["7181"],"normalizedValue":"vivo s16","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩30 plus","id":["7187"],"normalizedValue":"荣耀 畅玩30 plus","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z40s pro 80w (5g版)","id":["7188"],"normalizedValue":"努比亚 z40s pro 80w (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo t2x (5g版)","id":["7191"],"normalizedValue":"vivo t2x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y77e (5g版)","id":["7192"],"normalizedValue":"vivo y77e (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 5","id":["7193"],"normalizedValue":"黑鲨游戏手机 5","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 5 pro","id":["7194"],"normalizedValue":"黑鲨游戏手机 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt2 (大师探索版)","id":["7195"],"normalizedValue":"真我 gt2 (大师探索版)","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 18x","id":["7198"],"normalizedValue":"魅族 18x","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y33s","id":["7209"],"normalizedValue":"vivo y33s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x90","id":["7210"],"normalizedValue":"vivo x90","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y76s","id":["7211"],"normalizedValue":"vivo y76s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y30 (2020款)","id":["7212"],"normalizedValue":"vivo y30 (2020款)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno7 (5g版)","id":["7213"],"normalizedValue":"oppo reno7 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n2 flip","id":["7214"],"normalizedValue":"oppo find n2 flip","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 7s","id":["7215"],"normalizedValue":"努比亚 红魔 7s","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 edge s pro","id":["7216"],"normalizedValue":"摩托罗拉 edge s pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y30 (2020款 标准版)","id":["7240"],"normalizedValue":"vivo y30 (2020款 标准版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo7 se","id":["7242"],"normalizedValue":"iqoo neo7 se","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a97","id":["7251"],"normalizedValue":"oppo a97","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y31s","id":["7252"],"normalizedValue":"vivo y31s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 11 pro+","id":["7254"],"normalizedValue":"真我 11 pro+","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 11 pro","id":["7255"],"normalizedValue":"真我 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 11","id":["7256"],"normalizedValue":"真我 11","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x30","id":["7267"],"normalizedValue":"荣耀 x30","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s7e (5g 活力版)","id":["7268"],"normalizedValue":"vivo s7e (5g 活力版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a1 pro","id":["7269"],"normalizedValue":"oppo a1 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 11","id":["7271"],"normalizedValue":"一加 11","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 2","id":["7272"],"normalizedValue":"一加 ace 2","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 5 rs","id":["7280"],"normalizedValue":"黑鲨游戏手机 5 rs","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a57 (5g 2022款)","id":["7284"],"normalizedValue":"oppo a57 (5g 2022款)","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 11 (5g版)","id":["7285"],"normalizedValue":"麦芒 11 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"104047","categoryId":"655"},"entity":"鼎桥 m40","id":["7286"],"normalizedValue":"鼎桥 m40","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v3","id":["7287"],"normalizedValue":"真我 v3","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v40 (轻奢版)","id":["7290"],"normalizedValue":"荣耀 v40 (轻奢版)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 axon 40 ultra","id":["7293"],"normalizedValue":"中兴 axon 40 ultra","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y53s (t2版)","id":["7294"],"normalizedValue":"vivo y53s (t2版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s17e","id":["7297"],"normalizedValue":"vivo s17e","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 80","id":["7298"],"normalizedValue":"荣耀 80","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v13 (5g版)","id":["7299"],"normalizedValue":"真我 v13 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s15e","id":["7301"],"normalizedValue":"vivo s15e","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo t1","id":["7302"],"normalizedValue":"vivo t1","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 10 pro","id":["7309"],"normalizedValue":"真我 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 10 pro+","id":["7310"],"normalizedValue":"真我 10 pro+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno9","id":["7311"],"normalizedValue":"oppo reno9","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno9 pro","id":["7312"],"normalizedValue":"oppo reno9 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno9 pro+","id":["7313"],"normalizedValue":"oppo reno9 pro+","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 9","id":["7314"],"normalizedValue":"hi nova 9","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 9 pro (5g版)","id":["7315"],"normalizedValue":"hi nova 9 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 10","id":["7316"],"normalizedValue":"hi nova 10","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 10 pro","id":["7317"],"normalizedValue":"hi nova 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic4 pro (5g款)","id":["7320"],"normalizedValue":"荣耀 magic4 pro (5g款)","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 s30 pro","id":["7321"],"normalizedValue":"摩托罗拉 s30 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s16e","id":["7322"],"normalizedValue":"vivo s16e","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q5 pro","id":["7324"],"normalizedValue":"真我 q5 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a96","id":["7325"],"normalizedValue":"oppo a96","type":"MODEL"}
+{"attributes":{"brandId":"153237","categoryId":"655"},"entity":"索尼 xperia 1 iv (5g版)","id":["7339"],"normalizedValue":"索尼 xperia 1 iv (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y35m","id":["7341"],"normalizedValue":"vivo y35m","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78m","id":["7360"],"normalizedValue":"vivo y78m","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a93s (5g版)","id":["7363"],"normalizedValue":"oppo a93s (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"11515","categoryId":"655"},"entity":"联想 拯救者 y70 (5g版)","id":["7367"],"normalizedValue":"联想 拯救者 y70 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x6","id":["7374"],"normalizedValue":"oppo find x6","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo8","id":["7380"],"normalizedValue":"iqoo neo8","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo8 pro","id":["7381"],"normalizedValue":"iqoo neo8 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno10","id":["7382"],"normalizedValue":"oppo reno10","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno10 pro","id":["7383"],"normalizedValue":"oppo reno10 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno10 pro+","id":["7384"],"normalizedValue":"oppo reno10 pro+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k11x","id":["7386"],"normalizedValue":"oppo k11x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a55 (5g版)","id":["7387"],"normalizedValue":"oppo a55 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x90 pro+","id":["7388"],"normalizedValue":"vivo x90 pro+","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace pro (5g版)","id":["7389"],"normalizedValue":"一加 ace pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y76s (t1版)","id":["7392"],"normalizedValue":"vivo y76s (t1版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 11","id":["7393"],"normalizedValue":"iqoo 11","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x6 pro","id":["7394"],"normalizedValue":"oppo find x6 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n2","id":["7395"],"normalizedValue":"oppo find n2","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 11 pro","id":["7404"],"normalizedValue":"iqoo 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a58","id":["7405"],"normalizedValue":"oppo a58","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno7 se (5g版)","id":["7408"],"normalizedValue":"oppo reno7 se (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 80 pro","id":["7420"],"normalizedValue":"荣耀 80 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x70t","id":["7421"],"normalizedValue":"vivo x70t","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold3 (5g版)","id":["7422"],"normalizedValue":"三星 galaxy z fold3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a56","id":["7427"],"normalizedValue":"oppo a56","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 9rt (5g版)","id":["7428"],"normalizedValue":"一加 9rt (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y35+","id":["7432"],"normalizedValue":"vivo y35+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 90","id":["7441"],"normalizedValue":"荣耀 90","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 90 pro","id":["7442"],"normalizedValue":"荣耀 90 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z6 (5g版)","id":["7445"],"normalizedValue":"iqoo z6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s17","id":["7449"],"normalizedValue":"vivo s17","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s17 pro","id":["7450"],"normalizedValue":"vivo s17 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo7 (竞速版)","id":["7451"],"normalizedValue":"iqoo neo7 (竞速版)","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 6","id":["7457"],"normalizedValue":"华硕 rog 游戏手机 6","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 2v","id":["7467"],"normalizedValue":"一加 ace 2v","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x3 pro (摄影师版)","id":["7469"],"normalizedValue":"oppo find x3 pro (摄影师版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo (5g 闪速版)","id":["7470"],"normalizedValue":"真我 gt neo (5g 闪速版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a53 (5g 2020款)","id":["7471"],"normalizedValue":"oppo a53 (5g 2020款)","type":"MODEL"}
+{"attributes":{"brandId":"21392","categoryId":"655"},"entity":"优畅 享 20","id":["7477"],"normalizedValue":"优畅 享 20","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s16 pro","id":["7482"],"normalizedValue":"vivo s16 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold+","id":["7509"],"normalizedValue":"vivo x fold+","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 x40","id":["7522"],"normalizedValue":"摩托罗拉 x40","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 60 se","id":["7525"],"normalizedValue":"荣耀 60 se","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w22 (5g版)","id":["7539"],"normalizedValue":"三星 w22 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic5","id":["7634"],"normalizedValue":"荣耀 magic5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a58x","id":["7635"],"normalizedValue":"oppo a58x","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x flip","id":["7647"],"normalizedValue":"vivo x flip","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold 2","id":["7648"],"normalizedValue":"vivo x fold 2","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic vs","id":["7649"],"normalizedValue":"荣耀 magic vs","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic5 (至臻版)","id":["7650"],"normalizedValue":"荣耀 magic5 (至臻版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x90s","id":["7695"],"normalizedValue":"vivo x90s","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z7x","id":["7731"],"normalizedValue":"iqoo z7x","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v20","id":["7743"],"normalizedValue":"真我 v20","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 11s","id":["7870"],"normalizedValue":"iqoo 11s","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 razr 40","id":["7872"],"normalizedValue":"摩托罗拉 razr 40","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z7","id":["7897"],"normalizedValue":"iqoo z7","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x50","id":["7900"],"normalizedValue":"荣耀 x50","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic5 pro","id":["7907"],"normalizedValue":"荣耀 magic5 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo 3 150w (5g款)","id":["7914"],"normalizedValue":"真我 gt neo 3 150w (5g款)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y35 (5g版)","id":["7939"],"normalizedValue":"vivo y35 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a95","id":["7940"],"normalizedValue":"oppo a95","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 razr 40 ultra","id":["7949"],"normalizedValue":"摩托罗拉 razr 40 ultra","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v2","id":["7993"],"normalizedValue":"荣耀 magic v2","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo5 se","id":["7995"],"normalizedValue":"真我 gt neo5 se","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo5 150w","id":["7996"],"normalizedValue":"真我 gt neo5 150w","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt neo5 240w","id":["7997"],"normalizedValue":"真我 gt neo5 240w","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z50 ultra","id":["7999"],"normalizedValue":"努比亚 z50 ultra","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 9 se","id":["8005"],"normalizedValue":"hi nova 9 se","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 60 pro 5g","id":["8013"],"normalizedValue":"wiko hi 畅享 60 pro 5g","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 20 pro","id":["8023"],"normalizedValue":"魅族 20 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v30t","id":["8025"],"normalizedValue":"真我 v30t","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩30","id":["8041"],"normalizedValue":"荣耀 畅玩30","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k11","id":["8042"],"normalizedValue":"oppo k11","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 11","id":["8068"],"normalizedValue":"hi nova 11","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 80 gt","id":["8073"],"normalizedValue":"荣耀 80 gt","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x40i (5g版)","id":["8074"],"normalizedValue":"荣耀 x40i (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v11s","id":["8076"],"normalizedValue":"真我 v11s","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold5 (5g版)","id":["8079"],"normalizedValue":"三星 galaxy z fold5 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip5 (5g版)","id":["8080"],"normalizedValue":"三星 galaxy z flip5 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀magic v2 (至臻版)","id":["8116"],"normalizedValue":"荣耀magic v2 (至臻版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 10 (青春版)","id":["8124"],"normalizedValue":"荣耀 10 (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x (青春版)","id":["8129"],"normalizedValue":"真我 x (青春版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩40 plus","id":["8130"],"normalizedValue":"荣耀 畅玩40 plus","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s9e (5g版)","id":["8131"],"normalizedValue":"vivo s9e (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 2 pro","id":["8215"],"normalizedValue":"一加 ace 2 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 80 pro 直屏版","id":["8267"],"normalizedValue":"荣耀 80 pro 直屏版","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic vs 至臻版","id":["8268"],"normalizedValue":"荣耀 magic vs 至臻版","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩 40","id":["8269"],"normalizedValue":"荣耀 畅玩 40","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n3 flip","id":["8294"],"normalizedValue":"oppo find n3 flip","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt5 240w","id":["8296"],"normalizedValue":"真我 gt5 240w","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 8s pro","id":["8359"],"normalizedValue":"努比亚 红魔 8s pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z8","id":["8360"],"normalizedValue":"iqoo z8","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a2 pro","id":["8371"],"normalizedValue":"oppo a2 pro","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 7","id":["8384"],"normalizedValue":"华硕 rog 游戏手机 7","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 20","id":["8385"],"normalizedValue":"麦芒 20","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v purse","id":["8390"],"normalizedValue":"荣耀 v purse","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x40 gt 竞速版","id":["8391"],"normalizedValue":"荣耀 x40 gt 竞速版","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z50","id":["8401"],"normalizedValue":"努比亚 z50","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y73t","id":["8419"],"normalizedValue":"vivo y73t","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 8 pro","id":["8426"],"normalizedValue":"努比亚 红魔 8 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z50s pro","id":["8427"],"normalizedValue":"努比亚 z50s pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a2x","id":["8430"],"normalizedValue":"oppo a2x","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w24","id":["8443"],"normalizedValue":"三星 w24","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 7t","id":["8449"],"normalizedValue":"荣耀 play 7t","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 8 pro+","id":["8467"],"normalizedValue":"努比亚 红魔 8 pro+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩50 plus","id":["13046"],"normalizedValue":"荣耀 畅玩50 plus","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 8t","id":["13068"],"normalizedValue":"荣耀 play 8t","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78 (t1版)","id":["13070"],"normalizedValue":"vivo y78 (t1版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy a54","id":["13080"],"normalizedValue":"三星 galaxy a54","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n3","id":["13085"],"normalizedValue":"oppo find n3","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic vs2","id":["13087"],"normalizedValue":"荣耀 magic vs2","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y100","id":["13104"],"normalizedValue":"vivo y100","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a2m","id":["13106"],"normalizedValue":"oppo a2m","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s23 fe","id":["13107"],"normalizedValue":"三星 galaxy s23 fe","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 20 classic","id":["13113"],"normalizedValue":"魅族 20 classic","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78t","id":["13124"],"normalizedValue":"vivo y78t","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 12","id":["13147"],"normalizedValue":"iqoo 12","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 12 pro","id":["13148"],"normalizedValue":"iqoo 12 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a2","id":["13177"],"normalizedValue":"oppo a2","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x100","id":["13888"],"normalizedValue":"vivo x100","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x100 pro","id":["13890"],"normalizedValue":"vivo x100 pro","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w24 flip","id":["14086"],"normalizedValue":"三星 w24 flip","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 60s 5g","id":["14088"],"normalizedValue":"wiko hi 畅享 60s 5g","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x50 pro (5g版)","id":["14093"],"normalizedValue":"真我 x50 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v23","id":["14095"],"normalizedValue":"真我 v23","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v30","id":["14098"],"normalizedValue":"真我 v30","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩 40c","id":["14101"],"normalizedValue":"荣耀 畅玩 40c","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩20a","id":["14103"],"normalizedValue":"荣耀 畅玩20a","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩20 pro","id":["14104"],"normalizedValue":"荣耀 畅玩20 pro","type":"MODEL"}
+{"attributes":{"brandId":"104047","categoryId":"655"},"entity":"鼎桥 p50 (5g版)","id":["14111"],"normalizedValue":"鼎桥 p50 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x50i+","id":["14116"],"normalizedValue":"荣耀 x50i+","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y36","id":["15054"],"normalizedValue":"vivo y36","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y36m","id":["15055"],"normalizedValue":"vivo y36m","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno11","id":["15065"],"normalizedValue":"oppo reno11","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno11 pro","id":["15066"],"normalizedValue":"oppo reno11 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 100","id":["15071"],"normalizedValue":"荣耀 100","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 100 pro","id":["15072"],"normalizedValue":"荣耀 100 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 9 pro+","id":["15094"],"normalizedValue":"努比亚 红魔 9 pro+","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt2 pro","id":["15099"],"normalizedValue":"真我 gt2 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y100i","id":["15115"],"normalizedValue":"vivo y100i","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 21","id":["15119"],"normalizedValue":"魅族 21","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z8x","id":["15123"],"normalizedValue":"iqoo z8x","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 9 pro","id":["15150"],"normalizedValue":"努比亚 红魔 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78","id":["15155"],"normalizedValue":"vivo y78","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 8s pro+","id":["15162"],"normalizedValue":"努比亚 红魔 8s pro+","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 12","id":["15163"],"normalizedValue":"一加 12","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt5 pro","id":["15167"],"normalizedValue":"真我 gt5 pro","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 20 infinity 无界版","id":["16548"],"normalizedValue":"魅族 20 infinity 无界版","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s18","id":["16559"],"normalizedValue":"vivo s18","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s18 pro","id":["16560"],"normalizedValue":"vivo s18 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s18e","id":["16562"],"normalizedValue":"vivo s18e","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y36i","id":["16578"],"normalizedValue":"vivo y36i","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z60 ultra","id":["16605"],"normalizedValue":"努比亚 z60 ultra","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a1 活力版","id":["16609"],"normalizedValue":"oppo a1 活力版","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 90 gt","id":["16627"],"normalizedValue":"荣耀 90 gt","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo9","id":["16639"],"normalizedValue":"iqoo neo9","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo9 pro","id":["16643"],"normalizedValue":"iqoo neo9 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 3","id":["16682"],"normalizedValue":"一加 ace 3","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x7","id":["16693"],"normalizedValue":"oppo find x7","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x7 ultra","id":["16694"],"normalizedValue":"oppo find x7 ultra","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x50 gt","id":["16696"],"normalizedValue":"荣耀 x50 gt","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y53t","id":["16701"],"normalizedValue":"vivo y53t","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v2 rsr 保时捷设计","id":["16707"],"normalizedValue":"荣耀 magic v2 rsr 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic6","id":["16708"],"normalizedValue":"荣耀 magic6","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic6 pro","id":["16709"],"normalizedValue":"荣耀 magic6 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x50 pro","id":["16746"],"normalizedValue":"荣耀 x50 pro","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s24","id":["16759"],"normalizedValue":"三星 galaxy s24","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s24+","id":["16760"],"normalizedValue":"三星 galaxy s24+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s24 ultra","id":["16761"],"normalizedValue":"三星 galaxy s24 ultra","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 8 pro","id":["16766"],"normalizedValue":"华硕 rog 游戏手机 8 pro","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 8","id":["16768"],"normalizedValue":"华硕 rog 游戏手机 8","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s17t","id":["16773"],"normalizedValue":"vivo s17t","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 12 pro+","id":["16893"],"normalizedValue":"真我 12 pro+","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 12 pro","id":["16894"],"normalizedValue":"真我 12 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a1x","id":["16898"],"normalizedValue":"oppo a1x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a1 (5g版)","id":["16908"],"normalizedValue":"oppo a1 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 21 pro","id":["16910"],"normalizedValue":"魅族 21 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo z3i (标准版)","id":["16977"],"normalizedValue":"vivo z3i (标准版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic6 (至臻版)","id":["17075"],"normalizedValue":"荣耀 magic6 (至臻版)","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 3v","id":["17102"],"normalizedValue":"一加 ace 3v","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold 3","id":["17103"],"normalizedValue":"vivo x fold 3","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z7i","id":["17114"],"normalizedValue":"iqoo z7i","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic6 rsr 保时捷设计","id":["17121"],"normalizedValue":"荣耀 magic6 rsr 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold 3 pro","id":["17139"],"normalizedValue":"vivo x fold 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 70 pro 5g","id":["17153"],"normalizedValue":"wiko hi 畅享 70 pro 5g","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy a55 (5g版)","id":["17176"],"normalizedValue":"三星 galaxy a55 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩50m","id":["17260"],"normalizedValue":"荣耀 畅玩50m","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩50","id":["17262"],"normalizedValue":"荣耀 畅玩50","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 80 se","id":["17265"],"normalizedValue":"荣耀 80 se","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我gt neo6 se","id":["17270"],"normalizedValue":"真我gt neo6 se","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3 pro","id":["17280"],"normalizedValue":"oppo a3 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 flip (5g版)","id":["17393"],"normalizedValue":"努比亚 flip (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 12x","id":["17427"],"normalizedValue":"真我 12x","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y200i","id":["17442"],"normalizedValue":"vivo y200i","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z9","id":["17472"],"normalizedValue":"iqoo z9","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z9 turbo","id":["17473"],"normalizedValue":"iqoo z9 turbo","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z9x","id":["17474"],"normalizedValue":"iqoo z9x","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy c55","id":["17477"],"normalizedValue":"三星 galaxy c55","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova12 se","id":["17485"],"normalizedValue":"hi nova12 se","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k12","id":["17495"],"normalizedValue":"oppo k12","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 小牛","id":["17534"],"normalizedValue":"努比亚 小牛","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x100s","id":["17549"],"normalizedValue":"vivo x100s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x100s pro","id":["17550"],"normalizedValue":"vivo x100s pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x100 ultra","id":["17551"],"normalizedValue":"vivo x100 ultra","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我gt neo6","id":["18282"],"normalizedValue":"真我gt neo6","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 21 note","id":["18563"],"normalizedValue":"魅族 21 note","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y200","id":["18578"],"normalizedValue":"vivo y200","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y200 gt","id":["18580"],"normalizedValue":"vivo y200 gt","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y200t","id":["18581"],"normalizedValue":"vivo y200t","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 12","id":["18608"],"normalizedValue":"真我 12","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo9s pro","id":["18611"],"normalizedValue":"iqoo neo9s pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 200","id":["18923"],"normalizedValue":"荣耀 200","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 200 pro","id":["18925"],"normalizedValue":"荣耀 200 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno12 pro","id":["18941"],"normalizedValue":"oppo reno12 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno12","id":["18942"],"normalizedValue":"oppo reno12","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s19 pro","id":["18945"],"normalizedValue":"vivo s19 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s19","id":["18950"],"normalizedValue":"vivo s19","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k12x","id":["26264"],"normalizedValue":"oppo k12x","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v flip","id":["26351"],"normalizedValue":"荣耀 magic v flip","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 3 pro","id":["26434"],"normalizedValue":"一加 ace 3 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩60 plus","id":["26440"],"normalizedValue":"荣耀 畅玩60 plus","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3 (5g版)","id":["26473"],"normalizedValue":"oppo a3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt5 150w","id":["26479"],"normalizedValue":"真我 gt5 150w","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 razr 50","id":["26483"],"normalizedValue":"摩托罗拉 razr 50","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 razr 50 ultra","id":["26484"],"normalizedValue":"摩托罗拉 razr 50 ultra","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 9s pro","id":["26493"],"normalizedValue":"努比亚 红魔 9s pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v60","id":["26583"],"normalizedValue":"真我 v60","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt6","id":["26601"],"normalizedValue":"真我 gt6","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 9s pro+","id":["26603"],"normalizedValue":"努比亚 红魔 9s pro+","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 s50 neo","id":["26606"],"normalizedValue":"摩托罗拉 s50 neo","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v60s","id":["26613"],"normalizedValue":"真我 v60s","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v3","id":["26642"],"normalizedValue":"荣耀 magic v3","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic vs3","id":["26643"],"normalizedValue":"荣耀 magic vs3","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo9s pro+","id":["26647"],"normalizedValue":"iqoo neo9s pro+","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y37 (5g版)","id":["26650"],"normalizedValue":"vivo y37 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y37m (5g版)","id":["26651"],"normalizedValue":"vivo y37m (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold6 (5g版)","id":["26690"],"normalizedValue":"三星 galaxy z fold6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip6 (5g版)","id":["26692"],"normalizedValue":"三星 galaxy z flip6 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z60s pro","id":["26957"],"normalizedValue":"努比亚 z60s pro","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 30","id":["26984"],"normalizedValue":"麦芒 30","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3 活力版","id":["26985"],"normalizedValue":"oppo a3 活力版","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x60i","id":["26997"],"normalizedValue":"荣耀 x60i","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z60 ultra 领先版","id":["27064"],"normalizedValue":"努比亚 z60 ultra 领先版","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 13 pro+","id":["27092"],"normalizedValue":"真我 13 pro+","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 魅蓝 20","id":["27117"],"normalizedValue":"魅族 魅蓝 20","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3x (5g版)","id":["27191"],"normalizedValue":"oppo a3x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 远航60","id":["27210"],"normalizedValue":"中兴 远航60","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y37 pro","id":["27447"],"normalizedValue":"vivo y37 pro","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 70m 5g","id":["27598"],"normalizedValue":"wiko hi 畅享 70m 5g","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 13 pro","id":["27605"],"normalizedValue":"真我 13 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300 pro","id":["27621"],"normalizedValue":"vivo y300 pro","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto s50","id":["27623"],"normalizedValue":"摩托罗拉 moto s50","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 13","id":["27658"],"normalizedValue":"真我 13","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y36c","id":["28607"],"normalizedValue":"vivo y36c","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z9 turbo+","id":["28744"],"normalizedValue":"iqoo z9 turbo+","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 lucky 08","id":["29612"],"normalizedValue":"魅族 lucky 08","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 9t","id":["29618"],"normalizedValue":"荣耀 play 9t","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k12 plus","id":["29756"],"normalizedValue":"oppo k12 plus","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x200","id":["29773"],"normalizedValue":"vivo x200","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x200 pro","id":["29774"],"normalizedValue":"vivo x200 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x200 pro mini","id":["29776"],"normalizedValue":"vivo x200 pro mini","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 9c","id":["29794"],"normalizedValue":"荣耀 play 9c","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x60","id":["29953"],"normalizedValue":"荣耀 x60","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x60 pro","id":["29955"],"normalizedValue":"荣耀 x60 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x8","id":["30010"],"normalizedValue":"oppo find x8","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x8 pro","id":["30018"],"normalizedValue":"oppo find x8 pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 13","id":["30059"],"normalizedValue":"iqoo 13","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic7","id":["30062"],"normalizedValue":"荣耀 magic7","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic7 pro","id":["30065"],"normalizedValue":"荣耀 magic7 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 13","id":["30091"],"normalizedValue":"一加 13","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto g55","id":["30142"],"normalizedValue":"摩托罗拉 moto g55","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto g75","id":["30219"],"normalizedValue":"摩托罗拉 moto g75","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt7 pro","id":["30241"],"normalizedValue":"真我 gt7 pro","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w25","id":["30314"],"normalizedValue":"三星 w25","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w25 flip","id":["30315"],"normalizedValue":"三星 w25 flip","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10 pro","id":["30437"],"normalizedValue":"努比亚 红魔 10 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10 pro+","id":["30439"],"normalizedValue":"努比亚 红魔 10 pro+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno13","id":["30475"],"normalizedValue":"oppo reno13","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno13 pro","id":["30476"],"normalizedValue":"oppo reno13 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s20","id":["30561"],"normalizedValue":"vivo s20","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s20 pro","id":["30562"],"normalizedValue":"vivo s20 pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z70 ultra","id":["30571"],"normalizedValue":"努比亚 z70 ultra","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo10","id":["30572"],"normalizedValue":"iqoo neo10","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo10 pro","id":["30591"],"normalizedValue":"iqoo neo10 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 300","id":["30631"],"normalizedValue":"荣耀 300","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 300 pro","id":["30632"],"normalizedValue":"荣耀 300 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 300 ultra","id":["30633"],"normalizedValue":"荣耀 300 ultra","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 9 pro","id":["30636"],"normalizedValue":"华硕 rog 游戏手机 9 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3i","id":["30692"],"normalizedValue":"oppo a3i","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 neo7","id":["30761"],"normalizedValue":"真我 neo7","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 70 plus","id":["30771"],"normalizedValue":"wiko hi 畅享 70 plus","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 9","id":["30788"],"normalizedValue":"华硕 rog 游戏手机 9","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 gt","id":["30789"],"normalizedValue":"荣耀 gt","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v60 pro","id":["30829"],"normalizedValue":"真我 v60 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300","id":["30833"],"normalizedValue":"vivo y300","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic7 rsr 保时捷设计","id":["30947"],"normalizedValue":"荣耀 magic7 rsr 保时捷设计","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 5","id":["30968"],"normalizedValue":"一加 ace 5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5 pro","id":["30969"],"normalizedValue":"oppo a5 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 5 pro","id":["30970"],"normalizedValue":"一加 ace 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto g54","id":["31105"],"normalizedValue":"摩托罗拉 moto g54","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z9 turbo (长续航版)","id":["31286"],"normalizedValue":"iqoo z9 turbo (长续航版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s25 ultra","id":["31430"],"normalizedValue":"三星 galaxy s25 ultra","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s25+","id":["31746"],"normalizedValue":"三星 galaxy s25+","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s25","id":["31747"],"normalizedValue":"三星 galaxy s25","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find n5","id":["32421"],"normalizedValue":"oppo find n5","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt7 pro 竞速版","id":["32598"],"normalizedValue":"真我 gt7 pro 竞速版","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 neo7 se","id":["32611"],"normalizedValue":"真我 neo7 se","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300i","id":["32840"],"normalizedValue":"vivo y300i","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 flip 2","id":["34685"],"normalizedValue":"努比亚 flip 2","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5 (活力版)","id":["34693"],"normalizedValue":"oppo a5 (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5 (5g版)","id":["34698"],"normalizedValue":"oppo a5 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 neo7x","id":["34949"],"normalizedValue":"真我 neo7x","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300t","id":["35099"],"normalizedValue":"vivo y300t","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300 pro+","id":["35112"],"normalizedValue":"vivo y300 pro+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩60","id":["35116"],"normalizedValue":"荣耀 畅玩60","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v70s","id":["35140"],"normalizedValue":"真我 v70s","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x8 ultra","id":["35543"],"normalizedValue":"oppo find x8 ultra","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x8s","id":["35552"],"normalizedValue":"oppo find x8s","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x8s+","id":["35554"],"normalizedValue":"oppo find x8s+","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10 air","id":["35644"],"normalizedValue":"努比亚 红魔 10 air","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 power","id":["35653"],"normalizedValue":"荣耀 power","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x200 ultra","id":["35822"],"normalizedValue":"vivo x200 ultra","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x200s","id":["35823"],"normalizedValue":"vivo x200s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt7","id":["35827"],"normalizedValue":"真我 gt7","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x60 gt","id":["35858"],"normalizedValue":"荣耀 x60 gt","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 gt pro","id":["35859"],"normalizedValue":"荣耀 gt pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩60m","id":["35956"],"normalizedValue":"荣耀 畅玩60m","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 13t","id":["35960"],"normalizedValue":"一加 13t","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k12s","id":["36011"],"normalizedValue":"oppo k12s","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z10 turbo","id":["36460"],"normalizedValue":"iqoo z10 turbo","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x70i","id":["36461"],"normalizedValue":"荣耀 x70i","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z10 turbo pro","id":["36464"],"normalizedValue":"iqoo z10 turbo pro","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z10x","id":["36563"],"normalizedValue":"iqoo z10x","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 z70s ultra","id":["36650"],"normalizedValue":"努比亚 z70s ultra","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno14","id":["36844"],"normalizedValue":"oppo reno14","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno14 pro","id":["36847"],"normalizedValue":"oppo reno14 pro","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 note 16","id":["36849"],"normalizedValue":"魅族 note 16","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s25 edge","id":["36868"],"normalizedValue":"三星 galaxy s25 edge","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo10 pro+","id":["36987"],"normalizedValue":"iqoo neo10 pro+","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 note 16 pro","id":["36996"],"normalizedValue":"魅族 note 16 pro","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 5 至尊版","id":["37255"],"normalizedValue":"一加 ace 5 至尊版","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 5 竞速版","id":["37256"],"normalizedValue":"一加 ace 5 竞速版","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 400","id":["37300"],"normalizedValue":"荣耀 400","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 400 pro","id":["37301"],"normalizedValue":"荣耀 400 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s30","id":["37306"],"normalizedValue":"vivo s30","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s30 pro mini","id":["37307"],"normalizedValue":"vivo s30 pro mini","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 neo7 turbo","id":["37309"],"normalizedValue":"真我 neo7 turbo","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y300 gt","id":["37419"],"normalizedValue":"vivo y300 gt","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5x (5g版)","id":["37690"],"normalizedValue":"oppo a5x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10s pro+","id":["37898"],"normalizedValue":"努比亚 红魔 10s pro+","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10s pro","id":["38358"],"normalizedValue":"努比亚 红魔 10s pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x fold 5","id":["38391"],"normalizedValue":"vivo x fold 5","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 40","id":["38608"],"normalizedValue":"麦芒 40","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v5","id":["38662"],"normalizedValue":"荣耀 magic v5","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x70","id":["39132"],"normalizedValue":"荣耀 x70","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z fold7 (5g版)","id":["39358"],"normalizedValue":"三星 galaxy z fold7 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip7 (5g版)","id":["39361"],"normalizedValue":"三星 galaxy z flip7 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy z flip7 fe","id":["39362"],"normalizedValue":"三星 galaxy z flip7 fe","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k13 turbo","id":["39407"],"normalizedValue":"oppo k13 turbo","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k13 turbo pro","id":["39409"],"normalizedValue":"oppo k13 turbo pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y50m (5g版)","id":["39423"],"normalizedValue":"vivo y50m (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y50 (5g版)","id":["39424"],"normalizedValue":"vivo y50 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩70 plus","id":["39772"],"normalizedValue":"荣耀 畅玩70 plus","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic v flip2","id":["40366"],"normalizedValue":"荣耀 magic v flip2","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y500","id":["40804"],"normalizedValue":"vivo y500","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 80 pro","id":["39242"],"normalizedValue":"wiko hi 畅享 80 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y72t","id":["32976"],"normalizedValue":"vivo y72t","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 18s","id":["7281"],"normalizedValue":"魅族 18s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x60 (曲屏版)","id":["7157"],"normalizedValue":"vivo x60 (曲屏版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩 30m","id":["8439"],"normalizedValue":"荣耀 畅玩 30m","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x60 pro+ (5g版)","id":["3595"],"normalizedValue":"vivo x60 pro+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y30 (2021款)","id":["7282"],"normalizedValue":"vivo y30 (2021款)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩7x","id":["3236"],"normalizedValue":"荣耀 畅玩7x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a6 pro","id":["41127"],"normalizedValue":"oppo a6 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y50i","id":["42742"],"normalizedValue":"vivo y50i","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s12 pro","id":["7407"],"normalizedValue":"vivo s12 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y53s (t1版)","id":["7274"],"normalizedValue":"vivo y53s (t1版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 5 pro","id":["3371"],"normalizedValue":"iqoo 5 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k13s","id":["42541"],"normalizedValue":"oppo k13s","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u5","id":["7177"],"normalizedValue":"iqoo u5","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x300","id":["42599"],"normalizedValue":"vivo x300","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 note 10","id":["3245"],"normalizedValue":"荣耀 note 10","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno3 pro (5g版)","id":["361"],"normalizedValue":"oppo reno3 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a6","id":["42177"],"normalizedValue":"oppo a6","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y33e","id":["7632"],"normalizedValue":"vivo y33e","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y10 (t2版)","id":["7327"],"normalizedValue":"vivo y10 (t2版)","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 edge 60s","id":["37679"],"normalizedValue":"摩托罗拉 edge 60s","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 9x pro","id":["3260"],"normalizedValue":"荣耀 9x pro","type":"MODEL"}
+{"attributes":{"brandId":"203906","categoryId":"655"},"entity":"nzone 50 pro (5g版)","id":["8386"],"normalizedValue":"nzone 50 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 畅行 60 plus","id":["36526"],"normalizedValue":"中兴 畅行 60 plus","type":"MODEL"}
+{"attributes":{"brandId":"731287","categoryId":"655"},"entity":"hi nova 9z","id":["8387"],"normalizedValue":"hi nova 9z","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x60t pro+","id":["8020"],"normalizedValue":"vivo x60t pro+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k13x","id":["42619"],"normalizedValue":"oppo k13x","type":"MODEL"}
+{"attributes":{"brandId":"153237","categoryId":"655"},"entity":"索尼 xperia 1 v","id":["16547"],"normalizedValue":"索尼 xperia 1 v","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y36s","id":["26423"],"normalizedValue":"vivo y36s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x300 pro","id":["42600"],"normalizedValue":"vivo x300 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 13 pro (至尊版)","id":["27415"],"normalizedValue":"真我 13 pro (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s7e (5g版)","id":["7270"],"normalizedValue":"vivo s7e (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo z10 turbo+","id":["39942"],"normalizedValue":"iqoo z10 turbo+","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩 40s","id":["14102"],"normalizedValue":"荣耀 畅玩 40s","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno4 pro (5g版)","id":["371"],"normalizedValue":"oppo reno4 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r15","id":["224"],"normalizedValue":"oppo r15","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v11 (5g版)","id":["3698"],"normalizedValue":"真我 v11 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y30 (2021款 活力版)","id":["7241"],"normalizedValue":"vivo y30 (2021款 活力版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play5t pro","id":["8421"],"normalizedValue":"荣耀 play5t pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a83","id":["223"],"normalizedValue":"oppo a83","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s1","id":["1559"],"normalizedValue":"vivo s1","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y10(t1版)","id":["7275"],"normalizedValue":"vivo y10(t1版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y97","id":["1501"],"normalizedValue":"vivo y97","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo k7x (5g版)","id":["3642"],"normalizedValue":"oppo k7x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y30g","id":["7279"],"normalizedValue":"vivo y30g","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y52s (t1版)","id":["7517"],"normalizedValue":"vivo y52s (t1版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x9","id":["42761"],"normalizedValue":"oppo find x9","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x9 pro","id":["42762"],"normalizedValue":"oppo find x9 pro","type":"MODEL"}
+{"attributes":{"brandId":"11515","categoryId":"655"},"entity":"联想 拯救者 电竞手机 pro","id":["1997"],"normalizedValue":"联想 拯救者 电竞手机 pro","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 畅行 60","id":["17283"],"normalizedValue":"中兴 畅行 60","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y50t","id":["8388"],"normalizedValue":"vivo y50t","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r15 pro","id":["225"],"normalizedValue":"oppo r15 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic8 pro","id":["42745"],"normalizedValue":"荣耀 magic8 pro","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3i plus","id":["32795"],"normalizedValue":"oppo a3i plus","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a7x","id":["234"],"normalizedValue":"oppo a7x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r17 pro","id":["236"],"normalizedValue":"oppo r17 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v20","id":["3252"],"normalizedValue":"荣耀 v20","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u5x","id":["7273"],"normalizedValue":"iqoo u5x","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u3 (5g版)","id":["3668"],"normalizedValue":"iqoo u3 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s21+ (5g版)","id":["3647"],"normalizedValue":"三星 galaxy s21+ (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s21 fe(5g版)","id":["3940"],"normalizedValue":"三星 galaxy s21 fe(5g版)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 畅行 50","id":["13142"],"normalizedValue":"中兴 畅行 50","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y7s","id":["1569"],"normalizedValue":"vivo y7s","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 8t pro","id":["26425"],"normalizedValue":"荣耀 play 8t pro","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 10 pro+ (臻金传奇)","id":["35476"],"normalizedValue":"努比亚 红魔 10 pro+ (臻金传奇)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 小鲜50","id":["16577"],"normalizedValue":"中兴 小鲜50","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x5 pro (天玑版)","id":["3951"],"normalizedValue":"oppo find x5 pro (天玑版)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 远航41","id":["8335"],"normalizedValue":"中兴 远航41","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 小鲜60","id":["29792"],"normalizedValue":"中兴 小鲜60","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y78m (t1版)","id":["13174"],"normalizedValue":"vivo y78m (t1版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q3 pro (狂欢版)","id":["3747"],"normalizedValue":"真我 q3 pro (狂欢版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s10e","id":["7283"],"normalizedValue":"vivo s10e","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s1 pro","id":["1564"],"normalizedValue":"vivo s1 pro","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 远航30s","id":["37899"],"normalizedValue":"中兴 远航30s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y10","id":["7676"],"normalizedValue":"vivo y10","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 22","id":["41572"],"normalizedValue":"魅族 22","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x20 se","id":["3658"],"normalizedValue":"荣耀 x20 se","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 11 pro+","id":["42902"],"normalizedValue":"努比亚 红魔 11 pro+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a6 gt","id":["40884"],"normalizedValue":"oppo a6 gt","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 11 pro","id":["42900"],"normalizedValue":"努比亚 红魔 11 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 x30 max","id":["3792"],"normalizedValue":"荣耀 x30 max","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt8 pro","id":["43269"],"normalizedValue":"真我 gt8 pro","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 w26","id":["42855"],"normalizedValue":"三星 w26","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo 15","id":["42906"],"normalizedValue":"iqoo 15","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 6c","id":["8446"],"normalizedValue":"荣耀 play 6c","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo s7t","id":["3683"],"normalizedValue":"vivo s7t","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 6","id":["3027"],"normalizedValue":"一加 6","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 6t","id":["3028"],"normalizedValue":"一加 6t","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u3x (5g版)","id":["4116"],"normalizedValue":"iqoo u3x (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo u3","id":["1577"],"normalizedValue":"vivo u3","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x50 pro (5g版)","id":["1594"],"normalizedValue":"vivo x50 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo find x2 pro (5g版)","id":["367"],"normalizedValue":"oppo find x2 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 magic8","id":["42743"],"normalizedValue":"荣耀 magic8","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 10 se (5g版)","id":["3868"],"normalizedValue":"麦芒 10 se (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 16x","id":["2479"],"normalizedValue":"魅族 16x","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno10 pro (海外版)","id":["13071"],"normalizedValue":"oppo reno10 pro (海外版)","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 v10","id":["3237"],"normalizedValue":"荣耀 v10","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 15","id":["43872"],"normalizedValue":"一加 15","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y93","id":["1515"],"normalizedValue":"vivo y93","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 畅玩8a","id":["3253"],"normalizedValue":"荣耀 畅玩8a","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 edge 60 pro","id":["37272"],"normalizedValue":"摩托罗拉 edge 60 pro","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo nex 3 (4g版)","id":["1572"],"normalizedValue":"vivo nex 3 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 80","id":["36681"],"normalizedValue":"wiko hi 畅享 80","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy note 8","id":["618"],"normalizedValue":"三星 galaxy note 8","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo11","id":["44322"],"normalizedValue":"iqoo neo11","type":"MODEL"}
+{"attributes":{"brandId":"188749","categoryId":"655"},"entity":"tcl p10","id":["32440"],"normalizedValue":"tcl p10","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto g100 pro","id":["39604"],"normalizedValue":"摩托罗拉 moto g100 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x7 pro (至尊版)","id":["7468"],"normalizedValue":"真我 x7 pro (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v25","id":["14097"],"normalizedValue":"真我 v25","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 moto x50 ultra","id":["18913"],"normalizedValue":"摩托罗拉 moto x50 ultra","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q3i (5g版)","id":["3741"],"normalizedValue":"真我 q3i (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉  razr（5g版）","id":["3590"],"normalizedValue":"摩托罗拉  razr（5g版）","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a1i","id":["26612"],"normalizedValue":"oppo a1i","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 razr 60","id":["37067"],"normalizedValue":"摩托罗拉 razr 60","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机2","id":["7246"],"normalizedValue":"华硕 rog 游戏手机2","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play","id":["3243"],"normalizedValue":"荣耀 play","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y32t","id":["7691"],"normalizedValue":"vivo y32t","type":"MODEL"}
+{"attributes":{"brandId":"298340","categoryId":"655"},"entity":"黑鲨游戏手机 4s","id":["7183"],"normalizedValue":"黑鲨游戏手机 4s","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒9","id":["32780"],"normalizedValue":"麦芒9","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u1","id":["3366"],"normalizedValue":"iqoo u1","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 10","id":["4331"],"normalizedValue":"真我 10","type":"MODEL"}
+{"attributes":{"brandId":"153237","categoryId":"655"},"entity":"索尼 xperia 5 ii","id":["3591"],"normalizedValue":"索尼 xperia 5 ii","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo u3x (标准版)","id":["7239"],"normalizedValue":"iqoo u3x (标准版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x30 pro (5g版)","id":["1585"],"normalizedValue":"vivo x30 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"536885","categoryId":"655"},"entity":"iqoo neo (855竞速版)","id":["3361"],"normalizedValue":"iqoo neo (855竞速版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a56s","id":["26467"],"normalizedValue":"oppo a56s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 12 pro (至尊版)","id":["16895"],"normalizedValue":"真我 12 pro (至尊版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 v50s","id":["15170"],"normalizedValue":"真我 v50s","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 6","id":["3678"],"normalizedValue":"努比亚 红魔 6","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo x21i","id":["1489"],"normalizedValue":"vivo x21i","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 21 pro flyme 钛好用版","id":["37585"],"normalizedValue":"魅族 21 pro flyme 钛好用版","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y31s (t2版)","id":["7400"],"normalizedValue":"vivo y31s (t2版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y77t","id":["8272"],"normalizedValue":"vivo y77t","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y74s","id":["7452"],"normalizedValue":"vivo y74s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y32","id":["7295"],"normalizedValue":"vivo y32","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 a20","id":["7677"],"normalizedValue":"麦芒 a20","type":"MODEL"}
+{"attributes":{"brandId":"671611","categoryId":"655"},"entity":"麦芒 10","id":["3867"],"normalizedValue":"麦芒 10","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo t1x","id":["7454"],"normalizedValue":"vivo t1x","type":"MODEL"}
+{"attributes":{"brandId":"186708","categoryId":"655"},"entity":"wiko hi 畅享 80 gt","id":["41917"],"normalizedValue":"wiko hi 畅享 80 gt","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r11s plus","id":["220"],"normalizedValue":"oppo r11s plus","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 7","id":["3035"],"normalizedValue":"一加 7","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo r11s","id":["219"],"normalizedValue":"oppo r11s","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 14 pro","id":["34811"],"normalizedValue":"真我 14 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q2 pro (5g版)","id":["3687"],"normalizedValue":"真我 q2 pro (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s10e","id":["768"],"normalizedValue":"三星 galaxy s10e","type":"MODEL"}
+{"attributes":{"brandId":"655161","categoryId":"655"},"entity":"u-magic 优畅享 50 plus (5g)","id":["13053"],"normalizedValue":"u-magic 优畅享 50 plus (5g)","type":"MODEL"}
+{"attributes":{"brandId":"108960","categoryId":"655"},"entity":"中兴 axon 40 pro","id":["7715"],"normalizedValue":"中兴 axon 40 pro","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play5 (活力版)","id":["14105"],"normalizedValue":"荣耀 play5 (活力版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y200+","id":["31293"],"normalizedValue":"vivo y200+","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a3","id":["226"],"normalizedValue":"oppo a3","type":"MODEL"}
+{"attributes":{"brandId":"13066","categoryId":"655"},"entity":"摩托罗拉 g53","id":["30881"],"normalizedValue":"摩托罗拉 g53","type":"MODEL"}
+{"attributes":{"brandId":"27094","categoryId":"655"},"entity":"努比亚 红魔 6s pro","id":["7170"],"normalizedValue":"努比亚 红魔 6s pro","type":"MODEL"}
+{"attributes":{"brandId":"8214","categoryId":"655"},"entity":"黑莓 key 2","id":["2523"],"normalizedValue":"黑莓 key 2","type":"MODEL"}
+{"attributes":{"brandId":"12669","categoryId":"655"},"entity":"魅族 18 pro","id":["3611"],"normalizedValue":"魅族 18 pro","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 gt (大师版)","id":["7455"],"normalizedValue":"真我 gt (大师版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 14","id":["34810"],"normalizedValue":"真我 14","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s20 fe (5g版)","id":["3546"],"normalizedValue":"三星 galaxy s20 fe (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a11s","id":["8032"],"normalizedValue":"oppo a11s","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y70t","id":["7484"],"normalizedValue":"vivo y70t","type":"MODEL"}
+{"attributes":{"brandId":"91515","categoryId":"655"},"entity":"锤子 坚果 pro2","id":["3014"],"normalizedValue":"锤子 坚果 pro2","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 8","id":["3225"],"normalizedValue":"荣耀 8","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机5","id":["7200"],"normalizedValue":"华硕 rog 游戏手机5","type":"MODEL"}
+{"attributes":{"brandId":"174101","categoryId":"655"},"entity":"荣耀 play 6t","id":["8271"],"normalizedValue":"荣耀 play 6t","type":"MODEL"}
+{"attributes":{"brandId":"8551","categoryId":"655"},"entity":"华硕 rog 游戏手机 6 天玑版","id":["7485"],"normalizedValue":"华硕 rog 游戏手机 6 天玑版","type":"MODEL"}
+{"attributes":{"brandId":"104490","categoryId":"655"},"entity":"谷歌 pixel 8a","id":["30136"],"normalizedValue":"谷歌 pixel 8a","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5 (4g版)","id":["229"],"normalizedValue":"oppo a5 (4g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 q5","id":["4156"],"normalizedValue":"真我 q5","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo a5 plus","id":["41107"],"normalizedValue":"oppo a5 plus","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy a56 (5g版)","id":["35049"],"normalizedValue":"三星 galaxy a56 (5g版)","type":"MODEL"}
+{"attributes":{"brandId":"438621","categoryId":"655"},"entity":"真我 x7","id":["3617"],"normalizedValue":"真我 x7","type":"MODEL"}
+{"attributes":{"brandId":"63032","categoryId":"655"},"entity":"一加 ace 6","id":["43874"],"normalizedValue":"一加 ace 6","type":"MODEL"}
+{"attributes":{"brandId":"2032","categoryId":"655"},"entity":"oppo reno (10倍变焦版)","id":["340"],"normalizedValue":"oppo reno (10倍变焦版)","type":"MODEL"}
+{"attributes":{"brandId":"25591","categoryId":"655"},"entity":"vivo y100t","id":["16957"],"normalizedValue":"vivo y100t","type":"MODEL"}
+{"attributes":{"brandId":"41653","categoryId":"655"},"entity":"三星 galaxy s20 (5g版)","id":["818"],"normalizedValue":"三星 galaxy s20 (5g版)","type":"MODEL"}

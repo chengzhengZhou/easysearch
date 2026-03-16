@@ -1,0 +1,29 @@
+@RELATION category dic
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+显卡,category,1,679
+镜头,category,1,834
+[智能手写笔,手写笔],category,1,21445
+[笔记本,电脑,macbook],category,1,672
+[平板电脑,平板,ipad],category,1,2694
+无人机,category,1,12807
+[手机,iphone],category,1,655
+[投影机,投影仪],category,1,722
+[耳机,耳麦],category,1,842
+运动相机,category,1,12342
+[相机套机,单反],category,1,832
+[相机机身,微单],category,1,5012
+[游戏掌机,掌机,游戏机],category,1,12804
+[音箱,音响],category,1,841
+[智能手表,手表,watch],category,1,12348
+[台式机],category,1,673
+[cpu],category,1,678
+[拍立得],category,1,7170
+[手持稳定器,云台],category,1,21651
+[数码相机],category,1,831
+[摄像机],category,1,833

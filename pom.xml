@@ -22,6 +22,7 @@
     <modules>
         <module>easysearch-core</module>
         <module>easysearch-cf</module>
+        <module>easysearch-qp</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

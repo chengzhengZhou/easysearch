@@ -1,0 +1,17 @@
+@RELATION condition dic
+
+@ATTRIBUTE word STRING
+@ATTRIBUTE nature STRING
+@ATTRIBUTE frequency STRING
+@ATTRIBUTE id STRING
+
+@DATA
+[5成新,五成新,50新],condition,1,50
+[6成新,六成新,60新],condition,1,60
+[7成新,七成新,70新],condition,1,70
+[8成新,八成新,80新],condition,1,80
+[9新,9成新,九成新,90新],condition,1,90
+[95新,九五新],condition,1,95
+[98新,九八新],condition,1,98
+[99新,九九新],condition,1,99
+[全新,准新,准新机,100新],condition,1,100
