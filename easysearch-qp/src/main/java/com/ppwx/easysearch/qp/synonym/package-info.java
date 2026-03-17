@@ -1,13 +1,17 @@
-/**
- * 同义词模块：基于 HanLP BinTrie 的匹配，支持单向/双向、改写与拓展。
- * <ul>
- *   <li>数据格式：简化 txt（源词 \t 方向 \t 目标1,目标2,...）</li>
- *   <li>匹配：SynonymEngine（BinTrie + 最长匹配）</li>
- *   <li>改写：RewriteStrategy（ReplaceFirst / ReplaceAll）</li>
- *   <li>拓展：ExpandStrategy（ExpandOr）</li>
- * </ul>
+/*
+ * Copyright 2026 chengzhengZhou
  *
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/11/1 11:20
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.ppwx.easysearch.qp.synonym;

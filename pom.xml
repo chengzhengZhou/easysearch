@@ -8,6 +8,16 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <description>搜索框架</description>
+    <name>easysearch</name>
+    <inceptionYear>2026</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -243,6 +253,24 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>4.6</version>
+                    <configuration>
+                        <header>${project.basedir}/license-header.txt</header>
+                        <includes>
+                            <include>**/*.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/target/**</exclude>
+                        </excludes>
+                        <mapping>
+                            <java>SLASHSTAR_STYLE</java>
+                        </mapping>
+                        <strictCheck>true</strictCheck>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>

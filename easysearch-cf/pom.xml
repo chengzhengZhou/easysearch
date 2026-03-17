@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
     <description>基于物品的协同过滤实现</description>
     <artifactId>easysearch-cf</artifactId>
+    <name>easysearch-cf</name>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
     <dependencies>
         <dependency>
             <groupId>com.ppwx</groupId>

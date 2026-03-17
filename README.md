@@ -22,3 +22,7 @@
 ![图片alt](https://afl-linli.oss-cn-hangzhou.aliyuncs.com/uat/e32147eeeee348f3.png "二排流程图")
 
 ![图片alt](https://afl-linli.oss-cn-hangzhou.aliyuncs.com/uat/dd130df0f7084dbf.png "类关系图")
+
+### License
+
+This project is licensed under the Apache License, Version 2.0. See `LICENSE`.

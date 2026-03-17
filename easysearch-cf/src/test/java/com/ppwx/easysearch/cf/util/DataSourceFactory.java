@@ -1,3 +1,19 @@
+/*
+ * Copyright 2026 chengzhengZhou
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ppwx.easysearch.cf.util;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -15,7 +31,7 @@ import javax.sql.DataSource;
 /**
  * @author ext.ahs.zhouchzh1@jd.com
  * @className DataSourceFactory
- * @description Êý¾Ý¿âÁ¬½Ó
+ * @description ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
  * @date 2025/2/11 9:43
  **/
 public class DataSourceFactory {
@@ -31,18 +47,18 @@ public class DataSourceFactory {
     public static RestHighLevelClient newESClient() {
         RestClientBuilder builder = RestClient.builder(
                 new HttpHost("es-nlb-es-zrqe8x61jd.jvessel-open-sh.jdcloud.com", 9200, "http"));
-        // ÉèÖÃÓÃ»§Ãû¡¢ÃÜÂë
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY,
                 new UsernamePasswordCredentials("elastic", "Dev_ES_JD_1024KB"));
-        // Á¬½ÓÑÓÊ±ÅäÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
         builder.setRequestConfigCallback(requestConfigBuilder -> {
             requestConfigBuilder.setConnectTimeout(1000);
             requestConfigBuilder.setSocketTimeout(30000);
             requestConfigBuilder.setConnectionRequestTimeout(500);
             return requestConfigBuilder;
         });
-        // Á¬½ÓÊýÅäÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         builder.setHttpClientConfigCallback(httpClientBuilder -> {
             httpClientBuilder.setMaxConnTotal(100);
             httpClientBuilder.setMaxConnPerRoute(100);
