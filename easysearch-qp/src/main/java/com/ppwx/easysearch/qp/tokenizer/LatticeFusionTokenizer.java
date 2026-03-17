@@ -2,12 +2,7 @@ package com.ppwx.easysearch.qp.tokenizer;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 词图融合分词器：构建 Lattice（词图）并对边上由模型/词典给出的分数做最优路径求解，得到融合分词结果。

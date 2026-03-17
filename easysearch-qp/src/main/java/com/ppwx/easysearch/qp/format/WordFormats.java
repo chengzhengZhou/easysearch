@@ -2,7 +2,7 @@ package com.ppwx.easysearch.qp.format;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ArrayUtil;
-import com.ppwx.easysearch.qp.support.pipeline.Pipeline;
+import com.ppwx.easysearch.qp.support.Pipeline;
 
 import java.util.Collection;
 
@@ -62,10 +62,6 @@ public final class WordFormats {
 
     public static WordFormat ignoreCase() {
         return WordFormatIgnoreCase.getInstance();
-    }
-
-    public static WordFormat trim() {
-        return WordFormatTrim.getInstance();
     }
 
     public static WordFormat truncate() {

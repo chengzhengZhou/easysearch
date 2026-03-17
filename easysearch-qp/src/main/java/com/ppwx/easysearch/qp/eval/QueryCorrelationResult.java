@@ -1,13 +1,14 @@
 package com.ppwx.easysearch.qp.eval;
 
+import com.ppwx.easysearch.core.similarity.CosineSimilarity;
+import com.ppwx.easysearch.core.similarity.JaccardSimilarity;
+import com.ppwx.easysearch.core.similarity.SequenceSimilarityScore;
 import com.ppwx.easysearch.qp.ner.Entity;
 import com.ppwx.easysearch.qp.ner.EntityType;
-import com.ppwx.easysearch.qp.similarity.CosineSimilarity;
-import com.ppwx.easysearch.qp.similarity.JaccardSimilarity;
-import com.ppwx.easysearch.qp.similarity.LevenshteinDistanceSimilarity;
-import com.ppwx.easysearch.qp.similarity.SequenceSimilarityScore;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * 查询相关性评估结果

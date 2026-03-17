@@ -2,12 +2,7 @@ package com.ppwx.easysearch.qp.tokenizer;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 组合分词器：词典优先覆盖 + CRF 填缝。

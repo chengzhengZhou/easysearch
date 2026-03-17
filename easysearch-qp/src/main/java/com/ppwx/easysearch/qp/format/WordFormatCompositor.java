@@ -1,7 +1,7 @@
 package com.ppwx.easysearch.qp.format;
 
-import com.ppwx.easysearch.qp.support.pipeline.DefaultPipeline;
-import com.ppwx.easysearch.qp.support.pipeline.Pipeline;
+import com.ppwx.easysearch.qp.support.DefaultPipeline;
+import com.ppwx.easysearch.qp.support.Pipeline;
 
 import java.util.List;
 

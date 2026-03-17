@@ -1,10 +1,8 @@
 package com.ppwx.easysearch.qp.ner.recognizer;
 
 import com.ppwx.easysearch.qp.ner.Entity;
-import com.ppwx.easysearch.qp.ner.EntityNormalizer;
 import com.ppwx.easysearch.qp.ner.EntityType;
 import com.ppwx.easysearch.qp.ner.normalizer.OriginalSliceStrategy;
-import com.ppwx.easysearch.qp.ner.normalizer.SpaceJoinStrategy;
 import com.ppwx.easysearch.qp.tokenizer.Token;
 import org.junit.Assert;
 import org.junit.Test;

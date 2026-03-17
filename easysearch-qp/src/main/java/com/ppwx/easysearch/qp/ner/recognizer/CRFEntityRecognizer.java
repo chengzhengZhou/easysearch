@@ -3,19 +3,15 @@ package com.ppwx.easysearch.qp.ner.recognizer;
 import com.hankcs.hanlp.model.crf.CRFNERecognizer;
 import com.ppwx.easysearch.qp.ner.Entity;
 import com.ppwx.easysearch.qp.ner.EntityNormalizer;
-import com.ppwx.easysearch.qp.ner.EntityType;
 import com.ppwx.easysearch.qp.ner.EntityRecognizer;
-import com.ppwx.easysearch.qp.ner.normalizer.TokenSpanToValueStrategy;
+import com.ppwx.easysearch.qp.ner.EntityType;
 import com.ppwx.easysearch.qp.ner.normalizer.SpaceJoinStrategy;
+import com.ppwx.easysearch.qp.ner.normalizer.TokenSpanToValueStrategy;
 import com.ppwx.easysearch.qp.tokenizer.Token;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 基于 HanLP CRF 的实体识别器。

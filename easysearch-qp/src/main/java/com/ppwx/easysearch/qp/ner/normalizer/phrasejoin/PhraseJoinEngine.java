@@ -2,11 +2,7 @@ package com.ppwx.easysearch.qp.ner.normalizer.phrasejoin;
 
 import com.ppwx.easysearch.qp.tokenizer.Token;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 词组转移状态机引擎：根据 Profile 对 token 序列做转移，输出补偿合并后的字符串。

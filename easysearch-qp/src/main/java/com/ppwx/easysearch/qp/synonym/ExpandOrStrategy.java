@@ -1,10 +1,6 @@
 package com.ppwx.easysearch.qp.synonym;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 拓展策略：对每个匹配用其每个目标替换，生成多条 query（去重）。

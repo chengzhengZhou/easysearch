@@ -2,16 +2,11 @@ package com.ppwx.easysearch.qp.tokenizer;
 
 import com.hankcs.hanlp.model.crf.CRFPOSTagger;
 import com.hankcs.hanlp.model.crf.CRFSegmenter;
-import com.ppwx.easysearch.qp.util.StreamUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

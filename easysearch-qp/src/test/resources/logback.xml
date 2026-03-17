@@ -28,7 +28,4 @@
         <level value="INFO"/>
         <appender-ref  ref="stdout"/>
     </root>
-    <logger name="com.ppwx.easysearch.qp.prediction.NerCategoryPrediction" level="INFO" additivity="false">
-        <appender-ref ref="stdout"/>
-    </logger>
 </configuration>

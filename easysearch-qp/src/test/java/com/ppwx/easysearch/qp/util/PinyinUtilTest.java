@@ -1,7 +1,5 @@
 package com.ppwx.easysearch.qp.util;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.mining.word2vec.Word2VecTrainer;
 import org.junit.Test;
 
 public class PinyinUtilTest {
