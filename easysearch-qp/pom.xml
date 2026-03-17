@@ -29,19 +29,7 @@
             <artifactId>hutool-core</artifactId>
             <version>5.8.20</version>
         </dependency>
-        <!--ik中文分词-->
-        <!--<dependency>
-            <groupId>com.jianggujin</groupId>
-            <artifactId>IKAnalyzer-lucene</artifactId>
-            <optional>true</optional>
-        </dependency>-->
-        <!--汉语转拼音-->
-        <!--<dependency>
-            <groupId>com.belerweb</groupId>
-            <artifactId>pinyin4j</artifactId>
-            <version>2.5.1</version>
-            <optional>true</optional>
-        </dependency>-->
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
         <dependency>
             <groupId>org.apache.commons</groupId>
