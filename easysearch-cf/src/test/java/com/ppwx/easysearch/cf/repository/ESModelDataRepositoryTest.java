@@ -34,10 +34,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className ESModelDataRepositoryTest
  * @description ESModelDataRepository������
- * @date 2025/2/10 16:48
  **/
 public class ESModelDataRepositoryTest {
 

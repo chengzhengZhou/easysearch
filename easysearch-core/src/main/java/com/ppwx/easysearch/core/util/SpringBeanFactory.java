@@ -22,8 +22,6 @@ import java.util.Map;
  *
  * Get bean from spring ioc container.
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/06 15:38
  * @since 1.0.0
  */
 public class SpringBeanFactory {

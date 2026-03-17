@@ -144,7 +144,7 @@ public class DictOverrideCompositeTokenizer implements Tokenizer {
         return result;
     }
 
-    /** 在缝隙 [gStart, gEnd) 内用 CRF token 与缝隙的交集填充。 */
+    
     private void fillGapWithCrf(String text, List<Token> result, List<Token> crfSorted, int gStart, int gEnd) {
         for (Token c : crfSorted) {
             int cs = c.getStartIndex();

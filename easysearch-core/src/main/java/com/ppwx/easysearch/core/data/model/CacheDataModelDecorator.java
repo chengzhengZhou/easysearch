@@ -27,8 +27,6 @@ import io.netty.util.AttributeKey;
  * 数据缓存装饰器
  * model本身需要承载参数变量不宜直接缓存，而{@link DataSet}则只包含数据本身，适宜缓存
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/20 15:00
  * @since 1.0.0
  */
 @Deprecated

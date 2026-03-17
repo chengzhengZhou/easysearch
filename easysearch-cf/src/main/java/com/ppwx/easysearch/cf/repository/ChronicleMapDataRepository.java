@@ -32,10 +32,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className ChronicleMapDataRepository
  * @description 基于Chronicle Map构建
- * @date 2025/2/14 9:51
  **/
 public class ChronicleMapDataRepository extends AbstractPersistentDataRepository {
 

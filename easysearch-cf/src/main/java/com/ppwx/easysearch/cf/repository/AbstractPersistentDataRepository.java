@@ -26,10 +26,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className AbstractPersistentDataRepository
  * @description 模型持久化存储基类
- * @date 2025/2/8 17:54
  **/
 public abstract class AbstractPersistentDataRepository implements ModelDataRepository {
 

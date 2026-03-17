@@ -24,8 +24,6 @@ import com.ppwx.easysearch.core.util.IKAnalyzerUtil;
  *
  * 获取字段上的分词词组个数
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/27 10:21
  * @since 1.0.0
  */
 public class FieldLengthFunc implements Function<Integer> {

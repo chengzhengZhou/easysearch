@@ -27,8 +27,6 @@ import java.util.Date;
  *
  * json对象 column
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 11:58
  * @since 1.0.0
  */
 public class JsonColumn extends Column {

@@ -25,8 +25,6 @@ import java.util.UUID;
  * 会话管理器
  * 提供会话的获取、失效、持久化等
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/29 12:03
  * @since 1.0.0
  */
 public class SessionManager {

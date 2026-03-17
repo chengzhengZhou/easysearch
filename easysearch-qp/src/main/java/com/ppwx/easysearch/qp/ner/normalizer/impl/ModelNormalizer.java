@@ -31,8 +31,6 @@ import java.util.regex.Pattern;
  * 4. 统一括号：将中文括号转换为英文括号
  * 5. 统一后缀：统一 pro、max、ultra、plus 等后缀格式
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class ModelNormalizer extends AbstractEntityTypeNormalizer {
     

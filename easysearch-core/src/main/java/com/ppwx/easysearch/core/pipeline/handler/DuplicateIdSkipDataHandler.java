@@ -37,8 +37,6 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
  *
  * 重复id剔除Handler
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/10 16:52
  * @since 1.0.0
  */
 @DataHandler.Sharable

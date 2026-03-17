@@ -44,8 +44,6 @@ import static com.ppwx.easysearch.core.data.model.Key.*;
  * mapping和实际返回字段最好吻合统一，避免出现类型转换出错
  * 默认会在字段添加字段：GLOBAL_ID, GLOBAL_SCORE, GLOBAL_STAINING, GLOBAL_SCORE_DETAIL
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 19:55
  * @since 1.0.0
  */
 public abstract class AbstractElasticSearchDataModel extends AbstractDataModel {

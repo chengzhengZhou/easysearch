@@ -38,8 +38,6 @@ import java.util.BitSet;
  * resv 保留区，前12字节用于存储bitSetSize、expectedInsertions、hashIterations（16字节）,剩余4个字节未用
  * 共52个字节
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/01/29 10:35
  * @since 1.0.0
  */
 public class MetaBloomFilter implements BloomFilter {

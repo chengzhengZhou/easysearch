@@ -17,10 +17,8 @@
 package com.ppwx.easysearch.core.query;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className SortQueryAttr
  * @description 排序
- * @date 2024/10/14 19:25
  **/
 public class SortQueryAttr extends QueryAttr<SortQueryAttr.OrderBy> {
 

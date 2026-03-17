@@ -27,8 +27,6 @@ import java.util.List;
  *
  * 数据库分表工具类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/05 18:09
  * @since 1.0.0
  */
 public final class TableShardUtils {

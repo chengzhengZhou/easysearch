@@ -26,8 +26,6 @@ import java.util.Date;
  * java对象
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/18 17:06
  * @since 1.0.0
  */
 public class ObjectColumn<T> extends Column {

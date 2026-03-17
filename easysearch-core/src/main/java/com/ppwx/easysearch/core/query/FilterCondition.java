@@ -19,10 +19,8 @@ package com.ppwx.easysearch.core.query;
 import java.util.List;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className FilterCondition
  * @description 过滤条件
- * @date 2024/10/14 19:43
  **/
 public class FilterCondition {
 

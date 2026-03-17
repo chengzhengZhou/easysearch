@@ -19,10 +19,8 @@ package com.ppwx.easysearch.qp.format;
 import java.util.regex.Pattern;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className WordFormatSpecialChars
  * @description 特殊字符清理
- * @date 2024/11/1 19:47
  **/
 public class WordFormatSpecialChars implements WordFormat{
 

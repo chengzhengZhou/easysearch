@@ -27,15 +27,15 @@ public class ModelDictEntityLine extends BaseDictEntityLine {
 
     private static final long serialVersionUID = 1L;
 
-    /** 品牌 ID 在 attributes 中的 key */
+    
     public static final String ATTR_BRAND_ID = "brandId";
-    /** 类目 ID 在 attributes 中的 key */
+    
     public static final String ATTR_CATEGORY_ID = "categoryId";
-    /** 品牌名称 在 attributes 中的 key */
+    
     public static final String ATTR_BRAND_NAME = "brandName";
-    /** 类目名称 在 attributes 中的 key */
+    
     public static final String ATTR_CATEGORY_NAME = "categoryName";
-    /** 系列名称 */
+    
     public static final String SERIES = "series";
 
     /**

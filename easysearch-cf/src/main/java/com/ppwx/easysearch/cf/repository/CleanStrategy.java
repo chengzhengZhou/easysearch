@@ -19,10 +19,8 @@ package com.ppwx.easysearch.cf.repository;
 import java.util.Date;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className CleanStrategy
  * @description 评分矩阵清理策略
- * @date 2024/10/23 19:13
  **/
 public abstract class CleanStrategy {
 

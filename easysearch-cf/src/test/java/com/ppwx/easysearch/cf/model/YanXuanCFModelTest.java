@@ -60,8 +60,6 @@ import java.util.stream.Collectors;
  *
  * 严选数据测试
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/07 17:54
  * @since 1.0.0
  */
 public class YanXuanCFModelTest {
@@ -362,7 +360,7 @@ public class YanXuanCFModelTest {
     }
 
 
-    /*************************************************采取机型相似*************************************************/
+    
     public void loadProducts() throws IOException {
         try (InputStream resourceAsStream = this.getClass().getResourceAsStream("/data/test/yanxuan/products.txt");
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resourceAsStream, "GBK"))) {

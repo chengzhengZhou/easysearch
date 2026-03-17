@@ -29,8 +29,6 @@ import io.netty.util.AttributeMap;
  * DataModel作为数据源和{@link com.ppwx.easysearch.core.pipeline.DataHandler} 计算分离
  * 所有动态参数应该绑定到{@link DataModel} 上
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 19:45
  * @since 1.0.0
  */
 public interface DataModel extends AttributeMap {

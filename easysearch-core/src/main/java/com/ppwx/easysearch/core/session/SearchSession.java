@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.session;
  * 提供用于区分用户或调用客户端信息的容器
  * 相较于HttpSession，该Session只服务于搜推场景，会添加更丰富的方法和灵巧的调用机制
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/29 11:42
  * @since 1.0.0
  */
 public interface SearchSession {

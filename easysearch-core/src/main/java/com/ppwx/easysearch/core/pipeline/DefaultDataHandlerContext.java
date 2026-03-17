@@ -22,8 +22,6 @@ import java.util.concurrent.atomic.AtomicReference;
  *
  * 绑定处理器
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/08 19:18
  * @since 1.0.0
  */
 public class DefaultDataHandlerContext extends AbstractDataHandlerContext {

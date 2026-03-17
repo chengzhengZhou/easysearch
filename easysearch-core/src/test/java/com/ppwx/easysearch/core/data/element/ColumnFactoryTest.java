@@ -24,8 +24,6 @@ import org.junit.Test;
  *
  * ColumnFactory测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/06/27 16:07
  * @since 1.0.0
  */
 public class ColumnFactoryTest {

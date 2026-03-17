@@ -25,8 +25,6 @@ import java.util.regex.Pattern;
 /**
  * 存储容量归一化器
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class StorageNormalizer extends AbstractEntityTypeNormalizer {
     

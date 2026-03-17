@@ -48,7 +48,7 @@ public class DictOnlyTokenizer implements Tokenizer {
     private volatile BinTrie<CoreDictionary.Attribute> dictionary;
     private volatile int dictionaryEntryCount;
 
-    /** 默认最大词长（字符数） */
+    
     public static final int DEFAULT_MAX_WORD_LEN = 20;
     private static final String DEFAULT_OOV_POS = "NN";
 

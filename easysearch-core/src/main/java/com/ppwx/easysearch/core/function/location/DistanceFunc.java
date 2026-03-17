@@ -29,8 +29,6 @@ import static com.ppwx.easysearch.core.data.model.Key.COLUMN_LONGITUDE;
  *
  * 获取两个点之间的球面距离。一般用于LBS的距离计算
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/27 11:20
  * @since 1.0.0
  */
 public class DistanceFunc implements Function<Double> {

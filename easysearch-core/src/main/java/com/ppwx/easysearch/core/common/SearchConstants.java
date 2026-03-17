@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.common;
  *
  * 静态变量实体
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/10 17:30
  * @since 1.0.0
  */
 public final class SearchConstants {

@@ -45,8 +45,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_SCORE;
  * Mysql作为数据源模型
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/11 16:48
  * @since 1.0.0
  */
 public class MysqlDataModel extends AbstractDataModel {

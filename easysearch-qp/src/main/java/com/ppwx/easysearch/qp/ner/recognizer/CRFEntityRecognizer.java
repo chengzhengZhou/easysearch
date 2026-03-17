@@ -49,11 +49,11 @@ public class CRFEntityRecognizer implements EntityRecognizer {
 
     private String modelPath = CRF_NER_MODEL_RESOURCE;
 
-    /** 按实体类型选择的 token 片段→候选串策略，未配置的类型使用 defaultTokenSpanStrategy */
+    
     private Map<EntityType, TokenSpanToValueStrategy> tokenSpanStrategyByType;
-    /** 默认的 token 片段→候选串策略，与 tokenSpanStrategyByType 均为 null 时使用内置空格拼接（兼容旧行为） */
+    
     private TokenSpanToValueStrategy defaultTokenSpanStrategy;
-    /** 对候选串按类型做规则归一化（如 ModelNormalizer），可为 null */
+    
     private EntityNormalizer entityNormalizer;
 
     private CRFNERecognizer getOrCreateRecognizer() {

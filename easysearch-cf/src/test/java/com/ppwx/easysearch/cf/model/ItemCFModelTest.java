@@ -45,8 +45,6 @@ import java.util.List;
  *
  * 严选数据测试
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/07 17:54
  * @since 1.0.0
  */
 public class ItemCFModelTest {
@@ -255,8 +253,7 @@ public class ItemCFModelTest {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource, false);
         this.repository = new JdbcModelDataRepository( "t_", jdbcTemplate);*/
 
-        /*this.repository = new ModelDataRepositoryProxy(new MemoryModelDataRepository(),
-                new ESModelDataRepository(DataSourceFactory.newESClient()));*/
+        
 
         this.repository = new ChronicleMapDataRepository(5000000, 1000000);
     }

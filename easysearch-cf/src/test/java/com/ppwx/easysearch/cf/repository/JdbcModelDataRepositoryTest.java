@@ -39,8 +39,6 @@ import java.util.Date;
  *
  * JdbcModelDataRepository测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/05 22:29
  * @since 1.0.0
  */
 public class JdbcModelDataRepositoryTest {

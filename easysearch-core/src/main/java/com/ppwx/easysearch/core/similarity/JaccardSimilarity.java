@@ -24,10 +24,8 @@ import java.util.Set;
 import java.util.function.Function;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className JaccardSimilarity
  * @description 杰卡德相似度
- * @date 2024/10/10 14:33
  **/
 public class JaccardSimilarity implements WordSimilarityScore<Double>, SequenceSimilarityScore<Double> {
 

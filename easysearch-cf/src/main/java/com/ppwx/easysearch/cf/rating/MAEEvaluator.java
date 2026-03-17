@@ -17,10 +17,8 @@
 package com.ppwx.easysearch.cf.rating;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className MAEEvaluator
  * @description 平均值
- * @date 2024/10/19 18:16
  **/
 public class MAEEvaluator implements RecEvaluator {
 

@@ -17,10 +17,8 @@
 package com.ppwx.easysearch.core.query;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className KeyQueryAttr
  * @description 拓展处理关键字
- * @date 2024/10/14 19:21
  **/
 public class ValueQueryAttr extends QueryAttr<ValueQueryAttr.Entry> {
 

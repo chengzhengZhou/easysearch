@@ -31,10 +31,7 @@ import java.util.Map;
 /**
  *
  * 检索查询构造器
- * 相关规则参考文档https://cf.jd.com/pages/viewpage.action?pageId=72738717
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/08/22 18:30
  * @since 1.0.0
  */
 public class SearchBuilder {
@@ -106,9 +103,7 @@ public class SearchBuilder {
     /**
      * 默认构造器
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/8/23 17:19
      * @return
      */
     private SearchBuilder() {
@@ -125,7 +120,6 @@ public class SearchBuilder {
 
     /**
      * 特殊key搜索
-     * 详见https://cf.jd.com/pages/viewpage.action?pageId=72738717
      */
     public SearchBuilder specialKey(String field, String value) {
         this.key = field + KEY_SEPARATOR + StringUtils.trim(value);
@@ -134,7 +128,6 @@ public class SearchBuilder {
 
     /**
      * 特殊key搜索
-     * 详见https://cf.jd.com/pages/viewpage.action?pageId=72738717
      */
     public SearchBuilder specialKeys(String field, Collection<String> values) {
         StringBuilder builder = new StringBuilder();
@@ -188,9 +181,7 @@ public class SearchBuilder {
     /**
      * 是否使用cache
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param useCache
-     * @date 2023/8/23 17:11
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder useCache(boolean useCache) {
@@ -201,9 +192,7 @@ public class SearchBuilder {
     /**
      * 是否使用page cache
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param userPageCache
-     * @date 2023/8/23 17:11
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder usePageCache(boolean userPageCache) {
@@ -214,10 +203,8 @@ public class SearchBuilder {
     /**
      * 拓展的相关配置字段
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
      * @param value
-     * @date 2023/8/23 17:44
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder customValues(String field, String value) {
@@ -228,11 +215,9 @@ public class SearchBuilder {
     /**
      * 正排字段-范围过滤
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
      * @param min 最小值，可空
      * @param max 最大值，可空
-     * @date 2023/8/23 17:11
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder betweenFilter(String field, String min, String max) {
@@ -252,10 +237,8 @@ public class SearchBuilder {
     /**
      * 正排字段-多值过滤
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
      * @param values
-     * @date 2023/8/23 17:11
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder valuesFilter(String field, Collection<String> values) {
@@ -266,10 +249,8 @@ public class SearchBuilder {
     /**
      * 正排字段-单值过滤
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
      * @param value
-     * @date 2023/8/23 17:10
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder valueFilter(String field, String value) {
@@ -280,10 +261,8 @@ public class SearchBuilder {
     /**
      * 正排字段-单值非过滤
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
      * @param values
-     * @date 2023/8/23 17:10
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder notFilter(String field, Collection<String> values) {
@@ -294,9 +273,7 @@ public class SearchBuilder {
     /**
      * 正排字段-位置排序
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/8/23 17:10
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder locationFilter() {
@@ -307,10 +284,8 @@ public class SearchBuilder {
     /**
      * 自定义过滤
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param alias
      * @param expression
-     * @date 2023/8/23 16:17
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder customFilter(String alias, String expression) {
@@ -322,11 +297,9 @@ public class SearchBuilder {
      * 位置参数： location=纬度:经度:半径
      * 注：半径的单位是公里
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param latitude
      * @param longitude
      * @param radius 传入的是公里
-     * @date 2023/8/23 17:09
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder location(String latitude, String longitude, Integer radius) {
@@ -339,9 +312,7 @@ public class SearchBuilder {
     /**
      * 排序-正排
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
-     * @date 2023/8/23 16:40
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder sortAsc(String field) {
@@ -352,9 +323,7 @@ public class SearchBuilder {
     /**
      * 排序-倒排
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param field
-     * @date 2023/8/23 16:50
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder sortDesc(String field) {
@@ -365,9 +334,7 @@ public class SearchBuilder {
     /**
      * 排序-地址位置正排
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/8/23 17:09
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public SearchBuilder sortLocationAsc() {
@@ -378,9 +345,7 @@ public class SearchBuilder {
     /**
      * 是否对url编码
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param encode
-     * @date 2023/8/23 20:52
      * @return com.jd.ershou.rec.recall.SearchBuilder
      */
     public SearchBuilder encode(boolean encode) {
@@ -391,9 +356,7 @@ public class SearchBuilder {
     /**
      * 构建成查询参数
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param 
-     * @date 2023/8/23 16:51
      * @return com.ppwx.easysearch.core.query.SearchBuilder
      */
     public SearchBuilder build() {
@@ -403,8 +366,6 @@ public class SearchBuilder {
     /**
      * 构建成查询参数
      *
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/14 19:07
      * @return String
      */
     public String toQueryStr() {
@@ -475,9 +436,7 @@ public class SearchBuilder {
     /**
      * 静态构建
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param 
-     * @date 2023/8/23 17:25
      * @return com.jd.ershou.rec.call.SearchBuilder
      */
     public static SearchBuilder builder() {

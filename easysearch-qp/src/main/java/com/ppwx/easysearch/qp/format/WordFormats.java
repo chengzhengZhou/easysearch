@@ -23,10 +23,8 @@ import com.ppwx.easysearch.qp.support.Pipeline;
 import java.util.Collection;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className WordFormats
  * @description WordFormat操作类
- * @date 2024/11/1 23:58
  **/
 public final class WordFormats {
 

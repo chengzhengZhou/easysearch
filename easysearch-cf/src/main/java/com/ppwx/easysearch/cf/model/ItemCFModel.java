@@ -41,8 +41,6 @@ import java.util.concurrent.TimeUnit;
  * 本实现方案综合考虑了内存和效率，将其中核心的物品相似矩阵进行内存计算方便进行实时计算
  * 而将大量的用户行为记录存储到外部设备，增量行为数据进行实时计算后同步到各分布式节点
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/26 17:40
  * @since 1.0.0
  */
 public class ItemCFModel extends AbstractIncrementalModel {

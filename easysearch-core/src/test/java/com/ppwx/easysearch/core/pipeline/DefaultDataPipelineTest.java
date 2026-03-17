@@ -45,8 +45,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_SCORE;
  *
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/10 00:11
  * @since 1.0.0
  */
 public class DefaultDataPipelineTest {

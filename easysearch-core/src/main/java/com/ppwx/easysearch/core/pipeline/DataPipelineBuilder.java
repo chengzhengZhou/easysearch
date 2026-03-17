@@ -33,8 +33,6 @@ import java.util.function.Consumer;
  *
  * 数据处理管道建造者
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/11 14:35
  * @since 1.0.0
  */
 public class DataPipelineBuilder {

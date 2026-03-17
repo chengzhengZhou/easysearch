@@ -22,10 +22,8 @@ import java.time.Clock;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className SlidingTimeWindowMetricsTest
  * @description todo
- * @date 2024/11/28 15:32
  **/
 public class SlidingWindowMetricsTest {
 

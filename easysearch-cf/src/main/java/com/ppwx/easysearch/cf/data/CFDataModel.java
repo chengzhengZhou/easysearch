@@ -23,8 +23,6 @@ import net.librec.math.structure.SparseMatrix;
  * 拓展{{@link net.librec.data.DataModel}}
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/01 11:15
  * @since 1.0.0
  */
 public interface CFDataModel extends DataModel {

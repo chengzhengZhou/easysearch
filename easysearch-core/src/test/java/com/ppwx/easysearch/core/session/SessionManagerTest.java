@@ -25,8 +25,6 @@ import org.junit.Test;
  *
  * SessionManager测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/29 16:40
  * @since 1.0.0
  */
 public class SessionManagerTest {

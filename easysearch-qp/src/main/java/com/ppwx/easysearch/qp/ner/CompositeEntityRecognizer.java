@@ -31,8 +31,6 @@ import java.util.stream.Collectors;
  * 组合实体识别器
  * 通过组合多个EntityTypeRecognizer实现可扩展的实体识别
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class CompositeEntityRecognizer implements EntityRecognizer {
     

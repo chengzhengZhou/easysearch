@@ -38,8 +38,6 @@ import java.util.stream.Collectors;
  *
  * 基于物品的协同过滤排序
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/09 11:32
  * @since 1.0.0
  */
 public class ItemCFRankService implements RankService {

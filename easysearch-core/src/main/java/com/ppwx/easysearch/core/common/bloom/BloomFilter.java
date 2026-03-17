@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.common.bloom;
  * 布隆过滤器
  * 对hash计算进行了调整，降低hash计算次数
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/01/29 10:27
  * @since 1.0.0
  */
 public interface BloomFilter {

@@ -23,8 +23,6 @@ package com.ppwx.easysearch.core.pipeline;
  * 也是作为责任链的调用入口方法
  * 主要实现类为{@link DefaultDataPipeline} 和 {@link AbstractDataHandlerContext}
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/08 19:21
  * @since 1.0.0
  */
 public interface DataBoundInvoker extends DataHandler {

@@ -22,8 +22,6 @@ import com.ppwx.easysearch.qp.ner.EntityType;
  * 归一化器抽象基类
  * 提供通用的归一化逻辑框架
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public abstract class AbstractEntityTypeNormalizer implements EntityTypeNormalizer {
     

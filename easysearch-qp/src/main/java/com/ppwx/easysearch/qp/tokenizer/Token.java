@@ -23,8 +23,6 @@ import java.util.Objects;
 /**
  * 分词结果
  * 
- * @author system
- * @date 2024/12/19
  */
 public class Token {
     

@@ -25,8 +25,6 @@ import java.util.Map;
  * 数据集
  * 对源数据进行抽象统一
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/06 20:37
  * @since 1.0.0
  */
 public interface DataSet extends Cloneable, Serializable {

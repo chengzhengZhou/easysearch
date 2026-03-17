@@ -30,8 +30,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_ID;
  *
  * 数据集Table实现
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 17:00
  * @since 1.0.0
  */
 public class TableDataSet implements DataSet, Serializable {

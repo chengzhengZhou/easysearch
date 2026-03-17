@@ -23,8 +23,6 @@ import com.ppwx.easysearch.qp.ner.EntityType;
  * 单一实体类型识别器接口
  * 每个具体实现负责识别一种实体类型
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public interface EntityTypeRecognizer {
     

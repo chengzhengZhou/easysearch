@@ -26,8 +26,6 @@ import java.util.List;
  *
  * 预测模型接口
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/26 17:42
  * @since 1.0.0
  */
 public interface Model {
@@ -82,8 +80,6 @@ public interface Model {
 
     /**
      * @description 模型评估
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/22 14:03
      * @param evaluators
      * @return void
      */

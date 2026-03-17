@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
  */
 public class SpaceSegmentTokenizer implements Tokenizer {
 
-    /** 匹配非空白字符序列，用于按空格分片 */
+    
     private static final Pattern NON_WHITESPACE = Pattern.compile("\\S+");
 
     private final Tokenizer delegate;

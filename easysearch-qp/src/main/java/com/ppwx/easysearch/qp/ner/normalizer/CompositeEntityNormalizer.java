@@ -27,8 +27,6 @@ import java.util.Map;
  * 组合归一化器
  * 实现旧的 EntityNormalizer 接口，确保向后兼容
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class CompositeEntityNormalizer implements EntityNormalizer {
     

@@ -24,10 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className CodecDataSetDecorator
  * @description 支持序数据集的序列化
- * @date 2024/11/29 14:56
  **/
 public class DataSetMeta implements Serializable {
 

@@ -28,8 +28,6 @@ import java.util.*;
  *
  * 聚合多个数据模型
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/10 16:03
  * @since 1.0.0
  */
 public class DataModelComposite extends AbstractDataModel {

@@ -22,8 +22,6 @@ import java.util.Collection;
  * 实体识别置信度计算器
  * 基于多种因素动态计算实体识别的置信度
  * 
- * @author NER Team
- * @date 2025/10/11
  */
 public class ConfidenceCalculator {
     
@@ -221,19 +219,19 @@ public class ConfidenceCalculator {
      * 匹配类型枚举
      */
     public enum MatchType {
-        /** 精确匹配：完全匹配词典中的词条 */
+        
         EXACT_MATCH,
         
-        /** 部分匹配：匹配词典中词条的一部分 */
+        
         PARTIAL_MATCH,
         
-        /** 模糊匹配：通过相似度匹配 */
+        
         FUZZY_MATCH,
         
-        /** 基于规则：通过规则推断 */
+        
         RULE_BASED,
         
-        /** 其他 */
+        
         OTHER
     }
     

@@ -46,10 +46,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className ItemCFLocalTest
  * @description 线上9-10月数据分析测试
- * @date 2024/10/19 12:59
  **/
 public class ItemCFLocalTest {
 

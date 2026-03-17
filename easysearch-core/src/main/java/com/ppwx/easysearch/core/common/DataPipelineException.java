@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.common;
  *
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/09 18:50
  * @since 1.0.0
  */
 public class DataPipelineException extends DataException {

@@ -34,7 +34,7 @@ public class LatticeFusionTokenizer implements Tokenizer {
     private static final String SOURCE_DICT = "dict";
     private static final String SOURCE_SINGLE = "single";
 
-    /** 单字边的默认分数（低于词典/CRF 以便优先用成词） */
+    
     private static final double DEFAULT_SINGLE_CHAR_SCORE = 0.3;
 
     private final Tokenizer crfTokenizer;

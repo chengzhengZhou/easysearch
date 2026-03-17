@@ -24,8 +24,8 @@ package com.ppwx.easysearch.qp.synonym;
  * </ul>
  */
 public enum SynonymType {
-    /** 单向：仅 源词 → 目标 参与 */
+    
     UNIDIRECTIONAL,
-    /** 双向：等价，任一侧命中都可替换/拓展为另一侧 */
+    
     BIDIRECTIONAL
 }

@@ -24,8 +24,6 @@ import org.slf4j.Marker;
  *
  * 统一日志
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/27 10:08
  * @since 1.0.0
  */
 public final class SearchLog implements Logger {

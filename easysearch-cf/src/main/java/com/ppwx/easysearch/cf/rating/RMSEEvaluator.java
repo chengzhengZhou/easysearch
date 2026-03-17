@@ -17,10 +17,8 @@
 package com.ppwx.easysearch.cf.rating;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className RMSEEvaluator
  * @description 均方差
- * @date 2024/10/19 19:30
  **/
 public class RMSEEvaluator implements RecEvaluator {
 

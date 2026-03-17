@@ -32,8 +32,6 @@ import java.util.regex.Pattern;
  * 1. 单存储容量：64gb, 128gb, 512gb, 1tb 等
  * 2. 内存+存储：8g+256g, 12g+512g 等
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class StorageRecognizer implements EntityTypeRecognizer {
     

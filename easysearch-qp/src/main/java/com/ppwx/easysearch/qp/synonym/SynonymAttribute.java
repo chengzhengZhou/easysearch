@@ -41,7 +41,7 @@ public class SynonymAttribute {
         return type;
     }
 
-    /** 改写时取第一个目标；无目标返回空串。 */
+    
     public String getFirstTarget() {
         return targets.isEmpty() ? "" : targets.get(0);
     }

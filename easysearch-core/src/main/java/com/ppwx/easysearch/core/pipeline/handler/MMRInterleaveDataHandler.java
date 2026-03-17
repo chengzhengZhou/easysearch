@@ -34,10 +34,8 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
 
 /**
  * TODO 待完善
- * @author ext.ahs.zhouchzh1@jd.com
  * @className MMRInterleaveDataHandler
  * @description 基于MMR算法的打散策略
- * @date 2025/1/23 17:11
  **/
 @DataHandler.Sharable
 public class MMRInterleaveDataHandler extends DataHandlerAdapter {
@@ -115,8 +113,6 @@ public class MMRInterleaveDataHandler extends DataHandlerAdapter {
 
     /**
      * @description 相关性
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2025/1/23 17:53
      * @param a
      * @param b
      * @return double

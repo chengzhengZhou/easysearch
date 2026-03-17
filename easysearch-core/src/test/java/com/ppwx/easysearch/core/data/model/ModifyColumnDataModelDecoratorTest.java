@@ -32,8 +32,6 @@ import java.util.*;
  *
  * ModifyColumnDataModelDecorator测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/20 14:32
  * @since 1.0.0
  */
 public class ModifyColumnDataModelDecoratorTest {

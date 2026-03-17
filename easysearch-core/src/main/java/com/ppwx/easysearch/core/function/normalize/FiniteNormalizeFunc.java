@@ -29,8 +29,6 @@ import com.ppwx.easysearch.core.function.NumberScoreFunction;
  * 2.如果指定了value和max参数，normalize使用对数函数转化，
  * 3.如果指定了value、max和min，normalize使用线性函数转化
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/10/13 13:59
  * @since 1.0.0
  */
 public class FiniteNormalizeFunc implements NumberScoreFunction<Double> {
@@ -61,9 +59,7 @@ public class FiniteNormalizeFunc implements NumberScoreFunction<Double> {
      * 使用对数函数进行归一化时，样本及max的值要大于1
      * 使用线性函数进行归一化时，max要大于min
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param value 空值时被默认为0值
-     * @date 2023/10/13 14:08
      * @return double
      */
     @Override

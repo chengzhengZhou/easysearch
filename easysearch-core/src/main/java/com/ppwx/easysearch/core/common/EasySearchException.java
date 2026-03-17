@@ -27,8 +27,6 @@ package com.ppwx.easysearch.core.common;
  * method or constructor's {@code throws} clause if they can be thrown
  * by the execution of the method or constructor and propagate outside
  * the method or constructor boundary.
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 16:36
  * @since 1.0.0
  */
 public class EasySearchException extends Exception {

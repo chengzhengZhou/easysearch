@@ -28,8 +28,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_ID;
  *
  * 集合结构的数据集
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/10 17:58
  * @since 1.0.0
  */
 public class ListDataSet implements DataSet {

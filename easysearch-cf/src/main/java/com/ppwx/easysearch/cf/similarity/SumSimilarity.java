@@ -29,8 +29,6 @@ import java.util.List;
  *
  * 累加分值计算
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/31 16:25
  * @since 1.0.0
  */
 public class SumSimilarity extends AbstractRecommenderSimilarity {

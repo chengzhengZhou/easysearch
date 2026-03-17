@@ -49,8 +49,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_SCORE;
  *
  * ElasticSearchDataModelTest
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/12 11:01
  * @since 1.0.0
  */
 public class ElasticSearchDataModelTest {

@@ -24,8 +24,6 @@ import net.librec.math.structure.SymmMatrix;
  * 相似矩阵
  * 实现dim参数的自动获取，在cf相似分中为分子部分积分
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/31 13:46
  * @since 1.0.0
  */
 public class ScoreSumMatrix extends SymmMatrix {

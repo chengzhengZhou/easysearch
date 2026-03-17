@@ -42,12 +42,12 @@ import java.util.List;
 public class DictTokenizer implements Tokenizer {
 
     private volatile BinTrie<CoreDictionary.Attribute> dictionary;
-    /** 词典条目数，0 表示空词典（无参构造或加载了空文件），用于快速判断是否返回空结果 */
+    
     private volatile int dictionaryEntryCount;
 
-    /** 默认最大词长（字符数） */
+    
     public static final int DEFAULT_MAX_WORD_LEN = 20;
-    /** 未登录词默认词性 */
+    
     private static final String DEFAULT_OOV_POS = "NN";
 
     /**
@@ -269,7 +269,7 @@ public class DictTokenizer implements Tokenizer {
         return dictTokenizer;
     }
 
-    /** @return true 表示成功放入一条 */
+    
     private static boolean parseAndPut(BinTrie<CoreDictionary.Attribute> trie, String line) {
         if (StringUtils.isBlank(line)) {
             return false;

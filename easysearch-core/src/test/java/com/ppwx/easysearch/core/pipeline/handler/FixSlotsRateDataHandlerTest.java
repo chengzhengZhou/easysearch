@@ -41,8 +41,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_ID;
  *
  * FixSlotsRateDataHandler测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/03/19 22:41
  * @since 1.0.0
  */
 public class FixSlotsRateDataHandlerTest {

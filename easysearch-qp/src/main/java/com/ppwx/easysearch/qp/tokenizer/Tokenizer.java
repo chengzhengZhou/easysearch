@@ -21,8 +21,6 @@ import java.util.List;
 /**
  * 分词器核心接口
  * 
- * @author system
- * @date 2024/12/19
  */
 public interface Tokenizer {
     

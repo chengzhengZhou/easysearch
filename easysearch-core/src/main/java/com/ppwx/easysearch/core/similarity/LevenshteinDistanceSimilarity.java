@@ -22,10 +22,8 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className LevenshteinDistance
  * @description 莱文斯坦距离(Levenshtein distance)算法计算相似度
- * @date 2024/10/12 15:42
  **/
 public class LevenshteinDistanceSimilarity implements SequenceSimilarityScore<Double> {
 

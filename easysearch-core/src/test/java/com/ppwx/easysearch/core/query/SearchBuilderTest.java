@@ -24,10 +24,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className SearchBuilderTest
  * @description 简易查询语句构造器
- * @date 2024/10/14 18:10
  **/
 public class SearchBuilderTest {
 

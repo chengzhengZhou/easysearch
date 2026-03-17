@@ -21,10 +21,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className DefaultPipeline
  * @description 默认实现
- * @date 2024/11/1 19:36
  **/
 public class DefaultPipeline<T> implements Pipeline<T> {
 

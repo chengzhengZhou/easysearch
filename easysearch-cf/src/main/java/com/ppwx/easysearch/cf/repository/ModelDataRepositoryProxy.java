@@ -25,10 +25,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className CacheESModelDataRepository
  * @description 组合使用多个数据源，这里按用户偏好和相似矩阵进行拆分
- * @date 2025/2/11 13:41
  **/
 public class ModelDataRepositoryProxy implements ModelDataRepository {
     /**

@@ -38,8 +38,6 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
  * 基于滑动窗口，可配置前进步长和窗口大小
  * 默认每次步长为1，窗口为6
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/28 11:13
  * @since 1.0.0
  */
 @DataHandler.Sharable

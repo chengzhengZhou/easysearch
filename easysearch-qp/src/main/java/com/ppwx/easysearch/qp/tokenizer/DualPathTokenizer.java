@@ -99,7 +99,7 @@ public class DualPathTokenizer implements Tokenizer {
         return merge(pathB, pathAFiltered, segments);
     }
 
-    /** 片段：[start, end) 在原文中的起止位置 */
+    
     private static class Segment {
         final int start;
         final int end;
@@ -121,7 +121,7 @@ public class DualPathTokenizer implements Tokenizer {
         return segments;
     }
 
-    /** Path B：按空格分片，逐段分词 */
+    
     private List<Token> tokenizePathB(String text, List<Segment> segments) {
         List<Token> result = new ArrayList<>();
         for (Segment seg : segments) {
@@ -149,7 +149,7 @@ public class DualPathTokenizer implements Tokenizer {
         return result;
     }
 
-    /** Path A：去空格后整体分词，并将索引映射回原文 */
+    
     private List<Token> tokenizePathA(String text, List<Segment> segments) {
         String noSpace = WHITESPACE.matcher(text).replaceAll("");
         if (noSpace.isEmpty()) {
@@ -179,7 +179,7 @@ public class DualPathTokenizer implements Tokenizer {
         return result;
     }
 
-    /** 建立：去空格后的下标 -> 原文下标 的映射 */
+    
     private int[] buildCollapsedToOriginalMapping(String text) {
         List<Integer> mapping = new ArrayList<>();
         for (int i = 0; i < text.length(); i++) {
@@ -194,7 +194,7 @@ public class DualPathTokenizer implements Tokenizer {
         return arr;
     }
 
-    /** 舍弃 Path A 中跨越 Path B 片段边界的 token */
+    
     private List<Token> filterConflicting(List<Token> pathA, List<Segment> segments) {
         if (pathA.isEmpty()) {
             return pathA;
@@ -248,7 +248,7 @@ public class DualPathTokenizer implements Tokenizer {
         return out;
     }
 
-    /** 在每个片段内选择更细粒度的切分：Path A 更细时采用 Path A，否则采用 Path B（优先 Path B） */
+    
     private List<Token> chooseFiner(List<Token> pathB, List<Token> pathA) {
         if (pathA.isEmpty()) {
             return pathB;

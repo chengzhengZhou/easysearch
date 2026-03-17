@@ -31,8 +31,6 @@ import java.util.Map;
  *
  * DataTableSet测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 18:06
  * @since 1.0.0
  */
 public class DataTableSetTest {

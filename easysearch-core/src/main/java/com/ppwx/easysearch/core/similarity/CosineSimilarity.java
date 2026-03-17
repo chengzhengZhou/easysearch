@@ -23,10 +23,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className CosineSimilarity
  * @description 余弦相似度
- * @date 2024/10/10 14:40
  **/
 public class CosineSimilarity implements WordSimilarityScore<Double>, SequenceSimilarityScore<Double> {
 

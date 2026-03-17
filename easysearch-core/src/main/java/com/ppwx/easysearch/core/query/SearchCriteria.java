@@ -30,10 +30,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className SearchCriteria
  * @description 检索条件
- * @date 2024/10/14 19:18
  **/
 public class SearchCriteria {
 
@@ -187,8 +185,6 @@ public class SearchCriteria {
 
     /**
      * @description 根据名称查询
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/15 14:07
      * @param name
      * @return Optional<FilterCondition>
      */
@@ -201,8 +197,6 @@ public class SearchCriteria {
 
     /**
      * @description 根据名称查询自定义字段
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/17 15:41
      * @param name
      * @return Optional<ValueQueryAttr>
      */
@@ -215,8 +209,6 @@ public class SearchCriteria {
 
     /**
      * @description 解析{@link SearchBuilder}构建的查询语句
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/14 19:55
      * @param query 查询语句
      * @param encoded 是否编码
      * @return SearchCriteria
@@ -238,8 +230,6 @@ public class SearchCriteria {
 
     /**
      * @description 转换为查询字符串
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/17 14:23
      * @param encode
      * @return String
      */
@@ -320,8 +310,6 @@ public class SearchCriteria {
 
     /**
      * @description 对查询参数进行签名，可用与缓存等场景
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/17 14:16
      * @return String
      */
     public String sign() {

@@ -17,10 +17,8 @@
 package com.ppwx.easysearch.qp.format;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className WordFormatTruncate
  * @description 截断
- * @date 2024/11/1 19:47
  **/
 public class WordFormatTruncate implements WordFormat {
 

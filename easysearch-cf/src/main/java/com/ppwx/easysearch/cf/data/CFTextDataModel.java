@@ -24,8 +24,6 @@ import net.librec.math.structure.SparseMatrix;
  *
  * 从文本文件中加载用户行为数据
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/01 11:06
  * @since 1.0.0
  */
 public class CFTextDataModel extends TextDataModel implements CFDataModel {

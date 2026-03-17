@@ -25,10 +25,8 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className InMemoryMetricsRegistry
  * @description 基于内存的实例注册器
- * @date 2024/11/28 17:48
  **/
 public class InMemoryMetricsRegistry implements MetricsRegistry<Metrics> {
 

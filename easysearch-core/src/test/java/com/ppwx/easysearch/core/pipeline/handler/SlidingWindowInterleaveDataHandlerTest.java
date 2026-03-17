@@ -39,8 +39,6 @@ import static com.ppwx.easysearch.core.data.model.Key.GLOBAL_ID;
  *
  * SlidingWindowInterleaveDataHandler测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/28 12:36
  * @since 1.0.0
  */
 public class SlidingWindowInterleaveDataHandlerTest {

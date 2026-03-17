@@ -36,8 +36,6 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
  * 固出比例控制
  * 控制窗口内某类标的物的出现比例
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/03/19 19:13
  * @since 1.0.0
  */
 @DataHandler.Sharable

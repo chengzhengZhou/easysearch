@@ -26,8 +26,6 @@ import java.util.Collection;
  * 排序服务
  * 通过模型预测用户对商品的评好，然后进行排序
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/09 11:26
  * @since 1.0.0
  */
 public interface RankService {

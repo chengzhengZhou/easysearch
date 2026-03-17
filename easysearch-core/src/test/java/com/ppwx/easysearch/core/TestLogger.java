@@ -24,8 +24,6 @@ import org.slf4j.Marker;
  *
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/26 17:31
  * @since 1.0.0
  */
 public class TestLogger {

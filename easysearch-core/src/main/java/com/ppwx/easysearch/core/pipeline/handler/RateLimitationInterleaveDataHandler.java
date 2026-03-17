@@ -28,8 +28,6 @@ import java.util.*;
  * 控制露出比率（不可共享）
  * 
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/01 15:50
  * @since 1.0.0
  */
 public class RateLimitationInterleaveDataHandler extends SlidingWindowInterleaveDataHandler {

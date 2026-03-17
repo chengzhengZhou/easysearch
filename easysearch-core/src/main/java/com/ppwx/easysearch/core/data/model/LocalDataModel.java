@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.data.model;
  *
  * 用于测试替代
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/28 13:50
  * @since 1.0.0
  */
 public class LocalDataModel extends AbstractDataModel {

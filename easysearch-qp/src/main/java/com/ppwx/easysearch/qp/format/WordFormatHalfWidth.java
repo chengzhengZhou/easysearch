@@ -20,10 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className WordFormatHalfWidth
  * @description 半角
- * @date 2024/11/1 19:47
  **/
 public class WordFormatHalfWidth implements WordFormat {
 

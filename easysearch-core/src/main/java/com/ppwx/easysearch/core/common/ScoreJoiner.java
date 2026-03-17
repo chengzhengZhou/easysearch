@@ -26,8 +26,6 @@ import java.util.List;
  *
  * 数组计算辅助类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/04 21:13
  * @since 1.0.0
  */
 public class ScoreJoiner {
@@ -66,9 +64,7 @@ public class ScoreJoiner {
     /**
      * 添加数组
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param scoreJoiner
-     * @date 2023/7/5 10:58
      * @return com.aihuishou.szc2c.c2c.linli.business.service.util.score.SumDoubleArray
      */
     public synchronized ScoreJoiner join(ScoreJoiner scoreJoiner) {
@@ -82,9 +78,7 @@ public class ScoreJoiner {
     /**
      * 叠加两个数组
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param 
-     * @date 2023/7/4 21:36
      * @return double[]
      */
     public double[] evaluate() {
@@ -120,9 +114,7 @@ public class ScoreJoiner {
     /**
      * 获取特定明细
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param i
-     * @date 2023/7/7 0:42
      * @return java.util.List<com.aihuishou.szc2c.c2c.linli.business.service.util.score.ScoreDetail>
      */
     public List<ScoreDetail> details(int i) {
@@ -139,10 +131,8 @@ public class ScoreJoiner {
     /**
      * 构建一个数据叠加器
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param array
      * @param weight
-     * @date 2023/7/4 21:27
      * @return com.aihuishou.szc2c.c2c.linli.business.service.util.score.SumDoubleArray
      */
     public static ScoreJoiner of(double[] array, Double weight) {
@@ -159,9 +149,7 @@ public class ScoreJoiner {
     /**
      * 构建一个初始容器
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param initSize
-     * @date 2023/7/5 18:42
      * @return com.aihuishou.szc2c.c2c.linli.business.service.util.score.SumDoubleArray
      */
     public static ScoreJoiner ofEmpty(int initSize) {
@@ -178,10 +166,8 @@ public class ScoreJoiner {
     /**
      * 设置算分结果
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param i
      * @param detail
-     * @date 2023/7/6 15:56
      * @return void
      */
     public void setScoreDetail(int i, ScoreDetail detail) {
@@ -200,9 +186,7 @@ public class ScoreJoiner {
     /**
      * 获取得分
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param i
-     * @date 2023/7/6 17:09
      * @return double
      */
     public double getScore(int i) {

@@ -32,8 +32,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * 抽象实现
  * 通用性算法是基于当前数据集进行的，该抽象类主要实现一些通用的计算方法
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/26 19:36
  * @since 1.0.0
  */
 public abstract class AbstractScoreFunction implements NumberScoreFunction<Double> {
@@ -49,9 +47,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 无参构造
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/7/6 23:43
      * @return
      */
     public AbstractScoreFunction() {
@@ -61,9 +57,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 构造器
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param columns
-     * @date 2023/7/4 19:46
      * @return
      */
     public AbstractScoreFunction(List<Column> columns) {
@@ -73,9 +67,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 最小值
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param 
-     * @date 2023/7/4 20:08
      * @return int
      */
     public final double min() {
@@ -89,9 +81,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 最大值
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/7/4 20:08
      * @return int
      */
     public final double max() {
@@ -105,9 +95,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 计算平均值
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/7/4 20:14
      * @return double
      */
     public final double mean() {
@@ -121,9 +109,7 @@ public abstract class AbstractScoreFunction implements NumberScoreFunction<Doubl
     /**
      * 计算标准差
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/7/4 20:18
      * @return double
      */
     public final double standardDeviation() {

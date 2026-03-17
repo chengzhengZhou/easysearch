@@ -25,8 +25,6 @@ import java.util.Map;
 /**
  * 成色归一化器
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class ConditionNormalizer extends AbstractEntityTypeNormalizer {
     

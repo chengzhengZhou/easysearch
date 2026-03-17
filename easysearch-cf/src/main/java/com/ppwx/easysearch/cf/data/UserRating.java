@@ -22,8 +22,6 @@ import java.util.Date;
  *
  * 用户对标的物的频分
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/27 19:15
  * @since 1.0.0
  */
 public class UserRating {

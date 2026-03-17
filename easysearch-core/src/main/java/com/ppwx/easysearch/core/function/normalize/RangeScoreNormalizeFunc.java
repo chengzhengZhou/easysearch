@@ -26,16 +26,14 @@ import java.util.stream.Collectors;
  *
  * 数据段评分归一
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/06 10:51
  * @since 1.0.0
  */
 public class RangeScoreNormalizeFunc implements NumberScoreFunction<Double> {
-    /** 分值映射表 */
+    
     private Map<Double, Double> mapping;
-    /** 数据范围段 */
+    
     private List<Double> rangeArr;
-    /** 溢出分段的分值 */
+    
     private double overflowScore;
     /**
      * 构造器
@@ -43,8 +41,6 @@ public class RangeScoreNormalizeFunc implements NumberScoreFunction<Double> {
      * @param mapping
      * @param overflowScore 超出最大范围的分值
      * @return
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
-     * @date 2023/7/4 19:46
      */
     public RangeScoreNormalizeFunc(Map<Double, Double> mapping, double overflowScore) {
         assert mapping != null;
@@ -57,9 +53,7 @@ public class RangeScoreNormalizeFunc implements NumberScoreFunction<Double> {
      * 示例：1km内 +0.9分；3km内 +0.8分；5km内 +0.6分；10km内+0.4分；10km及以上 +0.2分
      * 将被解析为[1,3,5,10]，映射段为：1-1km内，3-3km内，5-5km内，10-10km内,Double.max-10km以上
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param mapping
-     * @date 2023/7/6 11:08
      * @return void
      */
     private void parseMapping(Map<Double, Double> mapping) {

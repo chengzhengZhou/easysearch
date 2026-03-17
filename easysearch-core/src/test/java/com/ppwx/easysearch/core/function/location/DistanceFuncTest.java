@@ -27,8 +27,6 @@ import static com.ppwx.easysearch.core.data.model.Key.COLUMN_LONGITUDE;
  *
  * DistanceFunc测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/27 11:30
  * @since 1.0.0
  */
 public class DistanceFuncTest {

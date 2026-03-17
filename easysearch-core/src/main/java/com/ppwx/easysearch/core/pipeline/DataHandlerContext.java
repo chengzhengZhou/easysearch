@@ -24,8 +24,6 @@ import io.netty.util.AttributeMap;
  * Pipeline的辅助类
  * 借助该类实现前后处理器的关联，并提供了一些注如参数获取
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/08 19:17
  * @since 1.0.0
  */
 public interface DataHandlerContext extends AttributeMap, DataBoundInvoker {

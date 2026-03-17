@@ -23,8 +23,6 @@ import org.junit.Test;
  *
  * FieldLengthFunc
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/27 11:07
  * @since 1.0.0
  */
 public class FieldLengthFuncTest {

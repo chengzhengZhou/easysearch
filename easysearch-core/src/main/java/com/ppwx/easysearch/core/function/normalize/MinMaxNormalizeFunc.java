@@ -26,17 +26,13 @@ import java.util.List;
  * 最小-最大归一化
  * 该方法将数据线性地映射到指定的最小值和最大值之间。公式如下：
  * normalized_value = (value - min_value) / (max_value - min_value)
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/04 20:20
  * @since 1.0.0
  */
 public class MinMaxNormalizeFunc extends AbstractScoreFunction {
     /**
      * 构造器
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param
-     * @date 2023/7/7 0:00
      * @return
      */
     public MinMaxNormalizeFunc() {
@@ -48,8 +44,6 @@ public class MinMaxNormalizeFunc extends AbstractScoreFunction {
      *
      * @param columns
      * @return
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
-     * @date 2023/7/4 19:46
      */
     public MinMaxNormalizeFunc(List<Column> columns) {
         super(columns);

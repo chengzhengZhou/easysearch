@@ -37,8 +37,6 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
 /**
  * 重复id叠加score Handler
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/27 10:35
  * @since 1.0.0
  */
 @DataHandler.Sharable

@@ -34,8 +34,6 @@ import static com.ppwx.easysearch.core.util.SearchLog.getLogger;
  *
  * 分值排序处理器
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/27 13:41
  * @since 1.0.0
  */
 @DataHandler.Sharable

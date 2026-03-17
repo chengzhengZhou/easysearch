@@ -19,10 +19,8 @@ package com.ppwx.easysearch.qp.support;
 import java.util.List;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @interface Pipeline
  * @description 管道类
- * @date 2024/11/1 19:35
  **/
 public interface Pipeline<T> {
 

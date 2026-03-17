@@ -56,10 +56,8 @@ import java.util.*;
 import java.util.function.Function;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className ESModelDataRepository
  * @description 使用ES存储数据模型
- * @date 2025/2/8 17:48
  **/
 public class ESModelDataRepository extends AbstractPersistentDataRepository{
 

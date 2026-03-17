@@ -29,8 +29,6 @@ import java.util.*;
  *
  * 基于内存存储实现
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/28 11:43
  * @since 1.0.0
  */
 public class MemoryModelDataRepository implements ModelDataRepository {

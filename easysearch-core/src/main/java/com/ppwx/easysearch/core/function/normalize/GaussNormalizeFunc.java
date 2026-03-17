@@ -26,8 +26,6 @@ import org.apache.commons.math.util.FastMath;
  * f(x)=e^{(-(x-a)^2/2b^2)}
  * 其中a为均值，b为标准方差
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/26 21:00
  * @since 1.0.0
  */
 public class GaussNormalizeFunc implements NumberScoreFunction<Double> {
@@ -48,10 +46,8 @@ public class GaussNormalizeFunc implements NumberScoreFunction<Double> {
     /**
      * 带参构造
      *
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
      * @param mean 均值
      * @param standardDeviation 方差
-     * @date 2023/7/27 11:17
      * @return
      */
     public GaussNormalizeFunc(double mean, double standardDeviation) {

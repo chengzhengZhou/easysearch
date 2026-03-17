@@ -24,8 +24,6 @@ import java.util.Map;
  *
  * {@link DataHandler} 适配器
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/09 18:44
  * @since 1.0.0
  */
 public class DataHandlerAdapter implements DataHandler {

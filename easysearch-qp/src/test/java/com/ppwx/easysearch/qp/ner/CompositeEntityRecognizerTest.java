@@ -28,8 +28,6 @@ import java.util.*;
 /**
  * CompositeEntityRecognizer 测试类
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class CompositeEntityRecognizerTest {
 

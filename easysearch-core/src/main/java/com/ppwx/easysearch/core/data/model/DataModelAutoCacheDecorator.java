@@ -29,8 +29,6 @@ import java.util.concurrent.TimeUnit;
  * 数据缓存装饰器
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/11/28 15:00
  * @since 1.0.0
  */
 public class DataModelAutoCacheDecorator extends DataModelCacheDecorator {

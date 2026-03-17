@@ -20,8 +20,6 @@ package com.ppwx.easysearch.cf.model;
  *
  * 增量更新model
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/29 19:59
  * @since 1.0.0
  */
 public abstract class AbstractIncrementalModel implements Model {

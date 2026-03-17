@@ -32,8 +32,6 @@ import java.util.concurrent.TimeUnit;
  * 时效分，用于衡量文档的新旧程度
  * 毫秒值版
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/26 15:22
  * @since 1.0.0
  */
 public class TimelinessMsFunc extends AbstractScoreFunction {

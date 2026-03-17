@@ -28,8 +28,6 @@ import java.util.List;
  *
  * 模型数据仓储
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/27 19:47
  * @since 1.0.0
  */
 public interface ModelDataRepository {
@@ -100,8 +98,6 @@ public interface ModelDataRepository {
 
     /**
      * @description 清理相似矩阵
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/10/23 19:25
      * @param strategy
      * @return void
      */

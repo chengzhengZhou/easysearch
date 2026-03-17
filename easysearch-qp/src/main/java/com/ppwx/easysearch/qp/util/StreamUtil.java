@@ -31,10 +31,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className StreamUtil
  * @description 文件流读取工具
- * @date 2024/10/9 14:15
  **/
 public class StreamUtil {
 
@@ -92,8 +90,6 @@ public class StreamUtil {
 
     /**
      * @description 获取resource下资源文件，适用于springboot项目
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/11/4 14:55
      * @param path 相对路径
      * @return InputStream
      */
@@ -104,8 +100,6 @@ public class StreamUtil {
 
     /**
      * @description 获取resource文本流
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/11/4 14:58
      * @param path  相对路径
      * @param charset  编码
      * @return InputStreamReader
@@ -116,8 +110,6 @@ public class StreamUtil {
 
     /**
      * @description 资源名称
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/11/4 15:15
      * @param path 相对路径
      * @return String
      */
@@ -127,8 +119,6 @@ public class StreamUtil {
 
     /**
      * @description 读取流数据，适用于文本流
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/11/4 15:35
      * @param stream       文本流
      * @param lineHandler  行处理器
      * @return void
@@ -150,8 +140,6 @@ public class StreamUtil {
 
     /**
      * @description 读取流数据，适用于文本流
-     * @author ext.ahs.zhouchzh1@jd.com
-     * @date 2024/11/4 15:36
      * @param path          文件路径
      * @param lineHandler   行处理器
      * @return void

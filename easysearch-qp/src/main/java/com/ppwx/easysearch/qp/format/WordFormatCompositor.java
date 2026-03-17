@@ -22,10 +22,8 @@ import com.ppwx.easysearch.qp.support.Pipeline;
 import java.util.List;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className WordFormatCompositor
  * @description WordFormat聚合
- * @date 2024/11/1 23:56
  **/
 public abstract class WordFormatCompositor implements WordFormat {
 

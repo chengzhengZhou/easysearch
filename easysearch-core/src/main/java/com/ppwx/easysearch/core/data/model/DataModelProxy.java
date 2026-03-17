@@ -27,8 +27,6 @@ import io.netty.util.AttributeKey;
  * DataModel代理
  * 从线程副本中获取实际调用{@link DataModel}
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/12 17:18
  * @since 1.0.0
  */
 public class DataModelProxy implements DataModel {

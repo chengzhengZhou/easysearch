@@ -25,8 +25,6 @@ import java.util.Set;
  *
  * SearchSession默认实现
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/29 12:01
  * @since 1.0.0
  */
 public class DefaultSearchSession implements SearchSession, Serializable {

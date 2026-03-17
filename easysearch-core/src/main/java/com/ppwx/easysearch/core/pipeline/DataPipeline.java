@@ -28,8 +28,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * 数据加工管道，典型的责任链模式
  * 该接口类提供了处理器的编排方法
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/08 19:19
  * @since 1.0.0
  */
 public interface DataPipeline extends DataBoundInvoker {

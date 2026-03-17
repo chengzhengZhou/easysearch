@@ -30,8 +30,6 @@ import java.util.stream.Collectors;
  *
  * MetaBloomFilter测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/01/26 18:08
  * @since 1.0.0
  */
 public class MetaBloomFilterTest {

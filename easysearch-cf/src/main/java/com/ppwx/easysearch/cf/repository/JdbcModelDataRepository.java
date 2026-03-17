@@ -47,8 +47,6 @@ import static com.ppwx.easysearch.cf.utils.TableShardUtils.splitRange;
  * 数据库存储模型数据
  * 用户数据和评分矩阵往往都较大，一般为百万到亿级别，需要考虑存储和加载的效率
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/08/02 17:51
  * @since 1.0.0
  */
 public class JdbcModelDataRepository extends AbstractPersistentDataRepository {

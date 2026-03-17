@@ -21,16 +21,14 @@ package com.ppwx.easysearch.core.common;
  * 算分明细信息
  * 当前先简单记录各因子的分值进行输出即可
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/06 15:01
  * @since 1.0.0
  */
 public class ScoreDetail {
-    /** 描述 */
+    
     private String desc;
-    /** 权重 */
+    
     private Double weight;
-    /** 分值 */
+    
     private Double score;
 
     public String getDesc() {

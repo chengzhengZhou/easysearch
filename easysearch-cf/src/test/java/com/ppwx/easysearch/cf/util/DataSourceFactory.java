@@ -29,10 +29,8 @@ import org.elasticsearch.client.RestHighLevelClient;
 import javax.sql.DataSource;
 
 /**
- * @author ext.ahs.zhouchzh1@jd.com
  * @className DataSourceFactory
  * @description ���ݿ�����
- * @date 2025/2/11 9:43
  **/
 public class DataSourceFactory {
 

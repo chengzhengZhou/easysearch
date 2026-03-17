@@ -184,7 +184,7 @@ public class SynonymEngine {
         return result;
     }
 
-    /** 当前是否已加载词表 */
+    
     public boolean isLoaded() {
         return trie != null;
     }

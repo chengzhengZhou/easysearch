@@ -40,8 +40,6 @@ import java.util.Map;
  *
  * DataModelComposite测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/12 16:59
  * @since 1.0.0
  */
 public class DataModelCompositeTest {

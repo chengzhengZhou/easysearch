@@ -26,8 +26,6 @@ import java.util.Date;
  *
  * 字段
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/07 10:16
  * @since 1.0.0
  */
 public abstract class Column {

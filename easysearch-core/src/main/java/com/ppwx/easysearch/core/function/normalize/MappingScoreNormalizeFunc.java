@@ -26,14 +26,12 @@ import java.util.Map;
  *
  * 数据映射分值归一
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/07/06 10:52
  * @since 1.0.0
  */
 public class MappingScoreNormalizeFunc implements TextScoreFunction {
-    /** 分值映射表 */
+    
     private Map<String, Double> mapping;
-    /** 未映射时的默认值 */
+    
     private double defaultScore;
     /**
      * 构造器
@@ -41,8 +39,6 @@ public class MappingScoreNormalizeFunc implements TextScoreFunction {
      * @param mapping
      * @param defaultScore
      * @return
-     * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
-     * @date 2023/7/4 19:46
      */
     public MappingScoreNormalizeFunc(Map<String, Double> mapping, double defaultScore) {
         assert mapping != null;

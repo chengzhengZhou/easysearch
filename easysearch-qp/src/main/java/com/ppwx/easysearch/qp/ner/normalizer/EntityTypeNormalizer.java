@@ -22,8 +22,6 @@ import com.ppwx.easysearch.qp.ner.EntityType;
  * 单一实体类型归一化器接口
  * 每个具体实现负责一种实体类型的归一化
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public interface EntityTypeNormalizer {
     

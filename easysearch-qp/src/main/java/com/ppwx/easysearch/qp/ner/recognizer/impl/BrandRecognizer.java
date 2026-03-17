@@ -24,8 +24,6 @@ import com.ppwx.easysearch.qp.ner.recognizer.AbstractDictionaryBasedRecognizer;
 /**
  * 品牌实体识别器
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class BrandRecognizer extends AbstractDictionaryBasedRecognizer {
     

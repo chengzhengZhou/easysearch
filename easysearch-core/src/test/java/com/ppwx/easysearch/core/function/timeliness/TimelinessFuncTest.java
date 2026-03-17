@@ -33,8 +33,6 @@ import java.util.concurrent.TimeUnit;
  *
  * TimelinessFunc测试类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/26 17:28
  * @since 1.0.0
  */
 public class TimelinessFuncTest {

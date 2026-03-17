@@ -20,8 +20,6 @@ package com.ppwx.easysearch.core.data.model;
  *
  * 配置信息key值
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/12 12:43
  * @since 1.0.0
  */
 public final class Key {

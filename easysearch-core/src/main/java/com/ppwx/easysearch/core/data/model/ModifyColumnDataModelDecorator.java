@@ -32,8 +32,6 @@ import java.util.stream.Collectors;
  *
  * 添加字段装饰器
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/02/20 13:46
  * @since 1.0.0
  */
 public class ModifyColumnDataModelDecorator implements DataModel {

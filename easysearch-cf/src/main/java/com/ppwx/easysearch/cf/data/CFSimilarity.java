@@ -28,8 +28,6 @@ import java.util.Map;
  *
  * cf分值信息
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/07/28 11:32
  * @since 1.0.0
  */
 public class CFSimilarity {

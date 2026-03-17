@@ -31,8 +31,6 @@ import java.util.concurrent.atomic.AtomicReference;
  *
  * 数据处理管道实现类
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2023/12/08 19:38
  * @since 1.0.0
  */
 public class DefaultDataPipeline implements DataPipeline {
@@ -64,8 +62,7 @@ public class DefaultDataPipeline implements DataPipeline {
         this.dataModel = ObjectUtil.checkNotNull(dataModel, "dataModel");
         this.thread = new AtomicReference<>();
         this.strictMode = shareMode;
-        /*succeededFuture = new SucceededChannelFuture(channel, null);
-        voidPromise =  new VoidChannelPromise(channel, true);*/
+        
 
         tail = new TailContext(this);
         head = new HeadContext(this);

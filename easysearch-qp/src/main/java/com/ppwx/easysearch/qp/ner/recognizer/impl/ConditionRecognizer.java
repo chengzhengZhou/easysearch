@@ -28,8 +28,6 @@ import java.util.regex.Pattern;
 /**
  * 成色实体识别器
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public class ConditionRecognizer extends AbstractDictionaryBasedRecognizer {
     

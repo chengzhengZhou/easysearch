@@ -22,8 +22,6 @@ import java.io.Serializable;
  *
  * 物品 - 属性映射
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/09/03 16:53
  * @since 1.0.0
  */
 public class ItemMapping implements Serializable {

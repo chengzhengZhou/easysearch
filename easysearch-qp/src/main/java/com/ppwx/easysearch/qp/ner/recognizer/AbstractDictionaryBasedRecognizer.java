@@ -27,8 +27,6 @@ import java.util.List;
  * 基于词典和词性的实体识别器抽象基类
  * 将归一化器作为依赖注入
  * 
- * @author ext.ahs.zhouchzh1@jd.com
- * @date 2024/10/9
  */
 public abstract class AbstractDictionaryBasedRecognizer implements EntityTypeRecognizer {
     

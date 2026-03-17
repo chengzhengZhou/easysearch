@@ -28,8 +28,6 @@ import java.util.concurrent.TimeUnit;
  * 淘汰策略：采用溢出后删除最老的；过有效期的清除；
  *
  *
- * @author Mikey(ext.ahs.zhouchzh1 @ jd.com)
- * @date 2024/01/27 22:32
  * @since 1.0.0
  */
 public class BloomFilterChunk implements BloomFilter {
