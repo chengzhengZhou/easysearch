@@ -15,10 +15,6 @@
 - `easysearch-core`：搜索执行内核（数据模型、处理管道、函数打分、指标等）
 - `easysearch-cf`：协同过滤能力（可作为个性化召回/重排外挂）
 
-### 项目蓝图
-
-完整项目蓝图见 `BLUEPRINT.md`（对外阐述：愿景/架构/配置后台/在线服务/MVP 路线）。
-
 ### 架构图（参考）
 
 ![图片alt](https://afl-linli.oss-cn-hangzhou.aliyuncs.com/uat/c3cf2c4091b46998.png "愿景架构图")
