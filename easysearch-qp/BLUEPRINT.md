@@ -37,17 +37,16 @@ QP 的“推荐最小链路”如下（可按业务裁剪）：
    - 推荐组合：词典识别 + 模型识别 + 合并策略（`EntityMerger` / `PriorityEntityRecognizer`）。
 6. **实体归一化与映射（ner.normalizer）**
    - 对不同 `EntityType` 输出统一的 normalizedValue；可追加外部 ID 映射。
-7. **输出（建议的 QueryContext）**
+7. **输出（QueryContext）**
    - 输出结构化结果供检索侧使用，并包含 trace/debug。
 
 ---
 
-## 3. 分层与包职责（与现有实现对齐）
+## 3. 分层与包职责
 
 ### 3.1 编排与门面层（`com.ppwx.easysearch.qp.support` 等）
 - `Pipeline<T>` / `DefaultPipeline<T>`
   - 作为 stage 编排的基础容器（addFirst/addLast/slice 等）。
-  - **建议**：在 QP 模块对外新增一个稳定门面（见第 5 节）。
 
 ### 3.2 干预（`com.ppwx.easysearch.qp.intervention`）
 - `SentenceInterventionEngine`
@@ -68,7 +67,6 @@ QP 的“推荐最小链路”如下（可按业务裁剪）：
   - `LatticeFusionTokenizer`：CRF/词典/单字边构 lattice，DP 求最优路径（融合通用）
 - `Token`
   - 标准字段：文本、词性、span、confidence、attributes。
-  - **建议约定**：attributes 至少包含 `source=crf|dict|single|...`，便于解释与诊断。
 
 ### 3.4 同义词（`com.ppwx.easysearch.qp.synonym`）
 - `SynonymEngine`
@@ -98,10 +96,9 @@ QP 的“推荐最小链路”如下（可按业务裁剪）：
 
 ---
 
-## 4. 扩展点蓝图（建议的“可长期演进”约束）
+## 4. 扩展点蓝图
 
-### 4.1 统一的 QueryContext（建议新增）
-建议在 QP 内定义统一输出对象（示意）：
+### 4.1 统一的 QueryContext（计划新增）
 
 ```java
 class QueryContext {
@@ -116,14 +113,12 @@ class QueryContext {
 }
 ```
 
-**收益**：对外 API 稳定；内部策略替换（DualPath/Lattice、rewrite/expand 方案）不影响下游。
-
-### 4.2 Stage 化编排（建议新增）
+### 4.2 Stage 化编排（计划新增）
 将“预处理/干预/分词/同义词/NER/归一化”抽为 `Stage`：
 - 每个 stage 只读写 `QueryContext` 的一部分，并写入 trace。
 - stage 可由 `Pipeline<Stage>` 管理，实现“按业务场景组装链路”。
 
-### 4.3 词表与模型的加载抽象（现有已具备基础）
+### 4.3 词表与模型的加载抽象
 统一通过 `TextLineSource` 抽象加载：
 - classpath / filesystem / DB / 配置中心 → `TextLineSource` → engine.load
 
@@ -135,9 +130,9 @@ class QueryContext {
 
 ---
 
-## 5. 对外集成方式（建议门面 API）
+## 5. 对外集成方式（门面 API）
 
-建议为 `easysearch-qp` 对外提供一个稳定门面（示意）：
+计划为 `easysearch-qp` 对外提供一个稳定门面：
 
 ```java
 QueryProcessor processor = QueryProcessor.builder()
@@ -158,7 +153,7 @@ QueryContext ctx = processor.process(query, options);
 
 ---
 
-## 6. 词表/规则格式清单（现状约定）
+## 6. 词表/规则格式清单
 
 - **整句干预（Sentence）**：`源句 \t 目标句 \t 匹配类型 \t 优先级`
 - **词表干预（Term）**：`源词 \t 目标词 \t 优先级`
@@ -169,7 +164,7 @@ QueryContext ctx = processor.process(query, options);
 
 ---
 
-## 7. 质量与评估（建议落地项）
+## 7. 质量与评估
 
 - **可观测性**
   - 记录：命中干预规则/同义词匹配/实体来源（dict/crf/rule）、耗时与词表版本。
@@ -181,25 +176,11 @@ QueryContext ctx = processor.process(query, options);
 
 ---
 
-## 8. 建议的默认组合（面向“轻量搜索系统”）
-
-- **干预**：`InterventionService`（sentence + term）
-- **分词**：优先 `DualPathTokenizer(CRFCompositeTokenizer)`（对空格意图友好，且兼顾去空格场景）
-  - 若需要强干预：换为 `DictOverrideCompositeTokenizer`
-  - 若需要融合最优：换为 `LatticeFusionTokenizer`
-- **同义词**：`SynonymService`
-  - rewrite：默认 `ReplaceFirstRewriteStrategy`（更稳）
-  - expand：默认 `ExpandOrStrategy`（需加 topK）
-- **NER**：`PriorityEntityRecognizer(DICT_FIRST, dictRecognizer)`
-  - 并配置 `CRFEntityRecognizer` 的 tokenSpanStrategy/entityNormalizer，保证 normalizedValue 一致
-
----
-
-## 9. 术语与输出约定
+## 8. 术语与输出约定
 
 - **Token span**：`[startIndex, endIndex)`，相对于干预后的 query（或明确记录是哪个版本的 query）。
-- **Entity span**：`[startOffset, endOffset)`，相对于 originText（建议与 tokens 保持同一基准，避免错位）。
+- **Entity span**：`[startOffset, endOffset)`，相对于 originText（与 tokens 保持同一基准，避免错位）。
 - **source 标记**
   - Token：attributes["source"] = crf/dict/single/...
-  - Entity：建议在 attachment 或新增字段记录来源（dict/crf/rule）。
+  - Entity：计划在 attachment 或新增字段记录来源（dict/crf/rule）。
 
