@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ppwx.easysearch.admin.mapper.EntityRuleMapper">
+
+    <insert id="copyFromVersion">
+        INSERT INTO qp_rule_entity
+        (version_id, entity_text, entity_type, normalized_value, aliases_json, attributes_json, relations_json, ids_json, enabled, created_at, updated_at)
+        SELECT
+            #{newVersionId}, entity_text, entity_type, normalized_value, aliases_json, attributes_json, relations_json, ids_json, enabled, NOW(), NOW()
+        FROM qp_rule_entity
+        WHERE version_id = #{baseVersionId}
+    </insert>
+
+</mapper>
+

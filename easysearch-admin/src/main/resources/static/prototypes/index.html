@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QP Admin</title>
+  <link rel="stylesheet" href="admin-shell.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">QP Admin</div>
+    <div class="nav-title">资源治理</div>
+    <a class="nav-item" href="#/overview" data-route="overview">总览</a>
+    <a class="nav-item" href="#/intervention" data-route="intervention">干预规则</a>
+    <a class="nav-item" href="#/synonym" data-route="synonym">同义词</a>
+    <a class="nav-item" href="#/entity" data-route="entity">实体词典</a>
+    <a class="nav-item" href="#/token" data-route="token">分词词典</a>
+    <div class="nav-title">发布治理</div>
+    <a class="nav-item" href="#/versions" data-route="versions">版本管理</a>
+    <a class="nav-item" href="#/publish" data-route="publish">发布记录</a>
+    <a class="nav-item" href="#/audit" data-route="audit">操作审计</a>
+  </aside>
+
+  <div id="page-mount" class="main"></div>
+</div>
+<script src="admin-shell.js"></script>
+</body>
+</html>

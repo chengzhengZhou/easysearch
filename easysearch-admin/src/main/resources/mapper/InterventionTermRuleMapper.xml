@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ppwx.easysearch.admin.mapper.InterventionTermRuleMapper">
+
+    <insert id="copyFromVersion">
+        INSERT INTO qp_rule_intervention_term
+        (version_id, source_text, target_text, priority, enabled, remark, created_at, updated_at)
+        SELECT
+            #{newVersionId}, source_text, target_text, priority, enabled, remark, NOW(), NOW()
+        FROM qp_rule_intervention_term
+        WHERE version_id = #{baseVersionId}
+    </insert>
+
+</mapper>
+

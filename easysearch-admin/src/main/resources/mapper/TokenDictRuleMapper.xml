@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ppwx.easysearch.admin.mapper.TokenDictRuleMapper">
+
+    <insert id="copyFromVersion">
+        INSERT INTO qp_rule_token_dict
+        (version_id, word, nature, frequency, biz_id, dict_type, enabled, created_at, updated_at)
+        SELECT
+            #{newVersionId}, word, nature, frequency, biz_id, dict_type, enabled, NOW(), NOW()
+        FROM qp_rule_token_dict
+        WHERE version_id = #{baseVersionId}
+    </insert>
+
+</mapper>
+
