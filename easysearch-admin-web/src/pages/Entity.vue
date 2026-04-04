@@ -84,7 +84,7 @@ const addForm = ref<{
   entityText: string
   entityType: string
   normalizedValue: string
-  aliasesJson: string
+  aliases: string[]
   attributesJson: string
   relationsJson: string
   idsJson: string
@@ -93,12 +93,13 @@ const addForm = ref<{
   entityText: '',
   entityType: 'BRAND',
   normalizedValue: '',
-  aliasesJson: '[]',
+  aliases: [],
   attributesJson: '{}',
   relationsJson: '{}',
   idsJson: '[]',
   enabled: 1,
 })
+const addAliasInput = ref<string>('')
 
 // 编辑弹窗状态
 const editModalOpen = ref(false)
@@ -107,7 +108,7 @@ const editForm = ref<{
   entityText: string
   entityType: string
   normalizedValue: string
-  aliasesJson: string
+  aliases: string[]
   attributesJson: string
   relationsJson: string
   idsJson: string
@@ -116,12 +117,69 @@ const editForm = ref<{
   entityText: '',
   entityType: 'BRAND',
   normalizedValue: '',
-  aliasesJson: '[]',
+  aliases: [],
   attributesJson: '{}',
   relationsJson: '{}',
   idsJson: '[]',
   enabled: 1,
 })
+const editAliasInput = ref<string>('')
+
+// 别名操作函数
+function parseAliasesJson(json: string | null): string[] {
+  if (!json) return []
+  try {
+    const arr = JSON.parse(json)
+    if (Array.isArray(arr)) return arr.filter(item => typeof item === 'string' && item.trim())
+    return []
+  } catch {
+    return []
+  }
+}
+
+function aliasesToJson(aliases: string[]): string {
+  return JSON.stringify(aliases.filter(a => a.trim()))
+}
+
+// 别名操作函数 - 新增弹窗
+function addAliasToAddForm() {
+  const value = addAliasInput.value.trim()
+  if (value && !addForm.value.aliases.includes(value)) {
+    addForm.value.aliases.push(value)
+  }
+  addAliasInput.value = ''
+}
+
+function removeAliasFromAddForm(index: number) {
+  addForm.value.aliases.splice(index, 1)
+}
+
+function handleAddAliasKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ',') {
+    event.preventDefault()
+    addAliasToAddForm()
+  }
+}
+
+// 别名操作函数 - 编辑弹窗
+function addAliasToEditForm() {
+  const value = editAliasInput.value.trim()
+  if (value && !editForm.value.aliases.includes(value)) {
+    editForm.value.aliases.push(value)
+  }
+  editAliasInput.value = ''
+}
+
+function removeAliasFromEditForm(index: number) {
+  editForm.value.aliases.splice(index, 1)
+}
+
+function handleEditAliasKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ',') {
+    event.preventDefault()
+    addAliasToEditForm()
+  }
+}
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 const comparePickerOpen = ref(false)
@@ -290,12 +348,13 @@ function openAddModal() {
     entityText: '',
     entityType: 'BRAND',
     normalizedValue: '',
-    aliasesJson: '[]',
+    aliases: [],
     attributesJson: '{}',
     relationsJson: '{}',
     idsJson: '[]',
     enabled: 1,
   }
+  addAliasInput.value = ''
   addModalOpen.value = true
 }
 
@@ -311,7 +370,7 @@ async function submitAdd() {
     entityText: entity,
     entityType: addForm.value.entityType,
     normalizedValue: normalized,
-    aliasesJson: addForm.value.aliasesJson || '[]',
+    aliasesJson: aliasesToJson(addForm.value.aliases),
     attributesJson: addForm.value.attributesJson || '{}',
     relationsJson: addForm.value.relationsJson || '{}',
     idsJson: addForm.value.idsJson || '[]',
@@ -337,12 +396,13 @@ function openEditModal(rule: EntityRule) {
     entityText: rule.entityText ?? '',
     entityType: rule.entityType ?? 'BRAND',
     normalizedValue: rule.normalizedValue ?? '',
-    aliasesJson: rule.aliasesJson ?? '[]',
+    aliases: parseAliasesJson(rule.aliasesJson ?? '[]'),
     attributesJson: rule.attributesJson ?? '{}',
     relationsJson: rule.relationsJson ?? '{}',
     idsJson: rule.idsJson ?? '[]',
     enabled: Number(rule.enabled ?? 1),
   }
+  editAliasInput.value = ''
   editModalOpen.value = true
 }
 
@@ -359,7 +419,7 @@ async function submitEdit() {
     entityText: entity,
     entityType: editForm.value.entityType,
     normalizedValue: normalized,
-    aliasesJson: editForm.value.aliasesJson || '[]',
+    aliasesJson: aliasesToJson(editForm.value.aliases),
     attributesJson: editForm.value.attributesJson || '{}',
     relationsJson: editForm.value.relationsJson || '{}',
     idsJson: editForm.value.idsJson || '[]',
@@ -875,8 +935,23 @@ onMounted(async () => {
           </select>
         </div>
         <div class="form-field form-field-full">
-          <label class="form-label">别名（JSON 数组）</label>
-          <textarea v-model="addForm.aliasesJson" class="textarea" rows="2" placeholder='["别名1","别名2"]'></textarea>
+          <label class="form-label">别名</label>
+          <div class="alias-tags-container">
+            <div class="alias-tags">
+              <span v-for="(alias, idx) in addForm.aliases" :key="idx" class="alias-tag">
+                {{ alias }}
+                <button type="button" class="alias-tag-remove" @click="removeAliasFromAddForm(idx)">&times;</button>
+              </span>
+              <input
+                v-model="addAliasInput"
+                class="alias-input"
+                placeholder="输入别名后按 Enter 或逗号添加"
+                @keydown="handleAddAliasKeydown($event)"
+                @blur="addAliasToAddForm()"
+              />
+            </div>
+          </div>
+          <div class="form-hint">按 Enter 或逗号分隔添加多个别名</div>
         </div>
         <div class="form-field form-field-full">
           <label class="form-label">属性（JSON 对象）</label>
@@ -917,8 +992,23 @@ onMounted(async () => {
           </select>
         </div>
         <div class="form-field form-field-full">
-          <label class="form-label">别名（JSON 数组）</label>
-          <textarea v-model="editForm.aliasesJson" class="textarea" rows="2" placeholder='["别名1","别名2"]'></textarea>
+          <label class="form-label">别名</label>
+          <div class="alias-tags-container">
+            <div class="alias-tags">
+              <span v-for="(alias, idx) in editForm.aliases" :key="idx" class="alias-tag">
+                {{ alias }}
+                <button type="button" class="alias-tag-remove" @click="removeAliasFromEditForm(idx)">&times;</button>
+              </span>
+              <input
+                v-model="editAliasInput"
+                class="alias-input"
+                placeholder="输入别名后按 Enter 或逗号添加"
+                @keydown="handleEditAliasKeydown($event)"
+                @blur="addAliasToEditForm()"
+              />
+            </div>
+          </div>
+          <div class="form-hint">按 Enter 或逗号分隔添加多个别名</div>
         </div>
         <div class="form-field form-field-full">
           <label class="form-label">属性（JSON 对象）</label>
@@ -1217,5 +1307,78 @@ table .select {
   .toolbar-actions {
     justify-content: flex-start;
   }
+}
+
+/* ==================== 别名标签输入 ==================== */
+.alias-tags-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+.alias-tags-container:focus-within {
+  background: #fff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.alias-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.alias-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1e40af;
+  transition: all 0.15s ease;
+}
+.alias-tag:hover {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+.alias-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-left: 2px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.alias-tag-remove:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+.alias-input {
+  flex: 1;
+  min-width: 150px;
+  border: none;
+  background: transparent;
+  padding: 4px 6px;
+  font-size: 13px;
+  outline: none;
+}
+.alias-input::placeholder {
+  color: #9ca3af;
+}
+.form-hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #9ca3af;
 }
 </style>
