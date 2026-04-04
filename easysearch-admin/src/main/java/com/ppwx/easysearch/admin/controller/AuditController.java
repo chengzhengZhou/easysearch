@@ -18,7 +18,7 @@ package com.ppwx.easysearch.admin.controller;
 
 import com.ppwx.easysearch.admin.domain.api.ApiResponse;
 import com.ppwx.easysearch.admin.domain.api.PageResult;
-import com.ppwx.easysearch.admin.domain.model.OperationLogDO;
+import com.ppwx.easysearch.admin.domain.vo.OperationLogVO;
 import com.ppwx.easysearch.admin.service.AuditService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,11 +37,13 @@ public class AuditController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('VIEWER','EDITOR','PUBLISHER','ADMIN')")
-    public ApiResponse<PageResult<OperationLogDO>> page(@RequestParam(required = false) Long resourceSetId,
-                                                        @RequestParam(required = false) Long versionId,
+    public ApiResponse<PageResult<OperationLogVO>> page(@RequestParam(required = false) Long resourceSetId,
+                                                        @RequestParam(required = false) Long snapshotId,
+                                                        @RequestParam(required = false) String action,
+                                                        @RequestParam(required = false) String entityType,
                                                         @RequestParam(defaultValue = "1") long page,
                                                         @RequestParam(defaultValue = "20") long pageSize) {
-        return ApiResponse.ok(auditService.page(resourceSetId, versionId, page, pageSize));
+        return ApiResponse.ok(auditService.page(resourceSetId, snapshotId, action, entityType, page, pageSize));
     }
 }
 
