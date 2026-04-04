@@ -85,7 +85,7 @@ const addForm = ref<{
   entityType: string
   normalizedValue: string
   aliases: string[]
-  attributesJson: string
+  attributes: { key: string; value: string }[]
   relationsJson: string
   idsJson: string
   enabled: number
@@ -94,7 +94,7 @@ const addForm = ref<{
   entityType: 'BRAND',
   normalizedValue: '',
   aliases: [],
-  attributesJson: '{}',
+  attributes: [],
   relationsJson: '{}',
   idsJson: '[]',
   enabled: 1,
@@ -109,7 +109,7 @@ const editForm = ref<{
   entityType: string
   normalizedValue: string
   aliases: string[]
-  attributesJson: string
+  attributes: { key: string; value: string }[]
   relationsJson: string
   idsJson: string
   enabled: number
@@ -118,7 +118,7 @@ const editForm = ref<{
   entityType: 'BRAND',
   normalizedValue: '',
   aliases: [],
-  attributesJson: '{}',
+  attributes: [],
   relationsJson: '{}',
   idsJson: '[]',
   enabled: 1,
@@ -180,6 +180,49 @@ function handleEditAliasKeydown(event: KeyboardEvent) {
     addAliasToEditForm()
   }
 }
+
+// 属性操作函数
+function parseAttributesJson(json: string | null): { key: string; value: string }[] {
+  if (!json) return []
+  try {
+    const obj = JSON.parse(json)
+    if (typeof obj === 'object' && obj !== null && !Array.isArray(obj)) {
+      return Object.entries(obj).map(([key, value]) => ({ key, value: String(value) }))
+    }
+    return []
+  } catch {
+    return []
+  }
+}
+
+function attributesToJson(attributes: { key: string; value: string }[]): string {
+  const obj: Record<string, string> = {}
+  attributes.forEach(attr => {
+    if (attr.key.trim()) {
+      obj[attr.key.trim()] = attr.value
+    }
+  })
+  return JSON.stringify(obj)
+}
+
+// 属性操作函数 - 新增弹窗
+function addAttributeToAddForm() {
+  addForm.value.attributes.push({ key: '', value: '' })
+}
+
+function removeAttributeFromAddForm(index: number) {
+  addForm.value.attributes.splice(index, 1)
+}
+
+// 属性操作函数 - 编辑弹窗
+function addAttributeToEditForm() {
+  editForm.value.attributes.push({ key: '', value: '' })
+}
+
+function removeAttributeFromEditForm(index: number) {
+  editForm.value.attributes.splice(index, 1)
+}
+
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 const comparePickerOpen = ref(false)
@@ -349,7 +392,7 @@ function openAddModal() {
     entityType: 'BRAND',
     normalizedValue: '',
     aliases: [],
-    attributesJson: '{}',
+    attributes: [],
     relationsJson: '{}',
     idsJson: '[]',
     enabled: 1,
@@ -371,7 +414,7 @@ async function submitAdd() {
     entityType: addForm.value.entityType,
     normalizedValue: normalized,
     aliasesJson: aliasesToJson(addForm.value.aliases),
-    attributesJson: addForm.value.attributesJson || '{}',
+    attributesJson: attributesToJson(addForm.value.attributes),
     relationsJson: addForm.value.relationsJson || '{}',
     idsJson: addForm.value.idsJson || '[]',
     enabled: Number(addForm.value.enabled ?? 1),
@@ -397,7 +440,7 @@ function openEditModal(rule: EntityRule) {
     entityType: rule.entityType ?? 'BRAND',
     normalizedValue: rule.normalizedValue ?? '',
     aliases: parseAliasesJson(rule.aliasesJson ?? '[]'),
-    attributesJson: rule.attributesJson ?? '{}',
+    attributes: parseAttributesJson(rule.attributesJson ?? '{}'),
     relationsJson: rule.relationsJson ?? '{}',
     idsJson: rule.idsJson ?? '[]',
     enabled: Number(rule.enabled ?? 1),
@@ -420,7 +463,7 @@ async function submitEdit() {
     entityType: editForm.value.entityType,
     normalizedValue: normalized,
     aliasesJson: aliasesToJson(editForm.value.aliases),
-    attributesJson: editForm.value.attributesJson || '{}',
+    attributesJson: attributesToJson(editForm.value.attributes),
     relationsJson: editForm.value.relationsJson || '{}',
     idsJson: editForm.value.idsJson || '[]',
     enabled: Number(editForm.value.enabled ?? 1),
@@ -954,8 +997,26 @@ onMounted(async () => {
           <div class="form-hint">按 Enter 或逗号分隔添加多个别名</div>
         </div>
         <div class="form-field form-field-full">
-          <label class="form-label">属性（JSON 对象）</label>
-          <textarea v-model="addForm.attributesJson" class="textarea" rows="2" placeholder='{"key":"value"}'></textarea>
+          <label class="form-label">属性</label>
+          <div class="kv-list">
+            <div v-for="(attr, idx) in addForm.attributes" :key="idx" class="kv-row">
+              <input
+                v-model="attr.key"
+                class="input kv-input kv-key"
+                placeholder="属性名"
+              />
+              <span class="kv-sep">=</span>
+              <input
+                v-model="attr.value"
+                class="input kv-input kv-value"
+                placeholder="属性值"
+              />
+              <button type="button" class="kv-remove" @click="removeAttributeFromAddForm(idx)">&times;</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-add-kv" @click="addAttributeToAddForm">
+              <span class="btn-icon-sm">+</span> 添加属性
+            </button>
+          </div>
         </div>
       </div>
       <template #footer>
@@ -1011,8 +1072,26 @@ onMounted(async () => {
           <div class="form-hint">按 Enter 或逗号分隔添加多个别名</div>
         </div>
         <div class="form-field form-field-full">
-          <label class="form-label">属性（JSON 对象）</label>
-          <textarea v-model="editForm.attributesJson" class="textarea" rows="2" placeholder='{"key":"value"}'></textarea>
+          <label class="form-label">属性</label>
+          <div class="kv-list">
+            <div v-for="(attr, idx) in editForm.attributes" :key="idx" class="kv-row">
+              <input
+                v-model="attr.key"
+                class="input kv-input kv-key"
+                placeholder="属性名"
+              />
+              <span class="kv-sep">=</span>
+              <input
+                v-model="attr.value"
+                class="input kv-input kv-value"
+                placeholder="属性值"
+              />
+              <button type="button" class="kv-remove" @click="removeAttributeFromEditForm(idx)">&times;</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-add-kv" @click="addAttributeToEditForm">
+              <span class="btn-icon-sm">+</span> 添加属性
+            </button>
+          </div>
         </div>
       </div>
       <template #footer>
@@ -1380,5 +1459,82 @@ table .select {
   margin-top: 4px;
   font-size: 11px;
   color: #9ca3af;
+}
+
+/* ==================== 键值对编辑 ==================== */
+.kv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kv-input {
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #f9fafb;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+.kv-input:focus {
+  background: #fff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.kv-key {
+  flex: 1;
+  min-width: 100px;
+}
+.kv-value {
+  flex: 2;
+  min-width: 150px;
+}
+.kv-sep {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 14px;
+}
+.kv-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #9ca3af;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.kv-remove:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+.btn-sm {
+  height: 28px;
+  line-height: 26px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.btn-add-kv {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #86efac;
+  color: #166534;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+.btn-add-kv:hover {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-color: #4ade80;
 }
 </style>

@@ -48,22 +48,83 @@ const publishConfirmOpen = ref(false)
 const publishChangeLog = ref<string>('')
 const publishValidateSummary = ref<string>('校验：未执行')
 const addModalOpen = ref(false)
-const addForm = ref<{ sourceText: string; direction: SynonymDirection; targets: string; enabled: number }>({
+const addForm = ref<{ sourceText: string; direction: SynonymDirection; targets: string[]; enabled: number }>({
   sourceText: '',
   direction: '=>',
-  targets: '',
+  targets: [],
   enabled: 1,
 })
+const addTargetInput = ref<string>('')
 
 // 编辑弹窗状态
 const editModalOpen = ref(false)
 const editingRule = ref<SynonymRule | null>(null)
-const editForm = ref<{ sourceText: string; direction: SynonymDirection; targets: string; enabled: number }>({
+const editForm = ref<{ sourceText: string; direction: SynonymDirection; targets: string[]; enabled: number }>({
   sourceText: '',
   direction: '=>',
-  targets: '',
+  targets: [],
   enabled: 1,
 })
+const editTargetInput = ref<string>('')
+
+// ==================== 目标词操作函数 ====================
+// 解析 JSON 为数组
+function parseTargetsJson(json: string | null): string[] {
+  if (!json) return []
+  try {
+    const arr = JSON.parse(json)
+    if (Array.isArray(arr)) return arr.filter(item => typeof item === 'string' && item.trim())
+    return []
+  } catch {
+    // 如果不是 JSON，尝试按逗号分隔
+    return json.split(',').map(s => s.trim()).filter(Boolean)
+  }
+}
+
+// 数组转 JSON
+function targetsToJson(targets: string[]): string {
+  return JSON.stringify(targets.filter(t => t.trim()))
+}
+
+// 新增弹窗 - 目标词操作
+function addTargetToAddForm() {
+  const value = addTargetInput.value.trim()
+  if (value && !addForm.value.targets.includes(value)) {
+    addForm.value.targets.push(value)
+  }
+  addTargetInput.value = ''
+}
+
+function removeTargetFromAddForm(index: number) {
+  addForm.value.targets.splice(index, 1)
+}
+
+function handleAddTargetKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ',') {
+    event.preventDefault()
+    addTargetToAddForm()
+  }
+}
+
+// 编辑弹窗 - 目标词操作
+function addTargetToEditForm() {
+  const value = editTargetInput.value.trim()
+  if (value && !editForm.value.targets.includes(value)) {
+    editForm.value.targets.push(value)
+  }
+  editTargetInput.value = ''
+}
+
+function removeTargetFromEditForm(index: number) {
+  editForm.value.targets.splice(index, 1)
+}
+
+function handleEditTargetKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ',') {
+    event.preventDefault()
+    addTargetToEditForm()
+  }
+}
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 const comparePickerOpen = ref(false)
@@ -222,27 +283,23 @@ async function confirmRollback() {
 
 function openAddModal() {
   if (!resourceSetId.value) return
-  addForm.value = { sourceText: '', direction: '=>', targets: '', enabled: 1 }
+  addForm.value = { sourceText: '', direction: '=>', targets: [], enabled: 1 }
+  addTargetInput.value = ''
   addModalOpen.value = true
 }
 
 async function submitAdd() {
   if (!resourceSetId.value) return
   const source = String(addForm.value.sourceText ?? '').trim()
-  const targets = String(addForm.value.targets ?? '').trim()
-  if (!source || !targets) {
+  const targets = addForm.value.targets
+  if (!source || targets.length === 0) {
     showToast('source 和 targets 必填')
-    return
-  }
-  const arr = targets.split(',').map((s) => s.trim()).filter(Boolean)
-  if (arr.length === 0) {
-    showToast('至少需要一个目标词')
     return
   }
   const payload = {
     sourceText: source,
     direction: addForm.value.direction,
-    targetsJson: JSON.stringify(arr),
+    targetsJson: targetsToJson(targets),
     enabled: Number(addForm.value.enabled ?? 1),
   }
   try {
@@ -261,41 +318,29 @@ async function submitAdd() {
 function openEditModal(rule: SynonymRule) {
   if (!resourceSetId.value) return
   editingRule.value = rule
-  // 将 targetsJson 转换回逗号分隔的字符串
-  let targetsStr = ''
-  try {
-    const arr = JSON.parse(rule.targetsJson ?? '[]')
-    targetsStr = Array.isArray(arr) ? arr.join(', ') : rule.targetsJson ?? ''
-  } catch {
-    targetsStr = rule.targetsJson ?? ''
-  }
   editForm.value = {
     sourceText: rule.sourceText ?? '',
     direction: (rule.direction ?? '=>') as SynonymDirection,
-    targets: targetsStr,
+    targets: parseTargetsJson(rule.targetsJson),
     enabled: Number(rule.enabled ?? 1),
   }
+  editTargetInput.value = ''
   editModalOpen.value = true
 }
 
 async function submitEdit() {
   if (!resourceSetId.value || !editingRule.value) return
   const source = String(editForm.value.sourceText ?? '').trim()
-  const targets = String(editForm.value.targets ?? '').trim()
-  if (!source || !targets) {
+  const targets = editForm.value.targets
+  if (!source || targets.length === 0) {
     showToast('source 和 targets 必填')
-    return
-  }
-  const arr = targets.split(',').map((s) => s.trim()).filter(Boolean)
-  if (arr.length === 0) {
-    showToast('至少需要一个目标词')
     return
   }
   const payload = {
     ...editingRule.value,
     sourceText: source,
     direction: editForm.value.direction,
-    targetsJson: JSON.stringify(arr),
+    targetsJson: targetsToJson(targets),
     enabled: Number(editForm.value.enabled ?? 1),
   }
   try {
@@ -799,8 +844,22 @@ onMounted(async () => {
         </div>
         <div class="form-field form-field-full">
           <label class="form-label">目标词 <span class="form-required">*</span></label>
-          <input v-model="addForm.targets" class="input input-full" placeholder="逗号分隔多个目标词，如：手机,电话,移动电话" />
-          <span class="form-hint">多个目标词之间用英文逗号分隔</span>
+          <div class="target-tags-container">
+            <div class="target-tags">
+              <span v-for="(target, idx) in addForm.targets" :key="idx" class="target-tag">
+                {{ target }}
+                <button type="button" class="target-tag-remove" @click="removeTargetFromAddForm(idx)">&times;</button>
+              </span>
+              <input
+                v-model="addTargetInput"
+                class="target-input"
+                placeholder="输入目标词后按 Enter 或逗号添加"
+                @keydown="handleAddTargetKeydown($event)"
+                @blur="addTargetToAddForm()"
+              />
+            </div>
+          </div>
+          <span class="form-hint">按 Enter 或逗号分隔添加多个目标词</span>
         </div>
       </div>
       <template #footer>
@@ -836,8 +895,22 @@ onMounted(async () => {
         </div>
         <div class="form-field form-field-full">
           <label class="form-label">目标词 <span class="form-required">*</span></label>
-          <input v-model="editForm.targets" class="input input-full" placeholder="逗号分隔多个目标词，如：手机,电话,移动电话" />
-          <span class="form-hint">多个目标词之间用英文逗号分隔</span>
+          <div class="target-tags-container">
+            <div class="target-tags">
+              <span v-for="(target, idx) in editForm.targets" :key="idx" class="target-tag">
+                {{ target }}
+                <button type="button" class="target-tag-remove" @click="removeTargetFromEditForm(idx)">&times;</button>
+              </span>
+              <input
+                v-model="editTargetInput"
+                class="target-input"
+                placeholder="输入目标词后按 Enter 或逗号添加"
+                @keydown="handleEditTargetKeydown($event)"
+                @blur="addTargetToEditForm()"
+              />
+            </div>
+          </div>
+          <span class="form-hint">按 Enter 或逗号分隔添加多个目标词</span>
         </div>
       </div>
       <template #footer>
@@ -1132,5 +1205,78 @@ table .select {
   .toolbar-actions {
     justify-content: flex-start;
   }
+}
+
+/* ==================== 目标词标签输入 ==================== */
+.target-tags-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+.target-tags-container:focus-within {
+  background: #fff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.target-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.target-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #166534;
+  transition: all 0.15s ease;
+}
+.target-tag:hover {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+}
+.target-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-left: 2px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #22c55e;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.target-tag-remove:hover {
+  background: #22c55e;
+  color: #fff;
+}
+.target-input {
+  flex: 1;
+  min-width: 200px;
+  border: none;
+  background: transparent;
+  padding: 4px 6px;
+  font-size: 13px;
+  outline: none;
+}
+.target-input::placeholder {
+  color: #9ca3af;
+}
+.form-hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #9ca3af;
 }
 </style>
