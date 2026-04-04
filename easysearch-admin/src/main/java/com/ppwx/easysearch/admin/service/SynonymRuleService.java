@@ -22,9 +22,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ppwx.easysearch.admin.domain.api.PageResult;
 import com.ppwx.easysearch.admin.domain.exception.BizException;
-import com.ppwx.easysearch.admin.domain.model.ResourceVersionDO;
 import com.ppwx.easysearch.admin.domain.model.SynonymRuleDO;
-import com.ppwx.easysearch.admin.mapper.ResourceVersionMapper;
 import com.ppwx.easysearch.admin.mapper.SynonymRuleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,32 +30,28 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 同义词规则服务
+ * 简化版：直接操作当前规则表（归属 resourceSetId），无需 versionId
+ */
 @Service
 public class SynonymRuleService {
     private final SynonymRuleMapper synonymRuleMapper;
-    private final ResourceVersionMapper resourceVersionMapper;
     private final OperationLogService operationLogService;
     private final ObjectMapper objectMapper;
 
     public SynonymRuleService(SynonymRuleMapper synonymRuleMapper,
-                              ResourceVersionMapper resourceVersionMapper,
                               OperationLogService operationLogService,
                               ObjectMapper objectMapper) {
         this.synonymRuleMapper = synonymRuleMapper;
-        this.resourceVersionMapper = resourceVersionMapper;
         this.operationLogService = operationLogService;
         this.objectMapper = objectMapper;
     }
 
-    @Transactional
-    public void copyFromVersion(Long newVersionId, Long baseVersionId) {
-        synonymRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-    }
-
-    public PageResult<SynonymRuleDO> page(Long versionId, String q, long page, long pageSize) {
+    public PageResult<SynonymRuleDO> page(Long resourceSetId, String q, long page, long pageSize) {
         Page<SynonymRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<SynonymRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(SynonymRuleDO::getVersionId, versionId);
+        qw.eq(SynonymRuleDO::getResourceSetId, resourceSetId);
         if (q != null && !q.trim().isEmpty()) {
             qw.and(x -> x.like(SynonymRuleDO::getSourceText, q).or().like(SynonymRuleDO::getTargetsJson, q));
         }
@@ -66,50 +60,46 @@ public class SynonymRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public SynonymRuleDO create(Long versionId, SynonymRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public SynonymRuleDO create(Long resourceSetId, SynonymRuleDO in) {
         in.setId(null);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         synonymRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "synonym", in.getId(), null, in);
+        operationLogService.log("create", resourceSetId, null, "synonym", in.getId(), null, in);
         return in;
     }
 
-    public SynonymRuleDO update(Long versionId, Long ruleId, SynonymRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public SynonymRuleDO update(Long resourceSetId, Long ruleId, SynonymRuleDO in) {
         SynonymRuleDO before = synonymRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
             throw new BizException(404, "rule not found");
         }
         in.setId(ruleId);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         synonymRuleMapper.updateById(in);
         SynonymRuleDO after = synonymRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "synonym", ruleId, before, after);
+        operationLogService.log("update", resourceSetId, null, "synonym", ruleId, before, after);
         return after;
     }
 
-    public void delete(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public void delete(Long resourceSetId, Long ruleId) {
         SynonymRuleDO before = synonymRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
             return;
         }
         synonymRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "synonym", ruleId, before, null);
+        operationLogService.log("delete", resourceSetId, null, "synonym", ruleId, before, null);
     }
 
     @Transactional
-    public InterventionRuleService.BatchImportResult batchImport(Long versionId, List<SynonymRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionRuleService.BatchImportResult batchImport(Long resourceSetId, List<SynonymRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (SynonymRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalize(in);
                 synonymRuleMapper.insert(in);
                 ok++;
@@ -117,20 +107,27 @@ public class SynonymRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "synonym", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "synonym", null, null, "ok=" + ok + ",fail=" + fail);
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
-    public VersionService.ValidateReport validate(Long versionId) {
-        List<SynonymRuleDO> rules = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getVersionId, versionId));
+    public PublishService.ValidateReport validate(Long resourceSetId) {
+        List<SynonymRuleDO> rules = synonymRuleMapper.selectList(
+                new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, resourceSetId));
         for (SynonymRuleDO r : rules) {
-            if (isBlank(r.getSourceText())) return VersionService.ValidateReport.fail("synonym: source required");
+            if (isBlank(r.getSourceText())) {
+                return PublishService.ValidateReport.fail("synonym: source required");
+            }
             String dir = safe(r.getDirection());
-            if (!("=>".equals(dir) || "<=".equals(dir) || "SYM".equals(dir))) return VersionService.ValidateReport.fail("synonym: invalid direction");
+            if (!("=>".equals(dir) || "<=".equals(dir) || "SYM".equals(dir))) {
+                return PublishService.ValidateReport.fail("synonym: invalid direction");
+            }
             List<String> targets = parseTargets(r.getTargetsJson());
-            if (targets.isEmpty()) return VersionService.ValidateReport.fail("synonym: targets required");
+            if (targets.isEmpty()) {
+                return PublishService.ValidateReport.fail("synonym: targets required");
+            }
         }
-        return VersionService.ValidateReport.ok("synonym ok; size=" + rules.size());
+        return PublishService.ValidateReport.ok("synonym ok; size=" + rules.size());
     }
 
     private void normalize(SynonymRuleDO in) {
@@ -160,13 +157,6 @@ public class SynonymRuleService {
         }
     }
 
-    private ResourceVersionDO ensureDraft(Long versionId) {
-        ResourceVersionDO v = resourceVersionMapper.selectById(versionId);
-        if (v == null) throw new BizException(404, "version not found");
-        if (!"draft".equals(v.getStatus())) throw new BizException(400, "only draft can be modified");
-        return v;
-    }
-
     private boolean isBlank(String s) {
         return s == null || s.trim().isEmpty();
     }
@@ -181,4 +171,3 @@ public class SynonymRuleService {
         return t.isEmpty() ? null : t;
     }
 }
-

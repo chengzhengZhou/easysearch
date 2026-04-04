@@ -49,36 +49,37 @@ public class DiffService {
         this.metaRuleMapper = metaRuleMapper;
     }
 
-    public DiffResult diff(Long currentVersionId, Long baseVersionId, RuleModule module, InterventionMode mode) {
+    public DiffResult diff(Long currentResourceSetId, Long baseSnapshotId, RuleModule module, InterventionMode mode) {
         if (module == RuleModule.intervention) {
             InterventionMode m = mode == null ? InterventionMode.sentence : mode;
             if (m == InterventionMode.sentence) {
-                List<InterventionSentenceRuleDO> cur = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getVersionId, currentVersionId));
-                List<InterventionSentenceRuleDO> base = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getVersionId, baseVersionId));
+                List<InterventionSentenceRuleDO> cur = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getResourceSetId, currentResourceSetId));
+                // TODO: 从快照表读取 base 数据
+                List<InterventionSentenceRuleDO> base = new ArrayList<>();
                 return diffByKey(cur, base, r -> safe(r.getSourceText()));
             }
-            List<InterventionTermRuleDO> cur = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getVersionId, currentVersionId));
-            List<InterventionTermRuleDO> base = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getVersionId, baseVersionId));
+            List<InterventionTermRuleDO> cur = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getResourceSetId, currentResourceSetId));
+            List<InterventionTermRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, r -> safe(r.getSourceText()));
         }
         if (module == RuleModule.synonym) {
-            List<SynonymRuleDO> cur = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getVersionId, currentVersionId));
-            List<SynonymRuleDO> base = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getVersionId, baseVersionId));
+            List<SynonymRuleDO> cur = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, currentResourceSetId));
+            List<SynonymRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, r -> safe(r.getSourceText()) + "|" + safe(r.getDirection()));
         }
         if (module == RuleModule.entity) {
-            List<EntityRuleDO> cur = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getVersionId, currentVersionId));
-            List<EntityRuleDO> base = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getVersionId, baseVersionId));
+            List<EntityRuleDO> cur = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getResourceSetId, currentResourceSetId));
+            List<EntityRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, r -> safe(r.getEntityText()) + "|" + safe(r.getEntityType()) + "|" + safe(r.getNormalizedValue()));
         }
         if (module == RuleModule.token) {
-            List<TokenDictRuleDO> cur = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getVersionId, currentVersionId));
-            List<TokenDictRuleDO> base = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getVersionId, baseVersionId));
+            List<TokenDictRuleDO> cur = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getResourceSetId, currentResourceSetId));
+            List<TokenDictRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, r -> safe(r.getWord()));
         }
         if (module == RuleModule.meta) {
-            List<MetaRuleDO> cur = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getVersionId, currentVersionId));
-            List<MetaRuleDO> base = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getVersionId, baseVersionId));
+            List<MetaRuleDO> cur = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getResourceSetId, currentResourceSetId));
+            List<MetaRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, this::metaKey);
         }
         throw new BizException(400, "module not supported");

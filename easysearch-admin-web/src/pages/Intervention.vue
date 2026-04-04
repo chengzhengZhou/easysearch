@@ -3,15 +3,12 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { http } from '../services/http'
 
 type Mode = 'sentence' | 'term'
-type ViewMode = 'view' | 'edit'
-type ViewVersion = 'online' | number
 
 const mode = ref<Mode>('sentence')
 const resourceSetId = ref<number | null>(null)
 
-// 统一原型：查看/编辑两态；查看=线上/历史只读，编辑=进入工作区（draft）
-const viewMode = ref<ViewMode>('view')
-const viewVersion = ref<ViewVersion>('online')
+// 简化版：去掉 viewMode（查看/编辑两态）、stagingVersionId 等概念
+// 页面始终可编辑，规则直接操作当前规则表
 
 const searchInput = ref<string>('')
 const pageSize = ref<number>(20)
@@ -25,8 +22,8 @@ const toast = ref<string>('')
 const loading = ref(false)
 
 type PageResult<T> = { page: number; pageSize: number; total: number; items: T[] }
-type ResourceSet = { id: number; name: string; moduleType: string; env: string; scene: string; currentVersionId?: number | null }
-type Version = { id: number; versionNo: number; status: string; changeLog?: string | null }
+type ResourceSet = { id: number; name: string; moduleType: string; env: string; scene: string; currentSnapshotId?: number | null }
+type Snapshot = { id: number; snapshotNo: number; changeLog?: string | null; ruleCount: number; publishedBy: string; publishedAt: string }
 type SentenceRule = {
   id: number
   sourceText: string
@@ -39,21 +36,19 @@ type SentenceRule = {
 type TermRule = { id: number; sourceText: string; targetText: string; priority: number; enabled: number; remark?: string | null }
 
 const resourceSets = ref<ResourceSet[]>([])
-const versions = ref<Version[]>([])
+const snapshots = ref<Snapshot[]>([])
 const rules = ref<Array<SentenceRule | TermRule>>([])
 
 const selectedIds = ref<Set<number>>(new Set())
 
-const comparePickerOpen = ref(false)
 const compareModalOpen = ref(false)
-const compareBaseVersionId = ref<number | null>(null)
 const diffSummary = ref<string>('-')
 const diffAdded = ref<any[]>([])
 const diffDeleted = ref<any[]>([])
 const diffModified = ref<any[]>([])
 
 const rollbackPickerOpen = ref(false)
-const rollbackToVersionId = ref<number | null>(null)
+const rollbackToSnapshotId = ref<number | null>(null)
 
 const publishConfirmOpen = ref(false)
 const publishChangeLog = ref<string>('')
@@ -65,42 +60,28 @@ const auditLog = ref<string[]>([])
 const addModalOpen = ref(false)
 const addForm = ref<any>({ sourceText: '', targetText: '', matchType: 'EXACT', priority: 0, enabled: 1 })
 
+const snapshotViewerOpen = ref(false)
+const viewingSnapshot = ref<Snapshot | null>(null)
+
 const modeLabel = computed(() => {
   return mode.value === 'sentence' ? '整句干预' : '词表干预'
 })
 
 const currentResourceSet = computed(() => resourceSets.value.find((r) => r.id === resourceSetId.value) ?? null)
-const onlineVersionId = computed<number | null>(() => (currentResourceSet.value?.currentVersionId ?? null) as number | null)
-const stagingVersion = computed<Version | null>(() => versions.value.find((v) => v.status === 'draft') ?? null)
-const stagingVersionId = computed<number | null>(() => (stagingVersion.value?.id ?? null) as number | null)
+const currentSnapshotId = computed<number | null>(() => (currentResourceSet.value?.currentSnapshotId ?? null) as number | null)
 
-const viewingVersionId = computed<number | null>(() => {
-  if (viewMode.value === 'edit') return stagingVersionId.value
-  if (viewVersion.value === 'online') return onlineVersionId.value
-  return Number(viewVersion.value)
-})
-
-const currentVersion = computed(() => versions.value.find((v) => v.id === viewingVersionId.value) ?? null)
-const isEditable = computed(() => viewMode.value === 'edit')
-
-function versionLabel(id: number | null): string {
-  if (!id) return '-'
-  const v = versions.value.find((x) => x.id === id)
-  if (!v) return '-'
-  return `v${v.versionNo} (${v.status})`
-}
+const currentSnapshot = computed(() => snapshots.value.find((s) => s.id === currentSnapshotId.value) ?? null)
 
 const topContext = computed(() => {
   const rs = currentResourceSet.value
   if (!rs) return ''
-  const onlineV = versions.value.find((v) => v.id === onlineVersionId.value) ?? null
-  const stagingV = versions.value.find((v) => v.id === stagingVersionId.value) ?? null
-  return `资源集：${rs.name} ｜ scene：${rs.scene} ｜ env：${rs.env} ｜ 线上：${onlineV ? `v${onlineV.versionNo}` : '-'} ｜ 工作区：${stagingV ? `v${stagingV.versionNo}` : '-'}`
+  const snap = currentSnapshot.value
+  return `资源集：${rs.name} ｜ scene：${rs.scene} ｜ env：${rs.env} ｜ 线上快照：${snap ? `#${snap.snapshotNo}` : '无'}`
 })
 
 async function ensureResourceSet(): Promise<number | null> {
   if (resourceSetId.value) return resourceSetId.value
-  // Empty DB bootstrap: create a default intervention resource set.
+  // 空库初始化：创建默认的 intervention 资源集
   try {
     const res = await http.post('/api/resource-sets', {
       moduleType: 'intervention',
@@ -112,7 +93,7 @@ async function ensureResourceSet(): Promise<number | null> {
     if (id) {
       resourceSetId.value = id
       await loadResourceSets()
-      await loadVersions()
+      await loadSnapshots()
       return id
     }
     return null
@@ -127,28 +108,26 @@ async function loadResourceSets() {
   resourceSets.value = (res.data?.data?.items ?? []) as ResourceSet[]
   if (!resourceSetId.value && resourceSets.value.length) {
     resourceSetId.value = resourceSets.value[0].id
-    await loadVersions()
+    await loadSnapshots()
   }
 }
 
-async function loadVersions() {
-  versions.value = []
+async function loadSnapshots() {
+  snapshots.value = []
   rules.value = []
   selectedIds.value = new Set()
   if (!resourceSetId.value) return
-  const res = await http.get(`/api/resource-sets/${resourceSetId.value}/versions`, { params: { page: 1, pageSize: 50 } })
-  versions.value = (res.data?.data?.items ?? []) as Version[]
-  // 默认：查看线上 current_version_id
-  viewMode.value = 'view'
-  viewVersion.value = 'online'
+  const res = await http.get(`/api/resource-sets/${resourceSetId.value}/snapshots`, { params: { page: 1, pageSize: 50 } })
+  snapshots.value = (res.data?.data?.items ?? []) as Snapshot[]
   await loadRules()
   await loadSideLogs()
 }
 
 async function loadRules() {
   rules.value = []
-  if (!viewingVersionId.value) return
-  const res = await http.get(`/api/versions/${viewingVersionId.value}/rules`, {
+  if (!resourceSetId.value) return
+  // 直接读取当前规则表（无需 versionId）
+  const res = await http.get(`/api/resource-sets/${resourceSetId.value}/rules`, {
     params: { module: 'intervention', mode: mode.value, q: searchInput.value || undefined, page: 1, pageSize: 200 },
   })
   const pr = res.data?.data as PageResult<any>
@@ -157,82 +136,18 @@ async function loadRules() {
   page.value = 1
 }
 
-async function ensureStagingExists() {
-  if (!resourceSetId.value) {
-    const id = await ensureResourceSet()
-    if (!id) return
-  }
-  if (stagingVersionId.value) return
-  toast.value = ''
-  loading.value = true
-  try {
-    // createDraft: 如果已存在 draft 会直接返回 existingDraft（后端保证幂等）
-    await http.post(`/api/resource-sets/${resourceSetId.value}/versions`, {
-      changeLog: publishChangeLog.value || '',
-      basedOnVersionId: onlineVersionId.value ?? undefined,
-    })
-    await loadVersions()
-  } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '初始化工作区失败'
-  } finally {
-    loading.value = false
-  }
-}
-
-async function setViewMode(next: ViewMode) {
-  if (next === 'edit') {
-    await ensureStagingExists()
-    if (!stagingVersionId.value) return
-    viewMode.value = 'edit'
-  } else {
-    viewMode.value = 'view'
-    viewVersion.value = 'online'
-  }
-  validateSummary.value = '尚未校验'
-  publishValidateSummary.value = '校验：未执行'
-  previewOutput.value = '尚未预览'
-  selectedIds.value = new Set()
-  await loadRules()
-}
-
-async function resetStaging() {
-  if (!resourceSetId.value) return
-  if (!isEditable.value) return
-  const ok = window.confirm('将重置工作区为线上版本，未发布变更将丢失。继续？')
-  if (!ok) return
-  loading.value = true
-  toast.value = ''
-  try {
-    await http.post(`/api/resource-sets/${resourceSetId.value}/staging/reset`, {
-      basedOnVersionId: onlineVersionId.value ?? undefined,
-      changeLog: `reset staging to online @ ${new Date().toLocaleString()}`,
-    })
-    auditLog.value.unshift(`${new Date().toLocaleString()} | 重置工作区：resourceSetId=${resourceSetId.value} basedOn=${onlineVersionId.value ?? '-'}`)
-    await loadVersions()
-    // 重置后仍在编辑模式（工作区）
-    viewMode.value = 'edit'
-    await loadRules()
-  } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '重置工作区失败'
-  } finally {
-    loading.value = false
-  }
-}
-
 async function validate() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
-  const res = await http.post(`/api/versions/${stagingVersionId.value}/validate`)
+  if (!resourceSetId.value) return
+  const res = await http.post(`/api/resource-sets/${resourceSetId.value}/validate`)
   validateSummary.value = res.data?.data?.summary ?? 'OK'
 }
 
 async function openPublishConfirm() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   publishValidateSummary.value = '校验：未执行'
   publishConfirmOpen.value = true
   try {
-    const res = await http.post(`/api/versions/${stagingVersionId.value}/validate`)
+    const res = await http.post(`/api/resource-sets/${resourceSetId.value}/validate`)
     const summary = res.data?.data?.summary ?? 'OK'
     validateSummary.value = summary
     publishValidateSummary.value = `校验：${summary}`
@@ -240,27 +155,23 @@ async function openPublishConfirm() {
     publishValidateSummary.value = `校验：失败（${e?.response?.data?.message ?? e?.message ?? 'unknown'}）`
   }
 }
+
 function closePublishConfirm() {
   publishConfirmOpen.value = false
 }
+
 async function confirmPublish() {
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   const cl = publishChangeLog.value.trim()
-  if (!cl) {
-    toast.value = '请填写发布说明（change_log）'
-    return
-  }
-  if (!stagingVersion.value?.changeLog) {
-    toast.value = '提示：当前后端仅在“建草稿”时写入 changeLog；本次输入用于对齐原型文案'
-  }
   try {
-    const res = await http.post(`/api/versions/${stagingVersionId.value}/publish`)
-    publishLog.value.unshift(`${new Date().toLocaleString()} | 发布成功 recordId=${res.data?.data?.publishRecordId ?? '-'}（reload 预留）`)
-    auditLog.value.unshift(`${new Date().toLocaleString()} | 发布：versionId=${stagingVersionId.value} changeLog=${cl}`)
+    const res = await http.post(`/api/resource-sets/${resourceSetId.value}/publish`, { changeLog: cl })
+    const snapshotId = res.data?.data?.snapshotId ?? '-'
+    publishLog.value.unshift(`${new Date().toLocaleString()} | 发布成功 snapshotId=${snapshotId}`)
+    auditLog.value.unshift(`${new Date().toLocaleString()} | 发布：changeLog=${cl}`)
     closePublishConfirm()
     publishChangeLog.value = ''
     await loadResourceSets()
-    await loadVersions()
+    await loadSnapshots()
     await loadSideLogs()
   } catch (e: any) {
     toast.value = e?.response?.data?.message ?? e?.message ?? '发布失败'
@@ -269,34 +180,37 @@ async function confirmPublish() {
 
 async function rollback() {
   if (!resourceSetId.value) return
-  rollbackToVersionId.value = null
+  rollbackToSnapshotId.value = null
   rollbackPickerOpen.value = true
 }
+
 function closeRollbackPicker() {
   rollbackPickerOpen.value = false
 }
+
 async function confirmRollback() {
   if (!resourceSetId.value) return
-  if (!rollbackToVersionId.value) {
-    toast.value = '请选择回滚版本'
+  if (!rollbackToSnapshotId.value) {
+    toast.value = '请选择回滚快照'
     return
   }
-  const to = rollbackToVersionId.value
+  const to = rollbackToSnapshotId.value
+  const ok = window.confirm('回滚将用历史快照覆盖当前规则，未发布的修改将丢失。继续？')
+  if (!ok) return
   try {
-    await http.post(`/api/resource-sets/${resourceSetId.value}/rollback`, undefined, { params: { toVersion: to } })
-    publishLog.value.unshift(`${new Date().toLocaleString()} | 回滚到 versionId=${to}（仅切指针；reload 预留）`)
-    auditLog.value.unshift(`${new Date().toLocaleString()} | 回滚：resourceSetId=${resourceSetId.value} toVersion=${to}`)
+    await http.post(`/api/resource-sets/${resourceSetId.value}/rollback`, undefined, { params: { toSnapshot: to } })
+    publishLog.value.unshift(`${new Date().toLocaleString()} | 回滚到 snapshotId=${to}`)
+    auditLog.value.unshift(`${new Date().toLocaleString()} | 回滚：snapshotId=${to}`)
     closeRollbackPicker()
     await loadResourceSets()
-    await loadVersions()
+    await loadSnapshots()
   } catch (e: any) {
     toast.value = e?.response?.data?.message ?? e?.message ?? '回滚失败'
   }
 }
 
 async function addRule() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   addForm.value = {
     sourceText: '',
     targetText: '',
@@ -308,8 +222,7 @@ async function addRule() {
 }
 
 async function submitAdd() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   const payload: any = {
     sourceText: String(addForm.value.sourceText ?? '').trim(),
     targetText: String(addForm.value.targetText ?? '').trim(),
@@ -324,11 +237,11 @@ async function submitAdd() {
     payload.matchType = String(addForm.value.matchType ?? 'EXACT')
   }
   try {
-    await http.post(`/api/versions/${stagingVersionId.value}/rules`, payload, {
+    await http.post(`/api/resource-sets/${resourceSetId.value}/rules`, payload, {
       params: { module: 'intervention', mode: mode.value },
     })
     addModalOpen.value = false
-    auditLog.value.unshift(`${new Date().toLocaleString()} | 新增规则（stagingVersionId=${stagingVersionId.value}）`)
+    auditLog.value.unshift(`${new Date().toLocaleString()} | 新增规则`)
     await loadRules()
   } catch (e: any) {
     toast.value = e?.response?.data?.message ?? e?.message ?? '新增失败'
@@ -336,64 +249,37 @@ async function submitAdd() {
 }
 
 async function removeRule(id: number) {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
-  await http.delete(`/api/versions/${stagingVersionId.value}/rules/${id}`, { params: { module: 'intervention', mode: mode.value } })
-  auditLog.value.unshift(`${new Date().toLocaleString()} | 删除规则 id=${id}（stagingVersionId=${stagingVersionId.value}）`)
+  if (!resourceSetId.value) return
+  await http.delete(`/api/resource-sets/${resourceSetId.value}/rules/${id}`, { params: { module: 'intervention', mode: mode.value } })
+  auditLog.value.unshift(`${new Date().toLocaleString()} | 删除规则 id=${id}`)
   await loadRules()
 }
 
 async function updateRuleCell(rule: any) {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
-  await http.put(`/api/versions/${stagingVersionId.value}/rules/${rule.id}`, rule, { params: { module: 'intervention', mode: mode.value } })
+  if (!resourceSetId.value) return
+  await http.put(`/api/resource-sets/${resourceSetId.value}/rules/${rule.id}`, rule, { params: { module: 'intervention', mode: mode.value } })
 }
 
 async function reload() {
   try {
     await http.post('/api/reload')
-    publishLog.value.unshift(`${new Date().toLocaleString()} | Reload（reserved）`)
+    publishLog.value.unshift(`${new Date().toLocaleString()} | Reload 触发`)
   } catch (e: any) {
     toast.value = e?.response?.data?.message ?? e?.message ?? 'reload 失败'
   }
 }
 
-function openComparePicker() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
-  const online = onlineVersionId.value
-  const candidates = versions.value.filter((v) => v.status !== 'draft')
-  compareBaseVersionId.value = (candidates.find((v) => v.id === online)?.id ?? candidates[0]?.id ?? null) as number | null
-  comparePickerOpen.value = true
-}
-
-async function runCompare() {
-  if (!stagingVersionId.value || !compareBaseVersionId.value) return
-  comparePickerOpen.value = false
-  const res = await http.get(`/api/versions/${stagingVersionId.value}/diff`, {
-    params: { baseVersionId: compareBaseVersionId.value, module: 'intervention', mode: mode.value },
-  })
-  const d = res.data?.data
-  diffAdded.value = d?.added ?? []
-  diffDeleted.value = d?.deleted ?? []
-  diffModified.value = d?.modified ?? []
-  diffSummary.value = `新增 ${diffAdded.value.length} 条，删除 ${diffDeleted.value.length} 条，变更 ${diffModified.value.length} 条（工作区相对基准）`
+function openCompareWithOnline() {
+  if (!resourceSetId.value || !currentSnapshotId.value) {
+    toast.value = '无线上快照可对比'
+    return
+  }
+  // 简化：直接对比当前编辑 vs 线上快照（实际实现需后端 diff 接口）
+  diffSummary.value = '功能开发中：当前编辑 vs 线上快照对比'
+  diffAdded.value = []
+  diffDeleted.value = []
+  diffModified.value = []
   compareModalOpen.value = true
-}
-
-async function preview() {
-  if (!viewingVersionId.value) return
-  const query = previewInput.value.trim()
-  if (!query) return
-  const res = await http.post(
-    `/api/versions/${viewingVersionId.value}/preview`,
-    { query },
-    { params: { module: 'intervention', mode: mode.value } },
-  )
-  const hits = (res.data?.data?.hits ?? []) as string[]
-  const out = res.data?.data?.output ?? query
-  previewOutput.value = hits.length ? `命中：\n- ${hits.join('\n- ')}` : '无命中'
-  previewOutput.value += `\n\noutput: ${out}`
 }
 
 function toggleAll(checked: boolean) {
@@ -430,19 +316,18 @@ const pagedRows = computed(() => {
 })
 
 watch(
-  () => [pageSize.value, searchInput.value, mode.value, viewMode.value, viewVersion.value],
+  () => [pageSize.value, searchInput.value, mode.value],
   async () => {
     page.value = 1
-    if (viewingVersionId.value) await loadRules()
+    if (resourceSetId.value) await loadRules()
   },
 )
 
 async function batchEnable(enabled: boolean) {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   const ids = Array.from(selectedIds.value)
   if (!ids.length) return
-  await http.post(`/api/versions/${stagingVersionId.value}/rules/${enabled ? 'batch-enable' : 'batch-disable'}`, { ids }, {
+  await http.post(`/api/resource-sets/${resourceSetId.value}/rules/${enabled ? 'batch-enable' : 'batch-disable'}`, { ids }, {
     params: { module: 'intervention', mode: mode.value },
   })
   auditLog.value.unshift(`${new Date().toLocaleString()} | 批量${enabled ? '启用' : '停用'} ids=${ids.join(',')}`)
@@ -450,11 +335,10 @@ async function batchEnable(enabled: boolean) {
 }
 
 async function batchDelete() {
-  if (!isEditable.value) return
-  if (!stagingVersionId.value) return
+  if (!resourceSetId.value) return
   const ids = Array.from(selectedIds.value)
   if (!ids.length) return
-  await http.post(`/api/versions/${stagingVersionId.value}/rules/batch-delete`, { ids }, { params: { module: 'intervention', mode: mode.value } })
+  await http.post(`/api/resource-sets/${resourceSetId.value}/rules/batch-delete`, { ids }, { params: { module: 'intervention', mode: mode.value } })
   auditLog.value.unshift(`${new Date().toLocaleString()} | 批量删除 ids=${ids.join(',')}`)
   await loadRules()
 }
@@ -464,7 +348,7 @@ async function loadSideLogs() {
   try {
     const pub = await http.get('/api/publish-records', { params: { resourceSetId: resourceSetId.value, page: 1, pageSize: 20 } })
     const items = (pub.data?.data?.items ?? []) as any[]
-    publishLog.value = items.map((i) => `${i.startedAt ?? ''} | ${i.publishStatus} | v=${i.versionId} | ${i.operator}`).slice(0, 30)
+    publishLog.value = items.map((i) => `${i.startedAt ?? ''} | ${i.publishStatus} | snapshot=${i.snapshotId} | ${i.operator}`).slice(0, 30)
   } catch {
     // ignore
   }
@@ -477,6 +361,11 @@ async function loadSideLogs() {
   } catch {
     // ignore
   }
+}
+
+function openSnapshotViewer(snap: Snapshot) {
+  viewingSnapshot.value = snap
+  snapshotViewerOpen.value = true
 }
 
 onMounted(async () => {
@@ -498,44 +387,29 @@ onMounted(async () => {
           <div class="context-row context-row-filters">
             <div class="context-col">
               <div class="hint" style="margin-bottom: 6px">资源集</div>
-              <select v-model="resourceSetId" class="select" @change="loadVersions">
+              <select v-model="resourceSetId" class="select" @change="loadSnapshots">
                 <option v-for="r in resourceSets" :key="r.id" :value="r.id">{{ r.name }}（scene={{ r.scene }}, env={{ r.env }}）</option>
               </select>
             </div>
             <div class="context-col">
-              <div class="hint" style="margin-bottom: 6px">版本切换</div>
-              <select v-model="viewVersion" class="select" :disabled="viewMode !== 'view'" @change="loadRules">
-                <option value="online">线上当前版本（current_version_id）</option>
-                <option v-for="v in versions.filter((x) => x.status !== 'draft')" :key="v.id" :value="v.id">
-                  历史：v{{ v.versionNo }} [{{ v.status }}]
-                </option>
-              </select>
-            </div>
-          </div>
-          <div class="context-row context-viewing-summary">
-            <div class="hint">
-              当前查看：<strong>{{ versionLabel(viewingVersionId) }}</strong>
-              <span style="margin-left: 10px">{{ viewMode === 'edit' ? '工作区可编辑' : '只读' }}</span>
+              <div class="hint" style="margin-bottom: 6px">当前线上快照</div>
+              <div class="hint">
+                <strong>{{ currentSnapshot ? `#${currentSnapshot.snapshotNo} (${currentSnapshot.ruleCount}条)` : '无' }}</strong>
+              </div>
             </div>
           </div>
 
-          <div class="context-actions context-actions-three">
-            <div class="action-group">
-              <span class="action-group-title">模式</span>
-              <button class="chip" :class="{ active: viewMode === 'view' }" type="button" @click="setViewMode('view')">查看</button>
-              <button class="chip" :class="{ active: viewMode === 'edit' }" type="button" @click="setViewMode('edit')">编辑</button>
-            </div>
-            <div class="action-group">
-              <span class="action-group-title">工作区</span>
-              <button class="btn" type="button" :disabled="!isEditable || loading" @click="resetStaging">重置工作区</button>
-              <button class="btn" type="button" :disabled="!isEditable" @click="openComparePicker">对比版本</button>
-            </div>
+          <div class="context-actions context-actions-simple">
             <div class="action-group">
               <span class="action-group-title">发布区</span>
-              <button class="btn warn" type="button" :disabled="!isEditable" @click="validate">校验</button>
-              <button class="btn primary" type="button" :disabled="!isEditable" @click="openPublishConfirm">发布</button>
+              <button class="btn warn" type="button" :disabled="!resourceSetId" @click="validate">校验</button>
+              <button class="btn primary" type="button" :disabled="!resourceSetId" @click="openPublishConfirm">发布</button>
               <button class="btn" type="button" :disabled="!resourceSetId" @click="rollback">回滚</button>
               <button class="btn ghost" type="button" @click="reload">Reload</button>
+            </div>
+            <div class="action-group">
+              <span class="action-group-title">对比</span>
+              <button class="btn" type="button" :disabled="!currentSnapshotId" @click="openCompareWithOnline">与线上对比</button>
             </div>
           </div>
         </div>
@@ -548,11 +422,11 @@ onMounted(async () => {
 
           <div class="rule-toolbar">
             <input v-model="searchInput" class="input" placeholder="搜索 source / target" />
-            <button class="btn primary" type="button" :disabled="!isEditable" @click="addRule">新增</button>
-            <button class="btn" type="button" :disabled="!isEditable" @click="batchEnable(true)">启用</button>
-            <button class="btn" type="button" :disabled="!isEditable" @click="batchEnable(false)">停用</button>
-            <button class="btn danger" type="button" :disabled="!isEditable" @click="batchDelete">删除</button>
-            <span class="hint" id="editabilityHint">{{ isEditable ? '工作区可编辑' : '只读查看' }}</span>
+            <button class="btn primary" type="button" :disabled="!resourceSetId" @click="addRule">新增</button>
+            <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(true)">启用</button>
+            <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(false)">停用</button>
+            <button class="btn danger" type="button" :disabled="!resourceSetId" @click="batchDelete">删除</button>
+            <span class="hint" id="editabilityHint">可直接编辑</span>
           </div>
 
           <div class="table-wrap">
@@ -562,7 +436,7 @@ onMounted(async () => {
                   <th>
                     <input
                       type="checkbox"
-                      :disabled="!isEditable"
+                      :disabled="!resourceSetId"
                       :checked="pagedRows.rows.length > 0 && pagedRows.rows.every((r) => selectedIds.has((r as any).id))"
                       @change="toggleAll(($event.target as HTMLInputElement).checked)"
                     />
@@ -586,32 +460,32 @@ onMounted(async () => {
                   <td>
                     <input
                       type="checkbox"
-                      :disabled="!isEditable"
+                      :disabled="!resourceSetId"
                       :checked="selectedIds.has((r as any).id)"
                       @change="toggleOne((r as any).id, ($event.target as HTMLInputElement).checked)"
                     />
                   </td>
                   <td>{{ (pagedRows.page - 1) * pageSize + idx + 1 }}</td>
                   <td>
-                    <input class="input" :disabled="!isEditable" v-model="(r as any).sourceText" @blur="updateRuleCell(r)" />
+                    <input class="input" :disabled="!resourceSetId" v-model="(r as any).sourceText" @blur="updateRuleCell(r)" />
                   </td>
                   <td>
-                    <input class="input" :disabled="!isEditable" v-model="(r as any).targetText" @blur="updateRuleCell(r)" />
+                    <input class="input" :disabled="!resourceSetId" v-model="(r as any).targetText" @blur="updateRuleCell(r)" />
                   </td>
                   <td v-if="mode === 'sentence'">
-                    <select class="select" :disabled="!isEditable" v-model="(r as any).matchType" @change="updateRuleCell(r)">
+                    <select class="select" :disabled="!resourceSetId" v-model="(r as any).matchType" @change="updateRuleCell(r)">
                       <option value="EXACT">EXACT</option>
                       <option value="PREFIX">PREFIX</option>
                       <option value="CONTAINS">CONTAINS</option>
                     </select>
                   </td>
                   <td>
-                    <input class="input" :disabled="!isEditable" type="number" v-model.number="(r as any).priority" @blur="updateRuleCell(r)" />
+                    <input class="input" :disabled="!resourceSetId" type="number" v-model.number="(r as any).priority" @blur="updateRuleCell(r)" />
                   </td>
                   <td>
                     <input
                       type="checkbox"
-                      :disabled="!isEditable"
+                      :disabled="!resourceSetId"
                       :checked="Number((r as any).enabled) === 1"
                       @change="
                         ;(r as any).enabled = ($event.target as HTMLInputElement).checked ? 1 : 0
@@ -620,7 +494,7 @@ onMounted(async () => {
                     />
                   </td>
                   <td class="actions">
-                    <button class="btn" type="button" :disabled="!isEditable" @click="removeRule((r as any).id)">删除</button>
+                    <button class="btn" type="button" :disabled="!resourceSetId" @click="removeRule((r as any).id)">删除</button>
                   </td>
                 </tr>
               </tbody>
@@ -648,19 +522,21 @@ onMounted(async () => {
 
       <div>
         <div class="panel">
-          <h3>预览</h3>
-          <input v-model="previewInput" class="input" placeholder="输入 query" />
-          <button class="btn primary" type="button" style="margin-top: 8px" :disabled="!viewingVersionId" @click="preview">执行预览</button>
-          <div class="preview-box">
-            <pre style="margin: 0; white-space: pre-wrap">{{ previewOutput }}</pre>
-          </div>
-        </div>
-
-        <div class="panel">
           <h3>校验结果</h3>
           <ul class="list">
             <li>{{ validateSummary }}</li>
           </ul>
+        </div>
+
+        <div class="panel">
+          <h3>历史快照</h3>
+          <div class="log-box">
+            <div v-if="snapshots.length === 0" class="hint">尚无快照</div>
+            <div v-else v-for="s in snapshots.slice(0, 20)" :key="s.id" class="snapshot-row">
+              <span>#{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedBy }} | {{ s.publishedAt }}</span>
+              <button class="btn btn-sm" type="button" @click="openSnapshotViewer(s)">查看</button>
+            </div>
+          </div>
         </div>
 
         <div class="panel">
@@ -683,50 +559,28 @@ onMounted(async () => {
 
     <div v-if="toast" class="toast">{{ toast }}</div>
 
-    <!-- compare picker -->
-    <div class="modal-mask" :class="{ show: comparePickerOpen }">
-      <div class="modal modal-sm">
-        <div class="modal-head">
-          <strong>选择对比版本</strong>
-          <button class="btn" type="button" @click="comparePickerOpen = false">关闭</button>
-        </div>
-        <div class="modal-body">
-          <div class="picker-hint">将「工作区（Staging）」的规则与所选「基准版本（线上/历史）」对比（按当前模式：整句/词表）。</div>
-          <select v-model="compareBaseVersionId" class="select">
-            <option v-for="v in versions.filter((x) => x.status !== 'draft')" :key="v.id" :value="v.id">
-              {{ v.id === onlineVersionId ? '线上' : '历史' }}：v{{ v.versionNo }} [{{ v.status }}]
-            </option>
-          </select>
-        </div>
-        <div class="modal-foot">
-          <button class="btn" type="button" @click="comparePickerOpen = false">取消</button>
-          <button class="btn primary" type="button" :disabled="!compareBaseVersionId" @click="runCompare">确定</button>
-        </div>
-      </div>
-    </div>
-
     <!-- rollback picker -->
     <div class="modal-mask" :class="{ show: rollbackPickerOpen }">
       <div class="modal modal-sm">
         <div class="modal-head">
-          <strong>选择回滚版本</strong>
+          <strong>选择回滚快照</strong>
           <button class="btn" type="button" @click="closeRollbackPicker">关闭</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">将线上生效版本切换为所选历史版本（published/archived），并触发 reload。建议回滚后同步重置工作区=线上。</div>
-          <select v-model="rollbackToVersionId" class="select">
+          <div class="picker-hint">用历史快照覆盖当前规则并切换线上指针。回滚会丢失未发布的修改。</div>
+          <select v-model="rollbackToSnapshotId" class="select">
             <option
-              v-for="v in versions.filter((x) => x.status !== 'draft' && x.id !== onlineVersionId)"
-              :key="v.id"
-              :value="v.id"
+              v-for="s in snapshots.filter((x) => x.id !== currentSnapshotId)"
+              :key="s.id"
+              :value="s.id"
             >
-              v{{ v.versionNo }} [{{ v.status }}]
+              #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
             </option>
           </select>
         </div>
         <div class="modal-foot">
           <button class="btn" type="button" @click="closeRollbackPicker">取消</button>
-          <button class="btn primary" type="button" :disabled="!rollbackToVersionId" @click="confirmRollback">确定回滚</button>
+          <button class="btn primary" type="button" :disabled="!rollbackToSnapshotId" @click="confirmRollback">确定回滚</button>
         </div>
       </div>
     </div>
@@ -739,14 +593,14 @@ onMounted(async () => {
           <button class="btn" type="button" @click="closePublishConfirm">关闭</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">将工作区发布为线上生效版本（切换 current_version_id 并触发 reload），发布后会自动生成新的工作区。</div>
+          <div class="picker-hint">将当前规则打快照并推线上。发布后 QP 需 reload 生效。</div>
           <div class="hint" style="margin-top: 8px">发布说明（change_log）：</div>
-          <textarea v-model="publishChangeLog" class="input" style="width: 100%; height: 72px; resize: vertical" placeholder="请填写本次发布说明（必填）" />
+          <textarea v-model="publishChangeLog" class="input" style="width: 100%; height: 72px; resize: vertical" placeholder="请填写本次发布说明（可选）" />
           <div class="hint" style="margin-top: 8px">{{ publishValidateSummary }}</div>
         </div>
         <div class="modal-foot">
           <button class="btn" type="button" @click="closePublishConfirm">取消</button>
-          <button class="btn primary" type="button" :disabled="!stagingVersionId" @click="confirmPublish">确认发布</button>
+          <button class="btn primary" type="button" :disabled="!resourceSetId" @click="confirmPublish">确认发布</button>
         </div>
       </div>
     </div>
@@ -762,16 +616,16 @@ onMounted(async () => {
           <div class="hint">{{ diffSummary }}</div>
           <div class="diff-grid">
             <div class="diff-col">
-              <h4>新增规则（工作区相对基准）</h4>
+              <h4>新增规则</h4>
               <pre class="pre">{{ JSON.stringify(diffAdded, null, 2) }}</pre>
             </div>
             <div class="diff-col">
-              <h4>删除规则（工作区相对基准）</h4>
+              <h4>删除规则</h4>
               <pre class="pre">{{ JSON.stringify(diffDeleted, null, 2) }}</pre>
             </div>
           </div>
           <div class="diff-col" style="margin-top: 10px">
-            <h4>同 source 内容变更</h4>
+            <h4>变更规则</h4>
             <pre class="pre">{{ JSON.stringify(diffModified, null, 2) }}</pre>
           </div>
         </div>
@@ -786,7 +640,7 @@ onMounted(async () => {
           <button class="btn" type="button" @click="addModalOpen = false">关闭</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">当前模式：{{ modeLabel }}（仅 Draft 可提交）。</div>
+          <div class="picker-hint">当前模式：{{ modeLabel }}</div>
           <div style="display: grid; grid-template-columns: 1fr; gap: 8px">
             <input v-model="addForm.sourceText" class="input" placeholder="source_text" />
             <input v-model="addForm.targetText" class="input" placeholder="target_text" />
@@ -816,7 +670,30 @@ onMounted(async () => {
         </div>
         <div class="modal-foot">
           <button class="btn" type="button" @click="addModalOpen = false">取消</button>
-          <button class="btn primary" type="button" :disabled="!isEditable" @click="submitAdd">确定</button>
+          <button class="btn primary" type="button" :disabled="!resourceSetId" @click="submitAdd">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- snapshot viewer -->
+    <div class="modal-mask" :class="{ show: snapshotViewerOpen }">
+      <div class="modal modal-sm">
+        <div class="modal-head">
+          <strong>快照详情</strong>
+          <button class="btn" type="button" @click="snapshotViewerOpen = false">关闭</button>
+        </div>
+        <div class="modal-body">
+          <div v-if="viewingSnapshot">
+            <div><strong>快照编号：</strong>#{{ viewingSnapshot.snapshotNo }}</div>
+            <div><strong>规则数量：</strong>{{ viewingSnapshot.ruleCount }}</div>
+            <div><strong>发布人：</strong>{{ viewingSnapshot.publishedBy }}</div>
+            <div><strong>发布时间：</strong>{{ viewingSnapshot.publishedAt }}</div>
+            <div><strong>说明：</strong>{{ viewingSnapshot.changeLog || '-' }}</div>
+            <div class="hint" style="margin-top: 12px">快照规则详情查看功能开发中...</div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn" type="button" @click="snapshotViewerOpen = false">关闭</button>
         </div>
       </div>
     </div>
@@ -824,32 +701,30 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.context-actions-three {
-  grid-template-columns:
-    minmax(100px, 0.5fr)
-    minmax(240px, 1.1fr)
-    minmax(340px, 1.25fr);
+.context-actions-simple {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
-.context-actions-three :is(.btn, .chip) {
+.context-actions-simple .action-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+.context-actions-simple .action-group-title {
+  font-size: 12px;
+  color: #6b7280;
+  margin-right: 6px;
+}
+.context-actions-simple :is(.btn, .chip) {
   height: 28px;
   line-height: 28px;
   padding: 0 10px;
   font-size: 12px;
-}
-.context-actions-three .chip {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.context-actions-three .action-group-title {
-  line-height: 28px;
-}
-.context-actions-three .action-group:first-child {
-  padding: 6px 8px;
-  gap: 6px;
-}
-.context-actions-three .action-group:first-child .action-group-title {
-  padding-right: 8px;
-  margin-right: 0;
 }
 .rule-toolbar {
   display: grid;
@@ -889,6 +764,19 @@ table {
   font-size: 12px;
   min-width: 920px;
 }
+.snapshot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.snapshot-row .btn-sm {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+}
 .toast {
   position: fixed;
   right: 16px;
@@ -904,12 +792,11 @@ table {
   .context-row-filters {
     grid-template-columns: 1fr;
   }
-  .context-actions-three {
-    grid-template-columns: 1fr;
+  .context-actions-simple {
+    flex-direction: column;
   }
   .diff-grid {
     grid-template-columns: 1fr;
   }
 }
 </style>
-

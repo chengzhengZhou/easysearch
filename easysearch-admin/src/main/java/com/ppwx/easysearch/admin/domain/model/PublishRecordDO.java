@@ -27,7 +27,7 @@ public class PublishRecordDO {
     @TableId(type = IdType.AUTO)
     private Long id;
     private Long resourceSetId;
-    private Long versionId;
+    private Long snapshotId;                 // 改为 snapshotId（取代 versionId）
     private String env;
     private String publishStatus;
     private String publishMsg;
@@ -51,12 +51,12 @@ public class PublishRecordDO {
         this.resourceSetId = resourceSetId;
     }
 
-    public Long getVersionId() {
-        return versionId;
+    public Long getSnapshotId() {
+        return snapshotId;
     }
 
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
+    public void setSnapshotId(Long snapshotId) {
+        this.snapshotId = snapshotId;
     }
 
     public String getEnv() {

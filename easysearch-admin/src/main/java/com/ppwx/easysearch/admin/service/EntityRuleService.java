@@ -23,40 +23,34 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ppwx.easysearch.admin.domain.api.PageResult;
 import com.ppwx.easysearch.admin.domain.exception.BizException;
 import com.ppwx.easysearch.admin.domain.model.EntityRuleDO;
-import com.ppwx.easysearch.admin.domain.model.ResourceVersionDO;
 import com.ppwx.easysearch.admin.mapper.EntityRuleMapper;
-import com.ppwx.easysearch.admin.mapper.ResourceVersionMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * 实体规则服务
+ * 简化版：直接操作当前规则表（归属 resourceSetId），无需 versionId
+ */
 @Service
 public class EntityRuleService {
     private final EntityRuleMapper entityRuleMapper;
-    private final ResourceVersionMapper resourceVersionMapper;
     private final OperationLogService operationLogService;
     private final ObjectMapper objectMapper;
 
     public EntityRuleService(EntityRuleMapper entityRuleMapper,
-                             ResourceVersionMapper resourceVersionMapper,
                              OperationLogService operationLogService,
                              ObjectMapper objectMapper) {
         this.entityRuleMapper = entityRuleMapper;
-        this.resourceVersionMapper = resourceVersionMapper;
         this.operationLogService = operationLogService;
         this.objectMapper = objectMapper;
     }
 
-    @Transactional
-    public void copyFromVersion(Long newVersionId, Long baseVersionId) {
-        entityRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-    }
-
-    public PageResult<EntityRuleDO> page(Long versionId, String q, String entityType, long page, long pageSize) {
+    public PageResult<EntityRuleDO> page(Long resourceSetId, String q, String entityType, long page, long pageSize) {
         Page<EntityRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<EntityRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(EntityRuleDO::getVersionId, versionId);
+        qw.eq(EntityRuleDO::getResourceSetId, resourceSetId);
         if (entityType != null && !entityType.trim().isEmpty()) {
             qw.eq(EntityRuleDO::getEntityType, entityType);
         }
@@ -70,46 +64,46 @@ public class EntityRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public EntityRuleDO create(Long versionId, EntityRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public EntityRuleDO create(Long resourceSetId, EntityRuleDO in) {
         in.setId(null);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         entityRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "entity", in.getId(), null, in);
+        operationLogService.log("create", resourceSetId, null, "entity", in.getId(), null, in);
         return in;
     }
 
-    public EntityRuleDO update(Long versionId, Long ruleId, EntityRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public EntityRuleDO update(Long resourceSetId, Long ruleId, EntityRuleDO in) {
         EntityRuleDO before = entityRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) throw new BizException(404, "rule not found");
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            throw new BizException(404, "rule not found");
+        }
         in.setId(ruleId);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         entityRuleMapper.updateById(in);
         EntityRuleDO after = entityRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "entity", ruleId, before, after);
+        operationLogService.log("update", resourceSetId, null, "entity", ruleId, before, after);
         return after;
     }
 
-    public void delete(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public void delete(Long resourceSetId, Long ruleId) {
         EntityRuleDO before = entityRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) return;
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            return;
+        }
         entityRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "entity", ruleId, before, null);
+        operationLogService.log("delete", resourceSetId, null, "entity", ruleId, before, null);
     }
 
     @Transactional
-    public InterventionRuleService.BatchImportResult batchImport(Long versionId, List<EntityRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionRuleService.BatchImportResult batchImport(Long resourceSetId, List<EntityRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (EntityRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalize(in);
                 entityRuleMapper.insert(in);
                 ok++;
@@ -117,22 +111,23 @@ public class EntityRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "entity", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "entity", null, null, "ok=" + ok + ",fail=" + fail);
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
-    public VersionService.ValidateReport validate(Long versionId) {
-        List<EntityRuleDO> rules = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getVersionId, versionId));
+    public PublishService.ValidateReport validate(Long resourceSetId) {
+        List<EntityRuleDO> rules = entityRuleMapper.selectList(
+                new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getResourceSetId, resourceSetId));
         for (EntityRuleDO r : rules) {
             if (isBlank(r.getEntityText()) || isBlank(r.getEntityType()) || isBlank(r.getNormalizedValue())) {
-                return VersionService.ValidateReport.fail("entity: entity/type/normalizedValue required");
+                return PublishService.ValidateReport.fail("entity: entity/type/normalizedValue required");
             }
             ensureJsonArray(r.getAliasesJson(), true);
             ensureJsonObject(r.getAttributesJson(), true);
             ensureJsonObject(r.getRelationsJson(), true);
             ensureJsonArray(r.getIdsJson(), true);
         }
-        return VersionService.ValidateReport.ok("entity ok; size=" + rules.size());
+        return PublishService.ValidateReport.ok("entity ok; size=" + rules.size());
     }
 
     private void normalize(EntityRuleDO in) {
@@ -180,13 +175,6 @@ public class EntityRuleService {
         }
     }
 
-    private ResourceVersionDO ensureDraft(Long versionId) {
-        ResourceVersionDO v = resourceVersionMapper.selectById(versionId);
-        if (v == null) throw new BizException(404, "version not found");
-        if (!"draft".equals(v.getStatus())) throw new BizException(400, "only draft can be modified");
-        return v;
-    }
-
     private boolean isBlank(String s) { return s == null || s.trim().isEmpty(); }
 
     private String trimToNull(String s) {
@@ -195,4 +183,3 @@ public class EntityRuleService {
         return t.isEmpty() ? null : t;
     }
 }
-

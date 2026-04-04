@@ -21,37 +21,31 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ppwx.easysearch.admin.domain.api.PageResult;
 import com.ppwx.easysearch.admin.domain.exception.BizException;
 import com.ppwx.easysearch.admin.domain.model.MetaRuleDO;
-import com.ppwx.easysearch.admin.domain.model.ResourceVersionDO;
 import com.ppwx.easysearch.admin.mapper.MetaRuleMapper;
-import com.ppwx.easysearch.admin.mapper.ResourceVersionMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Meta规则服务（品牌/品类/型号）
+ * 简化版：直接操作当前规则表（归属 resourceSetId），无需 versionId
+ */
 @Service
 public class MetaRuleService {
     private final MetaRuleMapper metaRuleMapper;
-    private final ResourceVersionMapper resourceVersionMapper;
     private final OperationLogService operationLogService;
 
     public MetaRuleService(MetaRuleMapper metaRuleMapper,
-                           ResourceVersionMapper resourceVersionMapper,
                            OperationLogService operationLogService) {
         this.metaRuleMapper = metaRuleMapper;
-        this.resourceVersionMapper = resourceVersionMapper;
         this.operationLogService = operationLogService;
     }
 
-    @Transactional
-    public void copyFromVersion(Long newVersionId, Long baseVersionId) {
-        metaRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-    }
-
-    public PageResult<MetaRuleDO> page(Long versionId, String q, String termType, long page, long pageSize) {
+    public PageResult<MetaRuleDO> page(Long resourceSetId, String q, String termType, long page, long pageSize) {
         Page<MetaRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<MetaRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(MetaRuleDO::getVersionId, versionId);
+        qw.eq(MetaRuleDO::getResourceSetId, resourceSetId);
         if (termType != null && !termType.trim().isEmpty()) {
             qw.eq(MetaRuleDO::getTermType, termType);
         }
@@ -69,46 +63,46 @@ public class MetaRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public MetaRuleDO create(Long versionId, MetaRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public MetaRuleDO create(Long resourceSetId, MetaRuleDO in) {
         in.setId(null);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         metaRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "meta", in.getId(), null, in);
+        operationLogService.log("create", resourceSetId, null, "meta", in.getId(), null, in);
         return in;
     }
 
-    public MetaRuleDO update(Long versionId, Long ruleId, MetaRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public MetaRuleDO update(Long resourceSetId, Long ruleId, MetaRuleDO in) {
         MetaRuleDO before = metaRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) throw new BizException(404, "rule not found");
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            throw new BizException(404, "rule not found");
+        }
         in.setId(ruleId);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         metaRuleMapper.updateById(in);
         MetaRuleDO after = metaRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "meta", ruleId, before, after);
+        operationLogService.log("update", resourceSetId, null, "meta", ruleId, before, after);
         return after;
     }
 
-    public void delete(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public void delete(Long resourceSetId, Long ruleId) {
         MetaRuleDO before = metaRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) return;
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            return;
+        }
         metaRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "meta", ruleId, before, null);
+        operationLogService.log("delete", resourceSetId, null, "meta", ruleId, before, null);
     }
 
     @Transactional
-    public InterventionRuleService.BatchImportResult batchImport(Long versionId, List<MetaRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionRuleService.BatchImportResult batchImport(Long resourceSetId, List<MetaRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (MetaRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalize(in);
                 metaRuleMapper.insert(in);
                 ok++;
@@ -116,28 +110,35 @@ public class MetaRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "meta", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "meta", null, null, "ok=" + ok + ",fail=" + fail);
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
-    public VersionService.ValidateReport validate(Long versionId) {
-        List<MetaRuleDO> rules = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getVersionId, versionId));
+    public PublishService.ValidateReport validate(Long resourceSetId) {
+        List<MetaRuleDO> rules = metaRuleMapper.selectList(
+                new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getResourceSetId, resourceSetId));
         for (MetaRuleDO r : rules) {
             String tt = safe(r.getTermType());
             if (!("category".equals(tt) || "brand".equals(tt) || "model".equals(tt))) {
-                return VersionService.ValidateReport.fail("meta: invalid term_type");
+                return PublishService.ValidateReport.fail("meta: invalid term_type");
             }
             if ("category".equals(tt)) {
-                if (isBlank(r.getCategoryId()) && isBlank(r.getCategoryName())) return VersionService.ValidateReport.fail("meta: category fields required");
+                if (isBlank(r.getCategoryId()) && isBlank(r.getCategoryName())) {
+                    return PublishService.ValidateReport.fail("meta: category fields required");
+                }
             }
             if ("brand".equals(tt)) {
-                if (isBlank(r.getBrandId()) && isBlank(r.getBrandName())) return VersionService.ValidateReport.fail("meta: brand fields required");
+                if (isBlank(r.getBrandId()) && isBlank(r.getBrandName())) {
+                    return PublishService.ValidateReport.fail("meta: brand fields required");
+                }
             }
             if ("model".equals(tt)) {
-                if (isBlank(r.getModelId()) && isBlank(r.getModelName())) return VersionService.ValidateReport.fail("meta: model fields required");
+                if (isBlank(r.getModelId()) && isBlank(r.getModelName())) {
+                    return PublishService.ValidateReport.fail("meta: model fields required");
+                }
             }
         }
-        return VersionService.ValidateReport.ok("meta ok; size=" + rules.size());
+        return PublishService.ValidateReport.ok("meta ok; size=" + rules.size());
     }
 
     private void normalize(MetaRuleDO in) {
@@ -156,15 +157,7 @@ public class MetaRuleService {
         }
     }
 
-    private ResourceVersionDO ensureDraft(Long versionId) {
-        ResourceVersionDO v = resourceVersionMapper.selectById(versionId);
-        if (v == null) throw new BizException(404, "version not found");
-        if (!"draft".equals(v.getStatus())) throw new BizException(400, "only draft can be modified");
-        return v;
-    }
-
     private boolean isBlank(String s) { return s == null || s.trim().isEmpty(); }
     private String safe(String s) { return s == null ? "" : s.trim(); }
     private String trimToNull(String s) { if (s == null) return null; String t = s.trim(); return t.isEmpty() ? null : t; }
 }
-

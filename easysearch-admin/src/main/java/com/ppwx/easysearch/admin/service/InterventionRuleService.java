@@ -23,42 +23,37 @@ import com.ppwx.easysearch.admin.domain.enums.InterventionMatchType;
 import com.ppwx.easysearch.admin.domain.exception.BizException;
 import com.ppwx.easysearch.admin.domain.model.InterventionSentenceRuleDO;
 import com.ppwx.easysearch.admin.domain.model.InterventionTermRuleDO;
-import com.ppwx.easysearch.admin.domain.model.ResourceVersionDO;
 import com.ppwx.easysearch.admin.mapper.InterventionSentenceRuleMapper;
 import com.ppwx.easysearch.admin.mapper.InterventionTermRuleMapper;
-import com.ppwx.easysearch.admin.mapper.ResourceVersionMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * 干预规则服务
+ * 简化版：直接操作当前规则表（归属 resourceSetId），无需 versionId
+ */
 @Service
 public class InterventionRuleService {
     private final InterventionSentenceRuleMapper sentenceRuleMapper;
     private final InterventionTermRuleMapper termRuleMapper;
-    private final ResourceVersionMapper resourceVersionMapper;
     private final OperationLogService operationLogService;
 
     public InterventionRuleService(InterventionSentenceRuleMapper sentenceRuleMapper,
                                    InterventionTermRuleMapper termRuleMapper,
-                                   ResourceVersionMapper resourceVersionMapper,
                                    OperationLogService operationLogService) {
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
-        this.resourceVersionMapper = resourceVersionMapper;
         this.operationLogService = operationLogService;
     }
 
-    @Transactional
-    public void copyAllFromVersion(Long newVersionId, Long baseVersionId) {
-        sentenceRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-        termRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-    }
+    // ========== 整句干预规则 ==========
 
-    public PageResult<InterventionSentenceRuleDO> pageSentence(Long versionId, String q, long page, long pageSize) {
+    public PageResult<InterventionSentenceRuleDO> pageSentence(Long resourceSetId, String q, long page, long pageSize) {
         Page<InterventionSentenceRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<InterventionSentenceRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(InterventionSentenceRuleDO::getVersionId, versionId);
+        qw.eq(InterventionSentenceRuleDO::getResourceSetId, resourceSetId);
         if (q != null && !q.trim().isEmpty()) {
             qw.and(x -> x.like(InterventionSentenceRuleDO::getSourceText, q).or().like(InterventionSentenceRuleDO::getTargetText, q));
         }
@@ -67,10 +62,44 @@ public class InterventionRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public PageResult<InterventionTermRuleDO> pageTerm(Long versionId, String q, long page, long pageSize) {
+    public InterventionSentenceRuleDO createSentence(Long resourceSetId, InterventionSentenceRuleDO in) {
+        in.setId(null);
+        in.setResourceSetId(resourceSetId);
+        normalizeSentence(in);
+        sentenceRuleMapper.insert(in);
+        operationLogService.log("create", resourceSetId, null, "intervention_sentence", in.getId(), null, in);
+        return in;
+    }
+
+    public InterventionSentenceRuleDO updateSentence(Long resourceSetId, Long ruleId, InterventionSentenceRuleDO in) {
+        InterventionSentenceRuleDO before = sentenceRuleMapper.selectById(ruleId);
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            throw new BizException(404, "rule not found");
+        }
+        in.setId(ruleId);
+        in.setResourceSetId(resourceSetId);
+        normalizeSentence(in);
+        sentenceRuleMapper.updateById(in);
+        InterventionSentenceRuleDO after = sentenceRuleMapper.selectById(ruleId);
+        operationLogService.log("update", resourceSetId, null, "intervention_sentence", ruleId, before, after);
+        return after;
+    }
+
+    public void deleteSentence(Long resourceSetId, Long ruleId) {
+        InterventionSentenceRuleDO before = sentenceRuleMapper.selectById(ruleId);
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            return;
+        }
+        sentenceRuleMapper.deleteById(ruleId);
+        operationLogService.log("delete", resourceSetId, null, "intervention_sentence", ruleId, before, null);
+    }
+
+    // ========== 词表干预规则 ==========
+
+    public PageResult<InterventionTermRuleDO> pageTerm(Long resourceSetId, String q, long page, long pageSize) {
         Page<InterventionTermRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<InterventionTermRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(InterventionTermRuleDO::getVersionId, versionId);
+        qw.eq(InterventionTermRuleDO::getResourceSetId, resourceSetId);
         if (q != null && !q.trim().isEmpty()) {
             qw.and(x -> x.like(InterventionTermRuleDO::getSourceText, q).or().like(InterventionTermRuleDO::getTargetText, q));
         }
@@ -79,118 +108,83 @@ public class InterventionRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public InterventionSentenceRuleDO createSentence(Long versionId, InterventionSentenceRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionTermRuleDO createTerm(Long resourceSetId, InterventionTermRuleDO in) {
         in.setId(null);
-        in.setVersionId(versionId);
-        normalizeSentence(in);
-        sentenceRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "intervention_sentence", in.getId(), null, in);
-        return in;
-    }
-
-    public InterventionSentenceRuleDO updateSentence(Long versionId, Long ruleId, InterventionSentenceRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
-        InterventionSentenceRuleDO before = sentenceRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
-            throw new BizException(404, "rule not found");
-        }
-        in.setId(ruleId);
-        in.setVersionId(versionId);
-        normalizeSentence(in);
-        sentenceRuleMapper.updateById(in);
-        InterventionSentenceRuleDO after = sentenceRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "intervention_sentence", ruleId, before, after);
-        return after;
-    }
-
-    public void deleteSentence(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
-        InterventionSentenceRuleDO before = sentenceRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
-            return;
-        }
-        sentenceRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "intervention_sentence", ruleId, before, null);
-    }
-
-    public InterventionTermRuleDO createTerm(Long versionId, InterventionTermRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
-        in.setId(null);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalizeTerm(in);
         termRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "intervention_term", in.getId(), null, in);
+        operationLogService.log("create", resourceSetId, null, "intervention_term", in.getId(), null, in);
         return in;
     }
 
-    public InterventionTermRuleDO updateTerm(Long versionId, Long ruleId, InterventionTermRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionTermRuleDO updateTerm(Long resourceSetId, Long ruleId, InterventionTermRuleDO in) {
         InterventionTermRuleDO before = termRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
             throw new BizException(404, "rule not found");
         }
         in.setId(ruleId);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalizeTerm(in);
         termRuleMapper.updateById(in);
         InterventionTermRuleDO after = termRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "intervention_term", ruleId, before, after);
+        operationLogService.log("update", resourceSetId, null, "intervention_term", ruleId, before, after);
         return after;
     }
 
-    public void deleteTerm(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public void deleteTerm(Long resourceSetId, Long ruleId) {
         InterventionTermRuleDO before = termRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) {
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
             return;
         }
         termRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "intervention_term", ruleId, before, null);
+        operationLogService.log("delete", resourceSetId, null, "intervention_term", ruleId, before, null);
     }
 
-    public VersionService.ValidateReport validateIntervention(Long versionId) {
+    // ========== 校验 ==========
+
+    public PublishService.ValidateReport validateIntervention(Long resourceSetId) {
         List<InterventionSentenceRuleDO> sentence = sentenceRuleMapper.selectList(
-                new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getVersionId, versionId));
+                new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getResourceSetId, resourceSetId));
         for (InterventionSentenceRuleDO r : sentence) {
             String s = safe(r.getSourceText());
             String t = safe(r.getTargetText());
             if (s.isEmpty() || t.isEmpty()) {
-                return VersionService.ValidateReport.fail("intervention sentence: source/target required");
+                return PublishService.ValidateReport.fail("intervention sentence: source/target required");
             }
             if (!isMatchTypeValid(r.getMatchType())) {
-                return VersionService.ValidateReport.fail("intervention sentence: invalid matchType " + r.getMatchType());
+                return PublishService.ValidateReport.fail("intervention sentence: invalid matchType " + r.getMatchType());
             }
             if (r.getPriority() != null && (r.getPriority() < -999 || r.getPriority() > 999)) {
-                return VersionService.ValidateReport.fail("intervention sentence: priority out of range");
+                return PublishService.ValidateReport.fail("intervention sentence: priority out of range");
             }
         }
 
         List<InterventionTermRuleDO> term = termRuleMapper.selectList(
-                new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getVersionId, versionId));
+                new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getResourceSetId, resourceSetId));
         for (InterventionTermRuleDO r : term) {
             String s = safe(r.getSourceText());
             String t = safe(r.getTargetText());
             if (s.isEmpty() || t.isEmpty()) {
-                return VersionService.ValidateReport.fail("intervention term: source/target required");
+                return PublishService.ValidateReport.fail("intervention term: source/target required");
             }
             if (r.getPriority() != null && (r.getPriority() < -999 || r.getPriority() > 999)) {
-                return VersionService.ValidateReport.fail("intervention term: priority out of range");
+                return PublishService.ValidateReport.fail("intervention term: priority out of range");
             }
         }
 
-        return VersionService.ValidateReport.ok("intervention ok; sentence=" + sentence.size() + ", term=" + term.size());
+        return PublishService.ValidateReport.ok("intervention ok; sentence=" + sentence.size() + ", term=" + term.size());
     }
 
+    // ========== 批量操作 ==========
+
     @Transactional
-    public BatchImportResult batchCreateSentence(Long versionId, List<InterventionSentenceRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public BatchImportResult batchCreateSentence(Long resourceSetId, List<InterventionSentenceRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (InterventionSentenceRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalizeSentence(in);
                 sentenceRuleMapper.insert(in);
                 ok++;
@@ -198,19 +192,18 @@ public class InterventionRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "intervention_sentence", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "intervention_sentence", null, null, "ok=" + ok + ",fail=" + fail);
         return BatchImportResult.of(ok, fail);
     }
 
     @Transactional
-    public BatchImportResult batchCreateTerm(Long versionId, List<InterventionTermRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public BatchImportResult batchCreateTerm(Long resourceSetId, List<InterventionTermRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (InterventionTermRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalizeTerm(in);
                 termRuleMapper.insert(in);
                 ok++;
@@ -218,48 +211,57 @@ public class InterventionRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "intervention_term", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "intervention_term", null, null, "ok=" + ok + ",fail=" + fail);
         return BatchImportResult.of(ok, fail);
     }
 
-    public static class BatchImportResult {
-        private int success;
-        private int failed;
-
-        public static BatchImportResult of(int success, int failed) {
-            BatchImportResult r = new BatchImportResult();
-            r.success = success;
-            r.failed = failed;
-            return r;
+    @Transactional
+    public void batchEnableSentence(Long resourceSetId, List<Long> ids, boolean enabled) {
+        for (Long id : ids) {
+            InterventionSentenceRuleDO rule = sentenceRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                rule.setEnabled(enabled ? 1 : 0);
+                sentenceRuleMapper.updateById(rule);
+            }
         }
-
-        public int getSuccess() {
-            return success;
-        }
-
-        public void setSuccess(int success) {
-            this.success = success;
-        }
-
-        public int getFailed() {
-            return failed;
-        }
-
-        public void setFailed(int failed) {
-            this.failed = failed;
-        }
+        operationLogService.log(enabled ? "batch_enable" : "batch_disable", resourceSetId, null, "intervention_sentence", null, null, "ids=" + ids);
     }
 
-    private ResourceVersionDO ensureDraft(Long versionId) {
-        ResourceVersionDO v = resourceVersionMapper.selectById(versionId);
-        if (v == null) {
-            throw new BizException(404, "version not found");
+    @Transactional
+    public void batchEnableTerm(Long resourceSetId, List<Long> ids, boolean enabled) {
+        for (Long id : ids) {
+            InterventionTermRuleDO rule = termRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                rule.setEnabled(enabled ? 1 : 0);
+                termRuleMapper.updateById(rule);
+            }
         }
-        if (!"draft".equals(v.getStatus())) {
-            throw new BizException(400, "only draft can be modified");
-        }
-        return v;
+        operationLogService.log(enabled ? "batch_enable" : "batch_disable", resourceSetId, null, "intervention_term", null, null, "ids=" + ids);
     }
+
+    @Transactional
+    public void batchDeleteSentence(Long resourceSetId, List<Long> ids) {
+        for (Long id : ids) {
+            InterventionSentenceRuleDO rule = sentenceRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                sentenceRuleMapper.deleteById(id);
+            }
+        }
+        operationLogService.log("batch_delete", resourceSetId, null, "intervention_sentence", null, null, "ids=" + ids);
+    }
+
+    @Transactional
+    public void batchDeleteTerm(Long resourceSetId, List<Long> ids) {
+        for (Long id : ids) {
+            InterventionTermRuleDO rule = termRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                termRuleMapper.deleteById(id);
+            }
+        }
+        operationLogService.log("batch_delete", resourceSetId, null, "intervention_term", null, null, "ids=" + ids);
+    }
+
+    // ========== 内部方法 ==========
 
     private void normalizeSentence(InterventionSentenceRuleDO in) {
         in.setSourceText(trimToNull(in.getSourceText()));
@@ -312,5 +314,34 @@ public class InterventionRuleService {
     private String safe(String s) {
         return s == null ? "" : s.trim();
     }
-}
 
+    // ========== 结果类 ==========
+
+    public static class BatchImportResult {
+        private int success;
+        private int failed;
+
+        public static BatchImportResult of(int success, int failed) {
+            BatchImportResult r = new BatchImportResult();
+            r.success = success;
+            r.failed = failed;
+            return r;
+        }
+
+        public int getSuccess() {
+            return success;
+        }
+
+        public void setSuccess(int success) {
+            this.success = success;
+        }
+
+        public int getFailed() {
+            return failed;
+        }
+
+        public void setFailed(int failed) {
+            this.failed = failed;
+        }
+    }
+}

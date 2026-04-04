@@ -29,7 +29,7 @@ public class OperationLogDO {
     private String userName;
     private String action;
     private Long resourceSetId;
-    private Long versionId;
+    private Long snapshotId;
     private String batchId;
     private String entityType;
     private Long entityId;
@@ -69,12 +69,12 @@ public class OperationLogDO {
         this.resourceSetId = resourceSetId;
     }
 
-    public Long getVersionId() {
-        return versionId;
+    public Long getSnapshotId() {
+        return snapshotId;
     }
 
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
+    public void setSnapshotId(Long snapshotId) {
+        this.snapshotId = snapshotId;
     }
 
     public String getBatchId() {

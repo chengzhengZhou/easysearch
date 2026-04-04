@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class SynonymRuleDO {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long versionId;
+    private Long resourceSetId;
     private String sourceText;
     private String direction;
     private String targetsJson;
@@ -43,12 +43,12 @@ public class SynonymRuleDO {
         this.id = id;
     }
 
-    public Long getVersionId() {
-        return versionId;
+    public Long getResourceSetId() {
+        return resourceSetId;
     }
 
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
+    public void setResourceSetId(Long resourceSetId) {
+        this.resourceSetId = resourceSetId;
     }
 
     public String getSourceText() {

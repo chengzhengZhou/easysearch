@@ -17,18 +17,18 @@
 package com.ppwx.easysearch.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ppwx.easysearch.admin.domain.model.InterventionTermRuleDO;
+import com.ppwx.easysearch.admin.domain.model.SnapshotInterventionTermDO;
 import org.apache.ibatis.annotations.Param;
 
-public interface InterventionTermRuleMapper extends BaseMapper<InterventionTermRuleDO> {
-    /**
-     * 删除指定资源集的所有规则（用于回滚时清空当前规则）
-     */
-    int deleteByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+public interface SnapshotInterventionTermMapper extends BaseMapper<SnapshotInterventionTermDO> {
 
     /**
-     * 统计指定资源集的规则数量
+     * 从当前规则表复制到快照表
      */
-    int countByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+    int copyFromRuleTable(@Param("snapshotId") Long snapshotId, @Param("resourceSetId") Long resourceSetId);
+
+    /**
+     * 从快照表还原到当前规则表
+     */
+    int restoreToRuleTable(@Param("snapshotId") Long snapshotId, @Param("resourceSetId") Long resourceSetId);
 }
-

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ppwx.easysearch.admin.mapper.SnapshotInterventionTermMapper">
+
+    <!-- 从当前规则表复制到快照表 -->
+    <insert id="copyFromRuleTable">
+        INSERT INTO qp_snapshot_intervention_term
+        (snapshot_id, source_rule_id, source_text, target_text, priority, enabled, remark, created_at)
+        SELECT
+            #{snapshotId}, id, source_text, target_text, priority, enabled, remark, NOW()
+        FROM qp_rule_intervention_term
+        WHERE resource_set_id = #{resourceSetId}
+    </insert>
+
+    <!-- 从快照表还原到当前规则表 -->
+    <insert id="restoreToRuleTable">
+        INSERT INTO qp_rule_intervention_term
+        (resource_set_id, source_text, target_text, priority, enabled, remark, created_at, updated_at)
+        SELECT
+            #{resourceSetId}, source_text, target_text, priority, enabled, remark, NOW(), NOW()
+        FROM qp_snapshot_intervention_term
+        WHERE snapshot_id = #{snapshotId}
+    </insert>
+
+</mapper>

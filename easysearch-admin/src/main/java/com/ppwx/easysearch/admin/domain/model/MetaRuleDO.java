@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class MetaRuleDO {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long versionId;
+    private Long resourceSetId;
     private String termType;
     private String categoryId;
     private String categoryName;
@@ -47,12 +47,12 @@ public class MetaRuleDO {
         this.id = id;
     }
 
-    public Long getVersionId() {
-        return versionId;
+    public Long getResourceSetId() {
+        return resourceSetId;
     }
 
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
+    public void setResourceSetId(Long resourceSetId) {
+        this.resourceSetId = resourceSetId;
     }
 
     public String getTermType() {

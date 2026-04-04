@@ -17,18 +17,12 @@
 package com.ppwx.easysearch.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ppwx.easysearch.admin.domain.model.InterventionTermRuleDO;
+import com.ppwx.easysearch.admin.domain.model.SnapshotDO;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
-public interface InterventionTermRuleMapper extends BaseMapper<InterventionTermRuleDO> {
-    /**
-     * 删除指定资源集的所有规则（用于回滚时清空当前规则）
-     */
-    int deleteByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+public interface SnapshotMapper extends BaseMapper<SnapshotDO> {
 
-    /**
-     * 统计指定资源集的规则数量
-     */
-    int countByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+    @Select("SELECT COALESCE(MAX(snapshot_no), 0) FROM qp_snapshot WHERE resource_set_id = #{resourceSetId}")
+    Integer selectMaxSnapshotNo(@Param("resourceSetId") Long resourceSetId);
 }
-

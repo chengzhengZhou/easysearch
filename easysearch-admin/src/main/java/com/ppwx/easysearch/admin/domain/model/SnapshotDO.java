@@ -23,22 +23,23 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
 
-@TableName("qp_resource_version")
-public class ResourceVersionDO {
+/**
+ * 快照元信息（取代原 qp_resource_version）
+ * 每次发布时创建一条记录
+ */
+@TableName("qp_snapshot")
+public class SnapshotDO {
     @TableId(type = IdType.AUTO)
     private Long id;
     private Long resourceSetId;
-    private Integer versionNo;
-    private String status;
-    @TableField("protected")
-    private Integer protectedFlag;
+    private Integer snapshotNo;              // 递增编号
     private String checksum;
     private String changeLog;
+    private Integer ruleCount;
     private String publishedBy;
     private LocalDateTime publishedAt;
-    private LocalDateTime archivedAt;
-    private String createdBy;
-    private LocalDateTime createdAt;
+    @TableField("protected_flag")
+    private Integer protectedFlag;
 
     public Long getId() {
         return id;
@@ -56,28 +57,12 @@ public class ResourceVersionDO {
         this.resourceSetId = resourceSetId;
     }
 
-    public Integer getVersionNo() {
-        return versionNo;
+    public Integer getSnapshotNo() {
+        return snapshotNo;
     }
 
-    public void setVersionNo(Integer versionNo) {
-        this.versionNo = versionNo;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Integer getProtectedFlag() {
-        return protectedFlag;
-    }
-
-    public void setProtectedFlag(Integer protectedFlag) {
-        this.protectedFlag = protectedFlag;
+    public void setSnapshotNo(Integer snapshotNo) {
+        this.snapshotNo = snapshotNo;
     }
 
     public String getChecksum() {
@@ -96,6 +81,14 @@ public class ResourceVersionDO {
         this.changeLog = changeLog;
     }
 
+    public Integer getRuleCount() {
+        return ruleCount;
+    }
+
+    public void setRuleCount(Integer ruleCount) {
+        this.ruleCount = ruleCount;
+    }
+
     public String getPublishedBy() {
         return publishedBy;
     }
@@ -112,28 +105,11 @@ public class ResourceVersionDO {
         this.publishedAt = publishedAt;
     }
 
-    public LocalDateTime getArchivedAt() {
-        return archivedAt;
+    public Integer getProtectedFlag() {
+        return protectedFlag;
     }
 
-    public void setArchivedAt(LocalDateTime archivedAt) {
-        this.archivedAt = archivedAt;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setProtectedFlag(Integer protectedFlag) {
+        this.protectedFlag = protectedFlag;
     }
 }
-

@@ -40,7 +40,7 @@ public class PublishRecordController {
     @GetMapping
     @PreAuthorize("hasAnyRole('VIEWER','EDITOR','PUBLISHER','ADMIN')")
     public ApiResponse<PageResult<PublishRecordDO>> page(@RequestParam(required = false) Long resourceSetId,
-                                                         @RequestParam(required = false) Long versionId,
+                                                         @RequestParam(required = false) Long snapshotId,
                                                          @RequestParam(defaultValue = "1") long page,
                                                          @RequestParam(defaultValue = "20") long pageSize) {
         Page<PublishRecordDO> p = new Page<>(page, pageSize);
@@ -48,8 +48,8 @@ public class PublishRecordController {
         if (resourceSetId != null) {
             qw.eq(PublishRecordDO::getResourceSetId, resourceSetId);
         }
-        if (versionId != null) {
-            qw.eq(PublishRecordDO::getVersionId, versionId);
+        if (snapshotId != null) {
+            qw.eq(PublishRecordDO::getSnapshotId, snapshotId);
         }
         qw.orderByDesc(PublishRecordDO::getId);
         Page<PublishRecordDO> out = publishRecordMapper.selectPage(p, qw);

@@ -22,18 +22,22 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
 
-@TableName("qp_rule_intervention_term")
-public class InterventionTermRuleDO {
+/**
+ * 词表干预快照规则
+ * 发布时从 qp_rule_intervention_term 逐行复制
+ */
+@TableName("qp_snapshot_intervention_term")
+public class SnapshotInterventionTermDO {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long resourceSetId;              // 直接归属资源集（取代 versionId）
+    private Long snapshotId;
+    private Long sourceRuleId;               // 来源规则 id，便于 diff 追踪
     private String sourceText;
     private String targetText;
     private Integer priority;
     private Integer enabled;
     private String remark;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public Long getId() {
         return id;
@@ -43,12 +47,20 @@ public class InterventionTermRuleDO {
         this.id = id;
     }
 
-    public Long getResourceSetId() {
-        return resourceSetId;
+    public Long getSnapshotId() {
+        return snapshotId;
     }
 
-    public void setResourceSetId(Long resourceSetId) {
-        this.resourceSetId = resourceSetId;
+    public void setSnapshotId(Long snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    public Long getSourceRuleId() {
+        return sourceRuleId;
+    }
+
+    public void setSourceRuleId(Long sourceRuleId) {
+        this.sourceRuleId = sourceRuleId;
     }
 
     public String getSourceText() {
@@ -98,13 +110,4 @@ public class InterventionTermRuleDO {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
-

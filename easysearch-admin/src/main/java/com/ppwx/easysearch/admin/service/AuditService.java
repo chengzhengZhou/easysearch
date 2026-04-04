@@ -31,14 +31,14 @@ public class AuditService {
         this.operationLogMapper = operationLogMapper;
     }
 
-    public PageResult<OperationLogDO> page(Long resourceSetId, Long versionId, long page, long pageSize) {
+    public PageResult<OperationLogDO> page(Long resourceSetId, Long snapshotId, long page, long pageSize) {
         Page<OperationLogDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<OperationLogDO> qw = new LambdaQueryWrapper<>();
         if (resourceSetId != null) {
             qw.eq(OperationLogDO::getResourceSetId, resourceSetId);
         }
-        if (versionId != null) {
-            qw.eq(OperationLogDO::getVersionId, versionId);
+        if (snapshotId != null) {
+            qw.eq(OperationLogDO::getSnapshotId, snapshotId);
         }
         qw.orderByDesc(OperationLogDO::getId);
         Page<OperationLogDO> out = operationLogMapper.selectPage(p, qw);

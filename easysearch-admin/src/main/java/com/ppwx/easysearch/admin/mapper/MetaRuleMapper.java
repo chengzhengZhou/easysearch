@@ -18,9 +18,18 @@ package com.ppwx.easysearch.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ppwx.easysearch.admin.domain.model.MetaRuleDO;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
+/**
+ * Meta规则 Mapper
+ * 简化版：使用 resourceSetId 代替 versionId
+ */
 public interface MetaRuleMapper extends BaseMapper<MetaRuleDO> {
-    int copyFromVersion(@Param("newVersionId") Long newVersionId, @Param("baseVersionId") Long baseVersionId);
-}
+    @Delete("DELETE FROM qp_rule_meta WHERE resource_set_id = #{resourceSetId}")
+    int deleteByResourceSetId(@Param("resourceSetId") Long resourceSetId);
 
+    @Select("SELECT COUNT(*) FROM qp_rule_meta WHERE resource_set_id = #{resourceSetId}")
+    int countByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+}

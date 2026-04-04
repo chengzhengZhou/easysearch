@@ -3,15 +3,5 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ppwx.easysearch.admin.mapper.SynonymRuleMapper">
-
-    <insert id="copyFromVersion">
-        INSERT INTO qp_rule_synonym
-        (version_id, source_text, direction, targets_json, enabled, remark, created_at, updated_at)
-        SELECT
-            #{newVersionId}, source_text, direction, targets_json, enabled, remark, NOW(), NOW()
-        FROM qp_rule_synonym
-        WHERE version_id = #{baseVersionId}
-    </insert>
-
+    <!-- 使用注解方式实现 deleteByResourceSetId 和 countByResourceSetId -->
 </mapper>
-

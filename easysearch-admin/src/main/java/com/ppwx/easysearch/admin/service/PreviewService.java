@@ -49,20 +49,20 @@ public class PreviewService {
         this.metaRuleMapper = metaRuleMapper;
     }
 
-    public PreviewResult preview(Long versionId, RuleModule module, InterventionMode mode, String query) {
+    public PreviewResult preview(Long resourceSetId, RuleModule module, InterventionMode mode, String query) {
         String q = query == null ? "" : query;
         List<String> hits = new ArrayList<>();
         if (module == RuleModule.intervention) {
             InterventionMode m = mode == null ? InterventionMode.sentence : mode;
             if (m == InterventionMode.sentence) {
-                List<InterventionSentenceRuleDO> rules = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getVersionId, versionId));
+                List<InterventionSentenceRuleDO> rules = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getResourceSetId, resourceSetId));
                 for (InterventionSentenceRuleDO r : rules) {
                     if (r.getSourceText() != null && q.contains(r.getSourceText())) {
                         hits.add("source=" + r.getSourceText() + " -> " + r.getTargetText());
                     }
                 }
             } else {
-                List<InterventionTermRuleDO> rules = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getVersionId, versionId));
+                List<InterventionTermRuleDO> rules = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getResourceSetId, resourceSetId));
                 for (InterventionTermRuleDO r : rules) {
                     if (r.getSourceText() != null && q.contains(r.getSourceText())) {
                         hits.add("source=" + r.getSourceText() + " -> " + r.getTargetText());
@@ -72,7 +72,7 @@ public class PreviewService {
             return PreviewResult.of(q, q, hits);
         }
         if (module == RuleModule.synonym) {
-            List<SynonymRuleDO> rules = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getVersionId, versionId));
+            List<SynonymRuleDO> rules = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, resourceSetId));
             for (SynonymRuleDO r : rules) {
                 if (r.getSourceText() != null && q.contains(r.getSourceText())) {
                     hits.add("source=" + r.getSourceText() + " " + r.getDirection() + " " + r.getTargetsJson());
@@ -81,7 +81,7 @@ public class PreviewService {
             return PreviewResult.of(q, q, hits);
         }
         if (module == RuleModule.entity) {
-            List<EntityRuleDO> rules = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getVersionId, versionId));
+            List<EntityRuleDO> rules = entityRuleMapper.selectList(new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getResourceSetId, resourceSetId));
             for (EntityRuleDO r : rules) {
                 if (r.getEntityText() != null && q.contains(r.getEntityText())) {
                     hits.add("entity=" + r.getEntityText() + " type=" + r.getEntityType() + " norm=" + r.getNormalizedValue());
@@ -90,7 +90,7 @@ public class PreviewService {
             return PreviewResult.of(q, q, hits);
         }
         if (module == RuleModule.token) {
-            List<TokenDictRuleDO> rules = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getVersionId, versionId));
+            List<TokenDictRuleDO> rules = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getResourceSetId, resourceSetId));
             for (TokenDictRuleDO r : rules) {
                 if (r.getWord() != null && q.contains(r.getWord())) {
                     hits.add("word=" + r.getWord() + "/" + r.getNature());
@@ -99,7 +99,7 @@ public class PreviewService {
             return PreviewResult.of(q, q, hits);
         }
         if (module == RuleModule.meta) {
-            List<MetaRuleDO> rules = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getVersionId, versionId));
+            List<MetaRuleDO> rules = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getResourceSetId, resourceSetId));
             for (MetaRuleDO r : rules) {
                 if (containsAny(q, r.getCategoryName(), r.getBrandName(), r.getBrandNameEn(), r.getModelName())) {
                     hits.add("term_type=" + r.getTermType() + " category=" + r.getCategoryName() + " brand=" + r.getBrandName() + " model=" + r.getModelName());

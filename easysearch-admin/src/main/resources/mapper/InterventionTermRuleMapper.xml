@@ -4,14 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ppwx.easysearch.admin.mapper.InterventionTermRuleMapper">
 
-    <insert id="copyFromVersion">
-        INSERT INTO qp_rule_intervention_term
-        (version_id, source_text, target_text, priority, enabled, remark, created_at, updated_at)
-        SELECT
-            #{newVersionId}, source_text, target_text, priority, enabled, remark, NOW(), NOW()
-        FROM qp_rule_intervention_term
-        WHERE version_id = #{baseVersionId}
-    </insert>
+    <delete id="deleteByResourceSetId">
+        DELETE FROM qp_rule_intervention_term
+        WHERE resource_set_id = #{resourceSetId}
+    </delete>
+
+    <select id="countByResourceSetId" resultType="int">
+        SELECT COUNT(*) FROM qp_rule_intervention_term
+        WHERE resource_set_id = #{resourceSetId}
+    </select>
 
 </mapper>
-

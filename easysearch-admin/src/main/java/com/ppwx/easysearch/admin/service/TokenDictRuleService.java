@@ -20,38 +20,32 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ppwx.easysearch.admin.domain.api.PageResult;
 import com.ppwx.easysearch.admin.domain.exception.BizException;
-import com.ppwx.easysearch.admin.domain.model.ResourceVersionDO;
 import com.ppwx.easysearch.admin.domain.model.TokenDictRuleDO;
-import com.ppwx.easysearch.admin.mapper.ResourceVersionMapper;
 import com.ppwx.easysearch.admin.mapper.TokenDictRuleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * 分词词典规则服务
+ * 简化版：直接操作当前规则表（归属 resourceSetId），无需 versionId
+ */
 @Service
 public class TokenDictRuleService {
     private final TokenDictRuleMapper tokenDictRuleMapper;
-    private final ResourceVersionMapper resourceVersionMapper;
     private final OperationLogService operationLogService;
 
     public TokenDictRuleService(TokenDictRuleMapper tokenDictRuleMapper,
-                                ResourceVersionMapper resourceVersionMapper,
                                 OperationLogService operationLogService) {
         this.tokenDictRuleMapper = tokenDictRuleMapper;
-        this.resourceVersionMapper = resourceVersionMapper;
         this.operationLogService = operationLogService;
     }
 
-    @Transactional
-    public void copyFromVersion(Long newVersionId, Long baseVersionId) {
-        tokenDictRuleMapper.copyFromVersion(newVersionId, baseVersionId);
-    }
-
-    public PageResult<TokenDictRuleDO> page(Long versionId, String q, long page, long pageSize) {
+    public PageResult<TokenDictRuleDO> page(Long resourceSetId, String q, long page, long pageSize) {
         Page<TokenDictRuleDO> p = new Page<>(page, pageSize);
         LambdaQueryWrapper<TokenDictRuleDO> qw = new LambdaQueryWrapper<>();
-        qw.eq(TokenDictRuleDO::getVersionId, versionId);
+        qw.eq(TokenDictRuleDO::getResourceSetId, resourceSetId);
         if (q != null && !q.trim().isEmpty()) {
             qw.and(x -> x.like(TokenDictRuleDO::getWord, q).or().like(TokenDictRuleDO::getNature, q));
         }
@@ -60,46 +54,46 @@ public class TokenDictRuleService {
         return PageResult.of(out.getCurrent(), out.getSize(), out.getTotal(), out.getRecords());
     }
 
-    public TokenDictRuleDO create(Long versionId, TokenDictRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public TokenDictRuleDO create(Long resourceSetId, TokenDictRuleDO in) {
         in.setId(null);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         tokenDictRuleMapper.insert(in);
-        operationLogService.log("create", v.getResourceSetId(), versionId, "token", in.getId(), null, in);
+        operationLogService.log("create", resourceSetId, null, "token", in.getId(), null, in);
         return in;
     }
 
-    public TokenDictRuleDO update(Long versionId, Long ruleId, TokenDictRuleDO in) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public TokenDictRuleDO update(Long resourceSetId, Long ruleId, TokenDictRuleDO in) {
         TokenDictRuleDO before = tokenDictRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) throw new BizException(404, "rule not found");
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            throw new BizException(404, "rule not found");
+        }
         in.setId(ruleId);
-        in.setVersionId(versionId);
+        in.setResourceSetId(resourceSetId);
         normalize(in);
         tokenDictRuleMapper.updateById(in);
         TokenDictRuleDO after = tokenDictRuleMapper.selectById(ruleId);
-        operationLogService.log("update", v.getResourceSetId(), versionId, "token", ruleId, before, after);
+        operationLogService.log("update", resourceSetId, null, "token", ruleId, before, after);
         return after;
     }
 
-    public void delete(Long versionId, Long ruleId) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public void delete(Long resourceSetId, Long ruleId) {
         TokenDictRuleDO before = tokenDictRuleMapper.selectById(ruleId);
-        if (before == null || !versionId.equals(before.getVersionId())) return;
+        if (before == null || !resourceSetId.equals(before.getResourceSetId())) {
+            return;
+        }
         tokenDictRuleMapper.deleteById(ruleId);
-        operationLogService.log("delete", v.getResourceSetId(), versionId, "token", ruleId, before, null);
+        operationLogService.log("delete", resourceSetId, null, "token", ruleId, before, null);
     }
 
     @Transactional
-    public InterventionRuleService.BatchImportResult batchImport(Long versionId, List<TokenDictRuleDO> items) {
-        ResourceVersionDO v = ensureDraft(versionId);
+    public InterventionRuleService.BatchImportResult batchImport(Long resourceSetId, List<TokenDictRuleDO> items) {
         int ok = 0;
         int fail = 0;
         for (TokenDictRuleDO in : items) {
             try {
                 in.setId(null);
-                in.setVersionId(versionId);
+                in.setResourceSetId(resourceSetId);
                 normalize(in);
                 tokenDictRuleMapper.insert(in);
                 ok++;
@@ -107,20 +101,25 @@ public class TokenDictRuleService {
                 fail++;
             }
         }
-        operationLogService.log("batch_import", v.getResourceSetId(), versionId, "token", null, null, "ok=" + ok + ",fail=" + fail);
+        operationLogService.log("batch_import", resourceSetId, null, "token", null, null, "ok=" + ok + ",fail=" + fail);
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
-    public VersionService.ValidateReport validate(Long versionId) {
-        List<TokenDictRuleDO> rules = tokenDictRuleMapper.selectList(new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getVersionId, versionId));
+    public PublishService.ValidateReport validate(Long resourceSetId) {
+        List<TokenDictRuleDO> rules = tokenDictRuleMapper.selectList(
+                new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getResourceSetId, resourceSetId));
         for (TokenDictRuleDO r : rules) {
-            if (isBlank(r.getWord()) || isBlank(r.getNature())) return VersionService.ValidateReport.fail("token: word/nature required");
-            if (r.getFrequency() != null && r.getFrequency() < 0) return VersionService.ValidateReport.fail("token: frequency must be non-negative");
+            if (isBlank(r.getWord()) || isBlank(r.getNature())) {
+                return PublishService.ValidateReport.fail("token: word/nature required");
+            }
+            if (r.getFrequency() != null && r.getFrequency() < 0) {
+                return PublishService.ValidateReport.fail("token: frequency must be non-negative");
+            }
             if (isBlank(r.getDictType()) || !("dic".equals(r.getDictType()) || "id".equals(r.getDictType()))) {
-                return VersionService.ValidateReport.fail("token: dictType must be dic/id");
+                return PublishService.ValidateReport.fail("token: dictType must be dic/id");
             }
         }
-        return VersionService.ValidateReport.ok("token ok; size=" + rules.size());
+        return PublishService.ValidateReport.ok("token ok; size=" + rules.size());
     }
 
     private void normalize(TokenDictRuleDO in) {
@@ -129,15 +128,12 @@ public class TokenDictRuleService {
         if (in.getNature() == null) in.setNature("NN");
         if (in.getEnabled() == null) in.setEnabled(1);
         if (in.getDictType() == null || in.getDictType().trim().isEmpty()) in.setDictType("dic");
-        if (in.getFrequency() != null && in.getFrequency() < 0) throw new BizException(400, "frequency must be non-negative");
-        if (!("dic".equals(in.getDictType()) || "id".equals(in.getDictType()))) throw new BizException(400, "dictType must be dic/id");
-    }
-
-    private ResourceVersionDO ensureDraft(Long versionId) {
-        ResourceVersionDO v = resourceVersionMapper.selectById(versionId);
-        if (v == null) throw new BizException(404, "version not found");
-        if (!"draft".equals(v.getStatus())) throw new BizException(400, "only draft can be modified");
-        return v;
+        if (in.getFrequency() != null && in.getFrequency() < 0) {
+            throw new BizException(400, "frequency must be non-negative");
+        }
+        if (!("dic".equals(in.getDictType()) || "id".equals(in.getDictType()))) {
+            throw new BizException(400, "dictType must be dic/id");
+        }
     }
 
     private boolean isBlank(String s) { return s == null || s.trim().isEmpty(); }
@@ -148,4 +144,3 @@ public class TokenDictRuleService {
         return t.isEmpty() ? null : t;
     }
 }
-

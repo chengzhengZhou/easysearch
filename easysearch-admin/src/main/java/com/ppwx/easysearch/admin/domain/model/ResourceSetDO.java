@@ -31,8 +31,7 @@ public class ResourceSetDO {
     private String env;
     private String name;
     private Integer status;
-    private Long currentVersionId;
-    private Long stagingVersionId;
+    private Long currentSnapshotId;          // 线上生效的快照 ID（取代 currentVersionId + stagingVersionId）
     private String createdBy;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -85,20 +84,12 @@ public class ResourceSetDO {
         this.status = status;
     }
 
-    public Long getCurrentVersionId() {
-        return currentVersionId;
+    public Long getCurrentSnapshotId() {
+        return currentSnapshotId;
     }
 
-    public void setCurrentVersionId(Long currentVersionId) {
-        this.currentVersionId = currentVersionId;
-    }
-
-    public Long getStagingVersionId() {
-        return stagingVersionId;
-    }
-
-    public void setStagingVersionId(Long stagingVersionId) {
-        this.stagingVersionId = stagingVersionId;
+    public void setCurrentSnapshotId(Long currentSnapshotId) {
+        this.currentSnapshotId = currentSnapshotId;
     }
 
     public String getCreatedBy() {

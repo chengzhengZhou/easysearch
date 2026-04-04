@@ -34,12 +34,12 @@ public class OperationLogService {
         this.securityUserService = securityUserService;
     }
 
-    public void log(String action, Long resourceSetId, Long versionId, String entityType, Long entityId, Object before, Object after) {
+    public void log(String action, Long resourceSetId, Long snapshotId, String entityType, Long entityId, Object before, Object after) {
         OperationLogDO l = new OperationLogDO();
         l.setUserName(securityUserService.currentUserOrSystem());
         l.setAction(action);
         l.setResourceSetId(resourceSetId);
-        l.setVersionId(versionId);
+        l.setSnapshotId(snapshotId);
         l.setEntityType(entityType);
         l.setEntityId(entityId);
         l.setBeforeJson(toJsonQuiet(before));

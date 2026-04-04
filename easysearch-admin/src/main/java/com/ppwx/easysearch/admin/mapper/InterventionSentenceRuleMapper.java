@@ -21,6 +21,14 @@ import com.ppwx.easysearch.admin.domain.model.InterventionSentenceRuleDO;
 import org.apache.ibatis.annotations.Param;
 
 public interface InterventionSentenceRuleMapper extends BaseMapper<InterventionSentenceRuleDO> {
-    int copyFromVersion(@Param("newVersionId") Long newVersionId, @Param("baseVersionId") Long baseVersionId);
+    /**
+     * 删除指定资源集的所有规则（用于回滚时清空当前规则）
+     */
+    int deleteByResourceSetId(@Param("resourceSetId") Long resourceSetId);
+
+    /**
+     * 统计指定资源集的规则数量
+     */
+    int countByResourceSetId(@Param("resourceSetId") Long resourceSetId);
 }
 

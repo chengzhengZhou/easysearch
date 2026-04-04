@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class InterventionSentenceRuleDO {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long versionId;
+    private Long resourceSetId;              // 直接归属资源集（取代 versionId）
     private String sourceText;
     private String targetText;
     private String matchType;
@@ -44,12 +44,12 @@ public class InterventionSentenceRuleDO {
         this.id = id;
     }
 
-    public Long getVersionId() {
-        return versionId;
+    public Long getResourceSetId() {
+        return resourceSetId;
     }
 
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
+    public void setResourceSetId(Long resourceSetId) {
+        this.resourceSetId = resourceSetId;
     }
 
     public String getSourceText() {
