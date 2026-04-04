@@ -314,7 +314,7 @@ async function confirmCompare() {
   }
   compareLoading.value = true
   try {
-    const params: any = {}
+    const params: any = { module: 'synonym' }
     if (compareSnapshotA.value !== null) params.snapshotA = compareSnapshotA.value
     if (compareSnapshotB.value !== null) params.snapshotB = compareSnapshotB.value
     const res = await http.get(`/api/resource-sets/${resourceSetId.value}/snapshot-diff`, { params })

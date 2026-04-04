@@ -36,6 +36,8 @@ public class DiffService {
     private final MetaRuleMapper metaRuleMapper;
     private final SnapshotInterventionSentenceMapper snapshotSentenceMapper;
     private final SnapshotInterventionTermMapper snapshotTermMapper;
+    private final SnapshotSynonymMapper snapshotSynonymMapper;
+    private final SnapshotEntityMapper snapshotEntityMapper;
     private final ResourceSetMapper resourceSetMapper;
 
     public DiffService(InterventionSentenceRuleMapper sentenceRuleMapper,
@@ -46,6 +48,8 @@ public class DiffService {
                        MetaRuleMapper metaRuleMapper,
                        SnapshotInterventionSentenceMapper snapshotSentenceMapper,
                        SnapshotInterventionTermMapper snapshotTermMapper,
+                       SnapshotSynonymMapper snapshotSynonymMapper,
+                       SnapshotEntityMapper snapshotEntityMapper,
                        ResourceSetMapper resourceSetMapper) {
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
@@ -55,6 +59,8 @@ public class DiffService {
         this.metaRuleMapper = metaRuleMapper;
         this.snapshotSentenceMapper = snapshotSentenceMapper;
         this.snapshotTermMapper = snapshotTermMapper;
+        this.snapshotSynonymMapper = snapshotSynonymMapper;
+        this.snapshotEntityMapper = snapshotEntityMapper;
         this.resourceSetMapper = resourceSetMapper;
     }
 
@@ -423,10 +429,6 @@ public class DiffService {
      * 变更摘要：当前规则表 vs 线上快照的轻量统计
      */
     public DiffSummary diffSummary(Long resourceSetId, RuleModule module) {
-        if (module != RuleModule.intervention) {
-            throw new BizException(400, "diff-summary not supported for module: " + module);
-        }
-
         ResourceSetDO rs = resourceSetMapper.selectById(resourceSetId);
         if (rs == null) {
             throw new BizException(404, "resource set not found");
@@ -434,24 +436,287 @@ public class DiffService {
 
         Long snapshotId = rs.getCurrentSnapshotId();
 
-        // sentence diff
-        DiffResult sentenceDiff = diff(resourceSetId, snapshotId, module, InterventionMode.sentence);
-        // term diff
-        DiffResult termDiff = diff(resourceSetId, snapshotId, module, InterventionMode.term);
+        if (module == RuleModule.intervention) {
+            // sentence diff
+            DiffResult sentenceDiff = diff(resourceSetId, snapshotId, module, InterventionMode.sentence);
+            // term diff
+            DiffResult termDiff = diff(resourceSetId, snapshotId, module, InterventionMode.term);
 
-        int addedCount = sentenceDiff.getAdded().size() + termDiff.getAdded().size();
-        int deletedCount = sentenceDiff.getDeleted().size() + termDiff.getDeleted().size();
-        int modifiedCount = sentenceDiff.getModified().size() + termDiff.getModified().size();
+            int addedCount = sentenceDiff.getAdded().size() + termDiff.getAdded().size();
+            int deletedCount = sentenceDiff.getDeleted().size() + termDiff.getDeleted().size();
+            int modifiedCount = sentenceDiff.getModified().size() + termDiff.getModified().size();
 
-        int currentSentenceCount = sentenceRuleMapper.countByResourceSetId(resourceSetId);
-        int currentTermCount = termRuleMapper.countByResourceSetId(resourceSetId);
+            int currentSentenceCount = sentenceRuleMapper.countByResourceSetId(resourceSetId);
+            int currentTermCount = termRuleMapper.countByResourceSetId(resourceSetId);
 
-        return DiffSummary.of(
-                addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
-                addedCount, deletedCount, modifiedCount,
-                currentSentenceCount + currentTermCount,
-                snapshotId == null
-        );
+            return DiffSummary.of(
+                    addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
+                    addedCount, deletedCount, modifiedCount,
+                    currentSentenceCount + currentTermCount,
+                    snapshotId == null
+            );
+        }
+
+        if (module == RuleModule.synonym) {
+            DiffResult synonymDiff = diffSynonym(resourceSetId, snapshotId);
+
+            int addedCount = synonymDiff.getAdded().size();
+            int deletedCount = synonymDiff.getDeleted().size();
+            int modifiedCount = synonymDiff.getModified().size();
+
+            int currentCount = synonymRuleMapper.countByResourceSetId(resourceSetId);
+
+            return DiffSummary.of(
+                    addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
+                    addedCount, deletedCount, modifiedCount,
+                    currentCount,
+                    snapshotId == null
+            );
+        }
+
+        if (module == RuleModule.entity) {
+            DiffResult entityDiff = diffEntity(resourceSetId, snapshotId);
+
+            int addedCount = entityDiff.getAdded().size();
+            int deletedCount = entityDiff.getDeleted().size();
+            int modifiedCount = entityDiff.getModified().size();
+
+            int currentCount = entityRuleMapper.countByResourceSetId(resourceSetId);
+
+            return DiffSummary.of(
+                    addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
+                    addedCount, deletedCount, modifiedCount,
+                    currentCount,
+                    snapshotId == null
+            );
+        }
+
+        throw new BizException(400, "diff-summary not supported for module: " + module);
+    }
+
+    /**
+     * 实体快照对比
+     */
+    public DiffResult diffEntity(Long resourceSetId, Long snapshotId) {
+        List<EntityRuleDO> current = entityRuleMapper.selectList(
+                new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getResourceSetId, resourceSetId));
+
+        List<EntityRuleDO> base = new ArrayList<>();
+        if (snapshotId != null) {
+            List<SnapshotEntityDO> snapRules = snapshotEntityMapper.selectList(
+                    new LambdaQueryWrapper<SnapshotEntityDO>().eq(SnapshotEntityDO::getSnapshotId, snapshotId));
+            for (SnapshotEntityDO s : snapRules) {
+                EntityRuleDO r = new EntityRuleDO();
+                r.setId(s.getSourceRuleId());
+                r.setEntityText(s.getEntityText());
+                r.setEntityType(s.getEntityType());
+                r.setNormalizedValue(s.getNormalizedValue());
+                r.setAliasesJson(s.getAliasesJson());
+                r.setAttributesJson(s.getAttributesJson());
+                r.setRelationsJson(s.getRelationsJson());
+                r.setIdsJson(s.getIdsJson());
+                r.setEnabled(s.getEnabled());
+                base.add(r);
+            }
+        }
+
+        return diffEntityByKey(current, base);
+    }
+
+    /**
+     * 实体规则的字段级比较
+     */
+    private DiffResult diffEntityByKey(List<EntityRuleDO> current, List<EntityRuleDO> base) {
+        Map<Long, EntityRuleDO> curMap = new LinkedHashMap<>();
+        for (EntityRuleDO r : current) {
+            if (r.getId() != null) curMap.put(r.getId(), r);
+        }
+        Map<Long, EntityRuleDO> baseMap = new LinkedHashMap<>();
+        for (EntityRuleDO r : base) {
+            if (r.getId() != null) baseMap.put(r.getId(), r);
+        }
+
+        List<Object> added = new ArrayList<>();
+        List<Object> deleted = new ArrayList<>();
+        List<ModifiedPair> modified = new ArrayList<>();
+
+        for (Map.Entry<Long, EntityRuleDO> e : curMap.entrySet()) {
+            if (!baseMap.containsKey(e.getKey())) {
+                added.add(e.getValue());
+            } else {
+                EntityRuleDO c = e.getValue();
+                EntityRuleDO b = baseMap.get(e.getKey());
+                if (!entityFieldsEqual(c, b)) {
+                    modified.add(ModifiedPair.of(String.valueOf(e.getKey()), b, c));
+                }
+            }
+        }
+        for (Map.Entry<Long, EntityRuleDO> e : baseMap.entrySet()) {
+            if (!curMap.containsKey(e.getKey())) {
+                deleted.add(e.getValue());
+            }
+        }
+        return DiffResult.of(added, deleted, modified);
+    }
+
+    /**
+     * 比较实体规则的业务字段是否相同
+     */
+    private boolean entityFieldsEqual(EntityRuleDO a, EntityRuleDO b) {
+        return Objects.equals(a.getEntityText(), b.getEntityText())
+                && Objects.equals(a.getEntityType(), b.getEntityType())
+                && Objects.equals(a.getNormalizedValue(), b.getNormalizedValue())
+                && Objects.equals(a.getAliasesJson(), b.getAliasesJson())
+                && Objects.equals(a.getAttributesJson(), b.getAttributesJson())
+                && Objects.equals(a.getRelationsJson(), b.getRelationsJson())
+                && Objects.equals(a.getIdsJson(), b.getIdsJson())
+                && Objects.equals(a.getEnabled(), b.getEnabled());
+    }
+
+    /**
+     * 实体快照间对比
+     */
+    public DiffResult diffEntitySnapshots(Long resourceSetId, Long snapshotA, Long snapshotB) {
+        List<EntityRuleDO> listA = loadEntityRules(resourceSetId, snapshotA);
+        List<EntityRuleDO> listB = loadEntityRules(resourceSetId, snapshotB);
+        return diffEntityByKey(listA, listB);
+    }
+
+    /**
+     * 从快照表或当前规则表加载实体规则
+     */
+    private List<EntityRuleDO> loadEntityRules(Long resourceSetId, Long snapshotId) {
+        if (snapshotId == null) {
+            return entityRuleMapper.selectList(
+                    new LambdaQueryWrapper<EntityRuleDO>()
+                            .eq(EntityRuleDO::getResourceSetId, resourceSetId));
+        }
+        List<SnapshotEntityDO> snapRules = snapshotEntityMapper.selectList(
+                new LambdaQueryWrapper<SnapshotEntityDO>()
+                        .eq(SnapshotEntityDO::getSnapshotId, snapshotId));
+        List<EntityRuleDO> result = new ArrayList<>();
+        for (SnapshotEntityDO s : snapRules) {
+            EntityRuleDO r = new EntityRuleDO();
+            r.setId(s.getSourceRuleId());
+            r.setEntityText(s.getEntityText());
+            r.setEntityType(s.getEntityType());
+            r.setNormalizedValue(s.getNormalizedValue());
+            r.setAliasesJson(s.getAliasesJson());
+            r.setAttributesJson(s.getAttributesJson());
+            r.setRelationsJson(s.getRelationsJson());
+            r.setIdsJson(s.getIdsJson());
+            r.setEnabled(s.getEnabled());
+            result.add(r);
+        }
+        return result;
+    }
+
+    /**
+     * 同义词快照对比
+     */
+    public DiffResult diffSynonym(Long resourceSetId, Long snapshotId) {
+        List<SynonymRuleDO> current = synonymRuleMapper.selectList(
+                new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, resourceSetId));
+
+        List<SynonymRuleDO> base = new ArrayList<>();
+        if (snapshotId != null) {
+            List<SnapshotSynonymDO> snapRules = snapshotSynonymMapper.selectList(
+                    new LambdaQueryWrapper<SnapshotSynonymDO>().eq(SnapshotSynonymDO::getSnapshotId, snapshotId));
+            for (SnapshotSynonymDO s : snapRules) {
+                SynonymRuleDO r = new SynonymRuleDO();
+                r.setId(s.getSourceRuleId());
+                r.setSourceText(s.getSourceText());
+                r.setDirection(s.getDirection());
+                r.setTargetsJson(s.getTargetsJson());
+                r.setEnabled(s.getEnabled());
+                r.setRemark(s.getRemark());
+                base.add(r);
+            }
+        }
+
+        return diffSynonymByKey(current, base);
+    }
+
+    /**
+     * 同义词规则的字段级比较
+     */
+    private DiffResult diffSynonymByKey(List<SynonymRuleDO> current, List<SynonymRuleDO> base) {
+        Map<Long, SynonymRuleDO> curMap = new LinkedHashMap<>();
+        for (SynonymRuleDO r : current) {
+            if (r.getId() != null) curMap.put(r.getId(), r);
+        }
+        Map<Long, SynonymRuleDO> baseMap = new LinkedHashMap<>();
+        for (SynonymRuleDO r : base) {
+            if (r.getId() != null) baseMap.put(r.getId(), r);
+        }
+
+        List<Object> added = new ArrayList<>();
+        List<Object> deleted = new ArrayList<>();
+        List<ModifiedPair> modified = new ArrayList<>();
+
+        for (Map.Entry<Long, SynonymRuleDO> e : curMap.entrySet()) {
+            if (!baseMap.containsKey(e.getKey())) {
+                added.add(e.getValue());
+            } else {
+                SynonymRuleDO c = e.getValue();
+                SynonymRuleDO b = baseMap.get(e.getKey());
+                if (!synonymFieldsEqual(c, b)) {
+                    modified.add(ModifiedPair.of(String.valueOf(e.getKey()), b, c));
+                }
+            }
+        }
+        for (Map.Entry<Long, SynonymRuleDO> e : baseMap.entrySet()) {
+            if (!curMap.containsKey(e.getKey())) {
+                deleted.add(e.getValue());
+            }
+        }
+        return DiffResult.of(added, deleted, modified);
+    }
+
+    /**
+     * 比较同义词规则的业务字段是否相同
+     */
+    private boolean synonymFieldsEqual(SynonymRuleDO a, SynonymRuleDO b) {
+        return Objects.equals(a.getSourceText(), b.getSourceText())
+                && Objects.equals(a.getDirection(), b.getDirection())
+                && Objects.equals(a.getTargetsJson(), b.getTargetsJson())
+                && Objects.equals(a.getEnabled(), b.getEnabled())
+                && Objects.equals(a.getRemark(), b.getRemark());
+    }
+
+    /**
+     * 同义词快照间对比
+     */
+    public DiffResult diffSynonymSnapshots(Long resourceSetId, Long snapshotA, Long snapshotB) {
+        List<SynonymRuleDO> listA = loadSynonymRules(resourceSetId, snapshotA);
+        List<SynonymRuleDO> listB = loadSynonymRules(resourceSetId, snapshotB);
+        return diffSynonymByKey(listA, listB);
+    }
+
+    /**
+     * 从快照表或当前规则表加载同义词规则
+     */
+    private List<SynonymRuleDO> loadSynonymRules(Long resourceSetId, Long snapshotId) {
+        if (snapshotId == null) {
+            return synonymRuleMapper.selectList(
+                    new LambdaQueryWrapper<SynonymRuleDO>()
+                            .eq(SynonymRuleDO::getResourceSetId, resourceSetId));
+        }
+        List<SnapshotSynonymDO> snapRules = snapshotSynonymMapper.selectList(
+                new LambdaQueryWrapper<SnapshotSynonymDO>()
+                        .eq(SnapshotSynonymDO::getSnapshotId, snapshotId));
+        List<SynonymRuleDO> result = new ArrayList<>();
+        for (SnapshotSynonymDO s : snapRules) {
+            SynonymRuleDO r = new SynonymRuleDO();
+            r.setId(s.getSourceRuleId());
+            r.setSourceText(s.getSourceText());
+            r.setDirection(s.getDirection());
+            r.setTargetsJson(s.getTargetsJson());
+            r.setEnabled(s.getEnabled());
+            r.setRemark(s.getRemark());
+            result.add(r);
+        }
+        return result;
     }
 
     public static class DiffSummary {

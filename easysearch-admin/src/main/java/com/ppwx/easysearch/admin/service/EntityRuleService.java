@@ -115,6 +115,29 @@ public class EntityRuleService {
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
+    @Transactional
+    public void batchEnable(Long resourceSetId, List<Long> ids, boolean enabled) {
+        for (Long id : ids) {
+            EntityRuleDO rule = entityRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                rule.setEnabled(enabled ? 1 : 0);
+                entityRuleMapper.updateById(rule);
+            }
+        }
+        operationLogService.log(enabled ? "batch_enable" : "batch_disable", resourceSetId, null, "entity", null, null, "ids=" + ids);
+    }
+
+    @Transactional
+    public void batchDelete(Long resourceSetId, List<Long> ids) {
+        for (Long id : ids) {
+            EntityRuleDO rule = entityRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                entityRuleMapper.deleteById(id);
+            }
+        }
+        operationLogService.log("batch_delete", resourceSetId, null, "entity", null, null, "ids=" + ids);
+    }
+
     public PublishService.ValidateReport validate(Long resourceSetId) {
         List<EntityRuleDO> rules = entityRuleMapper.selectList(
                 new LambdaQueryWrapper<EntityRuleDO>().eq(EntityRuleDO::getResourceSetId, resourceSetId));

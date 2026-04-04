@@ -29,8 +29,12 @@ import com.ppwx.easysearch.admin.mapper.ResourceSetMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotInterventionSentenceMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotInterventionTermMapper;
+import com.ppwx.easysearch.admin.mapper.SnapshotSynonymMapper;
+import com.ppwx.easysearch.admin.mapper.SnapshotEntityMapper;
 import com.ppwx.easysearch.admin.mapper.InterventionSentenceRuleMapper;
 import com.ppwx.easysearch.admin.mapper.InterventionTermRuleMapper;
+import com.ppwx.easysearch.admin.mapper.SynonymRuleMapper;
+import com.ppwx.easysearch.admin.mapper.EntityRuleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,9 +51,15 @@ public class PublishService {
     private final PublishRecordMapper publishRecordMapper;
     private final SnapshotInterventionSentenceMapper snapshotSentenceMapper;
     private final SnapshotInterventionTermMapper snapshotTermMapper;
+    private final SnapshotSynonymMapper snapshotSynonymMapper;
+    private final SnapshotEntityMapper snapshotEntityMapper;
     private final InterventionSentenceRuleMapper sentenceRuleMapper;
     private final InterventionTermRuleMapper termRuleMapper;
+    private final SynonymRuleMapper synonymRuleMapper;
+    private final EntityRuleMapper entityRuleMapper;
     private final InterventionRuleService interventionRuleService;
+    private final SynonymRuleService synonymRuleService;
+    private final EntityRuleService entityRuleService;
     private final OperationLogService operationLogService;
     private final SecurityUserService securityUserService;
 
@@ -58,9 +68,15 @@ public class PublishService {
                           PublishRecordMapper publishRecordMapper,
                           SnapshotInterventionSentenceMapper snapshotSentenceMapper,
                           SnapshotInterventionTermMapper snapshotTermMapper,
+                          SnapshotSynonymMapper snapshotSynonymMapper,
+                          SnapshotEntityMapper snapshotEntityMapper,
                           InterventionSentenceRuleMapper sentenceRuleMapper,
                           InterventionTermRuleMapper termRuleMapper,
+                          SynonymRuleMapper synonymRuleMapper,
+                          EntityRuleMapper entityRuleMapper,
                           InterventionRuleService interventionRuleService,
+                          SynonymRuleService synonymRuleService,
+                          EntityRuleService entityRuleService,
                           OperationLogService operationLogService,
                           SecurityUserService securityUserService) {
         this.resourceSetMapper = resourceSetMapper;
@@ -68,9 +84,15 @@ public class PublishService {
         this.publishRecordMapper = publishRecordMapper;
         this.snapshotSentenceMapper = snapshotSentenceMapper;
         this.snapshotTermMapper = snapshotTermMapper;
+        this.snapshotSynonymMapper = snapshotSynonymMapper;
+        this.snapshotEntityMapper = snapshotEntityMapper;
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
+        this.synonymRuleMapper = synonymRuleMapper;
+        this.entityRuleMapper = entityRuleMapper;
         this.interventionRuleService = interventionRuleService;
+        this.synonymRuleService = synonymRuleService;
+        this.entityRuleService = entityRuleService;
         this.operationLogService = operationLogService;
         this.securityUserService = securityUserService;
     }
@@ -98,6 +120,12 @@ public class PublishService {
         String moduleType = rs.getModuleType() == null ? "" : rs.getModuleType().trim();
         if ("intervention".equals(moduleType)) {
             return interventionRuleService.validateIntervention(resourceSetId);
+        }
+        if ("synonym".equals(moduleType)) {
+            return synonymRuleService.validate(resourceSetId);
+        }
+        if ("entity".equals(moduleType)) {
+            return entityRuleService.validate(resourceSetId);
         }
         // 其他模块可扩展...
         return ValidateReport.fail("unknown module_type: " + moduleType);
@@ -204,6 +232,35 @@ public class PublishService {
             snapshotMapper.updateById(snapshot);
             return count;
         }
+
+        if ("synonym".equals(moduleType)) {
+            // 先插入快照记录以获取 ID
+            snapshotMapper.insert(snapshot);
+            Long snapshotId = snapshot.getId();
+
+            // 复制同义词规则
+            count = snapshotSynonymMapper.copyFromRuleTable(snapshotId, resourceSetId);
+
+            snapshot.setId(snapshotId);
+            snapshot.setRuleCount(count);
+            snapshotMapper.updateById(snapshot);
+            return count;
+        }
+
+        if ("entity".equals(moduleType)) {
+            // 先插入快照记录以获取 ID
+            snapshotMapper.insert(snapshot);
+            Long snapshotId = snapshot.getId();
+
+            // 复制实体规则
+            count = snapshotEntityMapper.copyFromRuleTable(snapshotId, resourceSetId);
+
+            snapshot.setId(snapshotId);
+            snapshot.setRuleCount(count);
+            snapshotMapper.updateById(snapshot);
+            return count;
+        }
+
         // 其他模块可扩展...
         return count;
     }
@@ -246,6 +303,23 @@ public class PublishService {
             snapshotSentenceMapper.restoreToRuleTable(snapshotId, resourceSetId);
             snapshotTermMapper.restoreToRuleTable(snapshotId, resourceSetId);
         }
+
+        if ("synonym".equals(moduleType)) {
+            // 清空当前规则
+            synonymRuleMapper.deleteByResourceSetId(resourceSetId);
+
+            // 从快照还原
+            snapshotSynonymMapper.restoreToRuleTable(snapshotId, resourceSetId);
+        }
+
+        if ("entity".equals(moduleType)) {
+            // 清空当前规则
+            entityRuleMapper.deleteByResourceSetId(resourceSetId);
+
+            // 从快照还原
+            snapshotEntityMapper.restoreToRuleTable(snapshotId, resourceSetId);
+        }
+
         // 其他模块可扩展...
     }
 

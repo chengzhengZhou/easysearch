@@ -111,6 +111,29 @@ public class SynonymRuleService {
         return InterventionRuleService.BatchImportResult.of(ok, fail);
     }
 
+    @Transactional
+    public void batchEnable(Long resourceSetId, List<Long> ids, boolean enabled) {
+        for (Long id : ids) {
+            SynonymRuleDO rule = synonymRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                rule.setEnabled(enabled ? 1 : 0);
+                synonymRuleMapper.updateById(rule);
+            }
+        }
+        operationLogService.log(enabled ? "batch_enable" : "batch_disable", resourceSetId, null, "synonym", null, null, "ids=" + ids);
+    }
+
+    @Transactional
+    public void batchDelete(Long resourceSetId, List<Long> ids) {
+        for (Long id : ids) {
+            SynonymRuleDO rule = synonymRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                synonymRuleMapper.deleteById(id);
+            }
+        }
+        operationLogService.log("batch_delete", resourceSetId, null, "synonym", null, null, "ids=" + ids);
+    }
+
     public PublishService.ValidateReport validate(Long resourceSetId) {
         List<SynonymRuleDO> rules = synonymRuleMapper.selectList(
                 new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, resourceSetId));
