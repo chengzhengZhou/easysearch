@@ -31,7 +31,7 @@ public class BKTreeTest {
 
     @Test
     public void build_emptyTree() {
-        BKTree<String> tree = new BKTree<>(String::length);
+        BKTree<String> tree = new BKTree<>(EditDistanceCandidateGenerator::levenshteinDistance);
         tree.build(Collections.emptyList());
         assertEquals(0, tree.size());
         assertTrue(tree.isEmpty());
@@ -39,7 +39,7 @@ public class BKTreeTest {
 
     @Test
     public void build_singleItem() {
-        BKTree<String> tree = new BKTree<>(String::length);
+        BKTree<String> tree = new BKTree<>(EditDistanceCandidateGenerator::levenshteinDistance);
         tree.build(Collections.singletonList("hello"));
         assertEquals(1, tree.size());
         assertFalse(tree.isEmpty());
@@ -47,7 +47,7 @@ public class BKTreeTest {
 
     @Test
     public void build_multipleItems() {
-        BKTree<String> tree = new BKTree<>(String::length);
+        BKTree<String> tree = new BKTree<>(EditDistanceCandidateGenerator::levenshteinDistance);
         tree.build(Arrays.asList("abc", "abcd", "abcde", "abcdef", "ab"));
         assertEquals(5, tree.size());
     }
@@ -79,7 +79,6 @@ public class BKTreeTest {
         List<String> results = tree.search("apple", 1);
         assertTrue(results.contains("apple"));
         assertTrue(results.contains("apply"));
-        assertTrue(results.contains("app"));
         // "ape" 与 "apple" 的编辑距离为 2，不应出现在结果中
         assertFalse(results.contains("ape"));
         // "banana" 差距更远
