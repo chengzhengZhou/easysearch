@@ -38,10 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.headers().frameOptions().sameOrigin();
 
         http.authorizeRequests()
                 .antMatchers("/", "/index.html", "/static/**").permitAll()
                 .antMatchers("/api", "/api/health").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(devAuthFilter, UsernamePasswordAuthenticationFilter.class);
