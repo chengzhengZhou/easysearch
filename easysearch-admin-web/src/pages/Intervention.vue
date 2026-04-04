@@ -73,6 +73,12 @@ const addForm = ref<any>({ sourceText: '', targetText: '', matchType: 'EXACT', p
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 
+// 版本对比
+const comparePickerOpen = ref(false)
+const compareSnapshotA = ref<number | null>(null) // null 表示"当前编辑"
+const compareSnapshotB = ref<number | null>(null)
+const compareLoading = ref(false)
+
 type DiffSummary = {
   hasChanges: boolean
   addedCount: number
@@ -302,17 +308,52 @@ async function reload() {
   }
 }
 
-function openCompareWithOnline() {
-  if (!resourceSetId.value || !currentSnapshotId.value) {
-    showToast('无线上快照可对比')
+function openVersionCompare() {
+  if (!resourceSetId.value) {
+    showToast('请先选择资源集')
     return
   }
-  // 简化：直接对比当前编辑 vs 线上快照（实际实现需后端 diff 接口）
-  diffSummary.value = '功能开发中：当前编辑 vs 线上快照对比'
-  diffAdded.value = []
-  diffDeleted.value = []
-  diffModified.value = []
-  compareModalOpen.value = true
+  compareSnapshotA.value = null // 默认"当前编辑"
+  compareSnapshotB.value = currentSnapshotId.value
+  comparePickerOpen.value = true
+}
+
+function closeComparePicker() {
+  comparePickerOpen.value = false
+}
+
+function snapshotLabel(id: number | null): string {
+  if (id === null) return '当前编辑'
+  const s = snapshots.value.find((x) => x.id === id)
+  return s ? `快照 #${s.snapshotNo}` : `快照 id=${id}`
+}
+
+async function confirmCompare() {
+  if (!resourceSetId.value) return
+  if (compareSnapshotA.value === compareSnapshotB.value) {
+    showToast('两个版本不能相同')
+    return
+  }
+  compareLoading.value = true
+  try {
+    const params: any = { mode: mode.value }
+    if (compareSnapshotA.value !== null) params.snapshotA = compareSnapshotA.value
+    if (compareSnapshotB.value !== null) params.snapshotB = compareSnapshotB.value
+    const res = await http.get(`/api/resource-sets/${resourceSetId.value}/snapshot-diff`, { params })
+    const data = res.data?.data ?? {}
+    diffAdded.value = data.added ?? []
+    diffDeleted.value = data.deleted ?? []
+    diffModified.value = data.modified ?? []
+    const labelA = snapshotLabel(compareSnapshotA.value)
+    const labelB = snapshotLabel(compareSnapshotB.value)
+    diffSummary.value = `${labelA} vs ${labelB}（${modeLabel.value}）—— 新增 ${diffAdded.value.length} 条、删除 ${diffDeleted.value.length} 条、修改 ${diffModified.value.length} 条`
+    closeComparePicker()
+    compareModalOpen.value = true
+  } catch (e: any) {
+    showToast(e?.response?.data?.message ?? e?.message ?? '版本对比失败')
+  } finally {
+    compareLoading.value = false
+  }
 }
 
 function toggleAll(checked: boolean) {
@@ -468,6 +509,7 @@ onMounted(async () => {
                 <span v-if="diffSummaryData?.hasChanges" class="badge-dot"></span>
               </button>
               <button class="btn" type="button" :disabled="!resourceSetId" @click="rollback">回滚</button>
+              <button class="btn" type="button" :disabled="!resourceSetId" @click="openVersionCompare">版本对比</button>
               <button class="btn ghost" type="button" @click="reload">Reload</button>
             </div>
           </div>
@@ -673,6 +715,46 @@ onMounted(async () => {
       </div>
     </div>
 
+    <!-- version compare picker -->
+    <div class="modal-mask" :class="{ show: comparePickerOpen }">
+      <div class="modal modal-sm">
+        <div class="modal-head">
+          <strong>版本对比</strong>
+          <button class="btn" type="button" @click="closeComparePicker">关闭</button>
+        </div>
+        <div class="modal-body">
+          <div class="picker-hint">选择两个版本进行对比，对比维度跟随当前规则类型（{{ modeLabel }}）。</div>
+          <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: end; margin-top: 10px">
+            <div>
+              <div class="hint" style="margin-bottom: 4px">版本 A（左侧）</div>
+              <select v-model="compareSnapshotA" class="select">
+                <option :value="null">当前编辑</option>
+                <option v-for="s in snapshots" :key="s.id" :value="s.id">
+                  #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
+                </option>
+              </select>
+            </div>
+            <div class="hint" style="text-align: center; padding-bottom: 6px">vs</div>
+            <div>
+              <div class="hint" style="margin-bottom: 4px">版本 B（右侧）</div>
+              <select v-model="compareSnapshotB" class="select">
+                <option :value="null">当前编辑</option>
+                <option v-for="s in snapshots" :key="s.id" :value="s.id">
+                  #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn" type="button" @click="closeComparePicker">取消</button>
+          <button class="btn primary" type="button" :disabled="compareLoading" @click="confirmCompare">
+            {{ compareLoading ? '对比中...' : '开始对比' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- compare result -->
     <div class="modal-mask result" :class="{ show: compareModalOpen }">
       <div class="modal">
@@ -681,20 +763,101 @@ onMounted(async () => {
           <button class="btn" type="button" @click="compareModalOpen = false">关闭</button>
         </div>
         <div class="modal-body">
-          <div class="hint">{{ diffSummary }}</div>
-          <div class="diff-grid">
-            <div class="diff-col">
-              <h4>新增规则</h4>
-              <pre class="pre">{{ JSON.stringify(diffAdded, null, 2) }}</pre>
-            </div>
-            <div class="diff-col">
-              <h4>删除规则</h4>
-              <pre class="pre">{{ JSON.stringify(diffDeleted, null, 2) }}</pre>
+          <div class="diff-summary-bar">{{ diffSummary }}</div>
+
+          <div v-if="diffAdded.length > 0" class="diff-section">
+            <h4 class="diff-section-title diff-added-title">新增规则（{{ diffAdded.length }}）</h4>
+            <div class="table-wrap">
+              <table class="diff-table">
+                <thead>
+                  <tr>
+                    <th>source</th>
+                    <th>target</th>
+                    <th v-if="mode === 'sentence'">matchType</th>
+                    <th>priority</th>
+                    <th>enabled</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(r, i) in diffAdded" :key="i" class="diff-row-added">
+                    <td>{{ r.sourceText }}</td>
+                    <td>{{ r.targetText }}</td>
+                    <td v-if="mode === 'sentence'">{{ r.matchType }}</td>
+                    <td>{{ r.priority }}</td>
+                    <td>{{ r.enabled }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="diff-col" style="margin-top: 10px">
-            <h4>变更规则</h4>
-            <pre class="pre">{{ JSON.stringify(diffModified, null, 2) }}</pre>
+
+          <div v-if="diffDeleted.length > 0" class="diff-section">
+            <h4 class="diff-section-title diff-deleted-title">删除规则（{{ diffDeleted.length }}）</h4>
+            <div class="table-wrap">
+              <table class="diff-table">
+                <thead>
+                  <tr>
+                    <th>source</th>
+                    <th>target</th>
+                    <th v-if="mode === 'sentence'">matchType</th>
+                    <th>priority</th>
+                    <th>enabled</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(r, i) in diffDeleted" :key="i" class="diff-row-deleted">
+                    <td>{{ r.sourceText }}</td>
+                    <td>{{ r.targetText }}</td>
+                    <td v-if="mode === 'sentence'">{{ r.matchType }}</td>
+                    <td>{{ r.priority }}</td>
+                    <td>{{ r.enabled }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div v-if="diffModified.length > 0" class="diff-section">
+            <h4 class="diff-section-title diff-modified-title">修改规则（{{ diffModified.length }}）</h4>
+            <div v-for="(m, i) in diffModified" :key="i" class="diff-modified-item">
+              <div class="diff-modified-key">规则 ID: {{ m.key }}</div>
+              <div class="table-wrap">
+                <table class="diff-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>source</th>
+                      <th>target</th>
+                      <th v-if="mode === 'sentence'">matchType</th>
+                      <th>priority</th>
+                      <th>enabled</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="diff-row-before">
+                      <td class="diff-label">B</td>
+                      <td :class="{ 'diff-changed': m.before?.sourceText !== m.after?.sourceText }">{{ m.before?.sourceText }}</td>
+                      <td :class="{ 'diff-changed': m.before?.targetText !== m.after?.targetText }">{{ m.before?.targetText }}</td>
+                      <td v-if="mode === 'sentence'" :class="{ 'diff-changed': m.before?.matchType !== m.after?.matchType }">{{ m.before?.matchType }}</td>
+                      <td :class="{ 'diff-changed': m.before?.priority !== m.after?.priority }">{{ m.before?.priority }}</td>
+                      <td :class="{ 'diff-changed': m.before?.enabled !== m.after?.enabled }">{{ m.before?.enabled }}</td>
+                    </tr>
+                    <tr class="diff-row-after">
+                      <td class="diff-label">A</td>
+                      <td :class="{ 'diff-changed': m.before?.sourceText !== m.after?.sourceText }">{{ m.after?.sourceText }}</td>
+                      <td :class="{ 'diff-changed': m.before?.targetText !== m.after?.targetText }">{{ m.after?.targetText }}</td>
+                      <td v-if="mode === 'sentence'" :class="{ 'diff-changed': m.before?.matchType !== m.after?.matchType }">{{ m.after?.matchType }}</td>
+                      <td :class="{ 'diff-changed': m.before?.priority !== m.after?.priority }">{{ m.after?.priority }}</td>
+                      <td :class="{ 'diff-changed': m.before?.enabled !== m.after?.enabled }">{{ m.after?.enabled }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="diffAdded.length === 0 && diffDeleted.length === 0 && diffModified.length === 0" class="hint" style="text-align: center; padding: 20px">
+            两个版本内容完全一致，无差异
           </div>
         </div>
       </div>
@@ -897,5 +1060,80 @@ table {
 @keyframes badge-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+.diff-summary-bar {
+  padding: 8px 12px;
+  background: #f0f4ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #1e40af;
+  margin-bottom: 12px;
+}
+.diff-section {
+  margin-bottom: 16px;
+}
+.diff-section-title {
+  font-size: 13px;
+  margin: 0 0 6px 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.diff-added-title {
+  background: #dcfce7;
+  color: #166534;
+}
+.diff-deleted-title {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.diff-modified-title {
+  background: #fef3c7;
+  color: #92400e;
+}
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.diff-table th,
+.diff-table td {
+  padding: 4px 8px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+.diff-table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+.diff-row-added td {
+  background: #f0fdf4;
+}
+.diff-row-deleted td {
+  background: #fef2f2;
+}
+.diff-row-before td {
+  background: #fef2f2;
+}
+.diff-row-after td {
+  background: #f0fdf4;
+}
+.diff-changed {
+  font-weight: 700;
+  color: #b45309;
+}
+.diff-label {
+  font-weight: 600;
+  color: #6b7280;
+  width: 30px;
+  text-align: center;
+}
+.diff-modified-item {
+  margin-bottom: 10px;
+}
+.diff-modified-key {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
 }
 </style>

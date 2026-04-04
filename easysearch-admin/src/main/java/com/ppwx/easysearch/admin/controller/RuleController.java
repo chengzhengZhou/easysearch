@@ -264,6 +264,18 @@ public class RuleController {
         return ApiResponse.ok(publishService.listSnapshots(resourceSetId, page, pageSize));
     }
 
+    // ========== 版本对比 ==========
+
+    @GetMapping("/snapshot-diff")
+    @PreAuthorize("hasAnyRole('VIEWER','EDITOR','PUBLISHER','ADMIN')")
+    public ApiResponse<DiffService.DiffResult> snapshotDiff(
+            @PathVariable("id") @NotNull Long resourceSetId,
+            @RequestParam(value = "snapshotA", required = false) Long snapshotA,
+            @RequestParam(value = "snapshotB", required = false) Long snapshotB,
+            @RequestParam(value = "mode", required = false) InterventionMode mode) {
+        return ApiResponse.ok(diffService.diffSnapshots(resourceSetId, snapshotA, snapshotB, mode));
+    }
+
     // ========== 变更摘要 ==========
 
     @GetMapping("/diff-summary")

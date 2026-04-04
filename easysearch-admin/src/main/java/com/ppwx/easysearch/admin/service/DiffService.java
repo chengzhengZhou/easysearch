@@ -349,6 +349,77 @@ public class DiffService {
     }
 
     /**
+     * 快照间对比（或当前编辑 vs 快照）。
+     * snapshotA 为 null 表示"当前编辑版本"，此时从当前规则表查询数据。
+     * snapshotB 为 null 表示"当前编辑版本"。
+     * 结果语义：added = A 有 B 没有，deleted = B 有 A 没有，modified = 两边都有但字段不同。
+     */
+    public DiffResult diffSnapshots(Long resourceSetId, Long snapshotA, Long snapshotB, InterventionMode mode) {
+        InterventionMode m = mode == null ? InterventionMode.sentence : mode;
+        if (m == InterventionMode.sentence) {
+            List<InterventionSentenceRuleDO> listA = loadSentenceRules(resourceSetId, snapshotA);
+            List<InterventionSentenceRuleDO> listB = loadSentenceRules(resourceSetId, snapshotB);
+            return diffSentenceByKey(listA, listB);
+        }
+        List<InterventionTermRuleDO> listA = loadTermRules(resourceSetId, snapshotA);
+        List<InterventionTermRuleDO> listB = loadTermRules(resourceSetId, snapshotB);
+        return diffTermByKey(listA, listB);
+    }
+
+    /**
+     * 从快照表或当前规则表加载整句规则。snapshotId 为 null 则从当前规则表加载。
+     */
+    private List<InterventionSentenceRuleDO> loadSentenceRules(Long resourceSetId, Long snapshotId) {
+        if (snapshotId == null) {
+            return sentenceRuleMapper.selectList(
+                    new LambdaQueryWrapper<InterventionSentenceRuleDO>()
+                            .eq(InterventionSentenceRuleDO::getResourceSetId, resourceSetId));
+        }
+        List<SnapshotInterventionSentenceDO> snapRules = snapshotSentenceMapper.selectList(
+                new LambdaQueryWrapper<SnapshotInterventionSentenceDO>()
+                        .eq(SnapshotInterventionSentenceDO::getSnapshotId, snapshotId));
+        List<InterventionSentenceRuleDO> result = new ArrayList<>();
+        for (SnapshotInterventionSentenceDO s : snapRules) {
+            InterventionSentenceRuleDO r = new InterventionSentenceRuleDO();
+            r.setId(s.getSourceRuleId());
+            r.setSourceText(s.getSourceText());
+            r.setTargetText(s.getTargetText());
+            r.setMatchType(s.getMatchType());
+            r.setPriority(s.getPriority());
+            r.setEnabled(s.getEnabled());
+            r.setRemark(s.getRemark());
+            result.add(r);
+        }
+        return result;
+    }
+
+    /**
+     * 从快照表或当前规则表加载词表规则。snapshotId 为 null 则从当前规则表加载。
+     */
+    private List<InterventionTermRuleDO> loadTermRules(Long resourceSetId, Long snapshotId) {
+        if (snapshotId == null) {
+            return termRuleMapper.selectList(
+                    new LambdaQueryWrapper<InterventionTermRuleDO>()
+                            .eq(InterventionTermRuleDO::getResourceSetId, resourceSetId));
+        }
+        List<SnapshotInterventionTermDO> snapRules = snapshotTermMapper.selectList(
+                new LambdaQueryWrapper<SnapshotInterventionTermDO>()
+                        .eq(SnapshotInterventionTermDO::getSnapshotId, snapshotId));
+        List<InterventionTermRuleDO> result = new ArrayList<>();
+        for (SnapshotInterventionTermDO s : snapRules) {
+            InterventionTermRuleDO r = new InterventionTermRuleDO();
+            r.setId(s.getSourceRuleId());
+            r.setSourceText(s.getSourceText());
+            r.setTargetText(s.getTargetText());
+            r.setPriority(s.getPriority());
+            r.setEnabled(s.getEnabled());
+            r.setRemark(s.getRemark());
+            result.add(r);
+        }
+        return result;
+    }
+
+    /**
      * 变更摘要：当前规则表 vs 线上快照的轻量统计
      */
     public DiffSummary diffSummary(Long resourceSetId, RuleModule module) {
