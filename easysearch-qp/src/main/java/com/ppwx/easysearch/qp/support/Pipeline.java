@@ -19,84 +19,47 @@ package com.ppwx.easysearch.qp.support;
 import java.util.List;
 
 /**
+ * 管道 - 有序元素容器，支持头尾添加与只读遍历
+ *
  * @interface Pipeline
- * @description 管道类
  **/
 public interface Pipeline<T> {
 
     /**
-     * 加入到列表的末尾
-     * @param t 元素
-     * @return this
+     * 在列表开头插入元素
+     *
+     * @param t 要插入的元素
+     * @return 当前管道实例（支持链式调用）
      */
-    Pipeline addLast(final T t);
+    Pipeline<T> addFirst(T t);
 
     /**
-     * 加入到列表的开头
-     * @param t 元素
-     * @return this
+     * 在列表末尾追加元素
+     *
+     * @param t 要追加的元素
+     * @return 当前管道实例（支持链式调用）
      */
-    Pipeline addFirst(final T t);
+    Pipeline<T> addLast(T t);
 
     /**
-     * 设置元素 index 位置为 t
-     * @param index 下标志
-     * @param t 元素
-     * @return this
-     */
-    Pipeline set(final int index, final T t);
-
-    /**
-     * 移除最后一个元素
-     * @return this
-     */
-    Pipeline removeLast();
-
-    /**
-     * 移除第一个元素
-     * @return this
-     */
-    Pipeline removeFirst();
-
-    /**
-     * 移除 index 位置的元素
-     * @param index 下标值
-     * @return this
-     */
-    Pipeline remove(final int index);
-
-    /**
-     * 获取指定位置的元素
-     * @param index 下标
-     * @return 元素
-     */
-    T get(final int index);
-
-    /**
-     * 获取第一个位置的元素
-     * @return 元素
-     */
-    T getFirst();
-
-    /**
-     * 获取最后一个位置的元素
-     * @return 元素
-     */
-    T getLast();
-
-    /**
-     * 获取所有的元素列表
-     * @return 所有的元素列表
+     * 返回所有元素的只读视图
+     *
+     * @return 不可变的元素列表
      */
     List<T> list();
 
     /**
-     * 进行 slice 分片返回一个从 startIndex~endIndex 的新列表
-     * 1. 如果超过数组下标则直接报错
-     * @param startIndex 开始下标
-     * @param endIndex 结束下标
-     * @return 截取后的元素列表
+     * 返回当前元素数量
+     *
+     * @return 元素数量
      */
-    List<T> slice(final int startIndex, final int endIndex);
+    int size();
+
+    /**
+     * 判断管道是否为空
+     *
+     * @return 如果没有任何元素则返回 true
+     */
+    boolean isEmpty();
 
 }

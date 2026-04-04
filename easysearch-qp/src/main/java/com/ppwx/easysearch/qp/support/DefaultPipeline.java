@@ -16,80 +16,44 @@
 
 package com.ppwx.easysearch.qp.support;
 
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Pipeline 的默认实现
+ *
  * @className DefaultPipeline
- * @description 默认实现
  **/
 public class DefaultPipeline<T> implements Pipeline<T> {
 
-    /**
-     * 创建一个内部的链表
-     */
-    private LinkedList<T> list = new LinkedList<>();
-
-    @Override
-    public Pipeline<T> addLast(T t) {
-        list.addLast(t);
-        return this;
-    }
+    private final ArrayList<T> items = new ArrayList<>();
 
     @Override
     public Pipeline<T> addFirst(T t) {
-        list.addFirst(t);
+        items.add(0, t);
         return this;
     }
 
     @Override
-    public Pipeline<T> set(int index, T t) {
-        list.set(index, t);
+    public Pipeline<T> addLast(T t) {
+        items.add(t);
         return this;
-    }
-
-    @Override
-    public Pipeline<T> removeLast() {
-        list.removeLast();
-        return this;
-    }
-
-    @Override
-    public Pipeline<T> removeFirst() {
-        list.removeFirst();
-        return this;
-    }
-
-    @Override
-    public Pipeline<T> remove(int index) {
-        list.remove(index);
-        return this;
-    }
-
-    @Override
-    public T get(int index) {
-        return list.get(index);
-    }
-
-    @Override
-    public T getFirst() {
-        return list.getFirst();
-    }
-
-    @Override
-    public T getLast() {
-        return list.getLast();
     }
 
     @Override
     public List<T> list() {
-        return Collections.unmodifiableList(list);
+        return Collections.unmodifiableList(items);
     }
 
     @Override
-    public List<T> slice(int startIndex, int endIndex) {
-        return list.subList(startIndex, endIndex);
+    public int size() {
+        return items.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return items.isEmpty();
     }
 
 }
