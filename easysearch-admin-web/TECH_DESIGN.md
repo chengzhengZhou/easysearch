@@ -158,7 +158,7 @@
 - 干预词表：source/target/priority/enabled/remark
 - 同义词：source/direction/targets_json/enabled/remark（targets 支持标签输入）
 - 实体：entity/type/normalizedValue/aliases_json/attributes_json/relations_json/ids_json/enabled
-- 分词：word/nature/frequency/bizId/dictType/enabled
+- 分词：word/nature/frequency/bizId/enabled
 - 元信息：termType + 各 id/name 字段组合
 
 表单规则：
