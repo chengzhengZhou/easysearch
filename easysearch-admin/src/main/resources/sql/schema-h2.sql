@@ -134,13 +134,11 @@ CREATE TABLE IF NOT EXISTS qp_rule_token_dict (
   nature VARCHAR(64) NOT NULL,
   frequency INT NULL,
   biz_id VARCHAR(64) NULL,
-  dict_type VARCHAR(16) NOT NULL,            -- dic/id
   enabled TINYINT NOT NULL DEFAULT 1,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS idx_rtd_set_word ON qp_rule_token_dict(resource_set_id, word);
-CREATE INDEX IF NOT EXISTS idx_rtd_set_type ON qp_rule_token_dict(resource_set_id, dict_type);
 
 -- 元信息（当前编辑态）
 CREATE TABLE IF NOT EXISTS qp_rule_meta (
@@ -231,7 +229,6 @@ CREATE TABLE IF NOT EXISTS qp_snapshot_token_dict (
   nature VARCHAR(64) NOT NULL,
   frequency INT NULL,
   biz_id VARCHAR(64) NULL,
-  dict_type VARCHAR(16) NOT NULL,
   enabled TINYINT NOT NULL DEFAULT 1,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

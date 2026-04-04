@@ -38,6 +38,7 @@ public class DiffService {
     private final SnapshotInterventionTermMapper snapshotTermMapper;
     private final SnapshotSynonymMapper snapshotSynonymMapper;
     private final SnapshotEntityMapper snapshotEntityMapper;
+    private final SnapshotTokenDictMapper snapshotTokenDictMapper;
     private final ResourceSetMapper resourceSetMapper;
 
     public DiffService(InterventionSentenceRuleMapper sentenceRuleMapper,
@@ -50,6 +51,7 @@ public class DiffService {
                        SnapshotInterventionTermMapper snapshotTermMapper,
                        SnapshotSynonymMapper snapshotSynonymMapper,
                        SnapshotEntityMapper snapshotEntityMapper,
+                       SnapshotTokenDictMapper snapshotTokenDictMapper,
                        ResourceSetMapper resourceSetMapper) {
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
@@ -61,6 +63,7 @@ public class DiffService {
         this.snapshotTermMapper = snapshotTermMapper;
         this.snapshotSynonymMapper = snapshotSynonymMapper;
         this.snapshotEntityMapper = snapshotEntityMapper;
+        this.snapshotTokenDictMapper = snapshotTokenDictMapper;
         this.resourceSetMapper = resourceSetMapper;
     }
 
@@ -491,6 +494,23 @@ public class DiffService {
             );
         }
 
+        if (module == RuleModule.token) {
+            DiffResult tokenDiff = diffToken(resourceSetId, snapshotId);
+
+            int addedCount = tokenDiff.getAdded().size();
+            int deletedCount = tokenDiff.getDeleted().size();
+            int modifiedCount = tokenDiff.getModified().size();
+
+            int currentCount = tokenDictRuleMapper.countByResourceSetId(resourceSetId);
+
+            return DiffSummary.of(
+                    addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
+                    addedCount, deletedCount, modifiedCount,
+                    currentCount,
+                    snapshotId == null
+            );
+        }
+
         throw new BizException(400, "diff-summary not supported for module: " + module);
     }
 
@@ -714,6 +734,114 @@ public class DiffService {
             r.setTargetsJson(s.getTargetsJson());
             r.setEnabled(s.getEnabled());
             r.setRemark(s.getRemark());
+            result.add(r);
+        }
+        return result;
+    }
+
+    /**
+     * 分词词典快照对比
+     */
+    public DiffResult diffToken(Long resourceSetId, Long snapshotId) {
+        List<TokenDictRuleDO> current = tokenDictRuleMapper.selectList(
+                new LambdaQueryWrapper<TokenDictRuleDO>().eq(TokenDictRuleDO::getResourceSetId, resourceSetId));
+
+        List<TokenDictRuleDO> base = new ArrayList<>();
+        if (snapshotId != null) {
+            List<SnapshotTokenDictDO> snapRules = snapshotTokenDictMapper.selectList(
+                    new LambdaQueryWrapper<SnapshotTokenDictDO>().eq(SnapshotTokenDictDO::getSnapshotId, snapshotId));
+            for (SnapshotTokenDictDO s : snapRules) {
+                TokenDictRuleDO r = new TokenDictRuleDO();
+                r.setId(s.getSourceRuleId());
+                r.setWord(s.getWord());
+                r.setNature(s.getNature());
+                r.setFrequency(s.getFrequency());
+                r.setBizId(s.getBizId());
+                r.setEnabled(s.getEnabled());
+                base.add(r);
+            }
+        }
+
+        return diffTokenByKey(current, base);
+    }
+
+    /**
+     * 分词词典规则的字段级比较
+     */
+    private DiffResult diffTokenByKey(List<TokenDictRuleDO> current, List<TokenDictRuleDO> base) {
+        Map<Long, TokenDictRuleDO> curMap = new LinkedHashMap<>();
+        for (TokenDictRuleDO r : current) {
+            if (r.getId() != null) curMap.put(r.getId(), r);
+        }
+        Map<Long, TokenDictRuleDO> baseMap = new LinkedHashMap<>();
+        for (TokenDictRuleDO r : base) {
+            if (r.getId() != null) baseMap.put(r.getId(), r);
+        }
+
+        List<Object> added = new ArrayList<>();
+        List<Object> deleted = new ArrayList<>();
+        List<ModifiedPair> modified = new ArrayList<>();
+
+        for (Map.Entry<Long, TokenDictRuleDO> e : curMap.entrySet()) {
+            if (!baseMap.containsKey(e.getKey())) {
+                added.add(e.getValue());
+            } else {
+                TokenDictRuleDO c = e.getValue();
+                TokenDictRuleDO b = baseMap.get(e.getKey());
+                if (!tokenFieldsEqual(c, b)) {
+                    modified.add(ModifiedPair.of(String.valueOf(e.getKey()), b, c));
+                }
+            }
+        }
+        for (Map.Entry<Long, TokenDictRuleDO> e : baseMap.entrySet()) {
+            if (!curMap.containsKey(e.getKey())) {
+                deleted.add(e.getValue());
+            }
+        }
+        return DiffResult.of(added, deleted, modified);
+    }
+
+    /**
+     * 比较分词词典规则的业务字段是否相同
+     */
+    private boolean tokenFieldsEqual(TokenDictRuleDO a, TokenDictRuleDO b) {
+        return Objects.equals(a.getWord(), b.getWord())
+                && Objects.equals(a.getNature(), b.getNature())
+                && Objects.equals(a.getFrequency(), b.getFrequency())
+                && Objects.equals(a.getBizId(), b.getBizId())
+                && Objects.equals(a.getEnabled(), b.getEnabled());
+    }
+
+    /**
+     * 分词词典快照间对比
+     */
+    public DiffResult diffTokenSnapshots(Long resourceSetId, Long snapshotA, Long snapshotB) {
+        List<TokenDictRuleDO> listA = loadTokenRules(resourceSetId, snapshotA);
+        List<TokenDictRuleDO> listB = loadTokenRules(resourceSetId, snapshotB);
+        return diffTokenByKey(listA, listB);
+    }
+
+    /**
+     * 从快照表或当前规则表加载分词词典规则
+     */
+    private List<TokenDictRuleDO> loadTokenRules(Long resourceSetId, Long snapshotId) {
+        if (snapshotId == null) {
+            return tokenDictRuleMapper.selectList(
+                    new LambdaQueryWrapper<TokenDictRuleDO>()
+                            .eq(TokenDictRuleDO::getResourceSetId, resourceSetId));
+        }
+        List<SnapshotTokenDictDO> snapRules = snapshotTokenDictMapper.selectList(
+                new LambdaQueryWrapper<SnapshotTokenDictDO>()
+                        .eq(SnapshotTokenDictDO::getSnapshotId, snapshotId));
+        List<TokenDictRuleDO> result = new ArrayList<>();
+        for (SnapshotTokenDictDO s : snapRules) {
+            TokenDictRuleDO r = new TokenDictRuleDO();
+            r.setId(s.getSourceRuleId());
+            r.setWord(s.getWord());
+            r.setNature(s.getNature());
+            r.setFrequency(s.getFrequency());
+            r.setBizId(s.getBizId());
+            r.setEnabled(s.getEnabled());
             result.add(r);
         }
         return result;

@@ -26,9 +26,11 @@ import com.ppwx.easysearch.admin.domain.model.InterventionSentenceRuleDO;
 import com.ppwx.easysearch.admin.domain.model.InterventionTermRuleDO;
 import com.ppwx.easysearch.admin.domain.model.SynonymRuleDO;
 import com.ppwx.easysearch.admin.domain.model.EntityRuleDO;
+import com.ppwx.easysearch.admin.domain.model.TokenDictRuleDO;
 import com.ppwx.easysearch.admin.service.InterventionRuleService;
 import com.ppwx.easysearch.admin.service.SynonymRuleService;
 import com.ppwx.easysearch.admin.service.EntityRuleService;
+import com.ppwx.easysearch.admin.service.TokenDictRuleService;
 import com.ppwx.easysearch.admin.service.PublishService;
 import com.ppwx.easysearch.admin.service.DiffService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -50,6 +52,7 @@ public class RuleController {
     private final InterventionRuleService interventionRuleService;
     private final SynonymRuleService synonymRuleService;
     private final EntityRuleService entityRuleService;
+    private final TokenDictRuleService tokenDictRuleService;
     private final PublishService publishService;
     private final DiffService diffService;
     private final ObjectMapper objectMapper;
@@ -57,12 +60,14 @@ public class RuleController {
     public RuleController(InterventionRuleService interventionRuleService,
                           SynonymRuleService synonymRuleService,
                           EntityRuleService entityRuleService,
+                          TokenDictRuleService tokenDictRuleService,
                           PublishService publishService,
                           DiffService diffService,
                           ObjectMapper objectMapper) {
         this.interventionRuleService = interventionRuleService;
         this.synonymRuleService = synonymRuleService;
         this.entityRuleService = entityRuleService;
+        this.tokenDictRuleService = tokenDictRuleService;
         this.publishService = publishService;
         this.diffService = diffService;
         this.objectMapper = objectMapper;
@@ -92,6 +97,9 @@ public class RuleController {
         if (module == RuleModule.entity) {
             return ApiResponse.ok(entityRuleService.page(resourceSetId, q, entityType, page, pageSize));
         }
+        if (module == RuleModule.token) {
+            return ApiResponse.ok(tokenDictRuleService.page(resourceSetId, q, page, pageSize));
+        }
         // 其他模块可扩展...
         throw new IllegalArgumentException("module not implemented: " + module);
     }
@@ -118,6 +126,10 @@ public class RuleController {
         if (module == RuleModule.entity) {
             EntityRuleDO in = objectMapper.convertValue(body, EntityRuleDO.class);
             return ApiResponse.ok(entityRuleService.create(resourceSetId, in));
+        }
+        if (module == RuleModule.token) {
+            TokenDictRuleDO in = objectMapper.convertValue(body, TokenDictRuleDO.class);
+            return ApiResponse.ok(tokenDictRuleService.create(resourceSetId, in));
         }
         throw new IllegalArgumentException("module not implemented: " + module);
     }
@@ -146,6 +158,10 @@ public class RuleController {
             EntityRuleDO in = objectMapper.convertValue(body, EntityRuleDO.class);
             return ApiResponse.ok(entityRuleService.update(resourceSetId, ruleId, in));
         }
+        if (module == RuleModule.token) {
+            TokenDictRuleDO in = objectMapper.convertValue(body, TokenDictRuleDO.class);
+            return ApiResponse.ok(tokenDictRuleService.update(resourceSetId, ruleId, in));
+        }
         throw new IllegalArgumentException("module not implemented: " + module);
     }
 
@@ -170,6 +186,10 @@ public class RuleController {
         }
         if (module == RuleModule.entity) {
             entityRuleService.delete(resourceSetId, ruleId);
+            return ApiResponse.ok(null);
+        }
+        if (module == RuleModule.token) {
+            tokenDictRuleService.delete(resourceSetId, ruleId);
             return ApiResponse.ok(null);
         }
         throw new IllegalArgumentException("module not implemented: " + module);
@@ -212,6 +232,13 @@ public class RuleController {
             }
             return ApiResponse.ok(entityRuleService.batchImport(resourceSetId, items));
         }
+        if (module == RuleModule.token) {
+            List<TokenDictRuleDO> items = new ArrayList<>();
+            for (JsonNode n : body) {
+                items.add(objectMapper.convertValue(n, TokenDictRuleDO.class));
+            }
+            return ApiResponse.ok(tokenDictRuleService.batchImport(resourceSetId, items));
+        }
         throw new IllegalArgumentException("module not implemented: " + module);
     }
 
@@ -240,6 +267,10 @@ public class RuleController {
         }
         if (module == RuleModule.entity) {
             entityRuleService.batchEnable(resourceSetId, ids, true);
+            return ApiResponse.ok(null);
+        }
+        if (module == RuleModule.token) {
+            tokenDictRuleService.batchEnable(resourceSetId, ids, true);
             return ApiResponse.ok(null);
         }
         throw new IllegalArgumentException("module not implemented: " + module);
@@ -272,6 +303,10 @@ public class RuleController {
             entityRuleService.batchEnable(resourceSetId, ids, false);
             return ApiResponse.ok(null);
         }
+        if (module == RuleModule.token) {
+            tokenDictRuleService.batchEnable(resourceSetId, ids, false);
+            return ApiResponse.ok(null);
+        }
         throw new IllegalArgumentException("module not implemented: " + module);
     }
 
@@ -300,6 +335,10 @@ public class RuleController {
         }
         if (module == RuleModule.entity) {
             entityRuleService.batchDelete(resourceSetId, ids);
+            return ApiResponse.ok(null);
+        }
+        if (module == RuleModule.token) {
+            tokenDictRuleService.batchDelete(resourceSetId, ids);
             return ApiResponse.ok(null);
         }
         throw new IllegalArgumentException("module not implemented: " + module);
@@ -358,6 +397,9 @@ public class RuleController {
         }
         if (module == RuleModule.entity) {
             return ApiResponse.ok(diffService.diffEntitySnapshots(resourceSetId, snapshotA, snapshotB));
+        }
+        if (module == RuleModule.token) {
+            return ApiResponse.ok(diffService.diffTokenSnapshots(resourceSetId, snapshotA, snapshotB));
         }
         return ApiResponse.ok(diffService.diffSnapshots(resourceSetId, snapshotA, snapshotB, mode));
     }

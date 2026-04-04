@@ -115,11 +115,39 @@ public class TokenDictRuleService {
             if (r.getFrequency() != null && r.getFrequency() < 0) {
                 return PublishService.ValidateReport.fail("token: frequency must be non-negative");
             }
-            if (isBlank(r.getDictType()) || !("dic".equals(r.getDictType()) || "id".equals(r.getDictType()))) {
-                return PublishService.ValidateReport.fail("token: dictType must be dic/id");
-            }
         }
         return PublishService.ValidateReport.ok("token ok; size=" + rules.size());
+    }
+
+    /**
+     * 批量启用/停用规则
+     */
+    @Transactional
+    public void batchEnable(Long resourceSetId, List<Long> ids, boolean enabled) {
+        if (ids == null || ids.isEmpty()) return;
+        for (Long id : ids) {
+            TokenDictRuleDO rule = tokenDictRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                rule.setEnabled(enabled ? 1 : 0);
+                tokenDictRuleMapper.updateById(rule);
+            }
+        }
+        operationLogService.log(enabled ? "batch_enable" : "batch_disable", resourceSetId, null, "token", null, null, "ids=" + ids);
+    }
+
+    /**
+     * 批量删除规则
+     */
+    @Transactional
+    public void batchDelete(Long resourceSetId, List<Long> ids) {
+        if (ids == null || ids.isEmpty()) return;
+        for (Long id : ids) {
+            TokenDictRuleDO rule = tokenDictRuleMapper.selectById(id);
+            if (rule != null && resourceSetId.equals(rule.getResourceSetId())) {
+                tokenDictRuleMapper.deleteById(id);
+            }
+        }
+        operationLogService.log("batch_delete", resourceSetId, null, "token", null, null, "ids=" + ids);
     }
 
     private void normalize(TokenDictRuleDO in) {
@@ -127,12 +155,8 @@ public class TokenDictRuleService {
         in.setNature(trimToNull(in.getNature()));
         if (in.getNature() == null) in.setNature("NN");
         if (in.getEnabled() == null) in.setEnabled(1);
-        if (in.getDictType() == null || in.getDictType().trim().isEmpty()) in.setDictType("dic");
         if (in.getFrequency() != null && in.getFrequency() < 0) {
             throw new BizException(400, "frequency must be non-negative");
-        }
-        if (!("dic".equals(in.getDictType()) || "id".equals(in.getDictType()))) {
-            throw new BizException(400, "dictType must be dic/id");
         }
     }
 

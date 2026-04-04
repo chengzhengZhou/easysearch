@@ -54,6 +54,16 @@ const addForm = ref<{ sourceText: string; direction: SynonymDirection; targets: 
   targets: '',
   enabled: 1,
 })
+
+// 编辑弹窗状态
+const editModalOpen = ref(false)
+const editingRule = ref<SynonymRule | null>(null)
+const editForm = ref<{ sourceText: string; direction: SynonymDirection; targets: string; enabled: number }>({
+  sourceText: '',
+  direction: '=>',
+  targets: '',
+  enabled: 1,
+})
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 const comparePickerOpen = ref(false)
@@ -245,6 +255,59 @@ async function submitAdd() {
     await loadDiffSummary()
   } catch (e: any) {
     showError(e, '新增失败')
+  }
+}
+
+function openEditModal(rule: SynonymRule) {
+  if (!resourceSetId.value) return
+  editingRule.value = rule
+  // 将 targetsJson 转换回逗号分隔的字符串
+  let targetsStr = ''
+  try {
+    const arr = JSON.parse(rule.targetsJson ?? '[]')
+    targetsStr = Array.isArray(arr) ? arr.join(', ') : rule.targetsJson ?? ''
+  } catch {
+    targetsStr = rule.targetsJson ?? ''
+  }
+  editForm.value = {
+    sourceText: rule.sourceText ?? '',
+    direction: (rule.direction ?? '=>') as SynonymDirection,
+    targets: targetsStr,
+    enabled: Number(rule.enabled ?? 1),
+  }
+  editModalOpen.value = true
+}
+
+async function submitEdit() {
+  if (!resourceSetId.value || !editingRule.value) return
+  const source = String(editForm.value.sourceText ?? '').trim()
+  const targets = String(editForm.value.targets ?? '').trim()
+  if (!source || !targets) {
+    showToast('source 和 targets 必填')
+    return
+  }
+  const arr = targets.split(',').map((s) => s.trim()).filter(Boolean)
+  if (arr.length === 0) {
+    showToast('至少需要一个目标词')
+    return
+  }
+  const payload = {
+    ...editingRule.value,
+    sourceText: source,
+    direction: editForm.value.direction,
+    targetsJson: JSON.stringify(arr),
+    enabled: Number(editForm.value.enabled ?? 1),
+  }
+  try {
+    await http.put(`/api/resource-sets/${resourceSetId.value}/rules/${editingRule.value.id}`, payload, {
+      params: { module: 'synonym' },
+    })
+    editModalOpen.value = false
+    auditLog.value.unshift(`${new Date().toLocaleString()} | 编辑规则 id=${editingRule.value.id}`)
+    await loadRules()
+    await loadDiffSummary()
+  } catch (e: any) {
+    showError(e, '编辑失败')
   }
 }
 
@@ -488,6 +551,7 @@ onMounted(async () => {
                     >
                       {{ Number(r.enabled) === 1 ? '✓ 启用' : '✗ 停用' }}
                     </button>
+                    <button class="btn btn-edit" type="button" :disabled="!resourceSetId" @click="openEditModal(r)" title="编辑此规则">编辑</button>
                     <button class="btn btn-del" type="button" :disabled="!resourceSetId" @click="removeRule(r.id)" title="删除此规则">删除</button>
                   </td>
                 </tr>
@@ -747,6 +811,43 @@ onMounted(async () => {
       </template>
     </QpModal>
 
+    <!-- 编辑规则弹窗 -->
+    <QpModal :open="editModalOpen" title="编辑同义词规则" icon="✎" type="primary" @close="editModalOpen = false">
+      <QpAlert type="info" icon="📝">修改同义词映射关系，更改将在发布后生效。</QpAlert>
+      <div class="form-grid">
+        <div class="form-field form-field-full">
+          <label class="form-label">源文本 <span class="form-required">*</span></label>
+          <input v-model="editForm.sourceText" class="input input-full" placeholder="输入需要匹配的源词" />
+        </div>
+        <div class="form-field">
+          <label class="form-label">映射方向</label>
+          <select v-model="editForm.direction" class="select select-full">
+            <option value="=>">→ 单向（source → targets）</option>
+            <option value="<=">← 反向（targets → source）</option>
+            <option value="SYM">↔ 双向（互为同义词）</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">状态</label>
+          <select v-model.number="editForm.enabled" class="select select-full">
+            <option :value="1">✓ 启用</option>
+            <option :value="0">✗ 停用</option>
+          </select>
+        </div>
+        <div class="form-field form-field-full">
+          <label class="form-label">目标词 <span class="form-required">*</span></label>
+          <input v-model="editForm.targets" class="input input-full" placeholder="逗号分隔多个目标词，如：手机,电话,移动电话" />
+          <span class="form-hint">多个目标词之间用英文逗号分隔</span>
+        </div>
+      </div>
+      <template #footer>
+        <button class="btn btn-cancel" type="button" @click="editModalOpen = false">取消</button>
+        <button class="btn btn-primary" type="button" :disabled="!resourceSetId" @click="submitEdit">
+          <span class="btn-icon-sm">✓</span> 确定保存
+        </button>
+      </template>
+    </QpModal>
+
     <!-- 快照详情弹窗 -->
     <QpModal :open="snapshotViewerOpen" title="快照详情" icon="📦" type="primary" @close="snapshotViewerOpen = false">
       <div v-if="viewingSnapshot" class="snapshot-detail">
@@ -1000,6 +1101,23 @@ table .select {
   background: #fef2f2;
   color: #dc2626;
   border-color: #fca5a5;
+}
+.btn-edit {
+  height: 26px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+  background: #fff;
+  color: #6b7280;
+  border-color: #e5e7eb;
+  border-radius: 4px;
+  margin-right: 6px;
+  transition: all 0.15s ease;
+}
+.btn-edit:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #93c5fd;
 }
 
 /* ==================== 响应式 ==================== */

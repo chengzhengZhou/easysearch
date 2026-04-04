@@ -99,6 +99,29 @@ const addForm = ref<{
   idsJson: '[]',
   enabled: 1,
 })
+
+// 编辑弹窗状态
+const editModalOpen = ref(false)
+const editingRule = ref<EntityRule | null>(null)
+const editForm = ref<{
+  entityText: string
+  entityType: string
+  normalizedValue: string
+  aliasesJson: string
+  attributesJson: string
+  relationsJson: string
+  idsJson: string
+  enabled: number
+}>({
+  entityText: '',
+  entityType: 'BRAND',
+  normalizedValue: '',
+  aliasesJson: '[]',
+  attributesJson: '{}',
+  relationsJson: '{}',
+  idsJson: '[]',
+  enabled: 1,
+})
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 const comparePickerOpen = ref(false)
@@ -304,6 +327,54 @@ async function submitAdd() {
     await loadDiffSummary()
   } catch (e: any) {
     showError(e, '新增失败')
+  }
+}
+
+function openEditModal(rule: EntityRule) {
+  if (!resourceSetId.value) return
+  editingRule.value = rule
+  editForm.value = {
+    entityText: rule.entityText ?? '',
+    entityType: rule.entityType ?? 'BRAND',
+    normalizedValue: rule.normalizedValue ?? '',
+    aliasesJson: rule.aliasesJson ?? '[]',
+    attributesJson: rule.attributesJson ?? '{}',
+    relationsJson: rule.relationsJson ?? '{}',
+    idsJson: rule.idsJson ?? '[]',
+    enabled: Number(rule.enabled ?? 1),
+  }
+  editModalOpen.value = true
+}
+
+async function submitEdit() {
+  if (!resourceSetId.value || !editingRule.value) return
+  const entity = String(editForm.value.entityText ?? '').trim()
+  const normalized = String(editForm.value.normalizedValue ?? '').trim()
+  if (!entity || !normalized) {
+    showToast('实体文本和归一化值必填')
+    return
+  }
+  const payload = {
+    ...editingRule.value,
+    entityText: entity,
+    entityType: editForm.value.entityType,
+    normalizedValue: normalized,
+    aliasesJson: editForm.value.aliasesJson || '[]',
+    attributesJson: editForm.value.attributesJson || '{}',
+    relationsJson: editForm.value.relationsJson || '{}',
+    idsJson: editForm.value.idsJson || '[]',
+    enabled: Number(editForm.value.enabled ?? 1),
+  }
+  try {
+    await http.put(`/api/resource-sets/${resourceSetId.value}/rules/${editingRule.value.id}`, payload, {
+      params: { module: 'entity' },
+    })
+    editModalOpen.value = false
+    auditLog.value.unshift(`${new Date().toLocaleString()} | 编辑规则 id=${editingRule.value.id}`)
+    await loadRules()
+    await loadDiffSummary()
+  } catch (e: any) {
+    showError(e, '编辑失败')
   }
 }
 
@@ -548,6 +619,7 @@ onMounted(async () => {
                     >
                       {{ Number(r.enabled) === 1 ? '✓ 启用' : '✗ 停用' }}
                     </button>
+                    <button class="btn btn-edit" type="button" :disabled="!resourceSetId" @click="openEditModal(r)" title="编辑此规则">编辑</button>
                     <button class="btn btn-del" type="button" :disabled="!resourceSetId" @click="removeRule(r.id)" title="删除此规则">删除</button>
                   </td>
                 </tr>
@@ -819,6 +891,48 @@ onMounted(async () => {
       </template>
     </QpModal>
 
+    <!-- 编辑规则弹窗 -->
+    <QpModal :open="editModalOpen" title="编辑实体规则" icon="✎" type="primary" size="md" @close="editModalOpen = false">
+      <QpAlert type="info" icon="📝">修改实体词典规则，更改将在发布后生效。</QpAlert>
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label">实体文本 <span class="form-required">*</span></label>
+          <input v-model="editForm.entityText" class="input input-full" placeholder="输入实体文本，如：苹果" />
+        </div>
+        <div class="form-field">
+          <label class="form-label">实体类型</label>
+          <select v-model="editForm.entityType" class="select select-full">
+            <option v-for="t in ENTITY_TYPES" :key="t" :value="t">{{ t }}</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">归一化值 <span class="form-required">*</span></label>
+          <input v-model="editForm.normalizedValue" class="input input-full" placeholder="输入归一化值，如：Apple" />
+        </div>
+        <div class="form-field">
+          <label class="form-label">状态</label>
+          <select v-model.number="editForm.enabled" class="select select-full">
+            <option :value="1">✓ 启用</option>
+            <option :value="0">✗ 停用</option>
+          </select>
+        </div>
+        <div class="form-field form-field-full">
+          <label class="form-label">别名（JSON 数组）</label>
+          <textarea v-model="editForm.aliasesJson" class="textarea" rows="2" placeholder='["别名1","别名2"]'></textarea>
+        </div>
+        <div class="form-field form-field-full">
+          <label class="form-label">属性（JSON 对象）</label>
+          <textarea v-model="editForm.attributesJson" class="textarea" rows="2" placeholder='{"key":"value"}'></textarea>
+        </div>
+      </div>
+      <template #footer>
+        <button class="btn btn-cancel" type="button" @click="editModalOpen = false">取消</button>
+        <button class="btn btn-primary" type="button" :disabled="!resourceSetId" @click="submitEdit">
+          <span class="btn-icon-sm">✓</span> 确定保存
+        </button>
+      </template>
+    </QpModal>
+
     <!-- 快照详情弹窗 -->
     <QpModal :open="snapshotViewerOpen" title="快照详情" icon="📦" type="primary" @close="snapshotViewerOpen = false">
       <div v-if="viewingSnapshot" class="snapshot-detail">
@@ -1072,6 +1186,23 @@ table .select {
   background: #fef2f2;
   color: #dc2626;
   border-color: #fca5a5;
+}
+.btn-edit {
+  height: 26px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+  background: #fff;
+  color: #6b7280;
+  border-color: #e5e7eb;
+  border-radius: 4px;
+  margin-right: 6px;
+  transition: all 0.15s ease;
+}
+.btn-edit:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #93c5fd;
 }
 
 /* ==================== 响应式 ==================== */

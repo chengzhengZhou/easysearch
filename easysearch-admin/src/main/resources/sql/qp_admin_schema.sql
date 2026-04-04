@@ -135,12 +135,10 @@ CREATE TABLE IF NOT EXISTS qp_rule_token_dict (
   nature VARCHAR(64) NOT NULL,
   frequency INT NULL,
   biz_id VARCHAR(64) NULL,
-  dict_type VARCHAR(16) NOT NULL,            -- dic/id
   enabled TINYINT NOT NULL DEFAULT 1,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  KEY idx_set_word (resource_set_id, word),
-  KEY idx_set_type (resource_set_id, dict_type)
+  KEY idx_set_word (resource_set_id, word)
 );
 
 -- 元信息（当前编辑态）
@@ -236,7 +234,6 @@ CREATE TABLE IF NOT EXISTS qp_snapshot_token_dict (
   nature VARCHAR(64) NOT NULL,
   frequency INT NULL,
   biz_id VARCHAR(64) NULL,
-  dict_type VARCHAR(16) NOT NULL,
   enabled TINYINT NOT NULL DEFAULT 1,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   KEY idx_snapshot (snapshot_id),

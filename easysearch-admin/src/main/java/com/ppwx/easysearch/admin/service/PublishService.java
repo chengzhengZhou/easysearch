@@ -31,10 +31,12 @@ import com.ppwx.easysearch.admin.mapper.SnapshotInterventionSentenceMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotInterventionTermMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotSynonymMapper;
 import com.ppwx.easysearch.admin.mapper.SnapshotEntityMapper;
+import com.ppwx.easysearch.admin.mapper.SnapshotTokenDictMapper;
 import com.ppwx.easysearch.admin.mapper.InterventionSentenceRuleMapper;
 import com.ppwx.easysearch.admin.mapper.InterventionTermRuleMapper;
 import com.ppwx.easysearch.admin.mapper.SynonymRuleMapper;
 import com.ppwx.easysearch.admin.mapper.EntityRuleMapper;
+import com.ppwx.easysearch.admin.mapper.TokenDictRuleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -53,13 +55,16 @@ public class PublishService {
     private final SnapshotInterventionTermMapper snapshotTermMapper;
     private final SnapshotSynonymMapper snapshotSynonymMapper;
     private final SnapshotEntityMapper snapshotEntityMapper;
+    private final SnapshotTokenDictMapper snapshotTokenDictMapper;
     private final InterventionSentenceRuleMapper sentenceRuleMapper;
     private final InterventionTermRuleMapper termRuleMapper;
     private final SynonymRuleMapper synonymRuleMapper;
     private final EntityRuleMapper entityRuleMapper;
+    private final TokenDictRuleMapper tokenDictRuleMapper;
     private final InterventionRuleService interventionRuleService;
     private final SynonymRuleService synonymRuleService;
     private final EntityRuleService entityRuleService;
+    private final TokenDictRuleService tokenDictRuleService;
     private final OperationLogService operationLogService;
     private final SecurityUserService securityUserService;
 
@@ -70,13 +75,16 @@ public class PublishService {
                           SnapshotInterventionTermMapper snapshotTermMapper,
                           SnapshotSynonymMapper snapshotSynonymMapper,
                           SnapshotEntityMapper snapshotEntityMapper,
+                          SnapshotTokenDictMapper snapshotTokenDictMapper,
                           InterventionSentenceRuleMapper sentenceRuleMapper,
                           InterventionTermRuleMapper termRuleMapper,
                           SynonymRuleMapper synonymRuleMapper,
                           EntityRuleMapper entityRuleMapper,
+                          TokenDictRuleMapper tokenDictRuleMapper,
                           InterventionRuleService interventionRuleService,
                           SynonymRuleService synonymRuleService,
                           EntityRuleService entityRuleService,
+                          TokenDictRuleService tokenDictRuleService,
                           OperationLogService operationLogService,
                           SecurityUserService securityUserService) {
         this.resourceSetMapper = resourceSetMapper;
@@ -86,13 +94,16 @@ public class PublishService {
         this.snapshotTermMapper = snapshotTermMapper;
         this.snapshotSynonymMapper = snapshotSynonymMapper;
         this.snapshotEntityMapper = snapshotEntityMapper;
+        this.snapshotTokenDictMapper = snapshotTokenDictMapper;
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
         this.synonymRuleMapper = synonymRuleMapper;
         this.entityRuleMapper = entityRuleMapper;
+        this.tokenDictRuleMapper = tokenDictRuleMapper;
         this.interventionRuleService = interventionRuleService;
         this.synonymRuleService = synonymRuleService;
         this.entityRuleService = entityRuleService;
+        this.tokenDictRuleService = tokenDictRuleService;
         this.operationLogService = operationLogService;
         this.securityUserService = securityUserService;
     }
@@ -126,6 +137,9 @@ public class PublishService {
         }
         if ("entity".equals(moduleType)) {
             return entityRuleService.validate(resourceSetId);
+        }
+        if ("token".equals(moduleType)) {
+            return tokenDictRuleService.validate(resourceSetId);
         }
         // 其他模块可扩展...
         return ValidateReport.fail("unknown module_type: " + moduleType);
@@ -261,6 +275,20 @@ public class PublishService {
             return count;
         }
 
+        if ("token".equals(moduleType)) {
+            // 先插入快照记录以获取 ID
+            snapshotMapper.insert(snapshot);
+            Long snapshotId = snapshot.getId();
+
+            // 复制分词词典规则
+            count = snapshotTokenDictMapper.copyFromRuleTable(snapshotId, resourceSetId);
+
+            snapshot.setId(snapshotId);
+            snapshot.setRuleCount(count);
+            snapshotMapper.updateById(snapshot);
+            return count;
+        }
+
         // 其他模块可扩展...
         return count;
     }
@@ -318,6 +346,14 @@ public class PublishService {
 
             // 从快照还原
             snapshotEntityMapper.restoreToRuleTable(snapshotId, resourceSetId);
+        }
+
+        if ("token".equals(moduleType)) {
+            // 清空当前规则
+            tokenDictRuleMapper.deleteByResourceSetId(resourceSetId);
+
+            // 从快照还原
+            snapshotTokenDictMapper.restoreToRuleTable(snapshotId, resourceSetId);
         }
 
         // 其他模块可扩展...

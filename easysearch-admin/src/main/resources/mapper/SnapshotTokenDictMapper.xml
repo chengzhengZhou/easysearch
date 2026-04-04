@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ppwx.easysearch.admin.mapper.SnapshotTokenDictMapper">
+
+    <!-- 从当前规则表复制到快照表 -->
+    <insert id="copyFromRuleTable">
+        INSERT INTO qp_snapshot_token_dict (
+            snapshot_id, source_rule_id, word, nature, frequency, biz_id, enabled, created_at
+        )
+        SELECT
+            #{snapshotId}, id, word, nature, frequency, biz_id, enabled, CURRENT_TIMESTAMP
+        FROM qp_rule_token_dict
+        WHERE resource_set_id = #{resourceSetId}
+    </insert>
+
+    <!-- 从快照表还原到当前规则表 -->
+    <insert id="restoreToRuleTable">
+        INSERT INTO qp_rule_token_dict (
+            resource_set_id, word, nature, frequency, biz_id, enabled, created_at, updated_at
+        )
+        SELECT
+            #{resourceSetId}, word, nature, frequency, biz_id, enabled, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+        FROM qp_snapshot_token_dict
+        WHERE snapshot_id = #{snapshotId}
+    </insert>
+
+    <!-- 删除指定快照的所有规则 -->
+    <delete id="deleteBySnapshotId">
+        DELETE FROM qp_snapshot_token_dict WHERE snapshot_id = #{snapshotId}
+    </delete>
+
+</mapper>

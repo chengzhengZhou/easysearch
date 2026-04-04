@@ -22,18 +22,21 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
 
-@TableName("qp_rule_token_dict")
-public class TokenDictRuleDO {
+/**
+ * 分词词典快照 DO
+ */
+@TableName("qp_snapshot_token_dict")
+public class SnapshotTokenDictDO {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long resourceSetId;
+    private Long snapshotId;
+    private Long sourceRuleId;
     private String word;
     private String nature;
     private Integer frequency;
     private String bizId;
     private Integer enabled;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public Long getId() {
         return id;
@@ -43,12 +46,20 @@ public class TokenDictRuleDO {
         this.id = id;
     }
 
-    public Long getResourceSetId() {
-        return resourceSetId;
+    public Long getSnapshotId() {
+        return snapshotId;
     }
 
-    public void setResourceSetId(Long resourceSetId) {
-        this.resourceSetId = resourceSetId;
+    public void setSnapshotId(Long snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    public Long getSourceRuleId() {
+        return sourceRuleId;
+    }
+
+    public void setSourceRuleId(Long sourceRuleId) {
+        this.sourceRuleId = sourceRuleId;
     }
 
     public String getWord() {
@@ -98,13 +109,4 @@ public class TokenDictRuleDO {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
-
