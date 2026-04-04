@@ -172,8 +172,33 @@ export type AuditLogItem = {
 
 export type PublishRecord = {
   id: number
-  startedAt: string
-  publishStatus: string
+  resourceSetId: number
   snapshotId: number
+  env?: string
+  publishStatus: string
+  publishMsg?: string
+  startedAt: string
+  finishedAt?: string
   operator: string
+}
+
+// ==================== 总览页面相关 ====================
+export type OverviewStats = {
+  totalResourceSets: number
+  totalRules: number
+  publishedSnapshots: number
+  pendingChanges: number
+}
+
+export type ModuleRuleCount = {
+  module: string
+  count: number
+}
+
+export type ResourceSetWithStats = ResourceSet & {
+  ruleCount?: number
+  lastPublishedAt?: string
+  lastPublishedBy?: string
+  snapshotNo?: number
+  hasPendingChanges?: boolean
 }
