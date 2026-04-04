@@ -304,15 +304,6 @@ function toggleEnabled(rule: any) {
   updateRuleCell(rule)
 }
 
-async function reload() {
-  try {
-    await http.post('/api/reload')
-    publishLog.value.unshift(`${new Date().toLocaleString()} | Reload 触发`)
-  } catch (e: any) {
-    showToast(e?.response?.data?.message ?? e?.message ?? 'reload 失败')
-  }
-}
-
 function openVersionCompare() {
   if (!resourceSetId.value) {
     showToast('请先选择资源集')
@@ -487,61 +478,58 @@ onMounted(async () => {
 
     <section class="layout two-col">
       <div>
-        <div class="panel">
-          <h3>资源上下文</h3>
-          <div class="context-row context-row-filters">
-            <div class="context-col">
-              <div class="hint" style="margin-bottom: 6px">资源集</div>
-              <select v-model="resourceSetId" class="select" @change="loadSnapshots">
-                <option v-for="r in resourceSets" :key="r.id" :value="r.id">{{ r.name }}（scene={{ r.scene }}, env={{ r.env }}）</option>
+        <div class="panel panel-context">
+          <div class="context-bar">
+            <span class="context-title">资源上下文</span>
+            <label class="context-field">
+              <span class="context-label">资源集</span>
+              <select v-model="resourceSetId" class="select select-compact" @change="loadSnapshots">
+                <option v-for="r in resourceSets" :key="r.id" :value="r.id">{{ r.name }}（{{ r.scene }}/{{ r.env }}）</option>
               </select>
-            </div>
-            <div class="context-col">
-              <div class="hint" style="margin-bottom: 6px">规则类型</div>
-              <select v-model="mode" class="select">
-                <option value="sentence">整句规则</option>
-                <option value="term">词表规则</option>
+            </label>
+            <label class="context-field">
+              <span class="context-label">类型</span>
+              <select v-model="mode" class="select select-compact">
+                <option value="sentence">整句</option>
+                <option value="term">词表</option>
               </select>
-            </div>
+            </label>
+            <span class="context-sep"></span>
+            <button class="btn btn-ctx warn" type="button" :disabled="!resourceSetId" @click="validate">校验</button>
+            <button class="btn btn-ctx primary" type="button" :disabled="!resourceSetId" @click="openPublishConfirm">
+              发布
+              <span v-if="diffSummaryData?.hasChanges" class="badge-dot"></span>
+            </button>
+            <button class="btn btn-ctx" type="button" :disabled="!resourceSetId" @click="rollback">回滚</button>
+            <button class="btn btn-ctx" type="button" :disabled="!resourceSetId" @click="openVersionCompare">对比</button>
           </div>
-
-          <div class="context-actions context-actions-simple">
-            <div class="action-group">
-              <span class="action-group-title">发布区</span>
-              <button class="btn warn" type="button" :disabled="!resourceSetId" @click="validate">校验</button>
-              <button class="btn primary" type="button" :disabled="!resourceSetId" @click="openPublishConfirm">
-                发布
-                <span v-if="diffSummaryData?.hasChanges" class="badge-dot"></span>
-              </button>
-              <button class="btn" type="button" :disabled="!resourceSetId" @click="rollback">回滚</button>
-              <button class="btn" type="button" :disabled="!resourceSetId" @click="openVersionCompare">版本对比</button>
-              <button class="btn ghost" type="button" @click="reload">Reload</button>
-            </div>
-          </div>
-
-          <div v-if="diffSummaryData?.hasChanges" class="unpublished-banner">
-            <span class="unpublished-icon">⚠</span>
-            <span>
-              当前有未发布的编辑内容：
-              <template v-if="diffSummaryData.addedCount > 0">新增 {{ diffSummaryData.addedCount }} 条</template>
-              <template v-if="diffSummaryData.addedCount > 0 && (diffSummaryData.deletedCount > 0 || diffSummaryData.modifiedCount > 0)">、</template>
-              <template v-if="diffSummaryData.deletedCount > 0">删除 {{ diffSummaryData.deletedCount }} 条</template>
-              <template v-if="diffSummaryData.deletedCount > 0 && diffSummaryData.modifiedCount > 0">、</template>
-              <template v-if="diffSummaryData.modifiedCount > 0">修改 {{ diffSummaryData.modifiedCount }} 条</template>
-              <template v-if="diffSummaryData.noSnapshot">（尚无线上快照）</template>
-              ，请及时校验并发布
-            </span>
+          <div v-if="diffSummaryData?.hasChanges" class="unpublished-bar">
+            ⚠ 未发布变更：
+            <template v-if="diffSummaryData.addedCount > 0">+{{ diffSummaryData.addedCount }}</template>
+            <template v-if="diffSummaryData.addedCount > 0 && (diffSummaryData.deletedCount > 0 || diffSummaryData.modifiedCount > 0)"> · </template>
+            <template v-if="diffSummaryData.deletedCount > 0">-{{ diffSummaryData.deletedCount }}</template>
+            <template v-if="diffSummaryData.deletedCount > 0 && diffSummaryData.modifiedCount > 0"> · </template>
+            <template v-if="diffSummaryData.modifiedCount > 0">~{{ diffSummaryData.modifiedCount }}</template>
+            <template v-if="diffSummaryData.noSnapshot">（无快照）</template>
+            ，请及时发布
           </div>
         </div>
 
-        <div class="panel">
+        <div class="panel panel-main">
+          <div class="panel-header">
+            <h3>规则列表</h3>
+            <span class="panel-badge">{{ modeLabel }}</span>
+          </div>
           <div class="rule-toolbar">
-            <input v-model="searchInput" class="input" placeholder="搜索 source / target" />
-            <button class="btn primary" type="button" :disabled="!resourceSetId" @click="addRule">新增</button>
-            <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(true)">启用</button>
-            <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(false)">停用</button>
-            <button class="btn danger" type="button" :disabled="!resourceSetId" @click="batchDelete">删除</button>
-            <span class="hint" id="editabilityHint">可直接编辑</span>
+            <input v-model="searchInput" class="input search-input" placeholder="🔍 搜索源文本 / 目标文本..." />
+            <div class="toolbar-actions">
+              <button class="btn primary" type="button" :disabled="!resourceSetId" @click="addRule">
+                <span class="btn-icon">+</span> 新增
+              </button>
+              <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(true)">批量启用</button>
+              <button class="btn" type="button" :disabled="!resourceSetId" @click="batchEnable(false)">批量停用</button>
+              <button class="btn danger" type="button" :disabled="!resourceSetId" @click="batchDelete">批量删除</button>
+            </div>
           </div>
 
           <div class="table-wrap">
@@ -598,15 +586,16 @@ onMounted(async () => {
                   </td>
                   <td class="actions">
                     <button
-                      class="btn"
-                      :class="Number((r as any).enabled) === 1 ? 'btn-enabled' : 'btn-disabled'"
+                      class="btn btn-status"
+                      :class="Number((r as any).enabled) === 1 ? 'btn-status-on' : 'btn-status-off'"
                       type="button"
                       :disabled="!resourceSetId"
                       @click="toggleEnabled(r)"
+                      :title="Number((r as any).enabled) === 1 ? '点击停用' : '点击启用'"
                     >
-                      {{ Number((r as any).enabled) === 1 ? '已启用' : '已停用' }}
+                      {{ Number((r as any).enabled) === 1 ? '✓ 启用' : '✗ 停用' }}
                     </button>
-                    <button class="btn danger" type="button" :disabled="!resourceSetId" @click="removeRule((r as any).id)">删除</button>
+                    <button class="btn btn-del" type="button" :disabled="!resourceSetId" @click="removeRule((r as any).id)" title="删除此规则">删除</button>
                   </td>
                 </tr>
               </tbody>
@@ -614,56 +603,77 @@ onMounted(async () => {
           </div>
 
           <div class="pager-bottom">
-            <div class="hint">当前：{{ modeLabel }}；共 {{ pagedRows.total }} 条，{{ pagedRows.totalPages }} 页</div>
+            <div class="pager-info">
+              <span class="pager-stat">共 <strong>{{ pagedRows.total }}</strong> 条</span>
+              <span class="pager-divider">|</span>
+              <span class="pager-stat">{{ pagedRows.totalPages }} 页</span>
+            </div>
             <div class="pager-compact">
-              <span class="hint">每页</span>
-              <select v-model.number="pageSize" class="select" style="width: 72px">
+              <span class="pager-label">每页</span>
+              <select v-model.number="pageSize" class="select select-sm">
                 <option :value="10">10</option>
                 <option :value="20">20</option>
                 <option :value="50">50</option>
               </select>
-              <span class="hint">条，第</span>
-              <input v-model.number="page" class="input" style="width: 68px" />
-              <span class="hint">页</span>
-              <button class="btn" type="button" :disabled="page <= 1" @click="page = Math.max(1, page - 1)">上一页</button>
-              <button class="btn" type="button" :disabled="page >= pagedRows.totalPages" @click="page = Math.min(pagedRows.totalPages, page + 1)">下一页</button>
+              <span class="pager-label">条</span>
+              <span class="pager-divider">|</span>
+              <span class="pager-label">第</span>
+              <input v-model.number="page" class="input input-sm" type="number" min="1" :max="pagedRows.totalPages" />
+              <span class="pager-label">页</span>
+              <button class="btn btn-pager" type="button" :disabled="page <= 1" @click="page = Math.max(1, page - 1)">‹ 上一页</button>
+              <button class="btn btn-pager" type="button" :disabled="page >= pagedRows.totalPages" @click="page = Math.min(pagedRows.totalPages, page + 1)">下一页 ›</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="panel">
-          <h3>校验结果</h3>
-          <ul class="list">
-            <li>{{ validateSummary }}</li>
-          </ul>
+      <div class="side-panels">
+        <div class="panel panel-side">
+          <div class="panel-header">
+            <h3>📋 校验结果</h3>
+          </div>
+          <div class="validate-box" :class="{ 'validate-ok': validateSummary.includes('通过'), 'validate-fail': validateSummary.includes('失败') || validateSummary.includes('错误') }">
+            {{ validateSummary }}
+          </div>
         </div>
 
-        <div class="panel">
-          <h3>历史快照</h3>
+        <div class="panel panel-side">
+          <div class="panel-header">
+            <h3>📦 历史快照</h3>
+            <span class="panel-count">{{ snapshots.length }}</span>
+          </div>
           <div class="log-box">
-            <div v-if="snapshots.length === 0" class="hint">尚无快照</div>
+            <div v-if="snapshots.length === 0" class="empty-hint">暂无快照记录</div>
             <div v-else v-for="s in snapshots.slice(0, 20)" :key="s.id" class="snapshot-row">
-              <span>#{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedBy }} | {{ s.publishedAt }}</span>
+              <div class="snapshot-info">
+                <span class="snapshot-no">#{{ s.snapshotNo }}</span>
+                <span class="snapshot-meta">{{ s.ruleCount }}条 · {{ s.publishedBy }}</span>
+                <span class="snapshot-time">{{ s.publishedAt }}</span>
+              </div>
               <button class="btn btn-sm" type="button" @click="openSnapshotViewer(s)">查看</button>
             </div>
           </div>
         </div>
 
-        <div class="panel">
-          <h3>发布记录</h3>
+        <div class="panel panel-side">
+          <div class="panel-header">
+            <h3>📝 发布记录</h3>
+            <span class="panel-count">{{ publishLog.length }}</span>
+          </div>
           <div class="log-box">
-            <div v-if="publishLog.length === 0" class="hint">尚无记录</div>
-            <div v-else v-for="(l, i) in publishLog.slice(0, 30)" :key="i">{{ l }}</div>
+            <div v-if="publishLog.length === 0" class="empty-hint">暂无发布记录</div>
+            <div v-else v-for="(l, i) in publishLog.slice(0, 30)" :key="i" class="log-item">{{ l }}</div>
           </div>
         </div>
 
-        <div class="panel">
-          <h3>操作审计</h3>
+        <div class="panel panel-side">
+          <div class="panel-header">
+            <h3>🔍 操作审计</h3>
+            <span class="panel-count">{{ auditLog.length }}</span>
+          </div>
           <div class="log-box">
-            <div v-if="auditLog.length === 0" class="hint">尚无记录</div>
-            <div v-else v-for="(l, i) in auditLog.slice(0, 30)" :key="i">{{ l }}</div>
+            <div v-if="auditLog.length === 0" class="empty-hint">暂无审计记录</div>
+            <div v-else v-for="(l, i) in auditLog.slice(0, 30)" :key="i" class="log-item">{{ l }}</div>
           </div>
         </div>
       </div>
@@ -673,84 +683,126 @@ onMounted(async () => {
 
     <!-- rollback picker -->
     <div class="modal-mask" :class="{ show: rollbackPickerOpen }">
-      <div class="modal modal-sm">
+      <div class="modal modal-sm modal-animate">
         <div class="modal-head">
-          <strong>选择回滚快照</strong>
-          <button class="btn" type="button" @click="closeRollbackPicker">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon warn">↩</span>
+            <strong>选择回滚快照</strong>
+          </div>
+          <button class="btn-close" type="button" @click="closeRollbackPicker" title="关闭">×</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">用历史快照覆盖当前规则并切换线上指针。回滚会丢失未发布的修改。</div>
-          <select v-model="rollbackToSnapshotId" class="select">
-            <option
-              v-for="s in snapshots.filter((x) => x.id !== currentSnapshotId)"
-              :key="s.id"
-              :value="s.id"
-            >
-              #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
-            </option>
-          </select>
+          <div class="modal-alert warn">
+            <span class="alert-icon">⚠</span>
+            <span>回滚将用历史快照覆盖当前规则，未发布的修改将丢失。</span>
+          </div>
+          <div class="form-field">
+            <label class="form-label">选择目标快照</label>
+            <select v-model="rollbackToSnapshotId" class="select select-full">
+              <option :value="null" disabled>请选择要回滚到的快照...</option>
+              <option
+                v-for="s in snapshots.filter((x) => x.id !== currentSnapshotId)"
+                :key="s.id"
+                :value="s.id"
+              >
+                #{{ s.snapshotNo }} · {{ s.ruleCount }}条规则 · {{ s.publishedAt }}
+              </option>
+            </select>
+          </div>
         </div>
         <div class="modal-foot">
-          <button class="btn" type="button" @click="closeRollbackPicker">取消</button>
-          <button class="btn primary" type="button" :disabled="!rollbackToSnapshotId" @click="confirmRollback">确定回滚</button>
+          <button class="btn btn-cancel" type="button" @click="closeRollbackPicker">取消</button>
+          <button class="btn btn-warn" type="button" :disabled="!rollbackToSnapshotId" @click="confirmRollback">
+            <span class="btn-icon-sm">↩</span> 确定回滚
+          </button>
         </div>
       </div>
     </div>
 
     <!-- publish confirm -->
     <div class="modal-mask" :class="{ show: publishConfirmOpen }">
-      <div class="modal modal-sm">
+      <div class="modal modal-sm modal-animate">
         <div class="modal-head">
-          <strong>确认发布</strong>
-          <button class="btn" type="button" @click="closePublishConfirm">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon primary">🚀</span>
+            <strong>确认发布</strong>
+          </div>
+          <button class="btn-close" type="button" @click="closePublishConfirm" title="关闭">×</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">将当前规则打快照并推线上。发布后 QP 需 reload 生效。</div>
-          <div class="hint" style="margin-top: 8px">发布说明（change_log）：</div>
-          <textarea v-model="publishChangeLog" class="input" style="width: 100%; height: 72px; resize: vertical" placeholder="请填写本次发布说明（可选）" />
-          <div class="hint" style="margin-top: 8px">{{ publishValidateSummary }}</div>
+          <div class="modal-alert info">
+            <span class="alert-icon">ℹ</span>
+            <span>将当前规则打快照并推送到线上。</span>
+          </div>
+          <div class="form-field">
+            <label class="form-label">发布说明 <span class="form-optional">（可选）</span></label>
+            <textarea 
+              v-model="publishChangeLog" 
+              class="textarea" 
+              rows="3"
+              placeholder="请简要描述本次发布的变更内容..."
+            ></textarea>
+          </div>
+          <div class="validate-status" :class="{ 
+            'status-pending': publishValidateSummary.includes('未执行'),
+            'status-ok': publishValidateSummary.includes('通过') || publishValidateSummary.includes('OK'),
+            'status-fail': publishValidateSummary.includes('失败') || publishValidateSummary.includes('错误')
+          }">
+            <span class="status-dot"></span>
+            {{ publishValidateSummary }}
+          </div>
         </div>
         <div class="modal-foot">
-          <button class="btn" type="button" @click="closePublishConfirm">取消</button>
-          <button class="btn primary" type="button" :disabled="!resourceSetId" @click="confirmPublish">确认发布</button>
+          <button class="btn btn-cancel" type="button" @click="closePublishConfirm">取消</button>
+          <button class="btn btn-primary" type="button" :disabled="!resourceSetId" @click="confirmPublish">
+            <span class="btn-icon-sm">🚀</span> 确认发布
+          </button>
         </div>
       </div>
     </div>
 
     <!-- version compare picker -->
     <div class="modal-mask" :class="{ show: comparePickerOpen }">
-      <div class="modal modal-sm">
+      <div class="modal modal-sm modal-animate">
         <div class="modal-head">
-          <strong>版本对比</strong>
-          <button class="btn" type="button" @click="closeComparePicker">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon primary">⚖</span>
+            <strong>版本对比</strong>
+          </div>
+          <button class="btn-close" type="button" @click="closeComparePicker" title="关闭">×</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">选择两个版本进行对比，对比维度跟随当前规则类型（{{ modeLabel }}）。</div>
-          <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: end; margin-top: 10px">
-            <div>
-              <div class="hint" style="margin-bottom: 4px">版本 A（左侧）</div>
-              <select v-model="compareSnapshotA" class="select">
-                <option :value="null">当前编辑</option>
+          <div class="modal-alert info">
+            <span class="alert-icon">ℹ</span>
+            <span>选择两个版本进行差异对比，对比维度：<strong>{{ modeLabel }}</strong></span>
+          </div>
+          <div class="compare-grid">
+            <div class="form-field">
+              <label class="form-label">版本 A（基准）</label>
+              <select v-model="compareSnapshotA" class="select select-full">
+                <option :value="null">📝 当前编辑</option>
                 <option v-for="s in snapshots" :key="s.id" :value="s.id">
-                  #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
+                  #{{ s.snapshotNo }} · {{ s.ruleCount }}条 · {{ s.publishedAt }}
                 </option>
               </select>
             </div>
-            <div class="hint" style="text-align: center; padding-bottom: 6px">vs</div>
-            <div>
-              <div class="hint" style="margin-bottom: 4px">版本 B（右侧）</div>
-              <select v-model="compareSnapshotB" class="select">
-                <option :value="null">当前编辑</option>
+            <div class="compare-vs">VS</div>
+            <div class="form-field">
+              <label class="form-label">版本 B（对比）</label>
+              <select v-model="compareSnapshotB" class="select select-full">
+                <option :value="null">📝 当前编辑</option>
                 <option v-for="s in snapshots" :key="s.id" :value="s.id">
-                  #{{ s.snapshotNo }} | {{ s.ruleCount }}条 | {{ s.publishedAt }}
+                  #{{ s.snapshotNo }} · {{ s.ruleCount }}条 · {{ s.publishedAt }}
                 </option>
               </select>
             </div>
           </div>
         </div>
         <div class="modal-foot">
-          <button class="btn" type="button" @click="closeComparePicker">取消</button>
-          <button class="btn primary" type="button" :disabled="compareLoading" @click="confirmCompare">
+          <button class="btn btn-cancel" type="button" @click="closeComparePicker">取消</button>
+          <button class="btn btn-primary" type="button" :disabled="compareLoading" @click="confirmCompare">
+            <span v-if="compareLoading" class="btn-loading"></span>
+            <span v-else class="btn-icon-sm">⚖</span>
             {{ compareLoading ? '对比中...' : '开始对比' }}
           </button>
         </div>
@@ -759,16 +811,25 @@ onMounted(async () => {
 
     <!-- compare result -->
     <div class="modal-mask result" :class="{ show: compareModalOpen }">
-      <div class="modal">
+      <div class="modal modal-animate">
         <div class="modal-head">
-          <strong>版本差异</strong>
-          <button class="btn" type="button" @click="compareModalOpen = false">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon primary">📊</span>
+            <strong>版本差异</strong>
+          </div>
+          <button class="btn-close" type="button" @click="compareModalOpen = false" title="关闭">×</button>
         </div>
-        <div class="modal-body">
-          <div class="diff-summary-bar">{{ diffSummary }}</div>
+        <div class="modal-body modal-body-scroll">
+          <div class="diff-summary-bar">
+            <span class="diff-summary-icon">📊</span>
+            {{ diffSummary }}
+          </div>
 
           <div v-if="diffAdded.length > 0" class="diff-section">
-            <h4 class="diff-section-title diff-added-title">新增规则（{{ diffAdded.length }}）</h4>
+            <h4 class="diff-section-title diff-added-title">
+              <span class="diff-title-icon">＋</span>
+              新增规则（{{ diffAdded.length }}）
+            </h4>
             <div class="table-wrap">
               <table class="diff-table">
                 <thead>
@@ -794,7 +855,10 @@ onMounted(async () => {
           </div>
 
           <div v-if="diffDeleted.length > 0" class="diff-section">
-            <h4 class="diff-section-title diff-deleted-title">删除规则（{{ diffDeleted.length }}）</h4>
+            <h4 class="diff-section-title diff-deleted-title">
+              <span class="diff-title-icon">－</span>
+              删除规则（{{ diffDeleted.length }}）
+            </h4>
             <div class="table-wrap">
               <table class="diff-table">
                 <thead>
@@ -820,14 +884,20 @@ onMounted(async () => {
           </div>
 
           <div v-if="diffModified.length > 0" class="diff-section">
-            <h4 class="diff-section-title diff-modified-title">修改规则（{{ diffModified.length }}）</h4>
+            <h4 class="diff-section-title diff-modified-title">
+              <span class="diff-title-icon">～</span>
+              修改规则（{{ diffModified.length }}）
+            </h4>
             <div v-for="(m, i) in diffModified" :key="i" class="diff-modified-item">
-              <div class="diff-modified-key">规则 ID: {{ m.key }}</div>
+              <div class="diff-modified-key">
+                <span class="diff-key-icon">🔑</span>
+                规则 ID: {{ m.key }}
+              </div>
               <div class="table-wrap">
                 <table class="diff-table">
                   <thead>
                     <tr>
-                      <th></th>
+                      <th class="th-label"></th>
                       <th>source</th>
                       <th>target</th>
                       <th v-if="mode === 'sentence'">matchType</th>
@@ -837,7 +907,7 @@ onMounted(async () => {
                   </thead>
                   <tbody>
                     <tr class="diff-row-before">
-                      <td class="diff-label">B</td>
+                      <td class="diff-label">旧</td>
                       <td :class="{ 'diff-changed': m.before?.sourceText !== m.after?.sourceText }">{{ m.before?.sourceText }}</td>
                       <td :class="{ 'diff-changed': m.before?.targetText !== m.after?.targetText }">{{ m.before?.targetText }}</td>
                       <td v-if="mode === 'sentence'" :class="{ 'diff-changed': m.before?.matchType !== m.after?.matchType }">{{ m.before?.matchType }}</td>
@@ -858,8 +928,9 @@ onMounted(async () => {
             </div>
           </div>
 
-          <div v-if="diffAdded.length === 0 && diffDeleted.length === 0 && diffModified.length === 0" class="hint" style="text-align: center; padding: 20px">
-            两个版本内容完全一致，无差异
+          <div v-if="diffAdded.length === 0 && diffDeleted.length === 0 && diffModified.length === 0" class="diff-empty">
+            <span class="diff-empty-icon">✓</span>
+            <span>两个版本内容完全一致，无差异</span>
           </div>
         </div>
       </div>
@@ -867,66 +938,93 @@ onMounted(async () => {
 
     <!-- add rule -->
     <div class="modal-mask" :class="{ show: addModalOpen }">
-      <div class="modal modal-sm">
+      <div class="modal modal-sm modal-animate">
         <div class="modal-head">
-          <strong>新增规则</strong>
-          <button class="btn" type="button" @click="addModalOpen = false">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon primary">＋</span>
+            <strong>新增规则</strong>
+          </div>
+          <button class="btn-close" type="button" @click="addModalOpen = false" title="关闭">×</button>
         </div>
         <div class="modal-body">
-          <div class="picker-hint">当前模式：{{ modeLabel }}</div>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 8px">
-            <input v-model="addForm.sourceText" class="input" placeholder="source_text" />
-            <input v-model="addForm.targetText" class="input" placeholder="target_text" />
-            <div v-if="mode === 'sentence'" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-              <select v-model="addForm.matchType" class="select">
-                <option value="EXACT">EXACT</option>
-                <option value="PREFIX">PREFIX</option>
-                <option value="CONTAINS">CONTAINS</option>
-              </select>
-              <input v-model.number="addForm.priority" class="input" type="number" placeholder="priority" />
+          <div class="modal-alert info">
+            <span class="alert-icon">📝</span>
+            <span>当前模式：<strong>{{ modeLabel }}</strong></span>
+          </div>
+          <div class="form-grid">
+            <div class="form-field form-field-full">
+              <label class="form-label">源文本 <span class="form-required">*</span></label>
+              <input v-model="addForm.sourceText" class="input input-full" placeholder="输入需要匹配的源文本" />
             </div>
-            <div v-else style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-              <input v-model.number="addForm.priority" class="input" type="number" placeholder="priority" />
-              <select v-model.number="addForm.enabled" class="select">
-                <option :value="1">enabled=1</option>
-                <option :value="0">enabled=0</option>
+            <div class="form-field form-field-full">
+              <label class="form-label">目标文本 <span class="form-required">*</span></label>
+              <input v-model="addForm.targetText" class="input input-full" placeholder="输入替换后的目标文本" />
+            </div>
+            <div v-if="mode === 'sentence'" class="form-field">
+              <label class="form-label">匹配类型</label>
+              <select v-model="addForm.matchType" class="select select-full">
+                <option value="EXACT">精确匹配</option>
+                <option value="PREFIX">前缀匹配</option>
+                <option value="CONTAINS">包含匹配</option>
               </select>
             </div>
-            <div v-if="mode === 'sentence'" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-              <select v-model.number="addForm.enabled" class="select">
-                <option :value="1">enabled=1</option>
-                <option :value="0">enabled=0</option>
+            <div class="form-field">
+              <label class="form-label">优先级</label>
+              <input v-model.number="addForm.priority" class="input input-full" type="number" placeholder="0" />
+              <span class="form-hint">建议范围 -999 ~ 999</span>
+            </div>
+            <div class="form-field">
+              <label class="form-label">状态</label>
+              <select v-model.number="addForm.enabled" class="select select-full">
+                <option :value="1">✓ 启用</option>
+                <option :value="0">✗ 停用</option>
               </select>
-              <div class="hint" style="align-self: center">priority 范围建议 -999~999</div>
             </div>
           </div>
         </div>
         <div class="modal-foot">
-          <button class="btn" type="button" @click="addModalOpen = false">取消</button>
-          <button class="btn primary" type="button" :disabled="!resourceSetId" @click="submitAdd">确定</button>
+          <button class="btn btn-cancel" type="button" @click="addModalOpen = false">取消</button>
+          <button class="btn btn-primary" type="button" :disabled="!resourceSetId" @click="submitAdd">
+            <span class="btn-icon-sm">✓</span> 确定添加
+          </button>
         </div>
       </div>
     </div>
 
     <!-- snapshot viewer -->
     <div class="modal-mask" :class="{ show: snapshotViewerOpen }">
-      <div class="modal modal-sm">
+      <div class="modal modal-sm modal-animate">
         <div class="modal-head">
-          <strong>快照详情</strong>
-          <button class="btn" type="button" @click="snapshotViewerOpen = false">关闭</button>
+          <div class="modal-title">
+            <span class="modal-icon primary">📦</span>
+            <strong>快照详情</strong>
+          </div>
+          <button class="btn-close" type="button" @click="snapshotViewerOpen = false" title="关闭">×</button>
         </div>
         <div class="modal-body">
-          <div v-if="viewingSnapshot">
-            <div><strong>快照编号：</strong>#{{ viewingSnapshot.snapshotNo }}</div>
-            <div><strong>规则数量：</strong>{{ viewingSnapshot.ruleCount }}</div>
-            <div><strong>发布人：</strong>{{ viewingSnapshot.publishedBy }}</div>
-            <div><strong>发布时间：</strong>{{ viewingSnapshot.publishedAt }}</div>
-            <div><strong>说明：</strong>{{ viewingSnapshot.changeLog || '-' }}</div>
-            <div class="hint" style="margin-top: 12px">快照规则详情查看功能开发中...</div>
+          <div v-if="viewingSnapshot" class="snapshot-detail">
+            <div class="snapshot-detail-header">
+              <span class="snapshot-detail-no">#{{ viewingSnapshot.snapshotNo }}</span>
+              <span class="snapshot-detail-count">{{ viewingSnapshot.ruleCount }} 条规则</span>
+            </div>
+            <div class="snapshot-detail-grid">
+              <div class="detail-item">
+                <span class="detail-label">发布人</span>
+                <span class="detail-value">{{ viewingSnapshot.publishedBy }}</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">发布时间</span>
+                <span class="detail-value">{{ viewingSnapshot.publishedAt }}</span>
+              </div>
+              <div class="detail-item detail-item-full">
+                <span class="detail-label">发布说明</span>
+                <span class="detail-value">{{ viewingSnapshot.changeLog || '无' }}</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-foot">
-          <button class="btn" type="button" @click="snapshotViewerOpen = false">关闭</button>
+          <button class="btn btn-cancel" type="button" @click="snapshotViewerOpen = false">关闭</button>
         </div>
       </div>
     </div>
@@ -934,150 +1032,432 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.context-actions-simple {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 12px;
+/* ==================== 布局与面板 ==================== */
+.panel-main {
+  padding: 14px;
 }
-.context-actions-simple .action-group {
+.panel-side {
+  padding: 12px;
+}
+.panel-header {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: #f9fafb;
-  border-radius: 8px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f2f5;
 }
-.context-actions-simple .action-group-title {
-  font-size: 12px;
+.panel-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.panel-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  color: #4f46e5;
+  border-radius: 12px;
+  font-weight: 500;
+}
+.panel-count {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: #f3f4f6;
   color: #6b7280;
-  margin-right: 6px;
+  border-radius: 10px;
 }
-.context-actions-simple :is(.btn, .chip) {
-  height: 28px;
-  line-height: 28px;
-  padding: 0 10px;
-  font-size: 12px;
+.side-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.rule-toolbar {
-  display: grid;
-  grid-template-columns: minmax(220px, 1.2fr) auto auto auto auto auto;
-  gap: 6px;
+
+/* ==================== 资源上下文（紧凑版） ==================== */
+.panel-context {
+  padding: 8px 12px !important;
+  margin-bottom: 10px;
+}
+.context-bar {
+  display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-.rule-toolbar :is(.btn, .chip) {
+.context-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+  padding-right: 4px;
+}
+.context-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.context-label {
+  font-size: 11px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+.select-compact {
   height: 28px;
-  line-height: 28px;
-  padding: 0 10px;
+  padding: 0 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+.context-sep {
+  width: 1px;
+  height: 20px;
+  background: #d1d5db;
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+.btn-ctx {
+  height: 28px !important;
+  line-height: 26px !important;
+  padding: 0 10px !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+}
+.unpublished-bar {
+  margin-top: 6px;
+  padding: 5px 10px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #92400e;
+  line-height: 1.4;
+}
+
+/* ==================== 规则工具栏 ==================== */
+.rule-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+.search-input:focus {
+  background: #fff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.toolbar-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.toolbar-actions .btn {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+.btn-icon {
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* ==================== 表格样式 ==================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 860px;
+}
+table thead th {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  font-weight: 600;
+  color: #475569;
+  font-size: 12px;
+  padding: 10px 8px;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+table tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+table tbody tr {
+  transition: background 0.15s ease;
+}
+table tbody tr:hover {
+  background: #f8fafc;
+}
+table tbody tr.selected {
+  background: #eff6ff;
+}
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 表格内输入框 */
+table .input {
+  width: 100%;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+table .input:hover {
+  background: #f8fafc;
+  border-color: #e5e7eb;
+}
+table .input:focus {
+  background: #fff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+table .select {
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 4px;
   font-size: 12px;
 }
+
+/* ==================== 操作按钮 ==================== */
+.actions {
+  white-space: nowrap;
+  text-align: center;
+}
+.btn-status {
+  min-width: 60px;
+  height: 26px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-right: 6px;
+  transition: all 0.15s ease;
+}
+.btn-status-on {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+.btn-status-on:hover {
+  background: #bbf7d0;
+  border-color: #4ade80;
+}
+.btn-status-off {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+.btn-status-off:hover {
+  background: #fde68a;
+  border-color: #fbbf24;
+}
+.btn-del {
+  height: 26px;
+  line-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+  background: #fff;
+  color: #6b7280;
+  border-color: #e5e7eb;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+.btn-del:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+.btn.danger {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+.btn.danger:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+/* ==================== 分页区 ==================== */
 .pager-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f2f5;
+}
+.pager-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+.pager-stat strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+.pager-divider {
+  color: #d1d5db;
 }
 .pager-compact {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-.pager-compact .btn {
+.pager-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+.select-sm {
   height: 28px;
-  line-height: 28px;
+  width: 64px;
+  padding: 0 6px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+.input-sm {
+  height: 28px;
+  width: 52px;
+  padding: 0 6px;
+  font-size: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+.btn-pager {
+  height: 28px;
+  line-height: 26px;
   padding: 0 10px;
   font-size: 12px;
+  border-radius: 6px;
 }
-.btn-enabled {
-  background: #dcfce7;
-  color: #166534;
+.btn-pager:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== 右侧面板 ==================== */
+.validate-box {
+  padding: 10px 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #6b7280;
+}
+.validate-box.validate-ok {
+  background: #f0fdf4;
   border-color: #86efac;
+  color: #166534;
 }
-.btn-enabled:hover {
-  background: #bbf7d0;
-}
-.btn-disabled {
-  background: #fee2e2;
-  color: #991b1b;
+.validate-box.validate-fail {
+  background: #fef2f2;
   border-color: #fca5a5;
+  color: #dc2626;
 }
-.btn-disabled:hover {
-  background: #fecaca;
-}
-.actions {
-  white-space: nowrap;
-}
-.actions .btn {
-  margin-right: 4px;
-}
-.actions .btn:last-child {
-  margin-right: 0;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
+.empty-hint {
+  text-align: center;
+  color: #9ca3af;
   font-size: 12px;
-  min-width: 920px;
+  padding: 16px 0;
 }
 .snapshot-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #f3f4f6;
+}
+.snapshot-row:last-child {
+  border-bottom: none;
+}
+.snapshot-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+}
+.snapshot-no {
+  font-weight: 600;
+  color: #1f2937;
+}
+.snapshot-meta {
+  color: #6b7280;
+  font-size: 11px;
+}
+.snapshot-time {
+  color: #9ca3af;
+  font-size: 10px;
 }
 .snapshot-row .btn-sm {
   height: 24px;
-  line-height: 24px;
-  padding: 0 8px;
+  line-height: 22px;
+  padding: 0 10px;
   font-size: 11px;
+  border-radius: 4px;
 }
-.toast {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  background: #111827;
-  color: #fff;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: 12px;
-  max-width: 420px;
-}
-@media (max-width: 1024px) {
-  .context-row-filters {
-    grid-template-columns: 1fr;
-  }
-  .context-actions-simple {
-    flex-direction: column;
-  }
-  .diff-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.unpublished-banner {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #fef3c7;
-  border: 1px solid #f59e0b;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #92400e;
+.log-item {
+  padding: 4px 0;
+  font-size: 11px;
+  color: #4b5563;
+  border-bottom: 1px solid #f9fafb;
   line-height: 1.5;
 }
-.unpublished-icon {
-  font-size: 14px;
-  flex-shrink: 0;
+.log-item:last-child {
+  border-bottom: none;
 }
+
+/* ==================== Toast ==================== */
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: toast-in 0.25s ease;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== 发布状态标记 ==================== */
 .badge-dot {
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background: #ef4444;
   border-radius: 50%;
   margin-left: 4px;
@@ -1085,37 +1465,435 @@ table {
   animation: badge-pulse 1.5s infinite;
 }
 @keyframes badge-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
 }
-.diff-summary-bar {
+
+/* ==================== 弹窗优化 ==================== */
+.modal-animate {
+  animation: modal-slide-in 0.2s ease-out;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+@keyframes modal-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-title strong {
+  font-size: 15px;
+  color: #1f2937;
+}
+.modal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.modal-icon.primary {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  color: #4f46e5;
+}
+.modal-icon.warn {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #b45309;
+}
+.btn-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.btn-close:hover {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+.modal-body-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* ==================== 弹窗内警告/提示 ==================== */
+.modal-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.modal-alert.info {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  color: #1e40af;
+}
+.modal-alert.warn {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+.alert-icon {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* ==================== 表单元素 ==================== */
+.form-field:last-child {
+  margin-bottom: 0;
+}
+.form-field-full {
+  grid-column: 1 / -1;
+}
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+.form-required {
+  color: #ef4444;
+}
+.form-optional {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.form-hint {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.input-full,
+.select-full {
+  width: 100%;
+}
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.textarea:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ==================== 弹窗按钮 ==================== */
+.btn-cancel {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
+.btn-cancel:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+}
+.btn-primary:disabled {
+  background: #93c5fd;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn-warn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.3);
+}
+.btn-warn:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.4);
+}
+.btn-warn:disabled {
+  background: #fcd34d;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.btn-icon-sm {
+  margin-right: 4px;
+}
+.btn-loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  margin-right: 6px;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== 校验状态 ==================== */
+.validate-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 12px;
-  background: #f0f4ff;
-  border: 1px solid #bfdbfe;
   border-radius: 6px;
   font-size: 12px;
-  color: #1e40af;
-  margin-bottom: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
 }
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9ca3af;
+}
+.validate-status.status-pending .status-dot {
+  background: #9ca3af;
+}
+.validate-status.status-ok {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+.validate-status.status-ok .status-dot {
+  background: #22c55e;
+}
+.validate-status.status-fail {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+.validate-status.status-fail .status-dot {
+  background: #ef4444;
+}
+
+/* ==================== 版本对比选择器 ==================== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: end;
+}
+.compare-vs {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* ==================== 快照详情 ==================== */
+.snapshot-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f2f5;
+}
+.snapshot-detail-no {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.snapshot-detail-count {
+  font-size: 13px;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+.snapshot-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.detail-item-full {
+  grid-column: 1 / -1;
+}
+.detail-label {
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.detail-value {
+  font-size: 13px;
+  color: #1f2937;
+}
+.snapshot-detail-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+.tip-icon {
+  font-size: 14px;
+}
+
+/* ==================== 差异对比优化 ==================== */
+.diff-summary-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #1e40af;
+  margin-bottom: 16px;
+}
+.diff-summary-icon {
+  font-size: 16px;
+}
+.diff-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.diff-title-icon {
+  font-weight: 700;
+}
+.diff-modified-key {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  padding: 4px 8px;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+.diff-key-icon {
+  font-size: 11px;
+}
+.th-label {
+  width: 40px;
+}
+.diff-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+.diff-empty-icon {
+  font-size: 32px;
+  color: #22c55e;
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 1024px) {
+  .context-row-filters {
+    grid-template-columns: 1fr;
+  }
+  .context-actions-simple {
+    flex-direction: column;
+  }
+  .rule-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input {
+    max-width: none;
+  }
+  .toolbar-actions {
+    justify-content: flex-start;
+  }
+  .pager-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+  .compare-vs {
+    padding: 4px 0;
+  }
+}
+
+/* ==================== 差异表格样式 ==================== */
 .diff-section {
   margin-bottom: 16px;
 }
-.diff-section-title {
-  font-size: 13px;
-  margin: 0 0 6px 0;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
 .diff-added-title {
-  background: #dcfce7;
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
   color: #166534;
 }
 .diff-deleted-title {
-  background: #fee2e2;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
   color: #991b1b;
 }
 .diff-modified-title {
-  background: #fef3c7;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
   color: #92400e;
 }
 .diff-table {
@@ -1125,13 +1903,15 @@ table {
 }
 .diff-table th,
 .diff-table td {
-  padding: 4px 8px;
+  padding: 8px 10px;
   border: 1px solid #e5e7eb;
   text-align: left;
 }
 .diff-table th {
-  background: #f9fafb;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   font-weight: 600;
+  font-size: 11px;
+  color: #475569;
 }
 .diff-row-added td {
   background: #f0fdf4;
@@ -1148,19 +1928,23 @@ table {
 .diff-changed {
   font-weight: 700;
   color: #b45309;
+  background: rgba(251, 191, 36, 0.15) !important;
 }
 .diff-label {
   font-weight: 600;
   color: #6b7280;
-  width: 30px;
+  width: 40px;
   text-align: center;
+  font-size: 11px;
 }
 .diff-modified-item {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e5e7eb;
 }
-.diff-modified-key {
-  font-size: 11px;
-  color: #6b7280;
-  margin-bottom: 4px;
+.diff-modified-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 </style>
