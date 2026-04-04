@@ -175,7 +175,7 @@ public class SpellCorrectionEngineTest {
     private SpellCorrectionEngine createEngine() {
         try {
             DictBasedSpellChecker checker = new DictBasedSpellChecker();
-            checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+            checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
             return new SpellCorrectionEngine(checker);
         } catch (Exception e) {
             throw new RuntimeException("Failed to create engine", e);

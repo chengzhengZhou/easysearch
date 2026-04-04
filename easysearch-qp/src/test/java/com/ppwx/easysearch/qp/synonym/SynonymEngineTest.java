@@ -91,18 +91,18 @@ public class SynonymEngineTest {
     }
 
     @Test
-    public void load_fromInputStream() {
+    public void load_fromInputStream() throws IOException {
         String txt = "测试词\t=>\t替换词\n";
-        engine.load(new ByteArrayInputStream(txt.getBytes(StandardCharsets.UTF_8)));
+        engine.load(() -> new ByteArrayInputStream(txt.getBytes(StandardCharsets.UTF_8)));
         List<SynonymMatch> matches = engine.match("测试词");
         assertEquals(1, matches.size());
         assertEquals("替换词", matches.get(0).getAttribute().getFirstTarget());
     }
 
     @Test
-    public void load_ignoresCommentAndEmptyLine() {
+    public void load_ignoresCommentAndEmptyLine() throws IOException {
         String txt = "# comment\n\n手环\tSYM\t手表\n";
-        engine.load(new ByteArrayInputStream(txt.getBytes(StandardCharsets.UTF_8)));
+        engine.load(() -> new ByteArrayInputStream(txt.getBytes(StandardCharsets.UTF_8)));
         List<SynonymMatch> matches = engine.match("手环");
         assertEquals(1, matches.size());
     }

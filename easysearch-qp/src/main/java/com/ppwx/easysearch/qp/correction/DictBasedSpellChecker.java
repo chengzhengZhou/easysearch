@@ -18,10 +18,7 @@ package com.ppwx.easysearch.qp.correction;
 
 import com.hankcs.hanlp.collection.trie.bintrie.BaseNode;
 import com.hankcs.hanlp.collection.trie.bintrie.BinTrie;
-import com.ppwx.easysearch.qp.source.PathTextLineSource;
-import com.ppwx.easysearch.qp.source.TextLineSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.ppwx.easysearch.qp.source.AbstractReloadableEngine;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -33,11 +30,12 @@ import java.util.*;
  * 核心流程：加载词典 → 构建 Trie + 拼音索引 + BK-Tree →
  * 对输入 query 做错误检测 → 候选生成 → 多信号打分 → 输出纠错结果。
  * <p>
+ * 继承 {@link AbstractReloadableEngine} 以支持统一的资源热加载管理。
  * 线程安全：各索引通过 volatile 引用保证重载时的线程可见性。
  */
-public class DictBasedSpellChecker {
+public class DictBasedSpellChecker extends AbstractReloadableEngine {
 
-    private static final Logger log = LoggerFactory.getLogger(DictBasedSpellChecker.class);
+    public static final String ENGINE_NAME = "spellCorrection";
 
     /** 用于快速判断某词是否在词典中 */
     private volatile BinTrie<Boolean> dictTrie;
@@ -62,13 +60,14 @@ public class DictBasedSpellChecker {
     }
 
     public DictBasedSpellChecker(CorrectionConfig config) {
+        super(ENGINE_NAME);
         this.config = config;
     }
 
     // ==================== 词典加载 ====================
 
     /**
-     * 从路径加载纠错词典。支持 classpath 资源路径和文件系统路径。
+     * 从输入流加载纠错词典。
      * <p>
      * 词典格式（TSV）：每行一个词，可选附带词频（tab 分隔）。
      * <pre>
@@ -76,31 +75,17 @@ public class DictBasedSpellChecker {
      * 手机壳	9800
      * 华为	15000
      * </pre>
-     *
-     * @param path 词典文件路径
+     * <p>
+     * 实现 {@link AbstractReloadableEngine#doLoad(InputStream)}，
+     * 通过 volatile 引用原子替换保证线程安全。
      */
-    public void load(String path) throws IOException {
-        load(new PathTextLineSource(path));
-    }
-
-    /**
-     * 从统一资源源加载纠错词典。
-     */
-    public void load(TextLineSource source) throws IOException {
-        try (InputStream is = source.openStream()) {
-            load(is);
-        }
-    }
-
-    /**
-     * 从输入流加载纠错词典。
-     */
-    public void load(InputStream inputStream) {
+    @Override
+    protected void doLoad(InputStream is) throws IOException {
         List<DictEntry> entries = new ArrayList<>();
         long maxFreq = 0;
 
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+                new InputStreamReader(is, StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -125,11 +110,14 @@ public class DictBasedSpellChecker {
                 }
                 entries.add(new DictEntry(word, null, freq));
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load spell correction dictionary", e);
         }
 
         buildIndex(entries, maxFreq);
+    }
+
+    @Override
+    protected boolean checkLoaded() {
+        return dictTrie != null;
     }
 
     /**
@@ -390,10 +378,6 @@ public class DictBasedSpellChecker {
     private Candidate findBestCandidate(String term) {
         List<Candidate> candidates = generateAndScoreCandidates(term);
         return candidates.isEmpty() ? null : candidates.get(0);
-    }
-
-    public boolean isLoaded() {
-        return dictTrie != null;
     }
 
     /**

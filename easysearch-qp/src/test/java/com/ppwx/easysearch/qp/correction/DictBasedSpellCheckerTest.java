@@ -19,6 +19,7 @@ package com.ppwx.easysearch.qp.correction;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
@@ -40,9 +41,9 @@ public class DictBasedSpellCheckerTest {
             "充电宝\t7500\n";
 
     @Test
-    public void load_fromInputStream() {
+    public void load_fromInputStream() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
         assertTrue(checker.isLoaded());
     }
 
@@ -65,27 +66,27 @@ public class DictBasedSpellCheckerTest {
     }
 
     @Test
-    public void check_nullQuery() {
+    public void check_nullQuery() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         CorrectionResult result = checker.check(null);
         assertFalse(result.hasCorrections());
     }
 
     @Test
-    public void check_emptyQuery() {
+    public void check_emptyQuery() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         CorrectionResult result = checker.check("");
         assertFalse(result.hasCorrections());
     }
 
     @Test
-    public void check_noErrors() {
+    public void check_noErrors() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         // "手机壳" 在词典中，不应报错
         CorrectionResult result = checker.check("手机壳");
@@ -93,9 +94,9 @@ public class DictBasedSpellCheckerTest {
     }
 
     @Test
-    public void check_knownPhrase() {
+    public void check_knownPhrase() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         // 词典中有的词组合
         CorrectionResult result = checker.check("华为手机壳");
@@ -106,9 +107,9 @@ public class DictBasedSpellCheckerTest {
     }
 
     @Test
-    public void check_typo_generatesCandidates() {
+    public void check_typo_generatesCandidates() throws IOException {
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         // "手机壳" -> "手击壳" (同音错别字，编辑距离1)
         CorrectionResult result = checker.check("手击壳");
@@ -125,24 +126,24 @@ public class DictBasedSpellCheckerTest {
     }
 
     @Test
-    public void check_customConfig() {
+    public void check_customConfig() throws IOException {
         CorrectionConfig config = new CorrectionConfig()
                 .setHighThreshold(0.9)
                 .setLowThreshold(0.1)
                 .setMaxEditDistance(3);
 
         DictBasedSpellChecker checker = new DictBasedSpellChecker(config);
-        checker.load(new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(TEST_DICT.getBytes(StandardCharsets.UTF_8)));
 
         CorrectionResult result = checker.check("手击壳");
         assertNotNull(result);
     }
 
     @Test
-    public void check_commentLinesIgnored() {
+    public void check_commentLinesIgnored() throws IOException {
         String dictWithComments = "# 这是注释\n手机壳\t9800\n# 另一个注释\n华为\t15000\n";
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(dictWithComments.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(dictWithComments.getBytes(StandardCharsets.UTF_8)));
 
         assertTrue(checker.isLoaded());
         CorrectionResult result = checker.check("手机壳");
@@ -150,20 +151,20 @@ public class DictBasedSpellCheckerTest {
     }
 
     @Test
-    public void check_emptyLinesIgnored() {
+    public void check_emptyLinesIgnored() throws IOException {
         String dictWithEmpty = "\n\n手机壳\t9800\n\n\n";
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
-        checker.load(new ByteArrayInputStream(dictWithEmpty.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(dictWithEmpty.getBytes(StandardCharsets.UTF_8)));
 
         assertTrue(checker.isLoaded());
     }
 
     @Test
-    public void check_invalidFrequencyParsed() {
+    public void check_invalidFrequencyParsed() throws IOException {
         String dictWithInvalid = "手机壳\t9800\n华为\tinvalid_freq\n";
         DictBasedSpellChecker checker = new DictBasedSpellChecker();
         // 不应抛异常
-        checker.load(new ByteArrayInputStream(dictWithInvalid.getBytes(StandardCharsets.UTF_8)));
+        checker.load(() -> new ByteArrayInputStream(dictWithInvalid.getBytes(StandardCharsets.UTF_8)));
         assertTrue(checker.isLoaded());
     }
 }

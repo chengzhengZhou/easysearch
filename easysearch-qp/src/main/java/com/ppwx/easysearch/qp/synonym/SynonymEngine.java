@@ -18,8 +18,7 @@ package com.ppwx.easysearch.qp.synonym;
 
 import com.hankcs.hanlp.collection.trie.bintrie.BaseNode;
 import com.hankcs.hanlp.collection.trie.bintrie.BinTrie;
-import com.ppwx.easysearch.qp.source.PathTextLineSource;
-import com.ppwx.easysearch.qp.source.TextLineSource;
+import com.ppwx.easysearch.qp.source.AbstractReloadableEngine;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
@@ -35,10 +34,13 @@ import java.util.List;
  * 同义词引擎：基于 HanLP BinTrie 的匹配结构，从简化 txt 加载，支持最长匹配。
  * <p>
  * txt 格式：源词 \t 方向(=>|<=|SYM) \t 目标1,目标2,... ；空行和 # 开头行忽略。
+ * <p>
+ * 继承 {@link AbstractReloadableEngine} 以支持统一的资源热加载管理。
  */
-public class SynonymEngine {
+public class SynonymEngine extends AbstractReloadableEngine {
 
     public static final int DEFAULT_MAX_WORD_LEN = 20;
+    public static final String ENGINE_NAME = "synonym";
 
     private volatile BinTrie<SynonymAttribute> trie;
     private final int maxWordLen;
@@ -48,32 +50,21 @@ public class SynonymEngine {
     }
 
     public SynonymEngine(int maxWordLen) {
+        super(ENGINE_NAME);
         this.maxWordLen = Math.max(1, maxWordLen);
     }
 
     /**
-     * 从路径加载同义词表。支持 classpath 资源路径和文件系统路径。
+     * 从输入流加载同义词表。格式：源词 \t 方向 \t 目标1,目标2,...
+     * <p>
+     * 实现 {@link AbstractReloadableEngine#doLoad(InputStream)}，
+     * 通过 volatile 引用原子替换保证线程安全。
      */
-    public void load(String path) throws IOException {
-        load(new PathTextLineSource(path));
-    }
-
-    /**
-     * 从统一资源源加载同义词表（如文件、数据库等）。
-     */
-    public void load(TextLineSource source) throws IOException {
-        try (InputStream is = source.openStream()) {
-            load(is);
-        }
-    }
-
-    /**
-     * 从输入流加载。格式：源词 \t 方向 \t 目标1,目标2,...
-     */
-    public void load(InputStream inputStream) {
+    @Override
+    protected void doLoad(InputStream is) throws IOException {
         BinTrie<SynonymAttribute> newTrie = new BinTrie<>();
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+                new InputStreamReader(is, StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -82,10 +73,13 @@ public class SynonymEngine {
                 }
                 parseAndPut(newTrie, line);
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load synonym dictionary", e);
         }
         this.trie = newTrie;
+    }
+
+    @Override
+    protected boolean checkLoaded() {
+        return trie != null;
     }
 
     private static void parseAndPut(BinTrie<SynonymAttribute> trie, String line) {
@@ -182,10 +176,5 @@ public class SynonymEngine {
         }
 
         return result;
-    }
-
-    
-    public boolean isLoaded() {
-        return trie != null;
     }
 }

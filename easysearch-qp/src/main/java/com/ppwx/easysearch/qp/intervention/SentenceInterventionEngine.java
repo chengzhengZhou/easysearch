@@ -16,8 +16,7 @@
 
 package com.ppwx.easysearch.qp.intervention;
 
-import com.ppwx.easysearch.qp.source.PathTextLineSource;
-import com.ppwx.easysearch.qp.source.TextLineSource;
+import com.ppwx.easysearch.qp.source.AbstractReloadableEngine;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
@@ -38,34 +37,30 @@ import java.util.List;
  * - 目标句：命中后改写成的 query
  * - 匹配类型：EXACT | PREFIX | CONTAINS，默认 EXACT
  * - 优先级：可选，默认为 0；命中多个时选优先级最高的一条
+ * <p>
+ * 继承 {@link AbstractReloadableEngine} 以支持统一的资源热加载管理。
  */
-public class SentenceInterventionEngine {
+public class SentenceInterventionEngine extends AbstractReloadableEngine {
+
+    public static final String ENGINE_NAME = "sentenceIntervention";
 
     private volatile List<SentenceRule> rules = new ArrayList<>();
 
-    /**
-     * 从路径加载整句干预规则。支持 classpath 资源路径和文件系统路径。
-     */
-    public void load(String path) throws IOException {
-        load(new PathTextLineSource(path));
+    public SentenceInterventionEngine() {
+        super(ENGINE_NAME);
     }
 
     /**
-     * 从统一资源源加载整句干预规则（如文件、数据库等）。
+     * 从输入流加载整句干预规则。格式：源句 \t 目标句 \t 匹配类型 \t 优先级
+     * <p>
+     * 实现 {@link AbstractReloadableEngine#doLoad(InputStream)}，
+     * 通过 volatile 引用原子替换保证线程安全。
      */
-    public void load(TextLineSource source) throws IOException {
-        try (InputStream is = source.openStream()) {
-            load(is);
-        }
-    }
-
-    /**
-     * 从输入流加载。格式：源句 \t 目标句 \t 匹配类型 \t 优先级
-     */
-    public void load(InputStream inputStream) {
+    @Override
+    protected void doLoad(InputStream is) throws IOException {
         List<SentenceRule> newRules = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+                new InputStreamReader(is, StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -77,12 +72,15 @@ public class SentenceInterventionEngine {
                     newRules.add(rule);
                 }
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load sentence intervention rules", e);
         }
         // 按优先级从高到低排序，优先匹配优先级高的规则
         newRules.sort(Comparator.comparingInt(SentenceRule::getPriority).reversed());
         rules = newRules;
+    }
+
+    @Override
+    protected boolean checkLoaded() {
+        return !rules.isEmpty();
     }
 
     private static SentenceRule parseRule(String line) {
@@ -136,13 +134,6 @@ public class SentenceInterventionEngine {
             }
         }
         return query;
-    }
-
-    /**
-     * 当前是否已加载规则。
-     */
-    public boolean isLoaded() {
-        return !rules.isEmpty();
     }
 
     /**

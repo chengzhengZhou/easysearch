@@ -18,8 +18,7 @@ package com.ppwx.easysearch.qp.intervention;
 
 import com.hankcs.hanlp.collection.trie.bintrie.BaseNode;
 import com.hankcs.hanlp.collection.trie.bintrie.BinTrie;
-import com.ppwx.easysearch.qp.source.PathTextLineSource;
-import com.ppwx.easysearch.qp.source.TextLineSource;
+import com.ppwx.easysearch.qp.source.AbstractReloadableEngine;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
@@ -39,10 +38,13 @@ import java.util.List;
  * - 源词：在 query 中匹配的片段
  * - 目标词：用于替换的文本
  * - 优先级：可选，默认为 0；同一源词多条规则时，仅保留优先级最高的一条
+ * <p>
+ * 继承 {@link AbstractReloadableEngine} 以支持统一的资源热加载管理。
  */
-public class TermInterventionEngine {
+public class TermInterventionEngine extends AbstractReloadableEngine {
 
     public static final int DEFAULT_MAX_WORD_LEN = 20;
+    public static final String ENGINE_NAME = "termIntervention";
 
     private volatile BinTrie<TermAttribute> trie;
     private final int maxWordLen;
@@ -52,32 +54,21 @@ public class TermInterventionEngine {
     }
 
     public TermInterventionEngine(int maxWordLen) {
+        super(ENGINE_NAME);
         this.maxWordLen = Math.max(1, maxWordLen);
     }
 
     /**
-     * 从路径加载干预词表。支持 classpath 资源路径和文件系统路径。
+     * 从输入流加载干预词表。格式：源词 \t 目标词 \t 优先级
+     * <p>
+     * 实现 {@link AbstractReloadableEngine#doLoad(InputStream)}，
+     * 通过 volatile 引用原子替换保证线程安全。
      */
-    public void load(String path) throws IOException {
-        load(new PathTextLineSource(path));
-    }
-
-    /**
-     * 从统一资源源加载干预词表（如文件、数据库等）。
-     */
-    public void load(TextLineSource source) throws IOException {
-        try (InputStream is = source.openStream()) {
-            load(is);
-        }
-    }
-
-    /**
-     * 从输入流加载。格式：源词 \t 目标词 \t 优先级
-     */
-    public void load(InputStream inputStream) {
+    @Override
+    protected void doLoad(InputStream is) throws IOException {
         BinTrie<TermAttribute> newTrie = new BinTrie<>();
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+                new InputStreamReader(is, StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -86,10 +77,13 @@ public class TermInterventionEngine {
                 }
                 parseAndPut(newTrie, line);
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load term intervention dictionary", e);
         }
         this.trie = newTrie;
+    }
+
+    @Override
+    protected boolean checkLoaded() {
+        return trie != null;
     }
 
     private static void parseAndPut(BinTrie<TermAttribute> trie, String line) {
@@ -188,11 +182,6 @@ public class TermInterventionEngine {
             sb.append(query, cursor, query.length());
         }
         return sb.toString();
-    }
-
-    
-    public boolean isLoaded() {
-        return trie != null;
     }
 
     /**
