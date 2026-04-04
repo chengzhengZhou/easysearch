@@ -299,6 +299,11 @@ async function updateRuleCell(rule: any) {
   await loadDiffSummary()
 }
 
+function toggleEnabled(rule: any) {
+  rule.enabled = Number(rule.enabled) === 1 ? 0 : 1
+  updateRuleCell(rule)
+}
+
 async function reload() {
   try {
     await http.post('/api/reload')
@@ -551,18 +556,17 @@ onMounted(async () => {
                       @change="toggleAll(($event.target as HTMLInputElement).checked)"
                     />
                   </th>
-                  <th>#</th>
-                  <th>source</th>
-                  <th>target</th>
-                  <th v-if="mode === 'sentence'">matchType</th>
-                  <th>priority</th>
-                  <th>enabled</th>
+                  <th>序号</th>
+                  <th>源文本</th>
+                  <th>目标文本</th>
+                  <th v-if="mode === 'sentence'">匹配类型</th>
+                  <th>优先级</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-if="pagedRows.rows.length === 0">
-                  <td :colspan="mode === 'sentence' ? 8 : 7" style="text-align: center; color: #5f6b7a; padding: 16px">
+                  <td :colspan="mode === 'sentence' ? 7 : 6" style="text-align: center; color: #5f6b7a; padding: 16px">
                     暂无规则
                   </td>
                 </tr>
@@ -584,27 +588,25 @@ onMounted(async () => {
                   </td>
                   <td v-if="mode === 'sentence'">
                     <select class="select" :disabled="!resourceSetId" v-model="(r as any).matchType" @change="updateRuleCell(r)">
-                      <option value="EXACT">EXACT</option>
-                      <option value="PREFIX">PREFIX</option>
-                      <option value="CONTAINS">CONTAINS</option>
+                      <option value="EXACT">精确</option>
+                      <option value="PREFIX">前缀</option>
+                      <option value="CONTAINS">包含</option>
                     </select>
                   </td>
                   <td>
                     <input class="input" :disabled="!resourceSetId" type="number" v-model.number="(r as any).priority" @blur="updateRuleCell(r)" />
                   </td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      :disabled="!resourceSetId"
-                      :checked="Number((r as any).enabled) === 1"
-                      @change="
-                        ;(r as any).enabled = ($event.target as HTMLInputElement).checked ? 1 : 0
-                        updateRuleCell(r)
-                      "
-                    />
-                  </td>
                   <td class="actions">
-                    <button class="btn" type="button" :disabled="!resourceSetId" @click="removeRule((r as any).id)">删除</button>
+                    <button
+                      class="btn"
+                      :class="Number((r as any).enabled) === 1 ? 'btn-enabled' : 'btn-disabled'"
+                      type="button"
+                      :disabled="!resourceSetId"
+                      @click="toggleEnabled(r)"
+                    >
+                      {{ Number((r as any).enabled) === 1 ? '已启用' : '已停用' }}
+                    </button>
+                    <button class="btn danger" type="button" :disabled="!resourceSetId" @click="removeRule((r as any).id)">删除</button>
                   </td>
                 </tr>
               </tbody>
@@ -843,7 +845,7 @@ onMounted(async () => {
                       <td :class="{ 'diff-changed': m.before?.enabled !== m.after?.enabled }">{{ m.before?.enabled }}</td>
                     </tr>
                     <tr class="diff-row-after">
-                      <td class="diff-label">A</td>
+                      <td class="diff-label">新</td>
                       <td :class="{ 'diff-changed': m.before?.sourceText !== m.after?.sourceText }">{{ m.after?.sourceText }}</td>
                       <td :class="{ 'diff-changed': m.before?.targetText !== m.after?.targetText }">{{ m.after?.targetText }}</td>
                       <td v-if="mode === 'sentence'" :class="{ 'diff-changed': m.before?.matchType !== m.after?.matchType }">{{ m.after?.matchType }}</td>
@@ -988,6 +990,31 @@ onMounted(async () => {
   line-height: 28px;
   padding: 0 10px;
   font-size: 12px;
+}
+.btn-enabled {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+.btn-enabled:hover {
+  background: #bbf7d0;
+}
+.btn-disabled {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+.btn-disabled:hover {
+  background: #fecaca;
+}
+.actions {
+  white-space: nowrap;
+}
+.actions .btn {
+  margin-right: 4px;
+}
+.actions .btn:last-child {
+  margin-right: 0;
 }
 table {
   width: 100%;
