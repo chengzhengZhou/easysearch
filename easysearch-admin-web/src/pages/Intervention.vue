@@ -66,7 +66,7 @@ const addModalOpen = ref(false)
 const addForm = ref<any>({ sourceText: '', targetText: '', matchType: 'EXACT', priority: 0, enabled: 1 })
 
 const modeLabel = computed(() => {
-  return mode.value === 'sentence' ? '整句干预（qp_rule_intervention_sentence）' : '词表干预（qp_rule_intervention_term）'
+  return mode.value === 'sentence' ? '整句干预' : '词表干预'
 })
 
 const currentResourceSet = computed(() => resourceSets.value.find((r) => r.id === resourceSetId.value) ?? null)
@@ -538,14 +538,12 @@ onMounted(async () => {
               <button class="btn ghost" type="button" @click="reload">Reload</button>
             </div>
           </div>
-          <div class="hint">查看模式默认展示线上生效版本（current_version_id），可切换查看历史版本（只读）。点击“编辑”进入工作区（Draft）进行编辑与发布。</div>
         </div>
 
         <div class="panel">
           <div class="chip-group">
             <button class="chip" :class="{ active: mode === 'sentence' }" type="button" @click="mode = 'sentence'">整句规则</button>
             <button class="chip" :class="{ active: mode === 'term' }" type="button" @click="mode = 'term'">词表规则</button>
-            <span class="hint">上下文区 + 规则区 + 预览/发布侧栏</span>
           </div>
 
           <div class="rule-toolbar">
@@ -554,16 +552,6 @@ onMounted(async () => {
             <button class="btn" type="button" :disabled="!isEditable" @click="batchEnable(true)">启用</button>
             <button class="btn" type="button" :disabled="!isEditable" @click="batchEnable(false)">停用</button>
             <button class="btn danger" type="button" :disabled="!isEditable" @click="batchDelete">删除</button>
-            <div class="pager-compact">
-              <span class="hint">页</span>
-              <select v-model.number="pageSize" class="select" style="width: 72px">
-                <option :value="10">10</option>
-                <option :value="20">20</option>
-                <option :value="50">50</option>
-              </select>
-              <span class="hint">码</span>
-              <input v-model.number="page" class="input" style="width: 68px" />
-            </div>
             <span class="hint" id="editabilityHint">{{ isEditable ? '工作区可编辑' : '只读查看' }}</span>
           </div>
 
@@ -639,14 +627,29 @@ onMounted(async () => {
             </table>
           </div>
 
-          <div class="hint" style="margin-top: 6px">当前：{{ modeLabel }}；total={{ pagedRows.total }} pages={{ pagedRows.totalPages }}</div>
+          <div class="pager-bottom">
+            <div class="hint">当前：{{ modeLabel }}；共 {{ pagedRows.total }} 条，{{ pagedRows.totalPages }} 页</div>
+            <div class="pager-compact">
+              <span class="hint">每页</span>
+              <select v-model.number="pageSize" class="select" style="width: 72px">
+                <option :value="10">10</option>
+                <option :value="20">20</option>
+                <option :value="50">50</option>
+              </select>
+              <span class="hint">条，第</span>
+              <input v-model.number="page" class="input" style="width: 68px" />
+              <span class="hint">页</span>
+              <button class="btn" type="button" :disabled="page <= 1" @click="page = Math.max(1, page - 1)">上一页</button>
+              <button class="btn" type="button" :disabled="page >= pagedRows.totalPages" @click="page = Math.min(pagedRows.totalPages, page + 1)">下一页</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div>
         <div class="panel">
-          <h3>预览（以当前查看版本规则模拟）</h3>
-          <input v-model="previewInput" class="input" placeholder="输入 query 预览改写结果" />
+          <h3>预览</h3>
+          <input v-model="previewInput" class="input" placeholder="输入 query" />
           <button class="btn primary" type="button" style="margin-top: 8px" :disabled="!viewingVersionId" @click="preview">执行预览</button>
           <div class="preview-box">
             <pre style="margin: 0; white-space: pre-wrap">{{ previewOutput }}</pre>
@@ -850,12 +853,31 @@ onMounted(async () => {
 }
 .rule-toolbar {
   display: grid;
-  grid-template-columns: minmax(220px, 1.2fr) auto auto auto auto auto auto auto;
+  grid-template-columns: minmax(220px, 1.2fr) auto auto auto auto auto;
   gap: 6px;
   align-items: center;
   margin-bottom: 6px;
 }
 .rule-toolbar :is(.btn, .chip) {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.pager-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+.pager-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pager-compact .btn {
   height: 28px;
   line-height: 28px;
   padding: 0 10px;
