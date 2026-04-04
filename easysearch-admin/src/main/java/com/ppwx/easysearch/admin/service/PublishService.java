@@ -169,7 +169,11 @@ public class PublishService {
         // 2. 按模块复制规则到快照表
         int ruleCount = copyRulesToSnapshot(locked.getModuleType(), resourceSetId, snapshot);
         snapshot.setRuleCount(ruleCount);
-        snapshotMapper.insert(snapshot);
+        // 注意：copyRulesToSnapshot 内部对于 intervention 模块已经执行过 insert，
+        // 只有当 snapshot.getId() 为 null 时才需要再次 insert（其他模块场景）
+        if (snapshot.getId() == null) {
+            snapshotMapper.insert(snapshot);
+        }
 
         // 3. 更新生效指针（放在最后）
         locked.setCurrentSnapshotId(snapshot.getId());

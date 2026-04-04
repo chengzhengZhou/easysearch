@@ -34,19 +34,28 @@ public class DiffService {
     private final EntityRuleMapper entityRuleMapper;
     private final TokenDictRuleMapper tokenDictRuleMapper;
     private final MetaRuleMapper metaRuleMapper;
+    private final SnapshotInterventionSentenceMapper snapshotSentenceMapper;
+    private final SnapshotInterventionTermMapper snapshotTermMapper;
+    private final ResourceSetMapper resourceSetMapper;
 
     public DiffService(InterventionSentenceRuleMapper sentenceRuleMapper,
                        InterventionTermRuleMapper termRuleMapper,
                        SynonymRuleMapper synonymRuleMapper,
                        EntityRuleMapper entityRuleMapper,
                        TokenDictRuleMapper tokenDictRuleMapper,
-                       MetaRuleMapper metaRuleMapper) {
+                       MetaRuleMapper metaRuleMapper,
+                       SnapshotInterventionSentenceMapper snapshotSentenceMapper,
+                       SnapshotInterventionTermMapper snapshotTermMapper,
+                       ResourceSetMapper resourceSetMapper) {
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
         this.synonymRuleMapper = synonymRuleMapper;
         this.entityRuleMapper = entityRuleMapper;
         this.tokenDictRuleMapper = tokenDictRuleMapper;
         this.metaRuleMapper = metaRuleMapper;
+        this.snapshotSentenceMapper = snapshotSentenceMapper;
+        this.snapshotTermMapper = snapshotTermMapper;
+        this.resourceSetMapper = resourceSetMapper;
     }
 
     public DiffResult diff(Long currentResourceSetId, Long baseSnapshotId, RuleModule module, InterventionMode mode) {
@@ -54,13 +63,41 @@ public class DiffService {
             InterventionMode m = mode == null ? InterventionMode.sentence : mode;
             if (m == InterventionMode.sentence) {
                 List<InterventionSentenceRuleDO> cur = sentenceRuleMapper.selectList(new LambdaQueryWrapper<InterventionSentenceRuleDO>().eq(InterventionSentenceRuleDO::getResourceSetId, currentResourceSetId));
-                // TODO: 从快照表读取 base 数据
                 List<InterventionSentenceRuleDO> base = new ArrayList<>();
-                return diffByKey(cur, base, r -> safe(r.getSourceText()));
+                if (baseSnapshotId != null) {
+                    List<SnapshotInterventionSentenceDO> snapRules = snapshotSentenceMapper.selectList(
+                            new LambdaQueryWrapper<SnapshotInterventionSentenceDO>().eq(SnapshotInterventionSentenceDO::getSnapshotId, baseSnapshotId));
+                    for (SnapshotInterventionSentenceDO s : snapRules) {
+                        InterventionSentenceRuleDO r = new InterventionSentenceRuleDO();
+                        r.setId(s.getSourceRuleId());
+                        r.setSourceText(s.getSourceText());
+                        r.setTargetText(s.getTargetText());
+                        r.setMatchType(s.getMatchType());
+                        r.setPriority(s.getPriority());
+                        r.setEnabled(s.getEnabled());
+                        r.setRemark(s.getRemark());
+                        base.add(r);
+                    }
+                }
+                return diffSentenceByKey(cur, base);
             }
             List<InterventionTermRuleDO> cur = termRuleMapper.selectList(new LambdaQueryWrapper<InterventionTermRuleDO>().eq(InterventionTermRuleDO::getResourceSetId, currentResourceSetId));
             List<InterventionTermRuleDO> base = new ArrayList<>();
-            return diffByKey(cur, base, r -> safe(r.getSourceText()));
+            if (baseSnapshotId != null) {
+                List<SnapshotInterventionTermDO> snapRules = snapshotTermMapper.selectList(
+                        new LambdaQueryWrapper<SnapshotInterventionTermDO>().eq(SnapshotInterventionTermDO::getSnapshotId, baseSnapshotId));
+                for (SnapshotInterventionTermDO s : snapRules) {
+                    InterventionTermRuleDO r = new InterventionTermRuleDO();
+                    r.setId(s.getSourceRuleId());
+                    r.setSourceText(s.getSourceText());
+                    r.setTargetText(s.getTargetText());
+                    r.setPriority(s.getPriority());
+                    r.setEnabled(s.getEnabled());
+                    r.setRemark(s.getRemark());
+                    base.add(r);
+                }
+            }
+            return diffTermByKey(cur, base);
         }
         if (module == RuleModule.synonym) {
             List<SynonymRuleDO> cur = synonymRuleMapper.selectList(new LambdaQueryWrapper<SynonymRuleDO>().eq(SynonymRuleDO::getResourceSetId, currentResourceSetId));
@@ -140,6 +177,101 @@ public class DiffService {
         return m;
     }
 
+    /**
+     * 整句规则的字段级比较
+     */
+    private DiffResult diffSentenceByKey(List<InterventionSentenceRuleDO> current, List<InterventionSentenceRuleDO> base) {
+        Map<Long, InterventionSentenceRuleDO> curMap = new LinkedHashMap<>();
+        for (InterventionSentenceRuleDO r : current) {
+            if (r.getId() != null) curMap.put(r.getId(), r);
+        }
+        Map<Long, InterventionSentenceRuleDO> baseMap = new LinkedHashMap<>();
+        for (InterventionSentenceRuleDO r : base) {
+            if (r.getId() != null) baseMap.put(r.getId(), r);
+        }
+
+        List<Object> added = new ArrayList<>();
+        List<Object> deleted = new ArrayList<>();
+        List<ModifiedPair> modified = new ArrayList<>();
+
+        for (Map.Entry<Long, InterventionSentenceRuleDO> e : curMap.entrySet()) {
+            if (!baseMap.containsKey(e.getKey())) {
+                added.add(e.getValue());
+            } else {
+                InterventionSentenceRuleDO c = e.getValue();
+                InterventionSentenceRuleDO b = baseMap.get(e.getKey());
+                if (!sentenceFieldsEqual(c, b)) {
+                    modified.add(ModifiedPair.of(String.valueOf(e.getKey()), b, c));
+                }
+            }
+        }
+        for (Map.Entry<Long, InterventionSentenceRuleDO> e : baseMap.entrySet()) {
+            if (!curMap.containsKey(e.getKey())) {
+                deleted.add(e.getValue());
+            }
+        }
+        return DiffResult.of(added, deleted, modified);
+    }
+
+    /**
+     * 比较整句规则的业务字段是否相同
+     */
+    private boolean sentenceFieldsEqual(InterventionSentenceRuleDO a, InterventionSentenceRuleDO b) {
+        return Objects.equals(a.getSourceText(), b.getSourceText())
+                && Objects.equals(a.getTargetText(), b.getTargetText())
+                && Objects.equals(a.getMatchType(), b.getMatchType())
+                && Objects.equals(a.getPriority(), b.getPriority())
+                && Objects.equals(a.getEnabled(), b.getEnabled())
+                && Objects.equals(a.getRemark(), b.getRemark());
+    }
+
+    /**
+     * 词表规则的字段级比较
+     */
+    private DiffResult diffTermByKey(List<InterventionTermRuleDO> current, List<InterventionTermRuleDO> base) {
+        Map<Long, InterventionTermRuleDO> curMap = new LinkedHashMap<>();
+        for (InterventionTermRuleDO r : current) {
+            if (r.getId() != null) curMap.put(r.getId(), r);
+        }
+        Map<Long, InterventionTermRuleDO> baseMap = new LinkedHashMap<>();
+        for (InterventionTermRuleDO r : base) {
+            if (r.getId() != null) baseMap.put(r.getId(), r);
+        }
+
+        List<Object> added = new ArrayList<>();
+        List<Object> deleted = new ArrayList<>();
+        List<ModifiedPair> modified = new ArrayList<>();
+
+        for (Map.Entry<Long, InterventionTermRuleDO> e : curMap.entrySet()) {
+            if (!baseMap.containsKey(e.getKey())) {
+                added.add(e.getValue());
+            } else {
+                InterventionTermRuleDO c = e.getValue();
+                InterventionTermRuleDO b = baseMap.get(e.getKey());
+                if (!termFieldsEqual(c, b)) {
+                    modified.add(ModifiedPair.of(String.valueOf(e.getKey()), b, c));
+                }
+            }
+        }
+        for (Map.Entry<Long, InterventionTermRuleDO> e : baseMap.entrySet()) {
+            if (!curMap.containsKey(e.getKey())) {
+                deleted.add(e.getValue());
+            }
+        }
+        return DiffResult.of(added, deleted, modified);
+    }
+
+    /**
+     * 比较词表规则的业务字段是否相同
+     */
+    private boolean termFieldsEqual(InterventionTermRuleDO a, InterventionTermRuleDO b) {
+        return Objects.equals(a.getSourceText(), b.getSourceText())
+                && Objects.equals(a.getTargetText(), b.getTargetText())
+                && Objects.equals(a.getPriority(), b.getPriority())
+                && Objects.equals(a.getEnabled(), b.getEnabled())
+                && Objects.equals(a.getRemark(), b.getRemark());
+    }
+
     public static class ModifiedPair {
         private String key;
         private Object before;
@@ -214,6 +346,74 @@ public class DiffService {
         public void setModified(List<ModifiedPair> modified) {
             this.modified = modified;
         }
+    }
+
+    /**
+     * 变更摘要：当前规则表 vs 线上快照的轻量统计
+     */
+    public DiffSummary diffSummary(Long resourceSetId, RuleModule module) {
+        if (module != RuleModule.intervention) {
+            throw new BizException(400, "diff-summary not supported for module: " + module);
+        }
+
+        ResourceSetDO rs = resourceSetMapper.selectById(resourceSetId);
+        if (rs == null) {
+            throw new BizException(404, "resource set not found");
+        }
+
+        Long snapshotId = rs.getCurrentSnapshotId();
+
+        // sentence diff
+        DiffResult sentenceDiff = diff(resourceSetId, snapshotId, module, InterventionMode.sentence);
+        // term diff
+        DiffResult termDiff = diff(resourceSetId, snapshotId, module, InterventionMode.term);
+
+        int addedCount = sentenceDiff.getAdded().size() + termDiff.getAdded().size();
+        int deletedCount = sentenceDiff.getDeleted().size() + termDiff.getDeleted().size();
+        int modifiedCount = sentenceDiff.getModified().size() + termDiff.getModified().size();
+
+        int currentSentenceCount = sentenceRuleMapper.countByResourceSetId(resourceSetId);
+        int currentTermCount = termRuleMapper.countByResourceSetId(resourceSetId);
+
+        return DiffSummary.of(
+                addedCount > 0 || deletedCount > 0 || modifiedCount > 0,
+                addedCount, deletedCount, modifiedCount,
+                currentSentenceCount + currentTermCount,
+                snapshotId == null
+        );
+    }
+
+    public static class DiffSummary {
+        private boolean hasChanges;
+        private int addedCount;
+        private int deletedCount;
+        private int modifiedCount;
+        private int currentRuleCount;
+        private boolean noSnapshot;
+
+        public static DiffSummary of(boolean hasChanges, int addedCount, int deletedCount, int modifiedCount, int currentRuleCount, boolean noSnapshot) {
+            DiffSummary s = new DiffSummary();
+            s.hasChanges = hasChanges;
+            s.addedCount = addedCount;
+            s.deletedCount = deletedCount;
+            s.modifiedCount = modifiedCount;
+            s.currentRuleCount = currentRuleCount;
+            s.noSnapshot = noSnapshot;
+            return s;
+        }
+
+        public boolean isHasChanges() { return hasChanges; }
+        public void setHasChanges(boolean hasChanges) { this.hasChanges = hasChanges; }
+        public int getAddedCount() { return addedCount; }
+        public void setAddedCount(int addedCount) { this.addedCount = addedCount; }
+        public int getDeletedCount() { return deletedCount; }
+        public void setDeletedCount(int deletedCount) { this.deletedCount = deletedCount; }
+        public int getModifiedCount() { return modifiedCount; }
+        public void setModifiedCount(int modifiedCount) { this.modifiedCount = modifiedCount; }
+        public int getCurrentRuleCount() { return currentRuleCount; }
+        public void setCurrentRuleCount(int currentRuleCount) { this.currentRuleCount = currentRuleCount; }
+        public boolean isNoSnapshot() { return noSnapshot; }
+        public void setNoSnapshot(boolean noSnapshot) { this.noSnapshot = noSnapshot; }
     }
 }
 

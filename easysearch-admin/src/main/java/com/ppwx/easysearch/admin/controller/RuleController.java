@@ -26,6 +26,7 @@ import com.ppwx.easysearch.admin.domain.model.InterventionSentenceRuleDO;
 import com.ppwx.easysearch.admin.domain.model.InterventionTermRuleDO;
 import com.ppwx.easysearch.admin.service.InterventionRuleService;
 import com.ppwx.easysearch.admin.service.PublishService;
+import com.ppwx.easysearch.admin.service.DiffService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,13 +45,16 @@ import java.util.Map;
 public class RuleController {
     private final InterventionRuleService interventionRuleService;
     private final PublishService publishService;
+    private final DiffService diffService;
     private final ObjectMapper objectMapper;
 
     public RuleController(InterventionRuleService interventionRuleService,
                           PublishService publishService,
+                          DiffService diffService,
                           ObjectMapper objectMapper) {
         this.interventionRuleService = interventionRuleService;
         this.publishService = publishService;
+        this.diffService = diffService;
         this.objectMapper = objectMapper;
     }
 
@@ -258,5 +262,14 @@ public class RuleController {
                                         @RequestParam(defaultValue = "1") long page,
                                         @RequestParam(defaultValue = "50") long pageSize) {
         return ApiResponse.ok(publishService.listSnapshots(resourceSetId, page, pageSize));
+    }
+
+    // ========== 变更摘要 ==========
+
+    @GetMapping("/diff-summary")
+    @PreAuthorize("hasAnyRole('VIEWER','EDITOR','PUBLISHER','ADMIN')")
+    public ApiResponse<DiffService.DiffSummary> diffSummary(@PathVariable("id") @NotNull Long resourceSetId,
+                                                             @RequestParam(value = "module", defaultValue = "intervention") RuleModule module) {
+        return ApiResponse.ok(diffService.diffSummary(resourceSetId, module));
     }
 }

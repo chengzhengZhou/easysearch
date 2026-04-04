@@ -21,6 +21,16 @@ const validateSummary = ref<string>('尚未校验')
 const toast = ref<string>('')
 const loading = ref(false)
 
+// 自动清除 toast
+function showToast(msg: string, duration = 3000) {
+  toast.value = msg
+  if (duration > 0) {
+    setTimeout(() => {
+      if (toast.value === msg) toast.value = ''
+    }, duration)
+  }
+}
+
 type PageResult<T> = { page: number; pageSize: number; total: number; items: T[] }
 type ResourceSet = { id: number; name: string; moduleType: string; env: string; scene: string; currentSnapshotId?: number | null }
 type Snapshot = { id: number; snapshotNo: number; changeLog?: string | null; ruleCount: number; publishedBy: string; publishedAt: string }
@@ -63,6 +73,16 @@ const addForm = ref<any>({ sourceText: '', targetText: '', matchType: 'EXACT', p
 const snapshotViewerOpen = ref(false)
 const viewingSnapshot = ref<Snapshot | null>(null)
 
+type DiffSummary = {
+  hasChanges: boolean
+  addedCount: number
+  deletedCount: number
+  modifiedCount: number
+  currentRuleCount: number
+  noSnapshot: boolean
+}
+const diffSummaryData = ref<DiffSummary | null>(null)
+
 const modeLabel = computed(() => {
   return mode.value === 'sentence' ? '整句干预' : '词表干预'
 })
@@ -76,7 +96,16 @@ const topContext = computed(() => {
   const rs = currentResourceSet.value
   if (!rs) return ''
   const snap = currentSnapshot.value
-  return `资源集：${rs.name} ｜ scene：${rs.scene} ｜ env：${rs.env} ｜ 线上快照：${snap ? `#${snap.snapshotNo}` : '无'}`
+  let base = `资源集：${rs.name} ｜ scene：${rs.scene} ｜ env：${rs.env} ｜ 线上快照：${snap ? `#${snap.snapshotNo}` : '无'}`
+  const ds = diffSummaryData.value
+  if (ds && ds.hasChanges) {
+    const parts: string[] = []
+    if (ds.addedCount > 0) parts.push(`新增${ds.addedCount}`)
+    if (ds.deletedCount > 0) parts.push(`删除${ds.deletedCount}`)
+    if (ds.modifiedCount > 0) parts.push(`修改${ds.modifiedCount}`)
+    base += ` ｜ ⚠ 未发布变更：${parts.join('、')}`
+  }
+  return base
 })
 
 async function ensureResourceSet(): Promise<number | null> {
@@ -98,7 +127,7 @@ async function ensureResourceSet(): Promise<number | null> {
     }
     return null
   } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '初始化资源集失败'
+    showToast(e?.response?.data?.message ?? e?.message ?? '初始化资源集失败')
     return null
   }
 }
@@ -121,6 +150,7 @@ async function loadSnapshots() {
   snapshots.value = (res.data?.data?.items ?? []) as Snapshot[]
   await loadRules()
   await loadSideLogs()
+  await loadDiffSummary()
 }
 
 async function loadRules() {
@@ -174,7 +204,7 @@ async function confirmPublish() {
     await loadSnapshots()
     await loadSideLogs()
   } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '发布失败'
+    showToast(e?.response?.data?.message ?? e?.message ?? '发布失败')
   }
 }
 
@@ -191,7 +221,7 @@ function closeRollbackPicker() {
 async function confirmRollback() {
   if (!resourceSetId.value) return
   if (!rollbackToSnapshotId.value) {
-    toast.value = '请选择回滚快照'
+    showToast('请选择回滚快照')
     return
   }
   const to = rollbackToSnapshotId.value
@@ -205,7 +235,7 @@ async function confirmRollback() {
     await loadResourceSets()
     await loadSnapshots()
   } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '回滚失败'
+    showToast(e?.response?.data?.message ?? e?.message ?? '回滚失败')
   }
 }
 
@@ -230,7 +260,7 @@ async function submitAdd() {
     enabled: Number(addForm.value.enabled ?? 1),
   }
   if (!payload.sourceText || !payload.targetText) {
-    toast.value = 'source/target 必填'
+    showToast('source/target 必填')
     return
   }
   if (mode.value === 'sentence') {
@@ -243,8 +273,9 @@ async function submitAdd() {
     addModalOpen.value = false
     auditLog.value.unshift(`${new Date().toLocaleString()} | 新增规则`)
     await loadRules()
+    await loadDiffSummary()
   } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? '新增失败'
+    showToast(e?.response?.data?.message ?? e?.message ?? '新增失败')
   }
 }
 
@@ -253,11 +284,13 @@ async function removeRule(id: number) {
   await http.delete(`/api/resource-sets/${resourceSetId.value}/rules/${id}`, { params: { module: 'intervention', mode: mode.value } })
   auditLog.value.unshift(`${new Date().toLocaleString()} | 删除规则 id=${id}`)
   await loadRules()
+  await loadDiffSummary()
 }
 
 async function updateRuleCell(rule: any) {
   if (!resourceSetId.value) return
   await http.put(`/api/resource-sets/${resourceSetId.value}/rules/${rule.id}`, rule, { params: { module: 'intervention', mode: mode.value } })
+  await loadDiffSummary()
 }
 
 async function reload() {
@@ -265,13 +298,13 @@ async function reload() {
     await http.post('/api/reload')
     publishLog.value.unshift(`${new Date().toLocaleString()} | Reload 触发`)
   } catch (e: any) {
-    toast.value = e?.response?.data?.message ?? e?.message ?? 'reload 失败'
+    showToast(e?.response?.data?.message ?? e?.message ?? 'reload 失败')
   }
 }
 
 function openCompareWithOnline() {
   if (!resourceSetId.value || !currentSnapshotId.value) {
-    toast.value = '无线上快照可对比'
+    showToast('无线上快照可对比')
     return
   }
   // 简化：直接对比当前编辑 vs 线上快照（实际实现需后端 diff 接口）
@@ -315,8 +348,17 @@ const pagedRows = computed(() => {
   return { rows: filteredRows.value.slice(start, start + size), totalPages, page: p, total: filteredRows.value.length }
 })
 
+// 当 pageSize 或 searchInput 变化时重置页码
 watch(
-  () => [pageSize.value, searchInput.value, mode.value],
+  () => [pageSize.value, searchInput.value],
+  () => {
+    page.value = 1
+  },
+)
+
+// 当 mode 变化时重新加载规则
+watch(
+  () => mode.value,
   async () => {
     page.value = 1
     if (resourceSetId.value) await loadRules()
@@ -332,6 +374,7 @@ async function batchEnable(enabled: boolean) {
   })
   auditLog.value.unshift(`${new Date().toLocaleString()} | 批量${enabled ? '启用' : '停用'} ids=${ids.join(',')}`)
   await loadRules()
+  await loadDiffSummary()
 }
 
 async function batchDelete() {
@@ -341,6 +384,7 @@ async function batchDelete() {
   await http.post(`/api/resource-sets/${resourceSetId.value}/rules/batch-delete`, { ids }, { params: { module: 'intervention', mode: mode.value } })
   auditLog.value.unshift(`${new Date().toLocaleString()} | 批量删除 ids=${ids.join(',')}`)
   await loadRules()
+  await loadDiffSummary()
 }
 
 async function loadSideLogs() {
@@ -360,6 +404,21 @@ async function loadSideLogs() {
       .slice(0, 30)
   } catch {
     // ignore
+  }
+}
+
+async function loadDiffSummary() {
+  if (!resourceSetId.value) {
+    diffSummaryData.value = null
+    return
+  }
+  try {
+    const res = await http.get(`/api/resource-sets/${resourceSetId.value}/diff-summary`, {
+      params: { module: 'intervention' },
+    })
+    diffSummaryData.value = (res.data?.data ?? null) as DiffSummary | null
+  } catch {
+    diffSummaryData.value = null
   }
 }
 
@@ -392,10 +451,11 @@ onMounted(async () => {
               </select>
             </div>
             <div class="context-col">
-              <div class="hint" style="margin-bottom: 6px">当前线上快照</div>
-              <div class="hint">
-                <strong>{{ currentSnapshot ? `#${currentSnapshot.snapshotNo} (${currentSnapshot.ruleCount}条)` : '无' }}</strong>
-              </div>
+              <div class="hint" style="margin-bottom: 6px">规则类型</div>
+              <select v-model="mode" class="select">
+                <option value="sentence">整句规则</option>
+                <option value="term">词表规则</option>
+              </select>
             </div>
           </div>
 
@@ -403,23 +463,31 @@ onMounted(async () => {
             <div class="action-group">
               <span class="action-group-title">发布区</span>
               <button class="btn warn" type="button" :disabled="!resourceSetId" @click="validate">校验</button>
-              <button class="btn primary" type="button" :disabled="!resourceSetId" @click="openPublishConfirm">发布</button>
+              <button class="btn primary" type="button" :disabled="!resourceSetId" @click="openPublishConfirm">
+                发布
+                <span v-if="diffSummaryData?.hasChanges" class="badge-dot"></span>
+              </button>
               <button class="btn" type="button" :disabled="!resourceSetId" @click="rollback">回滚</button>
               <button class="btn ghost" type="button" @click="reload">Reload</button>
             </div>
-            <div class="action-group">
-              <span class="action-group-title">对比</span>
-              <button class="btn" type="button" :disabled="!currentSnapshotId" @click="openCompareWithOnline">与线上对比</button>
-            </div>
+          </div>
+
+          <div v-if="diffSummaryData?.hasChanges" class="unpublished-banner">
+            <span class="unpublished-icon">⚠</span>
+            <span>
+              当前有未发布的编辑内容：
+              <template v-if="diffSummaryData.addedCount > 0">新增 {{ diffSummaryData.addedCount }} 条</template>
+              <template v-if="diffSummaryData.addedCount > 0 && (diffSummaryData.deletedCount > 0 || diffSummaryData.modifiedCount > 0)">、</template>
+              <template v-if="diffSummaryData.deletedCount > 0">删除 {{ diffSummaryData.deletedCount }} 条</template>
+              <template v-if="diffSummaryData.deletedCount > 0 && diffSummaryData.modifiedCount > 0">、</template>
+              <template v-if="diffSummaryData.modifiedCount > 0">修改 {{ diffSummaryData.modifiedCount }} 条</template>
+              <template v-if="diffSummaryData.noSnapshot">（尚无线上快照）</template>
+              ，请及时校验并发布
+            </span>
           </div>
         </div>
 
         <div class="panel">
-          <div class="chip-group">
-            <button class="chip" :class="{ active: mode === 'sentence' }" type="button" @click="mode = 'sentence'">整句规则</button>
-            <button class="chip" :class="{ active: mode === 'term' }" type="button" @click="mode = 'term'">词表规则</button>
-          </div>
-
           <div class="rule-toolbar">
             <input v-model="searchInput" class="input" placeholder="搜索 source / target" />
             <button class="btn primary" type="button" :disabled="!resourceSetId" @click="addRule">新增</button>
@@ -798,5 +866,36 @@ table {
   .diff-grid {
     grid-template-columns: 1fr;
   }
+}
+.unpublished-banner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #92400e;
+  line-height: 1.5;
+}
+.unpublished-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.badge-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #ef4444;
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: badge-pulse 1.5s infinite;
+}
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 </style>
