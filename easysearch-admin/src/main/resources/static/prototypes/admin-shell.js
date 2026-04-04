@@ -12,7 +12,6 @@
     entity: { title: "实体词典", html: "pages/entity.html", pageKey: "entity" },
     token: { title: "分词词典", html: "pages/token.html", pageKey: "token" },
     meta: { title: "元信息", html: "pages/meta.html", pageKey: "meta" },
-    versions: { title: "版本管理", html: "pages/versions.html", pageKey: null },
     publish: { title: "发布记录", html: "pages/publish.html", pageKey: null },
     audit: { title: "操作审计", html: "pages/audit.html", pageKey: null }
   };

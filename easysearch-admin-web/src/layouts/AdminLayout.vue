@@ -16,7 +16,6 @@ const route = useRoute()
       <RouterLink class="qpNavItem" to="/token" :class="{ active: route.name === 'token' }">分词词典</RouterLink>
 
       <div class="qpNavTitle">发布治理</div>
-      <RouterLink class="qpNavItem" to="/versions" :class="{ active: route.name === 'versions' }">版本管理</RouterLink>
       <RouterLink class="qpNavItem" to="/publish" :class="{ active: route.name === 'publish' }">发布记录</RouterLink>
       <RouterLink class="qpNavItem" to="/audit" :class="{ active: route.name === 'audit' }">操作审计</RouterLink>
     </aside>
