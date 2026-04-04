@@ -33,7 +33,6 @@ public class DiffService {
     private final SynonymRuleMapper synonymRuleMapper;
     private final EntityRuleMapper entityRuleMapper;
     private final TokenDictRuleMapper tokenDictRuleMapper;
-    private final MetaRuleMapper metaRuleMapper;
     private final SnapshotInterventionSentenceMapper snapshotSentenceMapper;
     private final SnapshotInterventionTermMapper snapshotTermMapper;
     private final SnapshotSynonymMapper snapshotSynonymMapper;
@@ -46,7 +45,6 @@ public class DiffService {
                        SynonymRuleMapper synonymRuleMapper,
                        EntityRuleMapper entityRuleMapper,
                        TokenDictRuleMapper tokenDictRuleMapper,
-                       MetaRuleMapper metaRuleMapper,
                        SnapshotInterventionSentenceMapper snapshotSentenceMapper,
                        SnapshotInterventionTermMapper snapshotTermMapper,
                        SnapshotSynonymMapper snapshotSynonymMapper,
@@ -58,7 +56,6 @@ public class DiffService {
         this.synonymRuleMapper = synonymRuleMapper;
         this.entityRuleMapper = entityRuleMapper;
         this.tokenDictRuleMapper = tokenDictRuleMapper;
-        this.metaRuleMapper = metaRuleMapper;
         this.snapshotSentenceMapper = snapshotSentenceMapper;
         this.snapshotTermMapper = snapshotTermMapper;
         this.snapshotSynonymMapper = snapshotSynonymMapper;
@@ -123,24 +120,7 @@ public class DiffService {
             List<TokenDictRuleDO> base = new ArrayList<>();
             return diffByKey(cur, base, r -> safe(r.getWord()));
         }
-        if (module == RuleModule.meta) {
-            List<MetaRuleDO> cur = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getResourceSetId, currentResourceSetId));
-            List<MetaRuleDO> base = new ArrayList<>();
-            return diffByKey(cur, base, this::metaKey);
-        }
         throw new BizException(400, "module not supported");
-    }
-
-    private String metaKey(MetaRuleDO r) {
-        String tt = safe(r.getTermType());
-        if ("category".equals(tt)) return "category:" + safe(firstNonBlank(r.getCategoryId(), r.getCategoryName()));
-        if ("brand".equals(tt)) return "brand:" + safe(firstNonBlank(r.getBrandId(), r.getBrandName()));
-        return "model:" + safe(firstNonBlank(r.getModelId(), r.getModelName()));
-    }
-
-    private String firstNonBlank(String a, String b) {
-        if (a != null && !a.trim().isEmpty()) return a;
-        return b;
     }
 
     private String safe(String s) {

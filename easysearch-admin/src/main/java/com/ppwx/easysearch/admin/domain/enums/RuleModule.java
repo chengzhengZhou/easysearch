@@ -20,7 +20,6 @@ public enum RuleModule {
     intervention,
     synonym,
     entity,
-    token,
-    meta
+    token
 }
 

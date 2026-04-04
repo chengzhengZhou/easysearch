@@ -33,20 +33,17 @@ public class PreviewService {
     private final SynonymRuleMapper synonymRuleMapper;
     private final EntityRuleMapper entityRuleMapper;
     private final TokenDictRuleMapper tokenDictRuleMapper;
-    private final MetaRuleMapper metaRuleMapper;
 
     public PreviewService(InterventionSentenceRuleMapper sentenceRuleMapper,
                           InterventionTermRuleMapper termRuleMapper,
                           SynonymRuleMapper synonymRuleMapper,
                           EntityRuleMapper entityRuleMapper,
-                          TokenDictRuleMapper tokenDictRuleMapper,
-                          MetaRuleMapper metaRuleMapper) {
+                          TokenDictRuleMapper tokenDictRuleMapper) {
         this.sentenceRuleMapper = sentenceRuleMapper;
         this.termRuleMapper = termRuleMapper;
         this.synonymRuleMapper = synonymRuleMapper;
         this.entityRuleMapper = entityRuleMapper;
         this.tokenDictRuleMapper = tokenDictRuleMapper;
-        this.metaRuleMapper = metaRuleMapper;
     }
 
     public PreviewResult preview(Long resourceSetId, RuleModule module, InterventionMode mode, String query) {
@@ -98,24 +95,7 @@ public class PreviewService {
             }
             return PreviewResult.of(q, q, hits);
         }
-        if (module == RuleModule.meta) {
-            List<MetaRuleDO> rules = metaRuleMapper.selectList(new LambdaQueryWrapper<MetaRuleDO>().eq(MetaRuleDO::getResourceSetId, resourceSetId));
-            for (MetaRuleDO r : rules) {
-                if (containsAny(q, r.getCategoryName(), r.getBrandName(), r.getBrandNameEn(), r.getModelName())) {
-                    hits.add("term_type=" + r.getTermType() + " category=" + r.getCategoryName() + " brand=" + r.getBrandName() + " model=" + r.getModelName());
-                }
-            }
-            return PreviewResult.of(q, q, hits);
-        }
         return PreviewResult.of(q, q, hits);
-    }
-
-    private boolean containsAny(String q, String... arr) {
-        if (q == null || q.isEmpty()) return false;
-        for (String s : arr) {
-            if (s != null && !s.trim().isEmpty() && q.contains(s.trim())) return true;
-        }
-        return false;
     }
 
     public static class PreviewResult {

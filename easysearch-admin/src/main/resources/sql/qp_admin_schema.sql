@@ -141,24 +141,6 @@ CREATE TABLE IF NOT EXISTS qp_rule_token_dict (
   KEY idx_set_word (resource_set_id, word)
 );
 
--- 元信息（当前编辑态）
-CREATE TABLE IF NOT EXISTS qp_rule_meta (
-  id BIGINT PRIMARY KEY AUTO_INCREMENT,
-  resource_set_id BIGINT NOT NULL,
-  term_type VARCHAR(16) NOT NULL,            -- category/brand/model
-  category_id VARCHAR(64) NULL,
-  category_name VARCHAR(255) NULL,
-  brand_id VARCHAR(64) NULL,
-  brand_name VARCHAR(255) NULL,
-  brand_name_en VARCHAR(255) NULL,
-  model_id VARCHAR(64) NULL,
-  model_name VARCHAR(255) NULL,
-  enabled TINYINT NOT NULL DEFAULT 1,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  KEY idx_set_term_type (resource_set_id, term_type)
-);
-
 -- ==================== 快照规则表（发布时逐行复制） ====================
 
 -- 整句干预快照
@@ -238,23 +220,4 @@ CREATE TABLE IF NOT EXISTS qp_snapshot_token_dict (
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   KEY idx_snapshot (snapshot_id),
   KEY idx_snapshot_word (snapshot_id, word)
-);
-
--- 元信息快照
-CREATE TABLE IF NOT EXISTS qp_snapshot_meta (
-  id BIGINT PRIMARY KEY AUTO_INCREMENT,
-  snapshot_id BIGINT NOT NULL,
-  source_rule_id BIGINT NULL,
-  term_type VARCHAR(16) NOT NULL,
-  category_id VARCHAR(64) NULL,
-  category_name VARCHAR(255) NULL,
-  brand_id VARCHAR(64) NULL,
-  brand_name VARCHAR(255) NULL,
-  brand_name_en VARCHAR(255) NULL,
-  model_id VARCHAR(64) NULL,
-  model_name VARCHAR(255) NULL,
-  enabled TINYINT NOT NULL DEFAULT 1,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  KEY idx_snapshot (snapshot_id),
-  KEY idx_snapshot_term_type (snapshot_id, term_type)
 );
