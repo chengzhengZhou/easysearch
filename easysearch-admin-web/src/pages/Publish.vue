@@ -8,13 +8,15 @@ import { QpModal, QpPagination, QpToast } from '../components'
 type PublishRecord = {
   id: number
   resourceSetId: number
-  versionId: number
+  snapshotId: number
   env: string
   publishStatus: string
   publishMsg?: string | null
   startedAt?: string | null
   finishedAt?: string | null
   operator: string
+  resourceSetName?: string | null
+  snapshotNo?: number | null
 }
 
 type PageResult<T> = { page: number; pageSize: number; total: number; items: T[] }
@@ -33,7 +35,7 @@ const { message: toastMessage, showError } = useToast()
 // ==================== 基础状态 ====================
 const loading = ref(false)
 const resourceSetId = ref<string>('')
-const versionId = ref<string>('')
+const snapshotId = ref<string>('')
 const statusFilter = ref<string>('')
 const envFilter = ref<string>('')
 
@@ -54,11 +56,11 @@ const filteredRecords = computed(() => {
     }
   }
 
-  // 按 versionId 过滤
-  if (versionId.value) {
-    const id = Number(versionId.value)
+  // 按 snapshotId 过滤
+  if (snapshotId.value) {
+    const id = Number(snapshotId.value)
     if (!isNaN(id)) {
-      result = result.filter((r) => r.versionId === id)
+      result = result.filter((r) => r.snapshotId === id)
     }
   }
 
@@ -135,7 +137,7 @@ function formatDuration(start?: string | null, end?: string | null): string {
 
 function clearFilters() {
   resourceSetId.value = ''
-  versionId.value = ''
+  snapshotId.value = ''
   statusFilter.value = ''
   envFilter.value = ''
   pagination.resetPage()
@@ -143,7 +145,7 @@ function clearFilters() {
 
 // ==================== 监听器 ====================
 watch(
-  () => [pagination.pageSize.value, resourceSetId.value, versionId.value, statusFilter.value, envFilter.value],
+  () => [pagination.pageSize.value, resourceSetId.value, snapshotId.value, statusFilter.value, envFilter.value],
   () => pagination.resetPage()
 )
 
@@ -174,11 +176,11 @@ onMounted(loadRecords)
               />
             </label>
             <label class="filter-field">
-              <span class="filter-label">版本 ID</span>
+              <span class="filter-label">快照 ID</span>
               <input
-                v-model="versionId"
+                v-model="snapshotId"
                 class="input input-filter"
-                placeholder="输入版本 ID"
+                placeholder="输入快照 ID"
                 type="number"
               />
             </label>
@@ -223,7 +225,7 @@ onMounted(loadRecords)
                 <th>序号</th>
                 <th>ID</th>
                 <th>资源集</th>
-                <th>版本</th>
+                <th>快照</th>
                 <th>环境</th>
                 <th>状态</th>
                 <th>操作人</th>
@@ -255,10 +257,10 @@ onMounted(loadRecords)
                   <code class="id-code">{{ r.id }}</code>
                 </td>
                 <td>
-                  <code class="id-code">{{ r.resourceSetId }}</code>
+                  <span :title="'ID: ' + r.resourceSetId">{{ r.resourceSetName || r.resourceSetId }}</span>
                 </td>
                 <td>
-                  <code class="id-code">{{ r.versionId }}</code>
+                  <span :title="'ID: ' + r.snapshotId">{{ r.snapshotNo != null ? '#' + r.snapshotNo : (r.snapshotId ?? '-') }}</span>
                 </td>
                 <td>
                   <span class="env-badge" :class="`env-${r.env?.toLowerCase()}`">{{ r.env }}</span>
@@ -317,15 +319,17 @@ onMounted(loadRecords)
 
         <div class="detail-grid">
           <div class="detail-item">
-            <span class="detail-label">资源集 ID</span>
+            <span class="detail-label">资源集</span>
             <span class="detail-value">
-              <code>{{ selectedRecord.resourceSetId }}</code>
+              {{ selectedRecord.resourceSetName || '-' }}
+              <code v-if="selectedRecord.resourceSetId" style="margin-left: 4px; font-size: 11px; color: #9ca3af;">ID: {{ selectedRecord.resourceSetId }}</code>
             </span>
           </div>
           <div class="detail-item">
-            <span class="detail-label">版本 ID</span>
+            <span class="detail-label">快照</span>
             <span class="detail-value">
-              <code>{{ selectedRecord.versionId }}</code>
+              {{ selectedRecord.snapshotNo != null ? '#' + selectedRecord.snapshotNo : '-' }}
+              <code v-if="selectedRecord.snapshotId" style="margin-left: 4px; font-size: 11px; color: #9ca3af;">ID: {{ selectedRecord.snapshotId }}</code>
             </span>
           </div>
           <div class="detail-item">
