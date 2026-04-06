@@ -174,7 +174,7 @@ List<Token> tokens = tokenizer.tokenize("搜索关键词");
 EntityRecognizer recognizer = new CompositeEntityRecognizer();
 
 // 执行识别
-List<Entity> entities = recognizer.recognize("北京市朝阳区");
+List<Entity> entities = recognizer.recognize("苹果iphone 15");
 ```
 
 ## 📁 项目结构
