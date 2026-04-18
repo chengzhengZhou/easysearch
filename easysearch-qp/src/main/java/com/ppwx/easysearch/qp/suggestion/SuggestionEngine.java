@@ -16,7 +16,6 @@
 
 package com.ppwx.easysearch.qp.suggestion;
 
-import com.hankcs.hanlp.collection.trie.bintrie.BinTrie;
 import com.ppwx.easysearch.qp.source.AbstractReloadableEngine;
 import com.ppwx.easysearch.qp.util.PinyinUtil;
 
@@ -31,29 +30,33 @@ import java.util.*;
  * 联想词引擎：负责词表加载和三套 Trie 索引构建。
  * <p>
  * 继承 {@link AbstractReloadableEngine}，支持通过 {@code TextLineSource} 热加载。
- * 在 {@link #doLoad(InputStream)} 中解析 TSV 词表并构建三棵 BinTrie：
+ * 在 {@link #doLoad(InputStream)} 中解析 TSV 词表并构建三棵 {@link PrefixTrie}：
  * <ul>
  *   <li>汉字前缀 Trie（原始文本 → SuggestionEntry）</li>
  *   <li>全拼前缀 Trie（拼音无调 → SuggestionEntry 列表）</li>
  *   <li>首字母前缀 Trie（拼音首字母 → SuggestionEntry 列表）</li>
  * </ul>
  * 词表格式（TSV）：{@code query文本 \t 权重(可选) \t 类目标签(可选)}
+ * <p>
+ * 使用自定义 {@link PrefixTrie} 替代 HanLP BinTrie，原生支持前缀子树 DFS 遍历，
+ * 前缀搜索复杂度从 O(N) 降低到 O(prefix.length + 匹配数)。
  */
 public class SuggestionEngine extends AbstractReloadableEngine {
 
     public static final String ENGINE_NAME = "suggestion";
 
+    /** 按 weight 升序比较器（小顶堆使用，堆顶为最小值） */
+    private static final Comparator<SuggestionEntry> WEIGHT_ASC =
+            Comparator.comparingLong(SuggestionEntry::getWeight);
+
     /** 汉字前缀索引：text → SuggestionEntry */
-    private volatile BinTrie<SuggestionEntry> prefixTrie;
+    private volatile PrefixTrie<SuggestionEntry> prefixTrie;
 
     /** 全拼前缀索引：pinyin → List<SuggestionEntry> */
-    private volatile BinTrie<List<SuggestionEntry>> pinyinTrie;
+    private volatile PrefixTrie<List<SuggestionEntry>> pinyinTrie;
 
     /** 首字母前缀索引：initials → List<SuggestionEntry> */
-    private volatile BinTrie<List<SuggestionEntry>> initialsTrie;
-
-    /** 所有词条（保留用于前缀搜索遍历） */
-    private volatile List<SuggestionEntry> allEntries;
+    private volatile PrefixTrie<List<SuggestionEntry>> initialsTrie;
 
     public SuggestionEngine() {
         super(ENGINE_NAME);
@@ -101,7 +104,7 @@ public class SuggestionEngine extends AbstractReloadableEngine {
 
     private void buildIndex(List<SuggestionEntry> entries) {
         // 1. 构建汉字前缀 Trie
-        BinTrie<SuggestionEntry> newPrefixTrie = new BinTrie<>();
+        PrefixTrie<SuggestionEntry> newPrefixTrie = new PrefixTrie<>();
         for (SuggestionEntry entry : entries) {
             newPrefixTrie.put(entry.getText(), entry);
         }
@@ -129,72 +132,50 @@ public class SuggestionEngine extends AbstractReloadableEngine {
             }
         }
 
-        BinTrie<List<SuggestionEntry>> newPinyinTrie = new BinTrie<>();
+        PrefixTrie<List<SuggestionEntry>> newPinyinTrie = new PrefixTrie<>();
         for (Map.Entry<String, List<SuggestionEntry>> e : pinyinMap.entrySet()) {
             newPinyinTrie.put(e.getKey(), e.getValue());
         }
 
-        BinTrie<List<SuggestionEntry>> newInitialsTrie = new BinTrie<>();
+        PrefixTrie<List<SuggestionEntry>> newInitialsTrie = new PrefixTrie<>();
         for (Map.Entry<String, List<SuggestionEntry>> e : initialsMap.entrySet()) {
             newInitialsTrie.put(e.getKey(), e.getValue());
         }
-
-        // 按 weight 降序排序的副本
-        List<SuggestionEntry> sortedEntries = new ArrayList<>(entries);
-        sortedEntries.sort((a, b) -> Long.compare(b.getWeight(), a.getWeight()));
 
         // 原子替换所有引用
         this.prefixTrie = newPrefixTrie;
         this.pinyinTrie = newPinyinTrie;
         this.initialsTrie = newInitialsTrie;
-        this.allEntries = Collections.unmodifiableList(sortedEntries);
 
         log.info("Suggestion dictionary loaded, entries: {}", entries.size());
     }
 
     /**
      * 汉字前缀搜索：返回以 prefix 开头的候选词条，按 weight 降序排列。
+     * <p>
+     * 使用 {@link PrefixTrie#prefixSearch} 通过 DFS 遍历前缀子树 + 小顶堆保留 Top-N，
+     * 复杂度 O(prefix.length + M·log(limit))，M 为匹配数。
      *
      * @param prefix 汉字前缀
      * @param limit  最大返回条数
-     * @return 匹配的词条列表
+     * @return 匹配的词条列表（按 weight 降序）
      */
     public List<SuggestionEntry> prefixSearch(String prefix, int limit) {
         if (prefix == null || prefix.isEmpty()) {
             return Collections.emptyList();
         }
-        List<SuggestionEntry> snapshot = this.allEntries;
-        if (snapshot == null) {
+        PrefixTrie<SuggestionEntry> trie = this.prefixTrie;
+        if (trie == null) {
             return Collections.emptyList();
         }
-
-        // 用 BinTrie 做精确命中检查 + 遍历所有条目过滤前缀
-        // 对于联想词场景（通常 < 10 万条），线性过滤 + 堆排序性能可接受
-        PriorityQueue<SuggestionEntry> heap = new PriorityQueue<>(
-                Math.min(limit + 1, 100),
-                Comparator.comparingLong(SuggestionEntry::getWeight)
-        );
-
-        for (SuggestionEntry entry : snapshot) {
-            if (entry.getText().startsWith(prefix)) {
-                heap.offer(entry);
-                if (heap.size() > limit) {
-                    heap.poll();
-                }
-            }
-        }
-
-        List<SuggestionEntry> result = new ArrayList<>(heap.size());
-        while (!heap.isEmpty()) {
-            result.add(heap.poll());
-        }
-        // 反转为降序
-        Collections.reverse(result);
-        return result;
+        return trie.prefixSearch(prefix, limit, WEIGHT_ASC);
     }
 
     /**
      * 全拼前缀搜索：返回拼音以 pinyinPrefix 开头的候选词条，按 weight 降序排列。
+     * <p>
+     * 使用 {@link PrefixTrie#prefixSearch} 通过 DFS 遍历前缀子树获取匹配的拼音 key，
+     * 再展开 List 并用小顶堆保留 Top-N。
      *
      * @param pinyinPrefix 拼音前缀（小写）
      * @param limit        最大返回条数
@@ -204,7 +185,7 @@ public class SuggestionEngine extends AbstractReloadableEngine {
         if (pinyinPrefix == null || pinyinPrefix.isEmpty()) {
             return Collections.emptyList();
         }
-        BinTrie<List<SuggestionEntry>> trie = this.pinyinTrie;
+        PrefixTrie<List<SuggestionEntry>> trie = this.pinyinTrie;
         if (trie == null) {
             return Collections.emptyList();
         }
@@ -214,6 +195,9 @@ public class SuggestionEngine extends AbstractReloadableEngine {
 
     /**
      * 首字母前缀搜索：返回拼音首字母以 initialsPrefix 开头的候选词条。
+     * <p>
+     * 使用 {@link PrefixTrie#prefixSearch} 通过 DFS 遍历前缀子树获取匹配的首字母 key，
+     * 再展开 List 并用小顶堆保留 Top-N。
      *
      * @param initialsPrefix 首字母前缀（小写）
      * @param limit          最大返回条数
@@ -223,7 +207,7 @@ public class SuggestionEngine extends AbstractReloadableEngine {
         if (initialsPrefix == null || initialsPrefix.isEmpty()) {
             return Collections.emptyList();
         }
-        BinTrie<List<SuggestionEntry>> trie = this.initialsTrie;
+        PrefixTrie<List<SuggestionEntry>> trie = this.initialsTrie;
         if (trie == null) {
             return Collections.emptyList();
         }
@@ -234,27 +218,31 @@ public class SuggestionEngine extends AbstractReloadableEngine {
     /**
      * 在拼音/首字母 Trie 中做前缀搜索。
      * <p>
-     * 由于 BinTrie 的 entrySet() 返回所有条目，遍历过滤以 prefix 开头的 key，
-     * 收集对应的 entry 列表，用堆排序保留 Top-N。
+     * 使用 {@link PrefixTrie#prefixSearch} DFS 遍历前缀子树收集匹配的 List&lt;SuggestionEntry&gt;，
+     * 再展开去重并用小顶堆保留 Top-N。复杂度 O(prefix.length + M·log(limit))。
      */
     private List<SuggestionEntry> searchByPinyinTrie(
-            BinTrie<List<SuggestionEntry>> trie, String prefix, int limit) {
+            PrefixTrie<List<SuggestionEntry>> trie, String prefix, int limit) {
 
+        // 1. 使用 PrefixTrie 前缀搜索收集所有匹配的 List<SuggestionEntry>
+        //    这里 limit 设为 Integer.MAX_VALUE，因为需要展开 List 后再做 Top-N
+        List<List<SuggestionEntry>> matchedLists = trie.prefixSearch(
+                prefix, Integer.MAX_VALUE, (a, b) -> 0);
+        if (matchedLists.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        // 2. 展开 List，去重后用小顶堆保留 Top-N
         PriorityQueue<SuggestionEntry> heap = new PriorityQueue<>(
-                Math.min(limit + 1, 100),
-                Comparator.comparingLong(SuggestionEntry::getWeight)
-        );
-
+                Math.min(limit + 1, 100), WEIGHT_ASC);
         Set<String> seen = new HashSet<>();
 
-        for (Map.Entry<String, List<SuggestionEntry>> e : trie.entrySet()) {
-            if (e.getKey().startsWith(prefix)) {
-                for (SuggestionEntry entry : e.getValue()) {
-                    if (seen.add(entry.getText())) {
-                        heap.offer(entry);
-                        if (heap.size() > limit) {
-                            heap.poll();
-                        }
+        for (List<SuggestionEntry> entryList : matchedLists) {
+            for (SuggestionEntry entry : entryList) {
+                if (seen.add(entry.getText())) {
+                    heap.offer(entry);
+                    if (heap.size() > limit) {
+                        heap.poll();
                     }
                 }
             }
@@ -270,10 +258,17 @@ public class SuggestionEngine extends AbstractReloadableEngine {
 
     /**
      * 获取所有词条（按 weight 降序）。
+     * <p>
+     * 从 prefixTrie 收集全部值后排序返回。该方法非热路径，仅用于调试或统计。
      */
     public List<SuggestionEntry> getAllEntries() {
-        List<SuggestionEntry> snapshot = this.allEntries;
-        return snapshot != null ? snapshot : Collections.<SuggestionEntry>emptyList();
+        PrefixTrie<SuggestionEntry> trie = this.prefixTrie;
+        if (trie == null) {
+            return Collections.emptyList();
+        }
+        List<SuggestionEntry> all = trie.collectAllValues();
+        all.sort((a, b) -> Long.compare(b.getWeight(), a.getWeight()));
+        return Collections.unmodifiableList(all);
     }
 
     private static SuggestionEntry parseLine(String line) {

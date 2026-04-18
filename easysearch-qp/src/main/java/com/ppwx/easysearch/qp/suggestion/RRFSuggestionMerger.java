@@ -81,13 +81,11 @@ public class RRFSuggestionMerger implements SuggestionMerger {
         }
 
         // 构建 Suggestion 列表并按 RRF 分降序排序
-        List<Suggestion> suggestions = accumulators.values().stream()
+        return accumulators.values().stream()
                 .map(RRFAccumulator::toSuggestion)
                 .sorted()
                 .limit(limit)
                 .collect(Collectors.toList());
-
-        return suggestions;
     }
 
     /**
