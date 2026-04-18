@@ -17,18 +17,27 @@
 package com.ppwx.easysearch.qp.suggestion;
 
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.ToLongFunction;
 
 /**
- * 支持高效前缀子树遍历的泛型 Trie 数据结构。
+ * 支持高效前缀子树遍历的泛型 Trie 数据结构，带剪枝优化。
  * <p>
  * 核心能力：通过逐字符 transition 走到前缀节点后，DFS 遍历子树收集所有匹配值，
  * 配合小顶堆保留按指定 {@link Comparator} 排序的 Top-N 结果。
  * <p>
+ * <b>剪枝优化</b>：
+ * <ul>
+ *   <li>每个节点预存子树最大权重 {@code maxWeight}，DFS 时跳过无效子树</li>
+ *   <li>子节点按 {@code maxWeight} 降序排列，优先遍历高权重子树，使堆更快填满</li>
+ * </ul>
+ * <p>
  * 复杂度：
  * <ul>
  *   <li>{@code put} / {@code get}：O(key.length)</li>
- *   <li>{@code prefixSearch}：O(prefix.length + M·log(limit))，M 为匹配数</li>
+ *   <li>{@code prefixSearch}：O(prefix.length + K·log(limit))，K 为有效匹配数（剪枝后远小于总匹配数）</li>
  *   <li>{@code collectAllValues}：O(总节点数)</li>
+ *   <li>{@code buildMaxWeight}：O(总节点数)，构建完成后调用一次</li>
  * </ul>
  * <p>
  * 线程安全说明：本类不是线程安全的。预期使用方式为"构建完成后只读"，
@@ -49,10 +58,19 @@ public class PrefixTrie<V> {
 
         /** 子节点映射（字符 → 子节点），初始容量 4 以节省中文场景下的内存 */
         final Map<Character, Node<V>> children = new HashMap<>(4);
+
+        /** 子树最大权重，用于剪枝优化（方案一） */
+        long maxWeight = Long.MIN_VALUE;
+
+        /** 按 maxWeight 降序排列的子节点数组，用于优先遍历高权重子树（方案二） */
+        Node<V>[] sortedChildren;
     }
 
     private final Node<V> root = new Node<>();
     private int size;
+
+    /** 权重提取器，用于剪枝优化（buildMaxWeight 时设置） */
+    private ToLongFunction<V> weightExtractor;
 
     /**
      * 插入键值对。如果 key 已存在，覆盖其值。
@@ -120,6 +138,151 @@ public class PrefixTrie<V> {
         return result;
     }
 
+    // ==================== 方案一：maxWeight 剪枝优化 ====================
+
+    /**
+     * 构建子树最大权重索引，启用剪枝优化（方案一 + 方案二）。
+     * <p>
+     * 在 put 完成后调用一次，后序遍历计算每个节点的 maxWeight，
+     * 并按 maxWeight 降序构建子节点排序数组。
+     *
+     * @param weightExtractor 从值 V 中提取权重的函数
+     */
+    public void buildMaxWeight(ToLongFunction<V> weightExtractor) {
+        this.weightExtractor = weightExtractor;
+        computeMaxWeight(root, weightExtractor);
+        buildSortedChildren(root);
+    }
+
+    /**
+     * 后序遍历计算每个节点的子树最大权重。
+     */
+    private long computeMaxWeight(Node<V> node, ToLongFunction<V> weightExtractor) {
+        long max = (node.value != null) ? weightExtractor.applyAsLong(node.value) : Long.MIN_VALUE;
+        for (Node<V> child : node.children.values()) {
+            max = Math.max(max, computeMaxWeight(child, weightExtractor));
+        }
+        node.maxWeight = max;
+        return max;
+    }
+
+    // ==================== 方案二：子节点按 maxWeight 排序 ====================
+
+    /**
+     * 构建按 maxWeight 降序排列的子节点数组。
+     * 在 computeMaxWeight 完成后调用。
+     */
+    @SuppressWarnings("unchecked")
+    private void buildSortedChildren(Node<V> node) {
+        if (!node.children.isEmpty()) {
+            List<Node<V>> childList = new ArrayList<>(node.children.values());
+            childList.sort((a, b) -> Long.compare(b.maxWeight, a.maxWeight));
+            node.sortedChildren = childList.toArray(new Node[0]);
+            for (Node<V> child : node.sortedChildren) {
+                buildSortedChildren(child);
+            }
+        }
+    }
+
+    // ==================== 方案三：prefixVisit 遍历接口 ====================
+
+    /**
+     * 遍历前缀子树的所有值，通过 Consumer 回调处理。
+     * <p>
+     * 适用于拼音 Trie（值类型为 List），避免创建中间 List 收集所有匹配项。
+     * 支持通过 maxWeight 提前终止无效子树遍历。
+     *
+     * @param prefix  前缀字符串
+     * @param visitor 值处理回调
+     */
+    public void prefixVisit(String prefix, Consumer<V> visitor) {
+        if (prefix == null || prefix.isEmpty() || visitor == null) {
+            return;
+        }
+        Node<V> node = prefixNode(prefix);
+        if (node == null) {
+            return;
+        }
+        dfsVisit(node, visitor);
+    }
+
+    /**
+     * 带剪枝的前缀遍历，支持通过 PruneContext 提前终止无效子树。
+     * <p>
+     * PruneContext 提供当前堆顶权重阈值，当子树 maxWeight <= 阈值时跳过该子树。
+     *
+     * @param prefix  前缀字符串
+     * @param visitor 值处理回调
+     * @param context 剪枝上下文，提供动态权重阈值
+     */
+    public void prefixVisitWithPrune(String prefix, Consumer<V> visitor, PruneContext context) {
+        if (prefix == null || prefix.isEmpty() || visitor == null) {
+            return;
+        }
+        Node<V> node = prefixNode(prefix);
+        if (node == null) {
+            return;
+        }
+        dfsVisitWithPrune(node, visitor, context);
+    }
+
+    /**
+     * 剪枝上下文接口，提供动态权重阈值用于剪枝判断。
+     */
+    public interface PruneContext {
+        /**
+         * 获取当前的权重阈值（通常是堆顶元素的权重）。
+         * 当子树 maxWeight <= 此阈值时，可以跳过整棵子树。
+         *
+         * @return 当前权重阈值，返回 Long.MIN_VALUE 表示不剪枝
+         */
+        long getThreshold();
+
+        /**
+         * 堆是否已满（已达到 limit）。
+         * 只有堆满时才需要剪枝。
+         *
+         * @return 是否已满
+         */
+        boolean isFull();
+    }
+
+    private void dfsVisit(Node<V> node, Consumer<V> visitor) {
+        if (node.value != null) {
+            visitor.accept(node.value);
+        }
+        // 优先使用排序后的子节点数组（方案二）
+        if (node.sortedChildren != null) {
+            for (Node<V> child : node.sortedChildren) {
+                dfsVisit(child, visitor);
+            }
+        } else {
+            for (Node<V> child : node.children.values()) {
+                dfsVisit(child, visitor);
+            }
+        }
+    }
+
+    private void dfsVisitWithPrune(Node<V> node, Consumer<V> visitor, PruneContext context) {
+        // 方案一：剪枝 - 堆已满且子树最大权重 <= 阈值时跳过
+        if (context.isFull() && node.maxWeight <= context.getThreshold()) {
+            return;
+        }
+        if (node.value != null) {
+            visitor.accept(node.value);
+        }
+        // 方案二：优先遍历高权重子树
+        if (node.sortedChildren != null) {
+            for (Node<V> child : node.sortedChildren) {
+                dfsVisitWithPrune(child, visitor, context);
+            }
+        } else {
+            for (Node<V> child : node.children.values()) {
+                dfsVisitWithPrune(child, visitor, context);
+            }
+        }
+    }
+
     /**
      * 收集 Trie 中所有的值。
      *
@@ -160,16 +323,38 @@ public class PrefixTrie<V> {
 
     /**
      * DFS 遍历子树，使用小顶堆收集 Top-N 值。
+     * <p>
+     * 优化：
+     * <ul>
+     *   <li>方案一：当堆已满且子树 maxWeight <= 堆顶权重时，跳过整棵子树</li>
+     *   <li>方案二：优先遍历 maxWeight 大的子树，使堆更快填满高权重值</li>
+     * </ul>
      */
     private void dfsCollectTopN(Node<V> node, PriorityQueue<V> heap, int limit) {
+        // 方案一：剪枝优化 - 堆已满且子树最大权重不超过堆顶时跳过
+        if (weightExtractor != null && heap.size() >= limit && !heap.isEmpty()) {
+            long heapTopWeight = weightExtractor.applyAsLong(heap.peek());
+            if (node.maxWeight <= heapTopWeight) {
+                return;
+            }
+        }
+
         if (node.value != null) {
             heap.offer(node.value);
             if (heap.size() > limit) {
                 heap.poll();
             }
         }
-        for (Node<V> child : node.children.values()) {
-            dfsCollectTopN(child, heap, limit);
+
+        // 方案二：优先使用按 maxWeight 降序排列的子节点数组
+        if (node.sortedChildren != null) {
+            for (Node<V> child : node.sortedChildren) {
+                dfsCollectTopN(child, heap, limit);
+            }
+        } else {
+            for (Node<V> child : node.children.values()) {
+                dfsCollectTopN(child, heap, limit);
+            }
         }
     }
 
@@ -180,8 +365,15 @@ public class PrefixTrie<V> {
         if (node.value != null) {
             result.add(node.value);
         }
-        for (Node<V> child : node.children.values()) {
-            dfsCollectAll(child, result);
+        // 优先使用排序后的子节点数组
+        if (node.sortedChildren != null) {
+            for (Node<V> child : node.sortedChildren) {
+                dfsCollectAll(child, result);
+            }
+        } else {
+            for (Node<V> child : node.children.values()) {
+                dfsCollectAll(child, result);
+            }
         }
     }
 }

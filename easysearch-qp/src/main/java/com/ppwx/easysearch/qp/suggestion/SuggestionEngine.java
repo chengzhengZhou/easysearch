@@ -142,6 +142,18 @@ public class SuggestionEngine extends AbstractReloadableEngine {
             newInitialsTrie.put(e.getKey(), e.getValue());
         }
 
+        // 3. 构建 maxWeight 索引，启用剪枝优化（方案一 + 方案二）
+        newPrefixTrie.buildMaxWeight(SuggestionEntry::getWeight);
+        // 拼音 Trie 的值是 List<SuggestionEntry>，取列表中最大权重
+        newPinyinTrie.buildMaxWeight(list -> list.stream()
+                .mapToLong(SuggestionEntry::getWeight)
+                .max()
+                .orElse(Long.MIN_VALUE));
+        newInitialsTrie.buildMaxWeight(list -> list.stream()
+                .mapToLong(SuggestionEntry::getWeight)
+                .max()
+                .orElse(Long.MIN_VALUE));
+
         // 原子替换所有引用
         this.prefixTrie = newPrefixTrie;
         this.pinyinTrie = newPinyinTrie;
@@ -216,29 +228,42 @@ public class SuggestionEngine extends AbstractReloadableEngine {
     }
 
     /**
-     * 在拼音/首字母 Trie 中做前缀搜索。
+     * 在拼音/首字母 Trie 中做前缀搜索（方案三优化版）。
      * <p>
-     * 使用 {@link PrefixTrie#prefixSearch} DFS 遍历前缀子树收集匹配的 List&lt;SuggestionEntry&gt;，
-     * 再展开去重并用小顶堆保留 Top-N。复杂度 O(prefix.length + M·log(limit))。
+     * 使用 {@link PrefixTrie#prefixVisitWithPrune} 直接在 DFS 遍历中处理，
+     * 避免创建中间 List，并支持通过 maxWeight 剪枝。
+     * 复杂度从 O(prefix.length + M·log(limit)) 降低到 O(prefix.length + K·log(limit))，K ≪ M。
      */
     private List<SuggestionEntry> searchByPinyinTrie(
             PrefixTrie<List<SuggestionEntry>> trie, String prefix, int limit) {
 
-        // 1. 使用 PrefixTrie 前缀搜索收集所有匹配的 List<SuggestionEntry>
-        //    这里 limit 设为 Integer.MAX_VALUE，因为需要展开 List 后再做 Top-N
-        List<List<SuggestionEntry>> matchedLists = trie.prefixSearch(
-                prefix, Integer.MAX_VALUE, (a, b) -> 0);
-        if (matchedLists.isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        // 2. 展开 List，去重后用小顶堆保留 Top-N
+        // 使用小顶堆保留 Top-N
         PriorityQueue<SuggestionEntry> heap = new PriorityQueue<>(
                 Math.min(limit + 1, 100), WEIGHT_ASC);
         Set<String> seen = new HashSet<>();
 
-        for (List<SuggestionEntry> entryList : matchedLists) {
+        // 方案三：使用 prefixVisitWithPrune 直接遍历，避免中间 List 并支持剪枝
+        PrefixTrie.PruneContext context = new PrefixTrie.PruneContext() {
+            @Override
+            public long getThreshold() {
+                if (heap.isEmpty()) {
+                    return Long.MIN_VALUE;
+                }
+                return heap.peek().getWeight();
+            }
+
+            @Override
+            public boolean isFull() {
+                return heap.size() >= limit;
+            }
+        };
+
+        trie.prefixVisitWithPrune(prefix, entryList -> {
             for (SuggestionEntry entry : entryList) {
+                // 单条 entry 级别的剪枝：堆已满且当前 entry 权重 <= 堆顶时跳过
+                if (heap.size() >= limit && entry.getWeight() <= heap.peek().getWeight()) {
+                    continue;
+                }
                 if (seen.add(entry.getText())) {
                     heap.offer(entry);
                     if (heap.size() > limit) {
@@ -246,7 +271,7 @@ public class SuggestionEngine extends AbstractReloadableEngine {
                     }
                 }
             }
-        }
+        }, context);
 
         List<SuggestionEntry> result = new ArrayList<>(heap.size());
         while (!heap.isEmpty()) {
