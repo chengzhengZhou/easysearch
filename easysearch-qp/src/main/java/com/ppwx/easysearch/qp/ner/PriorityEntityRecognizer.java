@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 模型+词典的实体识别器
  * <p>
- * 组合 {@link CRFEntityRecognizer} 与 {@link DictEntityRecognizer}，
+ * 组合模型识别器与 {@link DictEntityRecognizer}，默认模型识别器为 {@link CRFEntityRecognizer}。
  * 模型训练调整周期较长，而词典能快速调整，两者结合可更好支持特殊词或临时实体词条。
  * <p>
  * 支持两种合并策略（{@link MergeStrategy}）：
@@ -38,7 +38,7 @@ import java.util.List;
  */
 public class PriorityEntityRecognizer implements EntityRecognizer {
 
-    private final CRFEntityRecognizer crfRecognizer;
+    private final EntityRecognizer modelRecognizer;
     private final DictEntityRecognizer dictRecognizer;
     private final EntityMerger merger;
 
@@ -70,14 +70,15 @@ public class PriorityEntityRecognizer implements EntityRecognizer {
     }
 
     /**
-     * 指定合并策略与已加载词典的 Dict 识别器。
+     * 指定合并策略、模型识别器与已加载词典的 Dict 识别器。
      *
-     * @param strategy      合并策略
-     * @param dictRecognizer 已通过工厂方法加载词典的 DictEntityRecognizer，可为 null（内部使用空词典）
+     * @param strategy        合并策略
+     * @param modelRecognizer 模型识别器，可为 null（内部使用默认 CRF 识别器）
+     * @param dictRecognizer  已通过工厂方法加载词典的 DictEntityRecognizer，可为 null（内部使用空词典）
      */
-    public PriorityEntityRecognizer(MergeStrategy strategy, CRFEntityRecognizer crfRecognizer, DictEntityRecognizer dictRecognizer) {
-        this.crfRecognizer = crfRecognizer;
-        this.dictRecognizer = dictRecognizer;
+    public PriorityEntityRecognizer(MergeStrategy strategy, EntityRecognizer modelRecognizer, DictEntityRecognizer dictRecognizer) {
+        this.modelRecognizer = modelRecognizer != null ? modelRecognizer : new CRFEntityRecognizer();
+        this.dictRecognizer = dictRecognizer != null ? dictRecognizer : new DictEntityRecognizer();
         this.merger = new EntityMerger(strategy);
     }
 
@@ -92,13 +93,15 @@ public class PriorityEntityRecognizer implements EntityRecognizer {
 
     @Override
     public Collection<Entity> extractEntities(String originText, List<Token> tokens) {
-        if (originText == null || tokens == null || tokens.isEmpty()) {
+        if (originText == null) {
             return Collections.emptyList();
         }
 
-        Collection<Entity> dictEntities = dictRecognizer.extractEntities(originText, tokens);
-        Collection<Entity> crfEntities = crfRecognizer.extractEntities(originText, tokens);
+        Collection<Entity> dictEntities = tokens == null || tokens.isEmpty()
+                ? Collections.emptyList()
+                : dictRecognizer.extractEntities(originText, tokens);
+        Collection<Entity> modelEntities = modelRecognizer.extractEntities(originText, tokens);
 
-        return merger.merge(dictEntities, crfEntities);
+        return merger.merge(dictEntities, modelEntities);
     }
 }
