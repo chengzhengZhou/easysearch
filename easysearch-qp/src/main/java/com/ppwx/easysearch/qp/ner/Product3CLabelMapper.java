@@ -31,7 +31,7 @@ public final class Product3CLabelMapper {
         Map<String, EntityType> map = new HashMap<>();
         map.put("BRD", EntityType.BRAND);
         map.put("CAT", EntityType.CATEGORY);
-        map.put("SER", EntityType.MODEL);
+        map.put("SER", EntityType.SERIES);
         map.put("MOD", EntityType.MODEL);
         map.put("VER", EntityType.FEATURE);
         map.put("STO", EntityType.STORAGE);

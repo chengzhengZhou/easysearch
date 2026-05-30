@@ -81,12 +81,12 @@ public class Product3CEntityRecognizerTest {
     }
 
     @Test
-    public void testParse() {
+    public void testRecognizeByModel() {
         Product3CNerConfig product3CNerConfig = new Product3CNerConfig();
         product3CNerConfig.setDictDir("data/dict/3c");
         product3CNerConfig.setModelPath("data/model/3c_ner.crf.txt.bin");
         Product3CEntityRecognizer recognizer = new Product3CEntityRecognizer(product3CNerConfig);
-        Collection<Entity> entities = recognizer.extractEntities("苹果iphone16", Collections.emptyList());
+        Collection<Entity> entities = recognizer.extractEntities("苹果 iphone 16", Collections.emptyList());
         System.out.println(entities);
     }
 

@@ -22,6 +22,7 @@ package com.ppwx.easysearch.qp.ner;
 public enum EntityType {
     CATEGORY("类别"),
     BRAND("品牌"),
+    SERIES("系列"),
     MODEL("型号"),
     CPU("处理器"),
     RAM("内存"),
