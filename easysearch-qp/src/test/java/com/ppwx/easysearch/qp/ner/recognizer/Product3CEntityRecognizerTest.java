@@ -23,6 +23,8 @@ import com.ppwx.easysearch.qp.ner.Product3CNerConfig;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -76,6 +78,16 @@ public class Product3CEntityRecognizerTest {
         List<Entity> entities = recognizer.parseBioToEntitiesForTest(
                 "abc", "abc", identity(3), endIdentity(3), new String[]{"B-XXX", "I-XXX", "O"});
         Assert.assertTrue(entities.isEmpty());
+    }
+
+    @Test
+    public void testParse() {
+        Product3CNerConfig product3CNerConfig = new Product3CNerConfig();
+        product3CNerConfig.setDictDir("data/dict/3c");
+        product3CNerConfig.setModelPath("data/model/3c_ner.crf.txt.bin");
+        Product3CEntityRecognizer recognizer = new Product3CEntityRecognizer(product3CNerConfig);
+        Collection<Entity> entities = recognizer.extractEntities("苹果iphone16", Collections.emptyList());
+        System.out.println(entities);
     }
 
     private static int[] identity(int length) {
