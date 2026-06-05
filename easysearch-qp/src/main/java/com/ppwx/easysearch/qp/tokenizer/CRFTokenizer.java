@@ -119,10 +119,11 @@ public class CRFTokenizer implements Tokenizer {
             return Collections.emptyList();
         }
 
+        String lowerText = text.toLowerCase();
         List<String> words;
         String[] posArray;
         try {
-            words = seg.segment(text);
+            words = seg.segment(lowerText);
             if (words == null || words.isEmpty()) {
                 return Collections.emptyList();
             }
@@ -135,13 +136,15 @@ public class CRFTokenizer implements Tokenizer {
             return Collections.emptyList();
         }
 
-        return buildTokens(text, words, posArray);
+        return buildTokens(text, lowerText, words, posArray);
     }
 
     /**
      * 根据原文顺序匹配词列表，构建带 startIndex/endIndex 的 Token 列表。
+     * lowerText 是 text 的小写版本，用于与分词结果（训练时小写）做偏移定位；
+     * Token.text 保留原始大小写。
      */
-    private static List<Token> buildTokens(String text, List<String> words, String[] posArray) {
+    private static List<Token> buildTokens(String text, String lowerText, List<String> words, String[] posArray) {
         List<Token> result = new ArrayList<>(words.size());
         int offset = 0;
         int len = text.length();
@@ -151,7 +154,7 @@ public class CRFTokenizer implements Tokenizer {
             if (word == null || word.isEmpty()) {
                 continue;
             }
-            int index = text.indexOf(word, offset);
+            int index = lowerText.indexOf(word, offset);
             if (index < 0) {
                 log.debug("Word not found in text at offset {}: '{}'", offset, word);
                 return Collections.emptyList();
@@ -163,7 +166,7 @@ public class CRFTokenizer implements Tokenizer {
             String type = (posArray[i] != null && !posArray[i].trim().isEmpty())
                     ? posArray[i].trim() : DEFAULT_POS;
             result.add(Token.builder()
-                    .text(word)
+                    .text(text.substring(index, endIndex))
                     .type(type)
                     .startIndex(index)
                     .endIndex(endIndex)
