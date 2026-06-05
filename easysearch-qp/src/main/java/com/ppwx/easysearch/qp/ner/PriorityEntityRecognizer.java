@@ -16,8 +16,8 @@
 
 package com.ppwx.easysearch.qp.ner;
 
-import com.ppwx.easysearch.qp.ner.recognizer.CRFEntityRecognizer;
 import com.ppwx.easysearch.qp.ner.recognizer.DictEntityRecognizer;
+import com.ppwx.easysearch.qp.ner.recognizer.Product3CEntityRecognizer;
 import com.ppwx.easysearch.qp.tokenizer.Token;
 
 import java.util.Collection;
@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 模型+词典的实体识别器
  * <p>
- * 组合模型识别器与 {@link DictEntityRecognizer}，默认模型识别器为 {@link CRFEntityRecognizer}。
+ * 组合模型识别器与 {@link DictEntityRecognizer}，默认模型识别器为 {@link Product3CEntityRecognizer}。
  * 模型训练调整周期较长，而词典能快速调整，两者结合可更好支持特殊词或临时实体词条。
  * <p>
  * 支持两种合并策略（{@link MergeStrategy}）：
@@ -66,7 +66,7 @@ public class PriorityEntityRecognizer implements EntityRecognizer {
      * @param dictRecognizer 已通过工厂方法加载词典的 DictEntityRecognizer，可为 null（内部使用空词典）
      */
     public PriorityEntityRecognizer(MergeStrategy strategy, DictEntityRecognizer dictRecognizer) {
-        this(strategy, new CRFEntityRecognizer(), dictRecognizer);
+        this(strategy, new Product3CEntityRecognizer(), dictRecognizer);
     }
 
     /**
@@ -77,7 +77,7 @@ public class PriorityEntityRecognizer implements EntityRecognizer {
      * @param dictRecognizer  已通过工厂方法加载词典的 DictEntityRecognizer，可为 null（内部使用空词典）
      */
     public PriorityEntityRecognizer(MergeStrategy strategy, EntityRecognizer modelRecognizer, DictEntityRecognizer dictRecognizer) {
-        this.modelRecognizer = modelRecognizer != null ? modelRecognizer : new CRFEntityRecognizer();
+        this.modelRecognizer = modelRecognizer != null ? modelRecognizer : new Product3CEntityRecognizer();
         this.dictRecognizer = dictRecognizer != null ? dictRecognizer : new DictEntityRecognizer();
         this.merger = new EntityMerger(strategy);
     }

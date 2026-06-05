@@ -490,12 +490,3 @@ PriorityEntityRecognizer：DictEntityRecognizer + Product3CEntityRecognizer
         ↓
 EntityMerger：默认 DICT_FIRST
 ```
-
-不建议直接用 `Product3CCRFRecognizer` 替换当前 `CRFEntityRecognizer`，原因是：
-
-1. 输入形态不同：前者是字符级 5 列特征，后者是 token + POS。
-2. 标注体系不同：前者是 3C BIO，后者是当前 BMEOS/token 逻辑。
-3. 资源依赖不同：前者依赖 3C 词典、拼写归一与专用模型。
-4. 直接替换会破坏现有词典归一、ID 映射与合并逻辑。
-
-最终建议以“新增适配器 + 配置切换 + 词典优先合并”的方式接入，既能复用训练项目的 3C 模型能力，也能保持 `easysearch` 在线链路稳定。
