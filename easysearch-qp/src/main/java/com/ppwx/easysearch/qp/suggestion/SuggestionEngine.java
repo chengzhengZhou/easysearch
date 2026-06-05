@@ -102,11 +102,19 @@ public class SuggestionEngine extends AbstractReloadableEngine {
         buildIndex(entries);
     }
 
+    /** 去掉字符串中所有空格，用于前缀索引 key 的规范化 */
+    private static String stripSpaces(String s) {
+        if (s == null || s.indexOf(' ') < 0) {
+            return s;
+        }
+        return s.replace(" ", "");
+    }
+
     private void buildIndex(List<SuggestionEntry> entries) {
         // 1. 构建汉字前缀 Trie
         PrefixTrie<SuggestionEntry> newPrefixTrie = new PrefixTrie<>();
         for (SuggestionEntry entry : entries) {
-            newPrefixTrie.put(entry.getText(), entry);
+            newPrefixTrie.put(stripSpaces(entry.getText()), entry);
         }
 
         // 2. 构建全拼 Trie 和首字母 Trie
@@ -180,7 +188,7 @@ public class SuggestionEngine extends AbstractReloadableEngine {
         if (trie == null) {
             return Collections.emptyList();
         }
-        return trie.prefixSearch(prefix, limit, WEIGHT_ASC);
+        return trie.prefixSearch(stripSpaces(prefix), limit, WEIGHT_ASC);
     }
 
     /**
