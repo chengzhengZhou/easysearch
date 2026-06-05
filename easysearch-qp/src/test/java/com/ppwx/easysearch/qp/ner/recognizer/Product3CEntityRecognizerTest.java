@@ -39,7 +39,7 @@ public class Product3CEntityRecognizerTest {
         Assert.assertEquals(EntityType.CATEGORY, Product3CLabelMapper.map("CAT"));
         Assert.assertEquals(EntityType.SERIES, Product3CLabelMapper.map("SER"));
         Assert.assertEquals(EntityType.MODEL, Product3CLabelMapper.map("MOD"));
-        Assert.assertEquals(EntityType.STORAGE, Product3CLabelMapper.map("STO"));
+        Assert.assertEquals(EntityType.PRM, Product3CLabelMapper.map("PRM"));
         Assert.assertEquals(EntityType.UNKNOWN, Product3CLabelMapper.map("NOT_EXIST"));
     }
 
@@ -55,7 +55,7 @@ public class Product3CEntityRecognizerTest {
                 "B-BRD", "I-BRD",
                 "B-SER", "I-SER", "I-SER", "I-SER", "B-MOD", "I-MOD",
                 "O",
-                "B-STO", "I-STO", "I-STO", "I-STO"
+                "B-PRM", "I-PRM", "I-PRM", "I-PRM"
         };
         List<Entity> entities = recognizer.parseBioToEntitiesForTest(
                 text, normalized, identity(normalized.length()), endIdentity(normalized.length()), tags);
@@ -68,7 +68,7 @@ public class Product3CEntityRecognizerTest {
         Assert.assertEquals("60", entities.get(2).getValue());
         Assert.assertEquals(EntityType.MODEL, entities.get(2).getType());
         Assert.assertEquals("512g", entities.get(3).getValue());
-        Assert.assertEquals(EntityType.STORAGE, entities.get(3).getType());
+        Assert.assertEquals(EntityType.PRM, entities.get(3).getType());
         Assert.assertEquals(0.7D, entities.get(0).getConfidence(), 0.0001D);
         Assert.assertTrue(entities.get(0).getAttachment() instanceof Map);
         Assert.assertEquals("test-version", ((Map<?, ?>) entities.get(0).getAttachment()).get("modelVersion"));
@@ -88,7 +88,7 @@ public class Product3CEntityRecognizerTest {
         product3CNerConfig.setDictDir("data/dict/3c");
         product3CNerConfig.setModelPath("data/model/vocab_ner_crf.txt.bin");
         Product3CEntityRecognizer recognizer = new Product3CEntityRecognizer(product3CNerConfig);
-        Collection<Entity> entities = recognizer.extractEntities("苹果iphone19", Collections.emptyList());
+        Collection<Entity> entities = recognizer.extractEntities("苹果iphone15 256G", Collections.emptyList());
         System.out.println(entities);
     }
 

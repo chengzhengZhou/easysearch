@@ -17,11 +17,7 @@
 package com.ppwx.easysearch.qp.ner.recognizer;
 
 import com.hankcs.hanlp.model.crf.Product3CCRFRecognizer;
-import com.ppwx.easysearch.qp.ner.Entity;
-import com.ppwx.easysearch.qp.ner.EntityRecognizer;
-import com.ppwx.easysearch.qp.ner.EntityType;
-import com.ppwx.easysearch.qp.ner.Product3CLabelMapper;
-import com.ppwx.easysearch.qp.ner.Product3CNerConfig;
+import com.ppwx.easysearch.qp.ner.*;
 import com.ppwx.easysearch.qp.ner.product3c.FeatureColumnBuilder;
 import com.ppwx.easysearch.qp.ner.product3c.Product3CTextNormalizer;
 import com.ppwx.easysearch.qp.tokenizer.Token;
@@ -30,13 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 二手 3C 字符级 CRF 实体识别器。

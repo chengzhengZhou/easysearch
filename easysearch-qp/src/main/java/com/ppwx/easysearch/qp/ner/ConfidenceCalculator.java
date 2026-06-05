@@ -161,9 +161,6 @@ public class ConfidenceCalculator {
                 return confidence * 0.85;
                 
             case COLOR:
-            case SIZE:
-            case STORAGE:
-            case RAM:
                 // 规格词较短，容易误匹配
                 return confidence * 0.90;
                 

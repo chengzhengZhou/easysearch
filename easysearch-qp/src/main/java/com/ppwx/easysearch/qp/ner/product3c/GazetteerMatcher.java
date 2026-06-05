@@ -46,6 +46,8 @@ public class GazetteerMatcher {
     private static final String GPU_NUMBERS = "1050|1060|1070|1080|1650|1660|2060|2070|2080|3050|3060|3070|3080|3090|"
             + "4050|4060|4070|4080|4090|5050|5060|5070|5080|5090|"
             + "5500|5600|5700|5800|5900|6600|6700|6800|6900|7600|7700|7800|7900|960|970|980";
+    private static final Pattern RAM = Pattern.compile("^(\\d{1,3})(g|gb)$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern RAM_CONTEXT = Pattern.compile("(笔记本|电脑|平板|内存|运存|运行内存|ram)", Pattern.CASE_INSENSITIVE);
     private static final Pattern STO = Pattern.compile("^(\\d{1,4})(g|gb|t|tb)$", Pattern.CASE_INSENSITIVE);
     private static final Pattern STO_COMBO = Pattern.compile("^\\d{1,3}(g|gb)?\\+\\d{1,4}(g|gb|t|tb)?$", Pattern.CASE_INSENSITIVE);
     private static final Pattern SCR = Pattern.compile("^(\\d+(?:\\.\\d+)?)(英寸|寸|″)$", Pattern.CASE_INSENSITIVE);
@@ -184,7 +186,7 @@ public class GazetteerMatcher {
             while (j < text.length() && text.charAt(j) != ' ') {
                 j++;
             }
-            String tag = paramTag(text.substring(i, j));
+            String tag = paramTag(text.substring(i, j), text, i, j);
             if (!"O".equals(tag)) {
                 for (int k = i; k < j; k++) {
                     col[k] = tag;
@@ -194,10 +196,13 @@ public class GazetteerMatcher {
         }
     }
 
-    private String paramTag(String token) {
+    private String paramTag(String token, String text, int start, int end) {
         String t = token.toLowerCase();
         if (versionWords.contains(t)) {
             return "VER";
+        }
+        if (RAM.matcher(t).matches() && hasRamContext(text, start, end)) {
+            return "RAM";
         }
         if (STO.matcher(t).matches() || STO_COMBO.matcher(t).matches()) {
             return "STO";
@@ -224,6 +229,12 @@ public class GazetteerMatcher {
             return "CON";
         }
         return "O";
+    }
+
+    private boolean hasRamContext(String text, int start, int end) {
+        int left = Math.max(0, start - 8);
+        int right = Math.min(text.length(), end + 8);
+        return RAM_CONTEXT.matcher(text.substring(left, right)).find();
     }
 
     public String getDictVersion() {

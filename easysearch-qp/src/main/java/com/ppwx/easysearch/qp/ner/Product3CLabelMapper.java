@@ -33,16 +33,12 @@ public final class Product3CLabelMapper {
         map.put("CAT", EntityType.CATEGORY);
         map.put("SER", EntityType.SERIES);
         map.put("MOD", EntityType.MODEL);
-        map.put("VER", EntityType.FEATURE);
-        map.put("STO", EntityType.STORAGE);
+        map.put("VER", EntityType.VERSION);
+        map.put("PRM", EntityType.PRM);
         map.put("CON", EntityType.CONDITION);
         map.put("CLR", EntityType.COLOR);
-        map.put("YR", EntityType.TAG);
-        map.put("CPU", EntityType.CPU);
-        map.put("GPU", EntityType.FEATURE);
-        map.put("SCR", EntityType.SCREEN);
-        map.put("PWR", EntityType.FEATURE);
-        map.put("LEN", EntityType.SIZE);
+        map.put("REG", EntityType.REGION);
+        map.put("YR", EntityType.YEAR);
         TYPE_MAP = Collections.unmodifiableMap(map);
     }
 

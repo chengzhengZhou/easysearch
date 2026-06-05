@@ -45,8 +45,6 @@ public class DefaultEntityNormalizer implements EntityNormalizer{
                 return normalizeBrand(word);
             case MODEL:
                 return normalizeModel(word);
-            case CPU:
-                return normalizeCPU(word);
             case CONDITION:
                 return normalizeCondition(word);
         }
