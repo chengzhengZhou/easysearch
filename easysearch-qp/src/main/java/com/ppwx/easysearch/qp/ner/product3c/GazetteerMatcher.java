@@ -24,13 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -40,9 +34,6 @@ public class GazetteerMatcher {
 
     private final Map<Character, Object> brandTrie;
     private final Map<Character, Object> categoryTrie;
-    private final Map<Character, Object> seriesTrie;
-    private final Map<Character, Object> colorTrie;
-    private final Map<Character, Object> regionTrie;
     private final Set<String> versionWords;
     private final String dictVersion;
 
@@ -71,9 +62,6 @@ public class GazetteerMatcher {
         List<String> categories = new ArrayList<>(readLines(dictDir, "category.txt"));
         categories.addAll(readLines(dictDir, "accessory.txt"));
         this.categoryTrie = buildTrie(categories);
-        this.seriesTrie = buildTrie(readLines(dictDir, "series.txt"));
-        this.colorTrie = buildTrie(readLines(dictDir, "color.txt"));
-        this.regionTrie = buildTrie(readLines(dictDir, "region.txt"));
         this.versionWords = new HashSet<>(readLines(dictDir, "version.txt"));
         List<String> version = readLines(dictDir, "VERSION");
 
@@ -120,22 +108,6 @@ public class GazetteerMatcher {
             node.put('$', word);
         }
         return root;
-    }
-
-    public List<int[]> findBrandSpans(String text) {
-        return findAll(text, brandTrie);
-    }
-
-    public List<int[]> findSeriesSpans(String text) {
-        return findAll(text, seriesTrie);
-    }
-
-    public List<int[]> findColorSpans(String text) {
-        return findAll(text, colorTrie);
-    }
-
-    public List<int[]> findRegionSpans(String text) {
-        return findAll(text, regionTrie);
     }
 
     public String[][] buildColumns(Product3CTextNormalizer.Result base, Product3CTextNormalizer.SpellingResult spell) {
