@@ -40,8 +40,12 @@ public class GazetteerMatcher {
 
     private final Map<Character, Object> brandTrie;
     private final Map<Character, Object> categoryTrie;
+    private final Map<Character, Object> seriesTrie;
+    private final Map<Character, Object> colorTrie;
+    private final Map<Character, Object> regionTrie;
     private final Set<String> versionWords;
     private final String dictVersion;
+
 
     private static final String GPU_NUMBERS = "1050|1060|1070|1080|1650|1660|2060|2070|2080|3050|3060|3070|3080|3090|"
             + "4050|4060|4070|4080|4090|5050|5060|5070|5080|5090|"
@@ -67,8 +71,12 @@ public class GazetteerMatcher {
         List<String> categories = new ArrayList<>(readLines(dictDir, "category.txt"));
         categories.addAll(readLines(dictDir, "accessory.txt"));
         this.categoryTrie = buildTrie(categories);
+        this.seriesTrie = buildTrie(readLines(dictDir, "series.txt"));
+        this.colorTrie = buildTrie(readLines(dictDir, "color.txt"));
+        this.regionTrie = buildTrie(readLines(dictDir, "region.txt"));
         this.versionWords = new HashSet<>(readLines(dictDir, "version.txt"));
         List<String> version = readLines(dictDir, "VERSION");
+
         this.dictVersion = version.isEmpty() ? "0" : version.get(0);
     }
 
@@ -114,8 +122,25 @@ public class GazetteerMatcher {
         return root;
     }
 
+    public List<int[]> findBrandSpans(String text) {
+        return findAll(text, brandTrie);
+    }
+
+    public List<int[]> findSeriesSpans(String text) {
+        return findAll(text, seriesTrie);
+    }
+
+    public List<int[]> findColorSpans(String text) {
+        return findAll(text, colorTrie);
+    }
+
+    public List<int[]> findRegionSpans(String text) {
+        return findAll(text, regionTrie);
+    }
+
     public String[][] buildColumns(Product3CTextNormalizer.Result base, Product3CTextNormalizer.SpellingResult spell) {
         String norm = spell.text;
+
         int n = norm.length();
         String[] c0 = new String[n];
         String[] c1 = new String[n];
@@ -136,8 +161,14 @@ public class GazetteerMatcher {
         return new String[][]{c0, c1, c2, c3, c4};
     }
 
-    @SuppressWarnings("unchecked")
     private void markTrie(String text, Map<Character, Object> trie, String[] col, String prefix) {
+        for (int[] match : findAll(text, trie)) {
+            markSpan(col, match[0], match[1], prefix);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private List<int[]> findAll(String text, Map<Character, Object> trie) {
         List<int[]> matches = new ArrayList<>();
         for (int i = 0; i < text.length(); i++) {
             Map<Character, Object> node = trie;
@@ -158,10 +189,22 @@ public class GazetteerMatcher {
                 matches.add(new int[]{i, last});
             }
         }
+        List<int[]> filtered = new ArrayList<>();
         for (int[] match : matches) {
-            markSpan(col, match[0], match[1], prefix);
+            boolean covered = false;
+            for (int[] kept : filtered) {
+                if (kept[0] <= match[0] && match[1] <= kept[1]) {
+                    covered = true;
+                    break;
+                }
+            }
+            if (!covered) {
+                filtered.add(match);
+            }
         }
+        return filtered;
     }
+
 
     private void markSpan(String[] col, int start, int end, String prefix) {
         for (int i = start; i < end; i++) {
