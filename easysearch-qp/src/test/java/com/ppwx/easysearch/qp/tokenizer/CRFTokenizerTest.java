@@ -38,7 +38,7 @@ public class CRFTokenizerTest {
 
     @Test
     public void tokenizeWhenModelAvailableReturnsValidTokens() {
-        CRFTokenizer tokenizer = new CRFTokenizer();
+        Product3CCWSTokenizer tokenizer = new Product3CCWSTokenizer();
         List<Token> tokens = tokenizer.tokenize("华为平板M5");
         // 模型可能不存在则返回空；存在则应有词且含偏移与词性
         if (tokens.isEmpty()) {
