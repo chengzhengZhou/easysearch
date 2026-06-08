@@ -27,11 +27,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 支持 5 列字符特征输入的二手 3C CRF NER 推理适配器。
+ * 支持 6 列字符特征输入的二手 3C CRF NER 推理适配器。
+ * 列序：0 小写字符 / 1 字类 / 2 品牌命中 / 3 品类命中 / 4 参数模式 / 5 系列命中
  */
 public class Product3CCRFRecognizer extends CRFNERecognizer {
 
-    public static final int NUM_COLUMNS = 5;
+    public static final int NUM_COLUMNS = 6;
 
     private final PerceptronNERecognizer decoder;
 
@@ -51,7 +52,7 @@ public class Product3CCRFRecognizer extends CRFNERecognizer {
 
     private static void validateColumns(String[][] columns) {
         if (columns == null || columns.length != NUM_COLUMNS || columns[0] == null) {
-            throw new IllegalArgumentException("Product3C CRF requires exactly 5 feature columns");
+            throw new IllegalArgumentException("Product3C CRF requires exactly 6 feature columns");
         }
         int length = columns[0].length;
         for (int i = 1; i < columns.length; i++) {

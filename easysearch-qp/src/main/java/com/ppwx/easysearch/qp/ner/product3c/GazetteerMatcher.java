@@ -29,11 +29,14 @@ import java.util.regex.Pattern;
 
 /**
  * 3C 领域词典与参数模式特征构造器。
+ * 构造 6 列字符级特征：字符/字类/品牌/品类/参数/系列。
  */
 public class GazetteerMatcher {
 
     private final Map<Character, Object> brandTrie;
     private final Map<Character, Object> categoryTrie;
+    private final Map<Character, Object> seriesTrie;
+    private final Map<Character, Object> chipsetTrie;
     private final Set<String> versionWords;
     private final String dictVersion;
 
@@ -62,6 +65,8 @@ public class GazetteerMatcher {
         List<String> categories = new ArrayList<>(readLines(dictDir, "category.txt"));
         categories.addAll(readLines(dictDir, "accessory.txt"));
         this.categoryTrie = buildTrie(categories);
+        this.seriesTrie = buildTrie(readLines(dictDir, "series.txt"));
+        this.chipsetTrie = buildTrie(readLines(dictDir, "chipset.txt"));
         this.versionWords = new HashSet<>(readLines(dictDir, "version.txt"));
         List<String> version = readLines(dictDir, "VERSION");
 
@@ -119,18 +124,32 @@ public class GazetteerMatcher {
         String[] c2 = new String[n];
         String[] c3 = new String[n];
         String[] c4 = new String[n];
+        String[] c5 = new String[n];
         for (int i = 0; i < n; i++) {
             c0[i] = String.valueOf(norm.charAt(i));
             c2[i] = "O";
             c3[i] = "O";
             c4[i] = "O";
+            c5[i] = "O";
             int ci = i < spell.normToCleaned.length ? spell.normToCleaned[i] : Math.min(i, base.charClasses.length - 1);
             c1[i] = String.valueOf(ci >= 0 && ci < base.charClasses.length ? base.charClasses[ci] : Product3CTextNormalizer.charType(norm.charAt(i)));
         }
         markTrie(norm, brandTrie, c2, "B");
         markTrie(norm, categoryTrie, c3, "C");
         markParams(norm, c4);
-        return new String[][]{c0, c1, c2, c3, c4};
+        markChipset(norm, c4);
+        markTrie(norm, seriesTrie, c5, "S");
+        return new String[][]{c0, c1, c2, c3, c4, c5};
+    }
+
+    private void markChipset(String text, String[] col) {
+        for (int[] m : findAll(text, chipsetTrie)) {
+            for (int k = m[0]; k < m[1]; k++) {
+                if ("O".equals(col[k])) {
+                    col[k] = "CPU";
+                }
+            }
+        }
     }
 
     private void markTrie(String text, Map<Character, Object> trie, String[] col, String prefix) {

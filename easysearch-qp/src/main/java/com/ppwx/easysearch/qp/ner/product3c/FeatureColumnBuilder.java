@@ -20,7 +20,8 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * 构造 Product3C CRF 所需的 5 列字符级特征。
+ * 构造 Product3C CRF 所需的 6 列字符级特征。
+ * 列序：0 小写字符 / 1 字类 / 2 品牌命中 / 3 品类命中 / 4 参数模式 / 5 系列命中
  */
 public class FeatureColumnBuilder {
 

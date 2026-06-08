@@ -1,0 +1,144 @@
+# 系列 / 产品线词典（统一标 SER；用于 CRF 第 5 列特征 + 规则预标 + Java 兜底）
+# 全部小写，每行一条，'#' 开头为注释
+# 规范：只收系列词干，版本词(pro/air/mini/max/ultra/plus)一律不进系列，交给 VER；避免单字母条目以防误触发
+# ===== Apple =====
+iphone
+ipad
+macbook
+imac
+mac studio
+airpods
+apple watch
+apple pencil
+homepod
+# ===== 华为 Huawei =====
+mate
+matepad
+matebook
+pura
+nova
+畅享
+maimang
+麦芒
+freebuds
+freelace
+watch gt
+# ===== 荣耀 Honor =====
+magic
+magicbook
+magicpad
+# ===== 小米 / 红米 Xiaomi / Redmi =====
+redmi
+红米
+redmi note
+红米note
+redmi k
+redmi turbo
+redmi pad
+redmibook
+civi
+# ===== OPPO / 一加 =====
+find
+find x
+find n
+reno
+oppo pad
+oneplus
+一加
+ace
+# ===== vivo / iQOO =====
+iqoo
+iqoo neo
+nex
+# ===== 三星 Samsung =====
+galaxy
+galaxy z
+galaxy a
+galaxy note
+galaxy tab
+galaxy watch
+galaxy buds
+# ===== realme 真我 =====
+真我
+# ===== 联想 Lenovo =====
+拯救者
+legion
+thinkpad
+thinkbook
+小新
+ideapad
+yoga
+异能者
+# ===== 华硕 ASUS =====
+rog
+天选
+灵耀
+无畏
+zenbook
+vivobook
+# ===== 戴尔 Dell =====
+xps
+游匣
+alienware
+外星人
+灵越
+成就
+inspiron
+latitude
+# ===== 惠普 HP =====
+暗影精灵
+光影精灵
+omen
+战
+星
+幽灵
+pavilion
+elitebook
+# ===== 宏碁 Acer =====
+暗影骑士
+掠夺者
+predator
+非凡
+# ===== 机械革命 / 雷神 / 神舟 =====
+蛟龙
+极光
+旷世
+无界
+战神
+# ===== 大疆 DJI =====
+mavic
+osmo
+pocket
+avata
+御
+# ===== 佳能 Canon =====
+eos
+eos r
+eos m
+powershot
+ixus
+# ===== 尼康 Nikon =====
+coolpix
+# ===== 索尼 Sony =====
+alpha
+黑卡
+playstation
+xperia
+walkman
+linkbuds
+# ===== 富士 Fujifilm =====
+gfx
+instax
+# ===== 任天堂 Nintendo =====
+switch
+switch oled
+switch lite
+# ===== 微软 Microsoft =====
+surface
+surface laptop
+surface book
+# ===== 耳机 / 影音 =====
+quietcomfort
+momentum
+# ===== GoPro / 运动相机 =====
+hero

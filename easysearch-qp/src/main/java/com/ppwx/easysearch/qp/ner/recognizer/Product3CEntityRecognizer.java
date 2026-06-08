@@ -31,7 +31,7 @@ import java.util.*;
 /**
  * 二手 3C 字符级 CRF 实体识别器。
  * <p>
- * 输入为原始 query，内部完成文本归一化、拼写归一、5 列特征构造、BIO 解析和 offset 回映射。
+ * 输入为原始 query，内部完成文本归一化、拼写归一、6 列特征构造、BIO 解析和 offset 回映射。
  */
 public class Product3CEntityRecognizer implements EntityRecognizer {
 
