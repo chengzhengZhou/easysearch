@@ -48,7 +48,7 @@ public class DictOverrideCompositeTokenizer implements Tokenizer {
      * 需要词典时请使用 {@link DictTokenizer#fromPath(String)} 等工厂方法创建 Dict 实例后传入双参构造。
      */
     public DictOverrideCompositeTokenizer() {
-        this(new CRFTokenizer(), new DictTokenizer());
+        this(new Product3CCWSTokenizer(), new DictTokenizer());
     }
 
     /**

@@ -41,7 +41,7 @@ public class LatticeFusionTokenizerTest {
     public void setUp() {
         String dict = "苹果\tnz\n手机\tn\n苹果手机\tnz\n影石\tnz\n";
         dictTokenizer = DictTokenizer.fromStream(new ByteArrayInputStream(dict.getBytes(StandardCharsets.UTF_8)));
-        fusionWithDict = new LatticeFusionTokenizer(new CRFTokenizer(), dictTokenizer);
+        fusionWithDict = new LatticeFusionTokenizer(new Product3CCWSTokenizer(), dictTokenizer);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class LatticeFusionTokenizerTest {
 
     @Test
     public void whenDictEmptyUsesCrfOnlyWithSource() {
-        Tokenizer crf = new CRFTokenizer();
+        Tokenizer crf = new Product3CCWSTokenizer();
         Tokenizer dictEmpty = text -> Collections.emptyList();
         LatticeFusionTokenizer tokenizer = new LatticeFusionTokenizer(crf, dictEmpty);
         List<Token> tokens = tokenizer.tokenize("测试");

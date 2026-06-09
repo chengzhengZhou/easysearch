@@ -19,7 +19,7 @@ package com.hankcs.hanlp.model.crf;
 import com.hankcs.hanlp.corpus.document.sentence.Sentence;
 import com.hankcs.hanlp.corpus.document.sentence.word.Word;
 import com.hankcs.hanlp.model.crf.crfpp.FeatureIndex;
-import com.hankcs.hanlp.model.crf.product3c.Product3CCWSFeatureColumnBuilder;
+import com.ppwx.easysearch.qp.tokenizer.product3c.FeatureColumnBuilder;
 import com.hankcs.hanlp.model.perceptron.PerceptronSegmenter;
 import com.hankcs.hanlp.model.perceptron.common.TaskType;
 import com.hankcs.hanlp.model.perceptron.feature.FeatureMap;
@@ -44,9 +44,9 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
     public static final String DEFAULT_DICT_PATH = "data/dict/3c";
     public static final String DEFAULT_SPELLING_PATH = "data/dict/spelling_normalize.tsv";
     public static final String CRF_MODEL = "data/model/3c_cws.crf.txt.bin";
-    public static final int NUM_COLUMNS = Product3CCWSFeatureColumnBuilder.NUM_COLUMNS;
+    public static final int NUM_COLUMNS = FeatureColumnBuilder.NUM_COLUMNS;
 
-    private final Product3CCWSFeatureColumnBuilder featureColumnBuilder;
+    private final FeatureColumnBuilder featureColumnBuilder;
     private PerceptronSegmenter decoder;
     private CWSTagSet cwsTagSet;
 
@@ -67,7 +67,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
     public Product3CCRFSegmenter(String modelPath, String dictPath, String spellingPath) throws IOException
     {
         super(modelPath);
-        this.featureColumnBuilder = new Product3CCWSFeatureColumnBuilder(dictPath, spellingPath);
+        this.featureColumnBuilder = new FeatureColumnBuilder(dictPath, spellingPath);
         initDecoder();
     }
 
@@ -88,7 +88,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
         }
         ensureDecoder();
 
-        Product3CCWSFeatureColumnBuilder.Result result = featureColumnBuilder.build(text);
+        FeatureColumnBuilder.Result result = featureColumnBuilder.build(text);
         if (result.length() == 0)
         {
             return;
@@ -109,7 +109,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
             return new LinkedList<int[]>();
         }
         ensureDecoder();
-        Product3CCWSFeatureColumnBuilder.Result result = featureColumnBuilder.build(text);
+        FeatureColumnBuilder.Result result = featureColumnBuilder.build(text);
         if (result.length() == 0)
         {
             return new LinkedList<int[]>();
@@ -120,7 +120,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
         return spans;
     }
 
-    private void collectSpans(Product3CCWSFeatureColumnBuilder.Result result, int[] tagArray, List<int[]> spans)
+    private void collectSpans(FeatureColumnBuilder.Result result, int[] tagArray, List<int[]> spans)
     {
         int tokenRawStart = -1;
         int tokenRawEnd = -1;
@@ -346,7 +346,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
         };
     }
 
-    private void tagsToWords(Product3CCWSFeatureColumnBuilder.Result result, int[] tagArray, List<String> output)
+    private void tagsToWords(FeatureColumnBuilder.Result result, int[] tagArray, List<String> output)
     {
         String rawText = result.raw;
         StringBuilder current = new StringBuilder();
@@ -490,7 +490,7 @@ public class Product3CCRFSegmenter extends CRFTagger implements Segmenter
         for (int i = 0; i < columns[0].length; i++)
         {
             String value = columns[0][i];
-            if (Product3CCWSFeatureColumnBuilder.SPACE_FEATURE.equals(value))
+            if (FeatureColumnBuilder.SPACE_FEATURE.equals(value))
             {
                 sentence.append(' ');
             }

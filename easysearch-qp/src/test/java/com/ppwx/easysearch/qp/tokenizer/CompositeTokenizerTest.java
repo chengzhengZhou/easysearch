@@ -41,7 +41,7 @@ public class CompositeTokenizerTest {
     public void setUp() {
         String dict = "苹果\tnz\n手机\tn\n苹果手机\tnz\n影石\tnz\n";
         dictTokenizer = DictTokenizer.fromStream(new ByteArrayInputStream(dict.getBytes(StandardCharsets.UTF_8)));
-        compositeWithDict = new CRFCompositeTokenizer(new CRFTokenizer(), dictTokenizer);
+        compositeWithDict = new CRFCompositeTokenizer(new Product3CCWSTokenizer(), dictTokenizer);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CompositeTokenizerTest {
 
     @Test
     public void whenDictEmptyUsesCrfOnlyWithSource() {
-        Tokenizer crf = new CRFTokenizer();
+        Tokenizer crf = new Product3CCWSTokenizer();
         Tokenizer dictEmpty = text -> Collections.emptyList();
         CRFCompositeTokenizer tokenizer = new CRFCompositeTokenizer(crf, dictEmpty);
         List<Token> tokens = tokenizer.tokenize("测试");

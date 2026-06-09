@@ -39,7 +39,7 @@ public class DualPathTokenizerTest {
     public void setUp() {
         String dict = "苹果\tnz\n手机\tn\n苹果手机\tnz\n真我\tnz\nGT5\tnz\nPro\tnz\niPhone\tnz\n16\tnz\n";
         DictTokenizer dictTokenizer = DictTokenizer.fromStream(new ByteArrayInputStream(dict.getBytes(StandardCharsets.UTF_8)));
-        Tokenizer composite = new CRFCompositeTokenizer(new CRFTokenizer(), dictTokenizer);
+        Tokenizer composite = new CRFCompositeTokenizer(new Product3CCWSTokenizer(), dictTokenizer);
         defaultTokenizer = new DualPathTokenizer(composite);
     }
 
@@ -59,7 +59,7 @@ public class DualPathTokenizerTest {
     @Test
     public void noSpaceSameAsSinglePath() {
         DictTokenizer dictTokenizer = DictTokenizer.fromStream(new ByteArrayInputStream("苹果\tnz\n手机\tn\n苹果手机\tnz\n真我\tnz\nGT5\tnz\nPro\tnz\n".getBytes(StandardCharsets.UTF_8)));
-        Tokenizer delegate = new CRFCompositeTokenizer(new CRFTokenizer(), dictTokenizer);
+        Tokenizer delegate = new CRFCompositeTokenizer(new Product3CCWSTokenizer(), dictTokenizer);
         DualPathTokenizer dual = new DualPathTokenizer(delegate);
         SpaceSegmentTokenizer spaceOnly = new SpaceSegmentTokenizer(delegate);
         String text = "苹果手机";

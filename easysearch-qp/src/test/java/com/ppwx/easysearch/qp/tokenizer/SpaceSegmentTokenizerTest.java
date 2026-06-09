@@ -39,7 +39,7 @@ public class SpaceSegmentTokenizerTest {
     public void setUp() {
         String dict = "苹果\tnz\n手机\tn\n苹果手机\tnz\n真我\tnz\nGT5\tnz\nPro\tnz\n";
         DictTokenizer dictTokenizer = DictTokenizer.fromStream(new ByteArrayInputStream(dict.getBytes(StandardCharsets.UTF_8)));
-        compositeWithDict = new CRFCompositeTokenizer(new CRFTokenizer(), dictTokenizer);
+        compositeWithDict = new CRFCompositeTokenizer(new Product3CCWSTokenizer(), dictTokenizer);
     }
 
     @Test

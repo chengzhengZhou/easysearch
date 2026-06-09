@@ -23,14 +23,14 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * CRFTokenizer 单元测试。
+ * Product3CCWSTokenizer 单元测试。
  * 空/null 不依赖模型；有模型时校验分词结果结构。
  */
-public class CRFTokenizerTest {
+public class Product3CCWSTokenizerTest {
 
     @Test
     public void tokenizeNullOrEmptyReturnsEmpty() {
-        CRFTokenizer tokenizer = new CRFTokenizer();
+        Product3CCWSTokenizer tokenizer = new Product3CCWSTokenizer();
         assertTrue(tokenizer.tokenize(null).isEmpty());
         assertTrue(tokenizer.tokenize("").isEmpty());
         assertTrue(tokenizer.tokenize("   ").isEmpty());

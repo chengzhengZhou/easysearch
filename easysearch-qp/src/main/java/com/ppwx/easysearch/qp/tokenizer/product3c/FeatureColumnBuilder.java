@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hankcs.hanlp.model.crf.product3c;
+package com.ppwx.easysearch.qp.tokenizer.product3c;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
  * 列序与 data/template/3c_cws.tpl 对齐：
  * 0 char, 1 char_type, 2 lex_hit, 3 param_hit。
  */
-public class Product3CCWSFeatureColumnBuilder
+public class FeatureColumnBuilder
 {
     public static final int NUM_COLUMNS = 4;
     public static final String SPACE_FEATURE = "\\s";
@@ -77,7 +77,7 @@ public class Product3CCWSFeatureColumnBuilder
         }
     }
 
-    public Product3CCWSFeatureColumnBuilder(String dictPath, String spellingPath) throws IOException
+    public FeatureColumnBuilder(String dictPath, String spellingPath) throws IOException
     {
         loadLexicon(dictPath);
         loadSpellingNormalize(spellingPath);

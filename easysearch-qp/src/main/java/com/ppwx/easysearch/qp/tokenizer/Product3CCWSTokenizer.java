@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 基于 Product3C CRF 分词模型的分词器，替换 {@link CRFTokenizer}。
+ * 基于 Product3C CRF 分词模型的分词器。
  * <p>
  * 内部完成文本归一化、拼写归一化、4 列特征构造，输出带原始偏移的 Token 列表。
  * 词性固定为 "NN"；若需词性标注请在上层叠加。

@@ -55,7 +55,7 @@ public class LatticeFusionTokenizer implements Tokenizer {
      * 使用默认 CRF 与空词典；需要词典时请用双参或三参构造传入。
      */
     public LatticeFusionTokenizer() {
-        this(new CRFTokenizer(), new DictTokenizer(), DEFAULT_SINGLE_CHAR_SCORE);
+        this(new Product3CCWSTokenizer(), new DictTokenizer(), DEFAULT_SINGLE_CHAR_SCORE);
     }
 
     @Override
