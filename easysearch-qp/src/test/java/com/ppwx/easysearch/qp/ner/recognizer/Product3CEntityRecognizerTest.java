@@ -86,7 +86,7 @@ public class Product3CEntityRecognizerTest {
     public void testRecognizeByModel() {
         Product3CNerConfig product3CNerConfig = new Product3CNerConfig();
         product3CNerConfig.setDictDir("data/dict/3c");
-        product3CNerConfig.setModelPath("data/model/vocab_ner_crf.txt.bin");
+        product3CNerConfig.setModelPath("data/model/3c_ner.crf.txt.bin");
         Product3CEntityRecognizer recognizer = new Product3CEntityRecognizer(product3CNerConfig);
         Collection<Entity> entities = recognizer.extractEntities("苹果iphone15 256G", Collections.emptyList());
         System.out.println(entities);
